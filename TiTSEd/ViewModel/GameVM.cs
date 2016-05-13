@@ -17,8 +17,7 @@ namespace TiTsEd.ViewModel
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file)
         {
-            // Import missing items
-            var unknownItemGroup = XmlData.Current.ItemGroups.Last();
+
         }
 
         static void ImportMissingNamedVectors(AmfObject cocItems, IEnumerable<XmlNamedVector4> xmlItems, string cocNameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlNamedVector4> targetXmlList = null)
@@ -54,6 +53,7 @@ namespace TiTsEd.ViewModel
             get { return getPC().GetString("short"); }
             set {
                 SetValue(getPC(), "short", value);
+                SetValue(getPC(), "uniqueName", value);
                 SetValue("saveName", value);
             }
         }
@@ -124,17 +124,110 @@ namespace TiTsEd.ViewModel
             set { SetValue(getPC(), "libidoRaw", value); }
         }
 
+        public double MaxCoreStat
+        {
+            get { return Level * 5; }
+        }
+
         public int HP
         {
             get { return getPC().GetInt("HPRaw"); }
             set { SetValue(getPC(), "HPRaw", value); }
         }
 
+        public int Level
+        {
+            get { return getPC().GetInt("level"); }
+            set {
+                SetValue(getPC(), "level", value);
+                OnPropertyChanged("MaxXP");
+                OnPropertyChanged("MaxXPLabel");
+                OnPropertyChanged("MaxCoreStat");
+                OnPropertyChanged("MaxHP");
+            }
+        }
+
+        public int CharacterClass
+        {
+            get { return getPC().GetInt("characterClass"); }
+            set { SetValue(getPC(), "characterClass", value); }
+        }
+
+        private int HPMod
+        {
+            get { return getPC().GetInt("HPMod"); }
+        }
+
+        public int PerkPoints
+        {
+            get { return getPC().GetInt("unclaimedClassPerks"); }
+            set { SetValue(getPC(), "unclaimedClassPerks", value); }
+        }
+
+        public int StatPoints
+        {
+            get { return getPC().GetInt("unspentStatPoints"); }
+            set { SetValue(getPC(), "unspentStatPoints", value); }
+        }
+
+        public int XP
+        {
+            get { return getPC().GetInt("XPRaw"); }
+            set { SetValue(getPC(), "XPRaw", value); }
+        }
+
+        public int MaxXP
+        {
+            get { return Level * Level * Level * Level * 100; }
+        }
+
+        public String MaxXPLabel
+        {
+            get
+            {
+                if (MaxXP > 1000)
+                {
+                    return MaxXP / 100 + "k";
+                }
+                return "" + MaxXP;
+            }
+        }
+
+        public int Personality
+        {
+            get { return getPC().GetInt("personality"); }
+            set { 
+                SetValue(getPC(), "personality", value);
+                OnPropertyChanged("PersonalityTip");
+            }
+        }
+
+        public String PersonalityTip
+        {
+            get {
+                if (Personality <= 33) return "Nice";
+                if (Personality <= 66) return "Mischievous";
+                return "Ass";
+            }
+        }
+
         public int MaxHP
         {
             get
             {
-                return 10000;
+                var bonus = 0;
+                //TODO check items for fortification effects and add to bonus
+
+                var maxhp = 15 + (Level - 1) * 15 + HPMod + bonus;
+
+                //class mercenary
+                if (CharacterClass == 0) maxhp += Level * 5;
+                //class engineer
+                if (CharacterClass == 2) maxhp -= Level * 5;
+
+                //TODO check status conditions
+
+                return maxhp;
             }
         }
 

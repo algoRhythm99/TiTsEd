@@ -1,3 +1,10 @@
 <?xml version="1.0"?>
 <TiTsEd>
+  <General>
+    <ClassTypes>
+      <ClassType ID="0" Name="Smuggler"/>
+      <ClassType ID="1" Name="Mercenary"/>
+      <ClassType ID="2" Name="Engineer"/>
+    </ClassTypes>
+  </General>
 </TiTsEd>

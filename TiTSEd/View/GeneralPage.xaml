@@ -17,9 +17,11 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
         <Grid Margin="0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -53,25 +55,44 @@
                 </common:AutoGrid>
             </StackPanel>
 
+            <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical">
+                <common:AutoGrid>
+                    <TextBlock              Text="Class"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.CharacterClass}" ItemsSource="{Binding Data.General.ClassTypes}"/>
+                    
+                    <TextBlock              Text="Level"/>
+                    <common:MyNumericBox    Value="{Binding Game.Level}" Lower="1" />
+
+                    <TextBlock              Text="XP"/>
+                    <common:MyNumericBox    Value="{Binding Game.XP}" Upper="{Binding Game.MaxXP}" UpperLabel="{Binding Game.MaxXPLabel}" />
+
+                    <TextBlock              Text="Stat Points"/>
+                    <common:MyNumericBox    Value="{Binding Game.StatPoints}"/>
+
+                    <TextBlock              Text="Personality"/>
+                    <common:MyNumericBox    Value="{Binding Game.Personality}" Upper="100" Tip="{Binding Game.PersonalityTip}" />
+                </common:AutoGrid>
+            </StackPanel>
+
             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Stats" Style="{StaticResource Header}"/>
                 </Border>
                 <common:AutoGrid>
                     <TextBlock              Text="Physique"/>
-                    <common:MyNumericBox    Value="{Binding Game.Physique}" Upper="100"/>
+                    <common:MyNumericBox    Value="{Binding Game.Physique}" Upper="{Binding Game.MaxCoreStat}"/>
 
                     <TextBlock              Text="Reflexes"/>
-                    <common:MyNumericBox    Value="{Binding Game.Reflexes}" Upper="100"/>
+                    <common:MyNumericBox    Value="{Binding Game.Reflexes}" Upper="{Binding Game.MaxCoreStat}"/>
 
                     <TextBlock              Text="Aim"/>
-                    <common:MyNumericBox    Value="{Binding Game.Aim}" Upper="100"/>
+                    <common:MyNumericBox    Value="{Binding Game.Aim}" Upper="{Binding Game.MaxCoreStat}"/>
 
                     <TextBlock              Text="Intelligence"/>
-                    <common:MyNumericBox    Value="{Binding Game.Intelligence}" Upper="100"/>
+                    <common:MyNumericBox    Value="{Binding Game.Intelligence}" Upper="{Binding Game.MaxCoreStat}"/>
 
                     <TextBlock              Text="Willpower"/>
-                    <common:MyNumericBox    Value="{Binding Game.Willpower}" Upper="100"/>
+                    <common:MyNumericBox    Value="{Binding Game.Willpower}" Upper="{Binding Game.MaxCoreStat}"/>
                     
                     <TextBlock              Text="Libido"/>
                     <common:MyNumericBox    Value="{Binding Game.Libido}" Upper="100"/>

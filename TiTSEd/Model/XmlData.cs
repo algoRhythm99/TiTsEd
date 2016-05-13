@@ -42,11 +42,11 @@ namespace TiTsEd.Model
                     XmlSerializer s = new XmlSerializer(typeof(XmlDataSet));
                     var fileData = s.Deserialize(stream) as XmlDataSet;
 
-                    var unknownPerks = new XmlPerkGroup { Name = "Unknown", Perks = new List<XmlNamedVector4>() };
-                    fileData.PerkGroups.Add(unknownPerks);
+                    //var unknownPerks = new XmlPerkGroup { Name = "Unknown", Perks = new List<XmlNamedVector4>() };
+                    //fileData.PerkGroups.Add(unknownPerks);
 
-                    var unknownItems = new XmlItemGroup { Name = "Unknown", Items = new List<XmlItem>(), Category = ItemCategories.Unknown };
-                    fileData.ItemGroups.Add(unknownItems);
+                    //var unknownItems = new XmlItemGroup { Name = "Unknown", Items = new List<XmlItem>(), Category = ItemCategories.Unknown };
+                    //fileData.ItemGroups.Add(unknownItems);
 
                     _files.Add(xmlFile, fileData);
                     if (_files.Count == 1) Select(xmlFile);
@@ -72,26 +72,16 @@ namespace TiTsEd.Model
     [XmlRoot("TiTsEd")]
     public sealed class XmlDataSet
     {
-        [XmlElement("Body")]
-        public XmlBodySet Body { get; set; }
+        [XmlElement("General")]
+        public XmlGeneralSet General { get; set; }
 
-        [XmlArray("Perks"), XmlArrayItem("PerkGroup")]
-        public List<XmlPerkGroup> PerkGroups { get; set; }
+        //remove all these until we have something we need them for
+    }
 
-        [XmlArray("Items"), XmlArrayItem("ItemGroup")]
-        public List<XmlItemGroup> ItemGroups { get; set; }
-
-        [XmlArray, XmlArrayItem("Status")]
-        public List<XmlNamedVector4> Statuses { get; set; }
-
-        [XmlArray, XmlArrayItem("KeyItem")]
-        public List<XmlNamedVector4> KeyItems { get; set; }
-
-        [XmlArray, XmlArrayItem("Flag")]
-        public XmlEnum[] Flags { get; set; }
-
-        [XmlArray, XmlArrayItem("PropertyCount")]
-        public XmlPropCount[] PropertyCounts { get; set; }
+    public sealed class XmlGeneralSet
+    {
+        [XmlArray, XmlArrayItem("ClassType")]
+        public XmlEnum[] ClassTypes { get; set; }
     }
 
     public sealed class XmlBodySet
