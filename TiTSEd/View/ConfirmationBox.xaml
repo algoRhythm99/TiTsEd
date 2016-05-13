@@ -1,0 +1,32 @@
+﻿<Window x:Class="TiTsEd.View.ConfirmationBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Quit without saving?" Height="150" Width="400" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="8,0,0,0"/>
+                <Setter Property="Height" Value="24"/>
+                <Setter Property="Width" Value="80"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="20,10,10,10" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="image" Width="32" Height="32" VerticalAlignment="Top"/>
+            <TextBlock Text="This savegame has been changed. Do you still want to close this application?" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Column="1" Margin="10,0,0,0"/>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button Click="close_Click">Close</Button>
+            <Button Click="cancel_Click" IsDefault="True">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

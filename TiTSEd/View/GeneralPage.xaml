@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="TiTsEd.View.GeneralPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:common="clr-namespace:TiTsEd.Common"
+             mc:Ignorable="d" 
+             d:DesignWidth="1024" d:DesignHeight="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/PageInclude.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+                <common:AutoGrid>
+                    <TextBlock              Text="Name" Width="Auto"/>
+                    <TextBox                Text="{Binding Game.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="8,4,8,4" Width="150" HorizontalAlignment="Left"
+                                                BorderBrush="{StaticResource NumericBorderBrush}" Height="22" VerticalContentAlignment="Center" Padding="3,0"/>
+
+                    <TextBlock              Text="Notes" Width="Auto"/>
+                    <TextBox                Text="{Binding Game.Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="8,4,8,4" Width="150" HorizontalAlignment="Left"
+                                                BorderBrush="{StaticResource NumericBorderBrush}" Height="22" VerticalContentAlignment="Center" Padding="3,0"/>
+
+                    <TextBlock              Text="Credits"/>
+                    <common:MyNumericBox    Value="{Binding Game.Credits}" Upper="900000" UpperLabel="900k"/>
+
+                    <TextBlock              Text="Days"/>
+                    <common:MyNumericBox    Value="{Binding Game.Days}" Unit="days"/>
+
+                    <TextBlock              Text="Hours"/>
+                    <common:MyNumericBox    Value="{Binding Game.Hours}" Upper="23" Max="23" Unit="hours"/>
+
+                    <TextBlock              Text="Minutes"/>
+                    <common:MyNumericBox    Value="{Binding Game.Minutes}" Upper="59" Max="59" Unit="minutes"/>
+                </common:AutoGrid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Stats" Style="{StaticResource Header}"/>
+                </Border>
+                <common:AutoGrid>
+                    <TextBlock              Text="Physique"/>
+                    <common:MyNumericBox    Value="{Binding Game.Physique}" Upper="100"/>
+
+                    <TextBlock              Text="Reflexes"/>
+                    <common:MyNumericBox    Value="{Binding Game.Reflexes}" Upper="100"/>
+
+                    <TextBlock              Text="Aim"/>
+                    <common:MyNumericBox    Value="{Binding Game.Aim}" Upper="100"/>
+
+                    <TextBlock              Text="Intelligence"/>
+                    <common:MyNumericBox    Value="{Binding Game.Intelligence}" Upper="100"/>
+
+                    <TextBlock              Text="Willpower"/>
+                    <common:MyNumericBox    Value="{Binding Game.Willpower}" Upper="100"/>
+                    
+                    <TextBlock              Text="Libido"/>
+                    <common:MyNumericBox    Value="{Binding Game.Libido}" Upper="100"/>
+                </common:AutoGrid>
+                <common:AutoGrid Margin="0,30,0,0">
+                    <TextBlock              Text="Current HP"/>
+                    <common:MyNumericBox    Value="{Binding Game.HP}" Upper="{Binding Game.MaxHP}"/>
+
+                    <TextBlock              Text="Lust"/>
+                    <common:MyNumericBox    Value="{Binding Game.Lust}" Upper="{Binding Game.MaxLust}"/>
+
+                    <TextBlock              Text="Energy"/>
+                    <common:MyNumericBox    Value="{Binding Game.Energy}" Upper="{Binding Game.MaxEnergy}"/>
+                </common:AutoGrid>
+                <common:AutoGrid Margin="0,30,0,0" IsEnabled="{Binding Game.IsRevampMod}" Visibility="{Binding Game.RevampModVisibility, FallbackValue={x:Static Visibility.Collapsed}}">
+                    <TextBlock              Text="Hunger"/>
+                    <common:MyNumericBox    Value="{Binding Game.Hunger}" Min="0" Max="100" Upper="100" Tip="{Binding Game.HungerTip}"/>
+                </common:AutoGrid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical" Margin="216,0,206,0"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>
