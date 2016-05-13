@@ -27,7 +27,7 @@ To report bugs, you may create/update issues in [TiTsEd's issue tracker](https:/
 
 ## CoCEd Contributors ##
 
-This save editor is based mostly off from [CoCEd](https://github.com/tmedwards/CoCEd "https://github.com/tmedwards/CoCEd") and uses much of it's base code.
+This save editor is based mostly off from [CoCEd](https://github.com/tmedwards/CoCEd "https://github.com/tmedwards/CoCEd") and uses much it's code.
 
 * Perdev2 (original creator)
 * TheMadExile/tmedwards (current maintainer)
