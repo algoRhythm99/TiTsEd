@@ -165,6 +165,7 @@
     </Content>
     <Content Include="TiTsEd.Data.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
