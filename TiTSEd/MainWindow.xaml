@@ -48,6 +48,9 @@
             <TabItem Header="General" Padding="5,0,0,0">
                 <view:GeneralPage Background="White"/>
             </TabItem>
+            <TabItem Header="Body">
+                <view:BodyPage Background="White"/>
+            </TabItem>
         </TabControl>
 
         <view:TopBar HorizontalAlignment="Stretch" Margin="0,7,5,0"/>

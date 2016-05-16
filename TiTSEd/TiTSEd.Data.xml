@@ -7,4 +7,160 @@
       <ClassType ID="2" Name="Engineer"/>
     </ClassTypes>
   </General>
+  <Body>
+    <!-- ========================================================================================================================================== -->
+    <SkinTypes>
+      <SkinType ID="0" Name="Skin"/>
+      <SkinType ID="1" Name="Fur"/>
+      <SkinType ID="2" Name="Scales"/>
+      <SkinType ID="3" Name="Goo"/>
+      <SkinType ID="4" Name="Chitin"/>
+      <SkinType ID="5" Name="Feathers"/>
+      <SkinType ID="6" Name="Latex"/>
+    </SkinTypes>
+    <!-- ========================================================================================================================================== -->
+    <SkinTones>
+      <SkinTone>albino</SkinTone>
+      <SkinTone>amber</SkinTone>
+      <SkinTone>aqua</SkinTone>
+      <SkinTone>black</SkinTone>
+      <SkinTone>blue</SkinTone>
+      <SkinTone>cerulean</SkinTone>
+      <SkinTone>chocolate</SkinTone>
+      <SkinTone>copper</SkinTone>
+      <SkinTone>crimson</SkinTone>
+      <SkinTone>dark</SkinTone>
+      <SkinTone>dark blue</SkinTone>
+      <SkinTone>dark green</SkinTone>
+      <SkinTone>dark red</SkinTone>
+      <SkinTone>ebony</SkinTone>
+      <SkinTone>emerald</SkinTone>
+      <SkinTone>fair</SkinTone>
+      <SkinTone>gold</SkinTone>
+      <SkinTone>gray</SkinTone>
+      <SkinTone>green</SkinTone>
+      <SkinTone>indigo</SkinTone>
+      <SkinTone>lavender</SkinTone>
+      <SkinTone>lime</SkinTone>
+      <SkinTone>luminescent lime green</SkinTone>
+      <SkinTone>maroon</SkinTone>
+      <SkinTone>olive</SkinTone>
+      <SkinTone>orange</SkinTone>
+      <SkinTone>pale</SkinTone>
+      <SkinTone>pale blue</SkinTone>
+      <SkinTone>pale green</SkinTone>
+      <SkinTone>pale white</SkinTone>
+      <SkinTone>peach</SkinTone>
+      <SkinTone>pink</SkinTone>
+      <SkinTone>purple</SkinTone>
+      <SkinTone>purple and white</SkinTone>
+      <SkinTone>red</SkinTone>
+      <SkinTone>rose</SkinTone>
+      <SkinTone>sable</SkinTone>
+      <SkinTone>silver</SkinTone>
+      <SkinTone>steel gray</SkinTone>
+      <SkinTone>tanned</SkinTone>
+      <SkinTone>teal</SkinTone>
+      <SkinTone>topaz</SkinTone>
+      <SkinTone>turquoise</SkinTone>
+      <SkinTone>vermillion-red</SkinTone>
+      <SkinTone>violet</SkinTone>
+      <SkinTone>viridescent</SkinTone>
+      <SkinTone>white</SkinTone>
+      <SkinTone>yellow</SkinTone>
+    </SkinTones>
+    <!-- ========================================================================================================================================== -->
+    <HairTypes>
+      <HairType ID="0" Name="Hair" />
+      <HairType ID="1" Name="Feathers" />
+      <HairType ID="2" Name="Transparent" />
+      <HairType ID="3" Name="Gooey" />
+      <HairType ID="4" Name="Tentacles" />
+      <HairType ID="5" Name="Quills" />
+    </HairTypes>
+    <!-- ========================================================================================================================================== -->
+    <FaceTypes>
+      <FaceType ID="0" Name="Human" />
+      <FaceType ID="1" Name="Equine" />
+      <FaceType ID="2" Name="Bovine" />
+      <FaceType ID="3" Name="Canine" />
+      <FaceType ID="4" Name="Feline" />
+      <FaceType ID="5" Name="Vulpine" />
+      <FaceType ID="9" Name="Lapine" />
+      <FaceType ID="11" Name="Draconic" />
+      <FaceType ID="12" Name="Lizan" />
+      <FaceType ID="14" Name="Frog" />
+      <FaceType ID="17" Name="Kangaroo" />
+      <FaceType ID="18" Name="Gabilani" />
+      <FaceType ID="19" Name="Shark" />
+      <FaceType ID="20" Name="Siren" />
+      <FaceType ID="24" Name="Kui-tan" />
+      <FaceType ID="25" Name="Human Masked" />
+      <FaceType ID="26" Name="Mouse" />
+      <FaceType ID="27" Name="Mouseman" />
+      <FaceType ID="39" Name="Naleen" />
+      <FaceType ID="40" Name="Panda" />
+      <FaceType ID="45" Name="Badger" />
+    </FaceTypes>
+    <!-- ========================================================================================================================================== -->
+    <EyeTypes>
+      <EyeType ID="0" Name="Human" />
+      <EyeType ID="4" Name="Feline" />
+      <EyeType ID="6" Name="Bee" />
+      <EyeType ID="7" Name="Arachnid" />
+      <EyeType ID="13" Name="Naga" />
+      <EyeType ID="14" Name="Frog" />
+      <EyeType ID="15" Name="Demonic" />
+      <EyeType ID="18" Name="Gabilani" />
+      <EyeType ID="49" Name="Leithan" />
+      <EyeType ID="51" Name="Synthetic" />
+      <EyeType ID="55" Name="Nyrea" />
+      <EyeType ID="60" Name="Myr" />
+      <EyeType ID="65" Name="Gryvain" />
+    </EyeTypes>
+    <!-- ========================================================================================================================================== -->
+    <EarTypes>
+      <EarType ID="0" Name="Human" />
+      <EarType ID="1" Name="Equine" />
+      <EarType ID="2" Name="Bovine" />
+      <EarType ID="3" Name="Canine" />
+      <EarType ID="4" Name="Feline" />
+      <EarType ID="5" Name="Vulpine" />
+      <EarType ID="8" Name="Drider" />
+      <EarType ID="9" Name="Lapine" />
+      <EarType ID="11" Name="Draconic" />
+      <EarType ID="12" Name="Lizan" />
+      <EarType ID="14" Name="Frog" />
+      <EarType ID="15" Name="Demonic" />
+      <EarType ID="17" Name="Kangaroo" />
+      <EarType ID="18" Name="Gabilani" />
+      <EarType ID="21" Name="Deer" />
+      <EarType ID="24" Name="Kui-tan" />
+      <EarType ID="26" Name="Mouse" />
+      <EarType ID="40" Name="Panda" />
+      <EarType ID="42" Name="Raskvel" />
+      <EarType ID="46" Name="Vanae" />
+      <EarType ID="49" Name="Leithan" />
+      <EarType ID="58" Name="Sylvan" />
+      <EarType ID="65" Name="Gryvain" />
+    </EarTypes>
+    <!-- ========================================================================================================================================== -->
+    <TongueTypes>
+      <TongueType ID="0" Name="Human" />
+      <TongueType ID="1" Name="Equine" />
+      <TongueType ID="2" Name="Bovine" />
+      <TongueType ID="3" Name="Canine" />
+      <TongueType ID="4" Name="Feline" />
+      <TongueType ID="6" Name="Bee" />
+      <TongueType ID="9" Name="Lapine" />
+      <TongueType ID="11" Name="Draconic" />
+      <TongueType ID="13" Name="Naga" />
+      <TongueType ID="14" Name="Frog" />
+      <TongueType ID="15" Name="Demonic" />
+      <TongueType ID="16" Name="Gooey" />
+      <TongueType ID="42" Name="Raskvel" />
+      <TongueType ID="49" Name="Leithan" />
+      <TongueType ID="57" Name="Ovir" />
+    </TongueTypes>
+  </Body>
 </TiTsEd>

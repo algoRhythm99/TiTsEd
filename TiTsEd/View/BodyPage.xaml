@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="TiTsEd.View.BodyPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:common="clr-namespace:TiTsEd.Common"
+             mc:Ignorable="d" 
+             d:DesignWidth="1024" d:DesignHeight="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/PageInclude.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+                <common:AutoGrid>
+                    <TextBlock              Text="Height"/>
+                    <common:MyNumericBox    Value="{Binding Game.Tallness}" Upper="100" Max="100" Unit="inches"/>
+
+                    <TextBlock              Text="Thickness"/>
+                    <common:MyNumericBox    Value="{Binding Game.Thickness}" Upper="100" Max="100" />
+                    
+                    <TextBlock              Text="Feminity"/>
+                    <common:MyNumericBox    Value="{Binding Game.Feminity}" Upper="100" Tip="{Binding Game.FeminityTip}"/>
+
+                    <TextBlock              Text="Tone"/>
+                    <common:MyNumericBox    Value="{Binding Game.Tone}" Upper="100" Max="100" />
+
+                    <TextBlock              Text="Skin Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}"/>
+
+                    <TextBlock              Text="Skin Tone"/>
+                    <ComboBox               Text="{Binding Game.SkinTone}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+
+                    <TextBlock              Text="Fur Color"/>
+                    <ComboBox               Text="{Binding Game.FurColor}" ItemsSource="{Binding Data.Body.FurColor}" Style="{StaticResource EditableTextBox}"/>
+                </common:AutoGrid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Face" Style="{StaticResource Header}"/>
+                </Border>
+                <common:AutoGrid>
+                    <TextBlock              Text="Hair Length"/>
+                    <common:MyNumericBox    Value="{Binding Game.HairLength}" Type="Double" Unit="inches"/>
+
+                    <TextBlock              Text="Hair Color"/>
+                    <ComboBox Text="{Binding Game.HairColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}"/>
+
+                    <TextBlock              Text="Hair Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.HairType}" ItemsSource="{Binding Data.Body.HairTypes}"/>
+                </common:AutoGrid>
+                <common:AutoGrid>
+                    <TextBlock              Text="Face"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.FaceType}" ItemsSource="{Binding Data.Body.FaceTypes}"/>
+
+                    <TextBlock              Text="Eye Color"/>
+                    <ComboBox               Text="{Binding Game.EyeColor}" ItemsSource="{Binding Data.Body.EyeColors}" Style="{StaticResource EditableTextBox}"/>
+
+                    <TextBlock              Text="Eye Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.EyeType}" ItemsSource="{Binding Data.Body.EyeTypes}"/>
+
+                    <TextBlock              Text="Ears"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.EarType}" ItemsSource="{Binding Data.Body.EarTypes}"/>
+
+                    <TextBlock              Text="Tongue"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.TongueType}" ItemsSource="{Binding Data.Body.TongueTypes}"/>
+                </common:AutoGrid>
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>

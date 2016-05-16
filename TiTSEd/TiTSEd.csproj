@@ -97,6 +97,9 @@
     <Compile Include="View\ConfirmationBox.xaml.cs">
       <DependentUpon>ConfirmationBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BodyPage.xaml.cs">
+      <DependentUpon>BodyPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ExceptionBox.xaml.cs">
       <DependentUpon>ExceptionBox.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
     <Page Include="View\ConfirmationBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BodyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ExceptionBox.xaml">
       <SubType>Designer</SubType>

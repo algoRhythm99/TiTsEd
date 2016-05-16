@@ -48,6 +48,8 @@ namespace TiTsEd.ViewModel
             return pc = chars.GetObj("PC");
         }
 
+
+        #region GeneralPage
         public string Name
         {
             get { return getPC().GetString("short"); }
@@ -252,5 +254,88 @@ namespace TiTsEd.ViewModel
         {
             get { return 100; }
         }
+
+        #endregion
+
+        #region BodyPage
+        public int Tallness
+        {
+            get { return getPC().GetInt("tallness"); }
+            set { SetValue(getPC(), "tallness", value); }
+        }
+        public int Thickness
+        {
+            get { return getPC().GetInt("thickness"); }
+            set { SetValue(getPC(), "thickness", value); }
+        }
+        public int Feminity
+        {
+            get { return getPC().GetInt("femininity"); }
+            set { SetValue(getPC(), "femininity", value); }
+        }
+        public int Tone
+        {
+            get { return getPC().GetInt("tone"); }
+            set { SetValue(getPC(), "tone", value); }
+        }
+        public int SkinType
+        {
+            get { return getPC().GetInt("skinType"); }
+            set { SetValue(getPC(), "skinType", value); }
+        }
+        public String SkinTone
+        {
+            get { return getPC().GetString("skinTone"); }
+            set { SetValue(getPC(), "skinTone", value); }
+        }
+        public String FurColor
+        {
+            get { return getPC().GetString("furColor"); }
+            set { SetValue(getPC(), "furColor", value); }
+        }
+
+
+        public int HairLength
+        {
+            get { return getPC().GetInt("hairLength"); }
+            set { SetValue(getPC(), "hairLength", value); }
+        }
+        public String HairColor
+        {
+            get { return getPC().GetString("hairColor"); }
+            set { SetValue(getPC(), "hairColor", value); }
+        }
+        public int HairType
+        {
+            get { return getPC().GetInt("hairType"); }
+            set { SetValue(getPC(), "hairType", value); }
+        }
+        public int FaceType
+        {
+            get { return getPC().GetInt("faceType"); }
+            set { SetValue(getPC(), "faceType", value); }
+        }
+        public int EarType
+        {
+            get { return getPC().GetInt("earType"); }
+            set { SetValue(getPC(), "earType", value); }
+        }
+        public int EyeType
+        {
+            get { return getPC().GetInt("eyeType"); }
+            set { SetValue(getPC(), "eyeType", value); }
+        }
+        public String EyeColor
+        {
+            get { return getPC().GetString("eyeColor"); }
+            set { SetValue(getPC(), "eyeColor", value); }
+        }
+        public int TongueType
+        {
+            get { return getPC().GetInt("tongueType"); }
+            set { SetValue(getPC(), "tongueType", value); }
+        }
+
+        #endregion
     }
 }

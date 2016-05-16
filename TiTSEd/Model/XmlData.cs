@@ -75,7 +75,9 @@ namespace TiTsEd.Model
         [XmlElement("General")]
         public XmlGeneralSet General { get; set; }
 
-        //remove all these until we have something we need them for
+        [XmlElement("Body")]
+        public XmlBodySet Body { get; set; }
+
     }
 
     public sealed class XmlGeneralSet
@@ -88,70 +90,24 @@ namespace TiTsEd.Model
     {
         [XmlArray, XmlArrayItem("SkinType")]
         public XmlEnum[] SkinTypes { get; set; }
+
         [XmlArray, XmlArrayItem("SkinTone")]
         public String[] SkinTones { get; set; }
-        [XmlArray, XmlArrayItem("SkinAdjective")]
-        public String[] SkinAdjectives { get; set; }
-        [XmlArray, XmlArrayItem("SkinDescription")]
-        public String[] SkinDescriptions { get; set; }
-        [XmlArray, XmlArrayItem("FurColor")]
-        public String[] FurColors { get; set; }
+
         [XmlArray, XmlArrayItem("HairType")]
         public XmlEnum[] HairTypes { get; set; }
-        [XmlArray, XmlArrayItem("HairColor")]
-        public String[] HairColors { get; set; }
-        [XmlArray, XmlArrayItem("BeardType")]
-        public XmlEnum[] BeardTypes { get; set; }
 
         [XmlArray, XmlArrayItem("FaceType")]
         public XmlEnum[] FaceTypes { get; set; }
-        [XmlArray, XmlArrayItem("TongueType")]
-        public XmlEnum[] TongueTypes { get; set; }
+
         [XmlArray, XmlArrayItem("EyeType")]
         public XmlEnum[] EyeTypes { get; set; }
+
         [XmlArray, XmlArrayItem("EarType")]
         public XmlEnum[] EarTypes { get; set; }
-        [XmlArray, XmlArrayItem("HornType")]
-        public XmlEnum[] HornTypes { get; set; }
-        [XmlArray, XmlArrayItem("AntennaeType")]
-        public XmlEnum[] AntennaeTypes { get; set; }
 
-        [XmlArray, XmlArrayItem("ArmType")]
-        public XmlEnum[] ArmTypes { get; set; }
-        [XmlArray, XmlArrayItem("TailType")]
-        public XmlEnum[] TailTypes { get; set; }
-        [XmlArray, XmlArrayItem("WingType")]
-        public XmlEnum[] WingTypes { get; set; }
-        [XmlArray, XmlArrayItem("WingDescription")]
-        public String[] WingDescriptions { get; set; }
-        [XmlArray, XmlArrayItem("LowerBodyType")]
-        public XmlEnum[] LowerBodyTypes { get; set; }
-        [XmlArray, XmlArrayItem("PiercingType")]
-        public XmlEnum[] PiercingTypes { get; set; }
-        [XmlArray, XmlArrayItem("PiercingMaterial")]
-        public String[] PiercingMaterials { get; set; }
-
-        [XmlArray, XmlArrayItem("CockType")]
-        public XmlEnum[] CockTypes { get; set; }
-        [XmlArray, XmlArrayItem("CockSockType")]
-        public XmlItem[] CockSockTypes { get; set; }
-        [XmlArray, XmlArrayItem("VaginaType")]
-        public XmlEnum[] VaginaTypes { get; set; }
-        [XmlArray, XmlArrayItem("VaginalWetnessLevel")]
-        public XmlEnum[] VaginalWetnessLevels { get; set; }
-        [XmlArray, XmlArrayItem("VaginalLoosenessLevel")]
-        public XmlEnum[] VaginalLoosenessLevels { get; set; }
-        [XmlArray, XmlArrayItem("AnalLoosenessLevel")]
-        public XmlEnum[] AnalLoosenessLevels { get; set; }
-        [XmlArray, XmlArrayItem("AnalWetnessLevel")]
-        public XmlEnum[] AnalWetnessLevels { get; set; }
-
-        [XmlArray, XmlArrayItem("PregnancyType")]
-        public XmlEnum[] PregnancyTypes { get; set; }
-        [XmlArray, XmlArrayItem("AnalPregnancyType")]
-        public XmlEnum[] AnalPregnancyTypes { get; set; }
-        [XmlArray, XmlArrayItem("EggPregnancyType")]
-        public XmlEnum[] EggPregnancyTypes { get; set; }
+        [XmlArray, XmlArrayItem("TongueType")]
+        public XmlEnum[] TongueTypes { get; set; }
     }
 
     [Flags]

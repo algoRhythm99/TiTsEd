@@ -21,6 +21,8 @@ Not currently compatible with Mac OS X and Linux (even if using Wine or Mono).
 
 To report bugs, you may create/update issues in [TiTsEd's issue tracker](https://github.com/Chase-san/TiTsEd/issues "https://github.com/Chase-san/TiTsEd/issues").
 
+To edit the program itself, you need a copy of [Visual Studio 2012 Express for Windows Desktop](https://www.microsoft.com/en-us/download/details.aspx?id=34673 "https://www.microsoft.com/en-us/download/details.aspx?id=34673") be sure to get the offline installer.
+
 ## Contributors ##
 
 * Chase-san
