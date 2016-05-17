@@ -303,4 +303,71 @@ namespace TiTsEd.ViewModel
 
         protected abstract AmfObject CreateNewObject();
     }
+
+    public class FlagItem
+    {
+        readonly AmfObject _object;
+        readonly XmlEnum _value;
+        public FlagItem(AmfObject obj, XmlEnum value)
+        {
+            _object = obj;
+            _value = value;
+        }
+
+        public String ItemName
+        {
+            get { return _value.Name; }
+        }
+
+        //Here is the real magic
+        public bool ItemChecked
+        {
+            get
+            {
+                //check all indexes of _object for this value if so return true
+                int i = 0;
+                int id = 0;
+                while ((id = _object.GetInt(i++, -1234)) != -1234)
+                {
+                    if (id == _value.ID)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            set
+            {
+                if (value)
+                {
+                    //check all indexes of _object for this value
+                    int i = -1;
+                    int id = 0;
+                    while ((id = _object.GetInt(++i, -1234)) != -1234)
+                    {
+                        if (id == _value.ID)
+                        {
+                            //we already exist
+                            return;
+                        }
+                    }
+                    //add this flag to the object
+                    _object.Push(_value.ID);
+                }
+                else
+                {
+                    int i = -1;
+                    int id = 0;
+                    while ((id = _object.GetInt(++i, -1234)) != -1234)
+                    {
+                        if (id == _value.ID)
+                        {
+                            _object.Pop(i);
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

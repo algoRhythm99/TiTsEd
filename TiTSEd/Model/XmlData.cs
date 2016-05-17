@@ -91,6 +91,9 @@ namespace TiTsEd.Model
         [XmlArray, XmlArrayItem("SkinType")]
         public XmlEnum[] SkinTypes { get; set; }
 
+        [XmlArray, XmlArrayItem("SkinFlag")]
+        public XmlEnum[] SkinFlags { get; set; }
+
         [XmlArray, XmlArrayItem("SkinTone")]
         public String[] SkinTones { get; set; }
 
@@ -108,6 +111,33 @@ namespace TiTsEd.Model
 
         [XmlArray, XmlArrayItem("TongueType")]
         public XmlEnum[] TongueTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("AntennaeType")]
+        public XmlEnum[] AntennaeTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("HornType")]
+        public XmlEnum[] HornTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("ArmType")]
+        public XmlEnum[] ArmTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("ArmFlag")]
+        public XmlEnum[] ArmFlags { get; set; }
+
+        [XmlArray, XmlArrayItem("LegType")]
+        public XmlEnum[] LegTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("LegFlag")]
+        public XmlEnum[] LegFlags { get; set; }
+
+        [XmlArray, XmlArrayItem("WingType")]
+        public XmlEnum[] WingTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("TailType")]
+        public XmlEnum[] TailTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("TailFlag")]
+        public XmlEnum[] TailFlags { get; set; }
     }
 
     [Flags]

@@ -38,19 +38,38 @@
 
                     <TextBlock              Text="Thickness"/>
                     <common:MyNumericBox    Value="{Binding Game.Thickness}" Upper="100" Max="100" />
-                    
-                    <TextBlock              Text="Feminity"/>
-                    <common:MyNumericBox    Value="{Binding Game.Feminity}" Upper="100" Tip="{Binding Game.FeminityTip}"/>
 
                     <TextBlock              Text="Tone"/>
                     <common:MyNumericBox    Value="{Binding Game.Tone}" Upper="100" Max="100" />
 
+                    <TextBlock              Text="Feminity"/>
+                    <common:MyNumericBox    Value="{Binding Game.Feminity}" Upper="100" Tip="{Binding Game.FeminityTip}"/>
+                </common:AutoGrid>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical">
+                <common:AutoGrid>
                     <TextBlock              Text="Skin Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}"/>
 
                     <TextBlock              Text="Skin Tone"/>
                     <ComboBox               Text="{Binding Game.SkinTone}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
-
+                </common:AutoGrid>
+                <Expander Header="Skin Flags" Margin="60,0,0,0">
+                    <ItemsControl ItemsSource="{Binding Game.SkinFlags}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <common:AutoGrid />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding ItemName}" IsChecked="{Binding ItemChecked}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Expander>
+                <common:AutoGrid>
                     <TextBlock              Text="Fur Color"/>
                     <ComboBox               Text="{Binding Game.FurColor}" ItemsSource="{Binding Data.Body.FurColor}" Style="{StaticResource EditableTextBox}"/>
                 </common:AutoGrid>
@@ -62,7 +81,7 @@
                 </Border>
                 <common:AutoGrid>
                     <TextBlock              Text="Hair Length"/>
-                    <common:MyNumericBox    Value="{Binding Game.HairLength}" Type="Double" Unit="inches"/>
+                    <common:MyNumericBox    Value="{Binding Game.HairLength}" Unit="inches"/>
 
                     <TextBlock              Text="Hair Color"/>
                     <ComboBox Text="{Binding Game.HairColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}"/>
@@ -86,8 +105,93 @@
                     <TextBlock              Text="Tongue"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.TongueType}" ItemsSource="{Binding Data.Body.TongueTypes}"/>
                 </common:AutoGrid>
+                <common:AutoGrid>
+                    <TextBlock              Text="Antennae Count"/>
+                    <common:MyNumericBox    Value="{Binding Game.AntennaeCount}" Max="2" Upper="2" />
+
+                    <TextBlock              Text="Antennae Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.AntennaeType}" ItemsSource="{Binding Data.Body.AntennaeTypes}"/>
+
+                    <TextBlock              Text="Horn Count"/>
+                    <common:MyNumericBox    Value="{Binding Game.HornCount}" Max="2" Upper="2" />
+
+                    <TextBlock              Text="Horn Length"/>
+                    <common:MyNumericBox    Value="{Binding Game.HornLength}" Max="30" Upper="30" Unit="inches" />
+
+                    <TextBlock              Text="Horn Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.HornType}" ItemsSource="{Binding Data.Body.HornTypes}"/>
+                </common:AutoGrid>
             </StackPanel>
 
+
+            <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Vertical">
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Body" Style="{StaticResource Header}"/>
+                </Border>
+                <common:AutoGrid>
+                    <TextBlock              Text="Arms"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.ArmType}" ItemsSource="{Binding Data.Body.ArmTypes}"/>
+                </common:AutoGrid>
+                <Expander Header="Arm Flags" Margin="60,0,0,0">
+                    <ItemsControl ItemsSource="{Binding Game.ArmFlags}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <common:AutoGrid />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding ItemName}" IsChecked="{Binding ItemChecked}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Expander>
+                <common:AutoGrid>
+                    <TextBlock              Text="Legs"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.LegType}" ItemsSource="{Binding Data.Body.LegTypes}"/>
+                </common:AutoGrid>
+                <Expander Header="Leg Flags" Margin="60,0,0,0">
+                    <ItemsControl ItemsSource="{Binding Game.LegFlags}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <common:AutoGrid />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding ItemName}" IsChecked="{Binding ItemChecked}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Expander>
+                <common:AutoGrid>
+                    <TextBlock              Text="Wing Count"/>
+                    <common:MyNumericBox    Value="{Binding Game.WingCount}" />
+
+                    <TextBlock              Text="Wing Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.WingType}" ItemsSource="{Binding Data.Body.WingTypes}"/>
+
+                    <TextBlock              Text="Tail Count"/>
+                    <common:MyNumericBox    Value="{Binding Game.TailCount}" />
+                    
+                    <TextBlock              Text="Tail Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.TailType}" ItemsSource="{Binding Data.Body.TailTypes}"/>
+                </common:AutoGrid>
+                <Expander Header="Tail Flags" Margin="60,0,0,0">
+                    <ItemsControl ItemsSource="{Binding Game.TailFlags}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <common:AutoGrid />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding ItemName}" IsChecked="{Binding ItemChecked}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Expander>
+            </StackPanel>
         </Grid>
     </ScrollViewer>
 </UserControl>
