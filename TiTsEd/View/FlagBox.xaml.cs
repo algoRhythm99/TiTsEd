@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,11 +15,19 @@ using System.Windows.Shapes;
 
 namespace TiTsEd.View {
     /// <summary>
-    /// Interaction logic for BodyPage.xaml
+    /// Interaction logic for FlagBox.xaml
     /// </summary>
-    public partial class BodyPage : UserControl {
-        public BodyPage() {
+    public partial class FlagBox : ItemsControl {
+        public FlagBox() {
             InitializeComponent();
+
+            
         }
+
+        public IEnumerable ItemsSource {
+            get { return base.ItemsSource; }
+            set { base.ItemsSource = value; }
+        }
+
     }
 }

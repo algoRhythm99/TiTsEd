@@ -10,14 +10,11 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace TiTsEd.Model
-{
-    public sealed class XmlData
-    {
+namespace TiTsEd.Model {
+    public sealed class XmlData {
         // Kind of hacky I suppose, but for something this simple it beats creating a discriminated union
         // or juggling a filename list/enum pair
-        public static class Files
-        {
+        public static class Files {
             public const string TiTs = "TiTsEd.Data.xml";
             public static readonly IEnumerable<string> All = new string[] { TiTs };
         }
@@ -30,15 +27,12 @@ namespace TiTsEd.Model
 
         public static XmlDataSet Current { get { return _files[_selectedFile]; } }
 
-        public static XmlLoadingResult LoadXml(string xmlFile)
-        {
-            try
-            {
+        public static XmlLoadingResult LoadXml(string xmlFile) {
+            try {
                 var path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
                 path = Path.Combine(path, xmlFile);
 
-                using (var stream = File.OpenRead(path))
-                {
+                using(var stream = File.OpenRead(path)) {
                     XmlSerializer s = new XmlSerializer(typeof(XmlDataSet));
                     var fileData = s.Deserialize(stream) as XmlDataSet;
 
@@ -49,29 +43,22 @@ namespace TiTsEd.Model
                     //fileData.ItemGroups.Add(unknownItems);
 
                     _files.Add(xmlFile, fileData);
-                    if (_files.Count == 1) Select(xmlFile);
+                    if(_files.Count == 1) Select(xmlFile);
 
                     return XmlLoadingResult.Success;
                 }
-            }
-            catch (UnauthorizedAccessException)
-            {
+            } catch(UnauthorizedAccessException) {
                 return XmlLoadingResult.NoPermission;
-            }
-            catch (SecurityException)
-            {
+            } catch(SecurityException) {
                 return XmlLoadingResult.NoPermission;
-            }
-            catch (FileNotFoundException)
-            {
+            } catch(FileNotFoundException) {
                 return XmlLoadingResult.MissingFile;
             }
         }
     }
 
     [XmlRoot("TiTsEd")]
-    public sealed class XmlDataSet
-    {
+    public sealed class XmlDataSet {
         [XmlElement("General")]
         public XmlGeneralSet General { get; set; }
 
@@ -80,14 +67,12 @@ namespace TiTsEd.Model
 
     }
 
-    public sealed class XmlGeneralSet
-    {
+    public sealed class XmlGeneralSet {
         [XmlArray, XmlArrayItem("ClassType")]
         public XmlEnum[] ClassTypes { get; set; }
     }
 
-    public sealed class XmlBodySet
-    {
+    public sealed class XmlBodySet {
         [XmlArray, XmlArrayItem("SkinType")]
         public XmlEnum[] SkinTypes { get; set; }
 
@@ -100,8 +85,17 @@ namespace TiTsEd.Model
         [XmlArray, XmlArrayItem("HairType")]
         public XmlEnum[] HairTypes { get; set; }
 
+        [XmlArray, XmlArrayItem("HairColor")]
+        public String[] HairColors { get; set; }
+
+        [XmlArray, XmlArrayItem("HairStyle")]
+        public String[] HairStyles { get; set; }
+
         [XmlArray, XmlArrayItem("FaceType")]
         public XmlEnum[] FaceTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("FaceFlag")]
+        public XmlEnum[] FaceFlags { get; set; }
 
         [XmlArray, XmlArrayItem("EyeType")]
         public XmlEnum[] EyeTypes { get; set; }
@@ -112,11 +106,17 @@ namespace TiTsEd.Model
         [XmlArray, XmlArrayItem("TongueType")]
         public XmlEnum[] TongueTypes { get; set; }
 
+        [XmlArray, XmlArrayItem("TongueFlag")]
+        public XmlEnum[] TongueFlags { get; set; }
+
         [XmlArray, XmlArrayItem("AntennaeType")]
         public XmlEnum[] AntennaeTypes { get; set; }
 
         [XmlArray, XmlArrayItem("HornType")]
         public XmlEnum[] HornTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("BeardStyle")]
+        public XmlEnum[] BeardStyles { get; set; }
 
         [XmlArray, XmlArrayItem("ArmType")]
         public XmlEnum[] ArmTypes { get; set; }
@@ -138,11 +138,16 @@ namespace TiTsEd.Model
 
         [XmlArray, XmlArrayItem("TailFlag")]
         public XmlEnum[] TailFlags { get; set; }
+
+        [XmlArray, XmlArrayItem("TailGenitalType")]
+        public XmlEnum[] TailGenitalTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("TailGenitalRaceType")]
+        public XmlEnum[] TailGenitalRaceTypes { get; set; }
     }
 
     [Flags]
-    public enum ItemCategories
-    {
+    public enum ItemCategories {
         Other = 1,
         Weapon = 2,
         Armor = 4,
@@ -154,8 +159,7 @@ namespace TiTsEd.Model
         All = Other | Weapon | Armor | ArmorCursed | Shield | Undergarment | Jewelry | Unknown,
     }
 
-    public sealed class XmlItemGroup
-    {
+    public sealed class XmlItemGroup {
         [XmlAttribute]
         public string Name { get; set; }
 
@@ -165,14 +169,12 @@ namespace TiTsEd.Model
         [XmlElement("Item")]
         public List<XmlItem> Items { get; set; }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return Name;
         }
     }
 
-    public sealed class XmlPerkGroup
-    {
+    public sealed class XmlPerkGroup {
         [XmlAttribute]
         public string Name { get; set; }
 
@@ -180,14 +182,12 @@ namespace TiTsEd.Model
         public List<XmlNamedVector4> Perks { get; set; }
 
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return Name;
         }
     }
 
-    public sealed class XmlEnum
-    {
+    public sealed class XmlEnum {
         [XmlAttribute]
         public int ID { get; set; }
         [XmlAttribute]
@@ -197,14 +197,12 @@ namespace TiTsEd.Model
         [XmlIgnore]
         public bool IsGrayedOut { get; set; }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return ID + " - " + Name;
         }
     }
 
-    public sealed class XmlItem
-    {
+    public sealed class XmlItem {
         [XmlAttribute]
         public string ID { get; set; }
         [XmlAttribute]
@@ -212,27 +210,23 @@ namespace TiTsEd.Model
         [XmlAttribute]
         public string Description { get; set; }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return ID + " | " + Name;
         }
     }
 
-    public sealed class XmlName
-    {
+    public sealed class XmlName {
         [XmlAttribute]
         public string Name { get; set; }
         [XmlAttribute]
         public string Description { get; set; }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return Name;
         }
     }
 
-    public sealed class XmlNamedVector4
-    {
+    public sealed class XmlNamedVector4 {
         [XmlAttribute]
         public string Name { get; set; }
         [XmlAttribute]
@@ -265,27 +259,23 @@ namespace TiTsEd.Model
         [XmlAttribute]
         public string Label4 { get; set; }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return Name;
         }
     }
 
-    public sealed class XmlPropCount
-    {
+    public sealed class XmlPropCount {
         [XmlAttribute]
         public string Version { get; set; }
         [XmlAttribute]
         public int Count { get; set; }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return Version + " - " + Count;
         }
     }
 
-    public enum XmlLoadingResult
-    {
+    public enum XmlLoadingResult {
         Success,
         InvalidFile,
         NoPermission,
