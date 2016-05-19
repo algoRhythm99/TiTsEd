@@ -144,6 +144,26 @@ namespace TiTsEd.Model {
 
         [XmlArray, XmlArrayItem("TailGenitalRaceType")]
         public XmlEnum[] TailGenitalRaceTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("GenitalSpotType")]
+        public XmlEnum[] GenitalSpotTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("MilkType")]
+        public XmlEnum[] MilkTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("CumType")]
+        public XmlEnum[] CumTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("GirlCumType")]
+        public XmlEnum[] GirlCumTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("NippleType")]
+        public XmlEnum[] NippleTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("DickNippleType")]
+        public XmlEnum[] DickNippleTypes { get; set; }
+
+
     }
 
     [Flags]

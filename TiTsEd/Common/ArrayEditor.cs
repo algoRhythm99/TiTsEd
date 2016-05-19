@@ -37,6 +37,7 @@ namespace TiTsEd.Common
         public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.Register("ItemTemplate", typeof(DataTemplate), typeof(ArrayEditor), new PropertyMetadata(null, OnPropertiesChanged));
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register("Header", typeof(string), typeof(ArrayEditor), new PropertyMetadata("", OnPropertiesChanged));
         public static readonly DependencyProperty CapacityProperty = DependencyProperty.Register("Capacity", typeof(int), typeof(ArrayEditor), new PropertyMetadata(Int32.MaxValue, OnPropertiesChanged));
+        public static readonly DependencyProperty MinCapacityProperty = DependencyProperty.Register("MinCapacity", typeof(int), typeof(ArrayEditor), new PropertyMetadata(0, OnPropertiesChanged));
 
         static ArrayEditor()
         {
@@ -65,6 +66,11 @@ namespace TiTsEd.Common
         {
             get { return (int)GetValue(CapacityProperty); }
             set { SetValue(CapacityProperty, value); }
+        }
+
+        public int MinCapacity {
+            get { return (int)GetValue(MinCapacityProperty); }
+            set { SetValue(MinCapacityProperty, value); }
         }
 
         ListBox _listBox;
@@ -169,6 +175,7 @@ namespace TiTsEd.Common
 
         void removeButton_Click(object sender, RoutedEventArgs e)
         {
+            if(Items.Count == MinCapacity) return;
             int index = _listBox.SelectedIndex;
             _listBox.SelectedIndex = Math.Min(index + 1, Items.Count - 2);
             Items.Delete(index);
@@ -197,6 +204,7 @@ namespace TiTsEd.Common
         {
             if (_listBox == null) return;
             _addButton.IsEnabled = (Items != null && Items.Count < Capacity);
+            _removeButton.IsEnabled = (Items != null && Items.Count > MinCapacity);
 
             var item = _listBox.SelectedItem;
             if (item != null)
@@ -207,7 +215,7 @@ namespace TiTsEd.Common
                 return;
             }
 
-            if (Items == null || Items.Count == 0)
+            if(Items == null || Items.Count == MinCapacity)
             {
                 ((FrameworkElement)Content).DataContext = null;
                 _contentBorder.Visibility = Visibility.Collapsed;

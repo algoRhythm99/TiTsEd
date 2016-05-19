@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:common="clr-namespace:TiTsEd.Common"
+             xmlns:view="clr-namespace:TiTsEd.View"
              mc:Ignorable="d" 
              d:DesignWidth="1024" d:DesignHeight="600">
     <UserControl.Resources>
@@ -113,7 +114,43 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical" Margin="216,0,206,0"/>
+            <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Vertical">
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Shape" Style="{StaticResource Header}"/>
+                </Border>
+                <common:AutoGrid>
+                    <TextBlock              Text="Height"/>
+                    <common:MyNumericBox    Value="{Binding Game.Tallness}" Upper="192" Max="192" Unit="inches"/>
+
+                    <TextBlock              Text="Thickness"/>
+                    <common:MyNumericBox    Value="{Binding Game.Thickness}" Upper="100" Max="100" />
+
+                    <TextBlock              Text="Tone"/>
+                    <common:MyNumericBox    Value="{Binding Game.Tone}" Upper="100" Max="100" />
+
+                    <TextBlock              Text="Feminity"/>
+                    <common:MyNumericBox    Value="{Binding Game.Feminity}" Upper="100" Tip="{Binding Game.FeminityTip}"/>
+                    
+                    <TextBlock              Text="Skin Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}"/>
+
+                    <TextBlock              Text="Skin Tone"/>
+                    <ComboBox               Text="{Binding Game.SkinTone}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+
+                    <TextBlock              Text="Skin Accent"/>
+                    <ComboBox               Text="{Binding Game.SkinAccent}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+                </common:AutoGrid>
+                <Expander Header="Skin Flags" Margin="60,0,0,0">
+                    <view:FlagBox ItemsSource="{Binding Game.SkinFlags}" />
+                </Expander>
+                <common:AutoGrid>
+                    <TextBlock              Text="Fur Color"/>
+                    <ComboBox               Text="{Binding Game.FurColor}" ItemsSource="{Binding Data.Body.FurColor}" Style="{StaticResource EditableTextBox}"/>
+
+                    <TextBlock              Text="Scale Color"/>
+                    <ComboBox               Text="{Binding Game.ScaleColor}" ItemsSource="{Binding Data.Body.ScaleColor}" Style="{StaticResource EditableTextBox}"/>
+                </common:AutoGrid>
+            </StackPanel>
         </Grid>
     </ScrollViewer>
 </UserControl>

@@ -73,6 +73,7 @@
     <Compile Include="Common\MyComboBox.cs" />
     <Compile Include="Common\MyPiercingBox.cs" />
     <Compile Include="Common\SearchBox.cs" />
+    <Compile Include="ViewModel\BreastsVM.cs" />
     <Compile Include="ViewModel\FilesVM.cs" />
     <Compile Include="ViewModel\NamedVector4VM.cs" />
     <Compile Include="Common\UpdatableCollection.cs" />
@@ -99,6 +100,9 @@
     </Compile>
     <Compile Include="View\BodyPage.xaml.cs">
       <DependentUpon>BodyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HeadPage.xaml.cs">
+      <DependentUpon>HeadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ExceptionBox.xaml.cs">
       <DependentUpon>ExceptionBox.xaml</DependentUpon>
@@ -145,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\BodyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HeadPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

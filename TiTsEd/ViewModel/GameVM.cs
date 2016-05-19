@@ -14,22 +14,7 @@ namespace TiTsEd.ViewModel {
     public sealed partial class GameVM : ObjectVM {
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file) {
-
-        }
-
-        static void ImportMissingNamedVectors(AmfObject cocItems, IEnumerable<XmlNamedVector4> xmlItems, string cocNameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlNamedVector4> targetXmlList = null) {
-            if(targetXmlList == null) targetXmlList = (IList<XmlNamedVector4>)xmlItems;
-            var xmlNames = new HashSet<String>(xmlItems.Select(x => x.Name));
-
-            foreach(var pair in cocItems) {
-                var name = pair.ValueAsObject.GetString(cocNameProperty);
-                if(xmlNames.Contains(name)) continue;
-                xmlNames.Add(name);
-
-                var xml = new XmlNamedVector4 { Name = name };
-                if(descriptionGetter != null) xml.Description = descriptionGetter(pair.ValueAsObject);
-                targetXmlList.Add(xml);
-            }
+                Breasts = new BreastArrayVM(this, getPC().GetObj("breastRows"));
         }
 
         private Dictionary<AmfObject, List<FlagItem>> flagData;
@@ -58,6 +43,8 @@ namespace TiTsEd.ViewModel {
             var chars = GetObj("characters");
             return pc = chars.GetObj("PC");
         }
+
+        public BreastArrayVM Breasts { get; private set; }
 
         #region GeneralPage
         public string Name {
@@ -233,9 +220,6 @@ namespace TiTsEd.ViewModel {
             get { return 100; }
         }
 
-        #endregion
-
-        #region BodyPage
         public int Tallness {
             get { return getPC().GetInt("tallness"); }
             set { SetValue(getPC(), "tallness", value, null); }
@@ -276,6 +260,9 @@ namespace TiTsEd.ViewModel {
             set { SetValue(getPC(), "scaleColor", value, null); }
         }
 
+        #endregion
+
+        #region HeadPage
         public int AntennaeCount {
             get { return getPC().GetInt("antennae"); }
             set { SetValue(getPC(), "antennae", value, null); }
@@ -357,7 +344,11 @@ namespace TiTsEd.ViewModel {
             get { return getPC().GetInt("beardStyle"); }
             set { SetValue(getPC(), "beardStyle", value, null); }
         }
-        //------------------------------------------------------------
+
+        #endregion
+
+        #region BodyPage
+
         public int HipRating {
             get { return getPC().GetInt("hipRatingRaw"); }
             set {
@@ -463,6 +454,52 @@ namespace TiTsEd.ViewModel {
 
         public List<FlagItem> TailFlags {
             get { return getFlagList(getPC().GetObj("tailFlags"), XmlData.Current.Body.TailFlags); }
+        }
+
+
+        public String NippleColor {
+            get { return getPC().GetString("nippleColor"); }
+            set { SetValue(getPC(), "nippleColor", value, null); }
+        }
+
+        public int NipplesPerBreast {
+            get { return getPC().GetInt("nipplesPerBreast"); }
+            set { SetValue(getPC(), "nipplesPerBreast", value, null); }
+        }
+
+        public int DickNippleType {
+            get { return getPC().GetInt("dickNippleType"); }
+            set { SetValue(getPC(), "dickNippleType", value, null); }
+        }
+
+        public int DickNippleMultiplier {
+            get { return getPC().GetInt("dickNippleMultiplier"); }
+            set { SetValue(getPC(), "dickNippleMultiplier", value, null); }
+        }
+
+        public int MilkType {
+            get { return getPC().GetInt("milkType"); }
+            set { SetValue(getPC(), "milkType", value, null); }
+        }
+
+        public int MilkFullness {
+            get { return getPC().GetInt("milkFullness"); }
+            set { SetValue(getPC(), "milkFullness", value, null); }
+        }
+
+        public int MilkRate {
+            get { return getPC().GetInt("milkRate"); }
+            set { SetValue(getPC(), "milkRate", value, null); }
+        }
+
+        public int MilkMultiplier {
+            get { return getPC().GetInt("milkMultiplier"); }
+            set { SetValue(getPC(), "milkMultiplier", value, null); }
+        }
+
+        public int MilkStorageMultiplier {
+            get { return getPC().GetInt("milkStorageMultiplier"); }
+            set { SetValue(getPC(), "milkStorageMultiplier", value, null); }
         }
 
         #endregion
