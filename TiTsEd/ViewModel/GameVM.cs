@@ -14,32 +14,26 @@ namespace TiTsEd.ViewModel {
     public sealed partial class GameVM : ObjectVM {
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file) {
-                //copy("ANNO","PC");
                 setCharacter("PC");
         }
 
-        private void copy(string src, string dst) {
+        //for later
+        private void copyCharacter(string src, string dst) {
             var chars = GetObj("characters");
             var srcChar = chars.GetObj(src);
             var dstChar = chars.GetObj(dst);
-            foreach(var pair in srcChar) {
-                var sKey = pair.Key.ToString();
-                if(sKey == "classInstance") {
+
+            foreach(var tag in XmlData.Current.General.CopyTags) {
+                if(!srcChar.Contains(tag) || dstChar.Contains(tag)) {
                     continue;
                 }
-                if(pair.Value != null && dstChar.Contains(pair.Key)) {
-                    if(pair.Value is string || pair.Value is String) {
-                        continue;
-                    }
-                    if(pair.Value.GetType() == typeof(AmfObject)) {
-                        dstChar[pair.Key] = pair.ValueAsObject.clone();
-                    } else {
-                        dstChar[pair.Key] = pair.Value;
-                    }
-                    //dstChar[pair.Key] = pair.Value;
+                var value = srcChar[tag];
+                if(value != null && value.GetType() == typeof(AmfObject)) {
+                    dstChar[tag] = (srcChar[tag] as AmfObject).clone();
+                } else {
+                    dstChar[tag] = value;
                 }
             }
-            //dstChar["uniqueName"] = "PC";
         }
 
         public void setCharacter(string name) {

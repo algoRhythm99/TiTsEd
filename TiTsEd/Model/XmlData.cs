@@ -70,6 +70,9 @@ namespace TiTsEd.Model {
     public sealed class XmlGeneralSet {
         [XmlArray, XmlArrayItem("ClassType")]
         public XmlEnum[] ClassTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("CopyTag")]
+        public string[] CopyTags { get; set; }
     }
 
     public sealed class XmlBodySet {
@@ -80,16 +83,16 @@ namespace TiTsEd.Model {
         public XmlEnum[] SkinFlags { get; set; }
 
         [XmlArray, XmlArrayItem("SkinTone")]
-        public String[] SkinTones { get; set; }
+        public string[] SkinTones { get; set; }
 
         [XmlArray, XmlArrayItem("HairType")]
         public XmlEnum[] HairTypes { get; set; }
 
         [XmlArray, XmlArrayItem("HairColor")]
-        public String[] HairColors { get; set; }
+        public string[] HairColors { get; set; }
 
         [XmlArray, XmlArrayItem("HairStyle")]
-        public String[] HairStyles { get; set; }
+        public string[] HairStyles { get; set; }
 
         [XmlArray, XmlArrayItem("FaceType")]
         public XmlEnum[] FaceTypes { get; set; }

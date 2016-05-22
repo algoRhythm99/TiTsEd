@@ -1,11 +1,100 @@
 <?xml version="1.0"?>
 <TiTsEd>
 	<General>
-	<ClassTypes>
-		<ClassType ID="0" Name="Smuggler"/>
-		<ClassType ID="1" Name="Mercenary"/>
-		<ClassType ID="2" Name="Engineer"/>
-	</ClassTypes>
+		<ClassTypes>
+			<ClassType ID="0" Name="Smuggler"/>
+			<ClassType ID="1" Name="Mercenary"/>
+			<ClassType ID="2" Name="Engineer"/>
+		</ClassTypes>
+		<CopyTags>
+			<CopyTag>analVirgin</CopyTag>
+			<CopyTag>antennae</CopyTag>
+			<CopyTag>antennaeType</CopyTag>
+			<CopyTag>armFlags</CopyTag>
+			<CopyTag>armType</CopyTag>
+			<CopyTag>ass</CopyTag>
+			<CopyTag>ballEfficiency</CopyTag>
+			<CopyTag>ballFullness</CopyTag>
+			<CopyTag>ballSizeMod</CopyTag>
+			<CopyTag>ballSizeRaw</CopyTag>
+			<CopyTag>balls</CopyTag>
+			<CopyTag>beardLength</CopyTag>
+			<CopyTag>beardStyle</CopyTag>
+			<CopyTag>bellyRatingRaw</CopyTag>
+			<CopyTag>breastRows</CopyTag>
+			<CopyTag>buttRatingRaw</CopyTag>
+			<CopyTag>clitLength</CopyTag>
+			<CopyTag>cockVirgin</CopyTag>
+			<CopyTag>cocks</CopyTag>
+			<CopyTag>cumMultiplierRaw</CopyTag>
+			<CopyTag>cumQualityRaw</CopyTag>
+			<CopyTag>cumType</CopyTag>
+			<CopyTag>dickNippleMultiplier</CopyTag>
+			<CopyTag>dickNippleType</CopyTag>
+			<CopyTag>earLength</CopyTag>
+			<CopyTag>earType</CopyTag>
+			<CopyTag>earsPierced</CopyTag>
+			<CopyTag>elasticity</CopyTag>
+			<CopyTag>eyeColor</CopyTag>
+			<CopyTag>eyeType</CopyTag>
+			<CopyTag>eyebrowPierced</CopyTag>
+			<CopyTag>faceFlags</CopyTag>
+			<CopyTag>faceType</CopyTag>
+			<CopyTag>femininity</CopyTag>
+			<CopyTag>fertilityRaw</CopyTag>
+			<CopyTag>furColor</CopyTag>
+			<CopyTag>genitalSpot</CopyTag>
+			<CopyTag>gills</CopyTag>
+			<CopyTag>girlCumType</CopyTag>
+			<CopyTag>hairColor</CopyTag>
+			<CopyTag>hairLength</CopyTag>
+			<CopyTag>hairStyle</CopyTag>
+			<CopyTag>hairType</CopyTag>
+			<CopyTag>hipRatingRaw</CopyTag>
+			<CopyTag>hornLength</CopyTag>
+			<CopyTag>hornType</CopyTag>
+			<CopyTag>horns</CopyTag>
+			<CopyTag>legCount</CopyTag>
+			<CopyTag>legFlags</CopyTag>
+			<CopyTag>legType</CopyTag>
+			<CopyTag>lipColor</CopyTag>
+			<CopyTag>lipMod</CopyTag>
+			<CopyTag>lipPierced</CopyTag>
+			<CopyTag>milkFullness</CopyTag>
+			<CopyTag>milkMultiplier</CopyTag>
+			<CopyTag>milkRate</CopyTag>
+			<CopyTag>milkStorageMultiplier</CopyTag>
+			<CopyTag>milkType</CopyTag>
+			<CopyTag>nippleColor</CopyTag>
+			<CopyTag>nippleLengthRatio</CopyTag>
+			<CopyTag>nippleWidthRatio</CopyTag>
+			<CopyTag>nipplesPerBreast</CopyTag>
+			<CopyTag>nipplesPierced</CopyTag>
+			<CopyTag>nosePierced</CopyTag>
+			<CopyTag>scaleColor</CopyTag>
+			<CopyTag>skinAccent</CopyTag>
+			<CopyTag>skinFlags</CopyTag>
+			<CopyTag>skinTone</CopyTag>
+			<CopyTag>skinType</CopyTag>
+			<CopyTag>tailCount</CopyTag>
+			<CopyTag>tailFlags</CopyTag>
+			<CopyTag>tailGenital</CopyTag>
+			<CopyTag>tailGenitalArg</CopyTag>
+			<CopyTag>tailGenitalColor</CopyTag>
+			<CopyTag>tailRecharge</CopyTag>
+			<CopyTag>tailType</CopyTag>
+			<CopyTag>tailVenom</CopyTag>
+			<CopyTag>tallness</CopyTag>
+			<CopyTag>thickness</CopyTag>
+			<CopyTag>tone</CopyTag>
+			<CopyTag>tongueFlags</CopyTag>
+			<CopyTag>tonguePierced</CopyTag>
+			<CopyTag>tongueType</CopyTag>
+			<CopyTag>vaginalVirgin</CopyTag>
+			<CopyTag>vaginas</CopyTag>
+			<CopyTag>wingCount</CopyTag>
+			<CopyTag>wingType</CopyTag>
+		</CopyTags>
 	</General>
 	<Body>
 		<!-- ================================================================ -->
