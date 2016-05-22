@@ -446,6 +446,56 @@ namespace TiTsEd.Model
             if (Type == AmfTypes.Dictionary) return key;
             return key.ToString();
         }
+
+        public AmfObject clone() {
+            AmfObject obj = new AmfObject(this.Type);
+            foreach(var v in _associativePart) {
+                if(v.Value != null) {
+                    if(v.Value.GetType() == typeof(AmfObject)) {
+                        obj._associativePart.Add(v.Key, ((AmfObject)v.Value).clone());
+                    } else {
+                        obj._associativePart.Add(v.Key, v.Value);
+                    }
+                } else {
+                    obj._associativePart.Add(v.Key, v.Value);
+                }
+            }
+            foreach(var v in _densePart) {
+                if(v != null) {
+                    if(v.GetType() == typeof(AmfObject)) {
+                        obj._densePart.Add(((AmfObject)v).clone());
+                    } else {
+                        obj._densePart.Add(v);
+                    }
+                } else {
+                    obj._densePart.Add(v);
+                }
+            }
+            foreach(var v in _sparsePart) {
+                if(v.Value != null) {
+                    if(v.Value.GetType() == typeof(AmfObject)) {
+                        obj._sparsePart.Add(v.Key, ((AmfObject)v.Value).clone());
+                    } else {
+                        obj._sparsePart.Add(v.Key, v.Value);
+                    }
+                } else {
+                    obj._sparsePart.Add(v.Key, v.Value);
+                }
+            }
+
+            if(Trait != null) {
+                obj.Trait.IsDynamic = Trait.IsDynamic;
+                obj.Trait.IsEnum = Trait.IsEnum;
+                obj.Trait.IsExternalizable = Trait.IsExternalizable;
+                obj.Trait.Name = Trait.Name;
+                obj.Trait.Properties = (string[])Trait.Properties.Clone();
+            }
+            obj.GenericElementType = GenericElementType;
+            obj.IsFixedVector = IsFixedVector;
+            obj.HasWeakKeys = HasWeakKeys;
+            
+            return obj;
+        }
     }
 
     public class AmfXmlType

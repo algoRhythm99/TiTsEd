@@ -74,6 +74,7 @@
     <Compile Include="Common\MyPiercingBox.cs" />
     <Compile Include="Common\SearchBox.cs" />
     <Compile Include="ViewModel\BreastsVM.cs" />
+    <Compile Include="ViewModel\CharacterVM.cs" />
     <Compile Include="ViewModel\FilesVM.cs" />
     <Compile Include="ViewModel\NamedVector4VM.cs" />
     <Compile Include="Common\UpdatableCollection.cs" />
