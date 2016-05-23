@@ -480,6 +480,46 @@ namespace TiTsEd.ViewModel {
             set { SetValue("vaginalVirgin", value); }
         }
 
+        public bool CockVirgin {
+            get { return GetBool("cockVirgin"); }
+            set { SetValue("cockVirgin", value); }
+        }
+
+        public int CumType {
+            get { return GetInt("cumType"); }
+            set { SetValue("cumType", value); }
+        }
+
+        public int CumMultiplier {
+            get { return GetInt("cumMultiplierRaw"); }
+            set { SetValue("cumMultiplierRaw", value); }
+        }
+
+        public int CumQuality {
+            get { return GetInt("cumQualityRaw"); }
+            set { SetValue("cumQualityRaw", value); }
+        }
+
+        public int Balls {
+            get { return GetInt("balls"); }
+            set { SetValue("balls", value); }
+        }
+
+        public double BallSize {
+            get { return GetDouble("ballSizeRaw"); }
+            set { SetValue("ballSizeRaw", value); }
+        }
+
+        public int BallFullness {
+            get { return GetInt("ballFullness"); }
+            set { SetValue("ballFullness", value); }
+        }
+
+        public int BallEfficiency {
+            get { return GetInt("ballEfficiency"); }
+            set { SetValue("ballEfficiency", value); }
+        }
+
         #endregion
     }
 }

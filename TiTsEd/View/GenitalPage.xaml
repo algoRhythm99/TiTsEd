@@ -32,7 +32,69 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
+			<StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
+                <common:AutoGrid>
+                    <TextBlock              Text="Balls"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Balls}" />
+                    
+                    <TextBlock              Text="Ball Size"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.BallSize}" Type="Double" />
+
+                    <TextBlock              Text="Ball Fullness"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.BallFullness}" />
+
+                    <TextBlock              Text="Ball Efficiency"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.BallEfficiency}" />
+
+                    <TextBlock              Text="Cum Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.CumType}" ItemsSource="{Binding Data.Body.CumTypes}"/>
+
+                    <TextBlock              Text="Cum Multiplier"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.CumMultiplier}" />
+
+                    <TextBlock              Text="Cum Quality"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.CumQuality}" />
+
+                    <TextBlock              Text="Cock Virgin"/>
+                    <CheckBox IsChecked="{Binding Game.Character.CockVirgin}" />
+                </common:AutoGrid>
+                <common:ArrayEditor Header="Cocks" Items="{Binding Game.Character.Cocks}" Capacity="5" MinCapacity="0">
+                    <common:ArrayEditor.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}"/>
+                        </DataTemplate>
+                    </common:ArrayEditor.ItemTemplate>
+                    <StackPanel>
+                        <common:AutoGrid>
+                            <TextBlock              Text="Type"/>
+                            <common:MyComboBox      SelectedValue="{Binding CockType}" ItemsSource="{Binding CockTypes}" />
+
+                            <TextBlock              Text="Color"/>
+                            <ComboBox Text="{Binding CockColor}" ItemsSource="{Binding CockColors}" Style="{StaticResource EditableTextBox}"/>
+
+                            <TextBlock              Text="Length"/>
+                            <common:MyNumericBox    Value="{Binding Length}" Unit="inches" />
+
+                            <TextBlock              Text="Thickness Ratio"/>
+                            <common:MyNumericBox    Value="{Binding ThicknessRatio}" Type="Double" Tip="{Binding ThicknessTip}" />
+
+                            <TextBlock              Text="Knot Multiplier"/>
+                            <common:MyNumericBox    Value="{Binding KnotMultiplier}" Type="Double" />
+
+                            <TextBlock              Text="Flaccid Multiplier"/>
+                            <common:MyNumericBox    Value="{Binding FlaccidMultiplier}" Type="Double" />
+
+                            <TextBlock              Text="Virgin"/>
+                            <CheckBox IsChecked="{Binding Virgin}" />
+                        </common:AutoGrid>
+                        <Expander Header="Flags">
+                            <view:FlagBox ItemsSource="{Binding CockFlags}" />
+                        </Expander>
+                    </StackPanel>
+                </common:ArrayEditor>
+            </StackPanel>
+			
+            <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
                 <common:AutoGrid>
                     <TextBlock              Text="Girl Cum Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}"/>

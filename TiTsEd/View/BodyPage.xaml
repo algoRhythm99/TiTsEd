@@ -97,28 +97,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
-                <common:ArrayEditor Header="Breasts" Items="{Binding Game.Character.Breasts}" Capacity="5" MinCapacity="1">
-                    <common:ArrayEditor.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Description}"/>
-                        </DataTemplate>
-                    </common:ArrayEditor.ItemTemplate>
-                    <common:AutoGrid>
-                        <TextBlock              Text="Rating"/>
-                        <common:MyNumericBox    Value="{Binding Rating}" Min="0" Lower="0" Upper="{Binding MaxRating}" Tip="{Binding RatingDescription}"/>
-
-                        <TextBlock              Text="Breast count"/>
-                        <common:MyNumericBox    Value="{Binding BreastCount}" Lower="2" Min="2" Upper="8" Max="8" ToolTip="Just one doesn't make sense in the in game descriptions." />
-
-                        <TextBlock              Text="Nipples Type"/>
-                        <common:MyComboBox      SelectedValue="{Binding NippleType}" ItemsSource="{Binding NippleTypes}" />
-
-                        <TextBlock              Text="Fullness"/>
-                        <common:MyNumericBox    Value="{Binding Fullness}" />
-                    </common:AutoGrid>
-                </common:ArrayEditor>
-                <Border Style="{StaticResource HeaderBorder}" />
-                <common:AutoGrid>
+				<common:AutoGrid>
                     <TextBlock              Text="Nipple Color"/>
                     <ComboBox               Text="{Binding Game.Character.NippleColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
 
@@ -147,6 +126,27 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.MilkStorageMultiplier}" />
                     
                 </common:AutoGrid>
+			
+                <common:ArrayEditor Header="Breasts" Items="{Binding Game.Character.Breasts}" Capacity="5" MinCapacity="1">
+                    <common:ArrayEditor.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}"/>
+                        </DataTemplate>
+                    </common:ArrayEditor.ItemTemplate>
+                    <common:AutoGrid>
+                        <TextBlock              Text="Rating"/>
+                        <common:MyNumericBox    Value="{Binding Rating}" Min="0" Lower="0" Upper="{Binding MaxRating}" Tip="{Binding RatingDescription}"/>
+
+                        <TextBlock              Text="Breast count"/>
+                        <common:MyNumericBox    Value="{Binding BreastCount}" Lower="2" Min="2" Upper="8" Max="8" ToolTip="Just one doesn't make sense in the in game descriptions." />
+
+                        <TextBlock              Text="Nipples Type"/>
+                        <common:MyComboBox      SelectedValue="{Binding NippleType}" ItemsSource="{Binding NippleTypes}" />
+
+                        <TextBlock              Text="Fullness"/>
+                        <common:MyNumericBox    Value="{Binding Fullness}" />
+                    </common:AutoGrid>
+                </common:ArrayEditor>
                 
             </StackPanel>
         </Grid>
