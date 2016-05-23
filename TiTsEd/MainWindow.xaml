@@ -54,6 +54,9 @@
             <TabItem Header="Body">
                 <view:BodyPage Background="White"/>
             </TabItem>
+            <TabItem Header="Genitals">
+                <view:GenitalPage Background="White"/>
+            </TabItem>
         </TabControl>
 
         <view:TopBar HorizontalAlignment="Stretch" Margin="0,7,5,0"/>

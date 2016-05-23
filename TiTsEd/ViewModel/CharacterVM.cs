@@ -12,29 +12,15 @@ namespace TiTsEd.ViewModel {
             _game = game;
 
             Breasts = new BreastArrayVM(game, GetObj("breastRows"));
+            Vaginas = new VaginaArrayVM(game, GetObj("vaginas"));
+            Cocks = new CockArrayVM(game, GetObj("cocks"));
         }
 
         public GameVM _game { get; set; }
 
-        private Dictionary<AmfObject, List<FlagItem>> flagData;
-        private List<FlagItem> getFlagList(AmfObject obj, XmlEnum[] data) {
-            if(flagData == null) {
-                flagData = new Dictionary<AmfObject, List<FlagItem>>();
-            }
-            List<FlagItem> flags = null;
-            if(flagData.ContainsKey(obj)) {
-                flags = flagData[obj];
-            } else {
-                flags = new List<FlagItem>();
-                foreach(XmlEnum e in data) {
-                    flags.Add(new FlagItem(obj, e));
-                }
-                flagData.Add(obj, flags);
-            }
-            return flags;
-        }
-
         public BreastArrayVM Breasts { get; private set; }
+        public VaginaArrayVM Vaginas { get; private set; }
+        public CockArrayVM Cocks { get; private set; }
 
         #region GeneralPage
         public string Name {
@@ -473,6 +459,25 @@ namespace TiTsEd.ViewModel {
         public int MilkStorageMultiplier {
             get { return GetInt("milkStorageMultiplier"); }
             set { SetValue("milkStorageMultiplier", value); }
+        }
+
+        #endregion
+
+        #region GenitalPage
+
+        public int GirlCumType {
+            get { return GetInt("girlCumType"); }
+            set { SetValue("girlCumType", value); }
+        }
+
+        public double ClitLength {
+            get { return GetDouble("clitLength"); }
+            set { SetValue("clitLength", value); }
+        }
+
+        public bool VaginalVirgin {
+            get { return GetBool("vaginalVirgin"); }
+            set { SetValue("vaginalVirgin", value); }
         }
 
         #endregion

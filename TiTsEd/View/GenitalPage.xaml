@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="TiTsEd.View.GenitalPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:common="clr-namespace:TiTsEd.Common"
+             xmlns:view="clr-namespace:TiTsEd.View"
+             mc:Ignorable="d" 
+             d:DesignWidth="1024" d:DesignHeight="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/PageInclude.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
+                <common:AutoGrid>
+                    <TextBlock              Text="Girl Cum Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}"/>
+
+                    <TextBlock              Text="Vaginal Virgin"/>
+                    <CheckBox IsChecked="{Binding Game.Character.VaginalVirgin}" />
+
+                    <TextBlock              Text="Clit Length"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.ClitLength}" Type="Double" Unit="inches" />
+                </common:AutoGrid>
+                <common:ArrayEditor Header="Vaginas" Items="{Binding Game.Character.Vaginas}" Capacity="3" MinCapacity="0">
+                    <common:ArrayEditor.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}"/>
+                        </DataTemplate>
+                    </common:ArrayEditor.ItemTemplate>
+                    <StackPanel>
+                        <common:AutoGrid>
+                            <TextBlock              Text="Type"/>
+                            <common:MyComboBox      SelectedValue="{Binding VaginaType}" ItemsSource="{Binding VaginaTypes}" />
+
+                            <TextBlock              Text="Color"/>
+                            <ComboBox Text="{Binding VaginaColor}" ItemsSource="{Binding VaginaColors}" Style="{StaticResource EditableTextBox}"/>
+
+                            <TextBlock              Text="Clits"/>
+                            <common:MyNumericBox    Value="{Binding Clits}" Min="1" Lower="1" />
+
+                            <TextBlock              Text="Wetness"/>
+                            <common:MyNumericBox    Value="{Binding Wetness}" Min="1" Lower="1" />
+
+                            <TextBlock              Text="Looseness"/>
+                            <common:MyNumericBox    Value="{Binding Looseness}" Min="1" Lower="1" />
+
+                            <TextBlock              Text="Hymen"/>
+                            <CheckBox IsChecked="{Binding Hymen}" />
+                        </common:AutoGrid>
+                        <Expander Header="Flags">
+                            <view:FlagBox ItemsSource="{Binding VaginaFlags}" />
+                        </Expander>
+                    </StackPanel>
+                </common:ArrayEditor>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

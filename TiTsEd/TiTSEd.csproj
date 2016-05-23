@@ -75,6 +75,8 @@
     <Compile Include="Common\SearchBox.cs" />
     <Compile Include="ViewModel\BreastsVM.cs" />
     <Compile Include="ViewModel\CharacterVM.cs" />
+    <Compile Include="ViewModel\CockVM.cs" />
+    <Compile Include="ViewModel\VaginaVM.cs" />
     <Compile Include="ViewModel\FilesVM.cs" />
     <Compile Include="ViewModel\NamedVector4VM.cs" />
     <Compile Include="Common\UpdatableCollection.cs" />
@@ -101,6 +103,9 @@
     </Compile>
     <Compile Include="View\BodyPage.xaml.cs">
       <DependentUpon>BodyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GenitalPage.xaml.cs">
+      <DependentUpon>GenitalPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HeadPage.xaml.cs">
       <DependentUpon>HeadPage.xaml</DependentUpon>
@@ -150,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\BodyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\GenitalPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
