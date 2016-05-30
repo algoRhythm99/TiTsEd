@@ -83,13 +83,13 @@
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.TailType}" ItemsSource="{Binding Data.Body.TailTypes}"/>
 
                     <TextBlock              Text="Tail Genital Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenital}" ItemsSource="{Binding Data.Body.TailGenitalTypes}"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenital}" ItemsSource="{Binding Data.Body.TailGenitalTypes}" IsEnabled="False" />
 
                     <TextBlock              Text="Tail Gential Race"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenitalRace}" ItemsSource="{Binding Data.Body.TailGenitalRaceTypes}"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenitalRace}" ItemsSource="{Binding Data.Body.TailGenitalRaceTypes}" IsEnabled="{Binding Game.Character.TailGenitalEnable}" />
 
                     <TextBlock              Text="Tail Genital Color"/>
-                    <ComboBox               Text="{Binding Game.Character.TailGenitalColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.TailGenitalColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" IsEnabled="{Binding Game.Character.TailGenitalEnable}"/>
                 </common:AutoGrid>
                 <Expander Header="Tail Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.TailFlags}" />

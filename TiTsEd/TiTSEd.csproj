@@ -78,7 +78,6 @@
     <Compile Include="ViewModel\CockVM.cs" />
     <Compile Include="ViewModel\VaginaVM.cs" />
     <Compile Include="ViewModel\FilesVM.cs" />
-    <Compile Include="ViewModel\NamedVector4VM.cs" />
     <Compile Include="Common\UpdatableCollection.cs" />
     <Compile Include="Common\UpdatableCollectionHelper.cs" />
     <Compile Include="Common\MyNumericBox.cs" />

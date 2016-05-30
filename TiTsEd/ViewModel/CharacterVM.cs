@@ -28,7 +28,7 @@ namespace TiTsEd.ViewModel {
             set {
                 SetValue("short", value);
                 //SetValue("uniqueName", value);
-                if(_game.IsPC) {
+                if (_game.IsPC) {
                     _game.SetValue("saveName", value);
                 }
             }
@@ -119,7 +119,7 @@ namespace TiTsEd.ViewModel {
 
         public String MaxXPLabel {
             get {
-                if(MaxXP > 1000) {
+                if (MaxXP > 1000) {
                     return MaxXP / 100 + "k";
                 }
                 return "" + MaxXP;
@@ -136,8 +136,8 @@ namespace TiTsEd.ViewModel {
 
         public String PersonalityTip {
             get {
-                if(Personality <= 33) return "Nice";
-                if(Personality <= 66) return "Mischievous";
+                if (Personality <= 33) return "Nice";
+                if (Personality <= 66) return "Mischievous";
                 return "Ass";
             }
         }
@@ -150,9 +150,9 @@ namespace TiTsEd.ViewModel {
                 var maxhp = 15 + (Level - 1) * 15 + HPMod + bonus;
 
                 //class mercenary
-                if(CharacterClass == 0) maxhp += Level * 5;
+                if (CharacterClass == 0) maxhp += Level * 5;
                 //class engineer
-                if(CharacterClass == 2) maxhp -= Level * 5;
+                if (CharacterClass == 2) maxhp -= Level * 5;
 
                 //TODO check status conditions
 
@@ -266,9 +266,31 @@ namespace TiTsEd.ViewModel {
         public List<FlagItem> FaceFlags {
             get { return getFlagList(GetObj("faceFlags"), XmlData.Current.Body.FaceFlags); }
         }
+        public int EarLength {
+            get { return GetInt("earLength"); }
+            set { SetValue("earLength", value); }
+        }
+        public bool EarLengthEnabled {
+            get {
+                //lookup ear type
+                XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.EarTypes, EarType);
+                if (datum != null) {
+                    //check if in ear length
+                    foreach (string name in XmlData.Current.Body.EarLengthEnables) {
+                        if (name.Equals(datum.Name)) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
         public int EarType {
             get { return GetInt("earType"); }
-            set { SetValue("earType", value); }
+            set {
+                SetValue("earType", value);
+                OnPropertyChanged("EarLengthEnabled");
+            }
         }
         public int EyeType {
             get { return GetInt("eyeType"); }
@@ -317,12 +339,12 @@ namespace TiTsEd.ViewModel {
         public string HipRatingTip {
             get {
                 var isMale = Feminity < 50;
-                if(HipRating >= 20) return isMale ? "inhumanly-wide" : "broodmother";
-                if(HipRating >= 15) return isMale ? "voluptuous" : "child-bearing";
-                if(HipRating >= 10) return isMale ? "wide" : "curvy";
-                if(HipRating >= 6) return isMale ? "ample" : "girly";
-                if(HipRating >= 4) return "well-formed";
-                if(HipRating >= 2) return "slender";
+                if (HipRating >= 20) return isMale ? "inhumanly-wide" : "broodmother";
+                if (HipRating >= 15) return isMale ? "voluptuous" : "child-bearing";
+                if (HipRating >= 10) return isMale ? "wide" : "curvy";
+                if (HipRating >= 6) return isMale ? "ample" : "girly";
+                if (HipRating >= 4) return "well-formed";
+                if (HipRating >= 2) return "slender";
                 return "boyish";
             }
         }
@@ -337,14 +359,14 @@ namespace TiTsEd.ViewModel {
 
         public string ButtRatingTip {
             get {
-                if(ButtRating >= 20) return "colossal";
-                if(ButtRating >= 16) return "huge";
-                if(ButtRating >= 13) return "voluminous";
-                if(ButtRating >= 10) return "spacious";
-                if(ButtRating >= 8) return "substantial";
-                if(ButtRating >= 6) return "shapely";
-                if(ButtRating >= 4) return "regular";
-                if(ButtRating >= 2) return "compact";
+                if (ButtRating >= 20) return "colossal";
+                if (ButtRating >= 16) return "huge";
+                if (ButtRating >= 13) return "voluminous";
+                if (ButtRating >= 10) return "spacious";
+                if (ButtRating >= 8) return "substantial";
+                if (ButtRating >= 6) return "shapely";
+                if (ButtRating >= 4) return "regular";
+                if (ButtRating >= 2) return "compact";
                 return "very small";
             }
         }
@@ -393,12 +415,39 @@ namespace TiTsEd.ViewModel {
 
         public int TailType {
             get { return GetInt("tailType"); }
-            set { SetValue("tailType", value); }
+            set {
+                SetValue("tailType", value);
+
+                TailGenital = 0;
+                XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.TailTypes, value);
+                if (datum != null) {
+                    var name = datum.Name;
+                    if (name == "Cuntsnake") {
+                        datum = XmlData.LookupEnumByName(XmlData.Current.Body.TailGenitalTypes, "Vagina");
+                        if(datum != null) {
+                            TailGenital = datum.ID;
+                        }
+                    }
+                    else if (name == "Cockvine") {
+                        datum = XmlData.LookupEnumByName(XmlData.Current.Body.TailGenitalTypes, "Cock");
+                        if (datum != null) {
+                            TailGenital = datum.ID;
+                        }
+                    }
+                }
+            }
+        }
+
+        public bool TailGenitalEnable {
+            get { return TailGenital != 0; }
         }
 
         public int TailGenital {
             get { return GetInt("tailGenital"); }
-            set { SetValue("tailGenital", value); }
+            set {
+                SetValue("tailGenital", value);
+                OnPropertyChanged("TailGenitalEnable");
+            }
         }
 
         public int TailGenitalRace {

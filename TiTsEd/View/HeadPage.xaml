@@ -37,9 +37,6 @@
                     <TextBlock Text="Head" Style="{StaticResource Header}"/>
                 </Border>
                 <common:AutoGrid>
-                    <TextBlock              Text="Horn Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.HornType}" ItemsSource="{Binding Data.Body.HornTypes}"/>
-                    
                     <TextBlock              Text="Hair Length"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.HairLength}" Unit="inches"/>
 
@@ -52,12 +49,21 @@
                     <TextBlock              Text="Hair Style"/>
                     <ComboBox Text="{Binding Game.Character.HairStyle}" ItemsSource="{Binding Data.Body.HairStyles}"/>
 
+                    <TextBlock              Text="Ear Length"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.EarLength}" IsEnabled="{Binding Game.Character.EarLengthEnabled}" />
+
+                    <TextBlock              Text="Ear Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.EarType}" ItemsSource="{Binding Data.Body.EarTypes}"/>
+
                     <TextBlock              Text="Antennae Count"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.AntennaeCount}" Max="2" Upper="2" />
 
                     <TextBlock              Text="Antennae Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.AntennaeType}" ItemsSource="{Binding Data.Body.AntennaeTypes}"/>
 
+                    <TextBlock              Text="Horn Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.HornType}" ItemsSource="{Binding Data.Body.HornTypes}"/>
+                    
                     <TextBlock              Text="Horn Count"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.HornCount}" Max="2" Upper="2" />
 
@@ -83,12 +89,6 @@
 
                     <TextBlock              Text="Eye Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.EyeType}" ItemsSource="{Binding Data.Body.EyeTypes}"/>
-
-                    <TextBlock              Text="Ear Length"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.EarLength}" />
-                    
-                    <TextBlock              Text="Ear Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.EarType}" ItemsSource="{Binding Data.Body.EarTypes}"/>
 
                     <TextBlock              Text="Tongue"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.TongueType}" ItemsSource="{Binding Data.Body.TongueTypes}"/>

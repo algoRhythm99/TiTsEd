@@ -55,6 +55,39 @@ namespace TiTsEd.Model {
                 return XmlLoadingResult.MissingFile;
             }
         }
+
+        /// <summary>
+        /// Get's the first enum in the set of enums that matches the given id.
+        /// </summary>
+        /// <param name="data">set of enums to search</param>
+        /// <param name="id">id value to match</param>
+        /// <returns>the matching XmlEnum or null if not found</returns>
+        public static XmlEnum LookupEnumByID(XmlEnum[] data, int id) {
+            foreach (XmlEnum datum in data) {
+                if (datum.ID == id) {
+                    return datum;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Get's the first enum in the set of enums that matches the given name.
+        /// </summary>
+        /// <param name="data">set of enums to search</param>
+        /// <param name="name">name value to match</param>
+        /// <returns>the matching XmlEnum or null if not found</returns>
+        public static XmlEnum LookupEnumByName(XmlEnum[] data, string name) {
+            if (String.IsNullOrEmpty(name)) {
+                return null;
+            }
+            foreach (XmlEnum datum in data) {
+                if (name.Equals(datum.Name)) {
+                    return datum;
+                }
+            }
+            return null;
+        }
     }
 
     [XmlRoot("TiTsEd")]
@@ -64,6 +97,9 @@ namespace TiTsEd.Model {
 
         [XmlElement("Body")]
         public XmlBodySet Body { get; set; }
+
+        [XmlElement("Items")]
+        public XmlItemSet Items { get; set; }
 
     }
 
@@ -105,6 +141,9 @@ namespace TiTsEd.Model {
 
         [XmlArray, XmlArrayItem("EarType")]
         public XmlEnum[] EarTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("EarLengthEnable")]
+        public string[] EarLengthEnables { get; set; }
 
         [XmlArray, XmlArrayItem("TongueType")]
         public XmlEnum[] TongueTypes { get; set; }
@@ -182,45 +221,39 @@ namespace TiTsEd.Model {
 
     }
 
-    [Flags]
-    public enum ItemCategories {
-        Other = 1,
-        Weapon = 2,
-        Armor = 4,
-        ArmorCursed = 8,
-        Shield = 16,
-        Undergarment = 32,
-        Jewelry = 64,
-        Unknown = 128,
-        All = Other | Weapon | Armor | ArmorCursed | Shield | Undergarment | Jewelry | Unknown,
-    }
+    public sealed class XmlItemSet {
+        [XmlArray("Accessory"), XmlArrayItem("Item")]
+        public XmlItem[] Accessory { get; set; }
 
-    public sealed class XmlItemGroup {
-        [XmlAttribute]
-        public string Name { get; set; }
+        [XmlArray("Clothing"), XmlArrayItem("Item")]
+        public XmlItem[] Clothing { get; set; }
 
-        [XmlAttribute]
-        public ItemCategories Category { get; set; }
+        [XmlArray("Armor"), XmlArrayItem("Item")]
+        public XmlItem[] Armor { get; set; }
 
-        [XmlElement("Item")]
-        public List<XmlItem> Items { get; set; }
+        [XmlArray("UpperUndergarment"), XmlArrayItem("Item")]
+        public XmlItem[] UpperUndergarment { get; set; }
 
-        public override string ToString() {
-            return Name;
-        }
-    }
+        [XmlArray("LowerUndergarment"), XmlArrayItem("Item")]
+        public XmlItem[] LowerUndergarment { get; set; }
 
-    public sealed class XmlPerkGroup {
-        [XmlAttribute]
-        public string Name { get; set; }
+        [XmlArray("Edible"), XmlArrayItem("Item")]
+        public XmlItem[] Edible { get; set; }
 
-        [XmlElement("Perk")]
-        public List<XmlNamedVector4> Perks { get; set; }
+        [XmlArray("Gadget"), XmlArrayItem("Item")]
+        public XmlItem[] Gadget { get; set; }
 
+        [XmlArray("MeleeWeapon"), XmlArrayItem("Item")]
+        public XmlItem[] MeleeWeapon { get; set; }
 
-        public override string ToString() {
-            return Name;
-        }
+        [XmlArray("RangedWeapon"), XmlArrayItem("Item")]
+        public XmlItem[] RangedWeapon { get; set; }
+
+        [XmlArray("Shield"), XmlArrayItem("Item")]
+        public XmlItem[] Shield { get; set; }
+
+        [XmlArray("Misc"), XmlArrayItem("Item")]
+        public XmlItem[] Misc { get; set; }
     }
 
     public sealed class XmlEnum {
@@ -244,10 +277,10 @@ namespace TiTsEd.Model {
         [XmlAttribute]
         public string Name { get; set; }
         [XmlAttribute]
-        public string Description { get; set; }
+        public int Stack { get; set; }
 
         public override string ToString() {
-            return ID + " | " + Name;
+            return Name;
         }
     }
 
@@ -256,44 +289,6 @@ namespace TiTsEd.Model {
         public string Name { get; set; }
         [XmlAttribute]
         public string Description { get; set; }
-
-        public override string ToString() {
-            return Name;
-        }
-    }
-
-    public sealed class XmlNamedVector4 {
-        [XmlAttribute]
-        public string Name { get; set; }
-        [XmlAttribute]
-        public string Description { get; set; }
-
-        [XmlAttribute]
-        public double Value1 { get; set; }
-        [XmlAttribute]
-        public double Value2 { get; set; }
-        [XmlAttribute]
-        public double Value3 { get; set; }
-        [XmlAttribute]
-        public double Value4 { get; set; }
-
-        [XmlAttribute]
-        public string Type1 { get; set; }
-        [XmlAttribute]
-        public string Type2 { get; set; }
-        [XmlAttribute]
-        public string Type3 { get; set; }
-        [XmlAttribute]
-        public string Type4 { get; set; }
-
-        [XmlAttribute]
-        public string Label1 { get; set; }
-        [XmlAttribute]
-        public string Label2 { get; set; }
-        [XmlAttribute]
-        public string Label3 { get; set; }
-        [XmlAttribute]
-        public string Label4 { get; set; }
 
         public override string ToString() {
             return Name;
