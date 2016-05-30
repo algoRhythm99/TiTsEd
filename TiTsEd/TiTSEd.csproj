@@ -81,7 +81,6 @@
     <Compile Include="Common\UpdatableCollection.cs" />
     <Compile Include="Common\UpdatableCollectionHelper.cs" />
     <Compile Include="Common\MyNumericBox.cs" />
-    <Compile Include="Common\NamedVector4Control.cs" />
     <Compile Include="Common\_ext.cs" />
     <Compile Include="Model\AmfFile.cs" />
     <Compile Include="Model\AmfObject.cs" />

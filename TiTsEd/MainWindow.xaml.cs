@@ -39,11 +39,6 @@ namespace TiTsEd
             else versionLabel.Text = version.Major + "." + version.Minor + "." + version.Build;
         }
 
-        public NamedVector4Popup ValuesPopup
-        {
-            get { return valuesPopup; }
-        }
-
         void OnQueryContinueDrag(object sender, QueryContinueDragEventArgs e)
         {
             if ((e.KeyStates & DragDropKeyStates.LeftMouseButton) != DragDropKeyStates.LeftMouseButton)

@@ -373,7 +373,9 @@ namespace TiTsEd.ViewModel
 
         public string SubLabel
         {
-            get { return Source["short"] + " - " + Source["days"] + " days" + " - " + Elapsed(); }
+            get {
+                return Source["saveName"] + " - " + Source["playerGender"] + " - " + Source["daysPassed"] + " days" + " - " + Elapsed();
+            }
         }
 
         string Elapsed()
