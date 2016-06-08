@@ -1,22 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using TiTsEd.Model;
 
-
 namespace TiTsEd.ViewModel {
     public class CharacterVM : ObjectVM {
+        private ItemContainerVM _inventory;
+
         public CharacterVM(GameVM game, AmfObject obj)
             : base(obj) {
 
-            _game = game;
+            Game = game;
 
             Breasts = new BreastArrayVM(game, GetObj("breastRows"));
             Vaginas = new VaginaArrayVM(game, GetObj("vaginas"));
             Cocks = new CockArrayVM(game, GetObj("cocks"));
+
+            var containers = new List<ItemContainerVM>();
+            _inventory = new ItemContainerVM(this, "Inventory", ItemCategories.All);
+            containers.Add(_inventory);
+            UpdateInventory();
+
+            // Complete slots creation
+            ItemContainers = new UpdatableCollection<ItemContainerVM>(containers);
         }
 
-        public GameVM _game { get; set; }
+        public void BeforeSerialization() {
+            CleanupInventory();
+        }
+
+        public GameVM Game { get; set; }
 
         public BreastArrayVM Breasts { get; private set; }
         public VaginaArrayVM Vaginas { get; private set; }
@@ -28,8 +42,8 @@ namespace TiTsEd.ViewModel {
             set {
                 SetValue("short", value);
                 //SetValue("uniqueName", value);
-                if (_game.IsPC) {
-                    _game.SetValue("saveName", value);
+                if (Game.IsPC) {
+                    Game.SetValue("saveName", value);
                 }
             }
         }
@@ -570,5 +584,47 @@ namespace TiTsEd.ViewModel {
         }
 
         #endregion
+
+        #region ItemPage
+        public UpdatableCollection<ItemContainerVM> ItemContainers { get; private set; }
+
+        public void UpdateInventory() {
+            _inventory.Clear();
+            const int maxSlots = 10;
+            AmfObject inv = GetObj("inventory");
+            for (int i = 0; i < maxSlots; ++i) {
+                AmfObject item = (AmfObject)inv[i];
+                if(item == null) {
+                    //just add an empty item, we'll fix it later maybe
+                    item = new AmfObject(AmfTypes.Object);
+                    item["classInstance"] = XmlItem.Empty.ID;
+                    item["shortName"] = XmlItem.Empty.Name;
+                    item["quantity"] = 0;
+                    item["version"] = 1;
+                    inv.Push(item);
+                }
+                _inventory.Add(item);
+            }
+        }
+
+        public void CleanupInventory() {
+            //shift all the items around in the inventory
+            const int maxSlots = 10;
+            AmfObject inv = GetObj("inventory");
+            AmfObject nInv = new AmfObject(AmfTypes.Array);
+            for (int i = 0; i < maxSlots; ++i) {
+                AmfObject item = (AmfObject)inv[i];
+                if (item == null) {
+                    continue;
+                }
+                if (item.GetString("classInstance") != XmlItem.Empty.ID) {
+                    nInv.Push(item);
+                }
+            }
+            SetValue("inventory", nInv);
+        }
+
+        #endregion
+
     }
 }

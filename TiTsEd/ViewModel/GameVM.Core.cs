@@ -52,6 +52,7 @@ namespace TiTsEd.ViewModel {
         public void BeforeSerialization() {
             //TODO add "H"
             SetValue("playerGender", IsFemale ? "F" : "M");
+            Character.BeforeSerialization();
         }
     }
 }

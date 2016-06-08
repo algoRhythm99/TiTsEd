@@ -699,356 +699,329 @@
 			<GenitalSpotType ID="3" Name="Under-tail" />
 		</GenitalSpotTypes>
 	</Body>
-
+  <!-- ================================================================ -->
   <Items>
-    <Accessory>
-      <Item ID="classes.Items.Accessories::ACECannon" Stack="1" Name="ACE Cannon" />
-      <Item ID="classes.Items.Accessories::AimEyepiece" Stack="1" Name="AimEyepiece" />
-      <Item ID="classes.Items.Accessories::Allure" Stack="1" Name="Allure" />
-      <Item ID="classes.Items.Accessories::FlashGoggles" Stack="1" Name="FlashGogs" />
-      <Item ID="classes.Items.Accessories::JungleLure" Stack="1" Name="JungleLure" />
-      <Item ID="classes.Items.Accessories::JungleRepel" Stack="1" Name="JungleRepel" />
-      <Item ID="classes.Items.Accessories::LeithaCharm" Stack="1" Name="LeithaChrm" />
-      <Item ID="classes.Items.Accessories::LightJetpack" Stack="1" Name="Lt.Jetpack" />
-      <Item ID="classes.Items.Accessories::LightningDuster" Stack="1" Name="L.Duster" />
-      <Item ID="classes.Items.Accessories::Minesweeper" Stack="1" Name="M.Sweeper" />
-      <Item ID="classes.Items.Accessories::MuskLure" Stack="1" Name="MuskLure" />
-      <Item ID="classes.Items.Accessories::MuskRepel" Stack="1" Name="M.Repel" />
-      <Item ID="classes.Items.Accessories::SalamanderDuster" Stack="1" Name="S.Duster" />
-      <Item ID="classes.Items.Accessories::TamWolf" Stack="1" Name="TamWolf" />
-      <Item ID="classes.Items.Accessories::TamWolfDamaged" Stack="1" Name="TamWolf" />
-      <Item ID="classes.Items.Accessories::TamWolfII" Stack="1" Name="TamWolf2.0" />
-      <Item ID="classes.Items.Accessories::VarmintLeash" Stack="1" Name="Pink Leash" />
-      <Item ID="classes.Items.Miscellaneous::Cargobot" Stack="1" Name="Cargobot" />
-      <Item ID="classes.Items.Miscellaneous::PHAccess" Stack="1" Name="PH Access." />
-    </Accessory>
-    <Clothing>
-      <Item ID="classes.Items.Apparel::AnnosBlouse" Stack="1" Name="Annos Blouse" />
-      <Item ID="classes.Items.Apparel::BunnyOutfit" Stack="1" Name="Bunny.O" />
-      <Item ID="classes.Items.Apparel::BusinessClothes" Stack="1" Name="B.Clothes" />
-      <Item ID="classes.Items.Apparel::ButlerCostume" Stack="1" Name="Butler.C" />
-      <Item ID="classes.Items.Apparel::ButlerOutfit" Stack="1" Name="Butler.O" />
-      <Item ID="classes.Items.Apparel::CheerleaderUniform" Stack="1" Name="Chr.Ldr." />
-      <Item ID="classes.Items.Apparel::ComfortableClothes" Stack="1" Name="C.Clothes" />
-      <Item ID="classes.Items.Apparel::CowPrintLeotard" Stack="1" Name="Cow Leotard" />
-      <Item ID="classes.Items.Apparel::DressClothes" Stack="1" Name="DressCloth" />
-      <Item ID="classes.Items.Apparel::FemaleDoctorOutfit" Stack="1" Name="F. Doctor" />
-      <Item ID="classes.Items.Apparel::KhansLabCoat" Stack="1" Name="LabCoat" />
-      <Item ID="classes.Items.Apparel::LatexBodysuit" Stack="1" Name="LtxBdy" />
-      <Item ID="classes.Items.Apparel::LeatherStrapHarness" Stack="1" Name="L.Harness" />
-      <Item ID="classes.Items.Apparel::LibrarianOutfit" Stack="1" Name="Libr.O" />
-      <Item ID="classes.Items.Apparel::LittleBlackDress" Stack="1" Name="BlkDress" />
-      <Item ID="classes.Items.Apparel::MaidOutfit" Stack="1" Name="MaidO." />
-      <Item ID="classes.Items.Apparel::MaleDoctorOutfit" Stack="1" Name="M.Doctor" />
-      <Item ID="classes.Items.Apparel::NurseOutfit" Stack="1" Name="NurseO." />
-      <Item ID="classes.Items.Apparel::OnePieceSwimsuit" Stack="1" Name="O.Swimsuit" />
-      <Item ID="classes.Items.Apparel::PeasantDress" Stack="1" Name="PeasantDress" />
-      <Item ID="classes.Items.Apparel::SchoolboyOutfit" Stack="1" Name="S.Boy O." />
-      <Item ID="classes.Items.Apparel::SchoolgirlCostume" Stack="1" Name="S.Girl C." />
-      <Item ID="classes.Items.Apparel::SchoolgirlOutfit" Stack="1" Name="S.Girl O." />
-      <Item ID="classes.Items.Apparel::TopNSkirt" Stack="1" Name="TopNSkirt." />
-      <Item ID="classes.Items.Apparel::UGCUniform" Stack="1" Name="UGC Uniform" />
-      <Item ID="classes.Items.Apparel::WaitressUniform" Stack="1" Name="WaitressUniform" />
-    </Clothing>
-    <Armor>
-      <Item ID="classes.Items.Apparel::AnnosCatsuit" Stack="1" Name="ST. Catsuit" />
-      <Item ID="classes.Items.Apparel::AtmaArmor" Stack="1" Name="AtmaArmor" />
-      <Item ID="classes.Items.Apparel::GenericCatsuit" Stack="1" Name="Catsuit" />
-      <Item ID="classes.Items.Apparel::GooeyCoverings" Stack="1" Name="gooverings" />
-      <Item ID="classes.Items.Apparel::LeatherArmor" Stack="1" Name="LeatherArmor" />
-      <Item ID="classes.Items.Apparel::MilitaryUniform" Stack="1" Name="MilitaryO." />
-      <Item ID="classes.Items.Apparel::NaleenArmor" Stack="1" Name="NaleenScale" />
-      <Item ID="classes.Items.Apparel::ProtectiveJacket" Stack="1" Name="P.Jacket" />
-      <Item ID="classes.Items.Apparel::ReinforcedBodysuit" Stack="1" Name="R.Bdysuit" />
-      <Item ID="classes.Items.Apparel::RevealingFemaleArmor" Stack="1" Name="R.F.Armor" />
-      <Item ID="classes.Items.Apparel::RevealingMaleArmor" Stack="1" Name="R.M.Armor" />
-      <Item ID="classes.Items.Apparel::Smartclothes" Stack="1" Name="Smartclothes" />
-      <Item ID="classes.Items.Apparel::SpacePirateOutfit" Stack="1" Name="S.Pirate O." />
-      <Item ID="classes.Items.Apparel::SteeleTechSuit" Stack="1" Name="ST. Suit" />
-      <Item ID="classes.Items.Apparel::ThermalJacket" Stack="1" Name="ThmJacket" />
-      <Item ID="classes.Items.Apparel::TransparentZipsuit" Stack="1" Name="T.Zipsuit" />
-      <Item ID="classes.Items.Apparel::TrashArmor" Stack="1" Name="T.Armor" />
-      <Item ID="classes.Items.Apparel::TSTArmor" Stack="1" Name="TST Armor" />
-      <Item ID="classes.Items.Apparel::TSTArmorMkII" Stack="1" Name="TST Armor II" />
-      <Item ID="classes.Items.Armor::ArmstrongSuitBlue" Stack="1" Name="AZA Suit" />
-      <Item ID="classes.Items.Armor::ArmstrongSuitViolet" Stack="1" Name="UVA Suit" />
-      <Item ID="classes.Items.Armor::ArmstrongSuitWhite" Stack="1" Name="PWA Suit" />
-      <Item ID="classes.Items.Armor::ChitinArmor" Stack="1" Name="C.Armor" />
-      <Item ID="classes.Items.Armor::ChitPlate" Stack="1" Name="C.Plate" />
-      <Item ID="classes.Items.Armor::GooArmor" Stack="1" Name="Goo Armor" />
-      <Item ID="classes.Items.Armor::MirroredJumpsuit" Stack="1" Name="M.Suit" />
-      <Item ID="classes.Items.Armor::NyreanChain" Stack="1" Name="N.Chain" />
-      <Item ID="classes.Items.Armor::PolishedPlate" Stack="1" Name="P.Plate" />
-      <Item ID="classes.Items.Armor::VoidPlateArmor" Stack="1" Name="Void Plates" />
-    </Armor>
-    <UpperUndergarment>
-      <Item ID="classes.Items.Apparel::FrillyBikiniTop" Stack="1" Name="BikiniTop" />
-      <Item ID="classes.Items.Apparel::FurryBra" Stack="1" Name="F.Bra" />
-      <Item ID="classes.Items.Apparel::Babydoll" Stack="1" Name="Babydoll" />
-      <Item ID="classes.Items.Apparel::BountyBra" Stack="1" Name="Bounty Bra" />
-      <Item ID="classes.Items.Apparel::Corset" Stack="1" Name="Corset" />
-      <Item ID="classes.Items.Apparel::CowPrintBra" Stack="1" Name="Cow Bra" />
-      <Item ID="classes.Items.Apparel::GirlyBra" Stack="1" Name="Girly Bra" />
-      <Item ID="classes.Items.Apparel::HoneypotBra" Stack="1" Name="HoneyBra" />
-      <Item ID="classes.Items.Apparel::LacyBra" Stack="1" Name="Lacy Bra" />
-      <Item ID="classes.Items.Apparel::LittleGreenBra" Stack="1" Name="LilG.Bra" />
-      <Item ID="classes.Items.Apparel::LittleGreenShirt" Stack="1" Name="LilG.Tee" />
-      <Item ID="classes.Items.Apparel::LittleGreenTankTop" Stack="1" Name="LilG.Tank" />
-      <Item ID="classes.Items.Apparel::MeshShirt" Stack="1" Name="M.Shirt" />
-      <Item ID="classes.Items.Apparel::Pasties" Stack="1" Name="Pasties" />
-      <Item ID="classes.Items.Apparel::PlainBra" Stack="1" Name="Bra" />
-      <Item ID="classes.Items.Apparel::PlainUndershirt" Stack="1" Name="Undershirt" />
-      <Item ID="classes.Items.Apparel::ShibariTop" Stack="1" Name="Shibari Top" />
-      <Item ID="classes.Items.Apparel::SkullPatternBra" Stack="1" Name="Sk.Bra" />
-      <Item ID="classes.Items.Apparel::SportsBra" Stack="1" Name="Sports Bra" />
-      <Item ID="classes.Items.Apparel::UnderbustCorset" Stack="1" Name="Underbust Corset" />
-      <Item ID="classes.Items.Apparel::Undershirt" Stack="1" Name="Undershirt" />
-    </UpperUndergarment>
-    <LowerUndergarment>
-      <Item ID="classes.Items.Apparel::FrillyBikiniBottom" Stack="1" Name="BikiniBtm" />
-      <Item ID="classes.Items.Apparel::BaggySwimShorts" Stack="1" Name="BaggyShorts" />
-      <Item ID="classes.Items.Apparel::Boxers" Stack="1" Name="Boxers" />
-      <Item ID="classes.Items.Apparel::Boyshorts" Stack="1" Name="Boyshorts" />
-      <Item ID="classes.Items.Apparel::CowPrintBikiniBottom" Stack="1" Name="Cow Bottom" />
-      <Item ID="classes.Items.Apparel::CowPrintPantiesAndGarter" Stack="1" Name="Cow Panties" />
-      <Item ID="classes.Items.Apparel::CString" Stack="1" Name="C.String" />
-      <Item ID="classes.Items.Apparel::GirlyPanties" Stack="1" Name="G.Panties" />
-      <Item ID="classes.Items.Apparel::LittleGreenBriefs" Stack="1" Name="LilG.Brief" />
-      <Item ID="classes.Items.Apparel::LittleGreenPanties" Stack="1" Name="LilG.Panty" />
-      <Item ID="classes.Items.Apparel::LittleGreenThong" Stack="1" Name="LilG.Thong" />
-      <Item ID="classes.Items.Apparel::MaleThong" Stack="1" Name="M.Thong" />
-      <Item ID="classes.Items.Apparel::PlainBriefs" Stack="1" Name="Briefs" />
-      <Item ID="classes.Items.Apparel::PlainPanties" Stack="1" Name="Panties" />
-      <Item ID="classes.Items.Apparel::ShibariBottom" Stack="1" Name="ShibariBottom" />
-      <Item ID="classes.Items.Apparel::Stockings" Stack="1" Name="Stockings" />
-      <Item ID="classes.Items.Apparel::ThermalUnderwear" Stack="1" Name="ThmUndies" />
-      <Item ID="classes.Items.Apparel::Thong" Stack="1" Name="Thong" />
-      <Item ID="classes.Items.Apparel::ZipPouch" Stack="1" Name="Z.Pouch" />
-    </LowerUndergarment>
-    <Edible>
-      <Item ID="classes.Items.Combat::CrystalShard" Stack="5" Name="Crystal S." />
-      <Item ID="classes.Items.Drinks::HoneyWine" Stack="1" Name="H.Wine" />
-      <Item ID="classes.Items.Drinks::RedMyrVenom" Stack="10" Name="R.Venom" />
-      <Item ID="classes.Items.Miscellaneous::AusarTreats" Stack="10" Name="AusarTreat" />
-      <Item ID="classes.Items.Miscellaneous::BBQToGo" Stack="10" Name="BBQ To-Go" />
-      <Item ID="classes.Items.Miscellaneous::BoobswellPads" Stack="50" Name="Boobswell P." />
-      <Item ID="classes.Items.Miscellaneous::Chocolac" Stack="10" Name="Chocolac" />
-      <Item ID="classes.Items.Miscellaneous::Condensol" Stack="10" Name="Condensol" />
-      <Item ID="classes.Items.Miscellaneous::Dumbfuck" Stack="10" Name="Dumbfuck" />
-      <Item ID="classes.Items.Miscellaneous::EasyFit" Stack="10" Name="EasyFit" />
-      <Item ID="classes.Items.Miscellaneous::Estrobloom" Stack="10" Name="Estrobloom" />
-      <Item ID="classes.Items.Miscellaneous::FertitePlus" Stack="10" Name="Fertite+" />
-      <Item ID="classes.Items.Miscellaneous::FocusPill" Stack="10" Name="FocusPill" />
-      <Item ID="classes.Items.Miscellaneous::FungalExtract" Stack="5" Name="F.Extract" />
-      <Item ID="classes.Items.Miscellaneous::GrayMicrobots" Stack="5" Name="G.M.Bots" />
-      <Item ID="classes.Items.Miscellaneous::Honeydew" Stack="10" Name="Honeydew" />
-      <Item ID="classes.Items.Miscellaneous::Honeypot" Stack="10" Name="Honeypot" />
-      <Item ID="classes.Items.Miscellaneous::HoneySeed" Stack="10" Name="Honeyseed" />
-      <Item ID="classes.Items.Miscellaneous::HorseCock" Stack="10" Name="Horse-Cock" />
-      <Item ID="classes.Items.Miscellaneous::HorsePill" Stack="10" Name="HorsePill" />
-      <Item ID="classes.Items.Miscellaneous::KnotAProblem" Stack="10" Name="KnotAProb" />
-      <Item ID="classes.Items.Miscellaneous::Lactaid" Stack="10" Name="Lactaid" />
-      <Item ID="classes.Items.Miscellaneous::LactaidMilkTank" Stack="10" Name="LactaidMT" />
-      <Item ID="classes.Items.Miscellaneous::LactaidOverdrive" Stack="10" Name="LactaidO" />
-      <Item ID="classes.Items.Miscellaneous::LargeEgg" Stack="12" Name="LargeEgg" />
-      <Item ID="classes.Items.Miscellaneous::MhengaMango" Stack="10" Name="M.Mango" />
-      <Item ID="classes.Items.Miscellaneous::MightyTight" Stack="10" Name="M.Tight" />
-      <Item ID="classes.Items.Miscellaneous::MilkCaramelGushers" Stack="50" Name="Milk Gushers" />
-      <Item ID="classes.Items.Miscellaneous::MilkmaidsAid" Stack="50" Name="Milk. Aid" />
-      <Item ID="classes.Items.Miscellaneous::MyrNectar" Stack="10" Name="MyrNectr" />
-      <Item ID="classes.Items.Miscellaneous::NaleenNip" Stack="10" Name="NaleenNip" />
-      <Item ID="classes.Items.Miscellaneous::NukiCookies" Stack="10" Name="Nuki C." />
-      <Item ID="classes.Items.Miscellaneous::Ovilium" Stack="10" Name="Ovilium" />
-      <Item ID="classes.Items.Miscellaneous::Pandaneen" Stack="10" Name="Pandaneen" />
-      <Item ID="classes.Items.Miscellaneous::PandaPro" Stack="10" Name="Panda Pro" />
-      <Item ID="classes.Items.Miscellaneous::ProphylacticGoblin" Stack="20" Name="Goblin P." />
-      <Item ID="classes.Items.Miscellaneous::ProphylacticLapinara" Stack="20" Name="LapinaraP" />
-      <Item ID="classes.Items.Miscellaneous::ProphylacticRaskvel" Stack="20" Name="Rask P." />
-      <Item ID="classes.Items.Miscellaneous::ProphylacticSydian" Stack="20" Name="Sydian P." />
-      <Item ID="classes.Items.Miscellaneous::Pussybloom" Stack="10" Name="Pussybloom" />
-      <Item ID="classes.Items.Miscellaneous::Pussyblossom" Stack="10" Name="Pussyblossom" />
-      <Item ID="classes.Items.Miscellaneous::Rainbotox" Stack="20" Name="Rainbotox" />
-      <Item ID="classes.Items.Miscellaneous::ShieldBooster" Stack="5" Name="S.Booster" />
-      <Item ID="classes.Items.Miscellaneous::SkySap" Stack="10" Name="SkySap" />
-      <Item ID="classes.Items.Miscellaneous::SmallEgg" Stack="12" Name="SmallEgg" />
-      <Item ID="classes.Items.Miscellaneous::Sterilex" Stack="10" Name="Sterilex" />
-      <Item ID="classes.Items.Miscellaneous::StrangeEgg" Stack="1" Name="S.Egg" />
-      <Item ID="classes.Items.Miscellaneous::SynthSap" Stack="10" Name="SynthSap" />
-      <Item ID="classes.Items.Miscellaneous::TerranTreats" Stack="10" Name="Human T." />
-      <Item ID="classes.Items.Miscellaneous::TestHPBooster" Stack="10" Name="HP Boost" />
-      <Item ID="classes.Items.Miscellaneous::Throbb" Stack="20" Name="Throbb" />
-      <Item ID="classes.Items.Miscellaneous::Tittyblossom" Stack="10" Name="Tittyblossom" />
-      <Item ID="classes.Items.Miscellaneous::Treatment" Stack="10" Name="Treatment" />
-      <Item ID="classes.Items.Miscellaneous::UthraSap" Stack="10" Name="UthraSap" />
-      <Item ID="classes.Items.Miscellaneous::VenusPod" Stack="10" Name="VenusPod" />
-      <Item ID="classes.Items.Miscellaneous::ZilHoney" Stack="10" Name="ZilHoney" />
-      <Item ID="classes.Items.Miscellaneous::ZilRation" Stack="10" Name="ZilRation" />
-      <Item ID="classes.Items.Recovery::PexigaSaliva" Stack="10" Name="P.Saliva" />
-      <Item ID="classes.Items.Recovery::ShieldBoosterMkII" Stack="5" Name="S.Boost M2" />
-      <Item ID="classes.Items.Toys.Bubbles::HugeCumBubble" Stack="1" Name="H.Bubble" />
-      <Item ID="classes.Items.Toys.Bubbles::LargeCumBubble" Stack="5" Name="L.Bubble" />
-      <Item ID="classes.Items.Toys.Bubbles::MediumCumBubble" Stack="10" Name="M.Bubble" />
-      <Item ID="classes.Items.Toys.Bubbles::SmallCumBubble" Stack="20" Name="S.Bubble" />
-      <Item ID="classes.Items.Transformatives::BigGreenPotion" Stack="5" Name="BGreenPot" />
-      <Item ID="classes.Items.Transformatives::Bovinium" Stack="10" Name="Bovinium" />
-      <Item ID="classes.Items.Transformatives::BumpyRoad" Stack="10" Name="BumpyRd." />
-      <Item ID="classes.Items.Transformatives::Catnip" Stack="10" Name="Catnip" />
-      <Item ID="classes.Items.Transformatives::ClearYu" Stack="10" Name="ClearYu" />
-      <Item ID="classes.Items.Transformatives::Clippex" Stack="10" Name="Clippex" />
-      <Item ID="classes.Items.Transformatives::DongDesigner" Stack="10" Name="Dong D." />
-      <Item ID="classes.Items.Transformatives::DoveBalm" Stack="10" Name="Dove Balm" />
-      <Item ID="classes.Items.Transformatives::EggBlueLarge" Stack="24" Name="Lg.BluEgg" />
-      <Item ID="classes.Items.Transformatives::EggBlueSmall" Stack="24" Name="Sm.BluEgg" />
-      <Item ID="classes.Items.Transformatives::EggPinkLarge" Stack="24" Name="Lg.PinkEgg" />
-      <Item ID="classes.Items.Transformatives::EggPinkSmall" Stack="24" Name="Sm.PinkEgg" />
-      <Item ID="classes.Items.Transformatives::EggWhiteLarge" Stack="24" Name="Lg.WhtEgg" />
-      <Item ID="classes.Items.Transformatives::EggWhiteSmall" Stack="24" Name="Sm.WhtEgg" />
-      <Item ID="classes.Items.Transformatives::GaloMax" Stack="10" Name="GaloMax" />
-      <Item ID="classes.Items.Transformatives::Goblinola" Stack="10" Name="Goblinola" />
-      <Item ID="classes.Items.Transformatives::GoldPill" Stack="10" Name="Gold Pill" />
-      <Item ID="classes.Items.Transformatives::GooBallBlue" Stack="10" Name="BlueGB" />
-      <Item ID="classes.Items.Transformatives::GooBallGreen" Stack="10" Name="GreenGB" />
-      <Item ID="classes.Items.Transformatives::GooBallOrange" Stack="10" Name="Orng.GB" />
-      <Item ID="classes.Items.Transformatives::GooBallPink" Stack="10" Name="Pink GB" />
-      <Item ID="classes.Items.Transformatives::GooBallPurple" Stack="10" Name="Purp.GB" />
-      <Item ID="classes.Items.Transformatives::GooBallRed" Stack="10" Name="Red GB" />
-      <Item ID="classes.Items.Transformatives::GooBallYellow" Stack="10" Name="Yellow GB" />
-      <Item ID="classes.Items.Transformatives::Gush" Stack="10" Name="Gush" />
-      <Item ID="classes.Items.Transformatives::Honeyizer" Stack="10" Name="H-izer" />
-      <Item ID="classes.Items.Transformatives::Hornitol" Stack="10" Name="Hornitol" />
-      <Item ID="classes.Items.Transformatives::HuskarTreats" Stack="10" Name="HuskarTreat" />
-      <Item ID="classes.Items.Transformatives::JunkTrunk" Stack="10" Name="J.Trunk" />
-      <Item ID="classes.Items.Transformatives::KerokorasVenom" Stack="10" Name="Kero.Ven." />
-      <Item ID="classes.Items.Transformatives::Lucifier" Stack="10" Name="Lucifier" />
-      <Item ID="classes.Items.Transformatives::ManUp" Stack="10" Name="ManUp" />
-      <Item ID="classes.Items.Transformatives::MinoCharge" Stack="10" Name="MinoCharge" />
-      <Item ID="classes.Items.Transformatives::Nepeta" Stack="10" Name="Nepeta" />
-      <Item ID="classes.Items.Transformatives::NyreanCandy" Stack="10" Name="N.Candy" />
-      <Item ID="classes.Items.Transformatives::OrangePill" Stack="10" Name="Orange P." />
-      <Item ID="classes.Items.Transformatives::OvirAce" Stack="10" Name="OvirAce" />
-      <Item ID="classes.Items.Transformatives::OvirPositive" Stack="5" Name="Ovir+" />
-      <Item ID="classes.Items.Transformatives::RainbowGaze" Stack="10" Name="RainbowG." />
-      <Item ID="classes.Items.Transformatives::RedPill" Stack="10" Name="Red Pill" />
-      <Item ID="classes.Items.Transformatives::RubberMade" Stack="10" Name="R.Made" />
-      <Item ID="classes.Items.Transformatives::Ruskvel" Stack="10" Name="Ruskvel" />
-      <Item ID="classes.Items.Transformatives::SemensFriend" Stack="10" Name="Semens F." />
-      <Item ID="classes.Items.Transformatives::SumaCream" Stack="12" Name="Suma" />
-      <Item ID="classes.Items.Transformatives::SumaCreamBlack" Stack="12" Name="Suma Blk." />
-      <Item ID="classes.Items.Transformatives::SumaCreamWhite" Stack="12" Name="Suma" />
-      <Item ID="classes.Items.Transformatives::Sylvanol" Stack="10" Name="Sylvanol" />
-    </Edible>
-    <Gadget>
-      <Item ID="classes.Items.Miscellaneous::ACock" Stack="10" Name="A.Cock" />
-      <Item ID="classes.Items.Miscellaneous::ADCock" Stack="10" Name="A.D.Cock" />
-      <Item ID="classes.Items.Miscellaneous::AHCock" Stack="10" Name="A.H.Cock" />
-      <Item ID="classes.Items.Miscellaneous::ClimbingKit" Stack="1" Name="ClimbKit" />
-      <Item ID="classes.Items.Miscellaneous::FishingRod" Stack="10" Name="Fish.Rod" />
-      <Item ID="classes.Items.Miscellaneous::Hoverboard" Stack="1" Name="Hoverboard" />
-      <Item ID="classes.Items.Miscellaneous::MagicMilker" Stack="1" Name="M.Milker" />
-      <Item ID="classes.Items.Miscellaneous::MilkBag" Stack="10" Name="MilkBag" />
-      <Item ID="classes.Items.Miscellaneous::Silicone" Stack="10" Name="Silicone" />
-      <Item ID="classes.Items.Miscellaneous::TarkusJokeBook" Stack="10" Name="JokeBook" />
-      <Item ID="classes.Items.Miscellaneous::VarmintItem" Stack="1" Name="Varmint" />
-      <Item ID="classes.Items.Toys::BubbleBuddy" Stack="1" Name="B.Buddy" />
-      <Item ID="classes.Items.Toys::EggTrainer" Stack="1" Name="EggTrnr" />
-      <Item ID="classes.Items.Toys::GravCuffs" Stack="1" Name="G.Cuffs" />
-      <Item ID="classes.Items.Toys::HoverHole" Stack="1" Name="H.Hole" />
-      <Item ID="classes.Items.Toys::NivasBionaHole" Stack="1" Name="N.B.Hole" />
-      <Item ID="classes.Items.Toys::TamaniBionaHole" Stack="1" Name="T.B.Hole" />
-    </Gadget>
-    <MeleeWeapon>
-      <Item ID="classes.Items.Melee::BioWhip" Stack="1" Name="BioWhip" />
-      <Item ID="classes.Items.Melee::CavalrySaber" Stack="1" Name="C.Saber" />
-      <Item ID="classes.Items.Melee::Cutlass" Stack="1" Name="Cutlass" />
-      <Item ID="classes.Items.Melee::EmmysJolthammer" Stack="1" Name="E's Hmmr" />
-      <Item ID="classes.Items.Melee::EmmysLavaSaber" Stack="1" Name="E'sSaber" />
-      <Item ID="classes.Items.Melee::EmmysVampBlade" Stack="1" Name="E's Blade" />
-      <Item ID="classes.Items.Melee::Fists" Stack="1" Name="fist" />
-      <Item ID="classes.Items.Melee::GooeyPsuedopod" Stack="1" Name="psuedopod" />
-      <Item ID="classes.Items.Melee::Jolthammer" Stack="1" Name="J.Hmmr." />
-      <Item ID="classes.Items.Melee::Knife" Stack="1" Name="Knife" />
-      <Item ID="classes.Items.Melee::LavaSaber" Stack="1" Name="L.Saber" />
-      <Item ID="classes.Items.Melee::Machette" Stack="1" Name="Machete" />
-      <Item ID="classes.Items.Melee::MechaFist" Stack="1" Name="mechafist" />
-      <Item ID="classes.Items.Melee::MilitaryPick" Stack="1" Name="M.Pick" />
-      <Item ID="classes.Items.Melee::NyreanSpear" Stack="1" Name="N.Spear" />
-      <Item ID="classes.Items.Melee::RaskvelWrench" Stack="1" Name="Wrench" />
-      <Item ID="classes.Items.Melee::Rock" Stack="1" Name="Rock" />
-      <Item ID="classes.Items.Melee::RocketHammer" Stack="1" Name="R.Hammer" />
-      <Item ID="classes.Items.Melee::ShockBlade" Stack="1" Name="ShockBlade" />
-      <Item ID="classes.Items.Melee::Shortsword" Stack="1" Name="Shortsword" />
-      <Item ID="classes.Items.Melee::SurvivalAxe" Stack="1" Name="SurvAxe" />
-      <Item ID="classes.Items.Melee::TaivrasSpear" Stack="1" Name="T.Spear" />
-      <Item ID="classes.Items.Melee::Tonfas" Stack="1" Name="tonfas" />
-      <Item ID="classes.Items.Melee::VampBlade" Stack="1" Name="V.Blade" />
-      <Item ID="classes.Items.Melee::VanaeSpear" Stack="1" Name="Vanae Spear" />
-      <Item ID="classes.Items.Melee::Warhammer" Stack="1" Name="Warhammer" />
-      <Item ID="classes.Items.Melee::Whip" Stack="1" Name="Whip" />
-    </MeleeWeapon>
-    <RangedWeapon>
-      <Item ID="classes.Items.Guns::AegisLightMG" Stack="1" Name="Aegis MG" />
-      <Item ID="classes.Items.Guns::ArcCaster" Stack="1" Name="ArcCast." />
-      <Item ID="classes.Items.Guns::BoltActionRifle" Stack="1" Name="B.Rifle" />
-      <Item ID="classes.Items.Guns::CustomLP17" Stack="1" Name="Custom LP-17" />
-      <Item ID="classes.Items.Guns::EagleHandgun" Stack="1" Name="E.Handgun" />
-      <Item ID="classes.Items.Guns::Electrogun" Stack="1" Name="Electrogun" />
-      <Item ID="classes.Items.Guns::EmmysSalamanderPistol" Stack="1" Name="E's Pistol" />
-      <Item ID="classes.Items.Guns::EmmysSalamanderRifle" Stack="1" Name="E's Rifle" />
-      <Item ID="classes.Items.Guns::EmmysSalamanderRifle2" Stack="1" Name="E's S.R." />
-      <Item ID="classes.Items.Guns::FlareGun" Stack="1" Name="FlareGun" />
-      <Item ID="classes.Items.Guns::Goovolver" Stack="1" Name="Goovolver" />
-      <Item ID="classes.Items.Guns::HammerCarbine" Stack="1" Name="Hammer C." />
-      <Item ID="classes.Items.Guns::HammerPistol" Stack="1" Name="Hammer Pstl." />
-      <Item ID="classes.Items.Guns::HoldoutHP" Stack="1" Name="Holdout H.P." />
-      <Item ID="classes.Items.Guns::HoldOutPistol" Stack="1" Name="Hld.Pistol" />
-      <Item ID="classes.Items.Guns::HuntingRifle" Stack="1" Name="H.Rifle" />
-      <Item ID="classes.Items.Guns::KhansArcCaster" Stack="1" Name="Khans AC." />
-      <Item ID="classes.Items.Guns::LaserCarbine" Stack="1" Name="Laser C." />
-      <Item ID="classes.Items.Guns::LaserPistol" Stack="1" Name="LaserPistol" />
-      <Item ID="classes.Items.Guns::MagnumPistol" Stack="1" Name="Mag.Pistol" />
-      <Item ID="classes.Items.Guns::MyrBow" Stack="1" Name="Myr Bow" />
-      <Item ID="classes.Items.Guns::MyrRifle" Stack="1" Name="M.Rifle" />
-      <Item ID="classes.Items.Guns::NovaPistol" Stack="1" Name="Nova Pstl." />
-      <Item ID="classes.Items.Guns::NovaRifle" Stack="1" Name="Nova Rifle" />
-      <Item ID="classes.Items.Guns::PlasmaPistol" Stack="1" Name="Plasma P." />
-      <Item ID="classes.Items.Guns::PrimitiveBow" Stack="1" Name="P.Bow" />
-      <Item ID="classes.Items.Guns::QueensBow" Stack="1" Name="Royal Bow" />
-      <Item ID="classes.Items.Guns::RudimentaryRevolver" Stack="1" Name="Revolvr" />
-      <Item ID="classes.Items.Guns::SalamanderPistol" Stack="1" Name="SalPistl" />
-      <Item ID="classes.Items.Guns::SalamanderRifle" Stack="1" Name="SalRifle" />
-      <Item ID="classes.Items.Guns::ScopedPistol" Stack="1" Name="S.Pistol" />
-      <Item ID="classes.Items.Guns::SecureMP" Stack="1" Name="secureMP" />
-      <Item ID="classes.Items.Guns::SlutRay" Stack="1" Name="SlutRay" />
-      <Item ID="classes.Items.Guns::SlutRayAdvanced" Stack="1" Name="A.SlutRay" />
-      <Item ID="classes.Items.Guns::TachyonBeamLaser" Stack="1" Name="Tach. Beam" />
-      <Item ID="classes.Items.Guns::TanisBow" Stack="1" Name="Tanis's Bow" />
-      <Item ID="classes.Items.Guns::TheShocker" Stack="1" Name="TheShocker" />
-      <Item ID="classes.Items.Guns::TrenchShotgun" Stack="1" Name="Shotgn" />
-      <Item ID="classes.Items.Guns::ZKRifle" Stack="1" Name="ZK Rifle" />
-    </RangedWeapon>
-    <Shield>
-      <Item ID="classes.Items.Protection::ArcticWarfareBelt" Stack="1" Name="AW Belt" />
-      <Item ID="classes.Items.Protection::BasicShield" Stack="1" Name="BasicShld" />
-      <Item ID="classes.Items.Protection::DBGShield" Stack="1" Name="DBG Shield" />
-      <Item ID="classes.Items.Protection::DecentShield" Stack="1" Name="Decent S." />
-      <Item ID="classes.Items.Protection::HeatBelt" Stack="1" Name="HeatBelt" />
-      <Item ID="classes.Items.Protection::ImprovisedShield" Stack="1" Name="I.Shield" />
-      <Item ID="classes.Items.Protection::JoyCoEliteShield" Stack="1" Name="E.Shield" />
-      <Item ID="classes.Items.Protection::JoyCoPremiumShield" Stack="1" Name="P.Shield" />
-      <Item ID="classes.Items.Protection::OzoneAegis" Stack="1" Name="O.Aegis" />
-      <Item ID="classes.Items.Protection::ReaperArmamentsMarkIIShield" Stack="1" Name="Mark IIS" />
-      <Item ID="classes.Items.Protection::ReaperArmamentsMarkIShield" Stack="1" Name="Mark I.S." />
-      <Item ID="classes.Items.Protection::SalamanderShield" Stack="1" Name="S.Shield" />
-    </Shield>
-    <Misc>
-      <Item ID="classes.Items.Miscellaneous::EMPGrenade" Stack="10" Name="EMP Gren." />
-      <Item ID="classes.Items.Miscellaneous::FlashGrenade" Stack="10" Name="Flashbang" />
-      <Item ID="classes.Items.Miscellaneous::TestGrenade" Stack="10" Name="T.Gren" />
-      <Item ID="classes.Items.Miscellaneous::GemSatchel" Stack="2" Name="GemSack" />
-      <Item ID="classes.Items.Miscellaneous::Kirkite" Stack="20" Name="Kirkite" />
-      <Item ID="classes.Items.Miscellaneous::Picardine" Stack="20" Name="Picardine" />
-      <Item ID="classes.Items.Miscellaneous::Satyrite" Stack="20" Name="Satyrite" />
-      <Item ID="classes.Items.Miscellaneous::VenusBloom" Stack="1" Name="V.Bloom" />
-    </Misc>
+    <Item Type="Accessory" Stack="1" Name="ACE Cannon" ID="classes.Items.Accessories::ACECannon" />
+    <Item Type="Accessory" Stack="1" Name="AimEyepiece" ID="classes.Items.Accessories::AimEyepiece" />
+    <Item Type="Accessory" Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
+    <Item Type="Accessory" Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
+    <Item Type="Accessory" Stack="1" Name="JungleLure" ID="classes.Items.Accessories::JungleLure" />
+    <Item Type="Accessory" Stack="1" Name="JungleRepel" ID="classes.Items.Accessories::JungleRepel" />
+    <Item Type="Accessory" Stack="1" Name="LeithaChrm" ID="classes.Items.Accessories::LeithaCharm" />
+    <Item Type="Accessory" Stack="1" Name="Lt.Jetpack" ID="classes.Items.Accessories::LightJetpack" />
+    <Item Type="Accessory" Stack="1" Name="L.Duster" ID="classes.Items.Accessories::LightningDuster" />
+    <Item Type="Accessory" Stack="1" Name="M.Sweeper" ID="classes.Items.Accessories::Minesweeper" />
+    <Item Type="Accessory" Stack="1" Name="MuskLure" ID="classes.Items.Accessories::MuskLure" />
+    <Item Type="Accessory" Stack="1" Name="M.Repel" ID="classes.Items.Accessories::MuskRepel" />
+    <Item Type="Accessory" Stack="1" Name="S.Duster" ID="classes.Items.Accessories::SalamanderDuster" />
+    <Item Type="Accessory" Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolf" />
+    <Item Type="Accessory" Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolfDamaged" />
+    <Item Type="Accessory" Stack="1" Name="TamWolf2.0" ID="classes.Items.Accessories::TamWolfII" />
+    <Item Type="Accessory" Stack="1" Name="Pink Leash" ID="classes.Items.Accessories::VarmintLeash" />
+    <Item Type="Accessory" Stack="1" Name="Cargobot" ID="classes.Items.Miscellaneous::Cargobot" />
+    <Item Type="Accessory" Stack="1" Name="PH Access." ID="classes.Items.Miscellaneous::PHAccess" />
+    <Item Type="Clothing" Stack="1" Name="Annos Blouse" ID="classes.Items.Apparel::AnnosBlouse" />
+    <Item Type="Clothing" Stack="1" Name="Bunny.O" ID="classes.Items.Apparel::BunnyOutfit" />
+    <Item Type="Clothing" Stack="1" Name="B.Clothes" ID="classes.Items.Apparel::BusinessClothes" />
+    <Item Type="Clothing" Stack="1" Name="Butler.C" ID="classes.Items.Apparel::ButlerCostume" />
+    <Item Type="Clothing" Stack="1" Name="Butler.O" ID="classes.Items.Apparel::ButlerOutfit" />
+    <Item Type="Clothing" Stack="1" Name="Chr.Ldr." ID="classes.Items.Apparel::CheerleaderUniform" />
+    <Item Type="Clothing" Stack="1" Name="C.Clothes" ID="classes.Items.Apparel::ComfortableClothes" />
+    <Item Type="Clothing" Stack="1" Name="Cow Leotard" ID="classes.Items.Apparel::CowPrintLeotard" />
+    <Item Type="Clothing" Stack="1" Name="DressCloth" ID="classes.Items.Apparel::DressClothes" />
+    <Item Type="Clothing" Stack="1" Name="F. Doctor" ID="classes.Items.Apparel::FemaleDoctorOutfit" />
+    <Item Type="Clothing" Stack="1" Name="LabCoat" ID="classes.Items.Apparel::KhansLabCoat" />
+    <Item Type="Clothing" Stack="1" Name="LtxBdy" ID="classes.Items.Apparel::LatexBodysuit" />
+    <Item Type="Clothing" Stack="1" Name="L.Harness" ID="classes.Items.Apparel::LeatherStrapHarness" />
+    <Item Type="Clothing" Stack="1" Name="Libr.O" ID="classes.Items.Apparel::LibrarianOutfit" />
+    <Item Type="Clothing" Stack="1" Name="BlkDress" ID="classes.Items.Apparel::LittleBlackDress" />
+    <Item Type="Clothing" Stack="1" Name="MaidO." ID="classes.Items.Apparel::MaidOutfit" />
+    <Item Type="Clothing" Stack="1" Name="M.Doctor" ID="classes.Items.Apparel::MaleDoctorOutfit" />
+    <Item Type="Clothing" Stack="1" Name="NurseO." ID="classes.Items.Apparel::NurseOutfit" />
+    <Item Type="Clothing" Stack="1" Name="O.Swimsuit" ID="classes.Items.Apparel::OnePieceSwimsuit" />
+    <Item Type="Clothing" Stack="1" Name="PeasantDress" ID="classes.Items.Apparel::PeasantDress" />
+    <Item Type="Clothing" Stack="1" Name="S.Boy O." ID="classes.Items.Apparel::SchoolboyOutfit" />
+    <Item Type="Clothing" Stack="1" Name="S.Girl C." ID="classes.Items.Apparel::SchoolgirlCostume" />
+    <Item Type="Clothing" Stack="1" Name="S.Girl O." ID="classes.Items.Apparel::SchoolgirlOutfit" />
+    <Item Type="Clothing" Stack="1" Name="TopNSkirt." ID="classes.Items.Apparel::TopNSkirt" />
+    <Item Type="Clothing" Stack="1" Name="UGC Uniform" ID="classes.Items.Apparel::UGCUniform" />
+    <Item Type="Clothing" Stack="1" Name="WaitressUniform" ID="classes.Items.Apparel::WaitressUniform" />
+    <Item Type="Armor" Stack="1" Name="ST. Catsuit" ID="classes.Items.Apparel::AnnosCatsuit" />
+    <Item Type="Armor" Stack="1" Name="AtmaArmor" ID="classes.Items.Apparel::AtmaArmor" />
+    <Item Type="Armor" Stack="1" Name="Catsuit" ID="classes.Items.Apparel::GenericCatsuit" />
+    <Item Type="Armor" Stack="1" Name="gooverings" ID="classes.Items.Apparel::GooeyCoverings" />
+    <Item Type="Armor" Stack="1" Name="LeatherArmor" ID="classes.Items.Apparel::LeatherArmor" />
+    <Item Type="Armor" Stack="1" Name="MilitaryO." ID="classes.Items.Apparel::MilitaryUniform" />
+    <Item Type="Armor" Stack="1" Name="NaleenScale" ID="classes.Items.Apparel::NaleenArmor" />
+    <Item Type="Armor" Stack="1" Name="P.Jacket" ID="classes.Items.Apparel::ProtectiveJacket" />
+    <Item Type="Armor" Stack="1" Name="R.Bdysuit" ID="classes.Items.Apparel::ReinforcedBodysuit" />
+    <Item Type="Armor" Stack="1" Name="R.F.Armor" ID="classes.Items.Apparel::RevealingFemaleArmor" />
+    <Item Type="Armor" Stack="1" Name="R.M.Armor" ID="classes.Items.Apparel::RevealingMaleArmor" />
+    <Item Type="Armor" Stack="1" Name="Smartclothes" ID="classes.Items.Apparel::Smartclothes" />
+    <Item Type="Armor" Stack="1" Name="S.Pirate O." ID="classes.Items.Apparel::SpacePirateOutfit" />
+    <Item Type="Armor" Stack="1" Name="ST. Suit" ID="classes.Items.Apparel::SteeleTechSuit" />
+    <Item Type="Armor" Stack="1" Name="ThmJacket" ID="classes.Items.Apparel::ThermalJacket" />
+    <Item Type="Armor" Stack="1" Name="T.Zipsuit" ID="classes.Items.Apparel::TransparentZipsuit" />
+    <Item Type="Armor" Stack="1" Name="T.Armor" ID="classes.Items.Apparel::TrashArmor" />
+    <Item Type="Armor" Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" />
+    <Item Type="Armor" Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" />
+    <Item Type="Armor" Stack="1" Name="AZA Suit" ID="classes.Items.Armor::ArmstrongSuitBlue" />
+    <Item Type="Armor" Stack="1" Name="UVA Suit" ID="classes.Items.Armor::ArmstrongSuitViolet" />
+    <Item Type="Armor" Stack="1" Name="PWA Suit" ID="classes.Items.Armor::ArmstrongSuitWhite" />
+    <Item Type="Armor" Stack="1" Name="C.Armor" ID="classes.Items.Armor::ChitinArmor" />
+    <Item Type="Armor" Stack="1" Name="C.Plate" ID="classes.Items.Armor::ChitPlate" />
+    <Item Type="Armor" Stack="1" Name="Goo Armor" ID="classes.Items.Armor::GooArmor" />
+    <Item Type="Armor" Stack="1" Name="M.Suit" ID="classes.Items.Armor::MirroredJumpsuit" />
+    <Item Type="Armor" Stack="1" Name="N.Chain" ID="classes.Items.Armor::NyreanChain" />
+    <Item Type="Armor" Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
+    <Item Type="Armor" Stack="1" Name="Void Plates" ID="classes.Items.Armor::VoidPlateArmor" />
+    <Item Type="UpperUndergarment" Stack="1" Name="BikiniTop" ID="classes.Items.Apparel::FrillyBikiniTop" />
+    <Item Type="UpperUndergarment" Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Bounty Bra" ID="classes.Items.Apparel::BountyBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Corset" ID="classes.Items.Apparel::Corset" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Girly Bra" ID="classes.Items.Apparel::GirlyBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="HoneyBra" ID="classes.Items.Apparel::HoneypotBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Lacy Bra" ID="classes.Items.Apparel::LacyBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="LilG.Bra" ID="classes.Items.Apparel::LittleGreenBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="LilG.Tee" ID="classes.Items.Apparel::LittleGreenShirt" />
+    <Item Type="UpperUndergarment" Stack="1" Name="LilG.Tank" ID="classes.Items.Apparel::LittleGreenTankTop" />
+    <Item Type="UpperUndergarment" Stack="1" Name="M.Shirt" ID="classes.Items.Apparel::MeshShirt" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Pasties" ID="classes.Items.Apparel::Pasties" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Bra" ID="classes.Items.Apparel::PlainBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Undershirt" ID="classes.Items.Apparel::PlainUndershirt" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Shibari Top" ID="classes.Items.Apparel::ShibariTop" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Sk.Bra" ID="classes.Items.Apparel::SkullPatternBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Sports Bra" ID="classes.Items.Apparel::SportsBra" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Underbust Corset" ID="classes.Items.Apparel::UnderbustCorset" />
+    <Item Type="UpperUndergarment" Stack="1" Name="Undershirt" ID="classes.Items.Apparel::Undershirt" />
+    <Item Type="LowerUndergarment" Stack="1" Name="BikiniBtm" ID="classes.Items.Apparel::FrillyBikiniBottom" />
+    <Item Type="LowerUndergarment" Stack="1" Name="BaggyShorts" ID="classes.Items.Apparel::BaggySwimShorts" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Cow Bottom" ID="classes.Items.Apparel::CowPrintBikiniBottom" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Cow Panties" ID="classes.Items.Apparel::CowPrintPantiesAndGarter" />
+    <Item Type="LowerUndergarment" Stack="1" Name="C.String" ID="classes.Items.Apparel::CString" />
+    <Item Type="LowerUndergarment" Stack="1" Name="G.Panties" ID="classes.Items.Apparel::GirlyPanties" />
+    <Item Type="LowerUndergarment" Stack="1" Name="LilG.Brief" ID="classes.Items.Apparel::LittleGreenBriefs" />
+    <Item Type="LowerUndergarment" Stack="1" Name="LilG.Panty" ID="classes.Items.Apparel::LittleGreenPanties" />
+    <Item Type="LowerUndergarment" Stack="1" Name="LilG.Thong" ID="classes.Items.Apparel::LittleGreenThong" />
+    <Item Type="LowerUndergarment" Stack="1" Name="M.Thong" ID="classes.Items.Apparel::MaleThong" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Briefs" ID="classes.Items.Apparel::PlainBriefs" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Panties" ID="classes.Items.Apparel::PlainPanties" />
+    <Item Type="LowerUndergarment" Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" />
+    <Item Type="LowerUndergarment" Stack="1" Name="ThmUndies" ID="classes.Items.Apparel::ThermalUnderwear" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" />
+    <Item Type="LowerUndergarment" Stack="1" Name="Z.Pouch" ID="classes.Items.Apparel::ZipPouch" />
+    <Item Type="Consumable" Stack="5" Name="Crystal S." ID="classes.Items.Combat::CrystalShard" />
+    <Item Type="Consumable" Stack="1" Name="H.Wine" ID="classes.Items.Drinks::HoneyWine" />
+    <Item Type="Consumable" Stack="10" Name="R.Venom" ID="classes.Items.Drinks::RedMyrVenom" />
+    <Item Type="Consumable" Stack="10" Name="AusarTreat" ID="classes.Items.Miscellaneous::AusarTreats" />
+    <Item Type="Consumable" Stack="10" Name="BBQ To-Go" ID="classes.Items.Miscellaneous::BBQToGo" />
+    <Item Type="Consumable" Stack="50" Name="Boobswell P." ID="classes.Items.Miscellaneous::BoobswellPads" />
+    <Item Type="Consumable" Stack="10" Name="Chocolac" ID="classes.Items.Miscellaneous::Chocolac" />
+    <Item Type="Consumable" Stack="10" Name="Condensol" ID="classes.Items.Miscellaneous::Condensol" />
+    <Item Type="Consumable" Stack="10" Name="Dumbfuck" ID="classes.Items.Miscellaneous::Dumbfuck" />
+    <Item Type="Consumable" Stack="10" Name="EasyFit" ID="classes.Items.Miscellaneous::EasyFit" />
+    <Item Type="Consumable" Stack="10" Name="Estrobloom" ID="classes.Items.Miscellaneous::Estrobloom" />
+    <Item Type="Consumable" Stack="10" Name="Fertite+" ID="classes.Items.Miscellaneous::FertitePlus" />
+    <Item Type="Consumable" Stack="10" Name="FocusPill" ID="classes.Items.Miscellaneous::FocusPill" />
+    <Item Type="Consumable" Stack="5" Name="F.Extract" ID="classes.Items.Miscellaneous::FungalExtract" />
+    <Item Type="Consumable" Stack="5" Name="G.M.Bots" ID="classes.Items.Miscellaneous::GrayMicrobots" />
+    <Item Type="Consumable" Stack="10" Name="Honeydew" ID="classes.Items.Miscellaneous::Honeydew" />
+    <Item Type="Consumable" Stack="10" Name="Honeypot" ID="classes.Items.Miscellaneous::Honeypot" />
+    <Item Type="Consumable" Stack="10" Name="Honeyseed" ID="classes.Items.Miscellaneous::HoneySeed" />
+    <Item Type="Consumable" Stack="10" Name="Horse-Cock" ID="classes.Items.Miscellaneous::HorseCock" />
+    <Item Type="Consumable" Stack="10" Name="HorsePill" ID="classes.Items.Miscellaneous::HorsePill" />
+    <Item Type="Consumable" Stack="10" Name="KnotAProb" ID="classes.Items.Miscellaneous::KnotAProblem" />
+    <Item Type="Consumable" Stack="10" Name="Lactaid" ID="classes.Items.Miscellaneous::Lactaid" />
+    <Item Type="Consumable" Stack="10" Name="LactaidMT" ID="classes.Items.Miscellaneous::LactaidMilkTank" />
+    <Item Type="Consumable" Stack="10" Name="LactaidO" ID="classes.Items.Miscellaneous::LactaidOverdrive" />
+    <Item Type="Consumable" Stack="12" Name="LargeEgg" ID="classes.Items.Miscellaneous::LargeEgg" />
+    <Item Type="Consumable" Stack="10" Name="M.Mango" ID="classes.Items.Miscellaneous::MhengaMango" />
+    <Item Type="Consumable" Stack="10" Name="M.Tight" ID="classes.Items.Miscellaneous::MightyTight" />
+    <Item Type="Consumable" Stack="50" Name="Milk Gushers" ID="classes.Items.Miscellaneous::MilkCaramelGushers" />
+    <Item Type="Consumable" Stack="50" Name="Milk. Aid" ID="classes.Items.Miscellaneous::MilkmaidsAid" />
+    <Item Type="Consumable" Stack="10" Name="MyrNectr" ID="classes.Items.Miscellaneous::MyrNectar" />
+    <Item Type="Consumable" Stack="10" Name="NaleenNip" ID="classes.Items.Miscellaneous::NaleenNip" />
+    <Item Type="Consumable" Stack="10" Name="Nuki C." ID="classes.Items.Miscellaneous::NukiCookies" />
+    <Item Type="Consumable" Stack="10" Name="Ovilium" ID="classes.Items.Miscellaneous::Ovilium" />
+    <Item Type="Consumable" Stack="10" Name="Pandaneen" ID="classes.Items.Miscellaneous::Pandaneen" />
+    <Item Type="Consumable" Stack="10" Name="Panda Pro" ID="classes.Items.Miscellaneous::PandaPro" />
+    <Item Type="Consumable" Stack="20" Name="Goblin P." ID="classes.Items.Miscellaneous::ProphylacticGoblin" />
+    <Item Type="Consumable" Stack="20" Name="LapinaraP" ID="classes.Items.Miscellaneous::ProphylacticLapinara" />
+    <Item Type="Consumable" Stack="20" Name="Rask P." ID="classes.Items.Miscellaneous::ProphylacticRaskvel" />
+    <Item Type="Consumable" Stack="20" Name="Sydian P." ID="classes.Items.Miscellaneous::ProphylacticSydian" />
+    <Item Type="Consumable" Stack="10" Name="Pussybloom" ID="classes.Items.Miscellaneous::Pussybloom" />
+    <Item Type="Consumable" Stack="10" Name="Pussyblossom" ID="classes.Items.Miscellaneous::Pussyblossom" />
+    <Item Type="Consumable" Stack="20" Name="Rainbotox" ID="classes.Items.Miscellaneous::Rainbotox" />
+    <Item Type="Consumable" Stack="5" Name="S.Booster" ID="classes.Items.Miscellaneous::ShieldBooster" />
+    <Item Type="Consumable" Stack="10" Name="SkySap" ID="classes.Items.Miscellaneous::SkySap" />
+    <Item Type="Consumable" Stack="12" Name="SmallEgg" ID="classes.Items.Miscellaneous::SmallEgg" />
+    <Item Type="Consumable" Stack="10" Name="Sterilex" ID="classes.Items.Miscellaneous::Sterilex" />
+    <Item Type="Consumable" Stack="1" Name="S.Egg" ID="classes.Items.Miscellaneous::StrangeEgg" />
+    <Item Type="Consumable" Stack="10" Name="SynthSap" ID="classes.Items.Miscellaneous::SynthSap" />
+    <Item Type="Consumable" Stack="10" Name="Human T." ID="classes.Items.Miscellaneous::TerranTreats" />
+    <Item Type="Consumable" Stack="10" Name="HP Boost" ID="classes.Items.Miscellaneous::TestHPBooster" />
+    <Item Type="Consumable" Stack="20" Name="Throbb" ID="classes.Items.Miscellaneous::Throbb" />
+    <Item Type="Consumable" Stack="10" Name="Tittyblossom" ID="classes.Items.Miscellaneous::Tittyblossom" />
+    <Item Type="Consumable" Stack="10" Name="Treatment" ID="classes.Items.Miscellaneous::Treatment" />
+    <Item Type="Consumable" Stack="10" Name="UthraSap" ID="classes.Items.Miscellaneous::UthraSap" />
+    <Item Type="Consumable" Stack="10" Name="VenusPod" ID="classes.Items.Miscellaneous::VenusPod" />
+    <Item Type="Consumable" Stack="10" Name="ZilHoney" ID="classes.Items.Miscellaneous::ZilHoney" />
+    <Item Type="Consumable" Stack="10" Name="ZilRation" ID="classes.Items.Miscellaneous::ZilRation" />
+    <Item Type="Consumable" Stack="10" Name="P.Saliva" ID="classes.Items.Recovery::PexigaSaliva" />
+    <Item Type="Consumable" Stack="5" Name="S.Boost M2" ID="classes.Items.Recovery::ShieldBoosterMkII" />
+    <Item Type="Consumable" Stack="1" Name="H.Bubble" ID="classes.Items.Toys.Bubbles::HugeCumBubble" />
+    <Item Type="Consumable" Stack="5" Name="L.Bubble" ID="classes.Items.Toys.Bubbles::LargeCumBubble" />
+    <Item Type="Consumable" Stack="10" Name="M.Bubble" ID="classes.Items.Toys.Bubbles::MediumCumBubble" />
+    <Item Type="Consumable" Stack="20" Name="S.Bubble" ID="classes.Items.Toys.Bubbles::SmallCumBubble" />
+    <Item Type="Consumable" Stack="5" Name="BGreenPot" ID="classes.Items.Transformatives::BigGreenPotion" />
+    <Item Type="Consumable" Stack="10" Name="Bovinium" ID="classes.Items.Transformatives::Bovinium" />
+    <Item Type="Consumable" Stack="10" Name="BumpyRd." ID="classes.Items.Transformatives::BumpyRoad" />
+    <Item Type="Consumable" Stack="10" Name="Catnip" ID="classes.Items.Transformatives::Catnip" />
+    <Item Type="Consumable" Stack="10" Name="ClearYu" ID="classes.Items.Transformatives::ClearYu" />
+    <Item Type="Consumable" Stack="10" Name="Clippex" ID="classes.Items.Transformatives::Clippex" />
+    <Item Type="Consumable" Stack="10" Name="Dong D." ID="classes.Items.Transformatives::DongDesigner" />
+    <Item Type="Consumable" Stack="10" Name="Dove Balm" ID="classes.Items.Transformatives::DoveBalm" />
+    <Item Type="Consumable" Stack="24" Name="Lg.BluEgg" ID="classes.Items.Transformatives::EggBlueLarge" />
+    <Item Type="Consumable" Stack="24" Name="Sm.BluEgg" ID="classes.Items.Transformatives::EggBlueSmall" />
+    <Item Type="Consumable" Stack="24" Name="Lg.PinkEgg" ID="classes.Items.Transformatives::EggPinkLarge" />
+    <Item Type="Consumable" Stack="24" Name="Sm.PinkEgg" ID="classes.Items.Transformatives::EggPinkSmall" />
+    <Item Type="Consumable" Stack="24" Name="Lg.WhtEgg" ID="classes.Items.Transformatives::EggWhiteLarge" />
+    <Item Type="Consumable" Stack="24" Name="Sm.WhtEgg" ID="classes.Items.Transformatives::EggWhiteSmall" />
+    <Item Type="Consumable" Stack="10" Name="GaloMax" ID="classes.Items.Transformatives::GaloMax" />
+    <Item Type="Consumable" Stack="10" Name="Goblinola" ID="classes.Items.Transformatives::Goblinola" />
+    <Item Type="Consumable" Stack="10" Name="Gold Pill" ID="classes.Items.Transformatives::GoldPill" />
+    <Item Type="Consumable" Stack="10" Name="BlueGB" ID="classes.Items.Transformatives::GooBallBlue" />
+    <Item Type="Consumable" Stack="10" Name="GreenGB" ID="classes.Items.Transformatives::GooBallGreen" />
+    <Item Type="Consumable" Stack="10" Name="Orng.GB" ID="classes.Items.Transformatives::GooBallOrange" />
+    <Item Type="Consumable" Stack="10" Name="Pink GB" ID="classes.Items.Transformatives::GooBallPink" />
+    <Item Type="Consumable" Stack="10" Name="Purp.GB" ID="classes.Items.Transformatives::GooBallPurple" />
+    <Item Type="Consumable" Stack="10" Name="Red GB" ID="classes.Items.Transformatives::GooBallRed" />
+    <Item Type="Consumable" Stack="10" Name="Yellow GB" ID="classes.Items.Transformatives::GooBallYellow" />
+    <Item Type="Consumable" Stack="10" Name="Gush" ID="classes.Items.Transformatives::Gush" />
+    <Item Type="Consumable" Stack="10" Name="H-izer" ID="classes.Items.Transformatives::Honeyizer" />
+    <Item Type="Consumable" Stack="10" Name="Hornitol" ID="classes.Items.Transformatives::Hornitol" />
+    <Item Type="Consumable" Stack="10" Name="HuskarTreat" ID="classes.Items.Transformatives::HuskarTreats" />
+    <Item Type="Consumable" Stack="10" Name="J.Trunk" ID="classes.Items.Transformatives::JunkTrunk" />
+    <Item Type="Consumable" Stack="10" Name="Kero.Ven." ID="classes.Items.Transformatives::KerokorasVenom" />
+    <Item Type="Consumable" Stack="10" Name="Lucifier" ID="classes.Items.Transformatives::Lucifier" />
+    <Item Type="Consumable" Stack="10" Name="ManUp" ID="classes.Items.Transformatives::ManUp" />
+    <Item Type="Consumable" Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
+    <Item Type="Consumable" Stack="10" Name="Nepeta" ID="classes.Items.Transformatives::Nepeta" />
+    <Item Type="Consumable" Stack="10" Name="N.Candy" ID="classes.Items.Transformatives::NyreanCandy" />
+    <Item Type="Consumable" Stack="10" Name="Orange P." ID="classes.Items.Transformatives::OrangePill" />
+    <Item Type="Consumable" Stack="10" Name="OvirAce" ID="classes.Items.Transformatives::OvirAce" />
+    <Item Type="Consumable" Stack="5" Name="Ovir+" ID="classes.Items.Transformatives::OvirPositive" />
+    <Item Type="Consumable" Stack="10" Name="RainbowG." ID="classes.Items.Transformatives::RainbowGaze" />
+    <Item Type="Consumable" Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
+    <Item Type="Consumable" Stack="10" Name="R.Made" ID="classes.Items.Transformatives::RubberMade" />
+    <Item Type="Consumable" Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
+    <Item Type="Consumable" Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
+    <Item Type="Consumable" Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
+    <Item Type="Consumable" Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
+    <Item Type="Consumable" Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCreamWhite" />
+    <Item Type="Consumable" Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
+    <Item Type="Gadget" Stack="10" Name="A.Cock" ID="classes.Items.Miscellaneous::ACock" />
+    <Item Type="Gadget" Stack="10" Name="A.D.Cock" ID="classes.Items.Miscellaneous::ADCock" />
+    <Item Type="Gadget" Stack="10" Name="A.H.Cock" ID="classes.Items.Miscellaneous::AHCock" />
+    <Item Type="Gadget" Stack="1" Name="ClimbKit" ID="classes.Items.Miscellaneous::ClimbingKit" />
+    <Item Type="Gadget" Stack="10" Name="Fish.Rod" ID="classes.Items.Miscellaneous::FishingRod" />
+    <Item Type="Gadget" Stack="1" Name="Hoverboard" ID="classes.Items.Miscellaneous::Hoverboard" />
+    <Item Type="Gadget" Stack="1" Name="M.Milker" ID="classes.Items.Miscellaneous::MagicMilker" />
+    <Item Type="Gadget" Stack="10" Name="MilkBag" ID="classes.Items.Miscellaneous::MilkBag" />
+    <Item Type="Gadget" Stack="10" Name="Silicone" ID="classes.Items.Miscellaneous::Silicone" />
+    <Item Type="Gadget" Stack="10" Name="JokeBook" ID="classes.Items.Miscellaneous::TarkusJokeBook" />
+    <Item Type="Gadget" Stack="1" Name="Varmint" ID="classes.Items.Miscellaneous::VarmintItem" />
+    <Item Type="Gadget" Stack="1" Name="B.Buddy" ID="classes.Items.Toys::BubbleBuddy" />
+    <Item Type="Gadget" Stack="1" Name="EggTrnr" ID="classes.Items.Toys::EggTrainer" />
+    <Item Type="Gadget" Stack="1" Name="G.Cuffs" ID="classes.Items.Toys::GravCuffs" />
+    <Item Type="Gadget" Stack="1" Name="H.Hole" ID="classes.Items.Toys::HoverHole" />
+    <Item Type="Gadget" Stack="1" Name="N.B.Hole" ID="classes.Items.Toys::NivasBionaHole" />
+    <Item Type="Gadget" Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
+    <Item Type="MeleeWeapon" Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
+    <Item Type="MeleeWeapon" Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Cutlass" ID="classes.Items.Melee::Cutlass" />
+    <Item Type="MeleeWeapon" Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" />
+    <Item Type="MeleeWeapon" Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" />
+    <Item Type="MeleeWeapon" Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" />
+    <Item Type="MeleeWeapon" Stack="1" Name="J.Hmmr." ID="classes.Items.Melee::Jolthammer" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Knife" ID="classes.Items.Melee::Knife" />
+    <Item Type="MeleeWeapon" Stack="1" Name="L.Saber" ID="classes.Items.Melee::LavaSaber" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Machete" ID="classes.Items.Melee::Machette" />
+    <Item Type="MeleeWeapon" Stack="1" Name="M.Pick" ID="classes.Items.Melee::MilitaryPick" />
+    <Item Type="MeleeWeapon" Stack="1" Name="N.Spear" ID="classes.Items.Melee::NyreanSpear" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Wrench" ID="classes.Items.Melee::RaskvelWrench" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Rock" ID="classes.Items.Melee::Rock" />
+    <Item Type="MeleeWeapon" Stack="1" Name="R.Hammer" ID="classes.Items.Melee::RocketHammer" />
+    <Item Type="MeleeWeapon" Stack="1" Name="ShockBlade" ID="classes.Items.Melee::ShockBlade" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Shortsword" ID="classes.Items.Melee::Shortsword" />
+    <Item Type="MeleeWeapon" Stack="1" Name="SurvAxe" ID="classes.Items.Melee::SurvivalAxe" />
+    <Item Type="MeleeWeapon" Stack="1" Name="T.Spear" ID="classes.Items.Melee::TaivrasSpear" />
+    <Item Type="MeleeWeapon" Stack="1" Name="V.Blade" ID="classes.Items.Melee::VampBlade" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Vanae Spear" ID="classes.Items.Melee::VanaeSpear" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
+    <Item Type="MeleeWeapon" Stack="1" Name="Whip" ID="classes.Items.Melee::Whip" />
+    <Item Type="RangerWeapon" Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
+    <Item Type="RangerWeapon" Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
+    <Item Type="RangerWeapon" Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BoltActionRifle" />
+    <Item Type="RangerWeapon" Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" />
+    <Item Type="RangerWeapon" Stack="1" Name="E.Handgun" ID="classes.Items.Guns::EagleHandgun" />
+    <Item Type="RangerWeapon" Stack="1" Name="Electrogun" ID="classes.Items.Guns::Electrogun" />
+    <Item Type="RangerWeapon" Stack="1" Name="E's Pistol" ID="classes.Items.Guns::EmmysSalamanderPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" />
+    <Item Type="RangerWeapon" Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" />
+    <Item Type="RangerWeapon" Stack="1" Name="FlareGun" ID="classes.Items.Guns::FlareGun" />
+    <Item Type="RangerWeapon" Stack="1" Name="Goovolver" ID="classes.Items.Guns::Goovolver" />
+    <Item Type="RangerWeapon" Stack="1" Name="Hammer C." ID="classes.Items.Guns::HammerCarbine" />
+    <Item Type="RangerWeapon" Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="Holdout H.P." ID="classes.Items.Guns::HoldoutHP" />
+    <Item Type="RangerWeapon" Stack="1" Name="Hld.Pistol" ID="classes.Items.Guns::HoldOutPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="H.Rifle" ID="classes.Items.Guns::HuntingRifle" />
+    <Item Type="RangerWeapon" Stack="1" Name="Khans AC." ID="classes.Items.Guns::KhansArcCaster" />
+    <Item Type="RangerWeapon" Stack="1" Name="Laser C." ID="classes.Items.Guns::LaserCarbine" />
+    <Item Type="RangerWeapon" Stack="1" Name="LaserPistol" ID="classes.Items.Guns::LaserPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="Mag.Pistol" ID="classes.Items.Guns::MagnumPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="Myr Bow" ID="classes.Items.Guns::MyrBow" />
+    <Item Type="RangerWeapon" Stack="1" Name="M.Rifle" ID="classes.Items.Guns::MyrRifle" />
+    <Item Type="RangerWeapon" Stack="1" Name="Nova Pstl." ID="classes.Items.Guns::NovaPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="Nova Rifle" ID="classes.Items.Guns::NovaRifle" />
+    <Item Type="RangerWeapon" Stack="1" Name="Plasma P." ID="classes.Items.Guns::PlasmaPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="P.Bow" ID="classes.Items.Guns::PrimitiveBow" />
+    <Item Type="RangerWeapon" Stack="1" Name="Royal Bow" ID="classes.Items.Guns::QueensBow" />
+    <Item Type="RangerWeapon" Stack="1" Name="Revolvr" ID="classes.Items.Guns::RudimentaryRevolver" />
+    <Item Type="RangerWeapon" Stack="1" Name="SalPistl" ID="classes.Items.Guns::SalamanderPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="SalRifle" ID="classes.Items.Guns::SalamanderRifle" />
+    <Item Type="RangerWeapon" Stack="1" Name="S.Pistol" ID="classes.Items.Guns::ScopedPistol" />
+    <Item Type="RangerWeapon" Stack="1" Name="SlutRay" ID="classes.Items.Guns::SlutRay" />
+    <Item Type="RangerWeapon" Stack="1" Name="A.SlutRay" ID="classes.Items.Guns::SlutRayAdvanced" />
+    <Item Type="RangerWeapon" Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" />
+    <Item Type="RangerWeapon" Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
+    <Item Type="RangerWeapon" Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
+    <Item Type="RangerWeapon" Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
+    <Item Type="RangerWeapon" Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
+    <Item Type="Shield" Stack="1" Name="AW Belt" ID="classes.Items.Protection::ArcticWarfareBelt" />
+    <Item Type="Shield" Stack="1" Name="BasicShld" ID="classes.Items.Protection::BasicShield" />
+    <Item Type="Shield" Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield" />
+    <Item Type="Shield" Stack="1" Name="Decent S." ID="classes.Items.Protection::DecentShield" />
+    <Item Type="Shield" Stack="1" Name="HeatBelt" ID="classes.Items.Protection::HeatBelt" />
+    <Item Type="Shield" Stack="1" Name="I.Shield" ID="classes.Items.Protection::ImprovisedShield" />
+    <Item Type="Shield" Stack="1" Name="E.Shield" ID="classes.Items.Protection::JoyCoEliteShield" />
+    <Item Type="Shield" Stack="1" Name="P.Shield" ID="classes.Items.Protection::JoyCoPremiumShield" />
+    <Item Type="Shield" Stack="1" Name="O.Aegis" ID="classes.Items.Protection::OzoneAegis" />
+    <Item Type="Shield" Stack="1" Name="Mark IIS" ID="classes.Items.Protection::ReaperArmamentsMarkIIShield" />
+    <Item Type="Shield" Stack="1" Name="Mark I.S." ID="classes.Items.Protection::ReaperArmamentsMarkIShield" />
+    <Item Type="Shield" Stack="1" Name="S.Shield" ID="classes.Items.Protection::SalamanderShield" />
+    <Item Type="Other" Stack="10" Name="EMP Gren." ID="classes.Items.Miscellaneous::EMPGrenade" />
+    <Item Type="Other" Stack="10" Name="Flashbang" ID="classes.Items.Miscellaneous::FlashGrenade" />
+    <Item Type="Other" Stack="10" Name="T.Gren" ID="classes.Items.Miscellaneous::TestGrenade" />
+    <Item Type="Other" Stack="2" Name="GemSack" ID="classes.Items.Miscellaneous::GemSatchel" />
+    <Item Type="Other" Stack="20" Name="Kirkite" ID="classes.Items.Miscellaneous::Kirkite" />
+    <Item Type="Other" Stack="20" Name="Picardine" ID="classes.Items.Miscellaneous::Picardine" />
+    <Item Type="Other" Stack="20" Name="Satyrite" ID="classes.Items.Miscellaneous::Satyrite" />
+    <Item Type="Other" Stack="1" Name="V.Bloom" ID="classes.Items.Miscellaneous::VenusBloom" />
   </Items>
 </TiTsEd>

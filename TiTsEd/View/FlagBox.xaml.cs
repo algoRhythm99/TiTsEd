@@ -19,12 +19,10 @@ namespace TiTsEd.View {
     /// </summary>
     public partial class FlagBox : ItemsControl {
         public FlagBox() {
-            InitializeComponent();
-
-            
+            InitializeComponent();   
         }
 
-        public IEnumerable ItemsSource {
+        public new IEnumerable ItemsSource {
             get { return base.ItemsSource; }
             set { base.ItemsSource = value; }
         }

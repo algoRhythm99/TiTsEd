@@ -14,39 +14,31 @@ using System.Windows.Media.Imaging;
 using TiTsEd.Model;
 using Microsoft.Win32;
 
-namespace TiTsEd.ViewModel
-{
-    public static class FileManagerVM
-    {
-        public static IEnumerable<IMenuVM> GetOpenMenus()
-        {
-            foreach (var dir in FileManager.GetDirectories())
-            {
+namespace TiTsEd.ViewModel {
+    public static class FileManagerVM {
+        public static IEnumerable<IMenuVM> GetOpenMenus() {
+            foreach (var dir in FileManager.GetDirectories()) {
                 yield return new SourceDirectoryVM(dir);
             }
             yield return new SourceDirectoryVM(FileManager.CreateBackupDirectory());
             yield return new ImportRootVM();
         }
 
-        public static IEnumerable<IMenuVM> GetSaveMenus()
-        {
-            foreach (var dir in FileManager.GetDirectories())
-            {
+        public static IEnumerable<IMenuVM> GetSaveMenus() {
+            foreach (var dir in FileManager.GetDirectories()) {
                 yield return new TargetDirectoryVM(dir);
             }
             yield return new ExportRootVM();
         }
     }
 
-    public interface IMenuBaseVM
-    {
+    public interface IMenuBaseVM {
         bool IsVisible { get; }
         bool HasSeparatorBefore { get; }
         IEnumerable<IMenuItemVM> Children { get; }
     }
 
-    public interface IMenuVM : IMenuBaseVM
-    {
+    public interface IMenuVM : IMenuBaseVM {
         String Label { get; }
         String ChildrenCount { get; }
         Visibility ChildrenCountVisibility { get; }
@@ -54,8 +46,7 @@ namespace TiTsEd.ViewModel
         void OnClick();
     }
 
-    public interface IMenuItemVM : IMenuBaseVM
-    {
+    public interface IMenuItemVM : IMenuBaseVM {
         string Path { get; }
         string Label { get; }
         string SubLabel { get; }
@@ -66,100 +57,79 @@ namespace TiTsEd.ViewModel
         void OnClick();
     }
 
-    public sealed class SourceDirectoryVM : IMenuVM
-    {
+    public sealed class SourceDirectoryVM : IMenuVM {
         readonly FlashDirectory _directory;
 
-        public SourceDirectoryVM(FlashDirectory directory)
-        {
+        public SourceDirectoryVM(FlashDirectory directory) {
             _directory = directory;
         }
 
-        public string Label
-        {
+        public string Label {
             get { return _directory.Name; }
         }
 
-        public IEnumerable<IMenuItemVM> Children
-        {
-            get
-            {
+        public IEnumerable<IMenuItemVM> Children {
+            get {
                 foreach (var file in _directory.Files) yield return new FileVM(file, _directory.Kind, true);
                 if (!String.IsNullOrEmpty(_directory.Path)) yield return new OpenDirectoryItemVM(_directory.Path);
             }
         }
 
-        public string ChildrenCount
-        {
+        public string ChildrenCount {
             get { return _directory.Files.Count.ToString(); }
         }
 
-        public Visibility ChildrenCountVisibility
-        {
+        public Visibility ChildrenCountVisibility {
             get { return Visibility.Visible; }
         }
 
-        public bool HasSeparatorBefore
-        {
+        public bool HasSeparatorBefore {
             get { return _directory.HasSeparatorBefore; }
         }
 
-        public bool IsVisible
-        {
+        public bool IsVisible {
             get { return _directory.Files.Count != 0; }
         }
 
-        public Brush Foreground
-        {
+        public Brush Foreground {
             get { return Brushes.Black; }
         }
 
-        public void OnClick()
-        {
+        public void OnClick() {
         }
     }
 
-    public sealed class TargetDirectoryVM : IMenuVM
-    {
+    public sealed class TargetDirectoryVM : IMenuVM {
         readonly FlashDirectory _directory;
 
-        public TargetDirectoryVM(FlashDirectory directory)
-        {
+        public TargetDirectoryVM(FlashDirectory directory) {
             _directory = directory;
         }
 
-        public string Label
-        {
+        public string Label {
             get { return _directory.Name; }
         }
 
-        public bool HasSeparatorBefore
-        {
+        public bool HasSeparatorBefore {
             get { return _directory.HasSeparatorBefore; }
         }
 
-        public bool IsVisible
-        {
+        public bool IsVisible {
             get { return _directory.Files.Count != 0 || !String.IsNullOrEmpty(_directory.Path); }
         }
 
-        public Brush Foreground
-        {
+        public Brush Foreground {
             get { return _directory.Files.Count == 0 ? Brushes.DarkGray : Brushes.Black; }
         }
 
-        public IEnumerable<IMenuItemVM> Children
-        {
-            get
-            {
-                if (_directory.Kind == DirectoryKind.External)
-                {
+        public IEnumerable<IMenuItemVM> Children {
+            get {
+                if (_directory.Kind == DirectoryKind.External) {
                     foreach (var file in _directory.Files) yield return new FileVM(file, _directory.Kind, false);
                     yield break;
                 }
 
-                if (_directory.Kind == DirectoryKind.Backup)
-                {
+                if (_directory.Kind == DirectoryKind.Backup) {
                     foreach (var file in _directory.Files) yield return new FileVM(file, _directory.Kind, false);
                     yield return new OpenDirectoryItemVM(_directory.Path); // Open directory
                     yield break;
@@ -169,16 +139,12 @@ namespace TiTsEd.ViewModel
                 if (String.IsNullOrEmpty(_directory.Path)) yield break;
 
                 // Return either a SaveTargetVM or a FileVM for every slot
-                for (int i = FileManager.SaveSlotsLowerBound; i <= FileManager.SaveSlotsUpperBoundByGame; i++)
-                {
+                for (int i = FileManager.SaveSlotsLowerBound; i <= FileManager.SaveSlotsUpperBoundByGame; i++) {
                     var name = "TiTs_" + i + ".sol";
                     var file = _directory.Files.FirstOrDefault(x => x.FilePath.EndsWith(name, StringComparison.InvariantCultureIgnoreCase));
-                    if (file != null)
-                    {
+                    if (file != null) {
                         yield return new FileVM(file, _directory.Kind, false);
-                    }
-                    else
-                    {
+                    } else {
                         var path = Path.Combine(_directory.Path, name);
                         var target = new SaveSlotVM { Label = "TiTs_" + i, Path = path };
                         yield return target;
@@ -190,60 +156,48 @@ namespace TiTsEd.ViewModel
             }
         }
 
-        public string ChildrenCount
-        {
+        public string ChildrenCount {
             get { return _directory.Files.Count.ToString(); }
         }
 
-        public Visibility ChildrenCountVisibility
-        {
+        public Visibility ChildrenCountVisibility {
             get { return Visibility.Visible; }
         }
 
-        public void OnClick()
-        {
+        public void OnClick() {
         }
     }
 
-    public sealed class ImportRootVM : IMenuVM
-    {
-        public string Label
-        {
+    public sealed class ImportRootVM : IMenuVM {
+        public string Label {
             get { return "Import…"; }
         }
 
-        public IEnumerable<IMenuItemVM> Children
-        {
+        public IEnumerable<IMenuItemVM> Children {
             get { yield break; }
         }
 
-        public string ChildrenCount
-        {
+        public string ChildrenCount {
             get { return ""; }
         }
 
-        public Visibility ChildrenCountVisibility
-        {
+        public Visibility ChildrenCountVisibility {
             get { return Visibility.Collapsed; }
         }
 
-        public bool HasSeparatorBefore
-        {
+        public bool HasSeparatorBefore {
             get { return false; }
         }
 
-        public bool IsVisible
-        {
+        public bool IsVisible {
             get { return true; }
         }
 
-        public Brush Foreground
-        {
+        public Brush Foreground {
             get { return Brushes.Black; }
         }
 
-        public void OnClick()
-        {
+        public void OnClick() {
             var dlg = new OpenFileDialog();
             dlg.Filter = "\"Slot\" format|*.sol|\"Save to File\" format|*";
             dlg.DefaultExt = ".sol";
@@ -259,49 +213,39 @@ namespace TiTsEd.ViewModel
         }
     }
 
-    public sealed class ExportRootVM : IMenuVM
-    {
-        public ExportRootVM()
-        {
+    public sealed class ExportRootVM : IMenuVM {
+        public ExportRootVM() {
         }
 
-        public string Label
-        {
+        public string Label {
             get { return "Export…"; }
         }
 
-        public IEnumerable<IMenuItemVM> Children
-        {
+        public IEnumerable<IMenuItemVM> Children {
             get { yield break; }
         }
 
-        public string ChildrenCount
-        {
+        public string ChildrenCount {
             get { return ""; }
         }
 
-        public Visibility ChildrenCountVisibility
-        {
+        public Visibility ChildrenCountVisibility {
             get { return Visibility.Collapsed; }
         }
 
-        public bool HasSeparatorBefore
-        {
+        public bool HasSeparatorBefore {
             get { return false; }
         }
 
-        public bool IsVisible
-        {
+        public bool IsVisible {
             get { return true; }
         }
 
-        public Brush Foreground
-        {
+        public Brush Foreground {
             get { return Brushes.Black; }
         }
 
-        public void OnClick()
-        {
+        public void OnClick() {
             var dlg = new SaveFileDialog();
             dlg.Filter = "\"Slot\" format (.sol)|*.sol|\"Save to File\" format|*";
             dlg.AddExtension = true;
@@ -319,50 +263,40 @@ namespace TiTsEd.ViewModel
         }
     }
 
-    public class FileVM : IMenuItemVM
-    {
+    public class FileVM : IMenuItemVM {
         readonly DirectoryKind _directoryKind;
         readonly bool _openOnClick;
 
-        public FileVM(AmfFile source, DirectoryKind directoryKind, bool openOnClick)
-        {
+        public FileVM(AmfFile source, DirectoryKind directoryKind, bool openOnClick) {
             Source = source;
             _openOnClick = openOnClick;
             _directoryKind = directoryKind;
         }
 
-        public AmfFile Source
-        {
+        public AmfFile Source {
             get;
             private set;
         }
 
-        public bool IsVisible
-        {
+        public bool IsVisible {
             get { return true; }
         }
 
-        public bool HasSeparatorBefore
-        {
+        public bool HasSeparatorBefore {
             get { return false; }
         }
 
-        public IEnumerable<IMenuItemVM> Children
-        {
+        public IEnumerable<IMenuItemVM> Children {
             get { yield break; }
         }
 
-        public string Path
-        {
+        public string Path {
             get { return Source.FilePath; }
         }
 
-        public string Label
-        {
-            get
-            {
-                switch (_directoryKind)
-                {
+        public string Label {
+            get {
+                switch (_directoryKind) {
                     case DirectoryKind.External: return System.IO.Path.GetFileNameWithoutExtension(Source.FilePath);
                     case DirectoryKind.Regular: return Source.Name;
                     case DirectoryKind.Backup: return Source.Name + " - " + Source.Date.ToString();
@@ -371,15 +305,13 @@ namespace TiTsEd.ViewModel
             }
         }
 
-        public string SubLabel
-        {
+        public string SubLabel {
             get {
                 return Source["saveName"] + " - " + Source["playerGender"] + " - " + Source["daysPassed"] + " days" + " - " + Elapsed();
             }
         }
 
-        string Elapsed()
-        {
+        string Elapsed() {
             var elapsed = DateTime.Now - Source.Date;
             if (elapsed.TotalDays > 1) return (int)elapsed.TotalDays + " days ago";
             if (elapsed.TotalHours > 1) return (int)elapsed.TotalHours + " hours ago";
@@ -387,20 +319,16 @@ namespace TiTsEd.ViewModel
             return "1 minute ago";
         }
 
-        public Brush Foreground
-        {
+        public Brush Foreground {
             get { return Brushes.Black; }
         }
 
-        public Visibility SubLabelVisibility
-        {
+        public Visibility SubLabelVisibility {
             get { return Visibility.Visible; }
         }
 
-        public Image Icon
-        {
-            get
-            {
+        public Image Icon {
+            get {
                 if (Source.Error == null) return null;
 
                 BitmapImage bmp = new BitmapImage();
@@ -414,124 +342,100 @@ namespace TiTsEd.ViewModel
             }
         }
 
-        public void OnClick()
-        {
+        public void OnClick() {
             if (_openOnClick) VM.Instance.Load(Source.FilePath, SerializationFormat.Slot, createBackup: _directoryKind != DirectoryKind.Backup);
             else VM.Instance.Save(Source.FilePath, Source.Format);
         }
     }
 
-    public class SaveSlotVM : IMenuItemVM
-    {
-        public string Path
-        {
+    public class SaveSlotVM : IMenuItemVM {
+        public string Path {
             get;
             set;
         }
 
-        public string Label
-        {
+        public string Label {
             get;
             set;
         }
 
-        public string SubLabel
-        {
+        public string SubLabel {
             get;
             set;
         }
 
-        public bool IsVisible
-        {
+        public bool IsVisible {
             get { return true; }
         }
 
-        public bool HasSeparatorBefore
-        {
+        public bool HasSeparatorBefore {
             get { return false; }
         }
 
-        public IEnumerable<IMenuItemVM> Children
-        {
+        public IEnumerable<IMenuItemVM> Children {
             get { yield break; }
         }
 
-        public Image Icon
-        {
+        public Image Icon {
             get { return null; }
         }
 
-        public Brush Foreground
-        {
+        public Brush Foreground {
             get { return Brushes.DarkGray; }
         }
 
-        public Visibility SubLabelVisibility
-        {
+        public Visibility SubLabelVisibility {
             get { return Visibility.Collapsed; }
         }
 
-        void IMenuItemVM.OnClick()
-        {
+        void IMenuItemVM.OnClick() {
             VM.Instance.Save(Path, SerializationFormat.Slot);
         }
     }
 
-    public sealed class OpenDirectoryItemVM : IMenuItemVM
-    {
-        public OpenDirectoryItemVM(string path)
-        {
+    public sealed class OpenDirectoryItemVM : IMenuItemVM {
+        public OpenDirectoryItemVM(string path) {
             Path = path;
         }
 
-        public string Path
-        {
+        public string Path {
             get;
             set;
         }
 
-        public string Label
-        {
+        public string Label {
             get { return "Open directory…"; }
         }
 
-        public string SubLabel
-        {
+        public string SubLabel {
             get { return null; }
         }
 
-        public bool IsVisible
-        {
+        public bool IsVisible {
             get { return true; }
         }
 
-        public bool HasSeparatorBefore
-        {
+        public bool HasSeparatorBefore {
             get { return true; }
         }
 
-        public IEnumerable<IMenuItemVM> Children
-        {
+        public IEnumerable<IMenuItemVM> Children {
             get { yield break; }
         }
 
-        public Image Icon
-        {
+        public Image Icon {
             get { return null; }
         }
 
-        public Brush Foreground
-        {
+        public Brush Foreground {
             get { return Brushes.Black; }
         }
 
-        public Visibility SubLabelVisibility
-        {
+        public Visibility SubLabelVisibility {
             get { return Visibility.Collapsed; }
         }
 
-        void IMenuItemVM.OnClick()
-        {
+        void IMenuItemVM.OnClick() {
             Process.Start(Path);
         }
     }

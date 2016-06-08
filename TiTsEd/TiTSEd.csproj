@@ -41,6 +41,9 @@
   <PropertyGroup>
     <StartupObject>TiTsEd.App</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>titsed.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -76,6 +79,7 @@
     <Compile Include="ViewModel\BreastsVM.cs" />
     <Compile Include="ViewModel\CharacterVM.cs" />
     <Compile Include="ViewModel\CockVM.cs" />
+    <Compile Include="ViewModel\ItemVM.cs" />
     <Compile Include="ViewModel\VaginaVM.cs" />
     <Compile Include="ViewModel\FilesVM.cs" />
     <Compile Include="Common\UpdatableCollection.cs" />
@@ -116,6 +120,9 @@
     </Compile>
     <Compile Include="View\GeneralPage.xaml.cs">
       <DependentUpon>GeneralPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ItemsPage.xaml.cs">
+      <DependentUpon>ItemsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TopBar.xaml.cs">
       <DependentUpon>TopBar.xaml</DependentUpon>
@@ -176,6 +183,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ItemsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\TopBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -190,6 +201,7 @@
   <ItemGroup>
     <Resource Include="Assets\cross.png" />
     <Resource Include="Assets\search.png" />
+    <Resource Include="titsed.ico" />
     <Content Include="TiTsEd.license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

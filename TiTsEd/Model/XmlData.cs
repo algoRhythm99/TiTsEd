@@ -32,7 +32,7 @@ namespace TiTsEd.Model {
                 var path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
                 path = Path.Combine(path, xmlFile);
 
-                using(var stream = File.OpenRead(path)) {
+                using (var stream = File.OpenRead(path)) {
                     XmlSerializer s = new XmlSerializer(typeof(XmlDataSet));
                     var fileData = s.Deserialize(stream) as XmlDataSet;
 
@@ -43,15 +43,15 @@ namespace TiTsEd.Model {
                     //fileData.ItemGroups.Add(unknownItems);
 
                     _files.Add(xmlFile, fileData);
-                    if(_files.Count == 1) Select(xmlFile);
+                    if (_files.Count == 1) Select(xmlFile);
 
                     return XmlLoadingResult.Success;
                 }
-            } catch(UnauthorizedAccessException) {
+            } catch (UnauthorizedAccessException) {
                 return XmlLoadingResult.NoPermission;
-            } catch(SecurityException) {
+            } catch (SecurityException) {
                 return XmlLoadingResult.NoPermission;
-            } catch(FileNotFoundException) {
+            } catch (FileNotFoundException) {
                 return XmlLoadingResult.MissingFile;
             }
         }
@@ -98,8 +98,8 @@ namespace TiTsEd.Model {
         [XmlElement("Body")]
         public XmlBodySet Body { get; set; }
 
-        [XmlElement("Items")]
-        public XmlItemSet Items { get; set; }
+        [XmlArray("Items"), XmlArrayItem("Item")]
+        public XmlItem[] Items { get; set; }
 
     }
 
@@ -221,41 +221,6 @@ namespace TiTsEd.Model {
 
     }
 
-    public sealed class XmlItemSet {
-        [XmlArray("Accessory"), XmlArrayItem("Item")]
-        public XmlItem[] Accessory { get; set; }
-
-        [XmlArray("Clothing"), XmlArrayItem("Item")]
-        public XmlItem[] Clothing { get; set; }
-
-        [XmlArray("Armor"), XmlArrayItem("Item")]
-        public XmlItem[] Armor { get; set; }
-
-        [XmlArray("UpperUndergarment"), XmlArrayItem("Item")]
-        public XmlItem[] UpperUndergarment { get; set; }
-
-        [XmlArray("LowerUndergarment"), XmlArrayItem("Item")]
-        public XmlItem[] LowerUndergarment { get; set; }
-
-        [XmlArray("Edible"), XmlArrayItem("Item")]
-        public XmlItem[] Edible { get; set; }
-
-        [XmlArray("Gadget"), XmlArrayItem("Item")]
-        public XmlItem[] Gadget { get; set; }
-
-        [XmlArray("MeleeWeapon"), XmlArrayItem("Item")]
-        public XmlItem[] MeleeWeapon { get; set; }
-
-        [XmlArray("RangedWeapon"), XmlArrayItem("Item")]
-        public XmlItem[] RangedWeapon { get; set; }
-
-        [XmlArray("Shield"), XmlArrayItem("Item")]
-        public XmlItem[] Shield { get; set; }
-
-        [XmlArray("Misc"), XmlArrayItem("Item")]
-        public XmlItem[] Misc { get; set; }
-    }
-
     public sealed class XmlEnum {
         [XmlAttribute]
         public int ID { get; set; }
@@ -272,16 +237,47 @@ namespace TiTsEd.Model {
     }
 
     public sealed class XmlItem {
+        public static XmlItem Empty = new XmlItem("classes.Items.Miscellaneous::EmptySlot", "<empty>", "Other", 0);
+
         [XmlAttribute]
         public string ID { get; set; }
         [XmlAttribute]
         public string Name { get; set; }
         [XmlAttribute]
+        public string Type { get; set; }
+        [XmlAttribute]
         public int Stack { get; set; }
+
+        public XmlItem() { }
+
+        public XmlItem(string id, string name, string type, int stack) {
+            ID = id;
+            Name = name;
+            Type = type;
+            Stack = stack;
+        }
 
         public override string ToString() {
             return Name;
         }
+    }
+
+    [Flags]
+    public enum ItemCategories {
+        Other = 1,
+        MeleeWeapon = 2,
+        RangedWeapon = 4,
+        Clothing = 8,
+        Armor = 8,
+        Shield = 16,
+        UpperUndergarment = 32,
+        LowerUndergarment = 64,
+        Accessory = 128,
+        Consumable = 256,
+        Gadget = 512,
+        All = Other | MeleeWeapon | RangedWeapon | Armor |
+            Clothing | Shield | UpperUndergarment | LowerUndergarment |
+            Accessory | Consumable | Gadget,
     }
 
     public sealed class XmlName {
