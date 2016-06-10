@@ -257,6 +257,32 @@ namespace TiTsEd.Model {
             Stack = stack;
         }
 
+        public string LongName {
+            get {
+                StringBuilder buf = new StringBuilder();
+                var className = ID.Substring(ID.LastIndexOf(':') + 1);
+                bool lastUpper = false;
+                char lastChr = '\0';
+                foreach (var chr in className) {
+                    if (Char.IsUpper(chr)) {
+                        if (lastUpper) {
+                            buf.Append('.');
+                        } else if (lastChr != 'I' || chr != 'I') {
+                            buf.Append(' ');
+                        }
+                        if (chr != 'I') {
+                            lastUpper = true;
+                        }
+                    } else {
+                        lastUpper = false;
+                    }
+                    buf.Append(chr);
+                    lastChr = chr;
+                }
+                return buf.ToString();
+            }
+        }
+
         public override string ToString() {
             return Name;
         }

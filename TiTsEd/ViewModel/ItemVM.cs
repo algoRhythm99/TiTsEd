@@ -46,7 +46,7 @@ namespace TiTsEd.ViewModel {
 
     public sealed class ItemSlotVM : ObjectVM {
         private readonly CharacterVM _character;
-        private XmlItem _type;
+        private XmlItem _xml;
 
         public ItemSlotVM(CharacterVM character, AmfObject obj, ItemCategories categories)
             : base(obj) {
@@ -55,10 +55,10 @@ namespace TiTsEd.ViewModel {
 
             //find the xml definition for this slot type
             var id = GetString("classInstance");
-            _type = XmlItem.Empty;
+            _xml = XmlItem.Empty;
             foreach (XmlItem item in XmlData.Current.Items) {
                 if (item.ID == id) {
-                    _type = item;
+                    _xml = item;
                     break;
                 }
             }
@@ -96,7 +96,7 @@ namespace TiTsEd.ViewModel {
 
         public int MaxQuantity {
             get {
-                return _type.Stack;
+                return _xml.Stack;
             }
         }
 
@@ -116,26 +116,27 @@ namespace TiTsEd.ViewModel {
 
         public string TypeID {
             get {
-                return _type.ID;
+                return _xml.ID;
             }
             set {
-                _type = XmlItem.Empty;
+                var oldTypeId = _xml.ID;
+                _xml = XmlItem.Empty;
                 foreach (XmlItem item in XmlData.Current.Items) {
                     if (item.ID == value) {
-                        _type = item;
+                        _xml = item;
                         break;
                     }
                 }
 
                 //update data
-                SetValue("classInstance", _type.ID);
-                SetValue("shortName", _type.Name);
+                SetValue("classInstance", _xml.ID);
+                SetValue("shortName", _xml.Name);
                 SetValue("version", 1);
 
                 if (Quantity > MaxQuantity) {
                     Quantity = MaxQuantity;
                 }
-                if (_type != XmlItem.Empty && Quantity < 1) {
+                if (_xml != XmlItem.Empty && Quantity < 1) {
                     Quantity = 1;
                 }
 
@@ -150,14 +151,21 @@ namespace TiTsEd.ViewModel {
                 OnPropertyChanged("QuantityDescription");
                 OnPropertyChanged("MaxQuantity");
 
-                _character.CleanupInventory();
-                _character.UpdateInventory();
+                //check if we have to reflow the inventory
+                if (oldTypeId == XmlItem.Empty.ID
+                || _xml.ID == XmlItem.Empty.ID) {
+                    _character.CleanupInventory();
+                    _character.UpdateInventory();
+                }
             }
         }
 
         public string TypeDescription {
             get {
-                return GetString("shortName");
+                if (_xml == XmlItem.Empty) {
+                    return _xml.Name;
+                }
+                return _xml.LongName;
             }
         }
 
@@ -182,6 +190,11 @@ namespace TiTsEd.ViewModel {
                     items.Add(new ItemVM(slot, xml));
                 }
             }
+
+            //sort items
+            items.Sort((a, b) => {
+                return a.Name.CompareTo(b.Name);
+            });
 
             Items = new UpdatableCollection<ItemVM>(items);
         }
@@ -221,9 +234,9 @@ namespace TiTsEd.ViewModel {
         public string Name {
             get {
                 if (ToolTip == null) {
-                    return _xml.Name;
+                    return _xml.LongName;
                 }
-                return _xml.Name + "\u202F*";
+                return _xml.LongName + "\u202F*";
             }
         }
 

@@ -169,8 +169,9 @@
                 <common:SearchBox Grid.Column="2" Text="{Binding Game.ItemSearchText}"/>
             </Grid>
 
-            <TreeView Grid.Row="1" ItemContainerStyle="{StaticResource RightGroupStyle}" Margin="30,30,0,0" Padding="0" BorderThickness="0" 
-                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible"
+            <TreeView Grid.Row="1" ItemContainerStyle="{StaticResource RightGroupStyle}" Margin="30,30,0,0"
+                      Padding="0" BorderThickness="0"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible" SelectedItemChanged="rightTree_SelectedItemChanged" 
                       ItemsSource="{Binding Path=SelectedItem.AllGroups, ElementName=leftTree}"/>
         </Grid>
     </Grid>
