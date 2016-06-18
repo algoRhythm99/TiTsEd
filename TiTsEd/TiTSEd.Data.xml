@@ -358,6 +358,7 @@
 			<HornType ID="2" Name="Bovine" />
 			<HornType ID="11" Name="Draconic" />
 			<HornType ID="12" Name="Lizan" />
+			<HornType ID="15" Name="Demonic" />
 			<HornType ID="21" Name="Deer" />
 			<HornType ID="50" Name="Goat" />
 			<HornType ID="62" Name="Rhino" />
@@ -968,44 +969,44 @@
 		<Item Type="MeleeWeapon" Stack="1" Name="Vanae Spear" ID="classes.Items.Melee::VanaeSpear" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Whip" ID="classes.Items.Melee::Whip" />
-		<Item Type="RangerWeapon" Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
-		<Item Type="RangerWeapon" Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
-		<Item Type="RangerWeapon" Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BoltActionRifle" />
-		<Item Type="RangerWeapon" Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" />
-		<Item Type="RangerWeapon" Stack="1" Name="E.Handgun" ID="classes.Items.Guns::EagleHandgun" />
-		<Item Type="RangerWeapon" Stack="1" Name="Electrogun" ID="classes.Items.Guns::Electrogun" />
-		<Item Type="RangerWeapon" Stack="1" Name="E's Pistol" ID="classes.Items.Guns::EmmysSalamanderPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" />
-		<Item Type="RangerWeapon" Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" />
-		<Item Type="RangerWeapon" Stack="1" Name="FlareGun" ID="classes.Items.Guns::FlareGun" />
-		<Item Type="RangerWeapon" Stack="1" Name="Goovolver" ID="classes.Items.Guns::Goovolver" />
-		<Item Type="RangerWeapon" Stack="1" Name="Hammer C." ID="classes.Items.Guns::HammerCarbine" />
-		<Item Type="RangerWeapon" Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="Holdout H.P." ID="classes.Items.Guns::HoldoutHP" />
-		<Item Type="RangerWeapon" Stack="1" Name="Hld.Pistol" ID="classes.Items.Guns::HoldOutPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="H.Rifle" ID="classes.Items.Guns::HuntingRifle" />
-		<Item Type="RangerWeapon" Stack="1" Name="Khans AC." ID="classes.Items.Guns::KhansArcCaster" />
-		<Item Type="RangerWeapon" Stack="1" Name="Laser C." ID="classes.Items.Guns::LaserCarbine" />
-		<Item Type="RangerWeapon" Stack="1" Name="LaserPistol" ID="classes.Items.Guns::LaserPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="Mag.Pistol" ID="classes.Items.Guns::MagnumPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="Myr Bow" ID="classes.Items.Guns::MyrBow" />
-		<Item Type="RangerWeapon" Stack="1" Name="M.Rifle" ID="classes.Items.Guns::MyrRifle" />
-		<Item Type="RangerWeapon" Stack="1" Name="Nova Pstl." ID="classes.Items.Guns::NovaPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="Nova Rifle" ID="classes.Items.Guns::NovaRifle" />
-		<Item Type="RangerWeapon" Stack="1" Name="Plasma P." ID="classes.Items.Guns::PlasmaPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="P.Bow" ID="classes.Items.Guns::PrimitiveBow" />
-		<Item Type="RangerWeapon" Stack="1" Name="Royal Bow" ID="classes.Items.Guns::QueensBow" />
-		<Item Type="RangerWeapon" Stack="1" Name="Revolvr" ID="classes.Items.Guns::RudimentaryRevolver" />
-		<Item Type="RangerWeapon" Stack="1" Name="SalPistl" ID="classes.Items.Guns::SalamanderPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="SalRifle" ID="classes.Items.Guns::SalamanderRifle" />
-		<Item Type="RangerWeapon" Stack="1" Name="S.Pistol" ID="classes.Items.Guns::ScopedPistol" />
-		<Item Type="RangerWeapon" Stack="1" Name="SlutRay" ID="classes.Items.Guns::SlutRay" />
-		<Item Type="RangerWeapon" Stack="1" Name="A.SlutRay" ID="classes.Items.Guns::SlutRayAdvanced" />
-		<Item Type="RangerWeapon" Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" />
-		<Item Type="RangerWeapon" Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
-		<Item Type="RangerWeapon" Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
-		<Item Type="RangerWeapon" Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
-		<Item Type="RangerWeapon" Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
+		<Item Type="RangedWeapon" Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
+		<Item Type="RangedWeapon" Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BoltActionRifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" />
+		<Item Type="RangedWeapon" Stack="1" Name="E.Handgun" ID="classes.Items.Guns::EagleHandgun" />
+		<Item Type="RangedWeapon" Stack="1" Name="Electrogun" ID="classes.Items.Guns::Electrogun" />
+		<Item Type="RangedWeapon" Stack="1" Name="E's Pistol" ID="classes.Items.Guns::EmmysSalamanderPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" />
+		<Item Type="RangedWeapon" Stack="1" Name="FlareGun" ID="classes.Items.Guns::FlareGun" />
+		<Item Type="RangedWeapon" Stack="1" Name="Goovolver" ID="classes.Items.Guns::Goovolver" />
+		<Item Type="RangedWeapon" Stack="1" Name="Hammer C." ID="classes.Items.Guns::HammerCarbine" />
+		<Item Type="RangedWeapon" Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="Holdout H.P." ID="classes.Items.Guns::HoldoutHP" />
+		<Item Type="RangedWeapon" Stack="1" Name="Hld.Pistol" ID="classes.Items.Guns::HoldOutPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="H.Rifle" ID="classes.Items.Guns::HuntingRifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="Khans AC." ID="classes.Items.Guns::KhansArcCaster" />
+		<Item Type="RangedWeapon" Stack="1" Name="Laser C." ID="classes.Items.Guns::LaserCarbine" />
+		<Item Type="RangedWeapon" Stack="1" Name="LaserPistol" ID="classes.Items.Guns::LaserPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="Mag.Pistol" ID="classes.Items.Guns::MagnumPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="Myr Bow" ID="classes.Items.Guns::MyrBow" />
+		<Item Type="RangedWeapon" Stack="1" Name="M.Rifle" ID="classes.Items.Guns::MyrRifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="Nova Pstl." ID="classes.Items.Guns::NovaPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="Nova Rifle" ID="classes.Items.Guns::NovaRifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="Plasma P." ID="classes.Items.Guns::PlasmaPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="P.Bow" ID="classes.Items.Guns::PrimitiveBow" />
+		<Item Type="RangedWeapon" Stack="1" Name="Royal Bow" ID="classes.Items.Guns::QueensBow" />
+		<Item Type="RangedWeapon" Stack="1" Name="Revolvr" ID="classes.Items.Guns::RudimentaryRevolver" />
+		<Item Type="RangedWeapon" Stack="1" Name="SalPistl" ID="classes.Items.Guns::SalamanderPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="SalRifle" ID="classes.Items.Guns::SalamanderRifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="S.Pistol" ID="classes.Items.Guns::ScopedPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="SlutRay" ID="classes.Items.Guns::SlutRay" />
+		<Item Type="RangedWeapon" Stack="1" Name="A.SlutRay" ID="classes.Items.Guns::SlutRayAdvanced" />
+		<Item Type="RangedWeapon" Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" />
+		<Item Type="RangedWeapon" Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
+		<Item Type="RangedWeapon" Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
+		<Item Type="RangedWeapon" Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
+		<Item Type="RangedWeapon" Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
 		<Item Type="Shield" Stack="1" Name="AW Belt" ID="classes.Items.Protection::ArcticWarfareBelt" />
 		<Item Type="Shield" Stack="1" Name="BasicShld" ID="classes.Items.Protection::BasicShield" />
 		<Item Type="Shield" Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield" />
