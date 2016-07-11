@@ -41,13 +41,13 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.HairLength}" Unit="inches"/>
 
                     <TextBlock              Text="Hair Color"/>
-                    <ComboBox Text="{Binding Game.Character.HairColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox Text="{Binding Game.Character.HairColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}" />
 
                     <TextBlock              Text="Hair Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.HairType}" ItemsSource="{Binding Data.Body.HairTypes}"/>
 
                     <TextBlock              Text="Hair Style"/>
-                    <ComboBox Text="{Binding Game.Character.HairStyle}" ItemsSource="{Binding Data.Body.HairStyles}"/>
+                    <ComboBox Text="{Binding Game.Character.HairStyle}" ItemsSource="{Binding Data.Body.HairStyles}" Style="{StaticResource EditableTextBox}" />
 
                     <TextBlock              Text="Ear Length"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.EarLength}" IsEnabled="{Binding Game.Character.EarLengthEnabled}" />
@@ -65,7 +65,7 @@
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.HornType}" ItemsSource="{Binding Data.Body.HornTypes}"/>
                     
                     <TextBlock              Text="Horn Count"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.HornCount}" Max="2" Upper="2" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.HornCount}" Max="8" Upper="8" />
 
                     <TextBlock              Text="Horn Length"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.HornLength}" Max="30" Upper="30" Unit="inches" />

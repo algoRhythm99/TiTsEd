@@ -41,6 +41,16 @@
         <Setter Property="Width" Value="150"/>
     </Style>
 
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{StaticResource NumericBorderBrush}" />
+        <Setter Property="Margin" Value="8,4,8,4" />
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Padding" Value="3,0" />
+    </Style>
+
     <Style x:Key="EditableTextBox" TargetType="{x:Type ComboBox}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="IsTextSearchCaseSensitive" Value="False"/>
@@ -49,6 +59,8 @@
         <Setter Property="Margin" Value="8,3,0,3"/>
         <Setter Property="Width" Value="150"/>
     </Style>
+
     
+
 
 </ResourceDictionary>

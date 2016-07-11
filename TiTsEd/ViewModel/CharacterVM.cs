@@ -16,6 +16,7 @@ namespace TiTsEd.ViewModel {
             Breasts = new BreastArrayVM(game, GetObj("breastRows"));
             Vaginas = new VaginaArrayVM(game, GetObj("vaginas"));
             Cocks = new CockArrayVM(game, GetObj("cocks"));
+            Ass = new VaginaVM(game, GetObj("ass"));
 
             var containers = new List<ItemContainerVM>();
             _inventory = new ItemContainerVM(this, "Inventory", ItemCategories.All);
@@ -35,6 +36,25 @@ namespace TiTsEd.ViewModel {
         public BreastArrayVM Breasts { get; private set; }
         public VaginaArrayVM Vaginas { get; private set; }
         public CockArrayVM Cocks { get; private set; }
+        public VaginaVM Ass { get; private set; }
+
+        public string GenderId {
+            get {
+                var gender = "N";
+                if (Vaginas.Count > 0 && Cocks.Count > 0) {
+                    gender = "H";
+                } else if (Cocks.Count > 0 && Feminity >= 50) {
+                    gender = "T";
+                } else if (Vaginas.Count > 0 && Feminity < 50) {
+                    gender = "C";
+                } else if (Cocks.Count > 0) {
+                    gender = "M";
+                } else if (Vaginas.Count > 0) {
+                    gender = "F";
+                }
+                return gender;
+            }
+        }
 
         #region GeneralPage
         public string Name {
@@ -118,8 +138,17 @@ namespace TiTsEd.ViewModel {
         }
 
         public int StatPoints {
-            get { return GetInt("unspentStatPoints"); }
-            set { SetValue("unspentStatPoints", value); }
+            get {
+                if (Game.IsPC) {
+                    return GetInt("unspentStatPoints");
+                }
+                return 0;
+            }
+            set {
+                if (Game.IsPC) {
+                    SetValue("unspentStatPoints", value);
+                }
+            }
         }
 
         public int XP {
@@ -266,8 +295,20 @@ namespace TiTsEd.ViewModel {
             set { SetValue("hairColor", value); }
         }
         public String HairStyle {
-            get { return GetString("hairStyle"); }
-            set { SetValue("hairStyle", value); }
+            get {
+                if (GetString("hairStyle") == "null") {
+                    return "";
+                }
+                return GetString("hairStyle");
+            }
+            set {
+                if (value == null || value.Length == 0) {
+                    SetValue("hairStyle", "null");
+                } else {
+                    SetValue("hairStyle", value);
+                }
+                
+            }
         }
         public int HairType {
             get { return GetInt("hairType"); }
@@ -536,6 +577,14 @@ namespace TiTsEd.ViewModel {
         public double ClitLength {
             get { return GetDouble("clitLength"); }
             set { SetValue("clitLength", value); }
+        }
+
+        public bool AnalVirgin {
+            get { return GetBool("analVirgin"); }
+            set {
+                SetValue("analVirgin", value);
+                Ass.Hymen = value;
+            }
         }
 
         public bool VaginalVirgin {

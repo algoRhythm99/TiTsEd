@@ -179,6 +179,13 @@ namespace TiTsEd.ViewModel {
         void MoveItemToIndex(int sourceIndex, int destIndex);
     }
 
+    public class GeneralObjectVM : ObjectVM {
+        public GeneralObjectVM(AmfObject obj)
+            : base(obj) {
+
+        }
+    }
+
     public abstract class ObjectVM : BindableBase {
         protected Dictionary<AmfObject, List<FlagItem>> flagData;
 
@@ -203,6 +210,10 @@ namespace TiTsEd.ViewModel {
 
         protected ObjectVM(AmfObject obj) {
             _obj = obj;
+        }
+
+        public bool HasValue(object key) {
+            return _obj.Contains(key);
         }
 
         public object GetValue(object key) {

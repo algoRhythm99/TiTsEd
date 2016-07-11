@@ -343,8 +343,11 @@ namespace TiTsEd.ViewModel {
         }
 
         public void OnClick() {
-            if (_openOnClick) VM.Instance.Load(Source.FilePath, SerializationFormat.Slot, createBackup: _directoryKind != DirectoryKind.Backup);
-            else VM.Instance.Save(Source.FilePath, Source.Format);
+            if (_openOnClick) {
+                VM.Instance.Load(Source.FilePath, SerializationFormat.Slot, createBackup: _directoryKind != DirectoryKind.Backup);
+            } else {
+                VM.Instance.Save(Source.FilePath, Source.Format);
+            }
         }
     }
 

@@ -32,15 +32,23 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding HasData}" Grid.Column="1" Grid.ColumnSpan="3" >
+                <TextBlock FontSize="12" Text="Character" Width="Auto" Margin="0,0,8,0" IsEnabled="{Binding HasData}" />
+                <ComboBox FontSize="12" Margin="0,0,8,0" IsEnabled="{Binding HasData}" Text="{Binding Game.CharacterSelection}" ItemsSource="{Binding Game.CharacterOptions}" />
+                <Button Content="Copy to PC" IsEnabled="{Binding Game.IsNotPC}" Click="CopyToPC_Clicked" />
+            </StackPanel>
+
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+
                 <common:AutoGrid>
                     <TextBlock              Text="Name" Width="Auto"/>
-                    <TextBox                Text="{Binding Game.Character.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="8,4,8,4" Width="150" HorizontalAlignment="Left"
-                                                BorderBrush="{StaticResource NumericBorderBrush}" Height="22" VerticalContentAlignment="Center" Padding="3,0"/>
+                    <TextBox                Text="{Binding Game.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                    <TextBlock              Text="Notes" Width="Auto"/>
-                    <TextBox                Text="{Binding Game.Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="8,4,8,4" Width="150" HorizontalAlignment="Left"
-                                                BorderBrush="{StaticResource NumericBorderBrush}" Height="22" VerticalContentAlignment="Center" Padding="3,0"/>
+                    <TextBlock              Text="E-Mail" Width="Auto" IsEnabled="{Binding Game.EmailEnabled}" />
+                    <TextBox                Text="{Binding Game.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Game.EmailEnabled}"  />
+
+                    <TextBlock              Text="Notes" Width="Auto" IsEnabled="{Binding Game.IsPC}" />
+                    <TextBox                Text="{Binding Game.Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Game.IsPC}"/>
 
                     <TextBlock              Text="Credits"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Credits}" Upper="900000" UpperLabel="900k"/>
@@ -67,11 +75,11 @@
                     <TextBlock              Text="XP"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.XP}" Upper="{Binding Game.Character.MaxXP}" UpperLabel="{Binding Game.Character.MaxXPLabel}" />
 
-                    <TextBlock              Text="Stat Points"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.StatPoints}"/>
+                    <TextBlock              Text="Stat Points" IsEnabled="{Binding Game.IsPC}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.StatPoints}" IsEnabled="{Binding Game.IsPC}" />
 
-                    <TextBlock              Text="Personality"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Personality}" Upper="100" Tip="{Binding Game.Character.PersonalityTip}" />
+                    <TextBlock              Text="Personality" IsEnabled="{Binding Game.IsPC}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Personality}" Upper="100" Tip="{Binding Game.Character.PersonalityTip}" IsEnabled="{Binding Game.IsPC}" />
                 </common:AutoGrid>
             </StackPanel>
 
@@ -107,10 +115,6 @@
 
                     <TextBlock              Text="Energy"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Energy}" Upper="{Binding Game.Character.MaxEnergy}"/>
-                </common:AutoGrid>
-                <common:AutoGrid Margin="0,30,0,0" IsEnabled="{Binding Game.Character.IsRevampMod}" Visibility="{Binding Game.Character.RevampModVisibility, FallbackValue={x:Static Visibility.Collapsed}}">
-                    <TextBlock              Text="Hunger"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Hunger}" Min="0" Max="100" Upper="100" Tip="{Binding Game.Character.HungerTip}"/>
                 </common:AutoGrid>
             </StackPanel>
 

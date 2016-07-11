@@ -57,13 +57,13 @@
             <TabItem Header="Genitals">
                 <view:GenitalPage Background="White"/>
             </TabItem>
-            <TabItem Header="Items">
+            <TabItem Header="Items" IsEnabled="{Binding Game.IsPC}">
                 <view:ItemsPage Background="White"/>
             </TabItem>
         </TabControl>
 
         <view:TopBar HorizontalAlignment="Stretch" Margin="0,7,5,0"/>
-
+        
         <TextBlock x:Name="versionLabel" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,43,18,0" Foreground="#A0A0A0" FontSize="12"/>
     </Grid>
 </Window>

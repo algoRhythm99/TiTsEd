@@ -269,6 +269,7 @@
 		<EyeTypes>
 			<EyeType ID="0" Name="Human" />
 			<EyeType ID="4" Name="Feline" />
+			<EyeType ID="5" Name="Vulpine" />
 			<EyeType ID="6" Name="Bee" />
 			<EyeType ID="7" Name="Arachnid" />
 			<EyeType ID="13" Name="Naga" />
@@ -321,6 +322,7 @@
 			<TongueType ID="2" Name="Bovine" />
 			<TongueType ID="3" Name="Canine" />
 			<TongueType ID="4" Name="Feline" />
+			<TongueType ID="5" Name="Vulpine" />
 			<TongueType ID="6" Name="Bee" />
 			<TongueType ID="9" Name="Lapine" />
 			<TongueType ID="11" Name="Draconic" />
@@ -386,6 +388,7 @@
 			<ArmType ID="1" Name="Equine" />
 			<ArmType ID="3" Name="Canine" />
 			<ArmType ID="4" Name="Feline" />
+			<ArmType ID="5" Name="Vulpine" />
 			<ArmType ID="6" Name="Bee" />
 			<ArmType ID="7" Name="Arachnid" />
 			<ArmType ID="8" Name="Drider" />
@@ -604,6 +607,7 @@
 			<CockType ID="1" Name="Equine" />
 			<CockType ID="3" Name="Canine" />
 			<CockType ID="4" Name="Feline" />
+			<CockType ID="5" Name="Vulpine" />
 			<CockType ID="6" Name="Bee" />
 			<CockType ID="11" Name="Draconic" />
 			<CockType ID="13" Name="Naga" />
@@ -778,6 +782,10 @@
 		<Item Type="Armor" Stack="1" Name="N.Chain" ID="classes.Items.Armor::NyreanChain" />
 		<Item Type="Armor" Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
 		<Item Type="Armor" Stack="1" Name="Void Plates" ID="classes.Items.Armor::VoidPlateArmor" />
+		<Item Type="Armor" Stack="1" Name="I.Coat" ID="classes.Items.Armor::InsulatedCoat" />
+		<Item Type="Armor" Stack="1" Name="O.Collar" ID="classes.Items.Armor.Unique::OmnisuitCollar" />
+		<Item Type="Armor" Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit" />
+		<Item Type="Armor" Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
 		<Item Type="UpperUndergarment" Stack="1" Name="BikiniTop" ID="classes.Items.Apparel::FrillyBikiniTop" />
 		<Item Type="UpperUndergarment" Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
@@ -839,6 +847,8 @@
 		<Item Type="Consumable" Stack="10" Name="Honeyseed" ID="classes.Items.Miscellaneous::HoneySeed" />
 		<Item Type="Consumable" Stack="10" Name="Horse-Cock" ID="classes.Items.Miscellaneous::HorseCock" />
 		<Item Type="Consumable" Stack="10" Name="HorsePill" ID="classes.Items.Miscellaneous::HorsePill" />
+		<Item Type="Consumable" Stack="10" Name="ImmBoost" ID="classes.Items.Miscellaneous::ImmunoBooster" />
+		<Item Type="Consumable" Stack="10" Name="K.Crunch" ID="classes.Items.Miscellaneous::Kalocrunch" />
 		<Item Type="Consumable" Stack="10" Name="KnotAProb" ID="classes.Items.Miscellaneous::KnotAProblem" />
 		<Item Type="Consumable" Stack="10" Name="Lactaid" ID="classes.Items.Miscellaneous::Lactaid" />
 		<Item Type="Consumable" Stack="10" Name="LactaidMT" ID="classes.Items.Miscellaneous::LactaidMilkTank" />
@@ -874,6 +884,7 @@
 		<Item Type="Consumable" Stack="10" Name="Treatment" ID="classes.Items.Miscellaneous::Treatment" />
 		<Item Type="Consumable" Stack="10" Name="UthraSap" ID="classes.Items.Miscellaneous::UthraSap" />
 		<Item Type="Consumable" Stack="10" Name="VenusPod" ID="classes.Items.Miscellaneous::VenusPod" />
+		<Item Type="Consumable" Stack="10" Name="YT.Lube" ID="classes.Items.Miscellaneous::YTRLube" />
 		<Item Type="Consumable" Stack="10" Name="ZilHoney" ID="classes.Items.Miscellaneous::ZilHoney" />
 		<Item Type="Consumable" Stack="10" Name="ZilRation" ID="classes.Items.Miscellaneous::ZilRation" />
 		<Item Type="Consumable" Stack="10" Name="P.Saliva" ID="classes.Items.Recovery::PexigaSaliva" />
@@ -890,12 +901,15 @@
 		<Item Type="Consumable" Stack="10" Name="Clippex" ID="classes.Items.Transformatives::Clippex" />
 		<Item Type="Consumable" Stack="10" Name="Dong D." ID="classes.Items.Transformatives::DongDesigner" />
 		<Item Type="Consumable" Stack="10" Name="Dove Balm" ID="classes.Items.Transformatives::DoveBalm" />
+		<Item Type="Consumable" Stack="10" Name="DracoG." ID="classes.Items.Transformatives::DracoGuard" />
 		<Item Type="Consumable" Stack="24" Name="Lg.BluEgg" ID="classes.Items.Transformatives::EggBlueLarge" />
 		<Item Type="Consumable" Stack="24" Name="Sm.BluEgg" ID="classes.Items.Transformatives::EggBlueSmall" />
 		<Item Type="Consumable" Stack="24" Name="Lg.PinkEgg" ID="classes.Items.Transformatives::EggPinkLarge" />
 		<Item Type="Consumable" Stack="24" Name="Sm.PinkEgg" ID="classes.Items.Transformatives::EggPinkSmall" />
 		<Item Type="Consumable" Stack="24" Name="Lg.WhtEgg" ID="classes.Items.Transformatives::EggWhiteLarge" />
 		<Item Type="Consumable" Stack="24" Name="Sm.WhtEgg" ID="classes.Items.Transformatives::EggWhiteSmall" />
+		<Item Type="Consumable" Stack="1" Name="Foxfire" ID="classes.Items.Transformatives::Foxfire" />
+		<Item Type="Consumable" Stack="1" Name="Frostfire" ID="classes.Items.Transformatives::Frostfire" />
 		<Item Type="Consumable" Stack="10" Name="GaloMax" ID="classes.Items.Transformatives::GaloMax" />
 		<Item Type="Consumable" Stack="10" Name="Goblinola" ID="classes.Items.Transformatives::Goblinola" />
 		<Item Type="Consumable" Stack="10" Name="Gold Pill" ID="classes.Items.Transformatives::GoldPill" />
@@ -933,12 +947,15 @@
 		<Item Type="Gadget" Stack="10" Name="A.D.Cock" ID="classes.Items.Miscellaneous::ADCock" />
 		<Item Type="Gadget" Stack="10" Name="A.H.Cock" ID="classes.Items.Miscellaneous::AHCock" />
 		<Item Type="Gadget" Stack="1" Name="ClimbKit" ID="classes.Items.Miscellaneous::ClimbingKit" />
+		<Item Type="Gadget" Stack="10" Name="Dong D." ID="classes.Items.Transformatives::DongDesigner" />
 		<Item Type="Gadget" Stack="10" Name="Fish.Rod" ID="classes.Items.Miscellaneous::FishingRod" />
+		<Item Type="Gadget" Stack="10" Name="Horse-Cock" ID="classes.Items.Miscellaneous::HorseCock" />
 		<Item Type="Gadget" Stack="1" Name="Hoverboard" ID="classes.Items.Miscellaneous::Hoverboard" />
 		<Item Type="Gadget" Stack="1" Name="M.Milker" ID="classes.Items.Miscellaneous::MagicMilker" />
 		<Item Type="Gadget" Stack="10" Name="MilkBag" ID="classes.Items.Miscellaneous::MilkBag" />
 		<Item Type="Gadget" Stack="10" Name="Silicone" ID="classes.Items.Miscellaneous::Silicone" />
 		<Item Type="Gadget" Stack="10" Name="JokeBook" ID="classes.Items.Miscellaneous::TarkusJokeBook" />
+		<Item Type="Gadget" Stack="10" Name="T.Pack" ID="classes.Items.Miscellaneous::ThermalPack" />
 		<Item Type="Gadget" Stack="1" Name="Varmint" ID="classes.Items.Miscellaneous::VarmintItem" />
 		<Item Type="Gadget" Stack="1" Name="B.Buddy" ID="classes.Items.Toys::BubbleBuddy" />
 		<Item Type="Gadget" Stack="1" Name="EggTrnr" ID="classes.Items.Toys::EggTrainer" />
@@ -969,6 +986,7 @@
 		<Item Type="MeleeWeapon" Stack="1" Name="Vanae Spear" ID="classes.Items.Melee::VanaeSpear" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Whip" ID="classes.Items.Melee::Whip" />
+		<Item Type="MeleeWeapon" Stack="1" Name="Y.Strap" ID="classes.Items.Melee::YappiStrap" />
 		<Item Type="RangedWeapon" Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
 		<Item Type="RangedWeapon" Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
 		<Item Type="RangedWeapon" Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BoltActionRifle" />
@@ -982,6 +1000,7 @@
 		<Item Type="RangedWeapon" Stack="1" Name="Goovolver" ID="classes.Items.Guns::Goovolver" />
 		<Item Type="RangedWeapon" Stack="1" Name="Hammer C." ID="classes.Items.Guns::HammerCarbine" />
 		<Item Type="RangedWeapon" Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistolScavenged" />
 		<Item Type="RangedWeapon" Stack="1" Name="Holdout H.P." ID="classes.Items.Guns::HoldoutHP" />
 		<Item Type="RangedWeapon" Stack="1" Name="Hld.Pistol" ID="classes.Items.Guns::HoldOutPistol" />
 		<Item Type="RangedWeapon" Stack="1" Name="H.Rifle" ID="classes.Items.Guns::HuntingRifle" />

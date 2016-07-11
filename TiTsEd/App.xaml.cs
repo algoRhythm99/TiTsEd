@@ -120,7 +120,6 @@ namespace TiTsEd
             }
 
             VM.Create();
-
             FileManager.BuildPaths();
             var directories = FileManager.GetDirectories().ToArray(); // Load all on startup to check for errors
             var result = ExceptionBoxResult.Continue;
