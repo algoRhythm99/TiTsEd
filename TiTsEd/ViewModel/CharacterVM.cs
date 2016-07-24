@@ -574,6 +574,11 @@ namespace TiTsEd.ViewModel {
             set { SetValue("girlCumType", value); }
         }
 
+        public int Fertility {
+            get { return GetInt("fertilityRaw"); }
+            set { SetValue("fertilityRaw", value); }
+        }
+
         public double ClitLength {
             get { return GetDouble("clitLength"); }
             set { SetValue("clitLength", value); }

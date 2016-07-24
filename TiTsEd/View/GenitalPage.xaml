@@ -99,6 +99,9 @@
                     <TextBlock              Text="Girl Cum Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}"/>
 
+                    <TextBlock              Text="Fertility"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Fertility}" />
+
                     <TextBlock              Text="Vaginal Virgin"/>
                     <CheckBox IsChecked="{Binding Game.Character.VaginalVirgin}" />
 
