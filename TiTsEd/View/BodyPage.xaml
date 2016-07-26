@@ -106,6 +106,9 @@
 
                     <TextBlock              Text="Looseness"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Ass.Looseness}" Min="1" Lower="1" />
+
+                    <TextBlock              Text="Anal Wetness"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.Wetness}" Min="1" Lower="1" />
                 </common:AutoGrid>
 
                 <Border Style="{StaticResource HeaderBorder}">
