@@ -637,6 +637,12 @@ namespace TiTsEd.ViewModel {
             set { SetValue("ballEfficiency", value); }
         }
 
+        public int RefractoryRate
+        {
+            get { return GetInt("refractoryRate"); }
+            set { SetValue("refractoryRate", value); }
+        }
+
         #endregion
 
         #region ItemPage
