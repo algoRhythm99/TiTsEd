@@ -6,8 +6,8 @@
         xmlns:vm="clr-namespace:TiTsEd.ViewModel" 
         Title="TiTsEd" 
         DataContext="{x:Static vm:VM.Instance}"
-        Width="1024" Height="768" MinWidth="1024" MinHeight="600">
-
+        Width="1024" Height="700" MinWidth="1024" MinHeight="700">
+    
     <Window.Resources>
         <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}">
             <Setter Property="Margin" Value="0"/>

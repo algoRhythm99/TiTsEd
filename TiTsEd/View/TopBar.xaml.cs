@@ -76,7 +76,9 @@ namespace TiTsEd.View
         {
             bool isChecked = (openButton.IsChecked == true);
             openButton.IsHitTestVisible = !isChecked;
-            if (isChecked) SetItems(openMenu, FileManagerVM.GetOpenMenus());
+            if (isChecked) {
+                SetItems(openMenu, FileManagerVM.GetOpenMenus());
+            }
             openMenu.IsOpen = isChecked;
         }
 

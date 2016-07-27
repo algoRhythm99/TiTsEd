@@ -30,15 +30,19 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding HasData}" Grid.Column="1" Grid.ColumnSpan="3" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding HasData}"
+                        Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" >
                 <TextBlock FontSize="12" Text="Character" Width="Auto" Margin="0,0,8,0" IsEnabled="{Binding HasData}" />
-                <ComboBox FontSize="12" Margin="0,0,8,0" IsEnabled="{Binding HasData}" Text="{Binding Game.CharacterSelection}" ItemsSource="{Binding Game.CharacterOptions}" />
+                <ComboBox FontSize="12" Margin="0,0,8,0" IsEnabled="{Binding HasData}"
+                          SelectedValue="{Binding Game.CharacterSelection}" ItemsSource="{Binding Game.CharacterOptions}" />
                 <Button Content="Copy to PC" IsEnabled="{Binding Game.IsNotPC}" Click="CopyToPC_Clicked" />
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
 
                 <common:AutoGrid>
                     <TextBlock              Text="Name" Width="Auto"/>
@@ -64,7 +68,7 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical">
+            <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Vertical">
                 <common:AutoGrid>
                     <TextBlock              Text="Class"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.CharacterClass}" ItemsSource="{Binding Data.General.ClassTypes}"/>
@@ -83,7 +87,7 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
+            <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Vertical">
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Stats" Style="{StaticResource Header}"/>
                 </Border>
@@ -118,7 +122,7 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Vertical">
+            <StackPanel Grid.Column="3" Grid.Row="5" Orientation="Vertical">
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Shape" Style="{StaticResource Header}"/>
                 </Border>
