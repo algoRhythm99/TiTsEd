@@ -574,6 +574,11 @@ namespace TiTsEd.ViewModel {
             set { SetValue("girlCumType", value); }
         }
 
+        public int Fertility {
+            get { return GetInt("fertilityRaw"); }
+            set { SetValue("fertilityRaw", value); }
+        }
+
         public double ClitLength {
             get { return GetDouble("clitLength"); }
             set { SetValue("clitLength", value); }
@@ -630,6 +635,12 @@ namespace TiTsEd.ViewModel {
         public int BallEfficiency {
             get { return GetInt("ballEfficiency"); }
             set { SetValue("ballEfficiency", value); }
+        }
+
+        public int RefractoryRate
+        {
+            get { return GetInt("refractoryRate"); }
+            set { SetValue("refractoryRate", value); }
         }
 
         #endregion

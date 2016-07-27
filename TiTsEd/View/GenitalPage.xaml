@@ -46,6 +46,9 @@
                     <TextBlock              Text="Ball Efficiency"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.BallEfficiency}" />
 
+                    <TextBlock              Text="Refractory Rate"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.RefractoryRate}" />
+
                     <TextBlock              Text="Cum Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.CumType}" ItemsSource="{Binding Data.Body.CumTypes}"/>
 
@@ -98,6 +101,9 @@
                 <common:AutoGrid>
                     <TextBlock              Text="Girl Cum Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}"/>
+
+                    <TextBlock              Text="Fertility"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Fertility}" />
 
                     <TextBlock              Text="Vaginal Virgin"/>
                     <CheckBox IsChecked="{Binding Game.Character.VaginalVirgin}" />
