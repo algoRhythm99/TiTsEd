@@ -826,6 +826,52 @@ namespace TiTsEd.ViewModel {
 
         #endregion
 
+        #region MiscPage
+
+        public string ImpregnationType
+        {
+            get { return GetString("impregnationType"); }
+            set { SetValue("impregnationType", value); }
+        }
+
+        public int PregnancyMultiplierRaw
+        {
+            get { return GetInt("pregnancyMultiplierRaw"); }
+            set { SetValue("pregnancyMultiplierRaw", value); }
+        }
+
+        public int PregnancyMultiplierMod
+        {
+            get { return GetInt("pregnancyMultiplierMod"); }
+            set { SetValue("pregnancyMultiplierMod", value); }
+        }
+
+        public int PregnancyIncubationBonusMotherRaw
+        {
+            get { return GetInt("pregnancyIncubationBonusMotherRaw"); }
+            set { SetValue("pregnancyIncubationBonusMotherRaw", value); }
+        }
+
+        public int PregnancyIncubationBonusMotherMod
+        {
+            get { return GetInt("pregnancyIncubationBonusMotherMod"); }
+            set { SetValue("pregnancyIncubationBonusMotherMod", value); }
+        }
+
+        public int PregnancyIncubationBonusFatherRaw
+        {
+            get { return GetInt("pregnancyIncubationBonusFatherRaw"); }
+            set { SetValue("pregnancyIncubationBonusFatherRaw", value); }
+        }
+
+        public int PregnancyIncubationBonusFatherMod
+        {
+            get { return GetInt("pregnancyIncubationBonusFatherMod"); }
+            set { SetValue("pregnancyIncubationBonusFatherMod", value); }
+        }
+
+        #endregion
+
         #region ItemPage
         public UpdatableCollection<ItemContainerVM> ItemContainers { get; private set; }
 

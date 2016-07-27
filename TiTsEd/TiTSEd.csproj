@@ -135,6 +135,9 @@
     <Compile Include="View\KeyItemsPage.xaml.cs">
       <DependentUpon>KeyItemsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MiscPage.xaml.cs">
+      <DependentUpon>MiscPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PerkPage.xaml.cs">
       <DependentUpon>PerkPage.xaml</DependentUpon>
     </Compile>
@@ -205,6 +208,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\KeyItemsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MiscPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
