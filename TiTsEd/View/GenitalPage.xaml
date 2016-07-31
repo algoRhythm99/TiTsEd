@@ -54,6 +54,10 @@
 
                 </common:AutoGrid>
                 <common:AutoGrid Columns="3">
+                    <TextBlock />
+                    <TextBlock Text="Base" TextAlignment="Center" />
+                    <TextBlock Text="Modifier" TextAlignment="Center" />
+                    
                     <TextBlock              Text="Cum Multiplier"/>
                     <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumMultiplier}" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" />
@@ -110,8 +114,8 @@
 
                 <common:AutoGrid Columns="3">
                     <TextBlock              Text="Fertility"/>
-                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Fertility}" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" />
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Fertility}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
                 <common:AutoGrid>
                     <TextBlock              Text="Vaginal Virgin"/>

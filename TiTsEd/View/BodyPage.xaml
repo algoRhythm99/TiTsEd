@@ -38,19 +38,19 @@
                 </Border>
                 <common:AutoGrid Columns="4">
                     <TextBlock              Text="Hip Rating"/>
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HipRating}"/>
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HipRatingMod}" />
-                    <TextBlock              Text="{Binding Game.Character.HipRatingTip}" FontStyle="Italic" IsEnabled="False"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HipRating}" ToolTip="Base"  />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HipRatingMod}" ToolTip="Modifier" />
+                    <TextBlock              Text="{Binding Game.Character.HipRatingTip}" FontStyle="Italic" IsEnabled="False" TextAlignment="Left"/>
 
                     <TextBlock              Text="Butt Rating"/>
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.ButtRating}" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.ButtRatingMod}" />
-                    <TextBlock              Text="{Binding Game.Character.ButtRatingTip}" FontStyle="Italic" IsEnabled="False"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.ButtRating}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.ButtRatingMod}" ToolTip="Modifier" />
+                    <TextBlock              Text="{Binding Game.Character.ButtRatingTip}" FontStyle="Italic" IsEnabled="False" TextAlignment="Left"/>
 
                     <TextBlock              Text="Belly Rating"/>
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.BellyRating}" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.BellyRatingMod}" />
-                    <TextBlock/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.BellyRating}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.BellyRatingMod}" ToolTip="Modifier" />
+                    <TextBlock />
                 </common:AutoGrid>
                 <common:AutoGrid>
                     <TextBlock              Text="Arms"/>
