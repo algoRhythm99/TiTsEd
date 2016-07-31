@@ -91,34 +91,47 @@
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Stats" Style="{StaticResource Header}"/>
                 </Border>
-                <common:AutoGrid>
-                    <TextBlock              Text="Physique"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Physique}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                <common:AutoGrid Columns="3">
+                    <TextBlock />
+                    <TextBlock HorizontalAlignment="Center" Text="Core" />
+                    <TextBlock HorizontalAlignment="Center" Text="Mod" />
+
+                    <TextBlock Text="Physique" />
+                    <common:MyNumericBox    Width="150" Upper="{Binding Game.Character.MaxCoreStat}" Value="{Binding Game.Character.Physique}" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.PhysiqueMod}" />
 
                     <TextBlock              Text="Reflexes"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Reflexes}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Reflexes}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.ReflexesMod}" />
 
                     <TextBlock              Text="Aim"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Aim}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Aim}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.AimMod}" />
 
                     <TextBlock              Text="Intelligence"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Intelligence}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Intelligence}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.IntelligenceMod}" />
 
                     <TextBlock              Text="Willpower"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Willpower}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Willpower}" Upper="{Binding Game.Character.MaxCoreStat}"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.WillpowerMod}" />
                     
                     <TextBlock              Text="Libido"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Libido}" Upper="100"/>
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Libido}" Upper="100"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.LibidoMod}" />
                 </common:AutoGrid>
-                <common:AutoGrid Margin="0,30,0,0">
+                <common:AutoGrid Margin="0,30,0,0" Columns="3">
                     <TextBlock              Text="Current HP"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.HP}" Upper="{Binding Game.Character.MaxHP}"/>
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.HP}" Upper="{Binding Game.Character.MaxHP}"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HPMod}"/>
 
                     <TextBlock              Text="Lust"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Lust}" Upper="{Binding Game.Character.MaxLust}"/>
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Lust}" Upper="{Binding Game.Character.MaxLust}"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.LustMod}" />
 
                     <TextBlock              Text="Energy"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Energy}" Upper="{Binding Game.Character.MaxEnergy}"/>
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Energy}" Upper="{Binding Game.Character.MaxEnergy}"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.EnergyMod}"/>
                 </common:AutoGrid>
             </StackPanel>
 

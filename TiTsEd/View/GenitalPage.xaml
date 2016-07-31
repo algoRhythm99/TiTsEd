@@ -32,11 +32,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-			<StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
                 <common:AutoGrid>
                     <TextBlock              Text="Balls"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Balls}" />
-                    
+
                     <TextBlock              Text="Ball Size"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.BallSize}" Type="Double" />
 
@@ -52,12 +52,17 @@
                     <TextBlock              Text="Cum Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.CumType}" ItemsSource="{Binding Data.Body.CumTypes}"/>
 
+                </common:AutoGrid>
+                <common:AutoGrid Columns="3">
                     <TextBlock              Text="Cum Multiplier"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.CumMultiplier}" />
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumMultiplier}" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" />
 
                     <TextBlock              Text="Cum Quality"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.CumQuality}" />
-
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumQuality}" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumQualityMod}" />
+                </common:AutoGrid>
+                <common:AutoGrid>
                     <TextBlock              Text="Cock Virgin"/>
                     <CheckBox IsChecked="{Binding Game.Character.CockVirgin}" />
                 </common:AutoGrid>
@@ -96,15 +101,19 @@
                     </StackPanel>
                 </common:ArrayEditor>
             </StackPanel>
-			
+
             <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
                 <common:AutoGrid>
                     <TextBlock              Text="Girl Cum Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}"/>
+                </common:AutoGrid>
 
+                <common:AutoGrid Columns="3">
                     <TextBlock              Text="Fertility"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Fertility}" />
-
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Fertility}" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" />
+                </common:AutoGrid>
+                <common:AutoGrid>
                     <TextBlock              Text="Vaginal Virgin"/>
                     <CheckBox IsChecked="{Binding Game.Character.VaginalVirgin}" />
 

@@ -78,9 +78,31 @@ namespace TiTsEd.ViewModel {
             set { SetValue("physiqueRaw", value); }
         }
 
+        public int PhysiqueMod
+        {
+            get { return GetInt("physiqueMod"); }
+            set { SetValue("physiqueMod", value); }
+        }
+
+        public int EffectivePhysique
+        {
+            get { return Physique + PhysiqueMod; }
+        }
+
         public int Reflexes {
             get { return GetInt("reflexesRaw"); }
             set { SetValue("reflexesRaw", value); }
+        }
+
+        public int ReflexesMod
+        {
+            get { return GetInt("reflexesMod"); }
+            set { SetValue("reflexesMod", value); }
+        }
+
+        public int EffectiveReflexes
+        {
+            get { return Reflexes + ReflexesMod; }
         }
 
         public int Aim {
@@ -88,9 +110,31 @@ namespace TiTsEd.ViewModel {
             set { SetValue("aimRaw", value); }
         }
 
+        public int AimMod
+        {
+            get { return GetInt("aimMod"); }
+            set { SetValue("aimMod", value); }
+        }
+
+        public int EffectiveAim
+        {
+            get { return Aim + AimMod; }
+        }
+
         public int Intelligence {
             get { return GetInt("intelligenceRaw"); }
             set { SetValue("intelligenceRaw", value); }
+        }
+
+        public int IntelligenceMod
+        {
+            get { return GetInt("intelligenceMod"); }
+            set { SetValue("intelligenceMod", value); }
+        }
+
+        public int EffectiveIntelligence
+        {
+            get { return Intelligence + IntelligenceMod; }
         }
 
         public int Willpower {
@@ -98,9 +142,31 @@ namespace TiTsEd.ViewModel {
             set { SetValue("willpowerRaw", value); }
         }
 
+        public int WillpowerMod
+        {
+            get { return GetInt("willpowerMod"); }
+            set { SetValue("willpowerMod", value); }
+        }
+
+        public int EffectiveWillpower
+        {
+            get { return Willpower + WillpowerMod; }
+        }
+
         public double Libido {
             get { return GetDouble("libidoRaw"); }
             set { SetValue("libidoRaw", value); }
+        }
+
+        public int LibidoMod
+        {
+            get { return GetInt("libidoMod"); }
+            set { SetValue("libidoMod", value); }
+        }
+
+        public double EffectiveLibido
+        {
+            get { return Libido + LibidoMod; }
         }
 
         public double MaxCoreStat {
@@ -208,6 +274,17 @@ namespace TiTsEd.ViewModel {
             set { SetValue("lustRaw", value); }
         }
 
+        public int LustMod
+        {
+            get { return GetInt("lustMod"); }
+            set { SetValue("lustMod", value); }
+        }
+
+        public double EffectiveLust
+        {
+            get { return Lust + LustMod; }
+        }
+
         public int MaxLust {
             get { return 100; }
         }
@@ -215,6 +292,12 @@ namespace TiTsEd.ViewModel {
         public int Energy {
             get { return GetInt("energyRaw"); }
             set { SetValue("energyRaw", value); }
+        }
+
+        public int EnergyMod
+        {
+            get { return GetInt("energyMod"); }
+            set { SetValue("energyMod", value); }
         }
 
         public int MaxEnergy {
@@ -391,15 +474,31 @@ namespace TiTsEd.ViewModel {
                 OnPropertyChanged("HipRatingTip");
             }
         }
+
+        public int HipRatingMod
+        {
+            get { return GetInt("hipRatingMod"); }
+            set
+            {
+                SetValue("hipRatingMod", value);
+                OnPropertyChanged("HipRatingTip");
+            }
+        }
+
+        public int EffectiveHipRating
+        {
+            get { return HipRating + HipRatingMod; }
+        }
+
         public string HipRatingTip {
             get {
                 var isMale = Feminity < 50;
-                if (HipRating >= 20) return isMale ? "inhumanly-wide" : "broodmother";
-                if (HipRating >= 15) return isMale ? "voluptuous" : "child-bearing";
-                if (HipRating >= 10) return isMale ? "wide" : "curvy";
-                if (HipRating >= 6) return isMale ? "ample" : "girly";
-                if (HipRating >= 4) return "well-formed";
-                if (HipRating >= 2) return "slender";
+                if (EffectiveHipRating >= 20) return isMale ? "inhumanly-wide" : "broodmother";
+                if (EffectiveHipRating >= 15) return isMale ? "voluptuous" : "child-bearing";
+                if (EffectiveHipRating >= 10) return isMale ? "wide" : "curvy";
+                if (EffectiveHipRating >= 6) return isMale ? "ample" : "girly";
+                if (EffectiveHipRating >= 4) return "well-formed";
+                if (EffectiveHipRating >= 2) return "slender";
                 return "boyish";
             }
         }
@@ -412,16 +511,31 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        public int ButtRatingMod
+        {
+            get { return GetInt("buttRatingMod"); }
+            set
+            {
+                SetValue("buttRatingMod", value);
+                OnPropertyChanged("ButtRatingTip");
+            }
+        }
+
+        public int EffectiveButtRating
+        {
+            get { return ButtRating + ButtRatingMod; }
+        }
+
         public string ButtRatingTip {
             get {
-                if (ButtRating >= 20) return "colossal";
-                if (ButtRating >= 16) return "huge";
-                if (ButtRating >= 13) return "voluminous";
-                if (ButtRating >= 10) return "spacious";
-                if (ButtRating >= 8) return "substantial";
-                if (ButtRating >= 6) return "shapely";
-                if (ButtRating >= 4) return "regular";
-                if (ButtRating >= 2) return "compact";
+                if (EffectiveButtRating >= 20) return "colossal";
+                if (EffectiveButtRating >= 16) return "huge";
+                if (EffectiveButtRating >= 13) return "voluminous";
+                if (EffectiveButtRating >= 10) return "spacious";
+                if (EffectiveButtRating >= 8) return "substantial";
+                if (EffectiveButtRating >= 6) return "shapely";
+                if (EffectiveButtRating >= 4) return "regular";
+                if (EffectiveButtRating >= 2) return "compact";
                 return "very small";
             }
         }
@@ -429,6 +543,17 @@ namespace TiTsEd.ViewModel {
         public int BellyRating {
             get { return GetInt("bellyRatingRaw"); }
             set { SetValue("bellyRatingRaw", value); }
+        }
+
+        public int BellyRatingMod
+        {
+            get { return GetInt("bellyRatingMod"); }
+            set { SetValue("bellyRatingMod", value); }
+        }
+
+        public int EffectiveBellyRating
+        {
+            get { return BellyRating + BellyRatingMod; }
         }
 
         public int ArmType {
@@ -579,6 +704,12 @@ namespace TiTsEd.ViewModel {
             set { SetValue("fertilityRaw", value); }
         }
 
+        public int FertilityMod
+        {
+            get { return GetInt("fertilityMod"); }
+            set { SetValue("fertilityMod", value); }
+        }
+
         public double ClitLength {
             get { return GetDouble("clitLength"); }
             set { SetValue("clitLength", value); }
@@ -612,9 +743,21 @@ namespace TiTsEd.ViewModel {
             set { SetValue("cumMultiplierRaw", value); }
         }
 
+        public int CumMultiplierMod
+        {
+            get { return GetInt("cumMultiplierMod"); }
+            set { SetValue("cumMultiplierMod", value); }
+        }
+
         public int CumQuality {
             get { return GetInt("cumQualityRaw"); }
             set { SetValue("cumQualityRaw", value); }
+        }
+
+        public int CumQualityMod
+        {
+            get { return GetInt("cumQualityMod"); }
+            set { SetValue("cumQualityMod", value); }
         }
 
         public int Balls {
