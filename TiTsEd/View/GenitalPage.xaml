@@ -59,12 +59,12 @@
                     <TextBlock Text="Modifier" TextAlignment="Center" />
                     
                     <TextBlock              Text="Cum Multiplier"/>
-                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumMultiplier}" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" />
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumMultiplier}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" ToolTip="Modifier" />
 
                     <TextBlock              Text="Cum Quality"/>
-                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumQuality}" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumQualityMod}" />
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumQuality}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumQualityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
                 <common:AutoGrid>
                     <TextBlock              Text="Cock Virgin"/>
