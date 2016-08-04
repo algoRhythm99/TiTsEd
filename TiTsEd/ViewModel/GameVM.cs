@@ -15,12 +15,51 @@ namespace TiTsEd.ViewModel {
     public sealed partial class GameVM : ObjectVM {
         private GeneralObjectVM _flags;
         private string _character;
+        readonly List<PerkVectorVM> _allPerks = new List<PerkVectorVM>();
 
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file) {
             setCharacter("PC");
 
             _flags = new GeneralObjectVM(GetObj("flags"));
+
+            // Perks
+            var charPerks = Character.GetObj("perks");
+            if (null == charPerks)
+            {
+                charPerks = new Model.AmfObject(AmfTypes.Array);
+            }
+            var xmlPerks = XmlData.Current.PerkGroups.SelectMany(x => x.Perks).ToArray();
+            var unknownPerkGroup = XmlData.Current.PerkGroups.Last();
+            ImportMissingNamedVectors(charPerks, xmlPerks, "storageName", x => x.GetString("tooltip"), unknownPerkGroup.Perks);
+
+            PerkGroups = new List<PerkGroupVM>();
+            foreach (var xmlGroup in XmlData.Current.PerkGroups)
+            {
+                var perksVM = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVectorVM(this, charPerks, x)).ToArray();
+                _allPerks.AddRange(perksVM);
+
+                var groupVM = new PerkGroupVM(this, xmlGroup.Name, perksVM);
+                PerkGroups.Add(groupVM);
+            }
+            ;
+        }
+
+        static void ImportMissingNamedVectors(AmfObject items, IEnumerable<XmlNamedVector4> xmlItems, string nameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlNamedVector4> targetXmlList = null)
+        {
+            if (targetXmlList == null) targetXmlList = (IList<XmlNamedVector4>)xmlItems;
+            var xmlNames = new HashSet<String>(xmlItems.Select(x => x.Name));
+
+            foreach (var pair in items)
+            {
+                var name = pair.ValueAsObject.GetString(nameProperty);
+                if (xmlNames.Contains(name)) continue;
+                xmlNames.Add(name);
+
+                var xml = new XmlNamedVector4 { Name = name };
+                if (descriptionGetter != null) xml.Description = descriptionGetter(pair.ValueAsObject);
+                targetXmlList.Add(xml);
+            }
         }
 
         public void copyCharacterToPC() {
@@ -170,6 +209,50 @@ namespace TiTsEd.ViewModel {
         public bool IsNotPC {
             get {
                 return !IsPC;
+            }
+        }
+
+        public List<PerkGroupVM> PerkGroups { get; private set; }
+
+        string _perkSearchText;
+        public string PerkSearchText
+        {
+            get { return _perkSearchText; }
+            set
+            {
+                if (_perkSearchText == value) return;
+                _perkSearchText = value;
+                foreach (var group in PerkGroups) group.Update();
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Returns the perk with the specified name (even if not owned by the player) AND registers a dependency between the caller property and this perk.
+        /// That way, anytime the perk is modified, OnPropertyChanged will be raised for the caller property.
+        /// </summary>
+        public PerkVectorVM GetPerk(string name, [CallerMemberName] string propertyName = null)
+        {
+            var perk = _allPerks.First(x => x.Name == name);
+            perk.GameVMProperties.Add(propertyName);
+            return perk;
+        }
+
+        // Whenever a PerkVM, FlagVM, or StatusVM is modified, it notifies GameVM with those functions so that it updates its dependent properties. 
+        // See also GetPerk, GetFlag, and GetStatus.
+        public void OnPerkChanged(string name)
+        {
+            foreach (var prop in _allPerks.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
+        }
+
+        public void OnPerkAddedOrRemoved(string name, bool isOwned)
+        {
+            // Grants/removes the player the appropriate bonuses when a perk is added or removed.
+            // We do not add stats however since the user can already change them easily.
+            switch (name)
+            {
+                default:
+                    break;
             }
         }
     }

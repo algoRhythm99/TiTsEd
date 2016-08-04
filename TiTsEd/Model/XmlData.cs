@@ -36,8 +36,8 @@ namespace TiTsEd.Model {
                     XmlSerializer s = new XmlSerializer(typeof(XmlDataSet));
                     var fileData = s.Deserialize(stream) as XmlDataSet;
 
-                    //var unknownPerks = new XmlPerkGroup { Name = "Unknown", Perks = new List<XmlNamedVector4>() };
-                    //fileData.PerkGroups.Add(unknownPerks);
+                    var unknownPerks = new XmlPerkGroup { Name = "Unknown", Perks = new List<XmlNamedVector4>() };
+                    fileData.PerkGroups.Add(unknownPerks);
 
                     //var unknownItems = new XmlItemGroup { Name = "Unknown", Items = new List<XmlItem>(), Category = ItemCategories.Unknown };
                     //fileData.ItemGroups.Add(unknownItems);
@@ -101,6 +101,8 @@ namespace TiTsEd.Model {
         [XmlArray("Items"), XmlArrayItem("Item")]
         public XmlItem[] Items { get; set; }
 
+        [XmlArray("Perks"), XmlArrayItem("PerkGroup")]
+        public List<XmlPerkGroup> PerkGroups { get; set; }
     }
 
     public sealed class XmlGeneralSet {
@@ -221,6 +223,21 @@ namespace TiTsEd.Model {
 
     }
 
+    public sealed class XmlPerkGroup
+    {
+        [XmlAttribute]
+        public string Name { get; set; }
+
+        [XmlElement("Perk")]
+        public List<XmlNamedVector4> Perks { get; set; }
+
+
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+
     public sealed class XmlEnum {
         [XmlAttribute]
         public int ID { get; set; }
@@ -313,6 +330,46 @@ namespace TiTsEd.Model {
         public string Description { get; set; }
 
         public override string ToString() {
+            return Name;
+        }
+    }
+
+    public sealed class XmlNamedVector4
+    {
+        [XmlAttribute]
+        public string Name { get; set; }
+        [XmlAttribute]
+        public string Description { get; set; }
+
+        [XmlAttribute]
+        public double Value1 { get; set; }
+        [XmlAttribute]
+        public double Value2 { get; set; }
+        [XmlAttribute]
+        public double Value3 { get; set; }
+        [XmlAttribute]
+        public double Value4 { get; set; }
+
+        [XmlAttribute]
+        public string Type1 { get; set; }
+        [XmlAttribute]
+        public string Type2 { get; set; }
+        [XmlAttribute]
+        public string Type3 { get; set; }
+        [XmlAttribute]
+        public string Type4 { get; set; }
+
+        [XmlAttribute]
+        public string Label1 { get; set; }
+        [XmlAttribute]
+        public string Label2 { get; set; }
+        [XmlAttribute]
+        public string Label3 { get; set; }
+        [XmlAttribute]
+        public string Label4 { get; set; }
+
+        public override string ToString()
+        {
             return Name;
         }
     }

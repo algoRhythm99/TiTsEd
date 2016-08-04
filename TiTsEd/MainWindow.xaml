@@ -60,10 +60,15 @@
             <TabItem Header="Items" IsEnabled="{Binding Game.IsPC}">
                 <view:ItemsPage Background="White"/>
             </TabItem>
+            <TabItem Header="Perks">
+                <view:PerkPage Background="White"/>
+            </TabItem>
         </TabControl>
 
         <view:TopBar HorizontalAlignment="Stretch" Margin="0,7,5,0"/>
-        
+
         <TextBlock x:Name="versionLabel" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,43,18,0" Foreground="#A0A0A0" FontSize="12"/>
+
+        <common:NamedVector4Popup x:Name="valuesPopup"/>
     </Grid>
 </Window>

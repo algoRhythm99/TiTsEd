@@ -65,6 +65,7 @@
     </ApplicationDefinition>
     <Compile Include="Common\ArrayEditor.cs" />
     <Compile Include="Common\AutoGrid.cs" />
+    <Compile Include="Common\NamedVector4Control.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -80,6 +81,8 @@
     <Compile Include="ViewModel\CharacterVM.cs" />
     <Compile Include="ViewModel\CockVM.cs" />
     <Compile Include="ViewModel\ItemVM.cs" />
+    <Compile Include="ViewModel\NamedVector4VM.cs" />
+    <Compile Include="ViewModel\PerkVM.cs" />
     <Compile Include="ViewModel\VaginaVM.cs" />
     <Compile Include="ViewModel\FilesVM.cs" />
     <Compile Include="Common\UpdatableCollection.cs" />
@@ -123,6 +126,9 @@
     </Compile>
     <Compile Include="View\ItemsPage.xaml.cs">
       <DependentUpon>ItemsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PerkPage.xaml.cs">
+      <DependentUpon>PerkPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TopBar.xaml.cs">
       <DependentUpon>TopBar.xaml</DependentUpon>
@@ -184,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ItemsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PerkPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
