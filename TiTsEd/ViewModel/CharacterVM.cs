@@ -251,6 +251,15 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        public int Exhibitionism
+        {
+            get { return GetInt("exhibitionismRaw"); }
+            set
+            {
+                SetValue("exhibitionismRaw", value);
+            }
+        }
+
         public int MaxHP {
             get {
                 var bonus = 0;
