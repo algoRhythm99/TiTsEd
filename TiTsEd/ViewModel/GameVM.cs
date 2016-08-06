@@ -15,10 +15,13 @@ namespace TiTsEd.ViewModel {
     public sealed partial class GameVM : ObjectVM {
         private GeneralObjectVM _flags;
         private string _character;
+        private bool _IsPC = true;
+        private string[] _characters;
         readonly List<PerkVectorVM> _allPerks = new List<PerkVectorVM>();
 
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file) {
+            SetCharacterOptions();
             setCharacter("PC");
 
             _flags = new GeneralObjectVM(GetObj("flags"));
@@ -101,13 +104,25 @@ namespace TiTsEd.ViewModel {
 
         public string[] CharacterOptions {
             get {
+                SetCharacterOptions();
+                return _characters;
+            }
+            private set {
+                _characters = value;
+            }
+        }
+
+        private void SetCharacterOptions() {
+            if (null == _characters) {
                 var tmpChar = GetObj("characters");
                 List<String> characters = new List<string>();
                 foreach (AmfPair pair in tmpChar) {
                     characters.Add(pair.Key.ToString());
                 }
-                characters.Sort();
-                return characters.ToArray();
+                if (characters.Count > 1) {
+                    characters.Sort();
+                }
+                CharacterOptions = characters.ToArray();
             }
         }
 
@@ -160,7 +175,7 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public string Name {
+        public new string Name {
             get { return Character.Name; }
             set {
                 var oldName = Name + " Steele";
@@ -204,7 +219,14 @@ namespace TiTsEd.ViewModel {
             set { SetValue("currentMinutes", value); }
         }
 
-        public bool IsPC { get; private set; }
+        public bool IsPC {
+            get {
+                return _IsPC;
+            }
+            private set  {
+                _IsPC = value;
+            }
+        }
 
         public bool IsNotPC {
             get {

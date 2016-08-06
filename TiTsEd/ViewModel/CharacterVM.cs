@@ -57,7 +57,7 @@ namespace TiTsEd.ViewModel {
         }
 
         #region GeneralPage
-        public string Name {
+        public new string Name {
             get { return GetString("short"); }
             set {
                 SetValue("short", value);

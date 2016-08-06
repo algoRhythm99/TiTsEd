@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
 using TiTsEd.Model;
 
 
@@ -180,6 +180,7 @@ namespace TiTsEd.ViewModel {
     /// View VM for an item category
     /// </summary>
     public sealed class ItemGroupVM {
+        private string _Name;
         public ItemGroupVM(string name, ItemSlotVM slot) {
             Name = name;
 
@@ -192,16 +193,16 @@ namespace TiTsEd.ViewModel {
             }
 
             //sort items
-            items.Sort((a, b) => {
-                return a.Name.CompareTo(b.Name);
-            });
+            if (items.Count > 1) {
+                items.Sort();
+            }
 
             Items = new UpdatableCollection<ItemVM>(items);
         }
 
         public string Name {
-            get;
-            private set;
+            get { return _Name; }
+            private set { _Name = value; }
         }
 
         public UpdatableCollection<ItemVM> Items {
@@ -218,25 +219,38 @@ namespace TiTsEd.ViewModel {
     /// <summary>
     /// View VM for a XmlItem
     /// </summary>
-    public sealed class ItemVM : BindableBase {
+    public sealed class ItemVM : BindableBase, IComparable {
         readonly ItemSlotVM _slot;
         readonly XmlItem _xml;
+        private string _Name;
 
         public ItemVM(ItemSlotVM slot, XmlItem item) {
             _slot = slot;
             _xml = item;
+            SetName();
         }
 
         public string ID {
             get { return _xml.ID; }
         }
 
-        public string Name {
+        public new string Name {
             get {
-                if (ToolTip == null) {
-                    return _xml.LongName;
+                SetName();
+                return _Name;
+            }
+            private set {
+                _Name = value;
+            }
+        }
+
+        private void SetName() {
+            if (null == _Name) {
+                if (null == ToolTip) {
+                    _Name = _xml.LongName;
+                } else {
+                    _Name = _xml.LongName + "\u202F*";
                 }
-                return _xml.LongName + "\u202F*";
             }
         }
 
@@ -260,5 +274,16 @@ namespace TiTsEd.ViewModel {
         public override string ToString() {
             return Name;
         }
+
+        int IComparable.CompareTo(object obj) {
+            ItemVM bObj = (ItemVM) obj;
+            if (this != bObj) {
+                string a = Name;
+                string b = bObj.Name;
+                return a.CompareTo(b);
+            }
+            return 0;
+        }
+
     }
 }
