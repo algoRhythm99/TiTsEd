@@ -157,35 +157,65 @@ namespace System.ComponentModel
             throw new InvalidOperationException("This list is read-only.");
         }
 
-        bool ICollection<TResult>.IsReadOnly
+        public bool IsReadOnly
         {
             get { return true; }
         }
 
+        bool ICollection<TResult>.IsReadOnly
+        {
+            get { return IsReadOnly; }
+        }
+
+        public void Insert(int index, TResult item)
+        {
+            ThrowReadOnlyException();
+        }
+
         void IList<TResult>.Insert(int index, TResult item)
+        {
+            Insert(index, item);
+        }
+
+        public void RemoveAt(int index)
         {
             ThrowReadOnlyException();
         }
 
         void IList<TResult>.RemoveAt(int index)
         {
+            RemoveAt(index);
+        }
+
+        public void Add(TResult item)
+        {
             ThrowReadOnlyException();
         }
 
         void ICollection<TResult>.Add(TResult item)
+        {
+            Add(item);
+        }
+
+        public void Clear()
         {
             ThrowReadOnlyException();
         }
 
         void ICollection<TResult>.Clear()
         {
+            Clear();
+        }
+
+        public bool Remove(TResult item)
+        {
             ThrowReadOnlyException();
+            return false;
         }
 
         bool ICollection<TResult>.Remove(TResult item)
         {
-            ThrowReadOnlyException();
-            return false;
+            return Remove(item);
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
@@ -194,48 +224,69 @@ namespace System.ComponentModel
         }
 
         #region IList Members
-        bool IList.Contains(object value)
+        public bool Contains(object value)
         {
             return Contains((TResult)value);
         }
 
-        int IList.IndexOf(object value)
+        bool IList.Contains(object value)
+        {
+            return Contains(value);
+        }
+
+        public int IndexOf(object value)
         {
             return IndexOf((TResult)value);
         }
-        bool IList.IsFixedSize
+
+        int IList.IndexOf(object value)
+        {
+            return IndexOf(value);
+        }
+
+        public bool IsFixedSize
         {
             get { return false; }
         }
 
+        bool IList.IsFixedSize
+        {
+            get { return IsFixedSize; }
+        }
+
         bool IList.IsReadOnly
         {
-            get { return true; }
+            get { return IsReadOnly; }
+        }
+
+        public int Add(object value)
+        {
+            throw new NotImplementedException();
         }
 
         int IList.Add(object value)
         {
-            throw new NotImplementedException();
+            return Add(value);
         }
 
         void IList.Clear()
         {
-            throw new NotImplementedException();
+            Clear();
         }
 
         void IList.Insert(int index, object value)
         {
-            throw new NotImplementedException();
+            Insert(index, (TResult)value);
         }
 
         void IList.Remove(object value)
         {
-            throw new NotImplementedException();
+            Remove((TResult)value);
         }
 
         void IList.RemoveAt(int index)
         {
-            throw new NotImplementedException();
+            RemoveAt(index);
         }
 
         object IList.this[int index]
@@ -247,19 +298,34 @@ namespace System.ComponentModel
             }
         }
 
-        void ICollection.CopyTo(Array array, int index)
+        public void CopyTo(Array array, int index)
         {
             ((IList)_items).CopyTo(array, index);
         }
 
-        bool ICollection.IsSynchronized
+        void ICollection.CopyTo(Array array, int index)
+        {
+            CopyTo(array, index);
+        }
+
+        public bool IsSynchronized
         {
             get { return false; }
         }
 
-        object ICollection.SyncRoot
+        bool ICollection.IsSynchronized
+        {
+            get { return IsSynchronized; }
+        }
+
+        public object SyncRoot
         {
             get { return this; }
+        }
+
+        object ICollection.SyncRoot
+        {
+            get { return SyncRoot; }
         }
 
         #endregion

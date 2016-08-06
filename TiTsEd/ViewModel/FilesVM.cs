@@ -300,7 +300,7 @@ namespace TiTsEd.ViewModel {
                     case DirectoryKind.External: return System.IO.Path.GetFileNameWithoutExtension(Source.FilePath);
                     case DirectoryKind.Regular: return Source.Name;
                     case DirectoryKind.Backup: return Source.Name + " - " + Source.Date.ToString();
-                    default: throw new NotImplementedException();
+                    default: throw new System.NotSupportedException();
                 }
             }
         }
@@ -391,10 +391,14 @@ namespace TiTsEd.ViewModel {
             get { return Visibility.Collapsed; }
         }
 
-        void IMenuItemVM.OnClick() {
+        public void OnClick() {
             VM.Instance.Save(Path, SerializationFormat.Slot);
         }
-    }
+
+        void IMenuItemVM.OnClick() {
+            OnClick();
+        }
+}
 
     public sealed class OpenDirectoryItemVM : IMenuItemVM {
         public OpenDirectoryItemVM(string path) {

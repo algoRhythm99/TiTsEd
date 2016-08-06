@@ -348,7 +348,7 @@ namespace TiTsEd.Model
             foreach (var entry in _associativePart) yield return new AmfPair(entry.Key, entry.Value);
         }
 
-        protected IEnumerable<AmfPair> Enumerate()
+        public IEnumerable<AmfPair> Enumerate()
         {
             foreach (var entry in _sparsePart) yield return new AmfPair(entry.Key, entry.Value);
             foreach (var entry in _associativePart) yield return new AmfPair(entry.Key, entry.Value);
@@ -356,6 +356,11 @@ namespace TiTsEd.Model
         }
 
         IEnumerator<AmfPair> IEnumerable<AmfPair>.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public IEnumerator<AmfPair> GetEnumerator()
         {
             return Enumerate().GetEnumerator();
         }

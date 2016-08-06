@@ -462,9 +462,17 @@ namespace TiTsEd.Model
             return result;
         }
 
-        void IDisposable.Dispose()
+        public void Dispose(bool disposing)
         {
-            _reader.Dispose();
+            if (disposing)
+            {
+                _reader.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
         }
     }
 }

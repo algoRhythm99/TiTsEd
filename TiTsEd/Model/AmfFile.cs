@@ -25,18 +25,18 @@ namespace TiTsEd.Model
             FilePath = path;
             Name = Path.GetFileNameWithoutExtension(FilePath);
             Date = File.GetLastWriteTime(path);
+            FileStream stream = null;
             try
             {
-                using (var stream = File.OpenRead(path))
+                stream = File.OpenRead(path);
+                using (var reader = new AmfReader(stream))
                 {
-                    using (var reader = new AmfReader(stream))
-                    {
-                        string name;
-                        SerializationFormat format;
-                        reader.Run(this, out name, out format);
-                        Format = format;
-                        Name = name;
-                    }
+                    stream = null;
+                    string name;
+                    SerializationFormat format;
+                    reader.Run(this, out name, out format);
+                    Format = format;
+                    Name = name;
                 }
             }
             // All exceptions need to be handled as the general case, since corrupt
@@ -48,6 +48,13 @@ namespace TiTsEd.Model
                 if (e is SecurityException || e is UnauthorizedAccessException) type = AmfFileError.Error.NoPermission;
                 else if (e is IOException) type = AmfFileError.Error.Unreadable;
                 Error = new AmfFileError(type, e.ToString());
+            }
+            finally
+            {
+                if (null != stream)
+                {
+                    stream.Dispose();
+                }
             }
         }
 
@@ -83,21 +90,26 @@ namespace TiTsEd.Model
 
         public bool CanBeSaved(SerializationFormat format)
         {
+            MemoryStream stream = null;
             try
             {
-                using (var stream = new MemoryStream())
+                stream = new MemoryStream();
+                using (var writer = new AmfWriter(stream))
                 {
-                    using (var writer = new AmfWriter(stream))
-                    {
-                        writer.Run(this, "Test", format);
-                        stream.Flush();
-                        stream.Close();
-                    }
+                    stream = null;
+                    writer.Run(this, "Test", format);
                 }
             }
             catch (Exception)
             {
                 return false;
+            }
+            finally
+            {
+                if (null != stream)
+                {
+                    stream.Dispose();
+                }
             }
             return true;
         }
@@ -133,13 +145,21 @@ namespace TiTsEd.Model
         private void Write(string path, SerializationFormat format, string name)
         {
             EnsureDeleted(path);
-            using (var stream = File.Create(path))
+            Stream stream = null;
+            try
             {
+                stream = File.Create(path);
                 using (var writer = new AmfWriter(stream))
                 {
+                    stream = null;
                     writer.Run(this, name, format);
-                    stream.Flush();
-                    stream.Close();
+                }
+            }
+            finally
+            {
+                if (null != stream)
+                {
+                    stream.Dispose();
                 }
             }
         }
@@ -157,13 +177,23 @@ namespace TiTsEd.Model
 #if DEBUG
         public void TestSerialization()
         {
-            using (var stream = new ComparisonStream(FilePath))
+            ComparisonStream stream = null;
+            try
             {
+                stream = new ComparisonStream(FilePath);
                 using (var writer = new AmfWriter(stream))
                 {
+                    stream = null;
                     writer.Run(this, Name, Format);
                 }
                 stream.AssertSameLength();
+            }
+            finally
+            {
+                if (null != stream)
+                {
+                    stream.Dispose();
+                }
             }
         }
 #endif

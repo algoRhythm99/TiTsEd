@@ -482,9 +482,20 @@ namespace TiTsEd.Model
             }
         }
 
-        void IDisposable.Dispose()
+        public void Dispose(bool disposing)
         {
-            _writer.Dispose();
+            if (disposing)
+            {
+                _writer.Dispose();
+                _charReader.Dispose();
+                _charStream.Dispose();
+                _charWriter.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
         }
     }
 }
