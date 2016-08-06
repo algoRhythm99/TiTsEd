@@ -900,6 +900,7 @@
 		<Item Type="Consumable" Stack="10" Name="Catnip" ID="classes.Items.Transformatives::Catnip" />
 		<Item Type="Consumable" Stack="10" Name="ClearYu" ID="classes.Items.Transformatives::ClearYu" />
 		<Item Type="Consumable" Stack="10" Name="Clippex" ID="classes.Items.Transformatives::Clippex" />
+		<Item Type="Consumable" Stack="10" Name="DendroGro" ID="classes.Items.Transformatives::DendroGro" />
 		<Item Type="Consumable" Stack="10" Name="Dong D." ID="classes.Items.Transformatives::DongDesigner" />
 		<Item Type="Consumable" Stack="10" Name="Dove Balm" ID="classes.Items.Transformatives::DoveBalm" />
 		<Item Type="Consumable" Stack="10" Name="DracoG." ID="classes.Items.Transformatives::DracoGuard" />
@@ -964,6 +965,7 @@
 		<Item Type="Gadget" Stack="1" Name="H.Hole" ID="classes.Items.Toys::HoverHole" />
 		<Item Type="Gadget" Stack="1" Name="N.B.Hole" ID="classes.Items.Toys::NivasBionaHole" />
 		<Item Type="Gadget" Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
+		<Item Type="Gadget" Stack="1" Name="SukMastr" ID="classes.Items.Toys::SukMastr" />
 		<Item Type="MeleeWeapon" Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
 		<Item Type="MeleeWeapon" Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Cutlass" ID="classes.Items.Melee::Cutlass" />
