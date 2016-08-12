@@ -830,6 +830,7 @@
 		<Item Type="Consumable" Stack="5" Name="Crystal S." ID="classes.Items.Combat::CrystalShard" />
 		<Item Type="Consumable" Stack="1" Name="H.Wine" ID="classes.Items.Drinks::HoneyWine" />
 		<Item Type="Consumable" Stack="10" Name="R.Venom" ID="classes.Items.Drinks::RedMyrVenom" />
+		<Item Type="Consumable" Stack="10" Name="Anusoft" ID="classes.Items.Miscellaneous::Anusoft" />
 		<Item Type="Consumable" Stack="10" Name="AusarTreat" ID="classes.Items.Miscellaneous::AusarTreats" />
 		<Item Type="Consumable" Stack="10" Name="BBQ To-Go" ID="classes.Items.Miscellaneous::BBQToGo" />
 		<Item Type="Consumable" Stack="50" Name="Boobswell P." ID="classes.Items.Miscellaneous::BoobswellPads" />
@@ -898,6 +899,7 @@
 		<Item Type="Consumable" Stack="10" Name="Bovinium" ID="classes.Items.Transformatives::Bovinium" />
 		<Item Type="Consumable" Stack="10" Name="BumpyRd." ID="classes.Items.Transformatives::BumpyRoad" />
 		<Item Type="Consumable" Stack="10" Name="Catnip" ID="classes.Items.Transformatives::Catnip" />
+		<Item Type="Consumable" Stack="10" Name="Cerespirin" ID="classes.Items.Transformatives::Cerespirin" />
 		<Item Type="Consumable" Stack="10" Name="ClearYu" ID="classes.Items.Transformatives::ClearYu" />
 		<Item Type="Consumable" Stack="10" Name="Clippex" ID="classes.Items.Transformatives::Clippex" />
 		<Item Type="Consumable" Stack="10" Name="DendroGro" ID="classes.Items.Transformatives::DendroGro" />
