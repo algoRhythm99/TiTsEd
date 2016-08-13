@@ -108,6 +108,8 @@
 			<SkinType ID="4" Name="Chitin" />
 			<SkinType ID="5" Name="Feathers" />
 			<SkinType ID="6" Name="Latex" />
+			<SkinType ID="7" Name="Plant" />
+			<SkinType ID="8" Name="Bark" />
 		</SkinTypes>
 		<!-- ================================================================ -->
 		<SkinFlags>
@@ -178,6 +180,7 @@
 			<HairType ID="3" Name="Gooey" />
 			<HairType ID="4" Name="Tentacles" />
 			<HairType ID="5" Name="Quills" />
+			<HairType ID="6" Name="Plant" />
 		</HairTypes>
 		<!-- ================================================================ -->
 		<HairColors>
@@ -279,6 +282,7 @@
 			<EyeType ID="18" Name="Gabilani" />
 			<EyeType ID="49" Name="Leithan" />
 			<EyeType ID="51" Name="Synthetic" />
+			<EyeType ID="53" Name="Daynar" />
 			<EyeType ID="55" Name="Nyrea" />
 			<EyeType ID="60" Name="Myr" />
 			<EyeType ID="65" Name="Gryvain" />
@@ -304,8 +308,11 @@
 			<EarType ID="26" Name="Mouse" />
 			<EarType ID="40" Name="Panda" />
 			<EarType ID="42" Name="Raskvel" />
+			<EarType ID="45" Name="Badger" />
 			<EarType ID="46" Name="Vanae" />
 			<EarType ID="49" Name="Leithan" />
+			<EarType ID="52" Name="Simii" />
+			<EarType ID="53" Name="Daynar" />
 			<EarType ID="58" Name="Sylvan" />
 			<EarType ID="65" Name="Gryvain" />
 		</EarTypes>
@@ -331,7 +338,9 @@
 			<TongueType ID="14" Name="Frog" />
 			<TongueType ID="15" Name="Demonic" />
 			<TongueType ID="16" Name="Gooey" />
+			<TongueType ID="40" Name="Panda" />
 			<TongueType ID="42" Name="Raskvel" />
+			<TongueType ID="45" Name="Badger" />
 			<TongueType ID="49" Name="Leithan" />
 			<TongueType ID="57" Name="Ovir" />
 		</TongueTypes>
@@ -351,6 +360,7 @@
 		<AntennaeTypes>
 			<AntennaeType ID="0" Name="None" />
 			<AntennaeType ID="6" Name="Bee" />
+			<AntennaeType ID="16" Name="Gooey" />
 			<AntennaeType ID="43" Name="Sydian" />
 			<AntennaeType ID="60" Name="Myr" />
 			<AntennaeType ID="64" Name="Hradian" />
@@ -399,9 +409,12 @@
 			<ArmType ID="40" Name="Panda" />
 			<ArmType ID="45" Name="Badger" />
 			<ArmType ID="49" Name="Leithan" />
+			<ArmType ID="52" Name="Simii" />
+			<ArmType ID="53" Name="Daynar" />
 			<ArmType ID="55" Name="Nyrea" />
 			<ArmType ID="57" Name="Ovir" />
 			<ArmType ID="60" Name="Myr" />
+			<ArmType ID="67" Name="Flower" />
 		</ArmTypes>
 		<!-- ================================================================ -->
 		<ArmFlags>
@@ -442,6 +455,9 @@
 			<LegType ID="35" Name="Succubus" />
 			<LegType ID="40" Name="Panda" />
 			<LegType ID="42" Name="Raskvel" />
+			<LegType ID="45" Name="Badger" />
+			<LegType ID="52" Name="Simii" />
+			<LegType ID="53" Name="Daynar" />
 			<LegType ID="55" Name="Nyrea" />
 			<LegType ID="57" Name="Ovir" />
 			<LegType ID="60" Name="Myr" />
@@ -471,12 +487,14 @@
 			<WingType ID="6" Name="Bee" />
 			<WingType ID="10" Name="Avian" />
 			<WingType ID="11" Name="Draconic" />
+			<WingType ID="15" Name="Demonic" />
 			<WingType ID="19" Name="Shark" />
 			<WingType ID="28" Name="Dove" />
 			<WingType ID="31" Name="Dragonfly" />
 			<WingType ID="36" Name="Small Bee" />
 			<WingType ID="37" Name="Small Demonic" />
 			<WingType ID="38" Name="Small Draconic" />
+			<WingType ID="54" Name="Cockvine" />
 			<WingType ID="58" Name="Sylvan" />
 			<WingType ID="59" Name="Dark Sylvan" />
 			<WingType ID="60" Name="Myr" />
@@ -512,6 +530,8 @@
 			<TailType ID="43" Name="Sydian" />
 			<TailType ID="45" Name="Badger" />
 			<TailType ID="46" Name="Vanae" />
+			<TailType ID="52" Name="Simii" />
+			<TailType ID="53" Name="Daynar" />
 			<TailType ID="54" Name="Cockvine" />
 			<TailType ID="57" Name="Ovir" />
 			<TailType ID="60" Name="Myr" />
@@ -539,6 +559,7 @@
 			<TailFlag ID="34" Name="Chitinous" />
 			<TailFlag ID="35" Name="Feathered" />
 			<TailFlag ID="37" Name="Gooey" />
+			<TailFlag ID="42" Name="Tailcunt" />
 		</TailFlags>
 		<!-- ================================================================ -->
 		<TailGenitalTypes>
@@ -551,10 +572,13 @@
 			<TailGenitalRaceType ID="0" Name="Human" />
 			<TailGenitalRaceType ID="1" Name="Equine" />
 			<TailGenitalRaceType ID="3" Name="Canine" />
+			<TailGenitalRaceType ID="4" Name="Feline" />
+			<TailGenitalRaceType ID="5" Name="Vulpine" />
 			<TailGenitalRaceType ID="16" Name="Gooey" />
 			<TailGenitalRaceType ID="20" Name="Siren" />
 			<TailGenitalRaceType ID="54" Name="Cockvine" />
 			<TailGenitalRaceType ID="65" Name="Gryvain" />
+			<TailGenitalRaceType ID="67" Name="Flower" />
 		</TailGenitalRaceTypes>
 		<!-- ================================================================ -->
 		<CumTypes>
@@ -573,6 +597,7 @@
 			<CumType ID="20" Name="Vanae Cum" />
 			<CumType ID="23" Name="Hradian Cum" />
 			<CumType ID="24" Name="Goo Cum" />
+			<CumType ID="25" Name="Fruit Cum" />
 		</CumTypes>
 		<!-- ================================================================ -->
 		<GirlCumTypes>
@@ -585,6 +610,7 @@
 			<GirlCumType ID="18" Name="Goo" />
 			<GirlCumType ID="21" Name="Nyrea Girl Cum" />
 			<GirlCumType ID="23" Name="Hradian Cum" />
+			<GirlCumType ID="26" Name="Fruit Girl Cum" />
 		</GirlCumTypes>
 		<!-- ================================================================ -->
 		<MilkTypes>
@@ -672,6 +698,7 @@
 			<VaginaType ID="51" Name="Synthetic" />
 			<VaginaType ID="55" Name="Nyrea" />
 			<VaginaType ID="65" Name="Gryvain" />
+			<VaginaType ID="67" Name="Flower" />
 		</VaginaTypes>
 		<!-- ================================================================ -->
 		<VaginaFlags>
