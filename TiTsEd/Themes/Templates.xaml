@@ -306,6 +306,106 @@
 
     <BitmapImage x:Key="SearchIcon" UriSource="pack://application:,,,/assets/search.png" DecodePixelWidth="15" DecodePixelHeight="15"/>
 
+    <Style x:Key="NamedVector4Button" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border x:Name="root" Background="#00FFFFFF" BorderBrush="#00FFFFFF" BorderThickness="1" SnapsToDevicePixels="True">
+                        <StackPanel Orientation="Horizontal" Margin="4,4">
+                            <Image x:Name="icon" Source="{StaticResource SearchIcon}" Width="15" Height="15" SnapsToDevicePixels="True"/>
+                            <Path x:Name="arrow" Fill="Black" Data="M 0 0 L 5 5 L 10 0 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0,0,0" SnapsToDevicePixels="True"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="root" Property="BorderBrush" Value="#808080"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>    
+    </Style>
+
+    <Style x:Key="{x:Type common:NamedVector4Control}" TargetType="{x:Type common:NamedVector4Control}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type common:NamedVector4Control}">
+                    <Grid x:Name="root" Background="#00FFFFFF">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ToggleButton x:Name="button" Style="{StaticResource NamedVector4Button}" Margin="0,3,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+
+                        <Border x:Name="border" Background="Transparent" Grid.Column="1">
+                            <CheckBox x:Name="checkBox" IsChecked="{Binding IsOwned}" Margin="4,8" Focusable="True">
+                                <CheckBox.Content>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="{Binding Name}" FontSize="12"/>
+                                        <TextBlock x:Name="subtitle" Text="{Binding Comment}" Visibility="{Binding CommentVisibility}" Foreground="#606060" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </CheckBox.Content>
+                            </CheckBox>
+                        </Border>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="border" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#F8F8F8"/>
+                        </Trigger>
+                        <Trigger SourceName="checkBox" Property="IsChecked" Value="False">
+                            <Setter TargetName="subtitle" Property="Foreground" Value="#A0A0A0"/>
+                        </Trigger>
+                        <Trigger Property="IsRightSided" Value="True">
+                            <Setter TargetName="button" Property="Grid.Column" Value="2"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition SourceName="checkBox" Property="IsChecked" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="button" Property="Visibility" Value="Visible"/>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{x:Type common:NamedVector4Popup}" TargetType="{x:Type common:NamedVector4Popup}">
+        <Setter Property="DataContext" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type common:NamedVector4Popup}">
+                    <Popup x:Name="popup" Placement="Bottom" StaysOpen="False">
+                        <Border Background="White" BorderBrush="Black" BorderThickness="1">
+                            <common:AutoGrid Margin="20">
+                                <TextBlock Text="{Binding Label1}" Foreground="#606060" VerticalAlignment="Center"/>
+                                <common:MyNumericBox Value="{Binding Value1}" Type="{Binding Type1}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70"/>
+
+                                <TextBlock Text="{Binding Label2}" Foreground="#606060" VerticalAlignment="Center"/>
+                                <common:MyNumericBox Value="{Binding Value2}" Type="{Binding Type2}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70"/>
+
+                                <TextBlock Text="{Binding Label3}" Foreground="#606060" VerticalAlignment="Center"/>
+                                <common:MyNumericBox Value="{Binding Value3}" Type="{Binding Type3}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70"/>
+
+                                <TextBlock Text="{Binding Label4}" Foreground="#606060" VerticalAlignment="Center"/>
+                                <common:MyNumericBox Value="{Binding Value4}" Type="{Binding Type4}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70"/>
+                            </common:AutoGrid>
+                        </Border>
+                    </Popup>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 
     <Style x:Key="{x:Type common:SearchBox}" TargetType="{x:Type common:SearchBox}">
         <Setter Property="HorizontalAlignment" Value="Center"/>

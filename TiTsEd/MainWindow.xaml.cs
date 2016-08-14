@@ -132,5 +132,10 @@ namespace TiTsEd
             base.OnClosed(e);
             App.Current.Shutdown();
         }
+
+        public NamedVector4Popup ValuesPopup
+        {
+            get { return valuesPopup; }
+        }
     }
 }
