@@ -51,9 +51,9 @@ namespace TiTsEd.View
             (new CheckForUpdateBox()).ShowDialog();
         }
 
-        void OnSaveRequiredChanged(object sender, bool saveRequired)
+        void OnSaveRequiredChanged(object sender, BoolEventArgs saveRequired)
         {
-            if (saveRequired) saveButton.Style = (Style)Resources["HighlightedSaveButton"];
+            if (saveRequired.Value) saveButton.Style = (Style)Resources["HighlightedSaveButton"];
             else saveButton.Style = _defaultSaveStyle;
         }
 

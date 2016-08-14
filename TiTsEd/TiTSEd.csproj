@@ -65,6 +65,7 @@
     </ApplicationDefinition>
     <Compile Include="Common\ArrayEditor.cs" />
     <Compile Include="Common\AutoGrid.cs" />
+    <Compile Include="Common\BoolEventArgs.cs" />
     <Compile Include="Common\NamedVector4Control.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>

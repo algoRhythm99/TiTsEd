@@ -88,8 +88,8 @@ namespace TiTsEd.View
 
         UpdateCheckResult CheckForUpdate()
         {
-            HttpWebRequest request;
-            HttpWebResponse response;
+            HttpWebRequest request = null;
+            HttpWebResponse response = null;
 
             // Create the request
             // Old SF: https://sourceforge.net/p/TiTsEd/code/HEAD/tree/latest?format=raw
@@ -103,36 +103,54 @@ namespace TiTsEd.View
             if (request == null) return UpdateCheckResult.Unknown;
             request.Method = "GET";
 
+            UpdateCheckResult result = UpdateCheckResult.No;
             // Get the response
             try
             {
                 response = (HttpWebResponse)request.GetResponse();
+
+                if (response == null) return UpdateCheckResult.Unknown;
+
+                // Check for an update
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Stream responseStream = null;
+                    string contents = null;
+                    try
+                    {
+                        responseStream = response.GetResponseStream();
+                        using (StreamReader readStream = new StreamReader(responseStream, Encoding.UTF8))
+                        {
+                            responseStream = null;
+                            contents = readStream.ReadToEnd();
+                            if (null != contents)
+                            {
+                                // Parse the contents and make the comparison
+                                var latest = ParseVersion(contents);
+                                var local = Assembly.GetExecutingAssembly().GetName().Version;
+                                if (latest[0] > local.Major) result = UpdateCheckResult.Yes;
+                                else if (latest[0] == local.Major)
+                                    if (latest[1] > local.Minor) result = UpdateCheckResult.Yes;
+                                    else if (latest[1] == local.Minor)
+                                        if (latest[2] > local.Build) result = UpdateCheckResult.Yes;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        if (null != responseStream)
+                        {
+                            responseStream.Dispose();
+                        }
+                    }
+                }
             }
             catch { return UpdateCheckResult.Unknown; }
-            if (response == null) return UpdateCheckResult.Unknown;
-
-            // Check for an update
-            UpdateCheckResult result = UpdateCheckResult.No;
-            if (response.StatusCode == HttpStatusCode.OK)
+            finally
             {
-                Stream responseStream = response.GetResponseStream();
-                StreamReader readStream = new StreamReader(responseStream, Encoding.UTF8);
-                string contents = readStream.ReadToEnd();
-                responseStream.Close();
-                readStream.Close();
-
-                // Parse the contents and make the comparison
-                var latest = ParseVersion(contents);
-                var local = Assembly.GetExecutingAssembly().GetName().Version;
-                if (latest[0] > local.Major) result = UpdateCheckResult.Yes;
-                else if (latest[0] == local.Major)
-                    if (latest[1] > local.Minor) result = UpdateCheckResult.Yes;
-                    else if (latest[1] == local.Minor)
-                        if (latest[2] > local.Build) result = UpdateCheckResult.Yes;
+                // Close the response
+                response.Close();
             }
-
-            // Close the response
-            response.Close();
 
             return result;
         }

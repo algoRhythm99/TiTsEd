@@ -16,7 +16,7 @@ using TiTsEd.Model;
 using TiTsEd.View;
 
 namespace TiTsEd.ViewModel {
-    public delegate void SaveRequiredChanged(object sender, bool e);
+    public delegate void SaveRequiredChanged(object sender, BoolEventArgs e);
 
     public sealed class VM : BindableBase {
         public event SaveRequiredChanged SaveRequiredChanged;
@@ -168,7 +168,7 @@ namespace TiTsEd.ViewModel {
 
             SaveRequired = saveRequired;
             UpdateAppTitle();
-            if(SaveRequiredChanged != null) SaveRequiredChanged(null, saveRequired);
+            if(SaveRequiredChanged != null) SaveRequiredChanged(null, new BoolEventArgs(saveRequired));
         }
     }
 
@@ -280,11 +280,15 @@ namespace TiTsEd.ViewModel {
             VM.Instance.NotifySaveRequiredChanged(true);
         }
 
-        void IArrayVM.MoveItemToIndex(int sourceIndex, int destIndex) {
-            if(sourceIndex == destIndex) return;
+        public void MoveItemToIndex(int sourceIndex, int destIndex) {
+            if (sourceIndex == destIndex) return;
             _object.Move(sourceIndex, destIndex);
             Update();
             VM.Instance.NotifySaveRequiredChanged(true);
+        }
+
+        void IArrayVM.MoveItemToIndex(int sourceIndex, int destIndex) {
+            MoveItemToIndex(sourceIndex, destIndex);
         }
 
         protected abstract AmfObject CreateNewObject();
