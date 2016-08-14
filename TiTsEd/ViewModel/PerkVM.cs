@@ -69,7 +69,7 @@ namespace TiTsEd.ViewModel
             if (double.IsNaN(obj.GetDouble("value4"))) obj["value4"] = 0;
         }
 
-        public string Name
+        public new string Name
         {
             get { return GetString("storageName"); }
             set
@@ -180,7 +180,7 @@ namespace TiTsEd.ViewModel
             Perks = new UpdatableCollection<PerkVectorVM>(perks.Where(x => x.Match(_game.PerkSearchText)));
         }
 
-        public string Name
+        public new string Name
         {
             get;
             private set;

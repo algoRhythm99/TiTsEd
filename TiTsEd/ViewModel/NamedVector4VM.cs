@@ -23,7 +23,7 @@ namespace TiTsEd.ViewModel
             _items = items;
         }
 
-        public string Name
+        public new string Name
         {
             get { return _xml.Name; }
         }

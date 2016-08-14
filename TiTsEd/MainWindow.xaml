@@ -60,7 +60,7 @@
             <TabItem Header="Items" IsEnabled="{Binding Game.IsPC}">
                 <view:ItemsPage Background="White"/>
             </TabItem>
-            <TabItem Header="Perks">
+            <TabItem Header="Perks" IsEnabled="{Binding Game.IsPC}">
                 <view:PerkPage Background="White"/>
             </TabItem>
         </TabControl>
