@@ -80,6 +80,12 @@ namespace TiTsEd.ViewModel {
             set { SetValue("wetnessRaw", value); }
         }
 
+        public int BonusCapacity
+        {
+            get { return GetInt("bonusCapacity"); }
+            set { SetValue("bonusCapacity", value); }
+        }
+
         public string VaginaColor {
             get { return GetString("vaginaColor"); }
             set {

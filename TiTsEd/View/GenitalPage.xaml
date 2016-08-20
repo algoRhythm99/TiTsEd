@@ -147,6 +147,9 @@
                             <TextBlock              Text="Looseness"/>
                             <common:MyNumericBox    Value="{Binding Looseness}" Min="1" Lower="1" />
 
+                            <TextBlock              Text="Bonus Capacity"/>
+                            <common:MyNumericBox    Value="{Binding BonusCapacity}" />
+
                             <TextBlock              Text="Hymen"/>
                             <CheckBox IsChecked="{Binding Hymen}" />
                         </common:AutoGrid>
