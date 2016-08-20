@@ -708,8 +708,8 @@ namespace TiTsEd.ViewModel {
             set { SetValue("girlCumType", value); }
         }
 
-        public int Fertility {
-            get { return GetInt("fertilityRaw"); }
+        public double Fertility {
+            get { return GetDouble("fertilityRaw"); }
             set { SetValue("fertilityRaw", value); }
         }
 
@@ -758,8 +758,8 @@ namespace TiTsEd.ViewModel {
             set { SetValue("cumMultiplierMod", value); }
         }
 
-        public int CumQuality {
-            get { return GetInt("cumQualityRaw"); }
+        public double CumQuality {
+            get { return GetDouble("cumQualityRaw"); }
             set { SetValue("cumQualityRaw", value); }
         }
 

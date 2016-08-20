@@ -63,7 +63,7 @@
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" ToolTip="Modifier" />
 
                     <TextBlock              Text="Cum Quality"/>
-                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumQuality}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumQuality}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumQualityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
                 <common:AutoGrid>
@@ -114,7 +114,7 @@
 
                 <common:AutoGrid Columns="3">
                     <TextBlock              Text="Fertility"/>
-                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Fertility}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
                 <common:AutoGrid>
