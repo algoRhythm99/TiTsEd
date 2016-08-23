@@ -664,6 +664,18 @@ namespace TiTsEd.ViewModel {
             set { SetValue("nipplesPerBreast", value); }
         }
 
+        public double NippleLengthRatio
+        {
+            get { return GetDouble("nippleLengthRatio"); }
+            set { SetValue("nippleLengthRatio", value); }
+        }
+
+        public double NippleWidthRatio
+        {
+            get { return GetDouble("nippleWidthRatio"); }
+            set { SetValue("nippleWidthRatio", value); }
+        }
+
         public int DickNippleType {
             get { return GetInt("dickNippleType"); }
             set { SetValue("dickNippleType", value); }

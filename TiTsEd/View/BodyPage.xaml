@@ -132,6 +132,12 @@
                     <TextBlock              Text="Nipples Per Breast" HorizontalAlignment="Right" Width="Auto"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.NipplesPerBreast}" />
 
+                    <TextBlock              Text="Nipple Length Ratio" HorizontalAlignment="Right" Width="Auto"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.NippleLengthRatio}" Type="Double" />
+
+                    <TextBlock              Text="Nipple Width Ratio" HorizontalAlignment="Right" Width="Auto"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.NippleWidthRatio}" Type="Double" />
+
                     <TextBlock              Text="Dick Nipple Type" HorizontalAlignment="Right" Width="Auto"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.DickNippleType}" ItemsSource="{Binding Data.Body.DickNippleTypes}" />
 
