@@ -378,8 +378,8 @@ namespace TiTsEd.ViewModel {
             set { SetValue("hornType", value); }
         }
 
-        public int HairLength {
-            get { return GetInt("hairLength"); }
+        public double HairLength {
+            get { return GetDouble("hairLength"); }
             set { SetValue("hairLength", value); }
         }
         public String HairColor {
@@ -679,8 +679,8 @@ namespace TiTsEd.ViewModel {
             set { SetValue("milkType", value); }
         }
 
-        public int MilkFullness {
-            get { return GetInt("milkFullness"); }
+        public double MilkFullness {
+            get { return GetDouble("milkFullness"); }
             set { SetValue("milkFullness", value); }
         }
 

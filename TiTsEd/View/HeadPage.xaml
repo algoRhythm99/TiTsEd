@@ -38,7 +38,7 @@
                 </Border>
                 <common:AutoGrid>
                     <TextBlock              Text="Hair Length"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.HairLength}" Unit="inches"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.HairLength}" Type="Double" Unit="inches"/>
 
                     <TextBlock              Text="Hair Color"/>
                     <ComboBox Text="{Binding Game.Character.HairColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}" />

@@ -142,7 +142,7 @@
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.MilkType}" ItemsSource="{Binding Data.Body.MilkTypes}" />
 
                     <TextBlock              Text="Milk Fullness" HorizontalAlignment="Right" Width="Auto"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.MilkFullness}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.MilkFullness}" Type="Double" />
 
                     <TextBlock              Text="Milk Rate" HorizontalAlignment="Right" Width="Auto"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.MilkRate}" />
