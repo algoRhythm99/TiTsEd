@@ -33,6 +33,11 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
+
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Male Organs" Style="{StaticResource Header}"/>
+                </Border>
+
                 <common:AutoGrid>
                     <TextBlock              Text="Balls"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Balls}" />
@@ -107,6 +112,11 @@
             </StackPanel>
 
             <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
+ 
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Female Organs" Style="{StaticResource Header}"/>
+                </Border>
+
                 <common:AutoGrid>
                     <TextBlock              Text="Girl Cum Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}"/>

@@ -44,6 +44,10 @@
 
             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
 
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="General Information" Style="{StaticResource Header}"/>
+                </Border>
+
                 <common:AutoGrid>
                     <TextBlock              Text="Name" Width="Auto"/>
                     <TextBox                Text="{Binding Game.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
@@ -69,6 +73,11 @@
             </StackPanel>
 
             <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Vertical">
+
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="" Style="{StaticResource Header}"/>
+                </Border>
+
                 <common:AutoGrid>
                     <TextBlock              Text="Class"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.CharacterClass}" ItemsSource="{Binding Data.General.ClassTypes}"/>
