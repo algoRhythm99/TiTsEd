@@ -9,7 +9,7 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel
 {
-    public abstract class NamedVector4VM : BindableBase
+    public abstract class NamedVector4VM : BindableBase, IComparable
     {
         protected readonly GameVM _game;
         protected readonly AmfObject _items;
@@ -261,5 +261,18 @@ namespace TiTsEd.ViewModel
         {
             return Name;
         }
+
+        int IComparable.CompareTo(object obj)
+        {
+            NamedVector4VM bObj = (NamedVector4VM)obj;
+            if (this != bObj)
+            {
+                string a = Name;
+                string b = bObj.Name;
+                return a.CompareTo(b);
+            }
+            return 0;
+        }
+
     }
 }

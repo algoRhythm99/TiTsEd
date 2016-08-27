@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using TiTsEd.Model;
 
@@ -25,6 +26,7 @@ namespace TiTsEd.ViewModel {
 
             // Complete slots creation
             ItemContainers = new UpdatableCollection<ItemContainerVM>(containers);
+
         }
 
         public void BeforeSerialization() {
@@ -857,5 +859,10 @@ namespace TiTsEd.ViewModel {
 
         #endregion
 
+        #region KeyItemsPage
+
+        public UpdatableCollection<KeyItemVM> KeyItems { get; set; }
+
+        #endregion
     }
 }

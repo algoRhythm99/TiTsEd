@@ -17,7 +17,8 @@ namespace TiTsEd.ViewModel {
         private string _character;
         private bool _IsPC = true;
         private string[] _characters;
-        readonly List<PerkVectorVM> _allPerks = new List<PerkVectorVM>();
+        readonly List<PerkVM> _allPerks = new List<PerkVM>();
+        readonly KeyItemVM[] _allKeyitems;
 
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file) {
@@ -39,13 +40,24 @@ namespace TiTsEd.ViewModel {
             PerkGroups = new List<PerkGroupVM>();
             foreach (var xmlGroup in XmlData.Current.PerkGroups)
             {
-                var perksVM = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVectorVM(this, charPerks, x)).ToArray();
+                var perksVM = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, charPerks, x)).ToArray();
                 _allPerks.AddRange(perksVM);
 
                 var groupVM = new PerkGroupVM(this, xmlGroup.Name, perksVM);
                 PerkGroups.Add(groupVM);
             }
-            ;
+
+            // KeyItems
+            _keyItemSearchText = previousVM?._keyItemSearchText;
+            var keyItems = Character.GetObj("keyItems");
+            if (null == keyItems)
+            {
+                keyItems = new Model.AmfObject(AmfTypes.Array);
+            }
+            var xmlKeys = XmlData.Current.KeyItems;
+            ImportMissingNamedVectors(keyItems, xmlKeys, "storageName", x => x.GetString("tooltip"));
+            _allKeyitems = XmlData.Current.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, keyItems, x)).ToArray();
+            Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyitems.Where(x => x.Match(_keyItemSearchText)));
         }
 
         static void ImportMissingNamedVectors(AmfObject items, IEnumerable<XmlNamedVector4> xmlItems, string nameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlNamedVector4> targetXmlList = null)
@@ -95,6 +107,10 @@ namespace TiTsEd.ViewModel {
             _character = name;
             if(name == "PC") {
                 IsPC = true;
+                if (null == Character.KeyItems && (null !=_allKeyitems))
+                {
+                    Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyitems.Where(x => x.Match(_keyItemSearchText)));
+                }
             } else {
                 IsPC = false;
             }
@@ -249,7 +265,7 @@ namespace TiTsEd.ViewModel {
 
         public List<PerkGroupVM> PerkGroups { get; private set; }
 
-        string _perkSearchText;
+        string _perkSearchText = "";
         public string PerkSearchText
         {
             get { return _perkSearchText; }
@@ -259,7 +275,6 @@ namespace TiTsEd.ViewModel {
                 }
                 _perkSearchText = value;
                 foreach (var group in PerkGroups) group.Update();
-                OnPropertyChanged();
             }
         }
 
@@ -267,7 +282,7 @@ namespace TiTsEd.ViewModel {
         /// Returns the perk with the specified name (even if not owned by the player) AND registers a dependency between the caller property and this perk.
         /// That way, anytime the perk is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public PerkVectorVM GetPerk(string name, [CallerMemberName] string propertyName = null)
+        public PerkVM GetPerk(string name, [CallerMemberName] string propertyName = null)
         {
             var perk = _allPerks.First(x => x.Name == name);
             perk.GameVMProperties.Add(propertyName);
@@ -285,6 +300,44 @@ namespace TiTsEd.ViewModel {
         {
             // Grants/removes the player the appropriate bonuses when a perk is added or removed.
             // We do not add stats however since the user can already change them easily.
+            switch (name)
+            {
+                default:
+                    break;
+            }
+        }
+
+        string _keyItemSearchText = "";
+        public string KeyItemSearchText
+        {
+            get { return _keyItemSearchText; }
+            set
+            {
+                if (_keyItemSearchText == value) {
+                    return;
+                }
+                _keyItemSearchText = value;
+                Character.KeyItems.Update();
+            }
+        }
+        /// <summary>
+        /// Returns the key item with the specified name (even if not owned by the player) AND registers a dependency between the caller property and this key item.
+        /// That way, anytime the key item is modified, OnPropertyChanged will be raised for the caller property.
+        /// </summary>
+        public KeyItemVM GetKeyItem(string name, [CallerMemberName] string propertyName = null)
+        {
+            var keyItem = _allKeyitems.First(x => x.Name == name);
+            keyItem.GameVMProperties.Add(propertyName);
+            return keyItem;
+        }
+
+        public void OnKeyItemChanged(string name)
+        {
+            foreach (var prop in _allKeyitems.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
+        }
+
+        public void OnKeyItemAddedOrRemoved(string name, bool isOwned)
+        {
             switch (name)
             {
                 default:

@@ -103,6 +103,9 @@ namespace TiTsEd.Model {
 
         [XmlArray("Perks"), XmlArrayItem("PerkGroup")]
         public List<XmlPerkGroup> PerkGroups { get; set; }
+
+        [XmlArray, XmlArrayItem("KeyItem")]
+        public List<XmlNamedVector4> KeyItems { get; set; }
     }
 
     public sealed class XmlGeneralSet {

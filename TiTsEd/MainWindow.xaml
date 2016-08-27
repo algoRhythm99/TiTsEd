@@ -66,6 +66,9 @@
             <TabItem Header="Perks" IsEnabled="{Binding Game.IsPC}">
                 <view:PerkPage Background="White"/>
             </TabItem>
+            <TabItem Header="Key Items" IsEnabled="{Binding Game.IsPC}">
+                <view:KeyItemsPage Background="White"/>
+            </TabItem>
         </TabControl>
 
         <view:TopBar HorizontalAlignment="Stretch" Margin="0,7,5,0"/>
