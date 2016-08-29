@@ -961,6 +961,7 @@
 		<Item Type="Consumable" Stack="10" Name="ManUp" ID="classes.Items.Transformatives::ManUp" />
 		<Item Type="Consumable" Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
 		<Item Type="Consumable" Stack="10" Name="Nepeta" ID="classes.Items.Transformatives::Nepeta" />
+		<Item Type="Consumable" Stack="10" Name="N.Butter" ID="classes.Items.Transformatives::NukiNutbutter" />
 		<Item Type="Consumable" Stack="10" Name="N.Candy" ID="classes.Items.Transformatives::NyreanCandy" />
 		<Item Type="Consumable" Stack="10" Name="Orange P." ID="classes.Items.Transformatives::OrangePill" />
 		<Item Type="Consumable" Stack="10" Name="OvirAce" ID="classes.Items.Transformatives::OvirAce" />
