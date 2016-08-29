@@ -4,7 +4,7 @@
 		<ClassTypes>
 			<ClassType ID="0" Name="Smuggler" />
 			<ClassType ID="1" Name="Mercenary" />
-			<ClassType ID="2" Name="Engineer" />
+			<ClassType ID="2" Name="Tech Specialist" />
 		</ClassTypes>
 		<!-- ================================================================ -->
 		<CopyTags>
@@ -1136,7 +1136,7 @@
 			<Perk Name="Smuggled Stimulant" Description="Allows you to gain 25 energy per round for 3 rounds, once per combat encounter." />
 			<Perk Name="Burst of Energy" Description="Allows you to recover 60 energy, once per combat encounter." />
 		</PerkGroup>
-		<PerkGroup Name="Engineer">
+		<PerkGroup Name="Tech Specialist">
 			<Perk Name="Paralyzing Shock" Description="An attack that allows you to paralyze a single foe. Characters with higher intelligence will have greater success using this skill." />
 			<Perk Name="Shield Tweaks" Description="Grants your shield generator an additional 2 points of shield protection per level." />
 			<Perk Name="Attack Drone" Description="Grants an attack drone that will automatically fire on your enemies every combat round as long as your shields are up. The drone will also bolster your shields with its own, raising your maximum shielding by one point per level." />
