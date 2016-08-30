@@ -373,6 +373,7 @@
 			<HornType ID="12" Name="Lizan" />
 			<HornType ID="15" Name="Demonic" />
 			<HornType ID="21" Name="Deer" />
+			<HornType ID="30" Name="Dryad" />
 			<HornType ID="50" Name="Goat" />
 			<HornType ID="62" Name="Rhino" />
 			<HornType ID="63" Name="Narwhal" />
