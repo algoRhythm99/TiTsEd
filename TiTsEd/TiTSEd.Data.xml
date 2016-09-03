@@ -1053,6 +1053,7 @@
 		<Item Type="RangedWeapon" Stack="1" Name="SalPistl" ID="classes.Items.Guns::SalamanderPistol" />
 		<Item Type="RangedWeapon" Stack="1" Name="SalRifle" ID="classes.Items.Guns::SalamanderRifle" />
 		<Item Type="RangedWeapon" Stack="1" Name="S.Pistol" ID="classes.Items.Guns::ScopedPistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="secureMP" ID="classes.Items.Guns::SecureMP" />
 		<Item Type="RangedWeapon" Stack="1" Name="SlutRay" ID="classes.Items.Guns::SlutRay" />
 		<Item Type="RangedWeapon" Stack="1" Name="A.SlutRay" ID="classes.Items.Guns::SlutRayAdvanced" />
 		<Item Type="RangedWeapon" Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" />
@@ -1080,6 +1081,7 @@
 		<Item Type="Other" Stack="20" Name="Picardine" ID="classes.Items.Miscellaneous::Picardine" />
 		<Item Type="Other" Stack="20" Name="Satyrite" ID="classes.Items.Miscellaneous::Satyrite" />
 		<Item Type="Other" Stack="1" Name="V.Bloom" ID="classes.Items.Miscellaneous::VenusBloom" />
+		<Item Type="Other" Stack="5" Name="W.Drone" ID="classes.Items.Miscellaneous::WeatherDrone" />
 	</Items>
 	<!-- ================================================================ -->
 	<Perks>
