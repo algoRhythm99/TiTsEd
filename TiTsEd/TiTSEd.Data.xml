@@ -709,6 +709,8 @@
 			<VaginaFlag ID="25" Name="Ovipositor" />
 			<VaginaFlag ID="30" Name="Nubby" />
 			<VaginaFlag ID="37" Name="Gooey" />
+			<VaginaFlag ID="40" Name="Slightly Pumped" />
+			<VaginaFlag ID="41" Name="Fully Pumped" />
 		</VaginaFlags>
 		<!-- ================================================================ -->
 		<NippleTypes>
