@@ -893,6 +893,7 @@
 		<Item Type="Consumable" Stack="10" Name="MyrNectr" ID="classes.Items.Miscellaneous::MyrNectar" />
 		<Item Type="Consumable" Stack="10" Name="NaleenNip" ID="classes.Items.Miscellaneous::NaleenNip" />
 		<Item Type="Consumable" Stack="10" Name="Nuki C." ID="classes.Items.Miscellaneous::NukiCookies" />
+		<Item Type="Consumable" Stack="10" Name="OS StimBoost" ID="classes.Items.Miscellaneous::OSStimBoost" />
 		<Item Type="Consumable" Stack="10" Name="Ovilium" ID="classes.Items.Miscellaneous::Ovilium" />
 		<Item Type="Consumable" Stack="10" Name="Pandaneen" ID="classes.Items.Miscellaneous::Pandaneen" />
 		<Item Type="Consumable" Stack="10" Name="Panda Pro" ID="classes.Items.Miscellaneous::PandaPro" />
