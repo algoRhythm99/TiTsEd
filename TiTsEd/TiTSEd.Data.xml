@@ -764,6 +764,7 @@
 		<Item Type="Clothing" Stack="1" Name="Butler.C" ID="classes.Items.Apparel::ButlerCostume" />
 		<Item Type="Clothing" Stack="1" Name="Butler.O" ID="classes.Items.Apparel::ButlerOutfit" />
 		<Item Type="Clothing" Stack="1" Name="Chr.Ldr." ID="classes.Items.Apparel::CheerleaderUniform" />
+		<Item Type="Clothing" Stack="1" Name="C.Suit" ID="classes.Items.Apparel::ClassySuit" />
 		<Item Type="Clothing" Stack="1" Name="C.Clothes" ID="classes.Items.Apparel::ComfortableClothes" />
 		<Item Type="Clothing" Stack="1" Name="Cow Leotard" ID="classes.Items.Apparel::CowPrintLeotard" />
 		<Item Type="Clothing" Stack="1" Name="DressCloth" ID="classes.Items.Apparel::DressClothes" />
@@ -774,6 +775,7 @@
 		<Item Type="Clothing" Stack="1" Name="Libr.O" ID="classes.Items.Apparel::LibrarianOutfit" />
 		<Item Type="Clothing" Stack="1" Name="BlkDress" ID="classes.Items.Apparel::LittleBlackDress" />
 		<Item Type="Clothing" Stack="1" Name="MaidO." ID="classes.Items.Apparel::MaidOutfit" />
+		<Item Type="Clothing" Stack="1" Name="Maid U." ID="classes.Items.Apparel::MaidUniform" />
 		<Item Type="Clothing" Stack="1" Name="M.Doctor" ID="classes.Items.Apparel::MaleDoctorOutfit" />
 		<Item Type="Clothing" Stack="1" Name="NurseO." ID="classes.Items.Apparel::NurseOutfit" />
 		<Item Type="Clothing" Stack="1" Name="O.Swimsuit" ID="classes.Items.Apparel::OnePieceSwimsuit" />
@@ -781,9 +783,12 @@
 		<Item Type="Clothing" Stack="1" Name="S.Boy O." ID="classes.Items.Apparel::SchoolboyOutfit" />
 		<Item Type="Clothing" Stack="1" Name="S.Girl C." ID="classes.Items.Apparel::SchoolgirlCostume" />
 		<Item Type="Clothing" Stack="1" Name="S.Girl O." ID="classes.Items.Apparel::SchoolgirlOutfit" />
+		<Item Type="Clothing" Stack="1" Name="S.Dress" ID="classes.Items.Apparel::SilkDress" />
+		<Item Type="Clothing" Stack="1" Name="T.Bodysuit" ID="classes.Items.Apparel::ThermalBodysuit" />
 		<Item Type="Clothing" Stack="1" Name="TopNSkirt." ID="classes.Items.Apparel::TopNSkirt" />
 		<Item Type="Clothing" Stack="1" Name="UGC Uniform" ID="classes.Items.Apparel::UGCUniform" />
 		<Item Type="Clothing" Stack="1" Name="WaitressUniform" ID="classes.Items.Apparel::WaitressUniform" />
+		<Item Type="Clothing" Stack="1" Name="Winter G." ID="classes.Items.Apparel::WinterGear" />
 		<Item Type="Armor" Stack="1" Name="ST. Catsuit" ID="classes.Items.Apparel::AnnosCatsuit" />
 		<Item Type="Armor" Stack="1" Name="AtmaArmor" ID="classes.Items.Apparel::AtmaArmor" />
 		<Item Type="Armor" Stack="1" Name="Catsuit" ID="classes.Items.Apparel::GenericCatsuit" />
@@ -814,6 +819,9 @@
 		<Item Type="Armor" Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
 		<Item Type="Armor" Stack="1" Name="Void Plates" ID="classes.Items.Armor::VoidPlateArmor" />
 		<Item Type="Armor" Stack="1" Name="I.Coat" ID="classes.Items.Armor::InsulatedCoat" />
+		<Item Type="Armor" Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
+		<Item Type="Armor" Stack="1" Name="WM Dress" ID="classes.Items.Armor::WeavemailDress" />
+		<Item Type="Armor" Stack="1" Name="WM Shirt" ID="classes.Items.Armor::WeavemailShirt" />
 		<Item Type="Armor" Stack="1" Name="O.Collar" ID="classes.Items.Armor.Unique::OmnisuitCollar" />
 		<Item Type="Armor" Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit" />
 		<Item Type="Armor" Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
@@ -1011,7 +1019,9 @@
 		<Item Type="MeleeWeapon" Stack="1" Name="L.Saber" ID="classes.Items.Melee::LavaSaber" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Machete" ID="classes.Items.Melee::Machette" />
 		<Item Type="MeleeWeapon" Stack="1" Name="M.Pick" ID="classes.Items.Melee::MilitaryPick" />
+		<Item Type="MeleeWeapon" Stack="1" Name="M.Saber" ID="classes.Items.Melee::MonofilamentSaber" />
 		<Item Type="MeleeWeapon" Stack="1" Name="N.Spear" ID="classes.Items.Melee::NyreanSpear" />
+		<Item Type="MeleeWeapon" Stack="1" Name="P.Talons" ID="classes.Items.Melee::PredatorTalons" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Wrench" ID="classes.Items.Melee::RaskvelWrench" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Rock" ID="classes.Items.Melee::Rock" />
 		<Item Type="MeleeWeapon" Stack="1" Name="R.Hammer" ID="classes.Items.Melee::RocketHammer" />
@@ -1019,6 +1029,7 @@
 		<Item Type="MeleeWeapon" Stack="1" Name="Shortsword" ID="classes.Items.Melee::Shortsword" />
 		<Item Type="MeleeWeapon" Stack="1" Name="SurvAxe" ID="classes.Items.Melee::SurvivalAxe" />
 		<Item Type="MeleeWeapon" Stack="1" Name="T.Spear" ID="classes.Items.Melee::TaivrasSpear" />
+		<Item Type="MeleeWeapon" Stack="1" Name="T.Scalpel" ID="classes.Items.Melee::ThermalScalpel" />
 		<Item Type="MeleeWeapon" Stack="1" Name="V.Blade" ID="classes.Items.Melee::VampBlade" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Vanae Spear" ID="classes.Items.Melee::VanaeSpear" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
@@ -1026,6 +1037,7 @@
 		<Item Type="MeleeWeapon" Stack="1" Name="Y.Strap" ID="classes.Items.Melee::YappiStrap" />
 		<Item Type="RangedWeapon" Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
 		<Item Type="RangedWeapon" Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
+		<Item Type="RangedWeapon" Stack="1" Name="B.Light" ID="classes.Items.Guns::BlackLight" />
 		<Item Type="RangedWeapon" Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BoltActionRifle" />
 		<Item Type="RangedWeapon" Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" />
 		<Item Type="RangedWeapon" Stack="1" Name="E.Handgun" ID="classes.Items.Guns::EagleHandgun" />
@@ -1049,6 +1061,7 @@
 		<Item Type="RangedWeapon" Stack="1" Name="M.Rifle" ID="classes.Items.Guns::MyrRifle" />
 		<Item Type="RangedWeapon" Stack="1" Name="Nova Pstl." ID="classes.Items.Guns::NovaPistol" />
 		<Item Type="RangedWeapon" Stack="1" Name="Nova Rifle" ID="classes.Items.Guns::NovaRifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="PlasmaBore" ID="classes.Items.Guns::PlasmaBore" />
 		<Item Type="RangedWeapon" Stack="1" Name="Plasma P." ID="classes.Items.Guns::PlasmaPistol" />
 		<Item Type="RangedWeapon" Stack="1" Name="P.Bow" ID="classes.Items.Guns::PrimitiveBow" />
 		<Item Type="RangedWeapon" Stack="1" Name="Royal Bow" ID="classes.Items.Guns::QueensBow" />
@@ -1059,6 +1072,7 @@
 		<Item Type="RangedWeapon" Stack="1" Name="secureMP" ID="classes.Items.Guns::SecureMP" />
 		<Item Type="RangedWeapon" Stack="1" Name="SlutRay" ID="classes.Items.Guns::SlutRay" />
 		<Item Type="RangedWeapon" Stack="1" Name="A.SlutRay" ID="classes.Items.Guns::SlutRayAdvanced" />
+		<Item Type="RangedWeapon" Stack="1" Name="SunFire" ID="classes.Items.Guns::SunFire" />
 		<Item Type="RangedWeapon" Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" />
 		<Item Type="RangedWeapon" Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
 		<Item Type="RangedWeapon" Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
