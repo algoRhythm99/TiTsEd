@@ -26,6 +26,7 @@ To edit the program itself, you need a copy of [Visual Studio 2012 Express for W
 ## Contributors ##
 
 * Chase-san
+* algoRhythm99 
 
 ## CoCEd Contributors ##
 
