@@ -752,6 +752,7 @@
 		<Item Type="Accessory" Stack="1" Name="MuskLure" ID="classes.Items.Accessories::MuskLure" />
 		<Item Type="Accessory" Stack="1" Name="M.Repel" ID="classes.Items.Accessories::MuskRepel" />
 		<Item Type="Accessory" Stack="1" Name="S.Duster" ID="classes.Items.Accessories::SalamanderDuster" />
+		<Item Type="Accessory" Stack="1" Name="Siegwulfe" ID="classes.Items.Accessories::SiegwulfeItem" />
 		<Item Type="Accessory" Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolf" />
 		<Item Type="Accessory" Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolfDamaged" />
 		<Item Type="Accessory" Stack="1" Name="TamWolf2.0" ID="classes.Items.Accessories::TamWolfII" />
