@@ -27,6 +27,9 @@
                                 <Setter TargetName="text" Property="Foreground" Value="#DA3100"/>
                                 <Setter TargetName="root" Property="Background" Value="White"/>
                             </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="text" Property="Foreground" Value="#00FFFFFF"/>
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
