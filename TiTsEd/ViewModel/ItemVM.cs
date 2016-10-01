@@ -46,12 +46,14 @@ namespace TiTsEd.ViewModel {
 
     public sealed class ItemSlotVM : ObjectVM {
         private readonly CharacterVM _character;
+        private ItemCategories _categories;
         private XmlItem _xml;
 
         public ItemSlotVM(CharacterVM character, AmfObject obj, ItemCategories categories)
             : base(obj) {
             Categories = categories;
             _character = character;
+            _categories = categories;
 
             //find the xml definition for this slot type
             var id = GetString("classInstance");
@@ -63,6 +65,10 @@ namespace TiTsEd.ViewModel {
                 }
             }
 
+            UpdateItemGroups();
+        }
+
+        public void UpdateItemGroups() {
             //create our groups
             var groups = new List<ItemGroupVM>();
             var enumNames = Enum.GetNames(typeof(ItemCategories));
@@ -72,7 +78,7 @@ namespace TiTsEd.ViewModel {
             foreach (string ename in enumNames) {
                 var etype = Enum.Parse(typeof(ItemCategories), ename);
                 int eint = (int)etype;
-                if (((int)categories & eint) == eint) {
+                if (((int)_categories & eint) == eint) {
                     //create the group for this supported type
                     ItemGroupVM vm = new ItemGroupVM(ename, this);
                     if (vm.Items.Count > 0) {
@@ -82,6 +88,7 @@ namespace TiTsEd.ViewModel {
             }
 
             AllGroups = new UpdatableCollection<ItemGroupVM>(groups);
+            OnPropertyChanged("AllGroups");
         }
 
         public ItemCategories Categories {
@@ -180,13 +187,22 @@ namespace TiTsEd.ViewModel {
     /// View VM for an item category
     /// </summary>
     public sealed class ItemGroupVM {
+        public const int MIN_ITEM_TEXT_SEARCH_LENGTH = 2; //should always be at least 1
         private string _Name;
         public ItemGroupVM(string name, ItemSlotVM slot) {
             Name = name;
 
             var items = new List<ItemVM>();
+            var searchText = "";
+            if (VM.Instance.Game != null) {
+                searchText = VM.Instance.Game.ItemSearchText;
+            }
             foreach (XmlItem xml in XmlData.Current.Items) {
-                //xmlitem.Type
+                if (searchText.Length >= MIN_ITEM_TEXT_SEARCH_LENGTH
+                    && !xml.Name.ToLower().Contains(searchText)
+                    && !xml.ID.ToLower().Contains(searchText)) {
+                    continue;
+                }
                 if (xml.Type == name) {
                     items.Add(new ItemVM(slot, xml));
                 }

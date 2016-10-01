@@ -234,15 +234,29 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        string _itemSearchText;
+        public string ItemSearchText {
+            get { return _itemSearchText; }
+            set {
+                if (_itemSearchText == value) {
+                    return;
+                }
+                _itemSearchText = value;
+                //a less than optimal way of handling this
+                Character.UpdateItemList();
+            }
+        }
+
         public List<PerkGroupVM> PerkGroups { get; private set; }
 
         string _perkSearchText;
         public string PerkSearchText
         {
             get { return _perkSearchText; }
-            set
-            {
-                if (_perkSearchText == value) return;
+            set {
+                if (_perkSearchText == value) {
+                    return;
+                }
                 _perkSearchText = value;
                 foreach (var group in PerkGroups) group.Update();
                 OnPropertyChanged();

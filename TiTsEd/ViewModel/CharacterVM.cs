@@ -812,6 +812,13 @@ namespace TiTsEd.ViewModel {
         #region ItemPage
         public UpdatableCollection<ItemContainerVM> ItemContainers { get; private set; }
 
+        public void UpdateItemList() {
+            //need to find a way to make search only apply to currently selected item somehow
+            foreach(var slot in _inventory.Slots) {
+                slot.UpdateItemGroups();
+            }
+        }
+
         public void UpdateInventory() {
             _inventory.Clear();
             const int maxSlots = 10;
