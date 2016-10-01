@@ -234,7 +234,7 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        string _itemSearchText;
+        string _itemSearchText = "";
         public string ItemSearchText {
             get { return _itemSearchText; }
             set {
