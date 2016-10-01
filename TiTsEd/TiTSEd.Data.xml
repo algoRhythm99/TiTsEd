@@ -599,6 +599,8 @@
 			<CumType ID="23" Name="Hradian Cum" />
 			<CumType ID="24" Name="Goo Cum" />
 			<CumType ID="25" Name="Fruit Cum" />
+			<CumType ID="27" Name="Eggnog" />
+			<CumType ID="28" Name="Peppermint Cum" />
 		</CumTypes>
 		<!-- ================================================================ -->
 		<GirlCumTypes>
@@ -827,12 +829,21 @@
 		<Item Type="Armor" Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit" />
 		<Item Type="Armor" Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
 		<Item Type="UpperUndergarment" Stack="1" Name="BikiniTop" ID="classes.Items.Apparel::FrillyBikiniTop" />
+		<Item Type="UpperUndergarment" Stack="1" Name="NetTop" ID="classes.Items.Apparel::FishnetTop" />
 		<Item Type="UpperUndergarment" Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Bounty Bra" ID="classes.Items.Apparel::BountyBra" />
+		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirt" />
+		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirt" />
+		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirt" />
+		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirt" />
+		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirt" />
+		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirt" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Corset" ID="classes.Items.Apparel::Corset" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
+		<Item Type="UpperUndergarment" Stack="1" Name="CowShirt" ID="classes.Items.Apparel::CowPrintedShirt" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Girly Bra" ID="classes.Items.Apparel::GirlyBra" />
+		<Item Type="UpperUndergarment" Stack="1" Name="Harness" ID="classes.Items.Apparel::Harness" />
 		<Item Type="UpperUndergarment" Stack="1" Name="HoneyBra" ID="classes.Items.Apparel::HoneypotBra" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Lacy Bra" ID="classes.Items.Apparel::LacyBra" />
 		<Item Type="UpperUndergarment" Stack="1" Name="LilG.Bra" ID="classes.Items.Apparel::LittleGreenBra" />
@@ -851,14 +862,20 @@
 		<Item Type="LowerUndergarment" Stack="1" Name="BaggyShorts" ID="classes.Items.Apparel::BaggySwimShorts" />
 		<Item Type="LowerUndergarment" Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" />
 		<Item Type="LowerUndergarment" Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts" />
+		<Item Type="LowerUndergarment" Stack="1" Name="BullStrap" ID="classes.Items.Apparel::BullsJockstrap" />
+		<Item Type="LowerUndergarment" Stack="1" Name="CockPasty" ID="classes.Items.Apparel::CockPasty" />
 		<Item Type="LowerUndergarment" Stack="1" Name="Cow Bottom" ID="classes.Items.Apparel::CowPrintBikiniBottom" />
 		<Item Type="LowerUndergarment" Stack="1" Name="Cow Panties" ID="classes.Items.Apparel::CowPrintPantiesAndGarter" />
+		<Item Type="UpperUndergarment" Stack="1" Name="CowShorts" ID="classes.Items.Apparel::CowPrintedShorts" />
 		<Item Type="LowerUndergarment" Stack="1" Name="C.String" ID="classes.Items.Apparel::CString" />
+		<Item Type="LowerUndergarment" Stack="1" Name="NetBriefs" ID="classes.Items.Apparel::FishnetBriefs" />
 		<Item Type="LowerUndergarment" Stack="1" Name="G.Panties" ID="classes.Items.Apparel::GirlyPanties" />
+		<Item Type="LowerUndergarment" Stack="1" Name="HorseBxs" ID="classes.Items.Apparel::HorseshoeBoxers" />
 		<Item Type="LowerUndergarment" Stack="1" Name="LilG.Brief" ID="classes.Items.Apparel::LittleGreenBriefs" />
 		<Item Type="LowerUndergarment" Stack="1" Name="LilG.Panty" ID="classes.Items.Apparel::LittleGreenPanties" />
 		<Item Type="LowerUndergarment" Stack="1" Name="LilG.Thong" ID="classes.Items.Apparel::LittleGreenThong" />
 		<Item Type="LowerUndergarment" Stack="1" Name="M.Thong" ID="classes.Items.Apparel::MaleThong" />
+		<Item Type="LowerUndergarment" Stack="1" Name="GuyTights" ID="classes.Items.Apparel::MaleTights" />
 		<Item Type="LowerUndergarment" Stack="1" Name="Briefs" ID="classes.Items.Apparel::PlainBriefs" />
 		<Item Type="LowerUndergarment" Stack="1" Name="Panties" ID="classes.Items.Apparel::PlainPanties" />
 		<Item Type="LowerUndergarment" Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" />
@@ -940,12 +957,14 @@
 		<Item Type="Consumable" Stack="10" Name="BumpyRd." ID="classes.Items.Transformatives::BumpyRoad" />
 		<Item Type="Consumable" Stack="10" Name="Catnip" ID="classes.Items.Transformatives::Catnip" />
 		<Item Type="Consumable" Stack="10" Name="Cerespirin" ID="classes.Items.Transformatives::Cerespirin" />
+		<Item Type="Consumable" Stack="10" Name="Circumser" ID="classes.Items.Transformatives::Circumscriber" />
 		<Item Type="Consumable" Stack="10" Name="ClearYu" ID="classes.Items.Transformatives::ClearYu" />
 		<Item Type="Consumable" Stack="10" Name="Clippex" ID="classes.Items.Transformatives::Clippex" />
 		<Item Type="Consumable" Stack="10" Name="DendroGro" ID="classes.Items.Transformatives::DendroGro" />
 		<Item Type="Consumable" Stack="10" Name="Dong D." ID="classes.Items.Transformatives::DongDesigner" />
 		<Item Type="Consumable" Stack="10" Name="Dove Balm" ID="classes.Items.Transformatives::DoveBalm" />
 		<Item Type="Consumable" Stack="10" Name="DracoG." ID="classes.Items.Transformatives::DracoGuard" />
+		<Item Type="Consumable" Stack="10" Name="Equilicum" ID="classes.Items.Transformatives::Equilicum" />
 		<Item Type="Consumable" Stack="24" Name="Lg.BluEgg" ID="classes.Items.Transformatives::EggBlueLarge" />
 		<Item Type="Consumable" Stack="24" Name="Sm.BluEgg" ID="classes.Items.Transformatives::EggBlueSmall" />
 		<Item Type="Consumable" Stack="24" Name="Lg.PinkEgg" ID="classes.Items.Transformatives::EggPinkLarge" />
@@ -975,19 +994,24 @@
 		<Item Type="Consumable" Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
 		<Item Type="Consumable" Stack="10" Name="Nepeta" ID="classes.Items.Transformatives::Nepeta" />
 		<Item Type="Consumable" Stack="10" Name="N.Butter" ID="classes.Items.Transformatives::NukiNutbutter" />
+		<Item Type="Consumable" Stack="10" Name="Nutnog" ID="classes.Items.Transformatives::Nutnog" />
 		<Item Type="Consumable" Stack="10" Name="N.Candy" ID="classes.Items.Transformatives::NyreanCandy" />
 		<Item Type="Consumable" Stack="10" Name="Orange P." ID="classes.Items.Transformatives::OrangePill" />
 		<Item Type="Consumable" Stack="10" Name="OvirAce" ID="classes.Items.Transformatives::OvirAce" />
 		<Item Type="Consumable" Stack="5" Name="Ovir+" ID="classes.Items.Transformatives::OvirPositive" />
+		<Item Type="Consumable" Stack="10" Name="Peckermint" ID="classes.Items.Transformatives::Peckermint" />
 		<Item Type="Consumable" Stack="10" Name="RainbowG." ID="classes.Items.Transformatives::RainbowGaze" />
 		<Item Type="Consumable" Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
 		<Item Type="Consumable" Stack="10" Name="R.Made" ID="classes.Items.Transformatives::RubberMade" />
 		<Item Type="Consumable" Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
+		<Item Type="Consumable" Stack="10" Name="JawBreakr" ID="classes.Items.Transformatives::SaltyJawBreaker" />
 		<Item Type="Consumable" Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
 		<Item Type="Consumable" Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
 		<Item Type="Consumable" Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
 		<Item Type="Consumable" Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCreamWhite" />
+		<Item Type="Consumable" Stack="10" Name="SwtSweat" ID="classes.Items.Transformatives::SweetSweat" />
 		<Item Type="Consumable" Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
+		<Item Type="Consumable" Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
 		<Item Type="Gadget" Stack="10" Name="A.Cock" ID="classes.Items.Miscellaneous::ACock" />
 		<Item Type="Gadget" Stack="10" Name="A.D.Cock" ID="classes.Items.Miscellaneous::ADCock" />
 		<Item Type="Gadget" Stack="10" Name="A.H.Cock" ID="classes.Items.Miscellaneous::AHCock" />
