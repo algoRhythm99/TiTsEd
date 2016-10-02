@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Text;
 using TiTsEd.Model;
 
 
 namespace TiTsEd.ViewModel {
+
     public sealed class ItemContainerVM {
         readonly ObservableCollection<ItemSlotVM> _slots = new ObservableCollection<ItemSlotVM>();
         readonly CharacterVM _character;
@@ -56,16 +58,84 @@ namespace TiTsEd.ViewModel {
             _categories = categories;
 
             //find the xml definition for this slot type
-            var id = GetString("classInstance");
-            _xml = XmlItem.Empty;
-            foreach (XmlItem item in XmlData.Current.Items) {
-                if (item.ID == id) {
-                    _xml = item;
+            var className = GetString("classInstance");
+            var variant = GetString("variant");
+            setXml(getXmlItemForSlot(className, variant));
+
+            UpdateItemGroups();
+        }
+
+        public void setXml(XmlItem xmlItem)
+        {
+            _xml = xmlItem;
+        }
+
+        public static XmlItem getXmlItemForSlot(string className, string variant)
+        {
+            XmlItem foundItem = XmlItem.Empty;
+            foreach (XmlItem item in XmlData.Current.Items)
+            {
+                bool isItem = (item.ID == className);
+                if (null != item.Variant)
+                {
+                    if (null != variant)
+                    {
+                        isItem = isItem && (variant == item.Variant);
+                    }
+                }
+                if (isItem)
+                {
+                    foundItem = item;
                     break;
                 }
             }
+            return foundItem;
+        }
 
-            UpdateItemGroups();
+        public void UpdateFromXmlItem(XmlItem xmlItem)
+        {
+            var oldTypeId = _xml.ID;
+            setXml(xmlItem);
+            Name = xmlItem.Name;
+            TypeID = xmlItem.ID;
+            if (xmlItem != XmlItem.Empty)
+            {
+                SetValue("version", 1);
+                if (xmlItem.LongName?.Length > 0)
+                {
+                    LongName = xmlItem.LongName;
+                }
+                if (xmlItem.Tooltip?.Length > 0)
+                {
+                    Tooltip = xmlItem.Tooltip;
+                }
+                if (xmlItem.Variant?.Length > 0)
+                {
+                    Variant = xmlItem.Variant;
+                }
+                Quantity = xmlItem.Stack;
+            }
+
+            //update all items for is selected
+            foreach (var group in AllGroups)
+            {
+                foreach (var item in group.Items)
+                {
+                    item.NotifyIsSelectedChanged();
+                }
+            }
+
+            OnPropertyChanged("DisplayName");
+            OnPropertyChanged("QuantityDescription");
+            OnPropertyChanged("MaxQuantity");
+
+            //check if we have to reflow the inventory
+            if (oldTypeId == XmlItem.Empty.ID
+            || xmlItem.ID == XmlItem.Empty.ID)
+            {
+                _character.CleanupInventory();
+                _character.UpdateInventory();
+            }
         }
 
         public void UpdateItemGroups() {
@@ -110,75 +180,88 @@ namespace TiTsEd.ViewModel {
         public int Quantity {
             get { return GetInt("quantity"); }
             set {
-                SetValue("quantity", value);
-
                 // Fix type
-                if (value == 0) TypeID = "NOTHING!";
-
+                SetValue("quantity", value);
+                if (value == 0)
+                {
+                    UpdateFromXmlItem(XmlItem.Empty);
+                }
                 // Property change
-                OnPropertyChanged("TypeDescription");
+                OnPropertyChanged("DisplayName");
                 OnPropertyChanged("QuantityDescription");
             }
         }
 
         public string TypeID {
             get {
-                return _xml.ID;
+                return GetString("classInstance");
             }
             set {
-                var oldTypeId = _xml.ID;
-                _xml = XmlItem.Empty;
-                foreach (XmlItem item in XmlData.Current.Items) {
-                    if (item.ID == value) {
-                        _xml = item;
-                        break;
-                    }
-                }
-
-                //update data
-                SetValue("classInstance", _xml.ID);
-                SetValue("shortName", _xml.Name);
-                SetValue("version", 1);
-
-                if (Quantity > MaxQuantity) {
-                    Quantity = MaxQuantity;
-                }
-                if (_xml != XmlItem.Empty && Quantity < 1) {
-                    Quantity = 1;
-                }
-
-                //update all items for is selected
-                foreach (var group in AllGroups) {
-                    foreach (var item in group.Items) {
-                        item.NotifyIsSelectedChanged();
-                    }
-                }
-
-                OnPropertyChanged("TypeDescription");
-                OnPropertyChanged("QuantityDescription");
-                OnPropertyChanged("MaxQuantity");
-
-                //check if we have to reflow the inventory
-                if (oldTypeId == XmlItem.Empty.ID
-                || _xml.ID == XmlItem.Empty.ID) {
-                    _character.CleanupInventory();
-                    _character.UpdateInventory();
-                }
-            }
-        }
-
-        public string TypeDescription {
-            get {
-                if (_xml == XmlItem.Empty) {
-                    return _xml.Name;
-                }
-                return _xml.LongName;
+                SetValue("classInstance", value);
             }
         }
 
         public string QuantityDescription {
             get {
                 return GetInt("quantity").ToString();
+            }
+        }
+
+        public new string Name
+        {
+            get
+            {
+                return GetString("shortName");
+            }
+            set
+            {
+                SetValue("shortName", value);
+            }
+        }
+
+
+        public string LongName
+        {
+            get
+            {
+                return GetString("longName");
+            }
+            set
+            {
+                SetValue("longName", value);
+            }
+        }
+
+        public string Tooltip
+        {
+            get
+            {
+                return GetString("tooltip");
+            }
+            set
+            {
+                SetValue("tooltip", value);
+            }
+        }
+
+        public string Variant
+        {
+            get
+            {
+                return GetString("variant");
+            }
+            set
+            {
+                SetValue("variant", Convert.ToInt32(value));
+            }
+        }
+
+        public string DisplayName
+        {
+            get
+            {
+                var xmlItem = getXmlItemForSlot(TypeID, Variant);
+                return XmlItem.GetDisplayName(xmlItem, TypeID);
             }
         }
     }
@@ -238,12 +321,10 @@ namespace TiTsEd.ViewModel {
     public sealed class ItemVM : BindableBase, IComparable {
         readonly ItemSlotVM _slot;
         readonly XmlItem _xml;
-        private string _Name;
 
         public ItemVM(ItemSlotVM slot, XmlItem item) {
             _slot = slot;
             _xml = item;
-            SetName();
         }
 
         public string ID {
@@ -251,34 +332,41 @@ namespace TiTsEd.ViewModel {
         }
 
         public new string Name {
-            get {
-                SetName();
-                return _Name;
-            }
-            private set {
-                _Name = value;
-            }
+            get { return _xml.Name; }
         }
 
-        private void SetName() {
-            if (null == _Name) {
-                if (null == ToolTip) {
-                    _Name = _xml.LongName;
-                } else {
-                    _Name = _xml.LongName + "\u202F*";
-                }
-            }
+        public string LongName
+        {
+            get { return _xml.LongName; }
+        }
+
+        public string DisplayName
+        {
+            get { return _xml.DisplayName; }
         }
 
         public string ToolTip {
-            get { return null; }
+            get { return _xml.Tooltip; }
+        }
+
+        public string Variant
+        {
+            get { return _xml.Variant; }
         }
 
         public bool IsSelected {
-            get { return _slot.TypeID == _xml.ID; }
+            get
+            {
+                bool _isSelected = (_slot.TypeID == ID);
+                _isSelected = _isSelected && (_slot.Name == Name);
+                if (null != Variant) {
+                    _isSelected = _isSelected && (_slot.Variant == Variant);
+                }
+                return _isSelected;
+            }
             set {
                 if (!value) return;
-                _slot.TypeID = _xml.ID;
+                _slot.UpdateFromXmlItem(_xml);
             }
         }
 
@@ -294,9 +382,17 @@ namespace TiTsEd.ViewModel {
         int IComparable.CompareTo(object obj) {
             ItemVM bObj = (ItemVM) obj;
             if (this != bObj) {
-                string a = Name;
-                string b = bObj.Name;
-                return a.CompareTo(b);
+                string a = ID;
+                string b = bObj.ID;
+                int typeCompare = a.CompareTo(b);
+                if (0 == typeCompare)
+                {
+                    if (Variant?.Length > 0)
+                    {
+                        return Variant.CompareTo(bObj.Variant);
+                    }
+                }
+                return typeCompare;
             }
             return 0;
         }

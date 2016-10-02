@@ -261,9 +261,15 @@ namespace TiTsEd.Model {
         [XmlAttribute]
         public string Name { get; set; }
         [XmlAttribute]
+        public string LongName { get; set; }
+        [XmlAttribute]
+        public string Tooltip { get; set; }
+        [XmlAttribute]
         public string Type { get; set; }
         [XmlAttribute]
         public int Stack { get; set; }
+        [XmlAttribute]
+        public string Variant { get; set; }
 
         public XmlItem() { }
 
@@ -274,34 +280,53 @@ namespace TiTsEd.Model {
             Stack = stack;
         }
 
-        public string LongName {
+        public string DisplayName {
             get {
-                StringBuilder buf = new StringBuilder();
-                var className = ID.Substring(ID.LastIndexOf(':') + 1);
-                bool lastUpper = false;
-                char lastChr = '\0';
-                foreach (var chr in className) {
-                    if (Char.IsUpper(chr)) {
-                        if (lastUpper) {
-                            buf.Append('.');
-                        } else if (lastChr != 'I' || chr != 'I') {
-                            buf.Append(' ');
-                        }
-                        if (chr != 'I') {
-                            lastUpper = true;
-                        }
-                    } else {
-                        lastUpper = false;
-                    }
-                    buf.Append(chr);
-                    lastChr = chr;
-                }
-                return buf.ToString();
+                return GetDisplayName(this);
             }
         }
 
         public override string ToString() {
             return Name;
+        }
+
+        public static string GetDisplayName(XmlItem item, string typeId = null, string longName = null)
+        {
+            if (item == Empty && typeId == Empty.ID)
+            {
+                return item.Name;
+            }
+            var _longName = longName ?? item.LongName;
+            var typeName = typeId ?? item.ID;
+            var className = _longName ?? typeName.Substring(typeName.LastIndexOf(':') + 1);
+            StringBuilder buf = new StringBuilder();
+            bool lastUpper = false;
+            char lastChr = '\0';
+            foreach (var chr in className)
+            {
+                if (Char.IsUpper(chr))
+                {
+                    if (lastUpper)
+                    {
+                        buf.Append('.');
+                    }
+                    else if (lastChr != 'I' || chr != 'I')
+                    {
+                        buf.Append(' ');
+                    }
+                    if (chr != 'I')
+                    {
+                        lastUpper = true;
+                    }
+                }
+                else
+                {
+                    lastUpper = false;
+                }
+                buf.Append(chr);
+                lastChr = chr;
+            }
+            return buf.ToString().Trim();
         }
     }
 
