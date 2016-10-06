@@ -351,7 +351,11 @@ namespace TiTsEd.ViewModel {
             if (this != bObj) {
                 string a = DisplayName;
                 string b = bObj.DisplayName;
-                return a.CompareTo(b);
+                int result = a.CompareTo(b);
+                if (0 == result && null != Variant && null != bObj.Variant) {
+                    result = Variant.CompareTo(bObj.Variant);
+                }
+                return result;
             }
             return 0;
         }
