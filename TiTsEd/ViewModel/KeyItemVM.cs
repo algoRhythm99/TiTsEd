@@ -61,8 +61,8 @@ namespace TiTsEd.ViewModel
                 {
                     AmfObject xObj = (AmfObject)x;
                     AmfObject yObj = (AmfObject)y;
-                    string xName = xObj?.GetString("storageName");
-                    string yName = yObj?.GetString("storageName");
+                    string xName = xObj.GetString("storageName");
+                    string yName = yObj.GetString("storageName");
                     return xName.CompareTo(yName);
                 });
                 OnSavePropertyChanged();

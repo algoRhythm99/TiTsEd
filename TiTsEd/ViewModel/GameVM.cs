@@ -48,7 +48,7 @@ namespace TiTsEd.ViewModel {
             }
 
             // KeyItems
-            _keyItemSearchText = previousVM?._keyItemSearchText;
+            _keyItemSearchText = previousVM._keyItemSearchText;
             var keyItems = Character.GetObj("keyItems");
             if (null == keyItems)
             {

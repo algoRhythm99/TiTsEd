@@ -101,15 +101,15 @@ namespace TiTsEd.ViewModel {
             if (xmlItem != XmlItem.Empty)
             {
                 SetValue("version", 1);
-                if (xmlItem.LongName?.Length > 0)
+                if (xmlItem.LongName.Length > 0)
                 {
                     LongName = xmlItem.LongName;
                 }
-                if (xmlItem.Tooltip?.Length > 0)
+                if (xmlItem.Tooltip.Length > 0)
                 {
                     Tooltip = xmlItem.Tooltip;
                 }
-                if (xmlItem.Variant?.Length > 0)
+                if (xmlItem.Variant.Length > 0)
                 {
                     Variant = xmlItem.Variant;
                 }
@@ -387,7 +387,7 @@ namespace TiTsEd.ViewModel {
                 int typeCompare = a.CompareTo(b);
                 if (0 == typeCompare)
                 {
-                    if (Variant?.Length > 0)
+                    if (Variant.Length > 0)
                     {
                         return Variant.CompareTo(bObj.Variant);
                     }
