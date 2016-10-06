@@ -226,8 +226,7 @@ namespace TiTsEd.Model {
 
     }
 
-    public sealed class XmlPerkGroup
-    {
+    public sealed class XmlPerkGroup {
         [XmlAttribute]
         public string Name { get; set; }
 
@@ -235,8 +234,7 @@ namespace TiTsEd.Model {
         public List<XmlNamedVector4> Perks { get; set; }
 
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return Name;
         }
     }
@@ -293,10 +291,8 @@ namespace TiTsEd.Model {
             return Name;
         }
 
-        public static string GetDisplayName(XmlItem item, string typeId = null, string longName = null)
-        {
-            if (item == Empty && typeId == Empty.ID)
-            {
+        public static string GetDisplayName(XmlItem item, string typeId = null, string longName = null) {
+            if (item == Empty && typeId == Empty.ID) {
                 return item.Name;
             }
             var _longName = longName ?? item.LongName;
@@ -305,25 +301,17 @@ namespace TiTsEd.Model {
             StringBuilder buf = new StringBuilder();
             bool lastUpper = false;
             char lastChr = '\0';
-            foreach (var chr in className)
-            {
-                if (Char.IsUpper(chr))
-                {
-                    if (lastUpper)
-                    {
+            foreach (var chr in className) {
+                if (Char.IsUpper(chr)) {
+                    if (lastUpper) {
                         buf.Append('.');
-                    }
-                    else if (lastChr != 'I' || chr != 'I')
-                    {
+                    } else if (lastChr != 'I' || chr != 'I') {
                         buf.Append(' ');
                     }
-                    if (chr != 'I')
-                    {
+                    if (chr != 'I') {
                         lastUpper = true;
                     }
-                }
-                else
-                {
+                } else {
                     lastUpper = false;
                 }
                 buf.Append(chr);
@@ -362,8 +350,7 @@ namespace TiTsEd.Model {
         }
     }
 
-    public sealed class XmlNamedVector4
-    {
+    public sealed class XmlNamedVector4 {
         [XmlAttribute]
         public string Name { get; set; }
         [XmlAttribute]
@@ -396,8 +383,7 @@ namespace TiTsEd.Model {
         [XmlAttribute]
         public string Label4 { get; set; }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return Name;
         }
     }

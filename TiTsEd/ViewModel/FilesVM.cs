@@ -398,7 +398,7 @@ namespace TiTsEd.ViewModel {
         void IMenuItemVM.OnClick() {
             OnClick();
         }
-}
+    }
 
     public sealed class OpenDirectoryItemVM : IMenuItemVM {
         public OpenDirectoryItemVM(string path) {

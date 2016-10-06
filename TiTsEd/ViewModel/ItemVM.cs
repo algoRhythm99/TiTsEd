@@ -65,26 +65,20 @@ namespace TiTsEd.ViewModel {
             UpdateItemGroups();
         }
 
-        public void setXml(XmlItem xmlItem)
-        {
+        public void setXml(XmlItem xmlItem) {
             _xml = xmlItem;
         }
 
-        public static XmlItem getXmlItemForSlot(string className, string variant)
-        {
+        public static XmlItem getXmlItemForSlot(string className, string variant) {
             XmlItem foundItem = XmlItem.Empty;
-            foreach (XmlItem item in XmlData.Current.Items)
-            {
+            foreach (XmlItem item in XmlData.Current.Items) {
                 bool isItem = (item.ID == className);
-                if (null != item.Variant)
-                {
-                    if (null != variant)
-                    {
+                if (null != item.Variant) {
+                    if (null != variant) {
                         isItem = isItem && (variant == item.Variant);
                     }
                 }
-                if (isItem)
-                {
+                if (isItem) {
                     foundItem = item;
                     break;
                 }
@@ -92,35 +86,28 @@ namespace TiTsEd.ViewModel {
             return foundItem;
         }
 
-        public void UpdateFromXmlItem(XmlItem xmlItem)
-        {
+        public void UpdateFromXmlItem(XmlItem xmlItem) {
             var oldTypeId = _xml.ID;
             setXml(xmlItem);
             Name = xmlItem.Name;
             TypeID = xmlItem.ID;
-            if (xmlItem != XmlItem.Empty)
-            {
+            if (xmlItem != XmlItem.Empty) {
                 SetValue("version", 1);
-                if (xmlItem.LongName.Length > 0)
-                {
+                if (xmlItem.LongName.Length > 0) {
                     LongName = xmlItem.LongName;
                 }
-                if (xmlItem.Tooltip.Length > 0)
-                {
+                if (xmlItem.Tooltip.Length > 0) {
                     Tooltip = xmlItem.Tooltip;
                 }
-                if (xmlItem.Variant.Length > 0)
-                {
+                if (xmlItem.Variant.Length > 0) {
                     Variant = xmlItem.Variant;
                 }
                 Quantity = xmlItem.Stack;
             }
 
             //update all items for is selected
-            foreach (var group in AllGroups)
-            {
-                foreach (var item in group.Items)
-                {
+            foreach (var group in AllGroups) {
+                foreach (var item in group.Items) {
                     item.NotifyIsSelectedChanged();
                 }
             }
@@ -131,8 +118,7 @@ namespace TiTsEd.ViewModel {
 
             //check if we have to reflow the inventory
             if (oldTypeId == XmlItem.Empty.ID
-            || xmlItem.ID == XmlItem.Empty.ID)
-            {
+            || xmlItem.ID == XmlItem.Empty.ID) {
                 _character.CleanupInventory();
                 _character.UpdateInventory();
             }
@@ -182,8 +168,7 @@ namespace TiTsEd.ViewModel {
             set {
                 // Fix type
                 SetValue("quantity", value);
-                if (value == 0)
-                {
+                if (value == 0) {
                     UpdateFromXmlItem(XmlItem.Empty);
                 }
                 // Property change
@@ -207,59 +192,45 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public new string Name
-        {
-            get
-            {
+        public new string Name {
+            get {
                 return GetString("shortName");
             }
-            set
-            {
+            set {
                 SetValue("shortName", value);
             }
         }
 
 
-        public string LongName
-        {
-            get
-            {
+        public string LongName {
+            get {
                 return GetString("longName");
             }
-            set
-            {
+            set {
                 SetValue("longName", value);
             }
         }
 
-        public string Tooltip
-        {
-            get
-            {
+        public string Tooltip {
+            get {
                 return GetString("tooltip");
             }
-            set
-            {
+            set {
                 SetValue("tooltip", value);
             }
         }
 
-        public string Variant
-        {
-            get
-            {
+        public string Variant {
+            get {
                 return GetString("variant");
             }
-            set
-            {
+            set {
                 SetValue("variant", Convert.ToInt32(value));
             }
         }
 
-        public string DisplayName
-        {
-            get
-            {
+        public string DisplayName {
+            get {
                 var xmlItem = getXmlItemForSlot(TypeID, Variant);
                 return XmlItem.GetDisplayName(xmlItem, TypeID);
             }
@@ -335,13 +306,11 @@ namespace TiTsEd.ViewModel {
             get { return _xml.Name; }
         }
 
-        public string LongName
-        {
+        public string LongName {
             get { return _xml.LongName; }
         }
 
-        public string DisplayName
-        {
+        public string DisplayName {
             get { return _xml.DisplayName; }
         }
 
@@ -349,14 +318,12 @@ namespace TiTsEd.ViewModel {
             get { return _xml.Tooltip; }
         }
 
-        public string Variant
-        {
+        public string Variant {
             get { return _xml.Variant; }
         }
 
         public bool IsSelected {
-            get
-            {
+            get {
                 bool _isSelected = (_slot.TypeID == ID);
                 _isSelected = _isSelected && (_slot.Name == Name);
                 if (null != Variant) {
@@ -380,15 +347,13 @@ namespace TiTsEd.ViewModel {
         }
 
         int IComparable.CompareTo(object obj) {
-            ItemVM bObj = (ItemVM) obj;
+            ItemVM bObj = (ItemVM)obj;
             if (this != bObj) {
                 string a = ID;
                 string b = bObj.ID;
                 int typeCompare = a.CompareTo(b);
-                if (0 == typeCompare)
-                {
-                    if (Variant.Length > 0)
-                    {
+                if (0 == typeCompare) {
+                    if (Variant.Length > 0) {
                         return Variant.CompareTo(bObj.Variant);
                     }
                 }
