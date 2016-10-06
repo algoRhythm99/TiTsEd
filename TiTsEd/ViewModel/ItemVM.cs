@@ -349,15 +349,9 @@ namespace TiTsEd.ViewModel {
         int IComparable.CompareTo(object obj) {
             ItemVM bObj = (ItemVM)obj;
             if (this != bObj) {
-                string a = ID;
-                string b = bObj.ID;
-                int typeCompare = a.CompareTo(b);
-                if (0 == typeCompare) {
-                    if (null != Variant && Variant.Length > 0) {
-                        return Variant.CompareTo(bObj.Variant);
-                    }
-                }
-                return typeCompare;
+                string a = DisplayName;
+                string b = bObj.DisplayName;
+                return a.CompareTo(b);
             }
             return 0;
         }

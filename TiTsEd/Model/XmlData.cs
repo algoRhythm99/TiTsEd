@@ -296,7 +296,7 @@ namespace TiTsEd.Model {
                 return item.Name;
             }
             var _longName = longName ?? item.LongName;
-            if (null != longName) {
+            if (null != _longName) {
                 //skip the side show and just return the long name
                 return _longName;
             }
