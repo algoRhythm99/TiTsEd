@@ -833,12 +833,7 @@
 		<Item Type="UpperUndergarment" Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Bounty Bra" ID="classes.Items.Apparel::BountyBra" />
-    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="1" Tooltip="Shirt Reads: Everything's bigger in New Texas! Take a look (Beneath the text is an arrow pointing down.)" />
-    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="2" Tooltip="Shirt Reads: Wrangling Varmints is easy! Let's see if you are." />
-    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="3" Tooltip="Shirt Reads: It ain't hard to pick up horseback ridin'. How bout I pick you up for some horse cock ridin'." />
-    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="4" Tooltip="Shirt Reads: I can help you saddle a horse. So long as you straddle my face." />
-    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="5" Tooltip="Shirt Reads: You do look mighty fine, are ya up for some 69?" />
-    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="6" Tooltip="Shirt Reads: Sorry ‘bout the mess, I just got back from the cockmilkers. Actually I'm feeling full again, wanna help out? (Beneath the text is some cumsplat-print.)" />
+    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt"/>
 		<Item Type="UpperUndergarment" Stack="1" Name="Corset" ID="classes.Items.Apparel::Corset" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
 		<Item Type="UpperUndergarment" Stack="1" Name="CowShirt" ID="classes.Items.Apparel::CowPrintedShirt" />

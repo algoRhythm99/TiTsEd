@@ -201,33 +201,11 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        public string LongName { get; set; }
 
-        public string LongName {
-            get {
-                return GetString("longName");
-            }
-            set {
-                SetValue("longName", value);
-            }
-        }
+        public string Tooltip { get; set; }
 
-        public string Tooltip {
-            get {
-                return GetString("tooltip");
-            }
-            set {
-                SetValue("tooltip", value);
-            }
-        }
-
-        public string Variant {
-            get {
-                return GetString("variant");
-            }
-            set {
-                SetValue("variant", Convert.ToInt32(value));
-            }
-        }
+        public string Variant { get; set; }
 
         public string DisplayName {
             get {
