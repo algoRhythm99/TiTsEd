@@ -833,12 +833,12 @@
 		<Item Type="UpperUndergarment" Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Bounty Bra" ID="classes.Items.Apparel::BountyBra" />
-		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirt" Variant="1" Tooltip="A black T-shirt with a new Texan pickup line on the front, generally used by bulls to pick up cows with as little spoken words as possible. The white text may seem vulgar on other planets, but there is no doubting its effectiveness on New Texans. This one reads:&#xD;&#xA;&#xD;&#xA;&#x9;&#x20;&#x20;&#x20;&#x20;&lt;b&gt;Everything's bigger in New Texas!&lt;/b&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x20;&#x20;&#x20;&#x20;&#x20;&lt;b&gt;Take a look&lt;/b&gt;&#xD;&#xA;&#xD;&#xA;&#x20;&#x20;&#x20;(Beneath the text is an arrow pointing down.)&#xD;&#xA;" />
-		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirt" Variant="2" Tooltip="A black T-shirt with a new Texan pickup line on the front, generally used by bulls to pick up cows with as little spoken words as possible. The white text may seem vulgar on other planets, but there is no doubting its effectiveness on New Texans. This one reads:&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x20;&#x20;&lt;b&gt;Wrangling Varmints is easy!&lt;/b&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;b&gt;Let's see if you are&lt;/b&gt;&#xD;&#xA;&#xD;&#xA;" />
-		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirt" Variant="3" Tooltip="A black T-shirt with a new Texan pickup line on the front, generally used by bulls to pick up cows with as little spoken words as possible. The white text may seem vulgar on other planets, but there is no doubting its effectiveness on New Texans. This one reads:&#xD;&#xA;&#xD;&#xA;&#x9;&lt;b&gt;It ain't hard to pick up horseback ridin'&lt;/b&gt;&#xD;&#xA;&#x9;&#x9;&#x20;&#x20;&lt;b&gt;How bout I pick you up for&lt;/b&gt;&#xD;&#xA;&#x9;&#x9;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&lt;b&gt;some horse&lt;i&gt;cock&lt;/i&gt; ridin'’&lt;/b&gt;&#xD;&#xA;&#xD;&#xA;" />
-		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirt" Variant="4" Tooltip="A black T-shirt with a new Texan pickup line on the front, generally used by bulls to pick up cows with as little spoken words as possible. The white text may seem vulgar on other planets, but there is no doubting its effectiveness on New Texans. This one reads:&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&lt;b&gt;I can help you saddle a horse.&lt;/b&gt;&#xD;&#xA;&#x9;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&lt;b&gt;So long as you straddle my face.&lt;/b&gt;&#xD;&#xA;&#xD;&#xA;" />
-		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirt" Variant="5" Tooltip="A black T-shirt with a new Texan pickup line on the front, generally used by bulls to pick up cows with as little spoken words as possible. The white text may seem vulgar on other planets, but there is no doubting its effectiveness on New Texans. This one reads:&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&lt;b&gt;You do look mighty fine,&lt;/b&gt;&#xD;&#xA;&#x9;&#x9;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&lt;b&gt;are ya up for some 69?&lt;/b&gt;&#xD;&#xA;&#xD;&#xA;" />
-		<Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirt" Variant="6" Tooltip="A black T-shirt with a new Texan pickup line on the front, generally used by bulls to pick up cows with as little spoken words as possible. The white text may seem vulgar on other planets, but there is no doubting its effectiveness on New Texans. This one reads:&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&lt;b&gt;Sorry ‘bout the mess,&lt;/b&gt;&#xD;&#xA;&#x9;&#x20;&#x20;&#x20;&#x20;&lt;b&gt;I just got back from the cockmilkers.&lt;/b&gt;&#xD;&#xA;&#x20;&#x20;&#x20;&lt;b&gt;Actually I'm feeling full again, wanna help out?&lt;/b&gt;&#xD;&#xA;&#xD;&#xA;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;(Beneath the text is some cumsplat-print.)&#xD;&#xA;" />
+    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="1" Tooltip="Shirt Reads: Everything's bigger in New Texas! Take a look (Beneath the text is an arrow pointing down.)" />
+    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="2" Tooltip="Shirt Reads: Wrangling Varmints is easy! Let's see if you are." />
+    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="3" Tooltip="Shirt Reads: It ain't hard to pick up horseback ridin'. How bout I pick you up for some horse cock ridin'." />
+    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="4" Tooltip="Shirt Reads: I can help you saddle a horse. So long as you straddle my face." />
+    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="5" Tooltip="Shirt Reads: You do look mighty fine, are ya up for some 69?" />
+    <Item Type="UpperUndergarment" Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" Variant="6" Tooltip="Shirt Reads: Sorry ‘bout the mess, I just got back from the cockmilkers. Actually I'm feeling full again, wanna help out? (Beneath the text is some cumsplat-print.)" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Corset" ID="classes.Items.Apparel::Corset" />
 		<Item Type="UpperUndergarment" Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
 		<Item Type="UpperUndergarment" Stack="1" Name="CowShirt" ID="classes.Items.Apparel::CowPrintedShirt" />
@@ -1036,9 +1036,9 @@
 		<Item Type="MeleeWeapon" Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
 		<Item Type="MeleeWeapon" Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Cutlass" ID="classes.Items.Melee::Cutlass" />
-		<Item Type="MeleeWeapon" Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" />
-		<Item Type="MeleeWeapon" Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" />
-		<Item Type="MeleeWeapon" Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" />
+		<Item Type="MeleeWeapon" Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" LongName="Emmy's Jolthammer" />
+		<Item Type="MeleeWeapon" Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" LongName="Emmy's Lava Saber" />
+		<Item Type="MeleeWeapon" Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" LongName="Emmy's Vamp Blade" />
 		<Item Type="MeleeWeapon" Stack="1" Name="J.Hmmr." ID="classes.Items.Melee::Jolthammer" />
 		<Item Type="MeleeWeapon" Stack="1" Name="Knife" ID="classes.Items.Melee::Knife" />
 		<Item Type="MeleeWeapon" Stack="1" Name="L.Saber" ID="classes.Items.Melee::LavaSaber" />
@@ -1064,12 +1064,12 @@
 		<Item Type="RangedWeapon" Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
 		<Item Type="RangedWeapon" Stack="1" Name="B.Light" ID="classes.Items.Guns::BlackLight" />
 		<Item Type="RangedWeapon" Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BoltActionRifle" />
-		<Item Type="RangedWeapon" Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" />
+		<Item Type="RangedWeapon" Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" LongName="Custom LP-17 Laser Pistol" />
 		<Item Type="RangedWeapon" Stack="1" Name="E.Handgun" ID="classes.Items.Guns::EagleHandgun" />
 		<Item Type="RangedWeapon" Stack="1" Name="Electrogun" ID="classes.Items.Guns::Electrogun" />
-		<Item Type="RangedWeapon" Stack="1" Name="E's Pistol" ID="classes.Items.Guns::EmmysSalamanderPistol" />
-		<Item Type="RangedWeapon" Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" />
-		<Item Type="RangedWeapon" Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" />
+		<Item Type="RangedWeapon" Stack="1" Name="E's Pistol" ID="classes.Items.Guns::EmmysSalamanderPistol" LongName="Emmy's Salamander Pistol" />
+		<Item Type="RangedWeapon" Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" LongName="Emmy's Salamander Rifle" />
+		<Item Type="RangedWeapon" Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" LongName="Emmy's Tweaked Salamander Rifle" />
 		<Item Type="RangedWeapon" Stack="1" Name="FlareGun" ID="classes.Items.Guns::FlareGun" />
 		<Item Type="RangedWeapon" Stack="1" Name="Goovolver" ID="classes.Items.Guns::Goovolver" />
 		<Item Type="RangedWeapon" Stack="1" Name="Hammer C." ID="classes.Items.Guns::HammerCarbine" />
