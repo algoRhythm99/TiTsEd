@@ -296,6 +296,9 @@ namespace TiTsEd.Model {
                 return item.Name;
             }
             var _longName = longName ?? item.LongName;
+                //skip the side show and just return the long name
+                return _longName;
+            }
             var typeName = typeId ?? item.ID;
             var className = _longName ?? typeName.Substring(typeName.LastIndexOf(':') + 1);
             StringBuilder buf = new StringBuilder();

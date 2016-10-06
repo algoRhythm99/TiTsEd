@@ -57,6 +57,7 @@ namespace TiTsEd.ViewModel
                 {
                     _items.Pop((int)pair.Key);
                 }
+
                 _items.SortDensePart((x, y) =>
                 {
                     AmfObject xObj = (AmfObject)x;

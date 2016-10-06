@@ -93,13 +93,13 @@ namespace TiTsEd.ViewModel {
             TypeID = xmlItem.ID;
             if (xmlItem != XmlItem.Empty) {
                 SetValue("version", 1);
-                if (xmlItem.LongName.Length > 0) {
+                if (null != xmlItem.LongName && xmlItem.LongName.Length > 0) {
                     LongName = xmlItem.LongName;
                 }
-                if (xmlItem.Tooltip.Length > 0) {
+                if (null != xmlItem.Tooltip && xmlItem.Tooltip.Length > 0) {
                     Tooltip = xmlItem.Tooltip;
                 }
-                if (xmlItem.Variant.Length > 0) {
+                if (null != xmlItem.Variant && xmlItem.Variant.Length > 0) {
                     Variant = xmlItem.Variant;
                 }
                 Quantity = xmlItem.Stack;
@@ -353,7 +353,7 @@ namespace TiTsEd.ViewModel {
                 string b = bObj.ID;
                 int typeCompare = a.CompareTo(b);
                 if (0 == typeCompare) {
-                    if (Variant.Length > 0) {
+                    if (null != Variant && Variant.Length > 0) {
                         return Variant.CompareTo(bObj.Variant);
                     }
                 }

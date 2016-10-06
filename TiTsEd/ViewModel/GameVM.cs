@@ -46,7 +46,9 @@ namespace TiTsEd.ViewModel {
             }
 
             // KeyItems
-            _keyItemSearchText = previousVM._keyItemSearchText;
+            if (null != previousVM) {
+                _keyItemSearchText = previousVM._keyItemSearchText;
+            }
             var keyItems = Character.GetObj("keyItems");
             if (null == keyItems) {
                 keyItems = new Model.AmfObject(AmfTypes.Array);
