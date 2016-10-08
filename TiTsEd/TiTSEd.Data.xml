@@ -887,7 +887,6 @@
 		<Item Type="Consumable" Stack="50" Name="Boobswell P." ID="classes.Items.Miscellaneous::BoobswellPads" />
 		<Item Type="Consumable" Stack="10" Name="Chocolac" ID="classes.Items.Miscellaneous::Chocolac" />
 		<Item Type="Consumable" Stack="10" Name="Condensol" ID="classes.Items.Miscellaneous::Condensol" />
-		<Item Type="Consumable" Stack="10" Name="DracoG." ID="classes.Items.Transformatives::DracoGuard" />
 		<Item Type="Consumable" Stack="10" Name="Dumbfuck" ID="classes.Items.Miscellaneous::Dumbfuck" />
 		<Item Type="Consumable" Stack="10" Name="EasyFit" ID="classes.Items.Miscellaneous::EasyFit" />
 		<Item Type="Consumable" Stack="10" Name="Estrobloom" ID="classes.Items.Miscellaneous::Estrobloom" />
