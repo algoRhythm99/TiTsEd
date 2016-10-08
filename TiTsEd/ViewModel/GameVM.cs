@@ -14,11 +14,11 @@ using TiTsEd.Model;
 namespace TiTsEd.ViewModel {
     public sealed partial class GameVM : ObjectVM {
         private GeneralObjectVM _flags;
-        private string _character;
+        private string _characterName;
         private bool _IsPC = true;
         private string[] _characters;
         readonly List<PerkVM> _allPerks = new List<PerkVM>();
-        readonly KeyItemVM[] _allKeyitems;
+        readonly KeyItemVM[] _allKeyItems;
 
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file) {
@@ -26,56 +26,52 @@ namespace TiTsEd.ViewModel {
             setCharacter("PC");
 
             _flags = new GeneralObjectVM(GetObj("flags"));
+            if (null != previousVM) {
+                _perkSearchText = previousVM._perkSearchText;
+                _keyItemSearchText = previousVM._keyItemSearchText;
+            }
 
             // Perks
-            var charPerks = Character.GetObj("perks");
-            if (null == charPerks) {
-                charPerks = new Model.AmfObject(AmfTypes.Array);
-            }
+            var charPerks = Character.PerksArray;
             var xmlPerks = XmlData.Current.PerkGroups.SelectMany(x => x.Perks).ToArray();
             var unknownPerkGroup = XmlData.Current.PerkGroups.Last();
             ImportMissingNamedVectors(charPerks, xmlPerks, "storageName", x => x.GetString("tooltip"), unknownPerkGroup.Perks);
 
-            PerkGroups = new List<PerkGroupVM>();
+            Character.PerkGroups = new List<PerkGroupVM>();
             foreach (var xmlGroup in XmlData.Current.PerkGroups) {
                 var perksVM = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, charPerks, x)).ToArray();
                 _allPerks.AddRange(perksVM);
 
                 var groupVM = new PerkGroupVM(this, xmlGroup.Name, perksVM);
-                PerkGroups.Add(groupVM);
+                Character.PerkGroups.Add(groupVM);
             }
 
             // KeyItems
-            if (null != previousVM) {
-                _keyItemSearchText = previousVM._keyItemSearchText;
-            }
-            var keyItems = Character.GetObj("keyItems");
-            if (null == keyItems) {
-                keyItems = new Model.AmfObject(AmfTypes.Array);
-            }
+            var keyItems = Character.KeyItemsArray;
             var xmlKeys = XmlData.Current.KeyItems;
             ImportMissingNamedVectors(keyItems, xmlKeys, "storageName", x => x.GetString("tooltip"));
-            _allKeyitems = XmlData.Current.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, keyItems, x)).ToArray();
-            Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyitems.Where(x => x.Match(_keyItemSearchText)));
+            _allKeyItems = XmlData.Current.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, keyItems, x)).ToArray();
+            Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyItems.Where(x => x.Match(KeyItemSearchText)));
         }
 
-        static void ImportMissingNamedVectors(AmfObject items, IEnumerable<XmlNamedVector4> xmlItems, string nameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlNamedVector4> targetXmlList = null) {
-            if (targetXmlList == null) targetXmlList = (IList<XmlNamedVector4>)xmlItems;
+        static void ImportMissingNamedVectors(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, string nameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlStorageClass> targetXmlList = null) {
+            if (targetXmlList == null) targetXmlList = (IList<XmlStorageClass>)xmlItems;
             var xmlNames = new HashSet<String>(xmlItems.Select(x => x.Name));
 
             foreach (var pair in items) {
-                var name = pair.ValueAsObject.GetString(nameProperty);
+                var itemObject = pair.ValueAsObject;
+                var name = itemObject.GetString(nameProperty);
                 if (xmlNames.Contains(name)) continue;
                 xmlNames.Add(name);
 
-                var xml = new XmlNamedVector4 { Name = name };
-                if (descriptionGetter != null) xml.Description = descriptionGetter(pair.ValueAsObject);
+                var xml = new XmlStorageClass { Name = name };
+                if (descriptionGetter != null) xml.Description = descriptionGetter(itemObject);
                 targetXmlList.Add(xml);
             }
         }
 
         public void copyCharacterToPC() {
-            copyCharacter(_character, "PC");
+            copyCharacter(_characterName, "PC");
         }
 
         //for later
@@ -101,14 +97,25 @@ namespace TiTsEd.ViewModel {
             var tmpChar = GetObj("characters");
             tmpChar = tmpChar.GetObj(name);
             Character = new CharacterVM(this, tmpChar);
-            _character = name;
+            _characterName = name;
             if (name == "PC") {
                 IsPC = true;
-                if (null == Character.KeyItems && (null != _allKeyitems)) {
-                    Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyitems.Where(x => x.Match(_keyItemSearchText)));
-                }
             } else {
                 IsPC = false;
+            }
+
+            if (null == Character.KeyItems && (null != _allKeyItems)) {
+                Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyItems.Where(x => x.Match(KeyItemSearchText)));
+            }
+
+            if (null == Character.PerkGroups && (null != _allPerks)) {
+                Character.PerkGroups = new List<PerkGroupVM>();
+                var charPerks = Character.PerksArray;
+                foreach (var xmlGroup in XmlData.Current.PerkGroups) {
+                    var perksVM = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, charPerks, x)).ToArray();
+                    var groupVM = new PerkGroupVM(this, xmlGroup.Name, perksVM);
+                    Character.PerkGroups.Add(groupVM);
+                }
             }
         }
 
@@ -140,7 +147,7 @@ namespace TiTsEd.ViewModel {
 
         public string CharacterSelection {
             get {
-                return _character;
+                return _characterName;
             }
             set {
                 setCharacter(value);
@@ -259,8 +266,6 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public List<PerkGroupVM> PerkGroups { get; private set; }
-
         string _perkSearchText = "";
         public string PerkSearchText {
             get { return _perkSearchText; }
@@ -269,12 +274,12 @@ namespace TiTsEd.ViewModel {
                     return;
                 }
                 _perkSearchText = value;
-                foreach (var group in PerkGroups) group.Update();
+                foreach (var group in Character.PerkGroups) group.Update();
             }
         }
 
         /// <summary>
-        /// Returns the perk with the specified name (even if not owned by the player) AND registers a dependency between the caller property and this perk.
+        /// Returns the perk with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this perk.
         /// That way, anytime the perk is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
         public PerkVM GetPerk(string name, [CallerMemberName] string propertyName = null) {
@@ -290,7 +295,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public void OnPerkAddedOrRemoved(string name, bool isOwned) {
-            // Grants/removes the player the appropriate bonuses when a perk is added or removed.
+            // Grants/removes the appropriate bonuses when a perk is added or removed.
             // We do not add stats however since the user can already change them easily.
             switch (name) {
                 default:
@@ -310,17 +315,17 @@ namespace TiTsEd.ViewModel {
             }
         }
         /// <summary>
-        /// Returns the key item with the specified name (even if not owned by the player) AND registers a dependency between the caller property and this key item.
+        /// Returns the key item with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this key item.
         /// That way, anytime the key item is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
         public KeyItemVM GetKeyItem(string name, [CallerMemberName] string propertyName = null) {
-            var keyItem = _allKeyitems.First(x => x.Name == name);
+            var keyItem = _allKeyItems.First(x => x.Name == name);
             keyItem.GameVMProperties.Add(propertyName);
             return keyItem;
         }
 
         public void OnKeyItemChanged(string name) {
-            foreach (var prop in _allKeyitems.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
+            foreach (var prop in _allKeyItems.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
         }
 
         public void OnKeyItemAddedOrRemoved(string name, bool isOwned) {

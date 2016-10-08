@@ -32,6 +32,15 @@ namespace TiTsEd.Common
             return defaultValue;
         }
 
+        public static string ReplaceUsingDictionary(string source, IDictionary<string, object> replacements) {
+            if (null == source) return null;
+            string replaced = source;
+            foreach (var key in replacements.Keys) {
+                replaced = replaced.Replace(key, Convert.ToString(replacements[key]));
+            }
+            return replaced;
+        }
+
     }
 
 

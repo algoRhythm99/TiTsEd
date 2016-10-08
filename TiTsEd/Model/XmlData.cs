@@ -36,7 +36,7 @@ namespace TiTsEd.Model {
                     XmlSerializer s = new XmlSerializer(typeof(XmlDataSet));
                     var fileData = s.Deserialize(stream) as XmlDataSet;
 
-                    var unknownPerks = new XmlPerkGroup { Name = "Unknown", Perks = new List<XmlNamedVector4>() };
+                    var unknownPerks = new XmlPerkGroup { Name = "Unknown", Perks = new List<XmlStorageClass>() };
                     fileData.PerkGroups.Add(unknownPerks);
 
                     //var unknownItems = new XmlItemGroup { Name = "Unknown", Items = new List<XmlItem>(), Category = ItemCategories.Unknown };
@@ -105,7 +105,8 @@ namespace TiTsEd.Model {
         public List<XmlPerkGroup> PerkGroups { get; set; }
 
         [XmlArray, XmlArrayItem("KeyItem")]
-        public List<XmlNamedVector4> KeyItems { get; set; }
+        public List<XmlStorageClass> KeyItems { get; set; }
+
     }
 
     public sealed class XmlGeneralSet {
@@ -231,7 +232,7 @@ namespace TiTsEd.Model {
         public string Name { get; set; }
 
         [XmlElement("Perk")]
-        public List<XmlNamedVector4> Perks { get; set; }
+        public List<XmlStorageClass> Perks { get; set; }
 
 
         public override string ToString() {
@@ -354,7 +355,7 @@ namespace TiTsEd.Model {
         }
     }
 
-    public sealed class XmlNamedVector4 {
+    public sealed class XmlStorageClass {
         [XmlAttribute]
         public string Name { get; set; }
         [XmlAttribute]
@@ -386,6 +387,23 @@ namespace TiTsEd.Model {
         public string Label3 { get; set; }
         [XmlAttribute]
         public string Label4 { get; set; }
+
+        [XmlAttribute]
+        public string Tooltip { get; set; }
+
+        [XmlAttribute]
+        public bool IsHidden { get; set; }
+
+        [XmlAttribute]
+        public bool IsCombatOnly { get; set; }
+
+        [XmlAttribute]
+        public string IconName { get; set; }
+        [XmlAttribute]
+        public int IconShade { get; set; }
+
+        [XmlAttribute]
+        public int MinutesLeft { get; set; }
 
         public override string ToString() {
             return Name;

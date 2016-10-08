@@ -861,8 +861,23 @@ namespace TiTsEd.ViewModel {
 
         #region KeyItemsPage
 
+        public AmfObject KeyItemsArray {
+            get { return GetObj("keyItems"); }
+        }
+
         public UpdatableCollection<KeyItemVM> KeyItems { get; set; }
 
         #endregion
+
+        #region PerksPage
+
+        public AmfObject PerksArray {
+            get { return GetObj("perks"); }
+        }
+
+        public List<PerkGroupVM> PerkGroups { get; set; }
+
+        #endregion
+
     }
 }
