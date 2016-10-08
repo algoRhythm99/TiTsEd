@@ -67,6 +67,7 @@
     <Compile Include="Common\AutoGrid.cs" />
     <Compile Include="Common\BoolEventArgs.cs" />
     <Compile Include="Common\NamedVector4Control.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -81,10 +82,12 @@
     <Compile Include="ViewModel\BreastsVM.cs" />
     <Compile Include="ViewModel\CharacterVM.cs" />
     <Compile Include="ViewModel\CockVM.cs" />
+    <Compile Include="ViewModel\FlagVM.cs" />
     <Compile Include="ViewModel\ItemVM.cs" />
     <Compile Include="ViewModel\KeyItemVM.cs" />
     <Compile Include="ViewModel\StorageClassVM.cs" />
     <Compile Include="ViewModel\PerkVM.cs" />
+    <Compile Include="ViewModel\StatusEffectVM.cs" />
     <Compile Include="ViewModel\VaginaVM.cs" />
     <Compile Include="ViewModel\FilesVM.cs" />
     <Compile Include="Common\UpdatableCollection.cs" />
@@ -134,6 +137,9 @@
     </Compile>
     <Compile Include="View\PerkPage.xaml.cs">
       <DependentUpon>PerkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RawPage.xaml.cs">
+      <DependentUpon>RawPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TopBar.xaml.cs">
       <DependentUpon>TopBar.xaml</DependentUpon>
@@ -203,6 +209,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PerkPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RawPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

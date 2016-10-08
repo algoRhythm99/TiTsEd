@@ -3,6 +3,12 @@
                     xmlns:local="clr-namespace:TiTsEd"
                     xmlns:common="clr-namespace:TiTsEd.Common">
 
+    <BitmapImage x:Key="CrossImage" UriSource="../Assets/cross.png" />
+    <Style x:Key="smallImageStyleKey" TargetType="Image">
+        <Setter Property="Width" Value="16" />
+        <Setter Property="Height" Value="16" />
+    </Style>
+
     <SolidColorBrush x:Key="NumericBorderBrush" Color="#808080"/>
     <SolidColorBrush x:Key="NumericDisabledBackground" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="NumericDisabledForeground" Color="#C0C0C0"/>
@@ -397,6 +403,9 @@
 
                                 <TextBlock Text="{Binding Label4}" Foreground="#606060" VerticalAlignment="Center"/>
                                 <common:MyNumericBox Value="{Binding Value4}" Type="{Binding Type4}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70"/>
+
+                                <TextBlock Text="Minutes Left" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding MinutesLeftVisibility}"/>
+                                <common:MyNumericBox Value="{Binding MinutesLeft}" Type="Int" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70" Visibility="{Binding MinutesLeftVisibility}"/>
                             </common:AutoGrid>
                         </Border>
                     </Popup>

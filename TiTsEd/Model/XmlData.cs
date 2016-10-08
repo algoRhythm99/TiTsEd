@@ -107,6 +107,11 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("KeyItem")]
         public List<XmlStorageClass> KeyItems { get; set; }
 
+        [XmlArray, XmlArrayItem("Status")]
+        public List<XmlStorageClass> Statuses { get; set; }
+
+        [XmlArray, XmlArrayItem("Flag")]
+        public XmlEnum[] Flags { get; set; }
     }
 
     public sealed class XmlGeneralSet {

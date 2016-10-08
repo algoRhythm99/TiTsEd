@@ -879,5 +879,14 @@ namespace TiTsEd.ViewModel {
 
         #endregion
 
+        #region RawPage
+
+        public AmfObject StatusEffectsArray {
+            get { return GetObj("statusEffects"); }
+        }
+
+        public UpdatableCollection<StatusEffectVM> StatusEffects { get; set; }
+
+        #endregion
     }
 }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using TiTsEd.Common;
 using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
@@ -19,16 +20,20 @@ namespace TiTsEd.ViewModel {
         private string[] _characters;
         readonly List<PerkVM> _allPerks = new List<PerkVM>();
         readonly KeyItemVM[] _allKeyItems;
+        readonly StatusEffectVM[] _allStatuses;
+        readonly SortedDictionary<string,FlagVM> _allFlags = new SortedDictionary<string,FlagVM>();
 
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file) {
             SetCharacterOptions();
             setCharacter("PC");
 
-            _flags = new GeneralObjectVM(GetObj("flags"));
+            var flagsObject = FlagsObject;
+            _flags = new GeneralObjectVM(flagsObject);
             if (null != previousVM) {
                 _perkSearchText = previousVM._perkSearchText;
                 _keyItemSearchText = previousVM._keyItemSearchText;
+                _rawDataSearchText = previousVM._rawDataSearchText;
             }
 
             // Perks
@@ -45,6 +50,7 @@ namespace TiTsEd.ViewModel {
                 var groupVM = new PerkGroupVM(this, xmlGroup.Name, perksVM);
                 Character.PerkGroups.Add(groupVM);
             }
+            //Character.Perks = new UpdatableCollection<PerkVM>(_allPerks.Where(x => x.Match(PerkSearchText)));
 
             // KeyItems
             var keyItems = Character.KeyItemsArray;
@@ -52,6 +58,29 @@ namespace TiTsEd.ViewModel {
             ImportMissingNamedVectors(keyItems, xmlKeys, "storageName", x => x.GetString("tooltip"));
             _allKeyItems = XmlData.Current.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, keyItems, x)).ToArray();
             Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyItems.Where(x => x.Match(KeyItemSearchText)));
+
+            // Statuses
+            var statuses = Character.StatusEffectsArray;
+            var xmlStatuses = XmlData.Current.Statuses;
+            ImportMissingNamedVectors(statuses, xmlStatuses, "storageName", x => x.GetString("tooltip"));
+            _allStatuses = XmlData.Current.Statuses.OrderBy(x => x.Name).Select(x => new StatusEffectVM(this, statuses, x)).ToArray();
+            Character.StatusEffects = new UpdatableCollection<StatusEffectVM>(_allStatuses.Where(x => x.Match(RawDataSearchText)));
+
+            // Flags
+            foreach (var xmlFlag in XmlData.Current.Flags) {
+                if (!_allFlags.ContainsKey(xmlFlag.Name)) {
+                    _allFlags[xmlFlag.Name] = new FlagVM(this, ref flagsObject, xmlFlag);
+                }
+            }
+            foreach (var flag in flagsObject) {
+                string flagName = flag.ToString();
+                if (!_allFlags.ContainsKey(flagName)) {
+                    XmlEnum data = new XmlEnum();
+                    data.Name = flagName;
+                    _allFlags[flagName] = new FlagVM(this, ref flagsObject, data);
+                }
+            }
+            Flags = new UpdatableCollection<FlagVM>(_allFlags.Values.ToList().Where(x => x.Match(RawDataSearchText)));
         }
 
         static void ImportMissingNamedVectors(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, string nameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlStorageClass> targetXmlList = null) {
@@ -117,6 +146,11 @@ namespace TiTsEd.ViewModel {
                     Character.PerkGroups.Add(groupVM);
                 }
             }
+
+            if (null == Character.StatusEffects && (null != _allStatuses)) {
+                Character.StatusEffects = new UpdatableCollection<StatusEffectVM>(_allStatuses.Where(x => x.Match(RawDataSearchText)));
+            }
+
         }
 
         public CharacterVM Character { get; private set; }
@@ -239,18 +273,12 @@ namespace TiTsEd.ViewModel {
         }
 
         public bool IsPC {
-            get {
-                return _IsPC;
-            }
-            private set {
-                _IsPC = value;
-            }
+            get { return _IsPC; }
+            private set { _IsPC = value; }
         }
 
         public bool IsNotPC {
-            get {
-                return !IsPC;
-            }
+            get { return !IsPC; }
         }
 
         string _itemSearchText = "";
@@ -334,5 +362,91 @@ namespace TiTsEd.ViewModel {
                     break;
             }
         }
+
+        string _rawDataSearchText = "";
+        public string RawDataSearchText
+        {
+            get { return _rawDataSearchText; }
+            set
+            {
+                if (_rawDataSearchText == value) {
+                    return;
+                }
+                _rawDataSearchText = value;
+                Character.StatusEffects.Update();
+                Flags.Update();
+            }
+        }
+
+        public AmfObject FlagsObject {
+            get { return GetObj("flags"); }
+        }
+
+        public UpdatableCollection<FlagVM> Flags { get; private set; }
+
+        /// <summary>
+        /// Returns the flag with the specified name (even if not set in the save) AND registers a dependency between the caller property and this flag.
+        /// That way, anytime the flag value is changed, OnPropertyChanged will be raised for the caller property.
+        /// </summary>
+        public FlagVM GetFlag(string name, [CallerMemberName] string propertyName = null) {
+            FlagVM flag = null;
+            if (_allFlags.ContainsKey(name)) {
+                flag = _allFlags[name];
+                flag.GameVMProperties.Add(propertyName);
+            }
+            return flag;
+        }
+
+        public void OnFlagChanged(string name) {
+            if (_allFlags.ContainsKey(name)) {
+                foreach (var prop in _allFlags[name].GameVMProperties) OnPropertyChanged(prop);
+            }
+        }
+
+        public void RemoveFlag(FlagVM flag) {
+            if (null != flag) {
+                var flagName = flag.Name;
+                // remove flag
+                if (null != FlagsObject && !String.IsNullOrEmpty(flagName)) {
+                    if (null != FlagsObject[flagName]) {
+                        flag.Value = null;
+                        FlagsObject[flagName] = null;
+                        OnFlagChanged(flagName);
+                        var search = RawDataSearchText;
+                        RawDataSearchText = @"\u200B"; // setting to Unicode zero-width space
+                        RawDataSearchText = search;
+                    }
+                }
+            }
+        }
+
+        private RelayCommand<FlagVM> _deleteFlagCommand;
+        public RelayCommand<FlagVM> DeleteFlagCommand {
+            get { return _deleteFlagCommand ?? (_deleteFlagCommand = new RelayCommand<FlagVM>(d => RemoveFlag(d))); }
+        }
+
+        /// <summary>
+        /// Returns the status with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this status.
+        /// That way, anytime the status is modified, OnPropertyChanged will be raised for the caller property.
+        /// </summary>
+        public StatusEffectVM GetStatus(string name, [CallerMemberName] string propertyName = null) {
+            var status = _allStatuses.First(x => x.Name == name);
+            status.GameVMProperties.Add(propertyName);
+            return status;
+        }
+
+        public void OnStatusChanged(string name) {
+            foreach (var prop in _allStatuses.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
+        }
+
+        public void OnStatusAddedOrRemoved(string name, bool isOwned) {
+            // Grants/removes the appropriate bonuses when a status is added or removed.
+            // We do not add stats however since the user can already change them easily.
+            switch (name) {
+                default:
+                    break;
+            }
+        }
+
     }
 }

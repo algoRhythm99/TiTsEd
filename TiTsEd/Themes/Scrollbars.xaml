@@ -188,4 +188,18 @@
         </Setter>
     </Style>
 
+    <Style x:Key="DataGridWithLeftScrollBar" TargetType="DataGrid">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGrid">
+                    <ScrollViewer Focusable="False" Style="{StaticResource ScrollViewerWithLeftScrollBar}">
+                        <ItemsPresenter Margin="{TemplateBinding Padding}"/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
