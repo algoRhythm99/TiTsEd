@@ -531,6 +531,7 @@
 			<TailType ID="43" Name="Sydian" />
 			<TailType ID="45" Name="Badger" />
 			<TailType ID="46" Name="Vanae" />
+			<TailType ID="51" Name="Synthetic" />
 			<TailType ID="52" Name="Simii" />
 			<TailType ID="53" Name="Daynar" />
 			<TailType ID="54" Name="Cockvine" />
@@ -657,6 +658,7 @@
 			<CockType ID="54" Name="Cockvine" />
 			<CockType ID="55" Name="Nyrea" />
 			<CockType ID="56" Name="Inhuman" />
+			<CockType ID="57" Name="Ovir" />
 			<CockType ID="61" Name="Saurian" />
 			<CockType ID="64" Name="Hradian" />
 			<CockType ID="65" Name="Gryvain" />
