@@ -87,6 +87,9 @@
 
                     <TextBlock              Text="Exhibitionism" IsEnabled="{Binding Game.IsPC}" />
                     <common:MyNumericBox    Value="{Binding Game.Character.Exhibitionism}" Upper="100" IsEnabled="{Binding Game.IsPC}" />
+
+                    <TextBlock              Text="Alcohol Tolerance" IsEnabled="{Binding Game.IsPC}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.AlcoholTolerance}" Lower="0" Upper="100" IsEnabled="{Binding Game.IsPC}" />
                 </common:AutoGrid>
             </StackPanel>
 

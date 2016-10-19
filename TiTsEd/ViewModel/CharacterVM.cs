@@ -355,6 +355,21 @@ namespace TiTsEd.ViewModel {
             set { SetValue("scaleColor", value); }
         }
 
+        public int AlcoholTolerance
+        {
+            get {
+                var toleranceStat = Game.GetStatus("Tolerance");
+                return (int)toleranceStat.Value1;
+            }
+            set {
+                var toleranceStat = Game.GetStatus("Tolerance");
+                if (!toleranceStat.IsOwned) {
+                    toleranceStat.IsOwned = true;
+                }
+                toleranceStat.Value1 = value;
+            }
+        }
+
         #endregion
 
         #region HeadPage
