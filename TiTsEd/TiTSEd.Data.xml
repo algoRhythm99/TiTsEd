@@ -919,6 +919,7 @@
 		<Item Type="Consumable" Stack="10" Name="Ovilium" ID="classes.Items.Miscellaneous::Ovilium" />
 		<Item Type="Consumable" Stack="10" Name="Pandaneen" ID="classes.Items.Miscellaneous::Pandaneen" />
 		<Item Type="Consumable" Stack="10" Name="Panda Pro" ID="classes.Items.Miscellaneous::PandaPro" />
+		<Item Type="Consumable" Stack="10" Name="Priapin" ID="classes.Items.Miscellaneous::Priapin" />
 		<Item Type="Consumable" Stack="20" Name="Goblin P." ID="classes.Items.Miscellaneous::ProphylacticGoblin" />
 		<Item Type="Consumable" Stack="20" Name="LapinaraP" ID="classes.Items.Miscellaneous::ProphylacticLapinara" />
 		<Item Type="Consumable" Stack="20" Name="Rask P." ID="classes.Items.Miscellaneous::ProphylacticRaskvel" />
