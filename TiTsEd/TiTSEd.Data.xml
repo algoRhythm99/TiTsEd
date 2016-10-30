@@ -1132,11 +1132,11 @@
 		<KeyItem Name="Broken Psi Amp" Description="A broken Psionic Amplifier, removed from Captain Zaalt Kandar's skull. After it went &lt;i&gt;slightly&lt;/i&gt; batshit." />
 		<KeyItem Name="Bulky Data-Core" />
 		<KeyItem Name="Capture Harness" />
-		<KeyItem Name="Coupon - Clippex" Description="Save 75% on your next purchase of Clippex!" Value1="0.25" Type1="Double" />
-		<KeyItem Name="Coupon - Estrobloom" Description="Save 10% on your next purchase of Estrobloom!" Value1="0.9" Type1="Double" />
-		<KeyItem Name="Coupon - Lucifier" Description="Save 75% on your next purchase of Lucifier!" Value1="0.25" Type1="Double" />
-		<KeyItem Name="Coupon - Semens F." Description="Save 75% on your next purchase of Semen’s Friend!" Value1="0.25" Type1="Double" />
-		<KeyItem Name="Coupon - TamaniCorp" Description="Save 10% on your next purchase from your local TamaniCorp retailer!" Value1="0.9" Type1="Double" />
+		<KeyItem Name="Coupon - Clippex" Description="Save 75% on your next purchase of Clippex!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
+		<KeyItem Name="Coupon - Estrobloom" Description="Save 10% on your next purchase of Estrobloom!" Label1="Discount Multiplier" Value1="0.9" Type1="Double" />
+		<KeyItem Name="Coupon - Lucifier" Description="Save 75% on your next purchase of Lucifier!"  Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
+		<KeyItem Name="Coupon - Semens F." Description="Save 75% on your next purchase of Semen’s Friend!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
+		<KeyItem Name="Coupon - TamaniCorp" Description="Save 10% on your next purchase from your local TamaniCorp retailer!" Label1="Discount Multiplier" Value1="0.9" Type1="Double" />
 		<KeyItem Name="Doctor Badger's Bimbo Raygun - Programmed for use on Penny." />
 		<KeyItem Name="Doctor Badger's Bimbo Raygun - Still programmed for use on Penny." />
 		<KeyItem Name="Doctor Badger's Reprogrammed Bimbo Raygun - For use on the Badger!" />
@@ -1291,7 +1291,7 @@
 			<Perk Name="Easy" Description="Gain 20% more lust from combat sources." Value1="20" />
 			<Perk Name="Fecund Figure" Description="Your broodmare body permanently changes you more into a fertility goddess while you are pregnant." Value1="1" Value2="1" />
 			<Perk Name="Firing Blanks" Description="There’s no way you could get anyone or anything pregnant." />
-			<Perk Name="Fixed CumQ" Value1="500000" />
+			<Perk Name="Fixed CumQ" Label1="Cum Quality" Value1="500000" />
 			<Perk Name="Flexibility" Description="You can bend and stretch more than most other creatures." />
 			<Perk Name="Flower Power" Description="Everything about being a pollen-producing flower nymph is deeply arousing. It has its upsides, though: the effect you have on most foes, for instance." Label1="Number of flowers active" Value1="4" Label2="Min Lust increase" Value2="20" Label3="Min Libido increase" Value3="45" />
 			<Perk Name="Fuck Sense" Description="Allows your sense ability to base success off your libido instead of intelligence." Value1="15" />
@@ -1304,14 +1304,15 @@
 			<Perk Name="Mega Milk" Description="Allows you to instantly produce a good amount of milk, even when empty." />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Milk Fountain" Description="Allows you to squirt milk with the greatest of ease." />
-			<Perk Name="Multiple Attacks" Description="Value1 is the number of attacks per turn" Value1="5" />
-			<Perk Name="Multiple Shots" Description="Value1 is the number of shots per turn" Value1="5" />
+			<Perk Name="Multiple Attacks" Description="{Value1} attacks per turn" Label1="Attacks per turn" Value1="5" />
+			<Perk Name="Multiple Shots" Description="{Value1} shots per turn" Label1="Shots per turn" Value1="5" />
 			<Perk Name="Myr Venom" Description="Grants a love-bite tease ability that deals a little lust damage to your opponent." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
 			<Perk Name="Panic Ejaculation" Description="Allows you to squirt out a little cum while grappled, easing your escape!" />
 			<Perk Name="Pheromone Cloud" Description="Boosts tease attack and arousal." />
 			<Perk Name="Pheromone Sweat" Description="Slightly boosts tease attack and arousal while sweating" />
 			<Perk Name="Ranged Immune" />
+			<Perk Name="Regal Mane" Description="You have an impressive mane bordering your neck." Label1="0 = No Collar&#xD;&#xA;20 = Fur Collar" Value1="20" />
 			<Perk Name="Resin" Description="Your heavy bark skin slows you all the way down, but provides plenty of protection. It also produces resin. Some flighty, energetic, needy species might find it difficult to resist wanting to plaster themselves all over you..." Label1="Max Reflexes multiplier" Value1="0.40" Type1="Double" />
 			<Perk Name="Sexy Thinking" Description="Boosts tease damage more the dumber and less willful you are." />
 			<Perk Name="Slut Stamp" Description="A tattoo permanently emblazoned above your ass makes you horny faster while wearing anything clothing your lower body." Value1="10" Value2="10" Value3="10" />
