@@ -115,8 +115,17 @@ namespace TiTsEd.Model {
     }
 
     public sealed class XmlGeneralSet {
+        [XmlArray, XmlArrayItem("Upbringing")]
+        public XmlEnum[] Upbringings { get; set; }
+
         [XmlArray, XmlArrayItem("ClassType")]
         public XmlEnum[] ClassTypes { get; set; }
+
+        [XmlArray, XmlArrayItem("OriginalRace")]
+        public string[] OriginalRaces { get; set; }
+
+        [XmlArray, XmlArrayItem("Affinity")]
+        public string[] Affinities { get; set; }
 
         [XmlArray, XmlArrayItem("CopyTag")]
         public string[] CopyTags { get; set; }

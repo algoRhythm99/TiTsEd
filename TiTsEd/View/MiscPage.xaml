@@ -17,6 +17,7 @@
     </UserControl.Resources>
 
     <ScrollViewer>
+
         <Grid Margin="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -35,8 +36,23 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="1">
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="History" Style="{StaticResource Header}"/>
+                </Border>
+                <common:AutoGrid Columns="2">
+                    <Label      Content="Upbringing"/>
+                    <common:MyComboBox  SelectedValue="{Binding Game.PCUpbringing}" ItemsSource="{Binding Data.General.Upbringings}"/>
 
+                    <Label      Content="Affinity"/>
+                    <ComboBox   SelectedValue="{Binding Game.Character.Affinity}" ItemsSource="{Binding Data.General.Affinities}" Style="{StaticResource EditableTextBox}"/>
+
+                    <Label      Content="Original Race"/>
+                    <ComboBox   SelectedValue="{Binding Game.Character.OriginalRace}" ItemsSource="{Binding Data.General.OriginalRaces}" Style="{StaticResource EditableTextBox}"/>
+                </common:AutoGrid>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="1">
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Pregnancy" Style="{StaticResource Header}"/>
                 </Border>

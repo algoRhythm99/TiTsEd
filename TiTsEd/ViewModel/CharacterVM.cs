@@ -828,6 +828,18 @@ namespace TiTsEd.ViewModel {
 
         #region MiscPage
 
+        public String Affinity
+        {
+            get { return GetString("affinity"); }
+            set { SetValue("affinity", value); }
+        }
+
+        public String OriginalRace
+        {
+            get { return GetString("originalRace"); }
+            set { SetValue("originalRace", value); }
+        }
+
         public string ImpregnationType
         {
             get { return GetString("impregnationType"); }

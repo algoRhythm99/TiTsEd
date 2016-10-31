@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TiTsEd>
 	<General>
+		<Upbringings>
+			<Upbringing ID="0" Name="Pampered" />
+			<Upbringing ID="1" Name="Athletic" />
+			<Upbringing ID="2" Name="Bookworm" />
+			<Upbringing ID="3" Name="Austere" />
+			<Upbringing ID="4" Name="Balanced" />
+		</Upbringings>
+		<OriginalRaces>
+			<OriginalRace>half-ausar</OriginalRace>
+			<OriginalRace>half-gryvain</OriginalRace>
+			<OriginalRace>half-kaithrit</OriginalRace>
+			<OriginalRace>half kui-tan</OriginalRace>
+			<OriginalRace>half-leithan</OriginalRace>
+			<OriginalRace>human</OriginalRace>
+		</OriginalRaces>
+		<Affinities>
+			<Affinity>aim</Affinity>
+			<Affinity>intelligence</Affinity>
+			<Affinity>physique</Affinity>
+			<Affinity>reflexes</Affinity>
+			<Affinity>willpower</Affinity>
+		</Affinities>
 		<ClassTypes>
 			<ClassType ID="0" Name="Smuggler" />
 			<ClassType ID="1" Name="Mercenary" />
@@ -2305,7 +2327,9 @@
 		<Flag Name="PC_EMAIL_ADDRESS" />
 		<Flag Name="PC_PAYS_LANE_ERRY_DAY" />
 		<Flag Name="PC_SELF_SUCKED_STANDARD" />
-		<Flag Name="PC_UPBRINGING" />
+-->
+		<Flag Name="PC_UPBRINGING" Description="0 = Pampered&#xD;&#xA;1 = Athletic&#xD;&#xA;2 = Bookworm&#xD;&#xA;3 = Austere&#xD;&#xA;4 = Balanced" />
+<!--
 		<Flag Name="PENNY_AFFECTION" />
 		<Flag Name="PENNY_BADGER_BIMBO" />
 		<Flag Name="PENNY_BADGER_WARNED" />

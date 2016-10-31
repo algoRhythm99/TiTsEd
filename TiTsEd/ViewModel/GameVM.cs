@@ -281,6 +281,20 @@ namespace TiTsEd.ViewModel {
             get { return !IsPC; }
         }
 
+        public int PCUpbringing
+        {
+            get {
+                if (IsPC && _flags.HasValue("PC_UPBRINGING") ) {
+                    return _flags.GetInt("PC_UPBRINGING");
+                }
+                return 0;
+            }
+            set {
+                _flags.SetValue("PC_UPBRINGING", value);
+                OnFlagChanged("PC_UPBRINGING");
+            }
+        }
+
         string _itemSearchText = "";
         public string ItemSearchText {
             get { return _itemSearchText; }
