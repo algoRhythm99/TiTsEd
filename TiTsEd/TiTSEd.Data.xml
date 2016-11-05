@@ -1031,6 +1031,7 @@
 		<Item Type="Consumable" Stack="10" Name="SwtSweat" ID="classes.Items.Transformatives::SweetSweat" />
 		<Item Type="Consumable" Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
 		<Item Type="Consumable" Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
+		<Item Type="Consumable" Stack="10" Name="Virection" ID="classes.Items.Transformatives::Virection" />
 		<Item Type="Gadget" Stack="10" Name="A.Cock" ID="classes.Items.Miscellaneous::ACock" />
 		<Item Type="Gadget" Stack="10" Name="A.D.Cock" ID="classes.Items.Miscellaneous::ADCock" />
 		<Item Type="Gadget" Stack="10" Name="A.H.Cock" ID="classes.Items.Miscellaneous::AHCock" />
