@@ -163,16 +163,21 @@ namespace TiTsEd
 
 
 #if DEBUG
-        static AmfFile AutoLoad(FlashDirectory[] directories)
-        {
-            var file = directories[0].Files[0];
+        static AmfFile AutoLoad(FlashDirectory[] directories) {
+            //find first file
+            AmfFile file = null;
+            foreach (var dir in directories) {
+                foreach (var dfile in dir.Files) {
+                    file = dfile;
+                    break;
+                }
+            }
 
             VM.Instance.Load(file.FilePath, SerializationFormat.Slot, createBackup: true);
             return file;
         }
 
-        static void PrintStatuses(AmfFile file)
-        {
+        static void PrintStatuses(AmfFile file) {
             foreach (AmfPair pair in file.GetObj("statusAffects"))
             {
                 int key = Int32.Parse(pair.Key as string);
@@ -181,12 +186,10 @@ namespace TiTsEd
             }
         }
 
-        static void RunSerializationTest(FlashDirectory[] directories)
-        {
+        static void RunSerializationTest(FlashDirectory[] directories) {
             Stopwatch s = new Stopwatch();
             s.Start();
-            foreach (var first in directories[0].Files)
-            {
+            foreach (var first in directories[0].Files) {
                 var outPath = "e:\\" + Path.GetFileName(first.FilePath);
                 first.TestSerialization();
                 first.Save(outPath, first.Format);

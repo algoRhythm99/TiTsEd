@@ -9,14 +9,17 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
 
+    /// <summary>
+    /// Defines a set of items for a character. This would be like the entire inventory. 
+    /// </summary>
     public sealed class ItemContainerVM {
         readonly ObservableCollection<ItemSlotVM> _slots = new ObservableCollection<ItemSlotVM>();
         readonly CharacterVM _character;
 
-        public ItemContainerVM(CharacterVM character, string name, ItemCategories categories) {
+        public ItemContainerVM(CharacterVM character, string name, List<String> itemTypes) {
             Name = name;
             _character = character;
-            Categories = categories;
+            Types = itemTypes;
         }
 
         public string Name {
@@ -24,7 +27,7 @@ namespace TiTsEd.ViewModel {
             private set;
         }
 
-        public ItemCategories Categories {
+        public List<String> Types {
             get;
             private set;
         }
@@ -34,7 +37,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public void Add(AmfObject obj) {
-            _slots.Add(new ItemSlotVM(_character, obj, Categories));
+            _slots.Add(new ItemSlotVM(_character, obj, Types));
         }
 
         public void Clear() {
@@ -46,49 +49,59 @@ namespace TiTsEd.ViewModel {
         }
     }
 
+    /// <summary>
+    /// This defines an individual item slot, say one entry in the inventory. This is the most important of the models.
+    /// </summary>
     public sealed class ItemSlotVM : ObjectVM {
         private readonly CharacterVM _character;
-        private ItemCategories _categories;
-        private XmlItem _xml;
-
-        public ItemSlotVM(CharacterVM character, AmfObject obj, ItemCategories categories)
+        
+        public ItemSlotVM(CharacterVM character, AmfObject obj, List<String> types)
             : base(obj) {
-            Categories = categories;
+            Types = types;
             _character = character;
-            _categories = categories;
 
-            //find the xml definition for this slot type
-            var className = GetString("classInstance");
-            var variant = GetString("variant");
-            setXml(getXmlItemForSlot(className, variant));
+            Xml = getXmlItemForSlot();
 
             UpdateItemGroups();
         }
 
-        public void setXml(XmlItem xmlItem) {
-            _xml = xmlItem;
-        }
+        public XmlItem Xml { get; private set; }
 
-        public static XmlItem getXmlItemForSlot(string className, string variant) {
-            XmlItem foundItem = XmlItem.Empty;
-            foreach (XmlItem item in XmlData.Current.Items) {
-                bool isItem = (item.ID == className);
-                if (null != item.Variant) {
-                    if (null != variant) {
-                        isItem = isItem && (variant == item.Variant);
+        private XmlItem getXmlItemForSlot() {
+            var className = GetString("classInstance");
+            //we will need to make this smarter eventually using the hasRandomProperties data
+            //we should match all the data defined in the item fields against the actual item properties
+
+            AmfObject tmp = _obj;
+
+            XmlItem bestItem = XmlItem.Empty;
+            int bestFieldMatch = -1;
+            foreach (XmlItemType type in XmlData.Current.ItemTypes) {
+                foreach (XmlItem item in type.Items) {
+                    //class name must match, otherwise skip it
+                    if (item.ID == className) {
+                        //if there are any fields, try and match them
+                        int fieldMatch = 0;
+                        foreach (XmlObjectField field in item.Fields) {
+                            //field.Name
+                            if (HasValue(field.Name) && GetString(field.Name).ToLower().Equals(field.Value.ToLower())) {
+                                //field matches
+                                fieldMatch++;
+                            }
+                        }
+                        if (fieldMatch > bestFieldMatch) {
+                            bestFieldMatch = fieldMatch;
+                            bestItem = item;
+                        }
                     }
                 }
-                if (isItem) {
-                    foundItem = item;
-                    break;
-                }
             }
-            return foundItem;
+            return bestItem;
         }
 
         public void UpdateFromXmlItem(XmlItem xmlItem) {
-            var oldTypeId = _xml.ID;
-            setXml(xmlItem);
+            var oldTypeId = Xml.ID;
+            Xml = xmlItem;
             Name = xmlItem.Name;
             TypeID = xmlItem.ID;
             if (xmlItem != XmlItem.Empty) {
@@ -99,9 +112,10 @@ namespace TiTsEd.ViewModel {
                 if (null != xmlItem.Tooltip && xmlItem.Tooltip.Length > 0) {
                     Tooltip = xmlItem.Tooltip;
                 }
+                /*
                 if (null != xmlItem.Variant && xmlItem.Variant.Length > 0) {
                     Variant = xmlItem.Variant;
-                }
+                }*/
                 Quantity = xmlItem.Stack;
             }
 
@@ -127,19 +141,15 @@ namespace TiTsEd.ViewModel {
         public void UpdateItemGroups() {
             //create our groups
             var groups = new List<ItemGroupVM>();
-            var enumNames = Enum.GetNames(typeof(ItemCategories));
-            Array.Sort<String>(enumNames);
+            //var enumNames = Enum.GetNames(typeof(ItemCategories));
+            var typeNames = Types;
+            typeNames.Sort();
 
             //check enum support
-            foreach (string ename in enumNames) {
-                var etype = Enum.Parse(typeof(ItemCategories), ename);
-                int eint = (int)etype;
-                if (((int)_categories & eint) == eint) {
-                    //create the group for this supported type
-                    ItemGroupVM vm = new ItemGroupVM(ename, this);
-                    if (vm.Items.Count > 0) {
-                        groups.Add(vm);
-                    }
+            foreach (string typeName in typeNames) {
+                ItemGroupVM vm = new ItemGroupVM(typeName, this);
+                if (vm.Items.Count > 0) {
+                    groups.Add(vm);
                 }
             }
 
@@ -147,7 +157,7 @@ namespace TiTsEd.ViewModel {
             OnPropertyChanged("AllGroups");
         }
 
-        public ItemCategories Categories {
+        public List<String> Types {
             get;
             private set;
         }
@@ -159,7 +169,7 @@ namespace TiTsEd.ViewModel {
 
         public int MaxQuantity {
             get {
-                return _xml.Stack;
+                return Xml.Stack;
             }
         }
 
@@ -209,14 +219,13 @@ namespace TiTsEd.ViewModel {
 
         public string DisplayName {
             get {
-                var xmlItem = getXmlItemForSlot(TypeID, Variant);
-                return XmlItem.GetDisplayName(xmlItem, TypeID);
+                return XmlItem.GetDisplayName(Xml, TypeID);
             }
         }
     }
 
     /// <summary>
-    /// View VM for an item category
+    /// This defines a set of items.
     /// </summary>
     public sealed class ItemGroupVM {
         public const int MIN_ITEM_TEXT_SEARCH_LENGTH = 2; //should always be at least 1
@@ -229,14 +238,21 @@ namespace TiTsEd.ViewModel {
             if (VM.Instance.Game != null) {
                 searchText = VM.Instance.Game.ItemSearchText;
             }
-            foreach (XmlItem xml in XmlData.Current.Items) {
-                if (searchText.Length >= MIN_ITEM_TEXT_SEARCH_LENGTH
-                    && !xml.Name.ToLower().Contains(searchText)
-                    && !xml.ID.ToLower().Contains(searchText)) {
-                    continue;
-                }
-                if (xml.Type == name) {
-                    items.Add(new ItemVM(slot, xml));
+
+            //we made this easier now
+            foreach (XmlItemType type in XmlData.Current.ItemTypes) {
+                if (type.Name == name) {
+                    //only add items from this item set into the group
+                    foreach (XmlItem xml in type.Items) {
+                        //skip items that do not match the search string
+                        if (searchText.Length >= MIN_ITEM_TEXT_SEARCH_LENGTH
+                            && !xml.Name.ToLower().Contains(searchText)
+                            && !xml.ID.ToLower().Contains(searchText)) {
+                            continue;
+                        }
+                        //add the item to the item group
+                        items.Add(new ItemVM(slot, xml));
+                    }
                 }
             }
 
@@ -269,49 +285,42 @@ namespace TiTsEd.ViewModel {
     /// </summary>
     public sealed class ItemVM : BindableBase, IComparable {
         readonly ItemSlotVM _slot;
-        readonly XmlItem _xml;
 
         public ItemVM(ItemSlotVM slot, XmlItem item) {
             _slot = slot;
-            _xml = item;
+            Xml = item;
         }
 
         public string ID {
-            get { return _xml.ID; }
+            get { return Xml.ID; }
         }
 
         public new string Name {
-            get { return _xml.Name; }
+            get { return Xml.Name; }
         }
 
         public string LongName {
-            get { return _xml.LongName; }
+            get { return Xml.LongName; }
         }
 
         public string DisplayName {
-            get { return _xml.DisplayName; }
+            get { return Xml.DisplayName; }
         }
 
         public string ToolTip {
-            get { return _xml.Tooltip; }
+            get { return Xml.Tooltip; }
         }
 
-        public string Variant {
-            get { return _xml.Variant; }
-        }
+        public XmlItem Xml { get; private set; }
 
         public bool IsSelected {
             get {
-                bool _isSelected = (_slot.TypeID == ID);
-                _isSelected = _isSelected && (_slot.Name == Name);
-                if (null != Variant) {
-                    _isSelected = _isSelected && (_slot.Variant == Variant);
-                }
-                return _isSelected;
+                //probably not the best idea ever, but it works
+                return _slot.Xml == Xml;
             }
             set {
                 if (!value) return;
-                _slot.UpdateFromXmlItem(_xml);
+                _slot.UpdateFromXmlItem(Xml);
             }
         }
 
@@ -330,9 +339,10 @@ namespace TiTsEd.ViewModel {
                 string a = DisplayName;
                 string b = bObj.DisplayName;
                 int result = a.CompareTo(b);
+                /*
                 if (0 == result && null != Variant && null != bObj.Variant) {
                     result = Variant.CompareTo(bObj.Variant);
-                }
+                }*/
                 return result;
             }
             return 0;
