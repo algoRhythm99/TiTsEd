@@ -864,29 +864,41 @@
 			<Item Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
 			<Item Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
 			<Item Stack="1" Name="Bounty Bra" ID="classes.Items.Apparel::BountyBra" />
-			<Item Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" >
-				<ItemField ID="hasRandomProperties" type="bool" value="true" />
-				<ItemField ID="varient" type="int" value="1" />
+			<Item Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirt" DisplayName="Corny T-Shirt v1" >
+				<ItemOption Name="Normal">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="varient" type="int" value="1" />
+				</ItemOption>
 			</Item>
-			<Item Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" >
-				<ItemField ID="hasRandomProperties" type="bool" value="true" />
-				<ItemField ID="varient" type="int" value="2" />
+			<Item Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirt" DisplayName="Corny T-Shirt v2" >
+				<ItemOption Name="Normal">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="varient" type="int" value="2" />
+				</ItemOption>
 			</Item>
-			<Item Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" >
-				<ItemField ID="hasRandomProperties" type="bool" value="true" />
-				<ItemField ID="varient" type="int" value="3" />
+			<Item Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirt" DisplayName="Corny T-Shirt v3" >
+				<ItemOption Name="Normal">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="varient" type="int" value="3" />
+				</ItemOption>
 			</Item>
-			<Item Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" >
-				<ItemField ID="hasRandomProperties" type="bool" value="true" />
-				<ItemField ID="varient" type="int" value="4" />
+			<Item Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirt" DisplayName="Corny T-Shirt v4" >
+				<ItemOption Name="Normal">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="varient" type="int" value="4" />
+				</ItemOption>
 			</Item>
-			<Item Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" >
-				<ItemField ID="hasRandomProperties" type="bool" value="true" />
-				<ItemField ID="varient" type="int" value="5" />
+			<Item Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirt" DisplayName="Corny T-Shirt v5" >
+				<ItemOption Name="Normal">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="varient" type="int" value="5" />
+				</ItemOption>
 			</Item>
-			<Item Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt" >
-				<ItemField ID="hasRandomProperties" type="bool" value="true" />
-				<ItemField ID="varient" type="int" value="6" />
+			<Item Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirt" DisplayName="Corny T-Shirt v6" >
+				<ItemOption Name="Normal">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="varient" type="int" value="6" />
+				</ItemOption>
 			</Item>
 			<Item Stack="1" Name="Corset" ID="classes.Items.Apparel::Corset" />
 			<Item Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
@@ -911,8 +923,20 @@
 		<ItemType Name="LowerUndergarment">
 			<Item Stack="1" Name="BikiniBtm" ID="classes.Items.Apparel::FrillyBikiniBottom" />
 			<Item Stack="1" Name="BaggyShorts" ID="classes.Items.Apparel::BaggySwimShorts" />
-			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" />
-			<Item Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts" />
+			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers">
+				<ItemOption Name="Normal" />
+				<ItemOption Name="Hardlight">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="hardLightEquipped" type="bool" value="true" />
+				</ItemOption>
+			</Item>
+			<Item Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts">
+				<ItemOption Name="Normal" />
+				<ItemOption Name="Hardlight">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="hardLightEquipped" type="bool" value="true" />
+				</ItemOption>
+			</Item>
 			<Item Stack="1" Name="BullStrap" ID="classes.Items.Apparel::BullsJockstrap" />
 			<Item Stack="1" Name="CockPasty" ID="classes.Items.Apparel::CockPasty" />
 			<Item Stack="1" Name="Cow Bottom" ID="classes.Items.Apparel::CowPrintBikiniBottom" />
@@ -928,11 +952,35 @@
 			<Item Stack="1" Name="M.Thong" ID="classes.Items.Apparel::MaleThong" />
 			<Item Stack="1" Name="GuyTights" ID="classes.Items.Apparel::MaleTights" />
 			<Item Stack="1" Name="Briefs" ID="classes.Items.Apparel::PlainBriefs" />
-			<Item Stack="1" Name="Panties" ID="classes.Items.Apparel::PlainPanties" />
-			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" />
-			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" />
+			<Item Stack="1" Name="Panties" ID="classes.Items.Apparel::PlainPanties">
+				<ItemOption Name="Normal" />
+				<ItemOption Name="Hardlight">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="hardLightEquipped" type="bool" value="true" />
+				</ItemOption>
+			</Item>
+			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom">
+				<ItemOption Name="Normal" />
+				<ItemOption Name="Hardlight">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="hardLightEquipped" type="bool" value="true" />
+				</ItemOption>
+			</Item>
+			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings">
+				<ItemOption Name="Normal" />
+				<ItemOption Name="Hardlight">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="hardLightEquipped" type="bool" value="true" />
+				</ItemOption>
+			</Item>
 			<Item Stack="1" Name="ThmUndies" ID="classes.Items.Apparel::ThermalUnderwear" />
-			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" />
+			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong">
+				<ItemOption Name="Normal" />
+				<ItemOption Name="Hardlight">
+					<ItemField ID="hasRandomProperties" type="bool" value="true" />
+					<ItemField ID="hardLightEquipped" type="bool" value="true" />
+				</ItemOption>
+			</Item>
 			<Item Stack="1" Name="Z.Pouch" ID="classes.Items.Apparel::ZipPouch" />
 		</ItemType>
 		<ItemType Name="Consumable">
@@ -1094,9 +1142,9 @@
 			<Item Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
 			<Item Stack="1" Name="Cutlass" ID="classes.Items.Melee::Cutlass" />
-			<Item Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" LongName="Emmy's Jolthammer" />
-			<Item Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" LongName="Emmy's Lava Saber" />
-			<Item Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" LongName="Emmy's Vamp Blade" />
+			<Item Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" DisplayName="Emmy's Jolthammer" />
+			<Item Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" DisplayName="Emmy's Lava Saber" />
+			<Item Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" DisplayName="Emmy's Vamp Blade" />
 			<Item Stack="1" Name="J.Hmmr." ID="classes.Items.Melee::Jolthammer" />
 			<Item Stack="1" Name="Knife" ID="classes.Items.Melee::Knife" />
 			<Item Stack="1" Name="L.Saber" ID="classes.Items.Melee::LavaSaber" />
@@ -1124,12 +1172,12 @@
 			<Item Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
 			<Item Stack="1" Name="B.Light" ID="classes.Items.Guns::BlackLight" />
 			<Item Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BoltActionRifle" />
-			<Item Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" LongName="Custom LP-17 Laser Pistol" />
+			<Item Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" DisplayName="Custom LP-17 Laser Pistol" />
 			<Item Stack="1" Name="E.Handgun" ID="classes.Items.Guns::EagleHandgun" />
 			<Item Stack="1" Name="Electrogun" ID="classes.Items.Guns::Electrogun" />
-			<Item Stack="1" Name="E's Pistol" ID="classes.Items.Guns::EmmysSalamanderPistol" LongName="Emmy's Salamander Pistol" />
-			<Item Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" LongName="Emmy's Salamander Rifle" />
-			<Item Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" LongName="Emmy's Tweaked Salamander Rifle" />
+			<Item Stack="1" Name="E's Pistol" ID="classes.Items.Guns::EmmysSalamanderPistol" DisplayName="Emmy's Salamander Pistol" />
+			<Item Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" DisplayName="Emmy's Salamander Rifle" />
+			<Item Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" DisplayName="Emmy's Tweaked Salamander Rifle" />
 			<Item Stack="1" Name="FlareGun" ID="classes.Items.Guns::FlareGun" />
 			<Item Stack="1" Name="Goovolver" ID="classes.Items.Guns::Goovolver" />
 			<Item Stack="1" Name="Hammer C." ID="classes.Items.Guns::HammerCarbine" />
