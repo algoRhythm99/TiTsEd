@@ -296,13 +296,15 @@ namespace TiTsEd.ViewModel {
             set { SetValue("lustMod", value); }
         }
 
-        public double EffectiveLust
-        {
-            get { return Lust + LustMod; }
-        }
-
         public int MaxLust {
-            get { return 100; }
+            get {
+                int max = 100;
+                var perk = Game.GetPerk("Inhuman Desire");
+                if (perk.IsOwned) {
+                    max += (int) perk.Value1;
+                }
+                return max;
+            }
         }
 
         public int Energy {
@@ -317,7 +319,14 @@ namespace TiTsEd.ViewModel {
         }
 
         public int MaxEnergy {
-            get { return 100; }
+            get {
+                int max = 100;
+                var perk = Game.GetPerk("Heroic Reserves");
+                if (perk.IsOwned) {
+                    max += 33;
+                }
+                return max;
+            }
         }
 
         public int Tallness {
