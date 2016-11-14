@@ -19,8 +19,13 @@ namespace TiTsEd.ViewModel {
             Cocks = new CockArrayVM(game, GetObj("cocks"));
             Ass = new VaginaVM(game, GetObj("ass"));
 
+            List<String> types = new List<String>();
+            foreach (XmlItemType type in XmlData.Current.ItemTypes) {
+                types.Add(type.Name);
+            }
+
             var containers = new List<ItemContainerVM>();
-            _inventory = new ItemContainerVM(this, "Inventory", ItemCategories.All);
+            _inventory = new ItemContainerVM(this, "Inventory", types);
             containers.Add(_inventory);
             UpdateInventory();
 

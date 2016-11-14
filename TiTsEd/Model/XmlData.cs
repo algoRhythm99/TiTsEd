@@ -98,8 +98,8 @@ namespace TiTsEd.Model {
         [XmlElement("Body")]
         public XmlBodySet Body { get; set; }
 
-        [XmlArray("Items"), XmlArrayItem("Item")]
-        public XmlItem[] Items { get; set; }
+        [XmlArray("Items"), XmlArrayItem("ItemType")]
+        public List<XmlItemType> ItemTypes { get; set; }
 
         [XmlArray("Perks"), XmlArrayItem("PerkGroup")]
         public List<XmlPerkGroup> PerkGroups { get; set; }
@@ -232,7 +232,6 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("VaginaFlag")]
         public XmlEnum[] VaginaFlags { get; set; }
 
-
         [XmlArray, XmlArrayItem("CockType")]
         public XmlEnum[] CockTypes { get; set; }
 
@@ -269,8 +268,20 @@ namespace TiTsEd.Model {
         }
     }
 
+    public sealed class XmlItemType {
+        [XmlAttribute]
+        public string Name { get; set; }
+
+        [XmlElement("Item")]
+        public List<XmlItem> Items { get; set; }
+
+        public override string ToString() {
+            return Name;
+        }
+    }
+
     public sealed class XmlItem {
-        public static XmlItem Empty = new XmlItem("classes.Items.Miscellaneous::EmptySlot", "<empty>", "Other", 0);
+        public static XmlItem Empty = new XmlItem("classes.Items.Miscellaneous::EmptySlot", "<empty>", 0);
 
         [XmlAttribute]
         public string ID { get; set; }
@@ -281,18 +292,15 @@ namespace TiTsEd.Model {
         [XmlAttribute]
         public string Tooltip { get; set; }
         [XmlAttribute]
-        public string Type { get; set; }
-        [XmlAttribute]
         public int Stack { get; set; }
-        [XmlAttribute]
-        public string Variant { get; set; }
+        [XmlElement("ItemField")]
+        public List<XmlObjectField> Fields { get; set; }
 
         public XmlItem() { }
 
-        public XmlItem(string id, string name, string type, int stack) {
+        public XmlItem(string id, string name, int stack) {
             ID = id;
             Name = name;
-            Type = type;
             Stack = stack;
         }
 
@@ -340,24 +348,6 @@ namespace TiTsEd.Model {
         }
     }
 
-    [Flags]
-    public enum ItemCategories {
-        Other = 1,
-        MeleeWeapon = 2,
-        RangedWeapon = 4,
-        Clothing = 8,
-        Armor = 8,
-        Shield = 16,
-        UpperUndergarment = 32,
-        LowerUndergarment = 64,
-        Accessory = 128,
-        Consumable = 256,
-        Gadget = 512,
-        All = Other | MeleeWeapon | RangedWeapon | Armor |
-            Clothing | Shield | UpperUndergarment | LowerUndergarment |
-            Accessory | Consumable | Gadget,
-    }
-
     public sealed class XmlName {
         [XmlAttribute]
         public string Name { get; set; }
@@ -367,6 +357,18 @@ namespace TiTsEd.Model {
         public override string ToString() {
             return Name;
         }
+    }
+
+    /// <summary>
+    /// Directly correlates to an entry in an Amf Object.
+    /// </summary>
+    public sealed class XmlObjectField {
+        [XmlAttribute]
+        public string Name { get; set; }
+        [XmlAttribute]
+        public string Type { get; set; }
+        [XmlAttribute]
+        public string Value { get; set; }
     }
 
     public sealed class XmlStorageClass {
