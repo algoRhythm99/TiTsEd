@@ -84,9 +84,28 @@ namespace TiTsEd.ViewModel {
                         int fieldMatch = 0;
                         foreach (XmlObjectField field in item.Fields) {
                             //field.Name
-                            if (HasValue(field.Name) && GetString(field.Name).ToLower().Equals(field.Value.ToLower())) {
-                                //field matches
-                                fieldMatch++;
+                            if (HasValue(field.Name)) {
+                                //do it by type
+                                switch (field.Type.ToLower()) {
+                                    case "bool":
+                                        if (field.Value.StartsWith("t", true, null) == GetBool(field.Name)) {
+                                            fieldMatch++;
+                                        }
+                                        break;
+                                    case "int":
+                                        if (int.Parse(field.Value) == GetInt(field.Name)) {
+                                            fieldMatch++;
+                                        }
+                                        break;
+                                    case "string":
+                                        if (field.Value == GetString(field.Name)) {
+                                            fieldMatch++;
+                                        }
+                                        break;
+                                    default:
+                                        //no match since we have no idea what type it is
+                                        break;
+                                }
                             }
                         }
                         if (fieldMatch > bestFieldMatch) {
@@ -106,16 +125,34 @@ namespace TiTsEd.ViewModel {
             TypeID = xmlItem.ID;
             if (xmlItem != XmlItem.Empty) {
                 SetValue("version", 1);
+                /* update the name as well */
+                Name = xmlItem.Name;
                 if (null != xmlItem.LongName && xmlItem.LongName.Length > 0) {
                     LongName = xmlItem.LongName;
                 }
                 if (null != xmlItem.Tooltip && xmlItem.Tooltip.Length > 0) {
                     Tooltip = xmlItem.Tooltip;
                 }
-                /*
-                if (null != xmlItem.Variant && xmlItem.Variant.Length > 0) {
-                    Variant = xmlItem.Variant;
-                }*/
+                /* Update all extra fields with fields from the xml. */
+                foreach (XmlObjectField field in xmlItem.Fields) {
+                    switch (field.Type.ToLower()) {
+                        case "bool":
+                            SetValue(field.Name, field.Value.StartsWith("t", true, null));
+                            break;
+                        case "int":
+                            SetValue(field.Name, int.Parse(field.Value));
+                            break;
+                        case "string":
+                            SetValue(field.Name, field.Value);
+                            break;
+                        default:
+                            //no match since we have no idea what type it is
+                            break;
+                    }
+                }
+
+
+                /* SetValue("quantity", value); */
                 Quantity = xmlItem.Stack;
             }
 
@@ -157,15 +194,9 @@ namespace TiTsEd.ViewModel {
             OnPropertyChanged("AllGroups");
         }
 
-        public List<String> Types {
-            get;
-            private set;
-        }
+        public List<String> Types { get; private set; }
 
-        public UpdatableCollection<ItemGroupVM> AllGroups {
-            get;
-            private set;
-        }
+        public UpdatableCollection<ItemGroupVM> AllGroups { get; private set; }
 
         public int MaxQuantity {
             get {
@@ -214,8 +245,6 @@ namespace TiTsEd.ViewModel {
         public string LongName { get; set; }
 
         public string Tooltip { get; set; }
-
-        public string Variant { get; set; }
 
         public string DisplayName {
             get {

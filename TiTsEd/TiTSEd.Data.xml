@@ -915,11 +915,13 @@
 			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" LongName="Boxers HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
+				<ItemField Name="basePrice" Type="int" Value="3130" />
 			</Item>
 			<Item Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts" />
 			<Item Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts" LongName="Boyshorts HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
+				<ItemField Name="basePrice" Type="int" Value="3180" />
 			</Item>
 			<Item Stack="1" Name="BullStrap" ID="classes.Items.Apparel::BullsJockstrap" />
 			<Item Stack="1" Name="CockPasty" ID="classes.Items.Apparel::CockPasty" />
@@ -940,22 +942,26 @@
 			<Item Stack="1" Name="Panties" ID="classes.Items.Apparel::PlainPanties" LongName="Plain Panties HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
+				<ItemField Name="basePrice" Type="int" Value="3040" />
 			</Item>
 			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" />
 			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" LongName="Shibari Bottom HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
+				<ItemField Name="basePrice" Type="int" Value="3920" />
 			</Item>
 			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" />
 			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" LongName="Stockings HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
+				<ItemField Name="basePrice" Type="int" Value="3850" />
 			</Item>
 			<Item Stack="1" Name="ThmUndies" ID="classes.Items.Apparel::ThermalUnderwear" />
 			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" />
 			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" LongName="Thong HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
+				<ItemField Name="basePrice" Type="int" Value="3550" />
 			</Item>
 			<Item Stack="1" Name="Z.Pouch" ID="classes.Items.Apparel::ZipPouch" />
 		</ItemType>
