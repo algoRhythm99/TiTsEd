@@ -864,30 +864,12 @@
 			<Item Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
 			<Item Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
 			<Item Stack="1" Name="Bounty Bra" ID="classes.Items.Apparel::BountyBra" />
-			<Item Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt v1" >
-				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
-				<ItemField Name="variant" Type="int" Value="1" />
-			</Item>
-			<Item Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt v2" >
-				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
-				<ItemField Name="variant" Type="int" Value="2" />
-			</Item>
-			<Item Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt v3" >
-				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
-				<ItemField Name="variant" Type="int" Value="3" />
-			</Item>
-			<Item Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt v4" >
-				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
-				<ItemField Name="variant" Type="int" Value="4" />
-			</Item>
-			<Item Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt v5" >
-				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
-				<ItemField Name="variant" Type="int" Value="5" />
-			</Item>
-			<Item Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirt" LongName="Corny T-Shirt v6" >
-				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
-				<ItemField Name="variant" Type="int" Value="6" />
-			</Item>
+			<Item Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirtV1" LongName="Corny T-Shirt v1" />
+			<Item Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirtV2" LongName="Corny T-Shirt v2" />
+			<Item Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirtV3" LongName="Corny T-Shirt v3" />
+			<Item Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirtV4" LongName="Corny T-Shirt v4" />
+			<Item Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirtV5" LongName="Corny T-Shirt v5" />
+			<Item Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirtV6" LongName="Corny T-Shirt v6" />
 			<Item Stack="1" Name="Corset" ID="classes.Items.Apparel::Corset" />
 			<Item Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
 			<Item Stack="1" Name="CowShirt" ID="classes.Items.Apparel::CowPrintedShirt" />
