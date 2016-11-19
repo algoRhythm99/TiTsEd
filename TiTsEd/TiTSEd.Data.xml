@@ -275,7 +275,7 @@
 			<FaceType ID="17" Name="Kangaroo" />
 			<FaceType ID="18" Name="Gabilani" />
 			<FaceType ID="19" Name="Shark" />
-			<FaceType ID="20" Name="Siren" />
+			<FaceType ID="20" Name="Suula" />
 			<FaceType ID="24" Name="Kui-tan" />
 			<FaceType ID="25" Name="Human Masked" />
 			<FaceType ID="26" Name="Mouse" />
@@ -543,7 +543,7 @@
 			<TailType ID="15" Name="Demonic" />
 			<TailType ID="17" Name="Kangaroo" />
 			<TailType ID="19" Name="Shark" />
-			<TailType ID="20" Name="Siren" />
+			<TailType ID="20" Name="Suula" />
 			<TailType ID="21" Name="Deer" />
 			<TailType ID="24" Name="Kui-tan" />
 			<TailType ID="26" Name="Mouse" />
@@ -599,7 +599,7 @@
 			<TailGenitalRaceType ID="4" Name="Feline" />
 			<TailGenitalRaceType ID="5" Name="Vulpine" />
 			<TailGenitalRaceType ID="16" Name="Gooey" />
-			<TailGenitalRaceType ID="20" Name="Siren" />
+			<TailGenitalRaceType ID="20" Name="Suula" />
 			<TailGenitalRaceType ID="54" Name="Cockvine" />
 			<TailGenitalRaceType ID="65" Name="Gryvain" />
 			<TailGenitalRaceType ID="67" Name="Flower" />
@@ -667,13 +667,14 @@
 			<CockType ID="15" Name="Demonic" />
 			<CockType ID="17" Name="Kangaroo" />
 			<CockType ID="18" Name="Gabilani" />
-			<CockType ID="20" Name="Siren" />
+			<CockType ID="20" Name="Suula" />
 			<CockType ID="22" Name="Anemone" />
 			<CockType ID="23" Name="Tentacle" />
 			<CockType ID="24" Name="Kui-tan" />
 			<CockType ID="34" Name="Venus Pitcher" />
 			<CockType ID="42" Name="Raskvel" />
 			<CockType ID="43" Name="Sydian" />
+			<CockType ID="46" Name="Vanae" />
 			<CockType ID="51" Name="Synthetic" />
 			<CockType ID="52" Name="Simii" />
 			<CockType ID="53" Name="Daynar" />
@@ -717,7 +718,7 @@
 			<VaginaType ID="13" Name="Naga" />
 			<VaginaType ID="16" Name="Gooey" />
 			<VaginaType ID="18" Name="Gabilani" />
-			<VaginaType ID="20" Name="Siren" />
+			<VaginaType ID="20" Name="Suula" />
 			<VaginaType ID="24" Name="Kui-tan" />
 			<VaginaType ID="44" Name="Lapinara" />
 			<VaginaType ID="46" Name="Vanae" />
