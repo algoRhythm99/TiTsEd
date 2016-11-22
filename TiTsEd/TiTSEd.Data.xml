@@ -1077,6 +1077,7 @@
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCreamWhite" />
 			<Item Stack="10" Name="SwtSweat" ID="classes.Items.Transformatives::SweetSweat" />
 			<Item Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
+			<Item Stack="10" Name="Deerium" ID="classes.Items.Transformatives::TauricoVenidae" />
 			<Item Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
 			<Item Stack="10" Name="Virection" ID="classes.Items.Transformatives::Virection" />
 		</ItemType>
