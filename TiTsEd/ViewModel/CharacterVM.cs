@@ -82,82 +82,112 @@ namespace TiTsEd.ViewModel {
 
         public int Physique {
             get { return GetInt("physiqueRaw"); }
-            set { SetValue("physiqueRaw", value); }
+            set { SetValue("physiqueRaw", value);
+                OnPropertyChanged("PhysiquePercent");
+            }
         }
 
-        public int PhysiqueMod
-        {
+        public int PhysiqueMod {
             get { return GetInt("physiqueMod"); }
-            set { SetValue("physiqueMod", value); }
+            set { SetValue("physiqueMod", value);
+                OnPropertyChanged("PhysiquePercent");
+            }
         }
 
-        public int EffectivePhysique
-        {
+        public int EffectivePhysique {
             get { return Physique + PhysiqueMod; }
+        }
+
+        public double PhysiquePercent {
+            get { return (EffectivePhysique / MaxCoreStat) * 100; }
         }
 
         public int Reflexes {
             get { return GetInt("reflexesRaw"); }
-            set { SetValue("reflexesRaw", value); }
+            set { SetValue("reflexesRaw", value);
+                OnPropertyChanged("ReflexesPercent");
+            }
         }
 
-        public int ReflexesMod
-        {
+        public int ReflexesMod {
             get { return GetInt("reflexesMod"); }
-            set { SetValue("reflexesMod", value); }
+            set { SetValue("reflexesMod", value);
+                OnPropertyChanged("ReflexesPercent");
+            }
         }
 
-        public int EffectiveReflexes
-        {
+        public int EffectiveReflexes {
             get { return Reflexes + ReflexesMod; }
+        }
+
+        public double ReflexesPercent {
+            get { return (EffectiveReflexes / MaxCoreStat) * 100; }
         }
 
         public int Aim {
             get { return GetInt("aimRaw"); }
-            set { SetValue("aimRaw", value); }
+            set { SetValue("aimRaw", value);
+                OnPropertyChanged("AimPercent");
+            }
         }
 
-        public int AimMod
-        {
+        public int AimMod {
             get { return GetInt("aimMod"); }
-            set { SetValue("aimMod", value); }
+            set { SetValue("aimMod", value);
+                OnPropertyChanged("AimPercent");
+            }
         }
 
-        public int EffectiveAim
-        {
+        public int EffectiveAim {
             get { return Aim + AimMod; }
+        }
+
+        public double AimPercent {
+            get { return (EffectiveAim / MaxCoreStat) * 100; }
         }
 
         public int Intelligence {
             get { return GetInt("intelligenceRaw"); }
-            set { SetValue("intelligenceRaw", value); }
+            set { SetValue("intelligenceRaw", value);
+                OnPropertyChanged("IntelligencePercent");
+            }
         }
 
-        public int IntelligenceMod
-        {
+        public int IntelligenceMod {
             get { return GetInt("intelligenceMod"); }
-            set { SetValue("intelligenceMod", value); }
+            set { SetValue("intelligenceMod", value);
+                OnPropertyChanged("IntelligencePercent");
+            }
         }
 
-        public int EffectiveIntelligence
-        {
+        public int EffectiveIntelligence {
             get { return Intelligence + IntelligenceMod; }
+        }
+
+        public double IntelligencePercent {
+            get { return (EffectiveIntelligence / MaxCoreStat) * 100; }
         }
 
         public int Willpower {
             get { return GetInt("willpowerRaw"); }
-            set { SetValue("willpowerRaw", value); }
+            set { SetValue("willpowerRaw", value);
+                OnPropertyChanged("WillpowerPercent");
+            }
         }
 
-        public int WillpowerMod
-        {
+        public int WillpowerMod {
             get { return GetInt("willpowerMod"); }
-            set { SetValue("willpowerMod", value); }
+            set { SetValue("willpowerMod", value);
+                OnPropertyChanged("WillpowerPercent");
+            }
         }
 
-        public int EffectiveWillpower
-        {
+        public int EffectiveWillpower {
             get { return Willpower + WillpowerMod; }
+        }
+
+        public double WillpowerPercent {
+            get { return (EffectiveWillpower / MaxCoreStat) * 100; }
         }
 
         public double Libido {
@@ -165,15 +195,13 @@ namespace TiTsEd.ViewModel {
             set { SetValue("libidoRaw", value); }
         }
 
-        public int LibidoMod
-        {
+        public int LibidoMod {
             get { return GetInt("libidoMod"); }
             set { SetValue("libidoMod", value); }
         }
 
-        public double EffectiveLibido
-        {
-            get { return Libido + LibidoMod; }
+        public int MaxLibido {
+            get { return 100; }
         }
 
         public double MaxCoreStat {
@@ -183,6 +211,28 @@ namespace TiTsEd.ViewModel {
         public int HP {
             get { return GetInt("HPRaw"); }
             set { SetValue("HPRaw", value); }
+        }
+
+        private int HPMod {
+            get { return GetInt("HPMod"); }
+        }
+
+        public int MaxHP {
+            get {
+                var bonus = 0;
+                //TODO check items for fortification effects and add to bonus
+
+                var maxhp = 15 + (Level - 1) * 15 + HPMod + bonus;
+
+                //class mercenary
+                if (CharacterClass == 0) maxhp += Level * 5;
+                //class engineer
+                if (CharacterClass == 2) maxhp -= Level * 5;
+
+                //TODO check status conditions
+
+                return maxhp;
+            }
         }
 
         public int Level {
@@ -199,10 +249,6 @@ namespace TiTsEd.ViewModel {
         public int CharacterClass {
             get { return GetInt("characterClass"); }
             set { SetValue("characterClass", value); }
-        }
-
-        private int HPMod {
-            get { return GetInt("HPMod"); }
         }
 
         public int PerkPoints {
@@ -242,56 +288,12 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int Personality {
-            get { return GetInt("personality"); }
-            set {
-                SetValue("personality", value);
-                OnPropertyChanged("PersonalityTip");
-            }
-        }
-
-        public String PersonalityTip {
-            get {
-                if (Personality <= 33) return "Nice";
-                if (Personality <= 66) return "Mischievous";
-                return "Ass";
-            }
-        }
-
-        public int Exhibitionism
-        {
-            get { return GetInt("exhibitionismRaw"); }
-            set
-            {
-                SetValue("exhibitionismRaw", value);
-            }
-        }
-
-        public int MaxHP {
-            get {
-                var bonus = 0;
-                //TODO check items for fortification effects and add to bonus
-
-                var maxhp = 15 + (Level - 1) * 15 + HPMod + bonus;
-
-                //class mercenary
-                if (CharacterClass == 0) maxhp += Level * 5;
-                //class engineer
-                if (CharacterClass == 2) maxhp -= Level * 5;
-
-                //TODO check status conditions
-
-                return maxhp;
-            }
-        }
-
         public double Lust {
             get { return GetDouble("lustRaw"); }
             set { SetValue("lustRaw", value); }
         }
 
-        public int LustMod
-        {
+        public int LustMod {
             get { return GetInt("lustMod"); }
             set { SetValue("lustMod", value); }
         }
@@ -312,8 +314,7 @@ namespace TiTsEd.ViewModel {
             set { SetValue("energyRaw", value); }
         }
 
-        public int EnergyMod
-        {
+        public int EnergyMod {
             get { return GetInt("energyMod"); }
             set { SetValue("energyMod", value); }
         }
@@ -329,48 +330,77 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        public int Personality {
+            get { return GetInt("personality"); }
+            set {
+                SetValue("personality", value);
+                OnPropertyChanged("PersonalityTip");
+            }
+        }
+
+        public String PersonalityTip {
+            get {
+                if (Personality <= 33) return "Nice";
+                if (Personality <= 66) return "Mischievous";
+                return "Ass";
+            }
+        }
+
+        public int Exhibitionism {
+            get { return GetInt("exhibitionismRaw"); }
+            set { SetValue("exhibitionismRaw", value); }
+        }
+
         public int Tallness {
             get { return GetInt("tallness"); }
             set { SetValue("tallness", value); }
         }
+
         public int Thickness {
             get { return GetInt("thickness"); }
             set { SetValue("thickness", value); }
         }
+
         public int Feminity {
             get { return GetInt("femininity"); }
             set { SetValue("femininity", value); }
         }
+
         public int Tone {
             get { return GetInt("tone"); }
             set { SetValue("tone", value); }
         }
+
         public int SkinType {
             get { return GetInt("skinType"); }
             set { SetValue("skinType", value); }
         }
+
         public String SkinTone {
             get { return GetString("skinTone"); }
             set { SetValue("skinTone", value); }
         }
+
         public String SkinAccent {
             get { return GetString("skinAccent"); }
             set { SetValue("skinAccent", value); }
         }
+
         public List<FlagItem> SkinFlags {
             get { return getFlagList(GetObj("skinFlags"), XmlData.Current.Body.SkinFlags); }
         }
+
         public String FurColor {
             get { return GetString("furColor"); }
             set { SetValue("furColor", value); }
         }
+
         public String ScaleColor {
             get { return GetString("scaleColor"); }
             set { SetValue("scaleColor", value); }
         }
 
-        public int AlcoholTolerance
-        {
+        public int AlcoholTolerance {
             get {
                 var toleranceStat = Game.GetStatus("Tolerance");
                 return (int)toleranceStat.Value1;
@@ -507,6 +537,11 @@ namespace TiTsEd.ViewModel {
 
         #region BodyPage
 
+        public double Elasticity {
+            get { return GetDouble("elasticity"); }
+            set { SetValue("elasticity", value); }
+        }
+
         public int HipRating {
             get { return GetInt("hipRatingRaw"); }
             set {
@@ -515,18 +550,15 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int HipRatingMod
-        {
+        public int HipRatingMod {
             get { return GetInt("hipRatingMod"); }
-            set
-            {
+            set {
                 SetValue("hipRatingMod", value);
                 OnPropertyChanged("HipRatingTip");
             }
         }
 
-        public int EffectiveHipRating
-        {
+        public int EffectiveHipRating {
             get { return HipRating + HipRatingMod; }
         }
 
@@ -551,18 +583,15 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int ButtRatingMod
-        {
+        public int ButtRatingMod {
             get { return GetInt("buttRatingMod"); }
-            set
-            {
+            set {
                 SetValue("buttRatingMod", value);
                 OnPropertyChanged("ButtRatingTip");
             }
         }
 
-        public int EffectiveButtRating
-        {
+        public int EffectiveButtRating {
             get { return ButtRating + ButtRatingMod; }
         }
 
@@ -585,14 +614,12 @@ namespace TiTsEd.ViewModel {
             set { SetValue("bellyRatingRaw", value); }
         }
 
-        public int BellyRatingMod
-        {
+        public int BellyRatingMod {
             get { return GetInt("bellyRatingMod"); }
             set { SetValue("bellyRatingMod", value); }
         }
 
-        public int EffectiveBellyRating
-        {
+        public int EffectiveBellyRating {
             get { return BellyRating + BellyRatingMod; }
         }
 
@@ -623,6 +650,7 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("wingCount"); }
             set { SetValue("wingCount", value); }
         }
+
         public int WingType {
             get { return GetInt("wingType"); }
             set { SetValue("wingType", value); }
@@ -684,6 +712,10 @@ namespace TiTsEd.ViewModel {
             get { return getFlagList(GetObj("tailFlags"), XmlData.Current.Body.TailFlags); }
         }
 
+        public int GenitalSpot {
+            get { return GetInt("genitalSpot"); }
+            set { SetValue("genitalSpot", value); }
+        }
 
         public String NippleColor {
             get { return GetString("nippleColor"); }
@@ -695,14 +727,12 @@ namespace TiTsEd.ViewModel {
             set { SetValue("nipplesPerBreast", value); }
         }
 
-        public double NippleLengthRatio
-        {
+        public double NippleLengthRatio {
             get { return GetDouble("nippleLengthRatio"); }
             set { SetValue("nippleLengthRatio", value); }
         }
 
-        public double NippleWidthRatio
-        {
+        public double NippleWidthRatio {
             get { return GetDouble("nippleWidthRatio"); }
             set { SetValue("nippleWidthRatio", value); }
         }
@@ -756,8 +786,7 @@ namespace TiTsEd.ViewModel {
             set { SetValue("fertilityRaw", value); }
         }
 
-        public int FertilityMod
-        {
+        public int FertilityMod {
             get { return GetInt("fertilityMod"); }
             set { SetValue("fertilityMod", value); }
         }
@@ -795,8 +824,7 @@ namespace TiTsEd.ViewModel {
             set { SetValue("cumMultiplierRaw", value); }
         }
 
-        public int CumMultiplierMod
-        {
+        public int CumMultiplierMod {
             get { return GetInt("cumMultiplierMod"); }
             set { SetValue("cumMultiplierMod", value); }
         }
@@ -806,8 +834,7 @@ namespace TiTsEd.ViewModel {
             set { SetValue("cumQualityRaw", value); }
         }
 
-        public int CumQualityMod
-        {
+        public int CumQualityMod {
             get { return GetInt("cumQualityMod"); }
             set { SetValue("cumQualityMod", value); }
         }
@@ -832,8 +859,7 @@ namespace TiTsEd.ViewModel {
             set { SetValue("ballEfficiency", value); }
         }
 
-        public int RefractoryRate
-        {
+        public int RefractoryRate {
             get { return GetInt("refractoryRate"); }
             set { SetValue("refractoryRate", value); }
         }
@@ -842,56 +868,47 @@ namespace TiTsEd.ViewModel {
 
         #region MiscPage
 
-        public String Affinity
-        {
+        public String Affinity {
             get { return GetString("affinity"); }
             set { SetValue("affinity", value); }
         }
 
-        public String OriginalRace
-        {
+        public String OriginalRace {
             get { return GetString("originalRace"); }
             set { SetValue("originalRace", value); }
         }
 
-        public string ImpregnationType
-        {
+        public string ImpregnationType {
             get { return GetString("impregnationType"); }
             set { SetValue("impregnationType", value); }
         }
 
-        public int PregnancyMultiplierRaw
-        {
+        public int PregnancyMultiplierRaw {
             get { return GetInt("pregnancyMultiplierRaw"); }
             set { SetValue("pregnancyMultiplierRaw", value); }
         }
 
-        public int PregnancyMultiplierMod
-        {
+        public int PregnancyMultiplierMod {
             get { return GetInt("pregnancyMultiplierMod"); }
             set { SetValue("pregnancyMultiplierMod", value); }
         }
 
-        public int PregnancyIncubationBonusMotherRaw
-        {
+        public int PregnancyIncubationBonusMotherRaw {
             get { return GetInt("pregnancyIncubationBonusMotherRaw"); }
             set { SetValue("pregnancyIncubationBonusMotherRaw", value); }
         }
 
-        public int PregnancyIncubationBonusMotherMod
-        {
+        public int PregnancyIncubationBonusMotherMod {
             get { return GetInt("pregnancyIncubationBonusMotherMod"); }
             set { SetValue("pregnancyIncubationBonusMotherMod", value); }
         }
 
-        public int PregnancyIncubationBonusFatherRaw
-        {
+        public int PregnancyIncubationBonusFatherRaw {
             get { return GetInt("pregnancyIncubationBonusFatherRaw"); }
             set { SetValue("pregnancyIncubationBonusFatherRaw", value); }
         }
 
-        public int PregnancyIncubationBonusFatherMod
-        {
+        public int PregnancyIncubationBonusFatherMod {
             get { return GetInt("pregnancyIncubationBonusFatherMod"); }
             set { SetValue("pregnancyIncubationBonusFatherMod", value); }
         }

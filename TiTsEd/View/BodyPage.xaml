@@ -76,6 +76,13 @@
                     <TextBlock              Text="Wing Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.WingType}" ItemsSource="{Binding Data.Body.WingTypes}"/>
                 </common:AutoGrid>
+                <common:AutoGrid>
+                    <TextBlock              Text="Elasticity"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Elasticity}" Type="Double" />
+
+                    <TextBlock              Text="Genital Spot"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.GenitalSpot}" ItemsSource="{Binding Data.Body.GenitalSpotTypes}"/>
+                </common:AutoGrid>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
@@ -118,7 +125,7 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.Ass.BonusCapacity}" />
 
                     <TextBlock              Text="Anal Wetness"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.Wetness}" Min="1" Lower="1" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.Wetness}" />
                 </common:AutoGrid>
 
                 <Border Style="{StaticResource HeaderBorder}">
