@@ -109,34 +109,35 @@
                 <common:AutoGrid Columns="4">
 
                     <TextBlock Text="Physique" />
-                    <common:MyNumericBox    Width="100" Upper="{Binding Game.Character.MaxCoreStat}" Value="{Binding Game.Character.Physique}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Physique}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.PhysiqueMod}" ToolTip="Modifier" />
-                    <TextBlock              Width="60"  Text="{Binding Game.Character.PhysiquePercent}" TextAlignment="Center" />
+                    <TextBlock              Width="50"  Text="{Binding Game.Character.PhysiquePercent}" ToolTip="Percent" TextAlignment="Center" />
 
                     <TextBlock              Text="Reflexes"/>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Reflexes}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.ReflexesMod}" ToolTip="Modifier" />
-                    <TextBlock              Width="60"  Text="{Binding Game.Character.ReflexesPercent}" TextAlignment="Center" />
+                    <TextBlock              Width="50"  Text="{Binding Game.Character.ReflexesPercent}" ToolTip="Percent" TextAlignment="Center" />
 
                     <TextBlock              Text="Aim"/>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Aim}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.AimMod}" ToolTip="Modifier" />
-                    <TextBlock              Width="60"  Text="{Binding Game.Character.AimPercent}" TextAlignment="Center" />
+                    <TextBlock              Width="50"  Text="{Binding Game.Character.AimPercent}" ToolTip="Percent" TextAlignment="Center" />
 
                     <TextBlock              Text="Intelligence"/>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Intelligence}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.IntelligenceMod}" ToolTip="Modifier" />
-                    <TextBlock              Width="60"  Text="{Binding Game.Character.IntelligencePercent}" TextAlignment="Center" />
+                    <TextBlock              Width="50"  Text="{Binding Game.Character.IntelligencePercent}" ToolTip="Percent" TextAlignment="Center" />
 
                     <TextBlock              Text="Willpower"/>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Willpower}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.WillpowerMod}" ToolTip="Modifier" />
-                    <TextBlock              Width="60"  Text="{Binding Game.Character.WillpowerPercent}" TextAlignment="Center" />
+                    <TextBlock              Width="50"  Text="{Binding Game.Character.WillpowerPercent}" ToolTip="Percent" TextAlignment="Center" />
                     
                     <TextBlock              Text="Libido"/>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Libido}" Upper="{Binding Game.Character.MaxLibido}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.LibidoMod}" ToolTip="Modifier" />
-                    <TextBlock Width="60" />
+                    <TextBlock Width="50" />
+
                 </common:AutoGrid>
                 <common:AutoGrid Margin="0,30,0,0" Columns="3">
 
