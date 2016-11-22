@@ -59,10 +59,7 @@
 
                 </common:AutoGrid>
                 <common:AutoGrid Columns="3">
-                    <TextBlock />
-                    <TextBlock Text="Base" TextAlignment="Center" />
-                    <TextBlock Text="Modifier" TextAlignment="Center" />
-                    
+
                     <TextBlock              Text="Cum Multiplier"/>
                     <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumMultiplier}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" ToolTip="Modifier" />
