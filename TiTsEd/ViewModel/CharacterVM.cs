@@ -99,7 +99,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public double PhysiquePercent {
-            get { return (EffectivePhysique / MaxCoreStat) * 100; }
+            get { return Math.Round((EffectivePhysique / MaxCoreStat) * 100); }
         }
 
         public int Reflexes {
@@ -121,7 +121,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public double ReflexesPercent {
-            get { return (EffectiveReflexes / MaxCoreStat) * 100; }
+            get { return Math.Round((EffectiveReflexes / MaxCoreStat) * 100); }
         }
 
         public int Aim {
@@ -143,7 +143,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public double AimPercent {
-            get { return (EffectiveAim / MaxCoreStat) * 100; }
+            get { return Math.Round((EffectiveAim / MaxCoreStat) * 100); }
         }
 
         public int Intelligence {
@@ -165,7 +165,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public double IntelligencePercent {
-            get { return (EffectiveIntelligence / MaxCoreStat) * 100; }
+            get { return Math.Round((EffectiveIntelligence / MaxCoreStat) * 100); }
         }
 
         public int Willpower {
@@ -187,7 +187,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public double WillpowerPercent {
-            get { return (EffectiveWillpower / MaxCoreStat) * 100; }
+            get { return Math.Round((EffectiveWillpower / MaxCoreStat) * 100); }
         }
 
         public double Libido {
