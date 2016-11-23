@@ -55,7 +55,7 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.RefractoryRate}" />
 
                     <TextBlock              Text="Cum Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.CumType}" ItemsSource="{Binding Data.Body.CumTypes}"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.CumType}" ItemsSource="{Binding Data.Body.FluidTypes}"/>
 
                 </common:AutoGrid>
                 <common:AutoGrid Columns="3">
@@ -116,7 +116,7 @@
 
                 <common:AutoGrid>
                     <TextBlock              Text="Girl Cum Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.FluidTypes}"/>
                 </common:AutoGrid>
 
                 <common:AutoGrid Columns="3">

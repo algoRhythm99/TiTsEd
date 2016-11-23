@@ -177,21 +177,14 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("GenitalSpotType")]
         public XmlEnum[] GenitalSpotTypes { get; set; }
 
-        [XmlArray, XmlArrayItem("MilkType")]
-        public XmlEnum[] MilkTypes { get; set; }
-
-        [XmlArray, XmlArrayItem("CumType")]
-        public XmlEnum[] CumTypes { get; set; }
-
-        [XmlArray, XmlArrayItem("GirlCumType")]
-        public XmlEnum[] GirlCumTypes { get; set; }
+        [XmlArray, XmlArrayItem("FluidType")]
+        public XmlEnum[] FluidTypes { get; set; }
 
         [XmlArray, XmlArrayItem("NippleType")]
         public XmlEnum[] NippleTypes { get; set; }
 
         [XmlArray, XmlArrayItem("DickNippleType")]
         public XmlEnum[] DickNippleTypes { get; set; }
-
 
         [XmlArray, XmlArrayItem("VaginaType")]
         public XmlEnum[] VaginaTypes { get; set; }

@@ -466,55 +466,37 @@
 			<TailGenitalType ID="2" Name="Vagina" />
 		</TailGenitalTypes>
 		<!-- ================================================================ -->
-		<CumTypes>
-			<CumType ID="0" Name="Milk" />
-			<CumType ID="1" Name="Honey" />
-			<CumType ID="2" Name="Cum" />
-			<CumType ID="6" Name="Cumsap" />
-			<CumType ID="7" Name="Chocolate Milk" />
-			<CumType ID="8" Name="Strawberry Milk" />
-			<CumType ID="9" Name="Sydian Cum" />
-			<CumType ID="14" Name="Gabilani Cum" />
-			<CumType ID="16" Name="Vanilla" />
-			<CumType ID="17" Name="Nyrea Cum" />
-			<CumType ID="18" Name="Goo" />
-			<CumType ID="19" Name="Chocolate Cum" />
-			<CumType ID="20" Name="Vanae Cum" />
-			<CumType ID="23" Name="Hradian Cum" />
-			<CumType ID="24" Name="Goo Cum" />
-			<CumType ID="25" Name="Fruit Cum" />
-			<CumType ID="27" Name="Eggnog" />
-			<CumType ID="28" Name="Peppermint Cum" />
-		</CumTypes>
-		<!-- ================================================================ -->
-		<GirlCumTypes>
-			<GirlCumType ID="1" Name="Honey" />
-			<GirlCumType ID="5" Name="Girl Cum" />
-			<GirlCumType ID="7" Name="Chocolate Milk" />
-			<GirlCumType ID="8" Name="Strawberry Milk" />
-			<GirlCumType ID="15" Name="Gabilani Girl Cum" />
-			<GirlCumType ID="16" Name="Vanilla" />
-			<GirlCumType ID="18" Name="Goo" />
-			<GirlCumType ID="21" Name="Nyrea Girl Cum" />
-			<GirlCumType ID="23" Name="Hradian Cum" />
-			<GirlCumType ID="26" Name="Fruit Girl Cum" />
-		</GirlCumTypes>
-		<!-- ================================================================ -->
-		<MilkTypes>
-			<MilkType ID="0" Name="Milk" />
-			<MilkType ID="1" Name="Honey" />
-			<MilkType ID="2" Name="Cum" />
-			<MilkType ID="4" Name="Milksap" />
-			<MilkType ID="5" Name="Girl Cum" />
-			<MilkType ID="7" Name="Chocolate Milk" />
-			<MilkType ID="8" Name="Strawberry Milk" />
-			<MilkType ID="10" Name="Vanae Maiden Milk" />
-			<MilkType ID="11" Name="Vanae Huntress Milk" />
-			<MilkType ID="12" Name="Nectar" />
-			<MilkType ID="13" Name="Leithan Milk" />
-			<MilkType ID="16" Name="Vanilla" />
-			<MilkType ID="22" Name="Blueberry Yogurt" />
-		</MilkTypes>
+		<FluidTypes>
+			<FluidType ID="0" Name="Milk" />
+			<FluidType ID="1" Name="Honey" />
+			<FluidType ID="2" Name="Cum" />
+			<FluidType ID="3" Name="Oil" />
+			<FluidType ID="4" Name="Milksap" />
+			<FluidType ID="5" Name="Girl Cum" />
+			<FluidType ID="6" Name="Cumsap" />
+			<FluidType ID="7" Name="Chocolate Milk" />
+			<FluidType ID="8" Name="Strawberry Milk" />
+			<FluidType ID="9" Name="Sydian Cum" />
+			<FluidType ID="10" Name="Vanae Maiden Milk" />
+			<FluidType ID="11" Name="Vanae Huntress Milk" />
+			<FluidType ID="12" Name="Nectar" />
+			<FluidType ID="13" Name="Leithan Milk" />
+			<FluidType ID="14" Name="Gabilani Cum" />
+			<FluidType ID="15" Name="Gabilani Girl Cum" />
+			<FluidType ID="16" Name="Vanilla" />
+			<FluidType ID="17" Name="Nyrea Cum" />
+			<FluidType ID="18" Name="Goo" />
+			<FluidType ID="19" Name="Chocolate Cum" />
+			<FluidType ID="20" Name="Vanae Cum" />
+			<FluidType ID="21" Name="Nyrea Girl Cum" />
+			<FluidType ID="22" Name="Blueberry Yogurt" />
+			<FluidType ID="23" Name="Hradian Cum" />
+			<FluidType ID="24" Name="Goo Cum" />
+			<FluidType ID="25" Name="Fruit Cum" />
+			<FluidType ID="26" Name="Fruit Girl Cum" />
+			<FluidType ID="27" Name="Eggnog" />
+			<FluidType ID="28" Name="Peppermint Cum" />
+		</FluidTypes>
 		<!-- ================================================================ -->
 		<CockFlags>
 			<CockFlag ID="2" Name="Prehensile" />
