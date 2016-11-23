@@ -122,6 +122,132 @@
 	</General>
 	<!-- ================================================================ -->
 	<Body>
+		<Colors>
+			<Color>albino</Color>
+			<Color>amber</Color>
+			<Color>amethyst</Color>
+			<Color>aqua</Color>
+			<Color>aquamarine</Color>
+			<Color>auburn</Color>
+			<Color>azure</Color>
+			<Color>black and yellow</Color>
+			<Color>black</Color>
+			<Color>blonde</Color>
+			<Color>blue</Color>
+			<Color>bronze</Color>
+			<Color>brown</Color>
+			<Color>bubblegum-pink</Color>
+			<Color>caramel</Color>
+			<Color>cerulean</Color>
+			<Color>cherry</Color>
+			<Color>chestnut</Color>
+			<Color>chocolate-brown</Color>
+			<Color>chocolate</Color>
+			<Color>chrome</Color>
+			<Color>citrine</Color>
+			<Color>clear</Color>
+			<Color>cobalt</Color>
+			<Color>copper</Color>
+			<Color>crimson</Color>
+			<Color>dark blue</Color>
+			<Color>dark brown</Color>
+			<Color>dark green</Color>
+			<Color>dark red</Color>
+			<Color>dark yellow</Color>
+			<Color>dark</Color>
+			<Color>dirty blonde</Color>
+			<Color>ebony</Color>
+			<Color>emerald</Color>
+			<Color>fair</Color>
+			<Color>fir green</Color>
+			<Color>garnet</Color>
+			<Color>glittering purple</Color>
+			<Color>glossy blue</Color>
+			<Color>glowing amber</Color>
+			<Color>glowing blue</Color>
+			<Color>glowing cyan</Color>
+			<Color>glowing gold</Color>
+			<Color>glowing green</Color>
+			<Color>glowing orange</Color>
+			<Color>glowing pink</Color>
+			<Color>glowing purple</Color>
+			<Color>glowing red</Color>
+			<Color>glowing silver</Color>
+			<Color>glowing violet</Color>
+			<Color>glowing white</Color>
+			<Color>glowing yellow</Color>
+			<Color>gold</Color>
+			<Color>gray</Color>
+			<Color>green</Color>
+			<Color>hazel</Color>
+			<Color>indigo</Color>
+			<Color>iridescent</Color>
+			<Color>ivory</Color>
+			<Color>jade</Color>
+			<Color>jet-black</Color>
+			<Color>lapis</Color>
+			<Color>lavender</Color>
+			<Color>leaf green</Color>
+			<Color>light purple</Color>
+			<Color>lime green</Color>
+			<Color>lime</Color>
+			<Color>luminescent lime green</Color>
+			<Color>luminous blue</Color>
+			<Color>luminous green</Color>
+			<Color>luminous orange</Color>
+			<Color>luminous pink</Color>
+			<Color>luminous purple</Color>
+			<Color>luminous silver</Color>
+			<Color>luminous violet</Color>
+			<Color>mahogany</Color>
+			<Color>maroon</Color>
+			<Color>metallic black</Color>
+			<Color>olive</Color>
+			<Color>onyx</Color>
+			<Color>opal</Color>
+			<Color>orange</Color>
+			<Color>pale blue</Color>
+			<Color>pale green</Color>
+			<Color>pale white</Color>
+			<Color>pale</Color>
+			<Color>peach</Color>
+			<Color>pearl</Color>
+			<Color>peridot</Color>
+			<Color>pink</Color>
+			<Color>platinum blonde</Color>
+			<Color>platinum</Color>
+			<Color>purple and white</Color>
+			<Color>purple</Color>
+			<Color>raven</Color>
+			<Color>red-orange</Color>
+			<Color>red</Color>
+			<Color>rose gold</Color>
+			<Color>rose</Color>
+			<Color>ruby</Color>
+			<Color>rusty</Color>
+			<Color>sable</Color>
+			<Color>sapphire</Color>
+			<Color>scarlet</Color>
+			<Color>silver</Color>
+			<Color>slut red</Color>
+			<Color>steel gray</Color>
+			<Color>steel</Color>
+			<Color>strawberry blonde</Color>
+			<Color>tanned</Color>
+			<Color>tawny</Color>
+			<Color>teal</Color>
+			<Color>topaz</Color>
+			<Color>transparent</Color>
+			<Color>turquoise</Color>
+			<Color>vermillion-red</Color>
+			<Color>vibrant purple</Color>
+			<Color>violet</Color>
+			<Color>viridescent</Color>
+			<Color>white</Color>
+			<Color>yellow-green</Color>
+			<Color>yellow-orange</Color>
+			<Color>yellow</Color>
+		</Colors>
 		<SkinTypes>
 			<SkinType ID="0" Name="Skin" />
 			<SkinType ID="1" Name="Fur" />
@@ -144,57 +270,6 @@
 			<SkinFlag ID="39" Name="Absorbent" />
 		</SkinFlags>
 		<!-- ================================================================ -->
-		<SkinTones>
-			<SkinTone>albino</SkinTone>
-			<SkinTone>amber</SkinTone>
-			<SkinTone>aqua</SkinTone>
-			<SkinTone>black</SkinTone>
-			<SkinTone>blue</SkinTone>
-			<SkinTone>cerulean</SkinTone>
-			<SkinTone>chocolate</SkinTone>
-			<SkinTone>copper</SkinTone>
-			<SkinTone>crimson</SkinTone>
-			<SkinTone>dark</SkinTone>
-			<SkinTone>dark blue</SkinTone>
-			<SkinTone>dark green</SkinTone>
-			<SkinTone>dark red</SkinTone>
-			<SkinTone>ebony</SkinTone>
-			<SkinTone>emerald</SkinTone>
-			<SkinTone>fair</SkinTone>
-			<SkinTone>gold</SkinTone>
-			<SkinTone>gray</SkinTone>
-			<SkinTone>green</SkinTone>
-			<SkinTone>indigo</SkinTone>
-			<SkinTone>lavender</SkinTone>
-			<SkinTone>lime</SkinTone>
-			<SkinTone>luminescent lime green</SkinTone>
-			<SkinTone>maroon</SkinTone>
-			<SkinTone>olive</SkinTone>
-			<SkinTone>orange</SkinTone>
-			<SkinTone>pale</SkinTone>
-			<SkinTone>pale blue</SkinTone>
-			<SkinTone>pale green</SkinTone>
-			<SkinTone>pale white</SkinTone>
-			<SkinTone>peach</SkinTone>
-			<SkinTone>pink</SkinTone>
-			<SkinTone>purple</SkinTone>
-			<SkinTone>purple and white</SkinTone>
-			<SkinTone>red</SkinTone>
-			<SkinTone>rose</SkinTone>
-			<SkinTone>sable</SkinTone>
-			<SkinTone>silver</SkinTone>
-			<SkinTone>steel gray</SkinTone>
-			<SkinTone>tanned</SkinTone>
-			<SkinTone>teal</SkinTone>
-			<SkinTone>topaz</SkinTone>
-			<SkinTone>turquoise</SkinTone>
-			<SkinTone>vermillion-red</SkinTone>
-			<SkinTone>violet</SkinTone>
-			<SkinTone>viridescent</SkinTone>
-			<SkinTone>white</SkinTone>
-			<SkinTone>yellow</SkinTone>
-		</SkinTones>
-		<!-- ================================================================ -->
 		<HairTypes>
 			<HairType ID="0" Name="Hair" />
 			<HairType ID="1" Name="Feathers" />
@@ -204,52 +279,6 @@
 			<HairType ID="5" Name="Quills" />
 			<HairType ID="6" Name="Plant" />
 		</HairTypes>
-		<!-- ================================================================ -->
-		<HairColors>
-			<HairColor>amber</HairColor>
-			<HairColor>black</HairColor>
-			<HairColor>blonde</HairColor>
-			<HairColor>blue</HairColor>
-			<HairColor>brown</HairColor>
-			<HairColor>cerulean</HairColor>
-			<HairColor>chestnut</HairColor>
-			<HairColor>chocolate</HairColor>
-			<HairColor>clear</HairColor>
-			<HairColor>copper</HairColor>
-			<HairColor>crimson</HairColor>
-			<HairColor>dark brown</HairColor>
-			<HairColor>emerald</HairColor>
-			<HairColor>glowing gold</HairColor>
-			<HairColor>glowing violet</HairColor>
-			<HairColor>gold</HairColor>
-			<HairColor>green</HairColor>
-			<HairColor>ivory</HairColor>
-			<HairColor>jet-black</HairColor>
-			<HairColor>lavender</HairColor>
-			<HairColor>luminous blue</HairColor>
-			<HairColor>luminous green</HairColor>
-			<HairColor>luminous orange</HairColor>
-			<HairColor>luminous pink</HairColor>
-			<HairColor>luminous purple</HairColor>
-			<HairColor>luminous silver</HairColor>
-			<HairColor>luminous violet</HairColor>
-			<HairColor>onyx</HairColor>
-			<HairColor>orange</HairColor>
-			<HairColor>peach</HairColor>
-			<HairColor>pink</HairColor>
-			<HairColor>purple</HairColor>
-			<HairColor>raven</HairColor>
-			<HairColor>red</HairColor>
-			<HairColor>rose</HairColor>
-			<HairColor>sable</HairColor>
-			<HairColor>silver</HairColor>
-			<HairColor>teal</HairColor>
-			<HairColor>transparent</HairColor>
-			<HairColor>vibrant purple</HairColor>
-			<HairColor>violet</HairColor>
-			<HairColor>white</HairColor>
-			<HairColor>yellow</HairColor>
-		</HairColors>
 		<!-- ================================================================ -->
 		<HairStyles>
 			<HairStyle />

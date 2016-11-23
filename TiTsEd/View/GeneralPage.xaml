@@ -176,20 +176,20 @@
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}"/>
 
                     <TextBlock              Text="Skin Tone"/>
-                    <ComboBox               Text="{Binding Game.Character.SkinTone}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.SkinTone}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}"/>
 
                     <TextBlock              Text="Skin Accent"/>
-                    <ComboBox               Text="{Binding Game.Character.SkinAccent}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.SkinAccent}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}"/>
                 </common:AutoGrid>
                 <Expander Header="Skin Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.SkinFlags}" />
                 </Expander>
                 <common:AutoGrid>
                     <TextBlock              Text="Fur Color"/>
-                    <ComboBox               Text="{Binding Game.Character.FurColor}" ItemsSource="{Binding Data.Body.FurColor}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.FurColor}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}"/>
 
                     <TextBlock              Text="Scale Color"/>
-                    <ComboBox               Text="{Binding Game.Character.ScaleColor}" ItemsSource="{Binding Data.Body.ScaleColor}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.ScaleColor}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}"/>
                 </common:AutoGrid>
             </StackPanel>
         </Grid>

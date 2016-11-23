@@ -138,14 +138,11 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("SkinFlag")]
         public XmlEnum[] SkinFlags { get; set; }
 
-        [XmlArray, XmlArrayItem("SkinTone")]
-        public string[] SkinTones { get; set; }
+        [XmlArray, XmlArrayItem("Color")]
+        public string[] Colors { get; set; }
 
         [XmlArray, XmlArrayItem("HairType")]
         public XmlEnum[] HairTypes { get; set; }
-
-        [XmlArray, XmlArrayItem("HairColor")]
-        public string[] HairColors { get; set; }
 
         [XmlArray, XmlArrayItem("HairStyle")]
         public string[] HairStyles { get; set; }

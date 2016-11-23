@@ -95,7 +95,7 @@ namespace TiTsEd.ViewModel {
 
         public string[] CockColors {
             get {
-                return XmlData.Current.Body.SkinTones;
+                return XmlData.Current.Body.Colors;
             }
         }
 
