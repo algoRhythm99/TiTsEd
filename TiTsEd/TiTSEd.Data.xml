@@ -368,6 +368,7 @@
 			<FaceFlag ID="6" Name="Smooth" />
 			<FaceFlag ID="14" Name="Muzzled" />
 			<FaceFlag ID="15" Name="Angular" />
+			<FaceFlag ID="43" Name="Beak" />
 		</FaceFlags>
 		<!-- ================================================================ -->
 		<EarLengthEnables>
