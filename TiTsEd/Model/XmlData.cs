@@ -147,62 +147,32 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("HairStyle")]
         public string[] HairStyles { get; set; }
 
-        [XmlArray, XmlArrayItem("FaceType")]
-        public XmlEnum[] FaceTypes { get; set; }
+        [XmlArray, XmlArrayItem("RaceType")]
+        public XmlEnum[] RaceTypes { get; set; }
 
         [XmlArray, XmlArrayItem("FaceFlag")]
         public XmlEnum[] FaceFlags { get; set; }
 
-        [XmlArray, XmlArrayItem("EyeType")]
-        public XmlEnum[] EyeTypes { get; set; }
-
-        [XmlArray, XmlArrayItem("EarType")]
-        public XmlEnum[] EarTypes { get; set; }
-
         [XmlArray, XmlArrayItem("EarLengthEnable")]
         public string[] EarLengthEnables { get; set; }
-
-        [XmlArray, XmlArrayItem("TongueType")]
-        public XmlEnum[] TongueTypes { get; set; }
 
         [XmlArray, XmlArrayItem("TongueFlag")]
         public XmlEnum[] TongueFlags { get; set; }
 
-        [XmlArray, XmlArrayItem("AntennaeType")]
-        public XmlEnum[] AntennaeTypes { get; set; }
-
-        [XmlArray, XmlArrayItem("HornType")]
-        public XmlEnum[] HornTypes { get; set; }
-
         [XmlArray, XmlArrayItem("BeardStyle")]
         public XmlEnum[] BeardStyles { get; set; }
-
-        [XmlArray, XmlArrayItem("ArmType")]
-        public XmlEnum[] ArmTypes { get; set; }
 
         [XmlArray, XmlArrayItem("ArmFlag")]
         public XmlEnum[] ArmFlags { get; set; }
 
-        [XmlArray, XmlArrayItem("LegType")]
-        public XmlEnum[] LegTypes { get; set; }
-
         [XmlArray, XmlArrayItem("LegFlag")]
         public XmlEnum[] LegFlags { get; set; }
-
-        [XmlArray, XmlArrayItem("WingType")]
-        public XmlEnum[] WingTypes { get; set; }
-
-        [XmlArray, XmlArrayItem("TailType")]
-        public XmlEnum[] TailTypes { get; set; }
 
         [XmlArray, XmlArrayItem("TailFlag")]
         public XmlEnum[] TailFlags { get; set; }
 
         [XmlArray, XmlArrayItem("TailGenitalType")]
         public XmlEnum[] TailGenitalTypes { get; set; }
-
-        [XmlArray, XmlArrayItem("TailGenitalRaceType")]
-        public XmlEnum[] TailGenitalRaceTypes { get; set; }
 
         [XmlArray, XmlArrayItem("GenitalSpotType")]
         public XmlEnum[] GenitalSpotTypes { get; set; }

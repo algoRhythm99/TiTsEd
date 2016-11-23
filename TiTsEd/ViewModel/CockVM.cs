@@ -109,7 +109,7 @@ namespace TiTsEd.ViewModel {
 
         public XmlEnum[] CockTypes {
             get {
-                return XmlData.Current.Body.CockTypes;
+                return XmlData.Current.Body.RaceTypes;
             }
         }
 

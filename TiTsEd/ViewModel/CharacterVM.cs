@@ -481,7 +481,7 @@ namespace TiTsEd.ViewModel {
         public bool EarLengthEnabled {
             get {
                 //lookup ear type
-                XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.EarTypes, EarType);
+                XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.RaceTypes, EarType);
                 if (datum != null) {
                     //check if in ear length
                     foreach (string name in XmlData.Current.Body.EarLengthEnables) {
@@ -667,7 +667,7 @@ namespace TiTsEd.ViewModel {
                 SetValue("tailType", value);
 
                 TailGenital = 0;
-                XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.TailTypes, value);
+                XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.RaceTypes, value);
                 if (datum != null) {
                     var name = datum.Name;
                     if (name == "Cuntsnake") {
