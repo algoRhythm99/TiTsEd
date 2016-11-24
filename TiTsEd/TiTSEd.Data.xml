@@ -1231,13 +1231,17 @@
 		<Flag Name="ANNO_CREWMEMBER" />
 		<Flag Name="ANNO_CREWMEMBER_INITIALSCENE" />
 		<Flag Name="ANNO_EVER_STRAPONED" />
-		<Flag Name="ANNO_MISSION_OFFER" />
+-->
+		<Flag Name="ANNO_MISSION_OFFER" Description="Undefined == Not started&#xD;&#xA;1 == Offered&#xD;&#xA;2 == In progress (Actually on Deck13)&#xD;&#xA;3 == Gray Prime resolved" />
+<!--
 		<Flag Name="ANNO_NOVA_UPDATE" />
 		<Flag Name="ANNO_OWNS_LIGHT_STRAPON" />
 		<Flag Name="ANNO_REN_TUTOR" />
 		<Flag Name="ANNO_SCRAP_DISABLED" />
 		<Flag Name="ANNO_SCRITCHES_HAPPENED" />
-		<Flag Name="ANNO_SEXED" />
+-->
+		<Flag Name="ANNO_SEXED" Description="Number of times you've had sex with Anno" />
+<!--
 		<Flag Name="ANNO_SHOT_WITH" />
 		<Flag Name="ANNO_SLEEPWITH_DOMORNING" />
 		<Flag Name="ANNO_SLEEPWITH_INTRODUCED" />
@@ -1273,7 +1277,7 @@
 		<Flag Name="ASSISTED_SHELLY_WITH_LAYING" />
 		<Flag Name="AURORA_SEEN_AFTER_SPLOSION" />
 -->
-		<Flag Name="BADGER_QUEST" Description="Undefined = Quest not started&#xD;&#xA;-2 = Turn the tables on Dr. Badger, zapping her with your reprogrammed raygun and turning her into a bimbo instead of Penny.&#xD;&#xA;-3 = Bimbo Badger&#xD;&#xA;1 = You've already accepted her “job offer.” Go find Penny!&#xD;&#xA;2 = You did what you were asked, time to get rewarded!&#xD;&#xA;3 = You already did her job." />
+		<Flag Name="BADGER_QUEST" Description="Undefined == Quest not started&#xD;&#xA;-2 == Turn the tables on Dr. Badger, zapping her with your reprogrammed raygun and turning her into a bimbo instead of Penny.&#xD;&#xA;-3 == Bimbo Badger&#xD;&#xA;1 == You've already accepted her “job offer.” Go find Penny!&#xD;&#xA;2 == You did what you were asked, time to get rewarded!&#xD;&#xA;3 == You already did her job." />
 <!--
 		<Flag Name="BADGER_QUEST_TIMER" />
 		<Flag Name="BEAT_TAIVRA_TIMESTAMP" />
@@ -1424,7 +1428,9 @@
 		<Flag Name="DECK13_COMPLETE" />
 		<Flag Name="DECK13_CREW_TALK" />
 		<Flag Name="DECK13_FINAL_FORM" />
-		<Flag Name="DECK13_GRAY_PRIME_DECISION" />
+-->
+		<Flag Name="DECK13_GRAY_PRIME_DECISION" Description="Undefined == not happened&#xD;&#xA;1 == Give Cyberware&#xD;&#xA;2 == Wipe Bots&#xD;&#xA;3 == Fought" />
+<!--
 		<Flag Name="DECK13_REACTOR_DOOR_OPEN" />
 		<Flag Name="DECK13_SAMPLES_TAKEN" />
 		<Flag Name="DECK13_SECONDARY_ENTERED" />
