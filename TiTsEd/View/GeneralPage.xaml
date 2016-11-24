@@ -173,7 +173,7 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.Feminity}" Upper="100" Tip="{Binding Game.Character.FeminityTip}"/>
                     
                     <TextBlock              Text="Skin Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.SkinType}" ItemsSource="{Binding Data.Body.RaceTypes}"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}"/>
 
                     <TextBlock              Text="Skin Tone"/>
                     <ComboBox               Text="{Binding Game.Character.SkinTone}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}"/>
