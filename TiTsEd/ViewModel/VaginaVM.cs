@@ -110,7 +110,7 @@ namespace TiTsEd.ViewModel {
 
         public XmlEnum[] VaginaTypes {
             get {
-                return XmlData.Current.Body.RaceTypes;
+                return XmlData.Current.Body.VaginaTypes;
             }
         }
 
