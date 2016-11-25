@@ -186,10 +186,10 @@
                 </Expander>
                 <common:AutoGrid>
                     <TextBlock              Text="Fur Color"/>
-                    <ComboBox               Text="{Binding Game.Character.FurColor}" ItemsSource="{Binding Data.Body.FurColor}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.FurColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}"/>
 
                     <TextBlock              Text="Scale Color"/>
-                    <ComboBox               Text="{Binding Game.Character.ScaleColor}" ItemsSource="{Binding Data.Body.ScaleColor}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.ScaleColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
                 </common:AutoGrid>
             </StackPanel>
         </Grid>
