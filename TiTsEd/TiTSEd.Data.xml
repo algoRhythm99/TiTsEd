@@ -250,7 +250,7 @@
 		</Colors>
 		<!-- ================================================================ -->
 		<RaceTypes>
-			<RaceType ID="0"  Name="Human / None" />
+			<RaceType ID="0"  Name="Human/None" />
 			<RaceType ID="1"  Name="Equine" />
 			<RaceType ID="2"  Name="Bovine" />
 			<RaceType ID="3"  Name="Canine" />
