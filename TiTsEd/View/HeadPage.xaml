@@ -41,7 +41,7 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.HairLength}" Type="Double" Unit="inches"/>
 
                     <TextBlock              Text="Hair Color"/>
-                    <ComboBox Text="{Binding Game.Character.HairColor}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}" />
+                    <ComboBox Text="{Binding Game.Character.HairColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}" />
 
                     <TextBlock              Text="Hair Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.HairType}" ItemsSource="{Binding Data.Body.HairTypes}"/>
@@ -85,7 +85,7 @@
                 </Expander>
                 <common:AutoGrid>
                     <TextBlock              Text="Eye Color"/>
-                    <ComboBox               Text="{Binding Game.Character.EyeColor}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.EyeColor}" ItemsSource="{Binding Data.Body.EyeColors}" Style="{StaticResource EditableTextBox}"/>
 
                     <TextBlock              Text="Eye Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.EyeType}" ItemsSource="{Binding Data.Body.EyeTypes}"/>
@@ -101,7 +101,7 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.LipSize}" ToolTip="This is based on femininity as well." />
 
                     <TextBlock              Text="Lip Color"/>
-                    <ComboBox Text="{Binding Game.Character.LipColor}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox Text="{Binding Game.Character.LipColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
 
                     <TextBlock              Text="Beard Length"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.BeardLength}" Unit="inches" />

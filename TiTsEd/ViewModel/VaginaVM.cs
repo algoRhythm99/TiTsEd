@@ -96,7 +96,7 @@ namespace TiTsEd.ViewModel {
 
         public string[] VaginaColors {
             get {
-                return XmlData.Current.Body.Colors;
+                return XmlData.Current.Body.SkinTones;
             }
         }
 

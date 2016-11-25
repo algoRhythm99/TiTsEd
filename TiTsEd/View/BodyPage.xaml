@@ -134,7 +134,7 @@
 
                 <common:AutoGrid>
                     <TextBlock              Text="Nipple Color" HorizontalAlignment="Right" Width="Auto"/>
-                    <ComboBox               Text="{Binding Game.Character.NippleColor}" ItemsSource="{Binding Data.Body.Colors}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.NippleColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
 
                     <TextBlock              Text="Nipples Per Breast" HorizontalAlignment="Right" Width="Auto"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.NipplesPerBreast}" />
