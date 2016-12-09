@@ -1370,7 +1370,7 @@
 			<Perk Name="Breed Hungry" Description="Increases speed that semen is created at and the pregnancy speed." Value1="15" />
 			<Perk Name="Brute Speech" Description="Alters dialogue in certain scenes." />
 			<Perk Name="Buttslut" Description="Ensures your ass always remains bubbly and that fluids shot inside will heal your injuries." />
-			<Perk Name="Can Crit" />
+			<Perk Name="Can Crit" Description="Allows critical attacks. Only useful on NPCs." />
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Cybernetic Synchronization" Description="Cybernetic enhancements will give you an additional intelligence capacity boost." Value1="5" />
 			<Perk Name="Ditz Speech" Description="Alters dialogue in certain scenes." />
@@ -1379,7 +1379,7 @@
 			<Perk Name="Easy" Description="Gain 20% more lust from combat sources." Value1="20" />
 			<Perk Name="Fecund Figure" Description="Your broodmare body permanently changes you more into a fertility goddess while you are pregnant." Value1="1" Value2="1" />
 			<Perk Name="Firing Blanks" Description="There’s no way you could get anyone or anything pregnant." />
-			<Perk Name="Fixed CumQ" Label1="Cum Quality" Value1="500000" />
+			<Perk Name="Fixed CumQ" Description="Ensures you always cum exactly {Value1} mLs." Label1="Cum Quantity" Value1="500000" />
 			<Perk Name="Flexibility" Description="You can bend and stretch more than most other creatures." />
 			<Perk Name="Flower Power" Description="Everything about being a pollen-producing flower nymph is deeply arousing. It has its upsides, though: the effect you have on most foes, for instance." Label1="Number of flowers active" Value1="4" Label2="Min Lust increase" Value2="20" Label3="Min Libido increase" Value3="45" />
 			<Perk Name="Fuck Sense" Description="Allows your sense ability to base success off your libido instead of intelligence." Value1="15" />
@@ -1399,12 +1399,11 @@
 			<Perk Name="Panic Ejaculation" Description="Allows you to squirt out a little cum while grappled, easing your escape!" />
 			<Perk Name="Pheromone Cloud" Description="Boosts tease attack and arousal." />
 			<Perk Name="Pheromone Sweat" Description="Slightly boosts tease attack and arousal while sweating" />
-			<Perk Name="Ranged Immune" />
+			<Perk Name="Ranged Immune" Description="Immune to ranged attacks" />
 			<Perk Name="Regal Mane" Description="You have an impressive mane bordering your neck." Label1="0 = No Collar&#xD;&#xA;20 = Fur Collar" Value1="20" />
 			<Perk Name="Resin" Description="Your heavy bark skin slows you all the way down, but provides plenty of protection. It also produces resin. Some flighty, energetic, needy species might find it difficult to resist wanting to plaster themselves all over you..." Label1="Max Reflexes multiplier" Value1="0.40" Type1="Double" />
 			<Perk Name="Sexy Thinking" Description="Boosts tease damage more the dumber and less willful you are." />
 			<Perk Name="Slut Stamp" Description="A tattoo permanently emblazoned above your ass makes you horny faster while wearing anything clothing your lower body." Value1="10" Value2="10" Value3="10" />
-			<Perk Name="Sneak Attack" />
 			<Perk Name="Sterile" Description="There’s no way anyone or anything could get you pregnant." />
 			<Perk Name="Treated Milk" Description="Any milk you lactate tastes better, and you are less likely to stop lactating." />
 			<Perk Name="Treated Readiness" Description="Increases minimum lust to 33, ensuring you're always ready to go." />
