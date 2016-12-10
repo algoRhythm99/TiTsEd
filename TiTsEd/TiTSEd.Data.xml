@@ -1390,55 +1390,57 @@
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
 			<Perk Name="Slut Stamp" Description="A tattoo permanently emblazoned above your ass makes you horny faster while wearing anything clothing your lower body." Value1="10" Value2="10" Value3="10" />
 		</PerkGroup>
-		<PerkGroup Name="Items">
-			<Perk Name="'Nuki Drunk" Description="Get drunk twice as slow and sober up four times slower." />
-			<Perk Name="'Nuki Nuts" Description="Permanent ability allowing your gonads to swell with excess seed." Value2="1" />
+		<PerkGroup Name="Treatment">
 			<Perk Name="Amazonian Needs" Description="Increases minimum lust by 20." Value1="20" />
 			<Perk Name="Amazonian Endurance" Description="Allows you to orgasm without fatiguing." />
 			<Perk Name="Amazonian Virility" Description="Ensures you never ejaculate less than 300 mLs." />
+			<Perk Name="Auto-Autofellatio" Description="Makes you so enamored of yourself that you can't resist some auto-fellatio." />
+			<Perk Name="Autofellatio Queen" Description="Allows you to recover energy by drinking your own seed." />
+			<Perk Name="Brute Speech" Description="Alters dialogue in certain scenes." />
+			<Perk Name="Ditz Speech" Description="Alters dialogue in certain scenes." />
+			<Perk Name="Dumb4Cum" Description="Grants extra intelligence after acquiring cum, but reduces it otherwise." />
+			<Perk Name="Fuck Sense" Description="Allows your sense ability to base success off your libido instead of intelligence." Value1="15" />
+			<Perk Name="Inhuman Desire" Description="Increases maximum lust by {Value1}." Value1="20" />
+			<Perk Name="Milk Fountain" Description="Allows you to squirt milk with the greatest of ease." />
+			<Perk Name="Panic Ejaculation" Description="Allows you to squirt out a little cum while grappled, easing your escape!" />
+			<Perk Name="Pheromone Cloud" Description="Boosts tease attack and arousal." />
+			<Perk Name="Treated Milk" Description="Any milk you lactate tastes better, and you are less likely to stop lactating." />
+			<Perk Name="Sexy Thinking" Description="Boosts tease damage more the dumber and less willful you are." />
+			<Perk Name="Treated Readiness" Description="Increases minimum lust to 33, ensuring you're always ready to go." />
+			<Perk Name="Weak Mind" Description="Intelligence and willpower losses doubled." />
+		</PerkGroup>
+		<PerkGroup Name="Other Items">
+			<Perk Name="'Nuki Drunk" Description="Get drunk twice as slow and sober up four times slower." />
+			<Perk Name="'Nuki Nuts" Description="Permanent ability allowing your gonads to swell with excess seed." Value2="1" />
 			<Perk Name="Androgyny" Description="Your face is always androgynous." />
 			<!--
 			<Perk Name="Androgyny" Description="Your animalistic visage maintain an androgynous appearance that would befit either gender." Value1="1" />
 			-->
-			<Perk Name="Auto-Autofellatio" Description="Makes you so enamored of yourself that you can't resist some auto-fellatio." />
-			<Perk Name="Autofellatio Queen" Description="Allows you to recover energy by drinking your own seed." />
 			<Perk Name="Black Latex" Description="Gives you delightful latex skin, but keeps you slightly more aroused at all times." />
 			<Perk Name="Breed Hungry" Description="Increases speed that semen is created at and the pregnancy speed." Value1="15" />
-			<Perk Name="Brute Speech" Description="Alters dialogue in certain scenes." />
-			<Perk Name="Can Crit" Description="Allows critical attacks. Only useful on NPCs." />
 			<Perk Name="Cybernetic Synchronization" Description="Cybernetic enhancements will give you an additional intelligence capacity boost." Value1="5" />
-			<Perk Name="Ditz Speech" Description="Alters dialogue in certain scenes." />
 			<Perk Name="Drug Fucked" Description="Grants: +40 to minimum libido, +10 to minimum lust, halved intelligence gains, and doubled libido gains" />
-			<Perk Name="Dumb4Cum" Description="Grants extra intelligence after acquiring cum, but reduces it otherwise." />
 			<Perk Name="Easy" Description="Gain 20% more lust from combat sources." Value1="20" />
 			<Perk Name="Fecund Figure" Description="Your broodmare body permanently changes you more into a fertility goddess while you are pregnant." Value1="1" Value2="1" />
 			<Perk Name="Firing Blanks" Description="There’s no way you could get anyone or anything pregnant." />
 			<Perk Name="Flexibility" Description="You can bend and stretch more than most other creatures." />
 			<Perk Name="Flower Power" Description="Everything about being a pollen-producing flower nymph is deeply arousing. It has its upsides, though: the effect you have on most foes, for instance." Label1="Number of flowers active" Value1="4" Label2="Min Lust increase" Value2="20" Label3="Min Libido increase" Value3="45" />
-			<Perk Name="Fuck Sense" Description="Allows your sense ability to base success off your libido instead of intelligence." Value1="15" />
 			<Perk Name="Honeypot" Description="Allows your body to convert excess thickness into delicious, boob-filling goodness." />
 			<Perk Name="Hypermilky" Description="Lactation will not decrease from disuse or overfilling." />
 			<Perk Name="Icy Veins" Description="Your body has adapted to the extreme winter cold." Value1="1" />
 			<Perk Name="Infertile" Description="You are unable to reproduce offspring naturally." />
-			<Perk Name="Inhuman Desire" Description="Increases maximum lust by {Value1}." Value1="20" />
 			<Perk Name="Mane" Description="Your hair grows out much like an equine's mane." />
 			<Perk Name="Mega Milk" Description="Allows you to instantly produce a good amount of milk, even when empty." />
-			<Perk Name="Milk Fountain" Description="Allows you to squirt milk with the greatest of ease." />
 			<Perk Name="Myr Venom" Description="Grants a love-bite tease ability that deals a little lust damage to your opponent." />
-			<Perk Name="Panic Ejaculation" Description="Allows you to squirt out a little cum while grappled, easing your escape!" />
-			<Perk Name="Pheromone Cloud" Description="Boosts tease attack and arousal." />
 			<Perk Name="Pheromone Sweat" Description="Slightly boosts tease attack and arousal while sweating" />
 			<Perk Name="Regal Mane" Description="You have an impressive mane bordering your neck." Label1="0 = No Collar&#xD;&#xA;20 = Fur Collar" Value1="20" />
 			<Perk Name="Resin" Description="Your heavy bark skin slows you all the way down, but provides plenty of protection. It also produces resin. Some flighty, energetic, needy species might find it difficult to resist wanting to plaster themselves all over you..." Label1="Max Reflexes multiplier" Value1="0.40" Type1="Double" />
-			<Perk Name="Sexy Thinking" Description="Boosts tease damage more the dumber and less willful you are." />
 			<Perk Name="Sterile" Description="There’s no way anyone or anything could get you pregnant." />
-			<Perk Name="Treated Milk" Description="Any milk you lactate tastes better, and you are less likely to stop lactating." />
-			<Perk Name="Treated Readiness" Description="Increases minimum lust to 33, ensuring you're always ready to go." />
 			<Perk Name="Venom Slut" Description="You're a total venom slut, raising your maximum lust while on red myr venom." />
-			<Perk Name="Weak Mind" Description="Intelligence and willpower losses doubled." />
 			<Perk Name="Weak Willed" Description="Willpower losses are doubled." />
 		</PerkGroup>
 		<PerkGroup Name="General">
+			<Perk Name="Can Crit" Description="Allows critical attacks. Only useful on NPCs." />
 			<Perk Name="Fixed CumQ" Description="Ensures you always cum exactly {Value1} mLs." Label1="Cum Quantity" Value1="500000" />
 			<Perk Name="Multiple Attacks" Description="{Value1} attacks per turn" Label1="Attacks per turn" Value1="5" />
 			<Perk Name="Multiple Shots" Description="{Value1} shots per turn" Label1="Shots per turn" Value1="5" />
