@@ -39,6 +39,9 @@ namespace TiTsEd.Model {
                     var unknownPerks = new XmlPerkGroup { Name = "Unknown", Perks = new List<XmlStorageClass>() };
                     fileData.PerkGroups.Add(unknownPerks);
 
+                    var unknownKeyItems = new XmlKeyItemGroup { Name = "Unknown", KeyItems = new List<XmlStorageClass>() };
+                    fileData.KeyItemGroups.Add(unknownKeyItems);
+
                     //var unknownItems = new XmlItemGroup { Name = "Unknown", Items = new List<XmlItem>(), Category = ItemCategories.Unknown };
                     //fileData.ItemGroups.Add(unknownItems);
 
@@ -104,8 +107,8 @@ namespace TiTsEd.Model {
         [XmlArray("Perks"), XmlArrayItem("PerkGroup")]
         public List<XmlPerkGroup> PerkGroups { get; set; }
 
-        [XmlArray, XmlArrayItem("KeyItem")]
-        public List<XmlStorageClass> KeyItems { get; set; }
+        [XmlArray("KeyItems"), XmlArrayItem("KeyItemGroup")]
+        public List<XmlKeyItemGroup> KeyItemGroups { get; set; }
 
         [XmlArray, XmlArrayItem("Status")]
         public List<XmlStorageClass> Statuses { get; set; }
@@ -247,6 +250,17 @@ namespace TiTsEd.Model {
         [XmlElement("Perk")]
         public List<XmlStorageClass> Perks { get; set; }
 
+        public override string ToString() {
+            return Name;
+        }
+    }
+
+    public sealed class XmlKeyItemGroup {
+        [XmlAttribute]
+        public string Name { get; set; }
+
+        [XmlElement("KeyItem")]
+        public List<XmlStorageClass> KeyItems { get; set; }
 
         public override string ToString() {
             return Name;

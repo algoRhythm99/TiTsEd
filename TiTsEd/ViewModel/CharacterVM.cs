@@ -969,7 +969,7 @@ namespace TiTsEd.ViewModel {
             get { return GetObj("keyItems"); }
         }
 
-        public UpdatableCollection<KeyItemVM> KeyItems { get; set; }
+        public List<KeyItemGroupVM> KeyItemGroups { get; set; }
 
         #endregion
 

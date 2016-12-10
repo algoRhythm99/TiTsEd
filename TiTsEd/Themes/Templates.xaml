@@ -433,4 +433,16 @@
         </Setter>
     </Style>
 
+    <Style x:Key="StorageClassStyle" TargetType="{x:Type TreeViewItem}">
+        <Setter Property="IsExpanded" Value="False" />
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                    <common:NamedVector4Control Margin="-20,0,0,0" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

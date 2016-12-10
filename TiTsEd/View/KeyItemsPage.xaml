@@ -13,12 +13,25 @@
                 <ResourceDictionary Source="../Themes/PageInclude.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style x:Key="KeyItemStyle" TargetType="{x:Type ListBoxItem}">
-                <Setter Property="Focusable" Value="False" />
+            <Style x:Key="KeyItemGroupsStyle" TargetType="{x:Type TreeViewItem}">
+                <Setter Property="IsExpanded" Value="True" />
+                <Setter Property="ItemsSource" Value="{Binding KeyItems}" />
+                <Setter Property="ItemContainerStyle" Value="{StaticResource StorageClassStyle}" />
+                <Setter Property="Focusable" Value="false" />
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                            <common:NamedVector4Control />
+                        <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                            <StackPanel Margin="20,0,0,30"
+                                        Orientation="Vertical"
+                                        Visibility="{Binding Visibility}">
+                                <Border Background="Transparent" IsHitTestVisible="False">
+                                    <TextBlock Margin="4"
+                                               FontSize="14"
+                                               FontWeight="Bold"
+                                               Text="{Binding Name}" />
+                                </Border>
+                                <ItemsPresenter x:Name="ItemsHost" Margin="0,0,0,20" />
+                            </StackPanel>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
@@ -37,13 +50,15 @@
             <common:SearchBox Text="{Binding Game.KeyItemSearchText}" />
         </StackPanel>
 
-        <ListBox Grid.Row="1"
-                 Margin="0"
-                 BorderThickness="0"
-                 ItemContainerStyle="{StaticResource KeyItemStyle}"
-                 ItemsSource="{Binding Game.Character.KeyItems}"
-                 Padding="30"
-                 ScrollViewer.CanContentScroll="False"
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
+        <TreeView Grid.Row="1"
+                  Margin="10,0,0,0"
+                  HorizontalAlignment="Stretch"
+                  BorderThickness="0"
+                  Focusable="False"
+                  ItemContainerStyle="{StaticResource KeyItemGroupsStyle}"
+                  ItemsSource="{Binding Game.Character.KeyItemGroups}"
+                  KeyboardNavigation.DirectionalNavigation="Contained"
+                  Padding="30"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
     </Grid>
 </UserControl>

@@ -19,7 +19,7 @@ namespace TiTsEd.ViewModel {
         private bool _IsPC = true;
         private string[] _characters;
         readonly List<PerkVM> _allPerks = new List<PerkVM>();
-        readonly KeyItemVM[] _allKeyItems;
+        readonly List<KeyItemVM> _allKeyItems = new List<KeyItemVM>();
         readonly StatusEffectVM[] _allStatuses;
         readonly SortedDictionary<string,FlagVM> _allFlags = new SortedDictionary<string,FlagVM>();
 
@@ -53,11 +53,20 @@ namespace TiTsEd.ViewModel {
             //Character.Perks = new UpdatableCollection<PerkVM>(_allPerks.Where(x => x.Match(PerkSearchText)));
 
             // KeyItems
-            var keyItems = Character.KeyItemsArray;
-            var xmlKeys = XmlData.Current.KeyItems;
-            ImportMissingNamedVectors(keyItems, xmlKeys, "storageName", x => x.GetString("tooltip"));
-            _allKeyItems = XmlData.Current.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, keyItems, x)).ToArray();
-            Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyItems.Where(x => x.Match(KeyItemSearchText)));
+            var charKeyItems = Character.KeyItemsArray;
+            var xmlKeys = XmlData.Current.KeyItemGroups.SelectMany(x => x.KeyItems).ToArray();
+            var unknownKeyItemGroup = XmlData.Current.KeyItemGroups.Last();
+            ImportMissingNamedVectors(charKeyItems, xmlKeys, "storageName", x => x.GetString("tooltip"), unknownKeyItemGroup.KeyItems);
+
+            Character.KeyItemGroups = new List<KeyItemGroupVM>();
+            foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
+                var keyItemsVM = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, charKeyItems, x)).ToArray();
+                _allKeyItems.AddRange(keyItemsVM);
+
+                var groupVM = new KeyItemGroupVM(this, xmlGroup.Name, keyItemsVM);
+                Character.KeyItemGroups.Add(groupVM);
+            }
+            //Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyItems.Where(x => x.Match(KeyItemSearchText)));
 
             // Statuses
             var statuses = Character.StatusEffectsArray;
@@ -133,8 +142,14 @@ namespace TiTsEd.ViewModel {
                 IsPC = false;
             }
 
-            if (null == Character.KeyItems && (null != _allKeyItems)) {
-                Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyItems.Where(x => x.Match(KeyItemSearchText)));
+            if (null == Character.KeyItemGroups && (null != _allKeyItems)) {
+                Character.KeyItemGroups = new List<KeyItemGroupVM>();
+                var charKeyItems = Character.KeyItemsArray;
+                foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
+                    var keyItemsVM = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, charKeyItems, x)).ToArray();
+                    var groupVM = new KeyItemGroupVM(this, xmlGroup.Name, keyItemsVM);
+                    Character.KeyItemGroups.Add(groupVM);
+                }
             }
 
             if (null == Character.PerkGroups && (null != _allPerks)) {
@@ -353,7 +368,7 @@ namespace TiTsEd.ViewModel {
                     return;
                 }
                 _keyItemSearchText = value;
-                Character.KeyItems.Update();
+                foreach (var group in Character.KeyItemGroups) group.Update();
             }
         }
         /// <summary>

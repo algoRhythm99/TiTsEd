@@ -1212,64 +1212,73 @@
 	</Items>
 	<!-- ================================================================ -->
 	<KeyItems>
-		<KeyItem Name="Arbetz Travel Agency Membership" />
+		<KeyItemGroup Name="Quest Items">
 <!--
-		<KeyItem Name="Ben’s Friendship Bracelet" />
-		<KeyItem Name="Bess’ Friendship Bracelet" />
+			<KeyItem Name="Ben’s Friendship Bracelet" />
+			<KeyItem Name="Bess’ Friendship Bracelet" />
 -->
-		<KeyItem Name="Broken Psi Amp" Description="A broken Psionic Amplifier, removed from Captain Zaalt Kandar's skull. After it went &lt;i&gt;slightly&lt;/i&gt; batshit." />
-		<KeyItem Name="Bulky Data-Core" />
-		<KeyItem Name="Capture Harness" />
-		<KeyItem Name="Coupon - Clippex" Description="Save 75% on your next purchase of Clippex!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
-		<KeyItem Name="Coupon - Estrobloom" Description="Save 10% on your next purchase of Estrobloom!" Label1="Discount Multiplier" Value1="0.9" Type1="Double" />
-		<KeyItem Name="Coupon - Lucifier" Description="Save 75% on your next purchase of Lucifier!"  Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
-		<KeyItem Name="Coupon - Semens F." Description="Save 75% on your next purchase of Semen’s Friend!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
-		<KeyItem Name="Coupon - TamaniCorp" Description="Save 10% on your next purchase from your local TamaniCorp retailer!" Label1="Discount Multiplier" Value1="0.9" Type1="Double" />
-		<KeyItem Name="Doctor Badger's Bimbo Raygun - Programmed for use on Penny." />
-		<KeyItem Name="Doctor Badger's Bimbo Raygun - Still programmed for use on Penny." />
-		<KeyItem Name="Doctor Badger's Reprogrammed Bimbo Raygun - For use on the Badger!" />
-		<KeyItem Name="Federation Vibrator" />
-		<KeyItem Name="Frostwyrm Scales" />
-		<KeyItem Name="Gildenmere Pass" />
-		<KeyItem Name="Goozooka" Description="This modified Goovolver was built by the ausar tech specialist Anno Dorna for you. Rather than normal galotians, this heavy cannon fires vials of gray goo at your enemies, re-programmed to go straight for an enemy's most sensitive spots. Consumes a vial of gray goo per shot!" />
-		<KeyItem Name="Hand So's Data Bead" />
-		<KeyItem Name="Hentai Magazine" />
-		<KeyItem Name="Holodisk: Horsecock Hell 2" Description="A pair of holodisks labeled '&lt;b&gt;Horsecock Hell 2: A Tail of Two Twats&lt;/b&gt;'. The cover makes a big deal out of the star of the show: 'Nivas Oxonef'" />
-		<KeyItem Name="Intact, Antique Android" />
-		<KeyItem Name="Kaska's Detonator" />
-		<KeyItem Name="Key Card - R&amp;D Security Pass" />
-		<KeyItem Name="Khorgan's Detonator" />
-		<KeyItem Name="Kressia Pass" />
-		<KeyItem Name="Lasso" />
-		<KeyItem Name="Locked Metal Chest" />
-		<KeyItem Name="Myr Security Radio" />
-		<KeyItem Name="Orange Myr Data" />
-		<KeyItem Name="Panties - Aina's - Extra-large, striped green centaur panties." />
-		<KeyItem Name="Panties - Briha's - Nylon, camo-print T-back panties." />
-		<KeyItem Name="Panties - Embry's - Plain, girly pink panties with little hearts." />
-		<KeyItem Name="Panties - Emmy's - Silky, purple, and cum-stained." />
-		<KeyItem Name="Panties - Kiro's - Lacy, black, and crotchless." />
-		<KeyItem Name="Panties - Lys's - Sheer black panties." />
-		<KeyItem Name="Panties - Penny's - Plain, blue, and crotchless." />
-		<KeyItem Name="Panties - Saendra's - Ultra-tight and bright pink." />
-		<KeyItem Name="Panties - Syri's - Sky blue, silky, and extra crotch room." />
-		<KeyItem Name="Panties - Xanthe's - Lacy, black siel-silk panties." />
-		<KeyItem Name="Parasite Cure" Description="A vial containing a potential cure for the parasite afflicting the crew of the Kashima." />
-		<KeyItem Name="Parasite Sample" Description="A small security hardcase containing a medical sample." />
-		<KeyItem Name="Pirate Datapad" />
-		<KeyItem Name="Platinum 190" />
-		<KeyItem Name="Red Myr Blood" Description="A vial of blood sampled from a red myr." />
-		<KeyItem Name="Republic Dildo" />
-		<KeyItem Name="Sexbot GPS Triangulator" />
-		<KeyItem Name="Signed Steph Irson Photo" Description="A signed photograph of Steph Irson... given to you by Steph Irson." />
-		<KeyItem Name="Silver Key" />
-		<KeyItem Name="Some Sort of Shining Spaceship Part" />
-		<KeyItem Name="Ten Ton Gym Membership" />
-		<KeyItem Name="Unification Rally Invite: 18:00, Mushroom Park" />
-		<KeyItem Name="Uveto A.I. Cores" Description="A.I. Cores recovered from Captain Zaalt Kandar, destined to be delivered to Uveto." />
-		<KeyItem Name="Vi's Vagina" />
-		<KeyItem Name="Water Princess Note" Description="This receipt by a child-recovery drone was doodled all over by the tiny water princesses you gave birth to. They've scrawled several affectionate drawings all over it, and written thank-yous for taking care of them. Looking at it gives you a warm, fuzzy feeling..." />
-		<KeyItem Name="Xanthe's Silk" Description="You're supposed to give this to Inessa. She'll supposedly know what it means." />
+			<KeyItem Name="Capture Harness" />
+			<KeyItem Name="Broken Psi Amp" Description="A broken Psionic Amplifier, removed from Captain Zaalt Kandar's skull. After it went &lt;i&gt;slightly&lt;/i&gt; batshit." />
+			<KeyItem Name="Doctor Badger's Bimbo Raygun - Programmed for use on Penny." />
+			<KeyItem Name="Doctor Badger's Bimbo Raygun - Still programmed for use on Penny." />
+			<KeyItem Name="Doctor Badger's Reprogrammed Bimbo Raygun - For use on the Badger!" />
+			<KeyItem Name="Hand So's Data Bead" />
+			<KeyItem Name="Hentai Magazine" />
+			<KeyItem Name="Kaska's Detonator" />
+			<KeyItem Name="Key Card - R&amp;D Security Pass" />
+			<KeyItem Name="Khorgan's Detonator" />
+			<KeyItem Name="Myr Security Radio" />
+			<KeyItem Name="Orange Myr Data" />
+			<KeyItem Name="Parasite Cure" Description="A vial containing a potential cure for the parasite afflicting the crew of the Kashima." />
+			<KeyItem Name="Parasite Sample" Description="A small security hardcase containing a medical sample." />
+			<KeyItem Name="Red Myr Blood" Description="A vial of blood sampled from a red myr." />
+			<KeyItem Name="Sexbot GPS Triangulator" />
+			<KeyItem Name="Silver Key" />
+			<KeyItem Name="Unification Rally Invite: 18:00, Mushroom Park" />
+			<KeyItem Name="Uveto A.I. Cores" Description="A.I. Cores recovered from Captain Zaalt Kandar, destined to be delivered to Uveto." />
+			<KeyItem Name="Xanthe's Silk" Description="You're supposed to give this to Inessa. She'll supposedly know what it means." />
+		</KeyItemGroup>
+		<KeyItemGroup Name="Coupons">
+			<KeyItem Name="Coupon - Clippex" Description="Save 75% on your next purchase of Clippex!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
+			<KeyItem Name="Coupon - Estrobloom" Description="Save 10% on your next purchase of Estrobloom!" Label1="Discount Multiplier" Value1="0.9" Type1="Double" />
+			<KeyItem Name="Coupon - Lucifier" Description="Save 75% on your next purchase of Lucifier!"  Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
+			<KeyItem Name="Coupon - Semens F." Description="Save 75% on your next purchase of Semen’s Friend!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
+			<KeyItem Name="Coupon - TamaniCorp" Description="Save 10% on your next purchase from your local TamaniCorp retailer!" Label1="Discount Multiplier" Value1="0.9" Type1="Double" />
+		</KeyItemGroup>
+		<KeyItemGroup Name="Panties">
+			<KeyItem Name="Panties - Aina's - Extra-large, striped green centaur panties." />
+			<KeyItem Name="Panties - Briha's - Nylon, camo-print T-back panties." />
+			<KeyItem Name="Panties - Embry's - Plain, girly pink panties with little hearts." />
+			<KeyItem Name="Panties - Emmy's - Silky, purple, and cum-stained." />
+			<KeyItem Name="Panties - Kiro's - Lacy, black, and crotchless." />
+			<KeyItem Name="Panties - Lys's - Sheer black panties." />
+			<KeyItem Name="Panties - Penny's - Plain, blue, and crotchless." />
+			<KeyItem Name="Panties - Saendra's - Ultra-tight and bright pink." />
+			<KeyItem Name="Panties - Syri's - Sky blue, silky, and extra crotch room." />
+			<KeyItem Name="Panties - Xanthe's - Lacy, black siel-silk panties." />
+		</KeyItemGroup>
+		<KeyItemGroup Name="Miscellaneous">
+			<KeyItem Name="Arbetz Travel Agency Membership" />
+			<KeyItem Name="Bulky Data-Core" />
+			<KeyItem Name="Federation Vibrator" />
+			<KeyItem Name="Frostwyrm Scales" />
+			<KeyItem Name="Gildenmere Pass" />
+			<KeyItem Name="Goozooka" Description="This modified Goovolver was built by the ausar tech specialist Anno Dorna for you. Rather than normal galotians, this heavy cannon fires vials of gray goo at your enemies, re-programmed to go straight for an enemy's most sensitive spots. Consumes a vial of gray goo per shot!" />
+			<KeyItem Name="Hardlight Strap-on Upgrades" />
+			<KeyItem Name="Holodisk: Horsecock Hell 2" Description="A pair of holodisks labeled '&lt;b&gt;Horsecock Hell 2: A Tail of Two Twats&lt;/b&gt;'. The cover makes a big deal out of the star of the show: 'Nivas Oxonef'" />
+			<KeyItem Name="Intact, Antique Android" />
+			<KeyItem Name="Kressia Pass" />
+			<KeyItem Name="Lasso" />
+			<KeyItem Name="Locked Metal Chest" />
+			<KeyItem Name="Pirate Datapad" />
+			<KeyItem Name="Platinum 190" />
+			<KeyItem Name="Republic Dildo" />
+			<KeyItem Name="Signed Steph Irson Photo" Description="A signed photograph of Steph Irson... given to you by Steph Irson." />
+			<KeyItem Name="Some Sort of Shining Spaceship Part" />
+			<KeyItem Name="Ten Ton Gym Membership" />
+			<KeyItem Name="Vi's Vagina" />
+			<KeyItem Name="Water Princess Note" Description="This receipt by a child-recovery drone was doodled all over by the tiny water princesses you gave birth to. They've scrawled several affectionate drawings all over it, and written thank-yous for taking care of them. Looking at it gives you a warm, fuzzy feeling..." />
+		</KeyItemGroup>
 	</KeyItems>
 	<!-- ================================================================ -->
 	<Perks>

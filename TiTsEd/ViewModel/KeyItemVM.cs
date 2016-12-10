@@ -1,7 +1,38 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Linq;
+using System.Windows;
 using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
+    public sealed class KeyItemGroupVM : BindableBase {
+        readonly GameVM _game;
+
+        public KeyItemGroupVM(GameVM game, string name, KeyItemVM[] keyItems) {
+            _game = game;
+            Name = name;
+            KeyItems = new UpdatableCollection<KeyItemVM>(keyItems.Where(x => x.Match(_game.KeyItemSearchText)));
+        }
+
+        public new string Name {
+            get;
+            private set;
+        }
+
+        public UpdatableCollection<KeyItemVM> KeyItems {
+            get;
+            private set;
+        }
+
+        public Visibility Visibility {
+            get { return KeyItems.Count != 0 ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
+        public void Update() {
+            KeyItems.Update();
+            OnPropertyChanged("Visibility");
+        }
+    }
+
     public sealed class KeyItemVM : StorageClassVM {
         public KeyItemVM(GameVM game, AmfObject keyItems, XmlStorageClass xml)
             : base(game, keyItems, xml) {
