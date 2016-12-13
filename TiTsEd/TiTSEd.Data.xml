@@ -1518,7 +1518,9 @@
 		<Flag Name="ANZHELA_SCARMED_TALK" />
 		<Flag Name="ANZHELA_TALKS" />
 		<Flag Name="ANZHELA_TREATED" />
-		<Flag Name="APPROACHED_EMMY" />
+-->
+		<Flag Name="APPROACHED_EMMY" Description="You've walked up to her" />
+<!--
 		<Flag Name="APPROACHED_FAZIAN" />
 		<Flag Name="APPROACHED_SHELLY" />
 		<Flag Name="ARBETZ_ENTERED" />
@@ -1761,24 +1763,21 @@
 		<Flag Name="EMBRY_TREATMENTS" />
 		<Flag Name="EMBRY_TURNED_DOWN_FUCKBUDDY" />
 		<Flag Name="EMBRY_VAGINAL_SEX_UNLOCKED" />
-		<Flag Name="EMMY_APOLOGIZED" />
-		<Flag Name="EMMY_BANNED" />
-		<Flag Name="EMMY_BF" />
-		<Flag Name="EMMY_CREW_REQUESTED" />
-		<Flag Name="EMMY_EATEN_OUT" />
-		<Flag Name="EMMY_EMAIL_TIMER" />
-		<Flag Name="EMMY_FUCKED" />
-		<Flag Name="EMMY_GIVEN_SHARD" />
-		<Flag Name="EMMY_MASSAGED" />
-		<Flag Name="EMMY_ORALED" />
-		<Flag Name="EMMY_ORAL_TIMER" />
-		<Flag Name="EMMY_POLY" />
-		<Flag Name="EMMY_PRESEX_FUN_TIMER" />
-		<Flag Name="EMMY_PROSTATELIGHT" />
-		<Flag Name="EMMY_QUEST" />
-		<Flag Name="EMMY_SPECIAL" />
-		<Flag Name="EMMY_TOY_TIMER" />
-		<Flag Name="EMMY_TRADE_OFFERED" />
+-->
+		<Flag Name="EMMY_APOLOGIZED" Description="1 == You've read Emmy's apology email" />
+		<Flag Name="EMMY_BANNED" Descripton="1 == You've been banned from Emmy's shop" />
+		<Flag Name="EMMY_BF" Description="1 == Emmy is pleased" />
+		<Flag Name="EMMY_CREW_REQUESTED" Description="1 == You've invited Emmy to join your crew" />
+		<Flag Name="EMMY_EATEN_OUT" Description="Number of times you've eaten Emmy out" />
+		<Flag Name="EMMY_FUCKED" Description="Number of times you've had &quot;real&quot; sex with Emmy" />
+		<Flag Name="EMMY_GIVEN_SHARD" Description="1 == You've given Emmy a Crystal Shard" />
+		<Flag Name="EMMY_MASSAGED" Description="Number of times you've set Emmy's herm harness to massage" />
+		<Flag Name="EMMY_ORALED" Description="Number of times Emmy has given the PC oral" />
+		<Flag Name="EMMY_POLY" Description="1 == Emmy is OK with PC polyamory" />
+		<Flag Name="EMMY_PROSTATELIGHT" Description="Number of times you've used a hard-light dildo on Emmy" />
+		<Flag Name="EMMY_QUEST" Description="Used to track the current progress of her sexquest&#xD;&#xA;Undefined == Nuttin' yet!&#xD;&#xA;0 == she has requested a flower, and you have not brought her one&#xD;&#xA;1 == You brought her a flower or charmed her into oral times.&#xD;&#xA;2 == Emmy has pointed you at part two of the quest.&#xD;&#xA;3 == You've completed the second part of the quest.&#xD;&#xA;4 == You talked about her toy but haven't bought it yet.&#xD;&#xA;5 == You bought the toy, but not yet delivered.&#xD;&#xA;6 == Delivered" />
+		<Flag Name="EMMY_TRADE_OFFERED" Description="offered to sell items to Emmy" />
+<!--
 		<Flag Name="ENABLE_LYS_FLOWER" />
 		<Flag Name="ENCOUNTERED_FREEDOM_BEEF" />
 		<Flag Name="ENCOUNTERED_LANDMINES" />
@@ -2265,7 +2264,9 @@
 		<Flag Name="MET_DR_LASH" />
 		<Flag Name="MET_ELLIE" />
 		<Flag Name="MET_EMBRY" />
-		<Flag Name="MET_EMMY" />
+-->
+		<Flag Name="MET_EMMY" Description="you know each other's name" />
+<!--
 		<Flag Name="MET_ETHELN" />
 		<Flag Name="MET_FEMALE_RASKVEL" />
 		<Flag Name="MET_FEMALE_SYDIAN" />
