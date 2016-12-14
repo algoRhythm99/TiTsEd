@@ -209,23 +209,25 @@ namespace TiTsEd.ViewModel {
             if (result == false) return;
 
             string path = dlg.FileName;
-            bool isTITSFile = path.EndsWith(".tits", StringComparison.InvariantCultureIgnoreCase);
-            byte[] buffer = new byte[4];
-            byte[] titsMarker = { 0x0A, 0x0B, 0x01, 0x1D };
             try {
                 using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read)) {
+
+                    byte[] buffer = new byte[4];
                     fs.Read(buffer, 0, buffer.Length);
                     fs.Close();
-                    isTITSFile = titsMarker.SequenceEqual(buffer);
+
+                    byte[] titsMarker = { 0x0A, 0x0B, 0x01, 0x1D };
+
+                    if (path.EndsWith(".tits", StringComparison.InvariantCultureIgnoreCase)
+                     || titsMarker.SequenceEqual(buffer)) {
+                        MessageBoxImage icon = MessageBoxImage.Stop;
+                        MessageBox.Show("Save to File format is not currently supported", "File format not supported", MessageBoxButton.OK, icon);
+                    } else {
+                        VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported, createBackup: true);
+                    }
                 }
             } catch (System.UnauthorizedAccessException ex) {
                 MessageBox.Show(ex.Message);
-            }
-            if (isTITSFile) {
-                MessageBoxImage icon = MessageBoxImage.Stop;
-                MessageBox.Show("Save to File format is not currently supported", "File format not supported", MessageBoxButton.OK, icon);
-            } else {
-                VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported, createBackup: true);
             }
         }
     }
