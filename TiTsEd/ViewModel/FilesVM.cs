@@ -214,7 +214,6 @@ namespace TiTsEd.ViewModel {
 
                     byte[] buffer = new byte[4];
                     fs.Read(buffer, 0, buffer.Length);
-                    fs.Close();
 
                     byte[] titsMarker = { 0x0A, 0x0B, 0x01, 0x1D };
 
