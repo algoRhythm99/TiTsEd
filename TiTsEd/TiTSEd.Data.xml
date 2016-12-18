@@ -1479,37 +1479,34 @@
 		<Flag Name="AINA_WAND_FIXED" />
 		<Flag Name="ANALED_YAMMI" />
 		<Flag Name="ANARRIE_AMBUSH" />
-		<Flag Name="ANNOS_SHOP_CLOSED" />
-		<Flag Name="ANNOxKAEDE_INTRODUCED" />
-		<Flag Name="ANNOxKAEDE_LAST_DAY" />
-		<Flag Name="ANNOxSYRI_EVENT" />
-		<Flag Name="ANNOxSYRI_WINCEST" />
-		<Flag Name="ANNO_ANALSEXED" />
-		<Flag Name="ANNO_ASLEEP" />
-		<Flag Name="ANNO_CREWMEMBER" />
-		<Flag Name="ANNO_CREWMEMBER_INITIALSCENE" />
-		<Flag Name="ANNO_EVER_STRAPONED" />
 -->
+		<Flag Name="ANNOS_SHOP_CLOSED" Description="1 == Anno's shop is currently closed" />
+		<Flag Name="ANNOxKAEDE_INTRODUCED" Description="1 == PC has been introduced by Anno to Kaede" />
+		<Flag Name="ANNOxKAEDE_LAST_DAY" Description="The last day number that a kaede/anno 3some possibility happened. If flag &lt; days - 7 is true, the option can (potentially) appear based on a rand check" />
+		<Flag Name="ANNOxSYRI_EVENT" Description="1 == Syri and Anno scene at family party" />
+		<Flag Name="ANNOxSYRI_WINCEST" Description="1 == You've had sex with Syri and Anno" />
+		<Flag Name="ANNO_ANALSEXED" Description="Number of times you've anal'd Anno" />
+		<Flag Name="ANNO_ASLEEP" Description="2 == Anno is currently asleep" />
+		<Flag Name="ANNO_CREWMEMBER" Description="0/Undefined == Not Recruited&#xD;&#xA;1 == Is Crewmember&#xD;&#xA;2 == Recruited but kicked off the ship" />
+		<Flag Name="ANNO_CREWMEMBER_INITIALSCENE" Description="1 == You've seen Anno's recruitment scene" />
+		<Flag Name="ANNO_EVER_STRAPONED" Description="1 == Anno has used a strapon on the PC" />
 		<Flag Name="ANNO_MISSION_OFFER" Description="Undefined == Not started&#xD;&#xA;1 == Offered&#xD;&#xA;2 == In progress (Actually on Deck13)&#xD;&#xA;3 == Gray Prime resolved" />
-<!--
-		<Flag Name="ANNO_NOVA_UPDATE" />
-		<Flag Name="ANNO_OWNS_LIGHT_STRAPON" />
-		<Flag Name="ANNO_REN_TUTOR" />
-		<Flag Name="ANNO_SCRAP_DISABLED" />
-		<Flag Name="ANNO_SCRITCHES_HAPPENED" />
--->
+		<Flag Name="ANNO_NOVA_UPDATE" Description="1 == You've talked to Anno about the Nova after her quest" />
+		<Flag Name="ANNO_OWNS_LIGHT_STRAPON" Description="1 == Anno owns a hardlight strapon" />
+		<Flag Name="ANNO_REN_TUTOR" Description="1 == Anno tutors Terensha" />
+		<Flag Name="ANNO_SCRAP_DISABLED" Description="1 == Anno won't offer to buy junk" />
+		<Flag Name="ANNO_SCRITCHES_HAPPENED" Description="1 == You've rubbed Anno's ears" />
 		<Flag Name="ANNO_SEXED" Description="Number of times you've had sex with Anno" />
+		<Flag Name="ANNO_SHOT_WITH" Description="1 == You've played target practice with Anno" />
+		<Flag Name="ANNO_SLEEPWITH_DOMORNING" Description="1 == Anno sexytimes in morning" />
+		<Flag Name="ANNO_SLEEPWITH_INTRODUCED" Description="1 == Anno offered to sleep with PC" />
+		<Flag Name="ANNO_SNUGGLED_AFTER_SHOOTOFF" Description="1 == You've cuddled Anno after beating her in target practice" />
+		<Flag Name="ANNO_STRAPON_MODS_ENABLED" Description="1 == Anno has modded her hardlight strapon" />
+		<Flag Name="ANNO_TALKED_ABOUT_THE_MEMO" Description="1 == You've talked to Anno about the company memo" />
+		<Flag Name="ANNO_TALKED_ABOUT_YOUR_DAD" Description="1 == You've talked to Anno about your dad" />
+		<Flag Name="ANNO_TRIBERATOR_USED" Description="Number of times you've used Anno's vibrator on her" />
+		<Flag Name="ANNO_X_KAEDE_THREESOMED" Description="Number of times you've had a threesome with Anno and Kaede" />
 <!--
-		<Flag Name="ANNO_SHOT_WITH" />
-		<Flag Name="ANNO_SLEEPWITH_DOMORNING" />
-		<Flag Name="ANNO_SLEEPWITH_INTRODUCED" />
-		<Flag Name="ANNO_SNUGGLED_AFTER_SHOOTOFF" />
-		<Flag Name="ANNO_STRAPON_MODS_ENABLED" />
-		<Flag Name="ANNO_TALKED_ABOUT_THE_MEMO" />
-		<Flag Name="ANNO_TALKED_ABOUT_YOUR_DAD" />
-		<Flag Name="ANNO_TEST_DROVE" />
-		<Flag Name="ANNO_TRIBERATOR_USED" />
-		<Flag Name="ANNO_X_KAEDE_THREESOMED" />
 		<Flag Name="ANT_ORGY_COUNT" />
 		<Flag Name="ANT_ORGY_TIME" />
 		<Flag Name="ANT_PANTIES_SHARED" />
@@ -1600,7 +1597,9 @@
 		<Flag Name="BETHS_TIMES_WHORED_ROOMS" />
 		<Flag Name="BETHS_TIMES_WHORED_VAGINA" />
 		<Flag Name="BETRAYED_KARA" />
-		<Flag Name="BET_AGAINST_SYRI" />
+-->
+		<Flag Name="BET_AGAINST_SYRI" Description="1 == if PC has ever engaged in a bet with Syri" />
+<!--
 		<Flag Name="BIMBOIFIED" />
 		<Flag Name="BONED_GOLD_DESERT" />
 		<Flag Name="BONED_RED_DESERT" />
@@ -1863,7 +1862,9 @@
 		<Flag Name="FUCKED_NEVRIE" />
 		<Flag Name="FUCKED_RED_DESERTBUTT" />
 		<Flag Name="FUCKED_SHIARE" />
-		<Flag Name="FUCKED_SYRI_COUNT" />
+-->
+		<Flag Name="FUCKED_SYRI_COUNT" Description="Number of times the PC has boned or been boned by the big-boned bitch" />
+<!--
 		<Flag Name="FUCKED_TAIVRA" />
 		<Flag Name="FUCKED_TAIVRAS_BETA" />
 		<Flag Name="FUCKED_TEXAN_CUSTOMS" />
@@ -1884,7 +1885,9 @@
 		<Flag Name="FYN_TAUGHT_DANCING" />
 		<Flag Name="GALOMAX_DOSES" />
 		<Flag Name="GAVE_LYS_FLOWER" />
-		<Flag Name="GAVE_SHEKKA_PROBE" />
+-->
+		<Flag Name="GAVE_SHEKKA_PROBE" Description="1 == You gave Shekka the probe" />
+<!--
 		<Flag Name="GENES_MODS_ENTERED" />
 		<Flag Name="GENES_MODS_TALK_ALIENS" />
 		<Flag Name="GENES_MODS_TALK_MODS" />
@@ -2235,8 +2238,10 @@
 		<Flag Name="MET_ALEX" />
 		<Flag Name="MET_ALICE" />
 		<Flag Name="MET_ANARRIE" />
-		<Flag Name="MET_ANNO" />
-		<Flag Name="MET_ANNO_POST_SPLOSION" />
+-->
+		<Flag Name="MET_ANNO" Description="1 == You've met Anno" />
+		<Flag Name="MET_ANNO_POST_SPLOSION" Description="1 == You've met Anno after Tarkus explosion" />
+<!--
 		<Flag Name="MET_ANZHELA" />
 		<Flag Name="MET_ASENNIA" />
 		<Flag Name="MET_ASTRA" />
@@ -2330,12 +2335,16 @@
 		<Flag Name="MET_SEXBOTS_ON_TARKUS" />
 		<Flag Name="MET_SEXBOT_FEMALE_ON_TARKUS" />
 		<Flag Name="MET_SEXBOT_MALE_ON_TARKUS" />
-		<Flag Name="MET_SHEKKA" />
+-->
+		<Flag Name="MET_SHEKKA" Description="1 == You've met Shekka" />
+<!--
 		<Flag Name="MET_SHIARE" />
 		<Flag Name="MET_SHOWER_GIRLS" />
 		<Flag Name="MET_SIMONE" />
 		<Flag Name="MET_SYDIAN_MALE" />
-		<Flag Name="MET_SYRI" />
+-->
+		<Flag Name="MET_SYRI" Description="1 == You've met Syri" />
+<!--
 		<Flag Name="MET_TAIVRA" />
 		<Flag Name="MET_TERENSHA" />
 		<Flag Name="MET_TLAKO" />
@@ -2474,11 +2483,13 @@
 		<Flag Name="PRINCESS_DEFEATED" />
 		<Flag Name="PUBLIC_USE_COUNT" />
 		<Flag Name="PUMPED_KIRO_PUSSY" />
-		<Flag Name="PUPPYSLUTMAS_2014" />
-		<Flag Name="PUPPYSLUTMAS_2014_ANNO_OFFER" />
-		<Flag Name="PUPPYSLUTMAS_2014_DRINKS" />
+-->
+		<Flag Name="PUPPYSLUTMAS_2014" Description="Anno or Syri" />
+		<Flag Name="PUPPYSLUTMAS_2014_ANNO_OFFER" Description="1 == Anno offered to take PC to family party" />
+		<Flag Name="PUPPYSLUTMAS_2014_DRINKS" Description="Number of drinks PC has had at the party" />
 		<Flag Name="PUPPYSLUTMAS_2014_SYRI_CLOTHES" />
-		<Flag Name="PUPPYSLUTMAS_2014_SYRI_OFFER" />
+		<Flag Name="PUPPYSLUTMAS_2014_SYRI_OFFER" Description="1 == Syri offered to take PC to family party" />
+<!--
 		<Flag Name="PURCHASED_FROM_EMS" />
 		<Flag Name="PURCHASED_FROM_SERA" />
 		<Flag Name="PURCHASED_GENES_GALO" />
@@ -2577,7 +2588,9 @@
 		<Flag Name="SALVAGED VANAE CAMP" />
 		<Flag Name="SCRAPYARD_SEEN" />
 		<Flag Name="SECOND_CAPTURED_ZIL_REPORTED_ON" />
-		<Flag Name="SEEN_ANNO_BUY_MENU" />
+-->
+		<Flag Name="SEEN_ANNO_BUY_MENU" Description="1 == You've seen Anno's shopping catalog" />
+<!--
 		<Flag Name="SEEN_BIMBO_PENNY" />
 		<Flag Name="SEEN_ELLIES_SHOP" />
 		<Flag Name="SEEN_EMMY" />
@@ -2588,10 +2601,14 @@
 		<Flag Name="SEEN_PENNY_HIDE_CUMSLUTTERY" />
 		<Flag Name="SEEN_RED_DESERTER_PREGGERS" />
 		<Flag Name="SEEN_SELLESY" />
-		<Flag Name="SEEN_SHEKKAS_NEW_SEXBOTS" />
-		<Flag Name="SEEN_SHEKKAS_SEXBOTS" />
+-->
+		<Flag Name="SEEN_SHEKKAS_NEW_SEXBOTS" Description="1 == You've seen Shekka's new bots" />
+		<Flag Name="SEEN_SHEKKAS_SEXBOTS" Description="1 == You've seen Shekka's bots" />
+<!--
 		<Flag Name="SEEN_SYNTHSAP_AD" />
-		<Flag Name="SEEN_SYRI_IN_THE_MORNING" />
+-->
+		<Flag Name="SEEN_SYRI_IN_THE_MORNING" Description="Number of times the PC has approached Syri in the mornings" />
+<!--
 		<Flag Name="SEEN_TEXAS_SURFACE" />
 		<Flag Name="SEEN_VI_BUY_MENU" />
 		<Flag Name="SEIFYN_NYREA_TALK" />
@@ -2685,16 +2702,18 @@
 		<Flag Name="SHADE_TALKED_ABOUT_FAMILY" />
 		<Flag Name="SHADE_TALKED_ABOUT_LIGHTNING" />
 		<Flag Name="SHADE_TALKED_ABOUT_MODS" />
-		<Flag Name="SHEKKA_SCRAP_DISABLED" />
-		<Flag Name="SHEKKA_TALKED_HERSELF" />
-		<Flag Name="SHEKKA_TALKED_HERSHOP" />
-		<Flag Name="SHEKKA_TALKED_NOVAHOME" />
-		<Flag Name="SHEKKA_TALKED_PLAN" />
-		<Flag Name="SHEKKA_TALKED_RASKVEL" />
-		<Flag Name="SHEKKA_TALKED_TARKUS" />
-		<Flag Name="SHEKKA_TALKED_THE_MESS" />
-		<Flag Name="SHEKKA_TALKED_WASTES" />
-		<Flag Name="SHEKKA_TALK_COOLDOWN" />
+-->
+		<Flag Name="SHEKKA_SCRAP_DISABLED" Description="1 == Shekka's shop is not available" />
+		<Flag Name="SHEKKA_TALKED_HERSELF" Description="1 == You've talked to Shekka about herself" />
+		<Flag Name="SHEKKA_TALKED_HERSHOP" Description="1 == You've talked to Shekka about her shop"/>
+		<Flag Name="SHEKKA_TALKED_NOVAHOME" Description="1 == You've talked to Shekka about Novahome" />
+		<Flag Name="SHEKKA_TALKED_PLAN" Description="1 == You've talked to Shekka about her plans" />
+		<Flag Name="SHEKKA_TALKED_RASKVEL" Description="1 == You've talked to Shekka about Raskvel" />
+		<Flag Name="SHEKKA_TALKED_TARKUS" Description="1 == You've talked to Shekka about Tarkus" />
+		<Flag Name="SHEKKA_TALKED_THE_MESS" Description="1 == You've talked to Shekka about the Mess" />
+		<Flag Name="SHEKKA_TALKED_WASTES" Description="1 == You've talked to Shekka about the wastes" />
+		<Flag Name="SHEKKA_TALK_COOLDOWN" Description="0 == Shekka can talk&#xD;&#xA;6 == Shekka is busy" />
+<!--
 		<Flag Name="SHIP_STORAGE_CONSUMABLES" />
 		<Flag Name="SHIP_STORAGE_EQUIPMENT" />
 		<Flag Name="SHIP_STORAGE_TOYS" />
@@ -2739,13 +2758,13 @@
 		<Flag Name="SYNTHSHEATH_ACQUIRED" />
 		<Flag Name="SYNTHSHEATH_TWO_FOUND" />
 		<Flag Name="SYNTHSHEATH_USED" />
-		<Flag Name="SyriTailcocked" />
-		<Flag Name="SYRI_BETTING_STORAGE" />
-		<Flag Name="SYRI_BIONAHOLE_USES" />
-		<Flag Name="SYRI_BUTT_GAPE_ALERT" />
-		<Flag Name="SYRI_SEEN_PCS_SHIP_CABIN" />
-		<Flag Name="SYRI_TALKS" />
-		<Flag Name="SYRI_WINBET_VAG" />
+-->
+		<Flag Name="SyriTailcocked" Description="Number of times you've used a tailcock on Syri" />
+		<Flag Name="SYRI_BETTING_STORAGE" Description="Stores credit bet or 9001 if ass betting" />
+		<Flag Name="SYRI_SEEN_PCS_SHIP_CABIN" Description="1 == Syri has seen the PC's ship cabin" />
+		<Flag Name="SYRI_TALKS" Description="Stores what talk scene to display next in the sequence. Scene 1 never repeats. YAY!" />
+		<Flag Name="SYRI_WINBET_VAG" Description="1 == PC can get vaginal sex with condom from Syri" />
+<!--
 		<Flag Name="S_RELIEF_ANN" />
 		<Flag Name="TAGGED_MHENGA_OXONIUM_DEPOSIT" />
 		<Flag Name="TAIVRA_CHAMBER_SEX" />
@@ -2757,7 +2776,9 @@
 		<Flag Name="TAIVRA_NEW_THRONE" />
 		<Flag Name="TAIVRA_RIVAL_TALK" />
 		<Flag Name="TAIVRA_THRONE_SEX" />
-		<Flag Name="TAKEN_ANNO_AROUND_AS_A_PET" />
+-->
+		<Flag Name="TAKEN_ANNO_AROUND_AS_A_PET" Description="1 == You've taken Anno on walkies" />
+<!--
 		<Flag Name="TAKEN_SHADES_HARDLIGHT" />
 		<Flag Name="TAKEN_SILICONE_538" />
 		<Flag Name="TAKEN_SILICONE_552" />
@@ -2811,8 +2832,10 @@
 		<Flag Name="THOLLUM_TOURED" />
 		<Flag Name="THROBB_QUANTITY_STORAGE_CHEAT" />
 		<Flag Name="TIMES_ATE_DELILAH_OUT" />
-		<Flag Name="TIMES_BET_YOURSELF_AGAINST_SYRI" />
-		<Flag Name="TIMES_BUTTFUCKED_BY_SYRI" />
+-->
+		<Flag Name="TIMES_BET_YOURSELF_AGAINST_SYRI" Description="Number of times you've put your ass on the line" />
+		<Flag Name="TIMES_BUTTFUCKED_BY_SYRI" Description="Number of times lost AND been buttfucked" />
+<!--
 		<Flag Name="TIMES_BUTT_TEASED" />
 		<Flag Name="TIMES_CAUGHT_BY_ELDER_VENUS_PITCHER" />
 		<Flag Name="TIMES_CELISE_IN_BALLS" />
@@ -2828,7 +2851,9 @@
 		<Flag Name="TIMES_JACKED_PENNY_OFF_WITH_ONAHOLE" />
 		<Flag Name="TIMES_LOSS_DOMMED_BY_NALEEN" />
 		<Flag Name="TIMES_LOSS_SUCKED_ZIL_MALE" />
-		<Flag Name="TIMES_LOST_TO_SYRI" />
+-->
+		<Flag Name="TIMES_LOST_TO_SYRI" Description="Number of times you've lost betting to Syri!" />
+<!--
 		<Flag Name="TIMES_LOST_TO_ZIL" />
 		<Flag Name="TIMES_MET_FEMZIL" />
 		<Flag Name="TIMES_MET_MALE_NALEEN" />
@@ -2839,21 +2864,27 @@
 		<Flag Name="TIMES_RODE_RASKVEL_FACE" />
 		<Flag Name="TIMES_SAT_ON_JADES_FACE" />
 		<Flag Name="TIMES_SEXED_ALISS" />
-		<Flag Name="TIMES_SEXED_SHEKKA" />
-		<Flag Name="TIMES_SHEKKA_KIRBUED" />
-		<Flag Name="TIMES_TAILVIBED_WITH_SHEKKA" />
+-->
+		<Flag Name="TIMES_SEXED_SHEKKA" Description="Number of times you've had sex with Shekka" />
+		<Flag Name="TIMES_SHEKKA_KIRBUED" Description="Number of times you've used your oversized member on Shekka" />
+		<Flag Name="TIMES_TAILVIBED_WITH_SHEKKA" Description="Number of times you've ridden Shekka's tail" />
+<!--
 		<Flag Name="TIMES_TAKEN_DUMBFUCK" />
 		<Flag Name="TIMES_TAKEN_RUST_BRO_IN_COOCH" />
 		<Flag Name="TIMES_THREE_D_SURPRISE_SEXED" />
 		<Flag Name="TIMES_THROBB_USED" />
 		<Flag Name="TIMES_VENUS_PITCHER_ELDER_ENCOUNTERED" />
 		<Flag Name="TIMES_WINSEXED_NALEEN" />
-		<Flag Name="TIMES_WON_AGAINST_SYRI" />
+-->
+		<Flag Name="TIMES_WON_AGAINST_SYRI" Description="Number of times you've defeated her!" />
+<!--
 		<Flag Name="TITFUCKED_JADE" />
 		<Flag Name="TLAKO_BASKETS" />
 		<Flag Name="TLAKO_THANKED" />
 		<Flag Name="TOLD_SHADE_SHES_YER_SIS" />
-		<Flag Name="TOLD_TO_ANNO_ABOUT_SYRI_RELATIONSHIP" />
+-->
+		<Flag Name="TOLD_TO_ANNO_ABOUT_SYRI_RELATIONSHIP" Description="1 == You've told Anno about your relationship with Syri" />
+<!--
 		<Flag Name="TOOK_DELILAHS_BUTTGINITY" />
 		<Flag Name="TOOK_PRINCESS_BUTTGINITY" />
 		<Flag Name="TREATED_BY_VI" />
@@ -2869,7 +2900,9 @@
 		<Flag Name="UNA_TALKED" />
 		<Flag Name="UNLOCKED_JUNKYARD_PLANET" />
 		<Flag Name="UNLOCKED_TAIVRAS_GATE" />
-		<Flag Name="UNLOCK_SYRI_ANNO_TALK" />
+-->
+		<Flag Name="UNLOCK_SYRI_ANNO_TALK" Description="1 == You can talk to Syri about Anno" />
+<!--
 		<Flag Name="USED SCENE EXECUTE FUNCTION" />
 		<Flag Name="USED_DONG_DESIGNER" />
 		<Flag Name="USED_GUSH" />
