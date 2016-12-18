@@ -1516,7 +1516,7 @@
 		<Flag Name="ANZHELA_TALKS" />
 		<Flag Name="ANZHELA_TREATED" />
 -->
-		<Flag Name="APPROACHED_EMMY" Description="You've walked up to her" />
+		<Flag Name="APPROACHED_EMMY" Description="1 == You've walked up to her" />
 <!--
 		<Flag Name="APPROACHED_FAZIAN" />
 		<Flag Name="APPROACHED_SHELLY" />
@@ -1775,7 +1775,7 @@
 		<Flag Name="EMMY_POLY" Description="1 == Emmy is OK with PC polyamory" />
 		<Flag Name="EMMY_PROSTATELIGHT" Description="Number of times you've used a hard-light dildo on Emmy" />
 		<Flag Name="EMMY_QUEST" Description="Used to track the current progress of her sexquest&#xD;&#xA;Undefined == Nuttin' yet!&#xD;&#xA;0 == she has requested a flower, and you have not brought her one&#xD;&#xA;1 == You brought her a flower or charmed her into oral times.&#xD;&#xA;2 == Emmy has pointed you at part two of the quest.&#xD;&#xA;3 == You've completed the second part of the quest.&#xD;&#xA;4 == You talked about her toy but haven't bought it yet.&#xD;&#xA;5 == You bought the toy, but not yet delivered.&#xD;&#xA;6 == Delivered" />
-		<Flag Name="EMMY_TRADE_OFFERED" Description="offered to sell items to Emmy" />
+		<Flag Name="EMMY_TRADE_OFFERED" Description="1 == offered to sell items to Emmy" />
 <!--
 		<Flag Name="ENABLE_LYS_FLOWER" />
 		<Flag Name="ENCOUNTERED_FREEDOM_BEEF" />
@@ -2050,17 +2050,19 @@
 		<Flag Name="KII3_SEARCHED" />
 		<Flag Name="KILLED_TAIVRA" />
 		<Flag Name="KING_NYREA" />
-		<Flag Name="KIRO_BALLJOBBED_YOU" />
-		<Flag Name="KIRO_BAR_MET" />
-		<Flag Name="KIRO_CELISE_3SOME" />
-		<Flag Name="KIRO_DEEPTHROATED_YOU" />
-		<Flag Name="KIRO_DISABLED_MINUTES" />
-		<Flag Name="KIRO_DRINKING_CONTEST_RESULTS" />
-		<Flag Name="KIRO_FUCKED_DURING_RESCUE" />
-		<Flag Name="KIRO_ORGIED" />
-		<Flag Name="KIRO_ORGY_DATE" />
-		<Flag Name="KIRO_TRUST" />
-		<Flag Name="KIRO_X_SAEN_HAPPENED" />
+-->
+		<Flag Name="KIRO_BALLJOBBED_YOU" Description="1 == Kiro has used her balls on your cocks" />
+		<Flag Name="KIRO_BAR_MET" Description="1 == You've met Kiro in a bar" />
+		<Flag Name="KIRO_CELISE_3SOME" Description="Number of times you've had a threesome with Kiro and Celise" />
+		<Flag Name="KIRO_DEEPTHROATED_YOU" Description="1 == Kiro has deepthroated you" />
+		<Flag Name="KIRO_DISABLED_MINUTES" Description="Number of minutes Kiro is unavailable" />
+		<Flag Name="KIRO_DRINKING_CONTEST_RESULTS" Description="-1 == You lost&#xD;&#xA;0 == You cheated&#xD;&#xA;1 == You win" />
+		<Flag Name="KIRO_FUCKED_DURING_RESCUE" Description="1 == You had sex with Kiro during her rescue" />
+		<Flag Name="KIRO_ORGIED" Description="Number of times you've gone to the orgy with Kiro" />
+		<Flag Name="KIRO_ORGY_DATE" Description="Days till the herm orgy will be available again" />
+		<Flag Name="KIRO_TRUST" Description="How much Kiro trusts you" />
+		<Flag Name="KIRO_X_SAEN_HAPPENED" Description="1 == You've had a threesome with Kiro and Saendra" />
+<!--
 		<Flag Name="KI_CMO_MEDSUPPLIES" />
 		<Flag Name="KI_CMO_SEARCHED" />
 		<Flag Name="KI_COMMAND_DECK_STEPS" />
@@ -2270,7 +2272,7 @@
 		<Flag Name="MET_ELLIE" />
 		<Flag Name="MET_EMBRY" />
 -->
-		<Flag Name="MET_EMMY" Description="you know each other's name" />
+		<Flag Name="MET_EMMY" Description="1 == You know each other's name" />
 <!--
 		<Flag Name="MET_ETHELN" />
 		<Flag Name="MET_FEMALE_RASKVEL" />
@@ -2301,7 +2303,9 @@
 		<Flag Name="MET_KAEDE" />
 		<Flag Name="MET_KARA" />
 		<Flag Name="MET_KEROKORAS" />
-		<Flag Name="MET_KIRO" />
+-->
+		<Flag Name="MET_KIRO" Description="1 == You've met Kiro" />
+<!--
 		<Flag Name="MET_LANE" />
 		<Flag Name="MET_LERRIS" />
 		<Flag Name="MET_LIEVE" />
@@ -2482,8 +2486,8 @@
 		<Flag Name="PREV_LOCATION" />
 		<Flag Name="PRINCESS_DEFEATED" />
 		<Flag Name="PUBLIC_USE_COUNT" />
-		<Flag Name="PUMPED_KIRO_PUSSY" />
 -->
+		<Flag Name="PUMPED_KIRO_PUSSY" Description="1 == You've used a Pussy Pump on Kiro" />
 		<Flag Name="PUPPYSLUTMAS_2014" Description="Anno or Syri" />
 		<Flag Name="PUPPYSLUTMAS_2014_ANNO_OFFER" Description="1 == Anno offered to take PC to family party" />
 		<Flag Name="PUPPYSLUTMAS_2014_DRINKS" Description="Number of drinks PC has had at the party" />
@@ -2543,11 +2547,13 @@
 		<Flag Name="RENVRA_SEXED" />
 		<Flag Name="REPEAT_GOBBLES_MILKED" />
 		<Flag Name="REQUEST_REN_HOME" />
-		<Flag Name="RESCUE KIRO FROM BLUEBALLS" />
-		<Flag Name="RESCUE KIRO TECHSPEC MACHINE FIX" />
-		<Flag Name="RESCUE KIRO TOOK CUTLASS" />
-		<Flag Name="RESCUE KIRO TOOK PISTOL" />
-		<Flag Name="RESCUE KIRO WAITED TO BOARD" />
+-->
+		<Flag Name="RESCUE KIRO FROM BLUEBALLS" Description="-1 == You noped out of the quest&#xD;&#xA;1 == You rescued Kiro" />
+		<Flag Name="RESCUE KIRO TECHSPEC MACHINE FIX" Description="-1 == You failed to fix the machine&#xD;&#xA;1 == You fixed Kiro's milker" />
+		<Flag Name="RESCUE KIRO TOOK CUTLASS" Description="1 == You took Kiro's sword" />
+		<Flag Name="RESCUE KIRO TOOK PISTOL" Description="1 == You took Kiro's pistol" />
+		<Flag Name="RESCUE KIRO WAITED TO BOARD" Description="1 == You waited before entering Kiro's ship" />
+<!--
 		<Flag Name="RHENWORLD_OFFICE_VISITED" />
 		<Flag Name="RIVALCONFIGURED" />
 		<Flag Name="RIVAL_GOT_MYR_COORDS_FIRST" />
