@@ -834,17 +834,27 @@
 			<Item Stack="1" Name="R.Bdysuit" ID="classes.Items.Apparel::ReinforcedBodysuit" />
 			<Item Stack="1" Name="R.F.Armor" ID="classes.Items.Apparel::RevealingFemaleArmor" />
 			<Item Stack="1" Name="R.M.Armor" ID="classes.Items.Apparel::RevealingMaleArmor" />
-			<Item Stack="1" Name="Smartclothes" ID="classes.Items.Apparel::Smartclothes" />
+			<Item Stack="1" Name="Smartclothes" ID="classes.Items.Apparel::Smartclothes">
+				<ItemField Name="shields" Type="int" Value="12" />
+			</Item>
 			<Item Stack="1" Name="S.Pirate O." ID="classes.Items.Apparel::SpacePirateOutfit" />
-			<Item Stack="1" Name="ST. Suit" ID="classes.Items.Apparel::SteeleTechSuit" />
+			<Item Stack="1" Name="ST. Suit" ID="classes.Items.Apparel::SteeleTechSuit">
+				<ItemField Name="shields" Type="int" Value="15" />
+			</Item>
 			<Item Stack="1" Name="ThmJacket" ID="classes.Items.Apparel::ThermalJacket" />
 			<Item Stack="1" Name="T.Zipsuit" ID="classes.Items.Apparel::TransparentZipsuit" />
 			<Item Stack="1" Name="T.Armor" ID="classes.Items.Apparel::TrashArmor" />
 			<Item Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" />
 			<Item Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" />
-			<Item Stack="1" Name="AZA Suit" ID="classes.Items.Armor::ArmstrongSuitBlue" />
-			<Item Stack="1" Name="UVA Suit" ID="classes.Items.Armor::ArmstrongSuitViolet" />
-			<Item Stack="1" Name="PWA Suit" ID="classes.Items.Armor::ArmstrongSuitWhite" />
+			<Item Stack="1" Name="AZA Suit" ID="classes.Items.Armor::ArmstrongSuitBlue">
+				<ItemField Name="shields" Type="int" Value="5" />
+			</Item>
+			<Item Stack="1" Name="UVA Suit" ID="classes.Items.Armor::ArmstrongSuitViolet">
+				<ItemField Name="shields" Type="int" Value="5" />
+			</Item>
+			<Item Stack="1" Name="PWA Suit" ID="classes.Items.Armor::ArmstrongSuitWhite">
+				<ItemField Name="shields" Type="int" Value="20" />
+			</Item>
 			<Item Stack="1" Name="C.Armor" ID="classes.Items.Armor::ChitinArmor" />
 			<Item Stack="1" Name="C.Plate" ID="classes.Items.Armor::ChitPlate" />
 			<Item Stack="1" Name="Goo Armor" ID="classes.Items.Armor::GooArmor" />
@@ -856,8 +866,12 @@
 			<Item Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
 			<Item Stack="1" Name="WM Dress" ID="classes.Items.Armor::WeavemailDress" />
 			<Item Stack="1" Name="WM Shirt" ID="classes.Items.Armor::WeavemailShirt" />
-			<Item Stack="1" Name="O.Collar" ID="classes.Items.Armor.Unique::OmnisuitCollar" />
-			<Item Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit" />
+			<Item Stack="1" Name="O.Collar" ID="classes.Items.Armor.Unique::OmnisuitCollar">
+				<ItemField Name="shields" Type="int" Value="5" />
+			</Item>
+			<Item Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit">
+				<ItemField Name="shields" Type="int" Value="5" />
+			</Item>
 			<Item Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
 		</ItemType>
 		<ItemType Name="Upper Undergarment">
@@ -1111,7 +1125,9 @@
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
 			<Item Stack="1" Name="Cutlass" ID="classes.Items.Melee::Cutlass" />
 			<Item Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" LongName="Emmy's Jolthammer" />
-			<Item Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" LongName="Emmy's Lava Saber" />
+			<Item Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" LongName="Emmy's Lava Saber">
+				<ItemField Name="shields" Type="int" Value="5" />
+			</Item>
 			<Item Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" LongName="Emmy's Vamp Blade" />
 			<Item Stack="1" Name="J.Hmmr." ID="classes.Items.Melee::Jolthammer" />
 			<Item Stack="1" Name="Knife" ID="classes.Items.Melee::Knife" />
@@ -1181,18 +1197,40 @@
 			<Item Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
 		</ItemType>
 		<ItemType Name="Shield">
-			<Item Stack="1" Name="AW Belt" ID="classes.Items.Protection::ArcticWarfareBelt" />
-			<Item Stack="1" Name="BasicShld" ID="classes.Items.Protection::BasicShield" />
-			<Item Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield" />
-			<Item Stack="1" Name="Decent S." ID="classes.Items.Protection::DecentShield" />
+			<Item Stack="1" Name="AW Belt" ID="classes.Items.Protection::ArcticWarfareBelt">
+				<ItemField Name="shields" Type="int" Value="25" />
+			</Item>
+			<Item Stack="1" Name="BasicShld" ID="classes.Items.Protection::BasicShield">
+				<ItemField Name="shields" Type="int" Value="10" />
+			</Item>
+			<Item Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield">
+				<ItemField Name="shields" Type="int" Value="500" />
+			</Item>
+			<Item Stack="1" Name="Decent S." ID="classes.Items.Protection::DecentShield">
+				<ItemField Name="shields" Type="int" Value="18" />
+			</Item>
 			<Item Stack="1" Name="HeatBelt" ID="classes.Items.Protection::HeatBelt" />
-			<Item Stack="1" Name="I.Shield" ID="classes.Items.Protection::ImprovisedShield" />
-			<Item Stack="1" Name="E.Shield" ID="classes.Items.Protection::JoyCoEliteShield" />
-			<Item Stack="1" Name="P.Shield" ID="classes.Items.Protection::JoyCoPremiumShield" />
-			<Item Stack="1" Name="O.Aegis" ID="classes.Items.Protection::OzoneAegis" />
-			<Item Stack="1" Name="Mark IIS" ID="classes.Items.Protection::ReaperArmamentsMarkIIShield" />
-			<Item Stack="1" Name="Mark I.S." ID="classes.Items.Protection::ReaperArmamentsMarkIShield" />
-			<Item Stack="1" Name="S.Shield" ID="classes.Items.Protection::SalamanderShield" />
+			<Item Stack="1" Name="I.Shield" ID="classes.Items.Protection::ImprovisedShield">
+				<ItemField Name="shields" Type="int" Value="30" />
+			</Item>
+			<Item Stack="1" Name="E.Shield" ID="classes.Items.Protection::JoyCoEliteShield">
+				<ItemField Name="shields" Type="int" Value="60" />
+			</Item>
+			<Item Stack="1" Name="P.Shield" ID="classes.Items.Protection::JoyCoPremiumShield">
+				<ItemField Name="shields" Type="int" Value="40" />
+			</Item>
+			<Item Stack="1" Name="O.Aegis" ID="classes.Items.Protection::OzoneAegis">
+				<ItemField Name="shields" Type="int" Value="50" />
+			</Item>
+			<Item Stack="1" Name="Mark IIS" ID="classes.Items.Protection::ReaperArmamentsMarkIIShield">
+				<ItemField Name="shields" Type="int" Value="100" />
+			</Item>
+			<Item Stack="1" Name="Mark I.S." ID="classes.Items.Protection::ReaperArmamentsMarkIShield">
+				<ItemField Name="shields" Type="int" Value="80" />
+			</Item>
+			<Item Stack="1" Name="S.Shield" ID="classes.Items.Protection::SalamanderShield">
+				<ItemField Name="shields" Type="int" Value="50" />
+			</Item>
 		</ItemType>
 		<ItemType Name="Other">
 			<Item Stack="10" Name="EMP Gren." ID="classes.Items.Miscellaneous::EMPGrenade" />
@@ -3056,7 +3094,9 @@
 		<Status Name="Roshan Blue" Description="You see everything so very clear now - if only you could focus a little better." IsHidden="false" IconName="Icon_DizzyDrunk" />
 		<Status Name="Royal Nectar" Description="Irellia's nectar has you feeling far peppier than normal." Value1="40" IsHidden="false" IconName="Charmed" MinutesLeft="2880" />
 		<Status Name="Royal Nectar" Description="That honey wine packs a punch! You're feeling a lot peppier now." Value1="30" IsHidden="false" IconName="Icon_Wine" MinutesLeft="2880" IconShade="300" />
+-->
 		<Status Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IsHidden="false" IconName="DefenseDown" IconShade="0" />
+<!--
 		<Status Name="Semen's Candy" Description="The Semen’s Friend candy is still in your system." Value1="1440" Value2="1" IsHidden="false" IconName="Icon_DrugPill" MinutesLeft="1440" />
 		<Status Name="Sex On a Meteor" Description="This top-shelf alcohol makes you almost irresistible, but easily aroused as well." Value2="5" IsHidden="false" IconName="LustUp" MinutesLeft="180" />
 		<Status Name="Sexy Costume" Description="The outfit you are wearing is making you feel randier than usual." Value1="10" IsHidden="false" IconName="LustUp" IconShade="100" />

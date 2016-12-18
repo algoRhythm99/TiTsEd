@@ -351,15 +351,6 @@ namespace TiTsEd.ViewModel {
             foreach (var prop in _allPerks.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
         }
 
-        public void OnPerkAddedOrRemoved(string name, bool isOwned) {
-            // Grants/removes the appropriate bonuses when a perk is added or removed.
-            // We do not add stats however since the user can already change them easily.
-            switch (name) {
-                default:
-                    break;
-            }
-        }
-
         string _keyItemSearchText = "";
         public string KeyItemSearchText {
             get { return _keyItemSearchText; }
@@ -383,13 +374,6 @@ namespace TiTsEd.ViewModel {
 
         public void OnKeyItemChanged(string name) {
             foreach (var prop in _allKeyItems.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
-        }
-
-        public void OnKeyItemAddedOrRemoved(string name, bool isOwned) {
-            switch (name) {
-                default:
-                    break;
-            }
         }
 
         string _rawDataSearchText = "";
@@ -466,15 +450,6 @@ namespace TiTsEd.ViewModel {
 
         public void OnStatusChanged(string name) {
             foreach (var prop in _allStatuses.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
-        }
-
-        public void OnStatusAddedOrRemoved(string name, bool isOwned) {
-            // Grants/removes the appropriate bonuses when a status is added or removed.
-            // We do not add stats however since the user can already change them easily.
-            switch (name) {
-                default:
-                    break;
-            }
         }
 
     }

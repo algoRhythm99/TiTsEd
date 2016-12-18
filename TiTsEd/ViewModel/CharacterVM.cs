@@ -8,17 +8,26 @@ using TiTsEd.Model;
 namespace TiTsEd.ViewModel {
     public class CharacterVM : ObjectVM {
         private ItemContainerVM _inventory;
+        private ItemSlotVM _shield;
+        private ItemSlotVM _meleeWeapon;
+        private ItemSlotVM _rangedWeapon;
+        private ItemSlotVM _accessory;
+        private ItemSlotVM _armor;
+        private ItemSlotVM _upperUndergarment;
+        private ItemSlotVM _lowerUndergarment;
 
         public CharacterVM(GameVM game, AmfObject obj)
             : base(obj) {
 
             Game = game;
 
+            // body parts
             Breasts = new BreastArrayVM(game, GetObj("breastRows"));
             Vaginas = new VaginaArrayVM(game, GetObj("vaginas"));
             Cocks = new CockArrayVM(game, GetObj("cocks"));
             Ass = new VaginaVM(game, GetObj("ass"));
 
+            // inventory
             List<String> types = new List<String>();
             foreach (XmlItemType type in XmlData.Current.ItemTypes) {
                 types.Add(type.Name);
@@ -32,6 +41,14 @@ namespace TiTsEd.ViewModel {
             // Complete slots creation
             ItemContainers = new UpdatableCollection<ItemContainerVM>(containers);
 
+            // shield, weapons, accessory, armors
+            _shield = new ItemSlotVM(this, GetObj("shield"), types);
+            _meleeWeapon = new ItemSlotVM(this, GetObj("meleeWeapon"), types);
+            _rangedWeapon = new ItemSlotVM(this, GetObj("rangedWeapon"), types);
+            _armor = new ItemSlotVM(this, GetObj("armor"), types);
+            _accessory = new ItemSlotVM(this, GetObj("accessory"), types);
+            _upperUndergarment = new ItemSlotVM(this, GetObj("upperUndergarment"), types);
+            _lowerUndergarment = new ItemSlotVM(this, GetObj("lowerUndergarment"), types);
         }
 
         public void BeforeSerialization() {
@@ -208,6 +225,48 @@ namespace TiTsEd.ViewModel {
             get { return Level * 5; }
         }
 
+        public int Shields {
+            get { return GetInt("shieldsRaw"); }
+            set { SetValue("shieldsRaw", value); }
+        }
+
+        public int MaxShields {
+            get {
+                int maxShields = 0;
+                int shields = (Shield != null) ? Shield.Xml.GetFieldValueAsInt("shields") : 0;
+                if (shields > 0) {
+                    maxShields += shields;
+
+                    maxShields += (MeleeWeapon != null) ? MeleeWeapon.Xml.GetFieldValueAsInt("shields") : 0;
+                    maxShields += (RangedWeapon != null) ? RangedWeapon.Xml.GetFieldValueAsInt("shields") : 0;
+
+                    maxShields += (Armor != null) ? Armor.Xml.GetFieldValueAsInt("shields") : 0;
+                    maxShields += (UpperUndergarment != null) ? UpperUndergarment.Xml.GetFieldValueAsInt("shields") : 0;
+                    maxShields += (LowerUndergarment != null) ? LowerUndergarment.Xml.GetFieldValueAsInt("shields") : 0;
+
+                    if (HasPerk("Shield Tweaks"))
+                    {
+                        maxShields += Level * 2;
+                    }
+                    if (HasPerk("Shield Booster"))
+                    {
+                        maxShields += Level * 8;
+                    }
+                    if (HasPerk("Attack Drone"))
+                    {
+                        maxShields += (Level * 3);
+                    }
+
+                    //Debuffs!
+                    if (HasStatusEffect("Rusted Emitters"))
+                    {
+                        maxShields = (int)Math.Round(maxShields * 0.75);
+                    }
+                }
+                return maxShields;
+            }
+        }
+
         public int HP {
             get { return GetInt("HPRaw"); }
             set { SetValue("HPRaw", value); }
@@ -243,6 +302,7 @@ namespace TiTsEd.ViewModel {
                 OnPropertyChanged("MaxXPLabel");
                 OnPropertyChanged("MaxCoreStat");
                 OnPropertyChanged("MaxHP");
+                OnPropertyChanged("MaxShields");
             }
         }
 
@@ -961,6 +1021,34 @@ namespace TiTsEd.ViewModel {
             SetValue("inventory", nInv);
         }
 
+        public ItemSlotVM Shield {
+            get { return _shield; }
+        }
+
+        public ItemSlotVM MeleeWeapon {
+            get { return _meleeWeapon; }
+        }
+
+        public ItemSlotVM RangedWeapon {
+            get { return _rangedWeapon; }
+        }
+
+        public ItemSlotVM Accessory {
+            get { return _accessory; }
+        }
+
+        public ItemSlotVM Armor {
+            get { return _armor; }
+        }
+
+        public ItemSlotVM UpperUndergarment {
+            get { return _upperUndergarment; }
+        }
+
+        public ItemSlotVM LowerUndergarment {
+            get { return _lowerUndergarment; }
+        }
+
         #endregion
 
         #region KeyItemsPage
@@ -970,6 +1058,18 @@ namespace TiTsEd.ViewModel {
         }
 
         public List<KeyItemGroupVM> KeyItemGroups { get; set; }
+
+        public bool HasKeyItem(string keyItemName) {
+            var keyItem = Game.GetKeyItem(keyItemName);
+            return keyItem != null ? keyItem.IsOwned : false;
+        }
+
+        public void OnKeyItemAddedOrRemoved(string name, bool isOwned) {
+            switch (name) {
+                default:
+                    break;
+            }
+        }
 
         #endregion
 
@@ -981,6 +1081,29 @@ namespace TiTsEd.ViewModel {
 
         public List<PerkGroupVM> PerkGroups { get; set; }
 
+        public bool HasPerk(string perkName) {
+            var perk = Game.GetPerk(perkName);
+            return perk != null ? perk.IsOwned : false;
+        }
+
+        public void OnPerkAddedOrRemoved(string name, bool isOwned) {
+            // Grants/removes the appropriate bonuses when a perk is added or removed.
+            // We do not add stats however since the user can already change them easily.
+            switch (name) {
+                case "Shield Tweaks":
+                    OnPropertyChanged("MaxShields");
+                    break;
+                case "Shield Booster":
+                    OnPropertyChanged("MaxShields");
+                    break;
+                case "Attack Drone":
+                    OnPropertyChanged("MaxShields");
+                    break;
+                default:
+                    break;
+            }
+        }
+
         #endregion
 
         #region RawPage
@@ -990,6 +1113,23 @@ namespace TiTsEd.ViewModel {
         }
 
         public UpdatableCollection<StatusEffectVM> StatusEffects { get; set; }
+
+        public bool HasStatusEffect(string statusEffectName) {
+            var statusEffect = Game.GetStatus(statusEffectName);
+            return statusEffect != null ? statusEffect.IsOwned : false;
+        }
+
+        public void OnStatusAddedOrRemoved(string name, bool isOwned) {
+            // Grants/removes the appropriate bonuses when a status is added or removed.
+            // We do not add stats however since the user can already change them easily.
+            switch (name) {
+                case "Rusted Emitters":
+                    OnPropertyChanged("MaxShields");
+                    break;
+                default:
+                    break;
+            }
+        }
 
         #endregion
     }

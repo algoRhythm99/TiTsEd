@@ -89,7 +89,7 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void OnIsOwnedChanged() {
-            _game.OnKeyItemAddedOrRemoved(Name, IsOwned);
+            _game.Character.OnKeyItemAddedOrRemoved(Name, IsOwned);
         }
 
     }

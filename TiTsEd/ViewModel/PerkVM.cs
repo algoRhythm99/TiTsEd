@@ -91,7 +91,7 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void OnIsOwnedChanged() {
-            _game.OnPerkAddedOrRemoved(Name, IsOwned);
+            _game.Character.OnPerkAddedOrRemoved(Name, IsOwned);
         }
     }
 }

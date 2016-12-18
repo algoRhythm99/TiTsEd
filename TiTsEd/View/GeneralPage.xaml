@@ -16,7 +16,7 @@
     </UserControl.Resources>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-        <Grid Margin="0,0">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -75,7 +75,7 @@
             <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Vertical">
 
                 <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="" Style="{StaticResource Header}"/>
+                    <TextBlock Text="Advancement" Style="{StaticResource Header}"/>
                 </Border>
 
                 <common:AutoGrid>
@@ -91,6 +91,12 @@
                     <TextBlock              Text="Stat Points" IsEnabled="{Binding Game.IsPC}" />
                     <common:MyNumericBox    Value="{Binding Game.Character.StatPoints}" IsEnabled="{Binding Game.IsPC}" />
 
+                </common:AutoGrid>
+
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Miscellaneous" Style="{StaticResource Header}"/>
+                </Border>
+                <common:AutoGrid>
                     <TextBlock              Text="Personality" IsEnabled="{Binding Game.IsPC}" />
                     <common:MyNumericBox    Value="{Binding Game.Character.Personality}" Upper="100" Tip="{Binding Game.Character.PersonalityTip}" IsEnabled="{Binding Game.IsPC}" />
 
@@ -104,7 +110,29 @@
 
             <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Vertical">
                 <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Stats" Style="{StaticResource Header}"/>
+                    <TextBlock Text="Combat Stats" Style="{StaticResource Header}"/>
+                </Border>
+                <common:AutoGrid>
+                    <TextBlock              Text="Shields"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Shields}" Upper="{Binding Game.Character.MaxShields}" />
+                </common:AutoGrid>
+                <common:AutoGrid Columns="3">
+
+                    <TextBlock              Text="HP"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HP}" Upper="{Binding Game.Character.MaxHP}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HPMod}" ToolTip="Modifier" />
+
+                    <TextBlock              Text="Lust"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Lust}" Upper="{Binding Game.Character.MaxLust}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.LustMod}" ToolTip="Modifier" />
+
+                    <TextBlock              Text="Energy"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Energy}" Upper="{Binding Game.Character.MaxEnergy}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.EnergyMod}" ToolTip="Modifier" />
+                </common:AutoGrid>
+
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Core Stats" Style="{StaticResource Header}"/>
                 </Border>
                 <common:AutoGrid Columns="4">
 
@@ -139,20 +167,7 @@
                     <TextBlock Width="50" />
 
                 </common:AutoGrid>
-                <common:AutoGrid Margin="0,30,0,0" Columns="3">
 
-                    <TextBlock              Text="Current HP"/>
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HP}" Upper="{Binding Game.Character.MaxHP}" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HPMod}" ToolTip="Modifier" />
-
-                    <TextBlock              Text="Lust"/>
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Lust}" Upper="{Binding Game.Character.MaxLust}" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.LustMod}" ToolTip="Modifier" />
-
-                    <TextBlock              Text="Energy"/>
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Energy}" Upper="{Binding Game.Character.MaxEnergy}" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.EnergyMod}" ToolTip="Modifier" />
-                </common:AutoGrid>
             </StackPanel>
 
             <StackPanel Grid.Column="3" Grid.Row="5" Orientation="Vertical">

@@ -360,6 +360,39 @@ namespace TiTsEd.Model {
             }
             return buf.ToString().Trim();
         }
+
+        public string GetFieldValue(string fieldName) {
+            if (null != Fields) {
+                foreach (var field in Fields) {
+                    if (fieldName == field.Name) {
+                        return field.Value;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public int GetFieldValueAsInt(string fieldName) {
+            var oVal = GetFieldValue(fieldName);
+            if (oVal != null) {
+                int iVal = 0;
+                bool success = int.TryParse(oVal, out iVal);
+                return success ? iVal : 0;
+            } else {
+                return 0;
+            }
+        }
+
+        public bool GetFieldValueAsBool(string fieldName) {
+            var oVal = GetFieldValue(fieldName);
+            if (oVal != null) {
+                bool bVal = false;
+                bool success = bool.TryParse(oVal, out bVal);
+                return success ? bVal : false;
+            } else {
+                return false;
+            }
+        }
     }
 
     public sealed class XmlName {

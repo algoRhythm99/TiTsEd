@@ -134,20 +134,22 @@ namespace TiTsEd.ViewModel {
                     Tooltip = xmlItem.Tooltip;
                 }
                 /* Update all extra fields with fields from the xml. */
-                foreach (XmlObjectField field in xmlItem.Fields) {
-                    switch (field.Type.ToLower()) {
-                        case "bool":
-                            SetValue(field.Name, field.Value.StartsWith("t", true, null));
-                            break;
-                        case "int":
-                            SetValue(field.Name, int.Parse(field.Value));
-                            break;
-                        case "string":
-                            SetValue(field.Name, field.Value);
-                            break;
-                        default:
-                            //no match since we have no idea what type it is
-                            break;
+                if (xmlItem.GetFieldValueAsBool("hasRandomProperties")) {
+                    foreach (XmlObjectField field in xmlItem.Fields) {
+                        switch (field.Type.ToLower()) {
+                            case "bool":
+                                SetValue(field.Name, field.Value.StartsWith("t", true, null));
+                                break;
+                            case "int":
+                                SetValue(field.Name, int.Parse(field.Value));
+                                break;
+                            case "string":
+                                SetValue(field.Name, field.Value);
+                                break;
+                            default:
+                                //no match since we have no idea what type it is
+                                break;
+                        }
                     }
                 }
 
@@ -375,6 +377,14 @@ namespace TiTsEd.ViewModel {
                 return result;
             }
             return 0;
+        }
+
+        public string GetFieldValue(string fieldName) {
+            return Xml.GetFieldValue(fieldName);
+        }
+
+        public int GetFieldValueAsInt(string fieldName) {
+            return Xml.GetFieldValueAsInt(fieldName);
         }
 
     }
