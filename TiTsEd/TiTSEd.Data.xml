@@ -1802,7 +1802,7 @@
 		<Flag Name="EMBRY_VAGINAL_SEX_UNLOCKED" />
 -->
 		<Flag Name="EMMY_APOLOGIZED" Description="1 == You've read Emmy's apology email" />
-		<Flag Name="EMMY_BANNED" Descripton="1 == You've been banned from Emmy's shop" />
+		<Flag Name="EMMY_BANNED" Description="1 == You've been banned from Emmy's shop" />
 		<Flag Name="EMMY_BF" Description="1 == Emmy is pleased" />
 		<Flag Name="EMMY_CREW_REQUESTED" Description="1 == You've invited Emmy to join your crew" />
 		<Flag Name="EMMY_EATEN_OUT" Description="Number of times you've eaten Emmy out" />
@@ -2272,141 +2272,130 @@
 		<Flag Name="MCALLISTER_MYR_TFS" />
 		<Flag Name="MEGA_MILKED" />
 		<Flag Name="MERCHANT_QUEEN_SEX_UNLOCKED" />
-		<Flag Name="MET SYDIAN FEMALE" />
-		<Flag Name="MET_ADULT_COCKVINE" />
-		<Flag Name="MET_AINA" />
-		<Flag Name="MET_ALEX" />
-		<Flag Name="MET_ALICE" />
-		<Flag Name="MET_ANARRIE" />
 -->
+		<Flag Name="MET SYDIAN FEMALE" Description="Number of times you've encountered a female Sydian" />
+		<Flag Name="MET_ADULT_COCKVINE" Description="Number of times you've encountered an adult cockvine" />
+		<Flag Name="MET_AINA" Description="1 == You've met Aina" />
+		<Flag Name="MET_ALEX" Description="1 == You've met Alex" />
+		<Flag Name="MET_ALICE" Description="1 == You've met Alice" />
+		<Flag Name="MET_ANARRIE" Description="1 == You've met Anarrie" />
 		<Flag Name="MET_ANNO" Description="1 == You've met Anno" />
-		<Flag Name="MET_ANNO_POST_SPLOSION" Description="1 == You've met Anno after Tarkus explosion" />
-<!--
-		<Flag Name="MET_ANZHELA" />
-		<Flag Name="MET_ASENNIA" />
-		<Flag Name="MET_ASTRA" />
-		<Flag Name="MET_AURIN" />
-		<Flag Name="MET_AURORA" />
-		<Flag Name="MET_BIG_T" />
-		<Flag Name="MET_BRILLIG" />
-		<Flag Name="MET_BURT" />
-		<Flag Name="MET_BUTCH" />
-		<Flag Name="MET_CAMERON" />
-		<Flag Name="MET_CANDICE" />
-		<Flag Name="MET_CARL" />
-		<Flag Name="MET_CASS" />
-		<Flag Name="MET_CERIA" />
-		<Flag Name="MET_CERRES" />
-		<Flag Name="MET_CGOOS" />
-		<Flag Name="MET_CGOO_SHOPKEEP" />
-		<Flag Name="MET_COCKVINE_SEEDLING" />
-		<Flag Name="MET_CUNT_SNAKE" />
-		<Flag Name="MET_DALLY" />
-		<Flag Name="MET_DANE" />
-		<Flag Name="MET_DEL" />
-		<Flag Name="MET_DR_BADGER" />
-		<Flag Name="MET_DR_HASWELL" />
-		<Flag Name="MET_DR_LASH" />
-		<Flag Name="MET_ELLIE" />
-		<Flag Name="MET_EMBRY" />
--->
+		<Flag Name="MET_ANNO_POST_SPLOSION" Description="1 == You've met with Anno after Tarkus explosion" />
+		<Flag Name="MET_ANZHELA" Description="1 == You've met Anzhela" />
+		<Flag Name="MET_ASENNIA" Description="1 == You've met Asennia" />
+		<Flag Name="MET_ASTRA" Description="1 == You've met Astra" />
+		<Flag Name="MET_AURIN" Description="1 == You've met Aurin, moderate Myr male" />
+		<Flag Name="MET_AURORA" Description="1 == You've met Aurora" />
+		<Flag Name="MET_BIG_T" Description="1 == You've met Big T" />
+		<Flag Name="MET_BRILLIG" Description="1 == You've met Brillig" />
+		<Flag Name="MET_BURT" Description="1 == You've met Burt" />
+		<Flag Name="MET_BUTCH" Description="1 == You've met Butch" />
+		<Flag Name="MET_CAMERON" Description="1 == You've met Cameron" />
+		<Flag Name="MET_CANDICE" Description="1 == You've met Candice" />
+		<Flag Name="MET_CARL" Description="1 == You've met Carl" />
+		<Flag Name="MET_CASS" Description="1 == You've met Cass" />
+		<Flag Name="MET_CERIA" Description="1 == You've met Ceria" />
+		<Flag Name="MET_CERRES" Description="1 == You've met Cerres the Queensguard" />
+		<Flag Name="MET_CGOOS" Description="1 == You've met a crystal goo" />
+		<Flag Name="MET_CGOO_SHOPKEEP" Description="1 == You've met the crystal goo shopkeeper" />
+		<Flag Name="MET_COCKVINE_SEEDLING" Description="Number of times you've encountered cockvine seedling" />
+		<Flag Name="MET_CUNT_SNAKE" Description="Number of times you've encountered a cunt snake" />
+		<Flag Name="MET_DALLY" Description="1 == You've met Dally" />
+		<Flag Name="MET_DANE" Description="1 == You've met Dane" />
+		<Flag Name="MET_DEL" Description="1 == You've met Del" />
+		<Flag Name="MET_DR_BADGER" Description="1 == You've met Dr Badger" />
+		<Flag Name="MET_DR_HASWELL" Description="1 == You've met Dr Haswell" />
+		<Flag Name="MET_DR_LASH" Description="1 == You've met Dr Lash" />
+		<Flag Name="MET_ELLIE" Description="1 == You've met Ellie" />
+		<Flag Name="MET_EMBRY" Description="1 == You've met Embry" />
 		<Flag Name="MET_EMMY" Description="1 == You know each other's name" />
-<!--
-		<Flag Name="MET_ETHELN" />
-		<Flag Name="MET_FEMALE_RASKVEL" />
-		<Flag Name="MET_FEMALE_SYDIAN" />
-		<Flag Name="MET_FEMKORGONNE" />
-		<Flag Name="MET_FLAHNE" />
-		<Flag Name="MET_FYN" />
-		<Flag Name="MET_GEOFF" />
-		<Flag Name="MET_GIALA" />
-		<Flag Name="MET_GIANNA" />
-		<Flag Name="MET_GIANNAS_TALK_MENU" />
-		<Flag Name="MET_GOLD_DESERTER" />
-		<Flag Name="MET_GOO_KNIGHT" />
-		<Flag Name="MET_GRAY_GOO" />
-		<Flag Name="MET_HALEY" />
-		<Flag Name="MET_HANA" />
-		<Flag Name="MET_HEPANE" />
-		<Flag Name="MET_HERMAN" />
-		<Flag Name="MET_HUNTERS_DREAM_SHOPKEEP" />
-		<Flag Name="MET_ILARIA" />
-		<Flag Name="MET_ILODEN" />
-		<Flag Name="MET_INESSA" />
-		<Flag Name="MET_INFECTED_MYR_FEMALE" />
-		<Flag Name="MET_INFECTED_MYR_MALE" />
-		<Flag Name="MET_IRELLIA" />
-		<Flag Name="MET_JEROME" />
-		<Flag Name="MET_JURO" />
-		<Flag Name="MET_KAEDE" />
-		<Flag Name="MET_KARA" />
-		<Flag Name="MET_KEROKORAS" />
--->
+		<Flag Name="MET_ETHELN" Description="1 == You've met Etheln the Feminine Myr male" />
+		<Flag Name="MET_FEMALE_RASKVEL" Description="Number of times you've encountered a female Raskvel" />
+		<Flag Name="MET_FEMKORGONNE" Description="Number of times you've encountered a female Korgonne" />
+		<Flag Name="MET_FLAHNE" Description="1 == You've met Flahne" />
+		<Flag Name="MET_FYN" Description="1 == You've met Fyn" />
+		<Flag Name="MET_GEOFF" Description="1 == You've met Geoff" />
+		<Flag Name="MET_GIALA" Description="1 == You've met Giala" />
+		<Flag Name="MET_GIANNA" Description="1 == You've met Gianna" />
+		<Flag Name="MET_GIANNAS_TALK_MENU" Description="1 == You've talked to Gianna" />
+		<Flag Name="MET_GOLD_DESERTER" Description="1 == You've met the Gold Myr deserter Lys" />
+		<Flag Name="MET_GOO_KNIGHT" Description="Number of times you've encountered a crystal goo knight" />
+		<Flag Name="MET_GRAY_GOO" Description="Number of times you've encountered a gray goo" />
+		<Flag Name="MET_HALEY" Description="1 == You've met Haley" />
+		<Flag Name="MET_HANA" Description="1 == You've met Hana the bartender" />
+		<Flag Name="MET_HEPANE" Description="1 == You've met Hepane" />
+		<Flag Name="MET_HERMAN" Description="1 == You've met Herman the chef" />
+		<Flag Name="MET_ILARIA" Description="1 == You've met Ilaria" />
+		<Flag Name="MET_ILODEN" Description="1 == You've met Iloden the Muscular Myr male" />
+		<Flag Name="MET_INESSA" Description="1 == You've met Inessa" />
+		<Flag Name="MET_INFECTED_MYR_FEMALE" Description="Number of times you've encountered an infected Myr female" />
+		<Flag Name="MET_INFECTED_MYR_MALE" Description="Number of times you've encountered an infected Myr male" />
+		<Flag Name="MET_IRELLIA" Description="1 == You've met Queen Irellia" />
+		<Flag Name="MET_JEROME" Description="1 == You've met Jerome" />
+		<Flag Name="MET_JURO" Description="1 == You've met Ambassador Juro" />
+		<Flag Name="MET_KAEDE" Description="1 == You've met Kaede" />
+		<Flag Name="MET_KARA" Description="1 == You've met Kara" />
+		<Flag Name="MET_KEROKORAS" Description="Number of times you've encountered a kerokoras" />
 		<Flag Name="MET_KIRO" Description="1 == You've met Kiro" />
-<!--
-		<Flag Name="MET_LANE" />
-		<Flag Name="MET_LERRIS" />
-		<Flag Name="MET_LIEVE" />
-		<Flag Name="MET_LILIANA" />
-		<Flag Name="MET_LOLA" />
-		<Flag Name="MET_LYRALLA" />
-		<Flag Name="MET_MALE_RASKVEL_GANG" />
-		<Flag Name="MET_MALE_SYDIAN" />
-		<Flag Name="MET_MCALLISTER" />
-		<Flag Name="MET_MERCHANT_QUEEN" />
-		<Flag Name="MET_MILLIE" />
-		<Flag Name="MET_NAYNA" />
-		<Flag Name="MET_NEHZARA" />
-		<Flag Name="MET_NERRASA" />
-		<Flag Name="MET_NESSA" />
-		<Flag Name="MET_NEVRIE" />
-		<Flag Name="MET_NYREA_ALPHA" />
-		<Flag Name="MET_NYREA_BETA" />
-		<Flag Name="MET_ORRYX" />
-		<Flag Name="MET_PENNY" />
-		<Flag Name="MET_QUENTON" />
-		<Flag Name="MET_RED_DESERTER" />
-		<Flag Name="MET_RENVRA" />
-		<Flag Name="MET_RHENESUNNE" />
-		<Flag Name="MET_SAENDRA" />
-		<Flag Name="MET_SEIFYN" />
-		<Flag Name="MET_SELLERA" />
-		<Flag Name="MET_SELLESY" />
-		<Flag Name="MET_SEMITH" />
-		<Flag Name="MET_SERA" />
-		<Flag Name="MET_SEXBOTS_ON_TARKUS" />
-		<Flag Name="MET_SEXBOT_FEMALE_ON_TARKUS" />
-		<Flag Name="MET_SEXBOT_MALE_ON_TARKUS" />
--->
+		<Flag Name="MET_LANE" Description="1 == You've met Lane" />
+		<Flag Name="MET_LERRIS" Description="1 == You've met Lerris" />
+		<Flag Name="MET_LIEVE" Description="1 == You've met Lieve" />
+		<Flag Name="MET_LILIANA" Description="1 == You've met Liliana" />
+		<Flag Name="MET_LOLA" Description="1 == You've met Lola" />
+		<Flag Name="MET_LYRALLA" Description="1 == You've met Lyralla" />
+		<Flag Name="MET_MALE_RASKVEL_GANG" Description="Number of times you've encountered the male Raskvel gang" />
+		<Flag Name="MET_MCALLISTER" Description="1 == You've met Doctor McAllister" />
+		<Flag Name="MET_MERCHANT_QUEEN" Description="1 == You've met the Gold Myr merchant queen" />
+		<Flag Name="MET_MILLIE" Description="1 == You've met Millie" />
+		<Flag Name="MET_NAYNA" Description="1 == You've met Nayna Triverre" />
+		<Flag Name="MET_NEHZARA" Description="1 == You've met Nehzara" />
+		<Flag Name="MET_NERRASA" Description="1 == You've met Nerrasa" />
+		<Flag Name="MET_NESSA" Description="1 == You've met Nessa" />
+		<Flag Name="MET_NEVRIE" Description="1 == You've met Nevrie" />
+		<Flag Name="MET_NYREA_ALPHA" Description="Number of times you've encountered a Nyrean alpha" />
+		<Flag Name="MET_NYREA_BETA" Description="Number of times you've encountered a Nyrean beta" />
+		<Flag Name="MET_ORRYX" Description="1 == You've met Orryx" />
+		<Flag Name="MET_PENNY" Description="1 == You've met Penny" />
+		<Flag Name="MET_QUENTON" Description="1 == You've met Quenton" />
+		<Flag Name="MET_RED_DESERTER" Description="1 == You've met the Red Myr deserter Briha" />
+		<Flag Name="MET_RENVRA" Description="1 == You've met Renvra" />
+		<Flag Name="MET_RHENESUNNE" Description="1 == You've met Anyxine Rhenesunne" />
+		<Flag Name="MET_SAENDRA" Description="1 == You've met Saendra" />
+		<Flag Name="MET_SEIFYN" Description="1 == You've met Seifyn" />
+		<Flag Name="MET_SELLERA" Description="1 == You've met Field Marshal Sellera" />
+		<Flag Name="MET_SELLESY" Description="1 == You've met Sellesy" />
+		<Flag Name="MET_SEMITH" Description="1 == You've met Semith" />
+		<Flag Name="MET_SERA" Description="1 == You've met Sera" />
+		<Flag Name="MET_SEXBOTS_ON_TARKUS" Description="Number of times you've encountered a sexbot on Tarkus" />
+		<Flag Name="MET_SEXBOT_FEMALE_ON_TARKUS" Description="Number of times you've encountered a female sexbot on Tarkus" />
+		<Flag Name="MET_SEXBOT_MALE_ON_TARKUS" Description="Number of times you've encountered a male sexbot on Tarkus" />
 		<Flag Name="MET_SHEKKA" Description="1 == You've met Shekka" />
-<!--
-		<Flag Name="MET_SHIARE" />
-		<Flag Name="MET_SHOWER_GIRLS" />
-		<Flag Name="MET_SIMONE" />
-		<Flag Name="MET_SYDIAN_MALE" />
--->
+		<Flag Name="MET_SHIARE" Description="1 == You've met Shiare" />
+		<Flag Name="MET_SIMONE" Description="1 == You've met Simone" />
+		<Flag Name="MET_SYDIAN_MALE" Description="Number of times you've encountered a male Sydian" />
 		<Flag Name="MET_SYRI" Description="1 == You've met Syri" />
+		<Flag Name="MET_TAIVRA" Description="1 == You've met Taivra" />
+		<Flag Name="MET_TERENSHA" Description="1 == You've met Terensha" />
+		<Flag Name="MET_TLAKO" Description="1 == You've met Tlako" />
+		<Flag Name="MET_UGC_TROOPER_AT_CHASMFALL" Description="1 == You've met Sergeant Horace Decker at the Stellar Tether" />
+		<Flag Name="MET_VAANDE" Description="1 == You've met Vaande" />
+		<Flag Name="MET_VAHN" Description="1 == You've met Vahn" />
+		<Flag Name="MET_VANAE_HUNTRESS" Description="Number of times you've encountered a Vanae huntress" />
+		<Flag Name="MET_VANAE_MAIDEN" Description="Number of times you've encountered a Vanae maiden" />
+		<Flag Name="MET_VARMINT" Description="Number of times you've encountered a varmint" />
+		<Flag Name="MET_VARMINT_PACK" Description="Number of times you've encountered a varmint pack" />
+		<Flag Name="MET_VI" Description="1 == You've met Vi" />
+		<Flag Name="MET_VKO" Description="1 == You've met V-Ko" />
+		<Flag Name="MET_WETRAXXEL_BRAWLER" Description="Number of times you've encountered a Wetraxxel brawler" />
+		<Flag Name="MET_WETRA_HOUND" Description="Number of times you've encountered a Wetra hound" />
+		<Flag Name="MET_XANTHE" Description="1 == You've met Xanthe" />
+		<Flag Name="MET_XOTCHI" Description="1 == You've met Xotchi" />
+		<Flag Name="MET_YAMMI" Description="1 == You've met Yammi" />
+		<Flag Name="MET_YANCY" Description="1 == You've met Yancy" />
+		<Flag Name="MET_YARASTA" Description="1 == You've met Yarasta" />
+		<Flag Name="MET_ZEPHYR" Description="1 == You've met Zephyr" />
+		<Flag Name="MET_ZODEE" Description="1 == You've met Zo'dee" />
 <!--
-		<Flag Name="MET_TAIVRA" />
-		<Flag Name="MET_TERENSHA" />
-		<Flag Name="MET_TLAKO" />
-		<Flag Name="MET_UGC_TROOPER_AT_CHASMFALL" />
-		<Flag Name="MET_VAANDE" />
-		<Flag Name="MET_VAHN" />
-		<Flag Name="MET_VANAE_HUNTRESS" />
-		<Flag Name="MET_VANAE_MAIDEN" />
-		<Flag Name="MET_VARMINT" />
-		<Flag Name="MET_VI" />
-		<Flag Name="MET_VKO" />
-		<Flag Name="MET_WETRAXXEL_BRAWLER" />
-		<Flag Name="MET_WETRA_HOUND" />
-		<Flag Name="MET_XANTHE" />
-		<Flag Name="MET_XOTCHI" />
-		<Flag Name="MET_YAMMI" />
-		<Flag Name="MET_YANCY" />
-		<Flag Name="MET_YARASTA" />
-		<Flag Name="MET_ZEPHYR" />
-		<Flag Name="MET_ZODEE" />
 		<Flag Name="MHENGA_PROBE_CASH_GOT" />
 		<Flag Name="MILKED_SHIARE" />
 		<Flag Name="MILK_BARN_COCKMILKER_BROKEN" />
@@ -2531,11 +2520,11 @@
 		<Flag Name="PUPPYSLUTMAS_2014_DRINKS" Description="Number of drinks PC has had at the party" />
 		<Flag Name="PUPPYSLUTMAS_2014_SYRI_CLOTHES" />
 		<Flag Name="PUPPYSLUTMAS_2014_SYRI_OFFER" Description="1 == Syri offered to take PC to family party" />
+		<Flag Name="PURCHASED_FROM_EMS" Description="1 == You've bought something from Emmy" />
+		<Flag Name="PURCHASED_FROM_SERA" Description="1 == You've bought something from Sera" />
+		<Flag Name="PURCHASED_GENES_GALO" Description="1 == You've bought Gene's GaloMax" />
+		<Flag Name="PURCHASED_SERAS_GALO" Description="1 == You've bought Sera's GaloMax" />
 <!--
-		<Flag Name="PURCHASED_FROM_EMS" />
-		<Flag Name="PURCHASED_FROM_SERA" />
-		<Flag Name="PURCHASED_GENES_GALO" />
-		<Flag Name="PURCHASED_SERAS_GALO" />
 		<Flag Name="PUT_LOAD_IN_CASS" />
 		<Flag Name="QUEENSGUARD_STAB_TIME" />
 		<Flag Name="QUEEN_OF_THE_DEEP_ENCOUNTERED" />
