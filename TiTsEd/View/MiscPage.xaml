@@ -65,9 +65,6 @@
                     <TextBlock Style="{StaticResource Header}" Text="Pregnancy" />
                 </Border>
                 <common:AutoGrid Columns="3">
-                    <TextBlock />
-                    <TextBlock Text="Base" TextAlignment="Center" />
-                    <TextBlock Text="Modifier" TextAlignment="Center" />
 
                     <Label Content="Multiplier" />
                     <common:MyNumericBox Width="100"
@@ -104,16 +101,16 @@
                 </Border>
                 <common:AutoGrid Columns="2">
                     <Label Content="Ass" />
-                    <common:MyNumericBox Value="{Binding Game.AssTease}" Upper="100" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.AssTease}" />
 
                     <Label Content="Chest" />
-                    <common:MyNumericBox Value="{Binding Game.ChestTease}" Upper="100" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.ChestTease}" />
 
                     <Label Content="Crotch" />
-                    <common:MyNumericBox Value="{Binding Game.CrotchTease}" Upper="100" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.CrotchTease}" />
 
                     <Label Content="Hips" />
-                    <common:MyNumericBox Value="{Binding Game.HipsTease}" Upper="100" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.HipsTease}" />
                 </common:AutoGrid>
             </StackPanel>
         </Grid>

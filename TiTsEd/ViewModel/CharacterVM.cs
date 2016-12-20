@@ -423,7 +423,10 @@ namespace TiTsEd.ViewModel {
 
         public int Feminity {
             get { return GetInt("femininity"); }
-            set { SetValue("femininity", value); }
+            set { SetValue("femininity", value);
+                OnPropertyChanged("LipRating");
+                OnPropertyChanged("LipRatingTip");
+            }
         }
 
         public int Tone {
@@ -481,6 +484,7 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("antennae"); }
             set { SetValue("antennae", value); }
         }
+
         public int AntennaeType {
             get { return GetInt("antennaeType"); }
             set { SetValue("antennaeType", value); }
@@ -490,10 +494,12 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("horns"); }
             set { SetValue("horns", value); }
         }
+
         public int HornLength {
             get { return GetInt("hornLength"); }
             set { SetValue("hornLength", value); }
         }
+
         public int HornType {
             get { return GetInt("hornType"); }
             set { SetValue("hornType", value); }
@@ -503,10 +509,12 @@ namespace TiTsEd.ViewModel {
             get { return GetDouble("hairLength"); }
             set { SetValue("hairLength", value); }
         }
+
         public String HairColor {
             get { return GetString("hairColor"); }
             set { SetValue("hairColor", value); }
         }
+
         public String HairStyle {
             get {
                 if (GetString("hairStyle") == "null") {
@@ -523,21 +531,26 @@ namespace TiTsEd.ViewModel {
                 
             }
         }
+
         public int HairType {
             get { return GetInt("hairType"); }
             set { SetValue("hairType", value); }
         }
+
         public int FaceType {
             get { return GetInt("faceType"); }
             set { SetValue("faceType", value); }
         }
+
         public List<FlagItem> FaceFlags {
             get { return getFlagList(GetObj("faceFlags"), XmlData.Current.Body.FaceFlags); }
         }
+
         public int EarLength {
             get { return GetInt("earLength"); }
             set { SetValue("earLength", value); }
         }
+
         public bool EarLengthEnabled {
             get {
                 //lookup ear type
@@ -553,6 +566,7 @@ namespace TiTsEd.ViewModel {
                 return false;
             }
         }
+
         public int EarType {
             get { return GetInt("earType"); }
             set {
@@ -560,34 +574,75 @@ namespace TiTsEd.ViewModel {
                 OnPropertyChanged("EarLengthEnabled");
             }
         }
+
         public int EyeType {
             get { return GetInt("eyeType"); }
             set { SetValue("eyeType", value); }
         }
+
         public String EyeColor {
             get { return GetString("eyeColor"); }
             set { SetValue("eyeColor", value); }
         }
+
         public int TongueType {
             get { return GetInt("tongueType"); }
             set { SetValue("tongueType", value); }
         }
+
         public List<FlagItem> TongueFlags {
             get { return getFlagList(GetObj("tongueFlags"), XmlData.Current.Body.TongueFlags); }
         }
 
         public int LipSize {
             get { return GetInt("lipMod"); }
-            set { SetValue("lipMod", value); }
+            set { SetValue("lipMod", value);
+                OnPropertyChanged("LipRating");
+                OnPropertyChanged("LipRatingTip");
+            }
         }
+
+        public int LipRating {
+            get { return LipSize + (Feminity / 25); }
+        }
+
+        public string LipRatingTip {
+            get {
+                string result = "";
+                int lips = LipRating;
+                if (lips <= 1) {
+                    result = "pencil-thin";
+                } else if (lips <= 2) {
+                    result = "supple";
+                } else if (lips <= 3) {
+                    result = "plump";
+                } else if (lips <= 4) {
+                    result = "luscious";
+                } else if (lips <= 5) {
+                    result = "swollen";
+                } else if (lips <= 6) {
+                    result = "exquisitely large";
+                } else if (lips <= 7) {
+                    result = "bloated";
+                } else if (lips <= 8) {
+                    result = "whorish";
+                } else {
+                    result = "scylla-tier";
+                }
+                return result;
+            }
+        }
+
         public String LipColor {
             get { return GetString("lipColor"); }
             set { SetValue("lipColor", value); }
         }
+
         public int BeardLength {
             get { return GetInt("beardLength"); }
             set { SetValue("beardLength", value); }
         }
+
         public int BeardStyle {
             get { return GetInt("beardStyle"); }
             set { SetValue("beardStyle", value); }

@@ -98,7 +98,7 @@
                 </Expander>
                 <common:AutoGrid>
                     <TextBlock              Text="Lip Mod"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.LipSize}" ToolTip="This is based on femininity as well." />
+                    <common:MyNumericBox    Value="{Binding Game.Character.LipSize}" ToolTip="This is based on femininity as well." Tip="{Binding Game.Character.LipRatingTip}" />
 
                     <TextBlock              Text="Lip Color"/>
                     <ComboBox Text="{Binding Game.Character.LipColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
