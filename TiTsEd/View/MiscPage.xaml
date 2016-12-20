@@ -20,41 +20,49 @@
 
         <Grid Margin="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+            <StackPanel Grid.Row="1"
+                        Grid.Column="1"
+                        Orientation="Vertical">
                 <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="History" Style="{StaticResource Header}"/>
+                    <TextBlock Style="{StaticResource Header}" Text="History" />
                 </Border>
                 <common:AutoGrid Columns="2">
-                    <Label      Content="Upbringing"/>
-                    <common:MyComboBox  SelectedValue="{Binding Game.PCUpbringing}" ItemsSource="{Binding Data.General.Upbringings}"/>
+                    <Label Content="Upbringing" />
+                    <common:MyComboBox ItemsSource="{Binding Data.General.Upbringings}" SelectedValue="{Binding Game.PCUpbringing}" />
 
-                    <Label      Content="Affinity"/>
-                    <ComboBox   SelectedValue="{Binding Game.Character.Affinity}" ItemsSource="{Binding Data.General.Affinities}" Style="{StaticResource EditableTextBox}"/>
+                    <Label Content="Affinity" />
+                    <ComboBox ItemsSource="{Binding Data.General.Affinities}"
+                              SelectedValue="{Binding Game.Character.Affinity}"
+                              Style="{StaticResource EditableTextBox}" />
 
-                    <Label      Content="Original Race"/>
-                    <ComboBox   SelectedValue="{Binding Game.Character.OriginalRace}" ItemsSource="{Binding Data.General.OriginalRaces}" Style="{StaticResource EditableTextBox}"/>
+                    <Label Content="Original Race" />
+                    <ComboBox ItemsSource="{Binding Data.General.OriginalRaces}"
+                              SelectedValue="{Binding Game.Character.OriginalRace}"
+                              Style="{StaticResource EditableTextBox}" />
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="1">
+            <StackPanel Grid.Row="1"
+                        Grid.Column="3"
+                        Orientation="Vertical">
                 <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Pregnancy" Style="{StaticResource Header}"/>
+                    <TextBlock Style="{StaticResource Header}" Text="Pregnancy" />
                 </Border>
                 <common:AutoGrid Columns="3">
                     <TextBlock />
@@ -62,17 +70,50 @@
                     <TextBlock Text="Modifier" TextAlignment="Center" />
 
                     <Label Content="Multiplier" />
-                    <common:MyNumericBox Width="100" Value="{Binding Game.Character.PregnancyMultiplierRaw}" ToolTip="Base" />
-                    <common:MyNumericBox Width="100" Value="{Binding Game.Character.PregnancyMultiplierMod}" ToolTip="Modifier" />
+                    <common:MyNumericBox Width="100"
+                                         ToolTip="Base"
+                                         Value="{Binding Game.Character.PregnancyMultiplierRaw}" />
+                    <common:MyNumericBox Width="100"
+                                         ToolTip="Modifier"
+                                         Value="{Binding Game.Character.PregnancyMultiplierMod}" />
 
                     <Label Content="Incubation Bonus Mother" />
-                    <common:MyNumericBox Width="100" Value="{Binding Game.Character.PregnancyIncubationBonusMotherRaw}" ToolTip="Base" />
-                    <common:MyNumericBox Width="100" Value="{Binding Game.Character.PregnancyIncubationBonusMotherMod}" ToolTip="Modifier" />
+                    <common:MyNumericBox Width="100"
+                                         ToolTip="Base"
+                                         Value="{Binding Game.Character.PregnancyIncubationBonusMotherRaw}" />
+                    <common:MyNumericBox Width="100"
+                                         ToolTip="Modifier"
+                                         Value="{Binding Game.Character.PregnancyIncubationBonusMotherMod}" />
 
                     <Label Content="Incubation Bonus Father" />
-                    <common:MyNumericBox Width="100" Value="{Binding Game.Character.PregnancyIncubationBonusFatherRaw}" ToolTip="Base" />
-                    <common:MyNumericBox Width="100" Value="{Binding Game.Character.PregnancyIncubationBonusFatherMod}" ToolTip="Modifier" />
+                    <common:MyNumericBox Width="100"
+                                         ToolTip="Base"
+                                         Value="{Binding Game.Character.PregnancyIncubationBonusFatherRaw}" />
+                    <common:MyNumericBox Width="100"
+                                         ToolTip="Modifier"
+                                         Value="{Binding Game.Character.PregnancyIncubationBonusFatherMod}" />
 
+                </common:AutoGrid>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2"
+                        Grid.Column="1"
+                        Orientation="Vertical">
+                <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Style="{StaticResource Header}" Text="Tease Stats" />
+                </Border>
+                <common:AutoGrid Columns="2">
+                    <Label Content="Ass" />
+                    <common:MyNumericBox Value="{Binding Game.AssTease}" Upper="100" />
+
+                    <Label Content="Chest" />
+                    <common:MyNumericBox Value="{Binding Game.ChestTease}" Upper="100" />
+
+                    <Label Content="Crotch" />
+                    <common:MyNumericBox Value="{Binding Game.CrotchTease}" Upper="100" />
+
+                    <Label Content="Hips" />
+                    <common:MyNumericBox Value="{Binding Game.HipsTease}" Upper="100" />
                 </common:AutoGrid>
             </StackPanel>
         </Grid>

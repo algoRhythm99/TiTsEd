@@ -296,8 +296,7 @@ namespace TiTsEd.ViewModel {
             get { return !IsPC; }
         }
 
-        public int PCUpbringing
-        {
+        public int PCUpbringing {
             get {
                 if (IsPC && _flags.HasValue("PC_UPBRINGING") ) {
                     return _flags.GetInt("PC_UPBRINGING");
@@ -307,6 +306,58 @@ namespace TiTsEd.ViewModel {
             set {
                 _flags.SetValue("PC_UPBRINGING", value);
                 OnFlagChanged("PC_UPBRINGING");
+            }
+        }
+
+        public int AssTease {
+            get {
+                if (IsPC && _flags.HasValue("TIMES_BUTT_TEASED")) {
+                    return _flags.GetInt("TIMES_BUTT_TEASED");
+                }
+                return 0;
+            }
+            set {
+                _flags.SetValue("TIMES_BUTT_TEASED", value);
+                OnFlagChanged("TIMES_BUTT_TEASED");
+            }
+        }
+
+        public int ChestTease {
+            get {
+                if (IsPC && _flags.HasValue("TIMES_CHEST_TEASED")) {
+                    return _flags.GetInt("TIMES_CHEST_TEASED");
+                }
+                return 0;
+            }
+            set {
+                _flags.SetValue("TIMES_CHEST_TEASED", value);
+                OnFlagChanged("TIMES_CHEST_TEASED");
+            }
+        }
+
+        public int CrotchTease {
+            get {
+                if (IsPC && _flags.HasValue("TIMES_CROTCH_TEASED")) {
+                    return _flags.GetInt("TIMES_CROTCH_TEASED");
+                }
+                return 0;
+            }
+            set {
+                _flags.SetValue("TIMES_CROTCH_TEASED", value);
+                OnFlagChanged("TIMES_CROTCH_TEASED");
+            }
+        }
+
+        public int HipsTease {
+            get {
+                if (IsPC && _flags.HasValue("TIMES_HIPS_TEASED")) {
+                    return _flags.GetInt("TIMES_HIPS_TEASED");
+                }
+                return 0;
+            }
+            set {
+                _flags.SetValue("TIMES_HIPS_TEASED", value);
+                OnFlagChanged("TIMES_HIPS_TEASED");
             }
         }
 
@@ -380,8 +431,7 @@ namespace TiTsEd.ViewModel {
         public string RawDataSearchText
         {
             get { return _rawDataSearchText; }
-            set
-            {
+            set {
                 if (_rawDataSearchText == value) {
                     return;
                 }
