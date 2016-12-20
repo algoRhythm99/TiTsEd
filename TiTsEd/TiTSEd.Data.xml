@@ -2657,39 +2657,41 @@
 		<Flag Name="SEMITH_NOTICE_1_READ" />
 		<Flag Name="SEMITH_SEXED" />
 		<Flag Name="SEMITH_TALK_ROUND" />
-		<Flag Name="SERA FUCKED PCS TAILCUNT" />
-		<Flag Name="SERA_CREATE_VAG" />
-		<Flag Name="SERA_EXHIBITION_BLOWJOB" />
-		<Flag Name="SERA_FACE_RIDE_TRAINING" />
-		<Flag Name="SERA_INCH_STEAL" />
-		<Flag Name="SERA_INCH_STEALING_HELP" />
-		<Flag Name="SERA_INCH_STEALING_SEX" />
-		<Flag Name="SERA_INFULENCE" />
-		<Flag Name="SERA_IN_JARDI_THREESOME" />
-		<Flag Name="SERA_NO_SEX" />
-		<Flag Name="SERA_PARTY_ATTIRE" />
-		<Flag Name="SERA_PARTY_DATE" />
-		<Flag Name="SERA_PARTY_FUCKED" />
-		<Flag Name="SERA_PARTY_INVITE" />
-		<Flag Name="SERA_PARTY_STAGE1" />
-		<Flag Name="SERA_PARTY_STAGE2" />
-		<Flag Name="SERA_PARTY_STAGE3" />
-		<Flag Name="SERA_PARTY_STAGE4" />
-		<Flag Name="SERA_SALARY_DATE" />
-		<Flag Name="SERA_SALARY_PAID" />
-		<Flag Name="SERA_STUCK_IT_ALL_IN_BUTT" />
-		<Flag Name="SERA_TAILED" />
-		<Flag Name="SERA_TALKED_ABOUT_BEING_PISSED_OFF" />
-		<Flag Name="SERA_TALKS_DEMONS" />
-		<Flag Name="SERA_TALKS_FURRIES" />
-		<Flag Name="SERA_TALKS_PAST" />
-		<Flag Name="SERA_TALKS_PRESENT" />
-		<Flag Name="SERA_TIT_FUCK_LUCKY_DIP" />
-		<Flag Name="SERA_TRIPLE_X_RATED" />
-		<Flag Name="SERA_UNLOCK_CLIPPEX" />
-		<Flag Name="SERA_UNLOCK_LUCIFIER" />
-		<Flag Name="SERA_UNLOCK_SEMENS" />
-		<Flag Name="SERA_URETHRA_TAILFUCKS" />
+-->
+		<Flag Name="SERA FUCKED PCS TAILCUNT" Description="Number of times Sera has used your tailcunt" />
+		<Flag Name="SERA_CREATE_VAG" Description="Sera has forced you to grow a vagina" />
+		<Flag Name="SERA_EXHIBITION_BLOWJOB" Description="Number of times Sera has made you a give a public blowjob" />
+		<Flag Name="SERA_FACE_RIDE_TRAINING" Description="Number of times Sera has ridden your face" />
+		<Flag Name="SERA_INCH_STEAL" Description="Number of inches Sera has absorbed from your penis" />
+		<Flag Name="SERA_INCH_STEALING_HELP" Description="Number of times you have helped untangle Sera's tail" />
+		<Flag Name="SERA_INCH_STEALING_SEX" Description="Number of times Sera has absorbed inches from your penis" />
+		<Flag Name="SERA_INFULENCE" Description="Sera's influence score" />
+		<Flag Name="SERA_IN_JARDI_THREESOME" Description="Number of times in a threesome with Sera and Jardi" />
+		<Flag Name="SERA_NO_SEX" Description="-1 == Sex/Talk disabled until biggestcock < 12&#xD;&#xA;1 == Sera is refusing to have sex with you" />
+		<Flag Name="SERA_PARTY_ATTIRE" Description="corset&#xD;&#xA;jeans and blouse&#xD;&#xA;business suit&#xD;&#xA;dress" />
+		<Flag Name="SERA_PARTY_DATE" Description="Party finished timestamp" />
+		<Flag Name="SERA_PARTY_FUCKED" Description="Number of sexy times at the party with Sera" />
+		<Flag Name="SERA_PARTY_INVITE" Description="Invitation/Quest status&#xD;&#xA;0 == option added to Talk options&#xD;&#xA;1 == second offer&#xD;&#xA;2 == party finished&#xD;&#xA;3 == party finished with &lt; 90 influence&#xD;&#xA;4 == party finished with &lt;= 190 influence" />
+		<Flag Name="SERA_PARTY_STAGE1" Description="PC's outfit for the party:&#xD;&#xA;butler&#xD;&#xA;schoolgirl" />
+		<Flag Name="SERA_PARTY_STAGE2" Description="Greeting type:&#xD;&#xA;hello&#xD;&#xA;bow&#xD;&#xA;curtsy&#xD;&#xA;appease&#xD;&#xA;nothing" />
+		<Flag Name="SERA_PARTY_STAGE3" Description="Answer to Sera's issue:&#xD;&#xA;nothing&#xD;&#xA;encourage&#xD;&#xA;relax" />
+		<Flag Name="SERA_PARTY_STAGE4" Description="Sex party option:jarvis&#xD;&#xA;stay&#xD;&#xA;sera&#xD;&#xA;vedice" />
+		<Flag Name="SERA_SALARY_DATE" Description="Date of last salary pay" />
+		<Flag Name="SERA_SALARY_PAID" Description="Number of times paid salary" />
+		<Flag Name="SERA_STUCK_IT_ALL_IN_BUTT" Description="Number of times Sera has stuffed your ass with dicks" />
+		<Flag Name="SERA_TAILED" Description="Number of times Sera has used her tail on you" />
+		<Flag Name="SERA_TALKED_ABOUT_BEING_PISSED_OFF" Description="1 == Sera has talked about why she is angry" />
+		<Flag Name="SERA_TALKS_DEMONS" Description="1 == Sera has talked about her appearance" />
+		<Flag Name="SERA_TALKS_FURRIES" Description="1 == Sera has talked about her hatred of furries" />
+		<Flag Name="SERA_TALKS_PAST" Description="1 == Sera has talked about her past" />
+		<Flag Name="SERA_TALKS_PRESENT" Description="1 == Sera has talked about her shop" />
+		<Flag Name="SERA_TIT_FUCK_LUCKY_DIP" Description="Number of times Sera has Titfucked or offered an item" />
+		<Flag Name="SERA_TRIPLE_X_RATED" Description="-1 == Your dick has grown larger than 12 inches after shrinking it&#xD;&#xA;0 == Sera has ordered you to shrink your dick&#xD;&#xA;2 == You have lost your dick&#xD;&#xA;3 == You do not have a 12&gt;= inch penis&#xD;&#xA;4 == You have proven your submission to Sera" />
+		<Flag Name="SERA_UNLOCK_CLIPPEX" Description="1 == Sera will offer to sell Clippex" />
+		<Flag Name="SERA_UNLOCK_LUCIFIER" Description="1 == Sera will offer to sell Lucifier" />
+		<Flag Name="SERA_UNLOCK_SEMENS" Description="1 == Sera will offer to sell Semen's Friend" />
+		<Flag Name="SERA_URETHRA_TAILFUCKS" Description="Number of times Sera has tail-fucked your urethra" />
+<!--
 		<Flag Name="SET_XANTHE_SEX" />
 		<Flag Name="SEXBOTS_GENDER_SETTING" />
 		<Flag Name="SEXBOTS_GENDER_SETTINGS" />
@@ -2864,54 +2866,48 @@
 		<Flag Name="THOLLUM_PASS_REQUESTED" />
 		<Flag Name="THOLLUM_TOURED" />
 		<Flag Name="THROBB_QUANTITY_STORAGE_CHEAT" />
-		<Flag Name="TIMES_ATE_DELILAH_OUT" />
 -->
+		<Flag Name="TIMES_ATE_DELILAH_OUT" Description="Number of times you've sat on Delilah's face" />
 		<Flag Name="TIMES_BET_YOURSELF_AGAINST_SYRI" Description="Number of times you've put your ass on the line" />
 		<Flag Name="TIMES_BUTTFUCKED_BY_SYRI" Description="Number of times lost AND been buttfucked" />
-<!--
-		<Flag Name="TIMES_BUTT_TEASED" />
-		<Flag Name="TIMES_CAUGHT_BY_ELDER_VENUS_PITCHER" />
-		<Flag Name="TIMES_CELISE_IN_BALLS" />
-		<Flag Name="TIMES_CHEST_TEASED" />
-		<Flag Name="TIMES_CROTCH_TEASED" />
-		<Flag Name="TIMES_ELECTROSTIMMED_BY_VKO" />
-		<Flag Name="TIMES_FED_CUNT_SNAKE" />
-		<Flag Name="TIMES_FROTTAGED_PENNY" />
-		<Flag Name="TIMES_FUCKED_BURT" />
-		<Flag Name="TIMES_HAD_SEX_WITH_DELILAH_IN_SOME_WAY" />
-		<Flag Name="TIMES_HAND_MILKED_SELF" />
-		<Flag Name="TIMES_HIPS_TEASED" />
-		<Flag Name="TIMES_JACKED_PENNY_OFF_WITH_ONAHOLE" />
-		<Flag Name="TIMES_LOSS_DOMMED_BY_NALEEN" />
-		<Flag Name="TIMES_LOSS_SUCKED_ZIL_MALE" />
--->
+		<Flag Name="TIMES_BUTT_TEASED" Description="Number of times you've used ass tease" />
+		<Flag Name="TIMES_CAUGHT_BY_ELDER_VENUS_PITCHER" Description="Number of times you've been caught by the Elder Venus Pitcher" />
+		<Flag Name="TIMES_CELISE_IN_BALLS" Description="Number of times Celise has gone into your balls" />
+		<Flag Name="TIMES_CHEST_TEASED" Description="Number of times you've used chest tease" />
+		<Flag Name="TIMES_CROTCH_TEASED" Description="Number of times you've used crotch tease" />
+		<Flag Name="TIMES_ELECTROSTIMMED_BY_VKO" Description="Number of times you've been electro-stimulated by V-Ko" />
+		<Flag Name="TIMES_FED_CUNT_SNAKE" Description="Number of times you've fed your cunt-snake" />
+		<Flag Name="TIMES_FROTTAGED_PENNY" Description="Number of times you've frottaged with Penny" />
+		<Flag Name="TIMES_FUCKED_BURT" Description="Number of times you've had sex with Burt" />
+		<Flag Name="TIMES_HAD_SEX_WITH_DELILAH_IN_SOME_WAY" Description="Number of times you've had sex with Delilah" />
+		<Flag Name="TIMES_HAND_MILKED_SELF" Description="Number of times you've milked yourself" />
+		<Flag Name="TIMES_HIPS_TEASED" Description="Number of times you've used hips tease" />
+		<Flag Name="TIMES_JACKED_PENNY_OFF_WITH_ONAHOLE" Description="Number of times you've used an onahole on Penny" />
+		<Flag Name="TIMES_LOSS_DOMMED_BY_NALEEN" Description="Number of times you've lost to a Naleen" />
+		<Flag Name="TIMES_LOSS_SUCKED_ZIL_MALE" Description="Number of times you've been forced to suck a male Zil" />
 		<Flag Name="TIMES_LOST_TO_SYRI" Description="Number of times you've lost betting to Syri!" />
-<!--
-		<Flag Name="TIMES_LOST_TO_ZIL" />
-		<Flag Name="TIMES_MET_FEMZIL" />
-		<Flag Name="TIMES_MET_MALE_NALEEN" />
-		<Flag Name="TIMES_MET_NALEEN" />
-		<Flag Name="TIMES_MET_VENUS_PITCHER" />
-		<Flag Name="TIMES_PENNY_PAWJOBBED" />
-		<Flag Name="TIMES_RODE_BY_SERA" />
-		<Flag Name="TIMES_RODE_RASKVEL_FACE" />
-		<Flag Name="TIMES_SAT_ON_JADES_FACE" />
-		<Flag Name="TIMES_SEXED_ALISS" />
--->
+		<Flag Name="TIMES_LOST_TO_ZIL" Description="Number of times you've lost to Zil" />
+		<Flag Name="TIMES_MET_FEMZIL" Description="Number of times you've encountered a female Zil" />
+		<Flag Name="TIMES_MET_MALE_NALEEN" Description="Number of times you've encountered a male Naleen" />
+		<Flag Name="TIMES_MET_NALEEN" Description="Number of times you've encountered a Naleen" />
+		<Flag Name="TIMES_MET_VENUS_PITCHER" Description="Number of times you've encountered a Venus Pitcher" />
+		<Flag Name="TIMES_PENNY_PAWJOBBED" Description="Number of times you've gotten a pawjob from Penny" />
+		<Flag Name="TIMES_RODE_BY_SERA" Description="Number of times Sera has ridden your dick" />
+		<Flag Name="TIMES_RODE_RASKVEL_FACE" Description="Number of times you've ridden a Raskvel's face" />
+		<Flag Name="TIMES_SAT_ON_JADES_FACE" Description="Number of times you've ridden Jade's face" />
+		<Flag Name="TIMES_SEXED_ALISS" Description="Number of times you've had sex with Aliss" />
 		<Flag Name="TIMES_SEXED_SHEKKA" Description="Number of times you've had sex with Shekka" />
 		<Flag Name="TIMES_SHEKKA_KIRBUED" Description="Number of times you've used your oversized member on Shekka" />
 		<Flag Name="TIMES_TAILVIBED_WITH_SHEKKA" Description="Number of times you've ridden Shekka's tail" />
-<!--
-		<Flag Name="TIMES_TAKEN_DUMBFUCK" />
-		<Flag Name="TIMES_TAKEN_RUST_BRO_IN_COOCH" />
-		<Flag Name="TIMES_THREE_D_SURPRISE_SEXED" />
-		<Flag Name="TIMES_THROBB_USED" />
-		<Flag Name="TIMES_VENUS_PITCHER_ELDER_ENCOUNTERED" />
-		<Flag Name="TIMES_WINSEXED_NALEEN" />
--->
+		<Flag Name="TIMES_TAKEN_DUMBFUCK" Description="Number of times you've used Dumbfuck" />
+		<Flag Name="TIMES_TAKEN_RUST_BRO_IN_COOCH" Description="Number of times you've had sex with a male Sydian" />
+		<Flag Name="TIMES_THREE_D_SURPRISE_SEXED" Description="Number of times Three-Dee has interrupted your sex with Burt" />
+		<Flag Name="TIMES_THROBB_USED" Description="Number of times you've used Throbb" />
+		<Flag Name="TIMES_VENUS_PITCHER_ELDER_ENCOUNTERED" Description="Number of times you've encountered an Elder Venus Pitcher" />
+		<Flag Name="TIMES_WINSEXED_NALEEN" Description="Number of times you've had victory sex with a Naleen" />
 		<Flag Name="TIMES_WON_AGAINST_SYRI" Description="Number of times you've defeated her!" />
+		<Flag Name="TITFUCKED_JADE" Description="Number of times you've titfucked Jade" />
 <!--
-		<Flag Name="TITFUCKED_JADE" />
 		<Flag Name="TLAKO_BASKETS" />
 		<Flag Name="TLAKO_THANKED" />
 		<Flag Name="TOLD_SHADE_SHES_YER_SIS" />
