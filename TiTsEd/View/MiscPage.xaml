@@ -48,8 +48,7 @@
 
                     <Label Content="Affinity" />
                     <ComboBox ItemsSource="{Binding Data.General.Affinities}"
-                              SelectedValue="{Binding Game.Character.Affinity}"
-                              Style="{StaticResource EditableTextBox}" />
+                              SelectedValue="{Binding Game.Character.Affinity}" />
 
                     <Label Content="Original Race" />
                     <ComboBox ItemsSource="{Binding Data.General.OriginalRaces}"
