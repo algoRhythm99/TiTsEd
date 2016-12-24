@@ -215,7 +215,7 @@ namespace TiTsEd.Model
         public int GetInt(Object key, int? defaultValue = null)
         {
             var value = this[key];
-            if (value == null) return defaultValue.Value;
+            if (value == null) return (defaultValue != null) ? defaultValue.Value : 0;
             if (value is string) return Int32.Parse((string)value);
             if (value is double) return (int)(double)value;
             if (value is bool) return (bool)value ? 1 : 0;
@@ -241,7 +241,7 @@ namespace TiTsEd.Model
         public bool GetBool(Object key, bool? defaultValue = null)
         {
             var value = this[key];
-            if (value == null) return defaultValue.Value;
+            if (value == null) return (defaultValue != null) ? defaultValue.Value : false;
             if (value is bool) return (bool)value;
             if (value is uint) return (uint)value == 0;
             if (value is int) return (int)value == 0;

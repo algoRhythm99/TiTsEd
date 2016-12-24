@@ -87,7 +87,7 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            _game.OnPerkChanged(Name);
+            _game.Character.OnPerkChanged(Name);
         }
 
         protected override void OnIsOwnedChanged() {

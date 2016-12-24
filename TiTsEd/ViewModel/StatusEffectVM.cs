@@ -1,8 +1,40 @@
-﻿using System.Linq;
+﻿using System;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
+    public sealed class StatusGroupVM : BindableBase {
+        readonly GameVM _game;
+
+        public StatusGroupVM(GameVM game, string name, StatusEffectVM[] statusEffects) {
+            _game = game;
+            Name = name;
+            StatusEffects = new UpdatableCollection<StatusEffectVM>(statusEffects.Where(x => x.Match(_game.RawDataSearchText)));
+        }
+
+        public new string Name {
+            get;
+            private set;
+        }
+
+        public UpdatableCollection<StatusEffectVM> StatusEffects {
+            get;
+            private set;
+        }
+
+        public Visibility Visibility {
+            get { return StatusEffects.Count != 0 ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
+        public void Update() {
+            StatusEffects.Update();
+            OnPropertyChanged("Visibility");
+        }
+    }
+
     public sealed class StatusEffectVM : StorageClassVM {
         public StatusEffectVM(GameVM game, AmfObject statuses, XmlStorageClass xml)
             : base(game, statuses, xml) {
@@ -64,7 +96,7 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            _game.OnStatusChanged(Name);
+            _game.Character.OnStatusChanged(Name);
         }
 
         protected override void OnIsOwnedChanged() {

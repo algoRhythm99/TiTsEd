@@ -39,7 +39,7 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            _game.OnKeyItemChanged(Name);
+            _game.Character.OnKeyItemChanged(Name);
         }
 
         public override AmfObject GetItems() {

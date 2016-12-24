@@ -18,9 +18,9 @@ namespace TiTsEd.ViewModel {
         private string _characterName;
         private bool _IsPC = true;
         private string[] _characters;
-        readonly List<PerkVM> _allPerks = new List<PerkVM>();
-        readonly List<KeyItemVM> _allKeyItems = new List<KeyItemVM>();
-        readonly StatusEffectVM[] _allStatuses;
+        public readonly List<PerkVM> AllPerks = new List<PerkVM>();
+        public readonly List<KeyItemVM> AllKeyItems = new List<KeyItemVM>();
+        public readonly List<StatusEffectVM> AllStatusEffects = new List<StatusEffectVM>();
         readonly SortedDictionary<string,FlagVM> _allFlags = new SortedDictionary<string,FlagVM>();
 
         public GameVM(AmfFile file, GameVM previousVM)
@@ -42,15 +42,7 @@ namespace TiTsEd.ViewModel {
             var unknownPerkGroup = XmlData.Current.PerkGroups.Last();
             ImportMissingNamedVectors(charPerks, xmlPerks, "storageName", x => x.GetString("tooltip"), unknownPerkGroup.Perks);
 
-            Character.PerkGroups = new List<PerkGroupVM>();
-            foreach (var xmlGroup in XmlData.Current.PerkGroups) {
-                var perksVM = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, charPerks, x)).ToArray();
-                _allPerks.AddRange(perksVM);
-
-                var groupVM = new PerkGroupVM(this, xmlGroup.Name, perksVM);
-                Character.PerkGroups.Add(groupVM);
-            }
-            //Character.Perks = new UpdatableCollection<PerkVM>(_allPerks.Where(x => x.Match(PerkSearchText)));
+            Character.UpdatePerks();
 
             // KeyItems
             var charKeyItems = Character.KeyItemsArray;
@@ -58,22 +50,15 @@ namespace TiTsEd.ViewModel {
             var unknownKeyItemGroup = XmlData.Current.KeyItemGroups.Last();
             ImportMissingNamedVectors(charKeyItems, xmlKeys, "storageName", x => x.GetString("tooltip"), unknownKeyItemGroup.KeyItems);
 
-            Character.KeyItemGroups = new List<KeyItemGroupVM>();
-            foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
-                var keyItemsVM = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, charKeyItems, x)).ToArray();
-                _allKeyItems.AddRange(keyItemsVM);
-
-                var groupVM = new KeyItemGroupVM(this, xmlGroup.Name, keyItemsVM);
-                Character.KeyItemGroups.Add(groupVM);
-            }
-            //Character.KeyItems = new UpdatableCollection<KeyItemVM>(_allKeyItems.Where(x => x.Match(KeyItemSearchText)));
+            Character.UpdateKeyItems();
 
             // Statuses
-            var statuses = Character.StatusEffectsArray;
-            var xmlStatuses = XmlData.Current.Statuses;
-            ImportMissingNamedVectors(statuses, xmlStatuses, "storageName", x => x.GetString("tooltip"));
-            _allStatuses = XmlData.Current.Statuses.OrderBy(x => x.Name).Select(x => new StatusEffectVM(this, statuses, x)).ToArray();
-            Character.StatusEffects = new UpdatableCollection<StatusEffectVM>(_allStatuses.Where(x => x.Match(RawDataSearchText)));
+            var charStatuses = Character.StatusEffectsArray;
+            var xmlStatusEffects = XmlData.Current.StatusEffectGroups.SelectMany(x => x.StatusEffects).ToArray();
+            var unknownStatusEffectsGroup = XmlData.Current.StatusEffectGroups.Last();
+            ImportMissingNamedVectors(charStatuses, xmlStatusEffects, "storageName", x => x.GetString("tooltip"), unknownStatusEffectsGroup.StatusEffects);
+
+            Character.UpdateStatusEffects();
 
             // Flags
             foreach (var xmlFlag in XmlData.Current.Flags) {
@@ -142,30 +127,11 @@ namespace TiTsEd.ViewModel {
                 IsPC = false;
             }
 
-            if (null == Character.KeyItemGroups && (null != _allKeyItems)) {
-                Character.KeyItemGroups = new List<KeyItemGroupVM>();
-                var charKeyItems = Character.KeyItemsArray;
-                foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
-                    var keyItemsVM = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, charKeyItems, x)).ToArray();
-                    var groupVM = new KeyItemGroupVM(this, xmlGroup.Name, keyItemsVM);
-                    Character.KeyItemGroups.Add(groupVM);
-                }
-            }
+            Character.UpdateKeyItems();
 
-            if (null == Character.PerkGroups && (null != _allPerks)) {
-                Character.PerkGroups = new List<PerkGroupVM>();
-                var charPerks = Character.PerksArray;
-                foreach (var xmlGroup in XmlData.Current.PerkGroups) {
-                    var perksVM = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, charPerks, x)).ToArray();
-                    var groupVM = new PerkGroupVM(this, xmlGroup.Name, perksVM);
-                    Character.PerkGroups.Add(groupVM);
-                }
-            }
+            Character.UpdatePerks();
 
-            if (null == Character.StatusEffects && (null != _allStatuses)) {
-                Character.StatusEffects = new UpdatableCollection<StatusEffectVM>(_allStatuses.Where(x => x.Match(RawDataSearchText)));
-            }
-
+            Character.UpdateStatusEffects();
         }
 
         public CharacterVM Character { get; private set; }
@@ -386,22 +352,6 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        /// <summary>
-        /// Returns the perk with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this perk.
-        /// That way, anytime the perk is modified, OnPropertyChanged will be raised for the caller property.
-        /// </summary>
-        public PerkVM GetPerk(string name, [CallerMemberName] string propertyName = null) {
-            var perk = _allPerks.First(x => x.Name == name);
-            perk.GameVMProperties.Add(propertyName);
-            return perk;
-        }
-
-        // Whenever a PerkVM, FlagVM, or StatusVM is modified, it notifies GameVM with those functions so that it updates its dependent properties. 
-        // See also GetPerk, GetFlag, and GetStatus.
-        public void OnPerkChanged(string name) {
-            foreach (var prop in _allPerks.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
-        }
-
         string _keyItemSearchText = "";
         public string KeyItemSearchText {
             get { return _keyItemSearchText; }
@@ -413,19 +363,6 @@ namespace TiTsEd.ViewModel {
                 foreach (var group in Character.KeyItemGroups) group.Update();
             }
         }
-        /// <summary>
-        /// Returns the key item with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this key item.
-        /// That way, anytime the key item is modified, OnPropertyChanged will be raised for the caller property.
-        /// </summary>
-        public KeyItemVM GetKeyItem(string name, [CallerMemberName] string propertyName = null) {
-            var keyItem = _allKeyItems.First(x => x.Name == name);
-            keyItem.GameVMProperties.Add(propertyName);
-            return keyItem;
-        }
-
-        public void OnKeyItemChanged(string name) {
-            foreach (var prop in _allKeyItems.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
-        }
 
         string _rawDataSearchText = "";
         public string RawDataSearchText
@@ -436,7 +373,7 @@ namespace TiTsEd.ViewModel {
                     return;
                 }
                 _rawDataSearchText = value;
-                Character.StatusEffects.Update();
+                foreach (var group in Character.StatusEffectGroups) group.Update();
                 Flags.Update();
             }
         }
@@ -487,20 +424,5 @@ namespace TiTsEd.ViewModel {
         public RelayCommand<FlagVM> DeleteFlagCommand {
             get { return _deleteFlagCommand ?? (_deleteFlagCommand = new RelayCommand<FlagVM>(d => RemoveFlag(d))); }
         }
-
-        /// <summary>
-        /// Returns the status with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this status.
-        /// That way, anytime the status is modified, OnPropertyChanged will be raised for the caller property.
-        /// </summary>
-        public StatusEffectVM GetStatus(string name, [CallerMemberName] string propertyName = null) {
-            var status = _allStatuses.First(x => x.Name == name);
-            status.GameVMProperties.Add(propertyName);
-            return status;
-        }
-
-        public void OnStatusChanged(string name) {
-            foreach (var prop in _allStatuses.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
-        }
-
     }
 }

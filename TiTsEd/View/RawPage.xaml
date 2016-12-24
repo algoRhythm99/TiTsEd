@@ -14,51 +14,37 @@
                 <ResourceDictionary Source="../Themes/PageInclude.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style x:Key="StatusToggle" TargetType="{x:Type ToggleButton}">
-                <Setter Property="Foreground" Value="#808080" />
-                <Setter Property="Background" Value="#00FFFFFF" />
-                <Setter Property="VerticalAlignment" Value="Center" />
+            <Style x:Key="StatusEffectStyle" TargetType="{x:Type TreeViewItem}">
+                <Setter Property="IsExpanded" Value="False" />
+                <Setter Property="Focusable" Value="True" />
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type ToggleButton}">
-                            <Grid Background="{TemplateBinding Background}">
-                                <Path x:Name="up"
-                                      Margin="2,14,2,0"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Top"
-                                      Data="M 0 0 L 5 -5 L 10 0 Z"
-                                      Fill="{TemplateBinding Foreground}"
-                                      SnapsToDevicePixels="True"
-                                      Visibility="Hidden" />
-                                <Path x:Name="down"
-                                      Margin="2,10,2,0"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Top"
-                                      Data="M 0 0 L 5 5 L 10 0 Z"
-                                      Fill="{TemplateBinding Foreground}"
-                                      SnapsToDevicePixels="True" />
-                            </Grid>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Foreground" Value="White" />
-                                    <Setter Property="Background" Value="#A0A0A0" />
-                                </Trigger>
-                                <Trigger Property="IsChecked" Value="True">
-                                    <Setter TargetName="up" Property="Visibility" Value="Visible" />
-                                    <Setter TargetName="down" Property="Visibility" Value="Hidden" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
+                        <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                            <common:NamedVector4Control IsRightSided="True" />
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
             </Style>
 
-            <Style x:Key="StatusStyle" TargetType="{x:Type ListBoxItem}">
-                <Setter Property="Focusable" Value="False" />
+            <Style x:Key="StatusGroupsStyle" TargetType="{x:Type TreeViewItem}">
+                <Setter Property="IsExpanded" Value="True" />
+                <Setter Property="ItemsSource" Value="{Binding StatusEffects}" />
+                <Setter Property="ItemContainerStyle" Value="{StaticResource StorageClassStyle}" />
+                <Setter Property="Focusable" Value="false" />
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                            <common:NamedVector4Control IsRightSided="True" />
+                        <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                            <StackPanel Margin="20,0,0,30"
+                                        Orientation="Vertical"
+                                        Visibility="{Binding Visibility}">
+                                <Border Background="Transparent" IsHitTestVisible="False">
+                                    <TextBlock Margin="4"
+                                               FontSize="14"
+                                               FontWeight="Bold"
+                                               Text="{Binding Name}" />
+                                </Border>
+                                <ItemsPresenter x:Name="ItemsHost" Margin="0,0,0,20" />
+                            </StackPanel>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
@@ -173,13 +159,18 @@
                                                        Path=SelectedItem}" />
             </DataGrid.InputBindings>
         </DataGrid>
-        <ListBox Grid.Row="2"
-                 Grid.Column="2"
-                 Margin="0"
-                 HorizontalAlignment="Stretch"
-                 ItemContainerStyle="{StaticResource StatusStyle}"
-                 ItemsSource="{Binding Game.Character.StatusEffects}"
-                 Padding="10" />
+
+        <TreeView Grid.Row="2"
+                  Grid.Column="2"
+                  Margin="10,0,0,0"
+                  HorizontalAlignment="Stretch"
+                  BorderThickness="0"
+                  Focusable="False"
+                  ItemContainerStyle="{StaticResource StatusGroupsStyle}"
+                  ItemsSource="{Binding Game.Character.StatusEffectGroups}"
+                  KeyboardNavigation.DirectionalNavigation="Contained"
+                  Padding="30"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
 
     </Grid>
 </UserControl>

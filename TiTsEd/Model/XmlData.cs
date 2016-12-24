@@ -42,6 +42,9 @@ namespace TiTsEd.Model {
                     var unknownKeyItems = new XmlKeyItemGroup { Name = "Unknown", KeyItems = new List<XmlStorageClass>() };
                     fileData.KeyItemGroups.Add(unknownKeyItems);
 
+                    var unknownStatusEffects = new XmlStatusEffectGroup { Name = "Unknown", StatusEffects = new List<XmlStorageClass>() };
+                    fileData.StatusEffectGroups.Add(unknownStatusEffects);
+
                     //var unknownItems = new XmlItemGroup { Name = "Unknown", Items = new List<XmlItem>(), Category = ItemCategories.Unknown };
                     //fileData.ItemGroups.Add(unknownItems);
 
@@ -110,8 +113,8 @@ namespace TiTsEd.Model {
         [XmlArray("KeyItems"), XmlArrayItem("KeyItemGroup")]
         public List<XmlKeyItemGroup> KeyItemGroups { get; set; }
 
-        [XmlArray, XmlArrayItem("Status")]
-        public List<XmlStorageClass> Statuses { get; set; }
+        [XmlArray("StatusEffects"), XmlArrayItem("StatusEffectGroup")]
+        public List<XmlStatusEffectGroup> StatusEffectGroups { get; set; }
 
         [XmlArray, XmlArrayItem("Flag")]
         public XmlEnum[] Flags { get; set; }
@@ -261,6 +264,18 @@ namespace TiTsEd.Model {
 
         [XmlElement("KeyItem")]
         public List<XmlStorageClass> KeyItems { get; set; }
+
+        public override string ToString() {
+            return Name;
+        }
+    }
+
+    public sealed class XmlStatusEffectGroup {
+        [XmlAttribute]
+        public string Name { get; set; }
+
+        [XmlElement("StatusEffect")]
+        public List<XmlStorageClass> StatusEffects { get; set; }
 
         public override string ToString() {
             return Name;

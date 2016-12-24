@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using TiTsEd.Model;
 
@@ -361,7 +362,7 @@ namespace TiTsEd.ViewModel {
         public int MaxLust {
             get {
                 int max = 100;
-                var perk = Game.GetPerk("Inhuman Desire");
+                var perk = GetPerk("Inhuman Desire", "MaxLust");
                 if (perk.IsOwned) {
                     max += (int) perk.Value1;
                 }
@@ -382,7 +383,7 @@ namespace TiTsEd.ViewModel {
         public int MaxEnergy {
             get {
                 int max = 100;
-                var perk = Game.GetPerk("Heroic Reserves");
+                var perk = GetPerk("Heroic Reserves", "MaxEnergy");
                 if (perk.IsOwned) {
                     max += 33;
                 }
@@ -465,11 +466,11 @@ namespace TiTsEd.ViewModel {
 
         public int AlcoholTolerance {
             get {
-                var toleranceStat = Game.GetStatus("Tolerance");
+                var toleranceStat = GetStatus("Tolerance", "AlcoholTolerance");
                 return (int)toleranceStat.Value1;
             }
             set {
-                var toleranceStat = Game.GetStatus("Tolerance");
+                var toleranceStat = GetStatus("Tolerance", "AlcoholTolerance");
                 if (!toleranceStat.IsOwned) {
                     toleranceStat.IsOwned = true;
                 }
@@ -1114,8 +1115,44 @@ namespace TiTsEd.ViewModel {
 
         public List<KeyItemGroupVM> KeyItemGroups { get; set; }
 
+        public void UpdateKeyItems(bool reset = false) {
+            if (reset || (null == KeyItemGroups)) {
+                KeyItemGroups = new List<KeyItemGroupVM>();
+            }
+            if (null != Game.AllKeyItems) {
+                var charKeyItems = KeyItemsArray;
+                foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
+                    var keyItemVMs = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(Game, charKeyItems, x)).ToArray();
+                    foreach (var keyItemVM in keyItemVMs) {
+                        bool found = false;
+                        foreach (var perk in Game.AllKeyItems) {
+                            if (perk.Name == keyItemVM.Name) {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (!found) {
+                            Game.AllKeyItems.Add(keyItemVM);
+                        }
+                    }
+
+                    var groupVM = new KeyItemGroupVM(Game, xmlGroup.Name, keyItemVMs);
+                    bool foundGroup = false;
+                    foreach (var group in KeyItemGroups) {
+                        if (group.Name == groupVM.Name) {
+                            foundGroup = true;
+                            break;
+                        }
+                    }
+                    if (!foundGroup) {
+                        KeyItemGroups.Add(groupVM);
+                    }
+                }
+            }
+        }
+
         public bool HasKeyItem(string keyItemName) {
-            var keyItem = Game.GetKeyItem(keyItemName);
+            var keyItem = GetKeyItem(keyItemName);
             return keyItem != null ? keyItem.IsOwned : false;
         }
 
@@ -1124,6 +1161,22 @@ namespace TiTsEd.ViewModel {
                 default:
                     break;
             }
+        }
+
+        /// <summary>
+        /// Returns the key item with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this key item.
+        /// That way, anytime the key item is modified, OnPropertyChanged will be raised for the caller property.
+        /// </summary>
+        public KeyItemVM GetKeyItem(string name, [CallerMemberName] string propertyName = null) {
+            var keyItem = Game.AllKeyItems.First(x => x.Name == name);
+            if (null != propertyName) {
+                keyItem.GameVMProperties.Add(propertyName);
+            }
+            return keyItem;
+        }
+
+        public void OnKeyItemChanged(string name) {
+            foreach (var prop in Game.AllKeyItems.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
         }
 
         #endregion
@@ -1136,8 +1189,44 @@ namespace TiTsEd.ViewModel {
 
         public List<PerkGroupVM> PerkGroups { get; set; }
 
+        public void UpdatePerks(bool reset = false) {
+            if (reset || (null == PerkGroups)) {
+                PerkGroups = new List<PerkGroupVM>();
+            }
+            if (null != Game.AllPerks) {
+                var perksArray = PerksArray;
+                foreach (var xmlGroup in XmlData.Current.PerkGroups) {
+                    var perkVMs = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(Game, perksArray, x)).ToArray();
+                    foreach (var perkVM in perkVMs) {
+                        bool found = false;
+                        foreach (var perk in Game.AllPerks) {
+                            if (perk.Name == perkVM.Name) {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (!found) {
+                            Game.AllPerks.Add(perkVM);
+                        }
+                    }
+
+                    var groupVM = new PerkGroupVM(Game, xmlGroup.Name, perkVMs);
+                    bool foundGroup = false;
+                    foreach (var group in PerkGroups)  {
+                        if (group.Name == groupVM.Name) {
+                            foundGroup = true;
+                            break;
+                        }
+                    }
+                    if (!foundGroup) {
+                        PerkGroups.Add(groupVM);
+                    }
+                }
+            }
+        }
+
         public bool HasPerk(string perkName) {
-            var perk = Game.GetPerk(perkName);
+            var perk = GetPerk(perkName);
             return perk != null ? perk.IsOwned : false;
         }
 
@@ -1165,6 +1254,24 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        /// <summary>
+        /// Returns the perk with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this perk.
+        /// That way, anytime the perk is modified, OnPropertyChanged will be raised for the caller property.
+        /// </summary>
+        public PerkVM GetPerk(string name, [CallerMemberName] string propertyName = null) {
+            var perk = Game.AllPerks.First(x => x.Name == name);
+            if (null != propertyName) {
+                perk.GameVMProperties.Add(propertyName);
+            }
+            return perk;
+        }
+
+        // Whenever a PerkVM, FlagVM, or StatusVM is modified, it notifies GameVM with those functions so that it updates its dependent properties.
+        // See also GetPerk, GetFlag, and GetStatus.
+        public void OnPerkChanged(string name) {
+            foreach (var prop in Game.AllPerks.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
+        }
+
         #endregion
 
         #region RawPage
@@ -1173,11 +1280,59 @@ namespace TiTsEd.ViewModel {
             get { return GetObj("statusEffects"); }
         }
 
-        public UpdatableCollection<StatusEffectVM> StatusEffects { get; set; }
+        public List<StatusGroupVM> StatusEffectGroups { get; set; }
+
+        public void UpdateStatusEffects(bool reset = false) {
+            if (reset || (null == StatusEffectGroups)) {
+                StatusEffectGroups = new List<StatusGroupVM>();
+            }
+            if (null != Game.AllStatusEffects) {
+                var charStatuses = StatusEffectsArray;
+                foreach (var xmlGroup in XmlData.Current.StatusEffectGroups) {
+                    var statusVMs = xmlGroup.StatusEffects.OrderBy(x => x.Name).Select(x => new StatusEffectVM(Game, charStatuses, x)).ToArray();
+                    foreach (var statusVM in statusVMs) {
+                        bool found = false;
+                        foreach (var effect in Game.AllStatusEffects) {
+                            if (effect.Name == statusVM.Name) {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (!found) {
+                            Game.AllStatusEffects.Add(statusVM);
+                        }
+                    }
+
+                    var groupVM = new StatusGroupVM(Game, xmlGroup.Name, statusVMs);
+                    bool foundGroup = false;
+                    foreach (var group in StatusEffectGroups) {
+                        if (group.Name == groupVM.Name) {
+                            foundGroup = true;
+                            break;
+                        }
+                    }
+                    if (!foundGroup) {
+                        StatusEffectGroups.Add(groupVM);
+                    }
+                }
+            }
+        }
 
         public bool HasStatusEffect(string statusEffectName) {
-            var statusEffect = Game.GetStatus(statusEffectName);
+            var statusEffect = GetStatus(statusEffectName);
             return statusEffect != null ? statusEffect.IsOwned : false;
+        }
+
+        /// <summary>
+        /// Returns the status with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this status.
+        /// That way, anytime the status is modified, OnPropertyChanged will be raised for the caller property.
+        /// </summary>
+        public StatusEffectVM GetStatus(string name, [CallerMemberName] string propertyName = null) {
+            var status = Game.AllStatusEffects.First(x => x.Name == name);
+            if (null != propertyName) {
+                status.GameVMProperties.Add(propertyName);
+            }
+            return status;
         }
 
         public void OnStatusAddedOrRemoved(string name, bool isOwned) {
@@ -1190,6 +1345,10 @@ namespace TiTsEd.ViewModel {
                 default:
                     break;
             }
+        }
+
+        public void OnStatusChanged(string name) {
+            foreach (var prop in Game.AllStatusEffects.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
         }
 
         #endregion
