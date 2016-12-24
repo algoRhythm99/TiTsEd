@@ -1154,6 +1154,12 @@ namespace TiTsEd.ViewModel {
                 case "Attack Drone":
                     OnPropertyChanged("MaxShields");
                     break;
+                case "Inhuman Desire":
+                    OnPropertyChanged("MaxLust");
+                    break;
+                case "Heroic Reserves":
+                    OnPropertyChanged("MaxEnergy");
+                    break;
                 default:
                     break;
             }
