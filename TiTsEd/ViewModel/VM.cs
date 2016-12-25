@@ -25,7 +25,6 @@ namespace TiTsEd.ViewModel {
         const string AppTitle = "TiTsEd";
 
         readonly List<string> _externalPaths = new List<string>();
-        AmfFile _currentFile;
 
         private VM() {
         }
@@ -42,12 +41,22 @@ namespace TiTsEd.ViewModel {
 
         public bool SaveRequired { get; private set; }
 
+        public AmfFile CurrentFile { get; private set; }
+
+        public string CurrentFileName
+        {
+            get
+            {
+                return (null != CurrentFile) ? CurrentFile.Name : "";
+            }
+        }
+
         public string FileVersion {
-            get { return _currentFile == null ? "" : _currentFile.GetString("version"); }
+            get { return (null != CurrentFile) ? CurrentFile.GetString("version") : ""; }
         }
 
         public bool HasData {
-            get { return _currentFile != null; }
+            get { return (null != CurrentFile); }
         }
 
         public void Load(string path, SerializationFormat expectedFormat, bool createBackup) {
@@ -103,15 +112,17 @@ namespace TiTsEd.ViewModel {
             }
 
             if (createBackup) FileManager.CreateBackup(path);
-            _currentFile = file;
+            CurrentFile = file;
 
             XmlData.Select(XmlData.Files.TiTs);
             Data = XmlData.Current;
-            Game = new GameVM(_currentFile, Game);
+            Game = new GameVM(CurrentFile, Game);
 
             OnPropertyChanged("Data");
             OnPropertyChanged("Game");
             OnPropertyChanged("HasData");
+            OnPropertyChanged("CurrentFile");
+            OnPropertyChanged("FileVersion");
             UpdateAppTitle();
             VM.Instance.NotifySaveRequiredChanged(false);
             if (FileOpened != null) FileOpened(null, null);
@@ -131,7 +142,7 @@ namespace TiTsEd.ViewModel {
             bool error = false;
             try {
                 Game.BeforeSerialization();
-                _currentFile.Save(path, format);
+                CurrentFile.Save(path, format);
                 FileManager.TryRegisterExternalFile(path);
             } catch (SecurityException) {
                 error = true;

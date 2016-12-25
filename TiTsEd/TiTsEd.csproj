@@ -13,7 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,8 +46,13 @@
     <ApplicationIcon>TiTsEd.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,13 +73,16 @@
     <Compile Include="Common\AutoGrid.cs" />
     <Compile Include="Common\BoolEventArgs.cs" />
     <Compile Include="Common\NamedVector4Control.cs" />
+    <Compile Include="Common\NaturalSortComparer.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\TreeNode.cs" />
     <Compile Include="Common\VersionInfo.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AmfObjectVM.cs" />
     <Compile Include="ViewModel\BindableBase.cs" />
     <Compile Include="Common\ItemPanel.cs" />
     <Compile Include="Common\Logger.cs" />
@@ -145,6 +154,12 @@
     </Compile>
     <Compile Include="View\RawPage.xaml.cs">
       <DependentUpon>RawPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ObjectInTreeView.xaml.cs">
+      <DependentUpon>ObjectInTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RawStateViewPage.xaml.cs">
+      <DependentUpon>RawStateViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TopBar.xaml.cs">
       <DependentUpon>TopBar.xaml</DependentUpon>
@@ -225,6 +240,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\ObjectInTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RawStateViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TopBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -250,6 +273,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

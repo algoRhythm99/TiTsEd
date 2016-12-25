@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="TiTsEd.View.ObjectInTreeView"
+             x:Name="ObjectInTreeViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:TiTsEd.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:TiTsEd.View"
+             d:DesignHeight="600"
+             d:DesignWidth="1024"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/PageInclude.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem">
+            </Style>
+            <Style x:Key="RootTreeViewItemStyle" TargetType="TreeViewItem" BasedOn="{StaticResource TreeViewItemStyle}">
+                <Setter Property="IsExpanded" Value="True"/>
+            </Style>
+            <Style x:Key="TreeNodeNameStyle" TargetType="TextBox">
+                <Setter Property="Width"            Value="300" />
+                <Setter Property="TextWrapping"     Value="WrapWithOverflow" />
+                <Setter Property="BorderThickness"  Value="0,0,1,1" />
+                <Setter Property="FontSize"         Value="14" />
+                <Setter Property="Padding"          Value="0,10,0,5" />
+            </Style>
+            <Style x:Key="TreeNodeValueStyle" TargetType="TextBox">
+                <Setter Property="MinWidth"         Value="240" />
+                <Setter Property="MaxWidth"         Value="400" />
+                <Setter Property="TextWrapping"     Value="WrapWithOverflow" />
+                <Setter Property="TextAlignment"    Value="Justify" />
+                <Setter Property="BorderThickness"  Value="0,0,0,1" />
+                <Setter Property="FontFamily"       Value="Consolas" />
+                <Setter Property="Padding"          Value="5,10,0,5" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <TreeView
+        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+        ItemsSource="{Binding TreeNodes, ElementName=ObjectInTreeViewControl}"
+        ItemContainerStyle="{StaticResource RootTreeViewItemStyle}">
+        <TreeView.Resources>
+            <HierarchicalDataTemplate
+                DataType="{x:Type common:TreeNode}"
+                ItemsSource="{Binding Path=Children}"
+                ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox    x:Name="Name"   Text="{Binding Path=Name}"  IsReadOnly="True"   Style="{StaticResource TreeNodeNameStyle}" />
+<!--
+                            <TextBlock Text=": " />
+-->
+                            <TextBox    x:Name="Value"  Text="{Binding Path=Value}" IsReadOnly="True"   Style="{StaticResource TreeNodeValueStyle}" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </HierarchicalDataTemplate>
+        </TreeView.Resources>
+    </TreeView>
+</UserControl>

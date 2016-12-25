@@ -27,6 +27,7 @@ namespace TiTsEd.ViewModel {
             : base(file) {
             SetCharacterOptions();
             setCharacter("PC");
+            SaveFile = new AmfObjectVM(file);
 
             var flagsObject = FlagsObject;
             _flags = new GeneralObjectVM(flagsObject);
@@ -143,9 +144,7 @@ namespace TiTsEd.ViewModel {
         }
 
         private void setCharacter(string name) {
-            var tmpChar = GetObj("characters");
-            tmpChar = tmpChar.GetObj(name);
-            Character = new CharacterVM(this, tmpChar);
+            Character = GetCharacter(name);
             _characterName = name;
             if (name == "PC") {
                 IsPC = true;
@@ -154,6 +153,14 @@ namespace TiTsEd.ViewModel {
             }
 
             Character.UpdateAll( _characterName );
+        }
+
+        public CharacterVM GetCharacter(string name)
+        {
+            var tmpChar = GetObj("characters");
+            tmpChar = tmpChar.GetObj(name);
+            var tcChar = new CharacterVM(this, tmpChar);
+            return tcChar;
         }
 
         public CharacterVM Character { get; private set; }
@@ -413,6 +420,12 @@ namespace TiTsEd.ViewModel {
                     }
                 }
             }
+        }
+
+        public AmfObjectVM SaveFile
+        {
+            get;
+            set;
         }
 
         private RelayCommand<FlagVM> _deleteFlagCommand;

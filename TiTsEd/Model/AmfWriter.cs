@@ -149,8 +149,8 @@ namespace TiTsEd.Model
             else if (obj is AmfObject)
             {
                 var o = (AmfObject)obj;
-                _writer.Write((byte)o.Type);
-                switch (o.Type)
+                _writer.Write((byte)o.AmfType);
+                switch (o.AmfType)
                 {
                     case AmfTypes.Array:
                         WriteArray(o);
@@ -429,11 +429,11 @@ namespace TiTsEd.Model
             WriteU29(vector.DenseCount, true);
 
             _writer.Write(vector.IsFixedVector);
-            if (vector.Type == AmfTypes.VectorGeneric) WriteString(vector.GenericElementType);
+            if (vector.AmfType == AmfTypes.VectorGeneric) WriteString(vector.GenericElementType);
 
             foreach (var value in vector.GetDensePart())
             {
-                switch (vector.Type)
+                switch (vector.AmfType)
                 {
                     case AmfTypes.VectorInt:
                         WriteI32((int)value);

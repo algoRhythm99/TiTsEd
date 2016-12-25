@@ -87,7 +87,7 @@ namespace TiTsEd.Model
 
         public AmfObject(AmfTypes type)
         {
-            Type = type;
+            AmfType = type;
 
             if (type == AmfTypes.Object)
             {
@@ -96,7 +96,7 @@ namespace TiTsEd.Model
         }
 
         public AmfTrait Trait { get; set; }
-        public AmfTypes Type { get; private set; }
+        public AmfTypes AmfType { get; private set; }
         public string GenericElementType { get; set; }
         public bool IsFixedVector { get; set; }
         public bool HasWeakKeys { get; set; }
@@ -448,12 +448,12 @@ namespace TiTsEd.Model
 
         object NormalizeAssociativeKey(Object key)
         {
-            if (Type == AmfTypes.Dictionary) return key;
+            if (AmfType == AmfTypes.Dictionary) return key;
             return key.ToString();
         }
 
         public AmfObject clone() {
-            AmfObject obj = new AmfObject(this.Type);
+            AmfObject obj = new AmfObject(this.AmfType);
             foreach(var v in _associativePart) {
                 if(v.Value != null) {
                     if(v.Value.GetType() == typeof(AmfObject)) {
