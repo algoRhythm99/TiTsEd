@@ -44,7 +44,8 @@
                 </Border>
                 <common:AutoGrid Columns="2">
                     <Label Content="Upbringing" />
-                    <common:MyComboBox ItemsSource="{Binding Data.General.Upbringings}" SelectedValue="{Binding Game.PCUpbringing}" />
+                    <common:MyComboBox ItemsSource="{Binding Data.General.Upbringings}"
+                                       SelectedValue="{Binding Game.PCUpbringing}" />
 
                     <Label Content="Affinity" />
                     <ComboBox ItemsSource="{Binding Data.General.Affinities}"
@@ -52,8 +53,7 @@
 
                     <Label Content="Original Race" />
                     <ComboBox ItemsSource="{Binding Data.General.OriginalRaces}"
-                              SelectedValue="{Binding Game.Character.OriginalRace}"
-                              Style="{StaticResource EditableTextBox}" />
+                              SelectedValue="{Binding Game.Character.OriginalRace}" />
                 </common:AutoGrid>
             </StackPanel>
 
