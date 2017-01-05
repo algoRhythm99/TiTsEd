@@ -771,6 +771,7 @@
 			<Item Stack="1" Name="ACE Cannon" ID="classes.Items.Accessories::ACECannon" />
 			<Item Stack="1" Name="AimEyepiece" ID="classes.Items.Accessories::AimEyepiece" />
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
+			<Item Stack="1" Name="Exp. Cloak" ID="classes.Items.Accessories::ExplorersCloak" />
 			<Item Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
 			<Item Stack="1" Name="JungleLure" ID="classes.Items.Accessories::JungleLure" />
 			<Item Stack="1" Name="JungleRepel" ID="classes.Items.Accessories::JungleRepel" />
@@ -857,12 +858,14 @@
 			</Item>
 			<Item Stack="1" Name="C.Armor" ID="classes.Items.Armor::ChitinArmor" />
 			<Item Stack="1" Name="C.Plate" ID="classes.Items.Armor::ChitPlate" />
+			<Item Stack="1" Name="Gem Links" ID="classes.Items.Armor::GemstoneLinks" />
 			<Item Stack="1" Name="Goo Armor" ID="classes.Items.Armor::GooArmor" />
 			<Item Stack="1" Name="M.Suit" ID="classes.Items.Armor::MirroredJumpsuit" />
 			<Item Stack="1" Name="N.Chain" ID="classes.Items.Armor::NyreanChain" />
 			<Item Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
 			<Item Stack="1" Name="Void Plates" ID="classes.Items.Armor::VoidPlateArmor" />
 			<Item Stack="1" Name="I.Coat" ID="classes.Items.Armor::InsulatedCoat" />
+			<Item Stack="1" Name="S.Parka" ID="classes.Items.Armor::SleekParka" />
 			<Item Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
 			<Item Stack="1" Name="WM Dress" ID="classes.Items.Armor::WeavemailDress" />
 			<Item Stack="1" Name="WM Shirt" ID="classes.Items.Armor::WeavemailShirt" />
@@ -890,6 +893,7 @@
 			<Item Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
 			<Item Stack="1" Name="CowShirt" ID="classes.Items.Apparel::CowPrintedShirt" />
 			<Item Stack="1" Name="Girly Bra" ID="classes.Items.Apparel::GirlyBra" />
+			<Item Stack="1" Name="HL Bra" ID="classes.Items.Apparel::HardlightAGBra" />
 			<Item Stack="1" Name="Harness" ID="classes.Items.Apparel::Harness" />
 			<Item Stack="1" Name="HoneyBra" ID="classes.Items.Apparel::HoneypotBra" />
 			<Item Stack="1" Name="Lacy Bra" ID="classes.Items.Apparel::LacyBra" />
@@ -902,6 +906,7 @@
 			<Item Stack="1" Name="Undershirt" ID="classes.Items.Apparel::PlainUndershirt" />
 			<Item Stack="1" Name="Shibari Top" ID="classes.Items.Apparel::ShibariTop" />
 			<Item Stack="1" Name="Sk.Bra" ID="classes.Items.Apparel::SkullPatternBra" />
+			<Item Stack="1" Name="Featherbra" ID="classes.Items.Apparel::SlepraDownBra" />
 			<Item Stack="1" Name="Sports Bra" ID="classes.Items.Apparel::SportsBra" />
 			<Item Stack="1" Name="Underbust Corset" ID="classes.Items.Apparel::UnderbustCorset" />
 			<Item Stack="1" Name="Undershirt" ID="classes.Items.Apparel::Undershirt" />
@@ -973,6 +978,7 @@
 			<Item Stack="50" Name="Boobswell P." ID="classes.Items.Miscellaneous::BoobswellPads" />
 			<Item Stack="10" Name="Chocolac" ID="classes.Items.Miscellaneous::Chocolac" />
 			<Item Stack="10" Name="Condensol" ID="classes.Items.Miscellaneous::Condensol" />
+			<Item Stack="10" Name="Curdsonwhey" ID="classes.Items.Miscellaneous::Curdsonwhey" />
 			<Item Stack="10" Name="Dumbfuck" ID="classes.Items.Miscellaneous::Dumbfuck" />
 			<Item Stack="10" Name="EasyFit" ID="classes.Items.Miscellaneous::EasyFit" />
 			<Item Stack="10" Name="Estrobloom" ID="classes.Items.Miscellaneous::Estrobloom" />
@@ -1079,6 +1085,7 @@
 			<Item Stack="10" Name="N.Butter" ID="classes.Items.Transformatives::NukiNutbutter" />
 			<Item Stack="10" Name="Nutnog" ID="classes.Items.Transformatives::Nutnog" />
 			<Item Stack="10" Name="N.Candy" ID="classes.Items.Transformatives::NyreanCandy" />
+			<Item Stack="10" Name="O. Oil" ID="classes.Items.Transformatives::OmegaOil" />
 			<Item Stack="10" Name="Orange P." ID="classes.Items.Transformatives::OrangePill" />
 			<Item Stack="10" Name="OvirAce" ID="classes.Items.Transformatives::OvirAce" />
 			<Item Stack="5" Name="Ovir+" ID="classes.Items.Transformatives::OvirPositive" />
@@ -1089,6 +1096,7 @@
 			<Item Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
 			<Item Stack="10" Name="JawBreakr" ID="classes.Items.Transformatives::SaltyJawBreaker" />
 			<Item Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
+			<Item Stack="10" Name="S.Clear" ID="classes.Items.Transformatives::SkinClear" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
 			<Item Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCreamWhite" />
@@ -1122,6 +1130,7 @@
 		</ItemType>
 		<ItemType Name="Melee Weapon">
 			<Item Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
+			<Item Stack="1" Name="B.Rapier" ID="classes.Items.Melee::BothriocRapier" />
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
 			<Item Stack="1" Name="Cutlass" ID="classes.Items.Melee::Cutlass" />
 			<Item Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" LongName="Emmy's Jolthammer" />
