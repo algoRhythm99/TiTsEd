@@ -3036,7 +3036,8 @@
 	<!-- ================================================================ -->
 	<StatusEffects>
 		<StatusEffectGroup Name="Intoxicants-related">
-			<StatusEffect Name="Alcohol" Description="0-100 == Your current alcohol level" IsHidden="true" />
+			<StatusEffect Name="Adorahol" Description="You’re feeling more affectionate that you otherwise would, no doubt the result of Kally’s ‘special’ drinks." Label1="Adorahol count" />
+			<StatusEffect Name="Alcohol" Label1="Alcohol belly level: 0-100" Label2="Alcohol blood level" IsHidden="true" />
 <!--
 			<StatusEffect Name="Buzzed" Description="You're a little buzzed, leaving you feeling strong but a little slower of wit and weaker of will.\n\nThis status will expire as your alcohol levels drop." IconName="Icon_DizzyDrunk" IconShade="0" />
 			<StatusEffect Name="Crabbst" Description="Makes you stronger but at what cost?" Value2="1" IconName="Icon_DizzyDrunk" MinutesLeft="180" />
@@ -3046,7 +3047,7 @@
 			<StatusEffect Name="Roshan Blue" Description="You see everything so very clear now - if only you could focus a little better." IconName="Icon_DizzyDrunk" />
 			<StatusEffect Name="Sex On a Meteor" Description="This top-shelf alcohol makes you almost irresistible, but easily aroused as well." Value2="5" IconName="LustUp" MinutesLeft="180" />
 -->
-			<StatusEffect Name="Tolerance" Description="0-100 == Your alcohol tolerance" Label1="Alcohol Tolerance" IsHidden="true" />
+			<StatusEffect Name="Tolerance" Description="0-100 == Your alcohol tolerance" Label1="Alcohol Tolerance: 0-100" IsHidden="true" />
 <!--
 			<StatusEffect Name="Smashed" Description="You're three sheets to the wind, but you feel like you could flip a truck.\n\nThis status will expire as your alcohol levels drop." IconName="Icon_DizzyDrunk" IconShade="0" />
 			<StatusEffect Name="Tallavarian Tingler" Description="This top-shelf alcohol generates troublesome tingles on contact, making it easy for your foes to arouse you." Value2="5" IconName="LustUp" MinutesLeft="280" />
@@ -3118,6 +3119,9 @@
 			<StatusEffect Name="Ludicrously Endowed" Description="The shifting masses of your over-sized endowments cause you to gain fifty percent more lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
+-->
+			<StatusEffect Name="Nyrea Eggs" Description="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" IsHidden="true" />
+<!--
 			<StatusEffect Name="Omit Cumflation Messages" IconName="Icon_Sperm_Hearts" Description="Cumflation messages are currently disabled." MinutesLeft="120" IsHidden="true" />
 			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
 			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
