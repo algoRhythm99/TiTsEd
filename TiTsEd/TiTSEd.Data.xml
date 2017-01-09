@@ -1282,6 +1282,7 @@
 			<KeyItem Name="Doctor Badger's Reprogrammed Bimbo Raygun - For use on the Badger!" />
 			<KeyItem Name="Hand So's Data Bead" />
 			<KeyItem Name="Hentai Magazine" />
+			<KeyItem Name="Kally's Bedroom Key" />
 			<KeyItem Name="Kaska's Detonator" />
 			<KeyItem Name="Key Card - R&amp;D Security Pass" />
 			<KeyItem Name="Khorgan's Detonator" />
@@ -2083,6 +2084,14 @@
 		<Flag Name="KAEDE_NT_ENCOUNTER" />
 		<Flag Name="KAEDE_UVETO_RAINCHECK" />
 		<Flag Name="KAEDE_UVETO_TEASED" />
+-->
+		<Flag Name="KALLY_3SOME_TALK" Description="1 == You've talked to Kally about a threesome with Kiro" />
+		<Flag Name="KALLY_BIMBO_CUMCASCADE" Description="Number of times Kally has drank her own ingredient while getting sucked off" />
+		<Flag Name="KALLY_BIMBO_TAPPED" Description="Number of times you've sucked off Kally as a bimbo" />
+		<Flag Name="KALLY_FAP_2_KIRO" Description="Number of times you've seen Kally fap to Kiro" />
+		<Flag Name="KALLY_KISSED_KIRO" Description="1 == Kally kissed Kiro" />
+		<Flag Name="KALLYS_SECRET_INGREDIENT" Description="-1 == You've told Kally her ingredient is gross&#xD;&#xA;1 == You've talked to Kally about the secret ingredient" />
+<!--
 		<Flag Name="KARA_DEFEATED_WITH_SHADE" />
 		<Flag Name="KARA_PAID_YOU" />
 		<Flag Name="KASHIMA_BRIDGE" />
@@ -2109,15 +2118,26 @@
 		<Flag Name="KILLED_TAIVRA" />
 		<Flag Name="KING_NYREA" />
 -->
+		<Flag Name="KIRO_3SOME_REACTION" Description="-1 == You don't want a threesome with Kally&#xD;&#xA;0 == You gave a neutral response to Kiro's threesome question&#xD;&#xA;1 == You want a threesome with Kiro and Kally" />
 		<Flag Name="KIRO_BALLJOBBED_YOU" Description="1 == Kiro has used her balls on your cocks" />
 		<Flag Name="KIRO_BAR_MET" Description="1 == You've met Kiro in a bar" />
+		<Flag Name="KIRO_BF_TALK" Description="1 == You've discussed your relationship situation with Kiro" />
 		<Flag Name="KIRO_CELISE_3SOME" Description="Number of times you've had a threesome with Kiro and Celise" />
 		<Flag Name="KIRO_DEEPTHROATED_YOU" Description="1 == Kiro has deepthroated you" />
 		<Flag Name="KIRO_DISABLED_MINUTES" Description="Number of minutes Kiro is unavailable" />
 		<Flag Name="KIRO_DRINKING_CONTEST_RESULTS" Description="-1 == You lost&#xD;&#xA;0 == You cheated&#xD;&#xA;1 == You win" />
 		<Flag Name="KIRO_FUCKED_DURING_RESCUE" Description="1 == You had sex with Kiro during her rescue" />
+		<Flag Name="KIRO_GF" Description="1 == You're Kiro's BF/GF" />
+		<Flag Name="KIRO_HOT_SIS" Description="1 == You've made Kiro admit her sister is hot" />
+		<Flag Name="KIRO_INCEST_TEASED" Description="1 == You've made Kiro admit she wants her sister" />
+		<Flag Name="KIRO_INTERRUPT_KALLYBEEJ" Description="1 == Kiro has interrupted your bimbo suckoff of Kally" />
+		<Flag Name="KIRO_KALLY_BOASTED" Description="1 == You boasted about Kiro's sexual prowess to Kally" />
+		<Flag Name="KIRO_KALLY_THREESOMES" Description="Number of times you've had a threesome with Kiro and Kally" />
+		<Flag Name="KIRO_MET_KALLY" Description="0 == Kiro hasn't met Kally yet&#xD;&#xA;1 == Airlock discussion&#xD;&#xA;2 = Hallway discussion&#xD;&#xA;3 == Outside the bar&#xD;&#xA;4 == Introductions complete" />
+		<Flag Name="KIRO_KALLY_PICARDINE_QUEST" Description="-2 == Kally knows the truth but is keeping it a secret&#xD;&#xA;-1 == You decided not to discuss it&#xD;&#xA;undefined/0 == Not started&#xD;&#xA;1 == You told Kiro to tell the truth&#xD;&#xA;2 == You told Kiro Kally would feel loved&#xD;&#xA;3 == You told Kally and she kissed Kiro" />
 		<Flag Name="KIRO_ORGIED" Description="Number of times you've gone to the orgy with Kiro" />
-		<Flag Name="KIRO_ORGY_DATE" Description="Days till the herm orgy will be available again" />
+		<Flag Name="KIRO_ORGY_DATE" Description="Last day number that you went to the orgy with Kiro" />
+		<Flag Name="KIRO_ROUGH_BUTTFUCK" Description="Number of times Kiro has owned your ass" />
 		<Flag Name="KIRO_TRUST" Description="How much Kiro trusts you" />
 		<Flag Name="KIRO_X_SAEN_HAPPENED" Description="1 == You've had a threesome with Kiro and Saendra" />
 <!--
@@ -2354,6 +2374,7 @@
 		<Flag Name="MET_JEROME" Description="1 == You've met Jerome" />
 		<Flag Name="MET_JURO" Description="1 == You've met Ambassador Juro" />
 		<Flag Name="MET_KAEDE" Description="1 == You've met Kaede" />
+		<Flag Name="MET_KALLY" Description="1 == You've met Kally" />
 		<Flag Name="MET_KARA" Description="1 == You've met Kara" />
 		<Flag Name="MET_KEROKORAS" Description="Number of times you've encountered a kerokoras" />
 		<Flag Name="MET_KIRO" Description="1 == You've met Kiro" />
@@ -2938,6 +2959,7 @@
 		<Flag Name="TOOK_PRINCESS_BUTTGINITY" />
 		<Flag Name="TREATED_BY_VI" />
 -->
+		<Flag Name="TRIED_KALLY_DOOR" Description="1 == You've tried opening Kally's door" />
 		<Flag Name="TREATMENT_HAX" Description="0 = Cow-Girl&#xD;&#xA;1 = Bull&#xD;&#xA;2 = Cum-Cow&#xD;&#xA;3 = Faux-Cow&#xD;&#xA;4 = Amazon&#xD;&#xA;5 = Double Stud&#xD;&#xA;6 = Undersized" />
 <!--
 		<Flag Name="TRIED_TO_GIVE_BESS_FREEDOM" />
