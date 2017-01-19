@@ -1456,10 +1456,11 @@
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
+			<Perk Name="Peace of Mind" Description="You radiate an aura of Zen-like calm. You can offer enemies the chance to peacefully surrender. The lower their level, the better the chance will be. In turn, however, enemies that peacefully demand you submit to them may be very difficult to resist.... Additionally boosts minimum lust to 20." />
 			<Perk Name="Slut Stamp" Description="A tattoo permanently emblazoned above your ass makes you horny faster while wearing anything clothing your lower body." Value1="10" Value2="10" Value3="10" />
 		</PerkGroup>
 		<PerkGroup Name="Treatment">
-			<Perk Name="Amazonian Needs" Description="Increases minimum lust by 20." Value1="20" />
+			<Perk Name="Amazonian Needs" Description="Increases minimum lust by 20." Label1="Minimum Lust Mod" Value1="20" Comment="The Value1 doesn't actually get used" />
 			<Perk Name="Amazonian Endurance" Description="Allows you to orgasm without fatiguing." />
 			<Perk Name="Amazonian Virility" Description="Ensures you never ejaculate less than 300 mLs." />
 			<Perk Name="Auto-Autofellatio" Description="Makes you so enamored of yourself that you can't resist some auto-fellatio." />
@@ -1468,7 +1469,7 @@
 			<Perk Name="Ditz Speech" Description="Alters dialogue in certain scenes." />
 			<Perk Name="Dumb4Cum" Description="Grants extra intelligence after acquiring cum, but reduces it otherwise." />
 			<Perk Name="Fuck Sense" Description="Allows your sense ability to base success off your libido instead of intelligence." Value1="15" />
-			<Perk Name="Inhuman Desire" Description="Increases maximum lust by {Value1}." Value1="20" />
+			<Perk Name="Inhuman Desire" Description="Increases maximum lust by {Value1}." Label1="Maximum Lust Mod" Value1="20" />
 			<Perk Name="Milk Fountain" Description="Allows you to squirt milk with the greatest of ease." />
 			<Perk Name="Panic Ejaculation" Description="Allows you to squirt out a little cum while grappled, easing your escape!" />
 			<Perk Name="Pheromone Cloud" Description="Boosts tease attack and arousal." />
@@ -1479,7 +1480,7 @@
 		</PerkGroup>
 		<PerkGroup Name="Other Items">
 			<Perk Name="'Nuki Drunk" Description="Get drunk twice as slow and sober up four times slower." />
-			<Perk Name="'Nuki Nuts" Description="Permanent ability allowing your gonads to swell with excess seed." Value2="1" />
+			<Perk Name="'Nuki Nuts" Description="Permanent ability allowing your gonads to swell with excess seed." Label2="1 == Permanent" Value2="1" />
 			<Perk Name="Androgyny" Description="Your face is always androgynous." />
 			<!--
 			<Perk Name="Androgyny" Description="Your animalistic visage maintain an androgynous appearance that would befit either gender." Value1="1" />
@@ -1500,6 +1501,7 @@
 			<Perk Name="Mane" Description="Your hair grows out much like an equine's mane." />
 			<Perk Name="Mega Milk" Description="Allows you to instantly produce a good amount of milk, even when empty." />
 			<Perk Name="Myr Venom" Description="Grants a love-bite tease ability that deals a little lust damage to your opponent." />
+			<Perk Name="Oviposition" Description="Causes you to regularly lay eggs when not otherwise pregnant." Label4="Timestamp" />
 			<Perk Name="Pheromone Sweat" Description="Slightly boosts tease attack and arousal while sweating" />
 			<Perk Name="Regal Mane" Description="You have an impressive mane bordering your neck." Label1="0 = No Collar&#xD;&#xA;20 = Fur Collar" Value1="20" />
 			<Perk Name="Resin" Description="Your heavy bark skin slows you all the way down, but provides plenty of protection. It also produces resin. Some flighty, energetic, needy species might find it difficult to resist wanting to plaster themselves all over you..." Label1="Max Reflexes multiplier" Value1="0.40" Type1="Double" />
@@ -1508,12 +1510,11 @@
 			<Perk Name="Weak Willed" Description="Willpower losses are doubled." />
 		</PerkGroup>
 		<PerkGroup Name="General">
-			<Perk Name="Can Crit" Description="Allows critical attacks. Only useful on NPCs." />
-			<Perk Name="Fixed CumQ" Description="Ensures you always cum exactly {Value1} mLs." Label1="Cum Quantity" Value1="500000" />
-			<Perk Name="Multiple Attacks" Description="{Value1} attacks per turn" Label1="Attacks per turn" Value1="5" />
-			<Perk Name="Multiple Shots" Description="{Value1} shots per turn" Label1="Shots per turn" Value1="5" />
-			<Perk Name="Paralyzing Shock" Description="An attack that allows you to paralyze a single foe. Characters with higher intelligence will have greater success using this skill." />
-			<Perk Name="Ranged Immune" Description="Immune to ranged attacks" />
+			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
+			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs." Label1="Cum Quantity" Value1="500000" />
+			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn" Label1="Attacks per turn" Value1="5" />
+			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn" Label1="Shots per turn" Value1="5" />
+			<Perk Name="Ranged Immune" Comment="Immune to ranged attacks" />
 		</PerkGroup>
 	</Perks>
 	<!-- ================================================================ -->
@@ -2099,17 +2100,19 @@
 		<Flag Name="KASHIMA_STATE" />
 		<Flag Name="KASKA_FUCKED" />
 		<Flag Name="KAT_MET" />
-		<Flag Name="KELLY_ATTRACTION" />
-		<Flag Name="KELLY_BLOWJOBS_GIVEN" />
-		<Flag Name="KELLY_CONFESSED" />
-		<Flag Name="KELLY_ENCOUNTERED_AT_THE_BAR" />
-		<Flag Name="KELLY_HAD_A_MEAL_SHARED" />
-		<Flag Name="KELLY_HAD_SPECIAL_TAUR_DP" />
-		<Flag Name="KELLY_HYPERPLAY_COUNT" />
-		<Flag Name="KELLY_MET" />
-		<Flag Name="KELLY_SEXED" />
-		<Flag Name="KELLY_SKYSAP_COLLECT" />
-		<Flag Name="KELLY_TIMES_DOUBLESTUFFED_THE_PC" />
+-->
+		<Flag Name="KELLY_ATTRACTION" Description="0-100, Kelly's affection for you" />
+		<Flag Name="KELLY_BLOWJOBS_GIVEN" Description="Number of times you've given Kelly a blowjob" />
+		<Flag Name="KELLY_CONFESSED" Description="1 == Kelly has confessed her affection" />
+		<Flag Name="KELLY_ENCOUNTERED_AT_THE_BAR" Description="1 == You've met Kelly at the bar" />
+		<Flag Name="KELLY_HAD_A_MEAL_SHARED" Description="Number of times you've shared a meal with Kelly" />
+		<Flag Name="KELLY_HAD_SPECIAL_TAUR_DP" Description="1 == Kelly has DP'd your Taur-body" />
+		<Flag Name="KELLY_HYPERPLAY_COUNT" Description="Number of times you and Kelly have played with your hyper-sized genitals" />
+		<Flag Name="KELLY_MET" Description="1 == You've met Kelly" />
+		<Flag Name="KELLY_SEXED" Description="Number of times you've had sexy times with Kelly" />
+		<Flag Name="KELLY_SKYSAP_COLLECT" Description="Undefined == quest not started&#xD;&#xA; 5 &lt;= Unlock SynthSap Research" />
+		<Flag Name="KELLY_TIMES_DOUBLESTUFFED_THE_PC" Description="Number of times Kelly has DP'd you" />
+<!--
 		<Flag Name="KIE5_SEARCHED" />
 		<Flag Name="KIG3_SEARCHED" />
 		<Flag Name="KII3_CRACKED" />
@@ -2678,9 +2681,7 @@
 -->
 		<Flag Name="SEEN_SHEKKAS_NEW_SEXBOTS" Description="1 == You've seen Shekka's new bots" />
 		<Flag Name="SEEN_SHEKKAS_SEXBOTS" Description="1 == You've seen Shekka's bots" />
-<!--
-		<Flag Name="SEEN_SYNTHSAP_AD" />
--->
+		<Flag Name="SEEN_SYNTHSAP_AD" Description="1 == You can sell SkySap to Kelly" />
 		<Flag Name="SEEN_SYRI_IN_THE_MORNING" Description="Number of times the PC has approached Syri in the mornings" />
 <!--
 		<Flag Name="SEEN_TEXAS_SURFACE" />
@@ -2830,7 +2831,9 @@
 		<Flag Name="SUPRESS_COMBAT" />
 		<Flag Name="SUPRESS_TREATED_MILK_FAP_MESSAGE" />
 		<Flag Name="SYDIAN QUEST STARTED" />
-		<Flag Name="SYNTHSAP_UNLOCKED" />
+-->
+		<Flag Name="SYNTHSAP_UNLOCKED" Description="1 == Allows to buy SynthSap from Kelly" />
+<!--
 		<Flag Name="SYNTHSHEATH_ACQUIRED" />
 		<Flag Name="SYNTHSHEATH_TWO_FOUND" />
 		<Flag Name="SYNTHSHEATH_USED" />
@@ -3069,7 +3072,7 @@
 			<StatusEffect Name="Roshan Blue" Description="You see everything so very clear now - if only you could focus a little better." IconName="Icon_DizzyDrunk" />
 			<StatusEffect Name="Sex On a Meteor" Description="This top-shelf alcohol makes you almost irresistible, but easily aroused as well." Value2="5" IconName="LustUp" MinutesLeft="180" />
 -->
-			<StatusEffect Name="Tolerance" Description="0-100 == Your alcohol tolerance" Label1="Alcohol Tolerance: 0-100" IsHidden="true" />
+			<StatusEffect Name="Tolerance" Comment="Value1 == alcohol tolerance" Label1="Alcohol Tolerance: 0-100" IsHidden="true" />
 <!--
 			<StatusEffect Name="Smashed" Description="You're three sheets to the wind, but you feel like you could flip a truck.\n\nThis status will expire as your alcohol levels drop." IconName="Icon_DizzyDrunk" IconShade="0" />
 			<StatusEffect Name="Tallavarian Tingler" Description="This top-shelf alcohol generates troublesome tingles on contact, making it easy for your foes to arouse you." Value2="5" IconName="LustUp" MinutesLeft="280" />
@@ -3116,7 +3119,6 @@
 			<StatusEffect Name="Sydian Prophylactic" Description="The spray currently effecting you will reduce encounters with sydians." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="T.Pack" Description="You are protected from Uveto's harsh cold... for now!" IconName="Icon_Smelly" MinutesLeft="1440" />
 			<StatusEffect Name="The Mango" Description="You are irresistible!" IconName="Charmed" MinutesLeft="1440" IconShade="12030916" />
-			<StatusEffect Name="The Treatment" Description="You are currently under the effects of the Treatment. Who knows what havoc it will wreak upon your system." IconName="Icon_Cow" MinutesLeft="10080" IconShade="0" />
 		</StatusEffectGroup>
 -->
 		<StatusEffectGroup Name="Miscellaneous">
@@ -3124,6 +3126,9 @@
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
+-->
+			<StatusEffect Name="Disarm Immune" IsHidden="true" />
+<!--
 			<StatusEffect Name="Egregiously Endowed" Description="Movement between rooms takes twice as long, and fleeing from combat is more difficult." IconName="Icon_Poison" />
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Endowment Immobilized" Description="Your endowments prevent you from moving." IconName="Icon_Poison" />
@@ -3131,20 +3136,20 @@
 			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
 -->
-			<StatusEffect Name="Infertile" Description="You can not be impregnated nor impregnate anyone" IsHidden="true" />
+			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
 <!--
 			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
 -->
-			<StatusEffect Name="Latex Skin" Description="You have latex skin" Value1="1" IsHidden="true" />
+			<StatusEffect Name="Latex Hair" IsHidden="true" />
+			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
 <!--
 			<StatusEffect Name="Lightning Moves" Description="Your recent fencing lessons give you an edge during fights." IconName="OffenseUp" MinutesLeft="4320" />
 			<StatusEffect Name="Ludicrously Endowed" Description="The shifting masses of your over-sized endowments cause you to gain fifty percent more lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
 -->
-			<StatusEffect Name="Nyrea Eggs" Description="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" IsHidden="true" />
+			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" IsHidden="true" />
 <!--
-			<StatusEffect Name="Omit Cumflation Messages" IconName="Icon_Sperm_Hearts" Description="Cumflation messages are currently disabled." MinutesLeft="120" IsHidden="true" />
 			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
 			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!\nMinimum lust increased by 20." IconName="LustUp" IconShade="0" />
@@ -3160,10 +3165,44 @@
 			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!\nExperience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
 			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+-->
+			<StatusEffect Name="Special Scrotum" Comment="Special scrotum description flag, see Value1" Label1="20 == FLAG_FURRED&#xD;&#xA;21 == FLAG_SCALED&#xD;&#xA;34 == FLAG_CHITINOUS&#xD;&#xA;35 == FLAG_FEATHERED&#xD;&#xA;37 == FLAG_GOOEY" Value1="20" IsHidden="true" />
+			<StatusEffect Name="Stun Immune" IsHidden="true" />
+<!--
+			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
+-->
+			<StatusEffect Name="The Treatment" Description="You are currently under the effects of the Treatment. Who knows what havoc it will wreak upon your system." Comment="v1 - Gender settings.&#xD;&#xA;
+					0 - girl mode&#xD;&#xA;
+					1 - dude mode&#xD;&#xA;
+					2 - cum-cow - female bimbo mods + autofellatio sluuuut&#xD;&#xA;
+					3 - herm/neuter doublemode - all male and female procs.&#xD;&#xA;
+					4 - herm/neuter amazon - male perks + boob/lactation boosts.&#xD;&#xA;
+					5 - herm girlmode + double dick/cum boosts.&#xD;&#xA;
+					6 - herm girlmode + dick shrinking to almost nothing.&#xD;&#xA;
+					v2 special variants&#xD;&#xA;
+					v3 hour counter&#xD;&#xA;
+					Special variants - girls with bigger horns (size 5)!" IconName="Icon_Cow" MinutesLeft="10080" IconShade="0" />
+			<StatusEffect Name="Treated" Comment="VARIABLE DEPENDING ON GENDER&#xD;&#xA;
+					0 - Girl Mode:&#xD;&#xA;
+						v1 - boob size result&#xD;&#xA;
+						v2 - horn size result&#xD;&#xA;
+						v3 - lip size result&#xD;&#xA;
+						v4 - ball size result&#xD;&#xA;
+					1 - Male Mode:&#xD;&#xA;
+						v1 - boob size result&#xD;&#xA;
+						v2 - horn size result&#xD;&#xA;
+						v3 - cock mod&#xD;&#xA;
+						v4 - ball size result&#xD;&#xA;
+					4 - Amazon Mode:&#xD;&#xA;
+						v1 - boob size result&#xD;&#xA;
+						v2 - horn size result&#xD;&#xA;
+						v3 - max cock size&#xD;&#xA;
+						v4 - futacock size (if any)" IsHidden="true" />
+<!--
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
 -->
-			<StatusEffect Name="Vanae Markings" Description="Vanae skin markings, Value4 = on balls too" Value4="1" Label4="1 = Ball Markings" IsHidden="true" />
+			<StatusEffect Name="Vanae Markings" Comment="Vanae skin markings, Value4 = on balls too" Value4="1" Label4="1 = Ball Markings" IsHidden="true" />
 <!--
 			<StatusEffect Name="Varmint Buddy" Description="The pink wireless leash you hold will ensure that your varmint companion stays close by, joining alongside you in battle if necessary." IconName="Radio" IconShade="0" />
 			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />

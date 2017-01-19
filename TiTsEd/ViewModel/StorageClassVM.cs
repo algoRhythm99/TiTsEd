@@ -41,20 +41,33 @@ namespace TiTsEd.ViewModel {
                 if (value) {
                     var obj = new AmfObject(AmfTypes.Object);
                     InitializeObject(obj);
-                    obj["value1"] = _xml.Value1;
-                    obj["value2"] = _xml.Value2;
-                    obj["value3"] = _xml.Value3;
-                    obj["value4"] = _xml.Value4;
-                    obj["tooltip"] = expandVars(_xml.Tooltip ?? _xml.Description);
                     items.Push(obj);
                 } else {
                     items.Pop((int)pair.Key);
                 }
+
+                items.SortDensePart((x, y) =>
+                {
+                    AmfObject xObj = (AmfObject)x;
+                    AmfObject yObj = (AmfObject)y;
+                    string xName = xObj.GetString("storageName");
+                    string yName = yObj.GetString("storageName");
+                    return xName.CompareTo(yName);
+                });
+
                 OnPropertyChanged("Value1");
                 OnPropertyChanged("Value2");
                 OnPropertyChanged("Value3");
                 OnPropertyChanged("Value4");
+                OnPropertyChanged("Description");
+                OnPropertyChanged("IconName");
+                OnPropertyChanged("IconShade");
+                OnPropertyChanged("IsHidden");
+                OnPropertyChanged("IsCombatOnly");
+                OnPropertyChanged("MinutesLeft");
                 OnPropertyChanged("Comment");
+                OnPropertyChanged("Subtitle");
+                OnPropertyChanged("Tooltip");
                 OnSavePropertyChanged();
                 OnIsOwnedChanged();
             }
@@ -63,15 +76,30 @@ namespace TiTsEd.ViewModel {
         protected virtual void OnIsOwnedChanged() {
         }
 
+        public string Tooltip {
+            get {
+                return expandVars(_xml.Tooltip);
+            }
+        }
+
         public string Comment {
             get {
-                var source = _xml.Tooltip ?? _xml.Description;
-                return expandVars(source);
+                return expandVars(_xml.Comment);
             }
         }
 
         public Visibility CommentVisibility {
-            get { return String.IsNullOrEmpty(Comment) ? Visibility.Collapsed : Visibility.Visible; }
+            get { return String.IsNullOrEmpty(Comment) ? Visibility.Collapsed : (Subtitle != Comment) ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
+        public string Subtitle {
+            get {
+                return !String.IsNullOrEmpty(Description) ? Description : Comment;
+            }
+        }
+
+        public Visibility SubtitleVisibility {
+            get { return String.IsNullOrEmpty(Subtitle) ? Visibility.Collapsed : Visibility.Visible; }
         }
 
         public new string Name {
@@ -79,8 +107,12 @@ namespace TiTsEd.ViewModel {
             set { SetValue("storageName", value); }
         }
 
-        public string Tooltip {
-            get { return GetString("tooltip"); }
+        public string Description {
+            get {
+                var tooltip = String.IsNullOrEmpty(GetString("tooltip")) ? null : GetString("tooltip");
+                var source = tooltip ?? _xml.Description;
+                return expandVars(source);
+            }
             set { SetValue("tooltip", value); }
         }
 
@@ -90,7 +122,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public virtual Visibility IconNameVisibility {
-            get { return Visibility.Hidden; }
+            get { return Visibility.Collapsed; }
         }
 
         public int IconShade {
@@ -99,7 +131,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public virtual Visibility IconShadeVisibility {
-            get { return Visibility.Hidden; }
+            get { return Visibility.Collapsed; }
         }
 
         public bool IsHidden {
@@ -108,7 +140,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public virtual Visibility IsHiddenVisibility {
-            get { return Visibility.Hidden; }
+            get { return Visibility.Collapsed; }
         }
 
         public bool IsCombatOnly {
@@ -117,7 +149,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public virtual Visibility IsCombatOnlyVisibility {
-            get { return Visibility.Hidden; }
+            get { return Visibility.Collapsed; }
         }
 
         public int MinutesLeft {
@@ -126,7 +158,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public virtual Visibility MinutesLeftVisibility {
-            get { return Visibility.Hidden; }
+            get { return Visibility.Collapsed; }
         }
 
         /// <summary>
@@ -254,12 +286,14 @@ namespace TiTsEd.ViewModel {
             bool success = SetValue(obj, key, value, propertyName);
             if (success) {
                 if ("tooltip" != Convert.ToString(key)) {
-                    var source = _xml.Tooltip ?? _xml.Description;
+                    var source = _xml.Description;
                     if (null != source) {
-                        Tooltip = expandVars(source);
-                        OnPropertyChanged("Comment");
+                        Description = expandVars(source);
                     }
                 }
+                OnPropertyChanged("Description");
+                OnPropertyChanged("Subtitle");
+                OnPropertyChanged("Comment");
             }
             return success;
         }
@@ -268,6 +302,9 @@ namespace TiTsEd.ViewModel {
             if (str == null) return true;
 
             int index = (Name ?? "").IndexOf(str, StringComparison.InvariantCultureIgnoreCase);
+            if (index != -1) return true;
+
+            index = (Description ?? "").IndexOf(str, StringComparison.InvariantCultureIgnoreCase);
             if (index != -1) return true;
 
             index = (Comment ?? "").IndexOf(str, StringComparison.InvariantCultureIgnoreCase);
@@ -286,16 +323,16 @@ namespace TiTsEd.ViewModel {
                 obj = new AmfObject(AmfTypes.Object);
             }
             obj["storageName"] = Name;
-            obj["tooltip"] = "";
-            obj["iconName"] = "";
-            obj["iconShade"] = 0xFFFFFF;
-            obj["minutesLeft"] = 0;
-            obj["value1"] = 0;
-            obj["value2"] = 0;
-            obj["value3"] = 0;
-            obj["value4"] = 0;
-            obj["hidden"] = true;
-            obj["combatOnly"] = false;
+            obj["tooltip"] = expandVars(_xml.Description);
+            obj["iconName"] = _xml.IconName ?? "";
+            obj["iconShade"] = _xml.IconShade ?? 0xFFFFFF;
+            obj["minutesLeft"] = _xml.MinutesLeft;
+            obj["value1"] = _xml.Value1;
+            obj["value2"] = _xml.Value2;
+            obj["value3"] = _xml.Value3;
+            obj["value4"] = _xml.Value4;
+            obj["hidden"] = _xml.IsHidden ?? true;
+            obj["combatOnly"] = _xml.IsCombatOnly ?? false;
             obj["classInstance"] = "classes::StorageClass";
         }
 
@@ -311,7 +348,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public string expandVars(string source) {
-            if (null == source) return null;
+            if (null == source) return "";
             var value1 = _xml.Value1;
             var value2 = _xml.Value2;
             var value3 = _xml.Value3;

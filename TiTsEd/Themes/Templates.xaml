@@ -352,7 +352,8 @@
                                 <CheckBox.Content>
                                     <StackPanel Orientation="Vertical">
                                         <TextBlock Text="{Binding Name}" FontSize="12"/>
-                                        <TextBlock x:Name="subtitle" Text="{Binding Comment}" Visibility="{Binding CommentVisibility}" Foreground="#606060" TextWrapping="Wrap"/>
+                                        <TextBlock x:Name="subtitle" Text="{Binding Subtitle}" Visibility="{Binding SubtitleVisibility}" Foreground="#606060" TextWrapping="Wrap"/>
+                                        <TextBlock x:Name="comment" Text="{Binding Comment}" Visibility="{Binding CommentVisibility}" Foreground="#606060" TextWrapping="Wrap"/>
                                     </StackPanel>
                                 </CheckBox.Content>
                             </CheckBox>
@@ -406,6 +407,17 @@
 
                                 <TextBlock Text="Minutes Left" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding MinutesLeftVisibility}"/>
                                 <common:MyNumericBox Value="{Binding MinutesLeft}" Type="Int" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70" Visibility="{Binding MinutesLeftVisibility}"/>
+
+                                <TextBlock Text="Hidden" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding IsHiddenVisibility}"/>
+                                <CheckBox IsChecked="{Binding IsHidden}" Margin="6,2,0,2" Visibility="{Binding IsHiddenVisibility}"/>
+
+                                <TextBlock Text="Combat Only" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding IsCombatOnlyVisibility}"/>
+                                <CheckBox IsChecked="{Binding IsCombatOnly}" Margin="6,2,0,2" Visibility="{Binding IsCombatOnlyVisibility}"/>
+
+                                <TextBlock Text="Icon Name" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding IconNameVisibility}"/>
+                                <TextBox Text="{Binding IconName}" Margin="6,2,0,2" Visibility="{Binding IconNameVisibility}"/>
+                                <TextBlock Text="Icon Shade" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding IconShadeVisibility}"/>
+                                <common:MyNumericBox Value="{Binding IconShade}" Type="Int" Min="0" Margin="6,2,0,2" Width="70" Visibility="{Binding IconShadeVisibility}"/>
                             </common:AutoGrid>
                         </Border>
                     </Popup>

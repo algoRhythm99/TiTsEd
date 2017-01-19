@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -470,15 +471,33 @@ namespace TiTsEd.Model {
         public string Tooltip { get; set; }
 
         [XmlAttribute]
-        public bool IsHidden { get; set; }
+        public string Comment { get; set; }
 
-        [XmlAttribute]
-        public bool IsCombatOnly { get; set; }
+        [XmlIgnore]
+        public bool? IsHidden { get; set; }
+        [XmlAttribute("IsHidden")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public bool XmlIsHidden { get { return IsHidden.Value; } set { IsHidden = value; } }
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public bool XmlIsHiddenSpecified { get { return IsHidden.HasValue; } }
+
+        [XmlIgnore]
+        public bool? IsCombatOnly { get; set; }
+        [XmlAttribute("IsCombatOnly")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public bool XmlIsCombatOnly { get { return IsCombatOnly.Value; } set { IsCombatOnly = value; } }
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public bool XmlIsCombatOnlySpecified { get { return IsCombatOnly.HasValue; } }
 
         [XmlAttribute]
         public string IconName { get; set; }
-        [XmlAttribute]
-        public int IconShade { get; set; }
+        [XmlIgnore]
+        public int? IconShade { get; set; }
+        [XmlAttribute("IconShade")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public int XmlIconShade { get { return IconShade.Value; } set { IconShade = value; } }
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public bool XmlIconShadeSpecified { get { return IconShade.HasValue; } }
 
         [XmlAttribute]
         public int MinutesLeft { get; set; }
