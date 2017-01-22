@@ -36,30 +36,6 @@ namespace TiTsEd.ViewModel {
                 _rawDataSearchText = previousVM._rawDataSearchText;
             }
 
-            // Perks
-            var charPerks = Character.PerksArray;
-            var xmlPerks = XmlData.Current.PerkGroups.SelectMany(x => x.Perks).ToArray();
-            var unknownPerkGroup = XmlData.Current.PerkGroups.Last();
-            ImportMissingNamedVectors(charPerks, xmlPerks, "storageName", x => x.GetString("tooltip"), unknownPerkGroup.Perks);
-
-            Character.UpdatePerks();
-
-            // KeyItems
-            var charKeyItems = Character.KeyItemsArray;
-            var xmlKeys = XmlData.Current.KeyItemGroups.SelectMany(x => x.KeyItems).ToArray();
-            var unknownKeyItemGroup = XmlData.Current.KeyItemGroups.Last();
-            ImportMissingNamedVectors(charKeyItems, xmlKeys, "storageName", x => x.GetString("tooltip"), unknownKeyItemGroup.KeyItems);
-
-            Character.UpdateKeyItems();
-
-            // Statuses
-            var charStatuses = Character.StatusEffectsArray;
-            var xmlStatusEffects = XmlData.Current.StatusEffectGroups.SelectMany(x => x.StatusEffects).ToArray();
-            var unknownStatusEffectsGroup = XmlData.Current.StatusEffectGroups.Last();
-            ImportMissingNamedVectors(charStatuses, xmlStatusEffects, "storageName", x => x.GetString("tooltip"), unknownStatusEffectsGroup.StatusEffects);
-
-            Character.UpdateStatusEffects();
-
             // Flags
             foreach (var xmlFlag in XmlData.Current.Flags) {
                 if (!_allFlags.ContainsKey(xmlFlag.Name)) {
@@ -77,7 +53,7 @@ namespace TiTsEd.ViewModel {
             Flags = new UpdatableCollection<FlagVM>(_allFlags.Values.ToList().Where(x => x.Match(RawDataSearchText)));
         }
 
-        static void ImportMissingNamedVectors(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, string nameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlStorageClass> targetXmlList = null) {
+        public static void ImportMissingNamedVectors(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, string nameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlStorageClass> targetXmlList = null) {
             if (targetXmlList == null) targetXmlList = (IList<XmlStorageClass>)xmlItems;
             var xmlNames = new HashSet<String>(xmlItems.Select(x => x.Name));
 

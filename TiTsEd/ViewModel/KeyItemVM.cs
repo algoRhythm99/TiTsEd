@@ -34,16 +34,16 @@ namespace TiTsEd.ViewModel {
     }
 
     public sealed class KeyItemVM : StorageClassVM {
-        public KeyItemVM(GameVM game, AmfObject keyItems, XmlStorageClass xml)
-            : base(game, keyItems, xml) {
+        public KeyItemVM(CharacterVM character, AmfObject keyItems, XmlStorageClass xml)
+            : base(character, keyItems, xml) {
         }
 
         protected override void NotifyGameVM() {
-            _game.Character.OnKeyItemChanged(Name);
+            _character.OnKeyItemChanged(Name);
         }
 
         public override AmfObject GetItems() {
-            return _game.Character.KeyItemsArray;
+            return _character.KeyItemsArray;
         }
 
         public override AmfObject GetObject() {
@@ -89,7 +89,7 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void OnIsOwnedChanged() {
-            _game.Character.OnKeyItemAddedOrRemoved(Name, IsOwned);
+            _character.OnKeyItemAddedOrRemoved(Name, IsOwned);
         }
 
     }

@@ -1411,7 +1411,7 @@
 			<Perk Name="Leap Up" Description="Allows you to easily and freely leap to your feet after being knocked prone." />
 		</PerkGroup>
 		<PerkGroup Name="Level 7 Smuggler">
-			<Perk Name="Hidden Loot" Description="Increases inventory size by two slots." />
+			<Perk Name="Hidden Loot" Description="Increases inventory size by two slots." Comment="Removal of this perk may lead to item loss" />
 			<Perk Name="Take Advantage" Description="Increase sneak attack and aimed shot base bonuses by 100%." />
 			<Perk Name="Smuggled Stimulant" Description="Allows you to gain 25 energy per round for 3 rounds, once per combat encounter." />
 			<Perk Name="Burst of Energy" Description="Allows you to recover 60 energy, once per combat encounter." />

@@ -28,10 +28,31 @@ namespace TiTsEd.ViewModel {
             Cocks = new CockArrayVM(game, GetObj("cocks"));
             Ass = new VaginaVM(game, GetObj("ass"));
 
+            // Perks
+            var xmlPerks = XmlData.Current.PerkGroups.SelectMany(x => x.Perks).ToArray();
+            var unknownPerkGroup = XmlData.Current.PerkGroups.Last();
+            GameVM.ImportMissingNamedVectors(PerksArray, xmlPerks, "storageName", x => x.GetString("tooltip"), unknownPerkGroup.Perks);
+            UpdatePerks();
+
+            // KeyItems
+            var xmlKeys = XmlData.Current.KeyItemGroups.SelectMany(x => x.KeyItems).ToArray();
+            var unknownKeyItemGroup = XmlData.Current.KeyItemGroups.Last();
+            GameVM.ImportMissingNamedVectors(KeyItemsArray, xmlKeys, "storageName", x => x.GetString("tooltip"), unknownKeyItemGroup.KeyItems);
+            UpdateKeyItems();
+
+            // Statuses
+            var xmlStatusEffects = XmlData.Current.StatusEffectGroups.SelectMany(x => x.StatusEffects).ToArray();
+            var unknownStatusEffectsGroup = XmlData.Current.StatusEffectGroups.Last();
+            GameVM.ImportMissingNamedVectors(StatusEffectsArray, xmlStatusEffects, "storageName", x => x.GetString("tooltip"), unknownStatusEffectsGroup.StatusEffects);
+            UpdateStatusEffects();
+
             // inventory
             List<String> types = new List<String>();
             foreach (XmlItemType type in XmlData.Current.ItemTypes) {
                 types.Add(type.Name);
+            }
+            if (!types.Contains("Unknown")) {
+                types.Add("Unknown");
             }
 
             var containers = new List<ItemContainerVM>();
@@ -1034,6 +1055,26 @@ namespace TiTsEd.ViewModel {
         #region ItemPage
         public UpdatableCollection<ItemContainerVM> ItemContainers { get; private set; }
 
+        public int MaxInventoryItems {
+            get {
+                int max = 10;
+                if (HasPerk("Hidden Loot")) {
+                    max += 2;
+                }
+                if (null != Accessory) {
+                    if ("Cargobot" == Accessory.Name) {
+                        max += 2;
+                    }
+                }
+                if (null != Armor) {
+                    if ("I.Coat" == Armor.Name) {
+                        max++;
+                    }
+                }
+                return max;
+            }
+        }
+
         public void UpdateItemList() {
             //need to find a way to make search only apply to currently selected item somehow
             foreach(var slot in _inventory.Slots) {
@@ -1043,8 +1084,8 @@ namespace TiTsEd.ViewModel {
 
         public void UpdateInventory() {
             _inventory.Clear();
-            const int maxSlots = 10;
             AmfObject inv = GetObj("inventory");
+            var maxSlots = MaxInventoryItems;
             for (int i = 0; i < maxSlots; ++i) {
                 AmfObject item = (AmfObject)inv[i];
                 if(item == null) {
@@ -1062,8 +1103,8 @@ namespace TiTsEd.ViewModel {
 
         public void CleanupInventory() {
             //shift all the items around in the inventory
-            const int maxSlots = 10;
             AmfObject inv = GetObj("inventory");
+            var maxSlots = MaxInventoryItems;
             AmfObject nInv = new AmfObject(AmfTypes.Array);
             for (int i = 0; i < maxSlots; ++i) {
                 AmfObject item = (AmfObject)inv[i];
@@ -1122,7 +1163,7 @@ namespace TiTsEd.ViewModel {
             if (null != Game.AllKeyItems) {
                 var charKeyItems = KeyItemsArray;
                 foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
-                    var keyItemVMs = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(Game, charKeyItems, x)).ToArray();
+                    var keyItemVMs = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, charKeyItems, x)).ToArray();
                     foreach (var keyItemVM in keyItemVMs) {
                         bool found = false;
                         foreach (var perk in Game.AllKeyItems) {
@@ -1196,7 +1237,7 @@ namespace TiTsEd.ViewModel {
             if (null != Game.AllPerks) {
                 var perksArray = PerksArray;
                 foreach (var xmlGroup in XmlData.Current.PerkGroups) {
-                    var perkVMs = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(Game, perksArray, x)).ToArray();
+                    var perkVMs = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, perksArray, x)).ToArray();
                     foreach (var perkVM in perkVMs) {
                         bool found = false;
                         foreach (var perk in Game.AllPerks) {
@@ -1235,11 +1276,7 @@ namespace TiTsEd.ViewModel {
             // We do not add stats however since the user can already change them easily.
             switch (name) {
                 case "Shield Tweaks":
-                    OnPropertyChanged("MaxShields");
-                    break;
                 case "Shield Booster":
-                    OnPropertyChanged("MaxShields");
-                    break;
                 case "Attack Drone":
                     OnPropertyChanged("MaxShields");
                     break;
@@ -1248,6 +1285,10 @@ namespace TiTsEd.ViewModel {
                     break;
                 case "Heroic Reserves":
                     OnPropertyChanged("MaxEnergy");
+                    break;
+                case "Hidden Loot":
+                    OnPropertyChanged("MaxInventoryItems");
+                    UpdateInventory();
                     break;
                 default:
                     break;
@@ -1289,7 +1330,7 @@ namespace TiTsEd.ViewModel {
             if (null != Game.AllStatusEffects) {
                 var charStatuses = StatusEffectsArray;
                 foreach (var xmlGroup in XmlData.Current.StatusEffectGroups) {
-                    var statusVMs = xmlGroup.StatusEffects.OrderBy(x => x.Name).Select(x => new StatusEffectVM(Game, charStatuses, x)).ToArray();
+                    var statusVMs = xmlGroup.StatusEffects.OrderBy(x => x.Name).Select(x => new StatusEffectVM(this, charStatuses, x)).ToArray();
                     foreach (var statusVM in statusVMs) {
                         bool found = false;
                         foreach (var effect in Game.AllStatusEffects) {

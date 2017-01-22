@@ -36,8 +36,8 @@ namespace TiTsEd.ViewModel {
     }
 
     public sealed class StatusEffectVM : StorageClassVM {
-        public StatusEffectVM(GameVM game, AmfObject statuses, XmlStorageClass xml)
-            : base(game, statuses, xml) {
+        public StatusEffectVM(CharacterVM character, AmfObject statuses, XmlStorageClass xml)
+            : base(character, statuses, xml) {
         }
 
         public override Visibility MinutesLeftVisibility {
@@ -49,7 +49,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public override AmfObject GetItems() {
-            return _game.Character.StatusEffectsArray;
+            return _character.StatusEffectsArray;
         }
 
         public override AmfObject GetObject() {
@@ -62,11 +62,11 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            _game.Character.OnStatusChanged(Name);
+            _character.OnStatusChanged(Name);
         }
 
         protected override void OnIsOwnedChanged() {
-            _game.Character.OnStatusAddedOrRemoved(Name, IsOwned);
+            _character.OnStatusAddedOrRemoved(Name, IsOwned);
         }
     }
 }

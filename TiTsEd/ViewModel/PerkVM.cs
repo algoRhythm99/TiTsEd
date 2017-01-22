@@ -36,12 +36,12 @@ namespace TiTsEd.ViewModel {
     }
 
     public sealed class PerkVM : StorageClassVM {
-        public PerkVM(GameVM game, AmfObject perksArray, XmlStorageClass xml)
-            : base(game, perksArray, xml) {
+        public PerkVM(CharacterVM character, AmfObject perksArray, XmlStorageClass xml)
+            : base(character, perksArray, xml) {
         }
 
         public override AmfObject GetItems() {
-            return _game.Character.PerksArray;
+            return _character.PerksArray;
         }
 
         public override AmfObject GetObject() {
@@ -49,11 +49,11 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            _game.Character.OnPerkChanged(Name);
+            _character.OnPerkChanged(Name);
         }
 
         protected override void OnIsOwnedChanged() {
-            _game.Character.OnPerkAddedOrRemoved(Name, IsOwned);
+            _character.OnPerkAddedOrRemoved(Name, IsOwned);
         }
     }
 }

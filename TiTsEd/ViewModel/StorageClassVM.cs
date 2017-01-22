@@ -8,14 +8,14 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public abstract class StorageClassVM : BindableBase {
-        protected readonly GameVM _game;
+        protected readonly CharacterVM _character;
         protected readonly AmfObject _items;
         protected readonly XmlStorageClass _xml;
         protected readonly HashSet<string> _gameProperties = new HashSet<string>();
 
-        protected StorageClassVM(GameVM game, AmfObject items, XmlStorageClass xml) {
+        protected StorageClassVM(CharacterVM character, AmfObject items, XmlStorageClass xml) {
             _xml = xml;
-            _game = game;
+            _character = character;
             _items = items;
         }
 
