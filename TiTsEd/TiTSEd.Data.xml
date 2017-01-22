@@ -253,12 +253,21 @@
 		<!-- ================================================================ -->
 		<HairStyles>
 			<HairStyle />
-			<HairStyle>ponytail</HairStyle>
-			<HairStyle>pigtailed hair</HairStyle>
-			<HairStyle>curled hair</HairStyle>
-			<HairStyle>braid</HairStyle>
 			<HairStyle>afro</HairStyle>
+			<HairStyle>braided</HairStyle>
+			<HairStyle>curls</HairStyle>
+			<HairStyle>curtains</HairStyle>
+			<HairStyle>fingerwave</HairStyle>
+			<HairStyle>loose</HairStyle>
 			<HairStyle>mohawk</HairStyle>
+			<HairStyle>pigtails</HairStyle>
+			<HairStyle>ponytail</HairStyle>
+			<HairStyle>quiff</HairStyle>
+			<HairStyle>ringlets</HairStyle>
+			<HairStyle>spikehawk</HairStyle>
+			<HairStyle>straight</HairStyle>
+			<HairStyle>tentacle</HairStyle>
+			<HairStyle>topknot</HairStyle>
 		</HairStyles>
 		<!-- ================================================================ -->
 		<FaceTypes>
