@@ -185,7 +185,7 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.Tone}" Upper="100" Max="100" />
 
                     <TextBlock              Text="Feminity"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Feminity}" Upper="100" Tip="{Binding Game.Character.FeminityTip}"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Feminity}" Upper="100" />
                     
                     <TextBlock              Text="Skin Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}"/>
@@ -194,7 +194,7 @@
                     <ComboBox               Text="{Binding Game.Character.SkinTone}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
 
                     <TextBlock              Text="Skin Accent"/>
-                    <ComboBox               Text="{Binding Game.Character.SkinAccent}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+                    <ComboBox               Text="{Binding Game.Character.SkinAccent}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" ToolTip="Used for: Vanae Markings color"/>
                 </common:AutoGrid>
                 <Expander Header="Skin Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.SkinFlags}" />

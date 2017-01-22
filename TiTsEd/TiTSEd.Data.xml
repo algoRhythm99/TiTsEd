@@ -302,6 +302,88 @@
 			<FaceFlag ID="43" Name="Beak" />
 		</FaceFlags>
 		<!-- ================================================================ -->
+		<EyeColors>
+			<EyeColor>amber</EyeColor>
+			<EyeColor>amethyst</EyeColor>
+			<EyeColor>aqua</EyeColor>
+			<EyeColor>aquamarine</EyeColor>
+			<EyeColor>black</EyeColor>
+			<EyeColor>blue</EyeColor>
+			<EyeColor>brown</EyeColor>
+			<EyeColor>cerulean</EyeColor>
+			<EyeColor>chestnut</EyeColor>
+			<EyeColor>citrine</EyeColor>
+			<EyeColor>cloudy</EyeColor>
+			<EyeColor>copper</EyeColor>
+			<EyeColor>crimson</EyeColor>
+			<EyeColor>dark blue</EyeColor>
+			<EyeColor>dark yellow</EyeColor>
+			<EyeColor>electric blue</EyeColor>
+			<EyeColor>emerald</EyeColor>
+			<EyeColor>fir green</EyeColor>
+			<EyeColor>garnet</EyeColor>
+			<EyeColor>glowing amber</EyeColor>
+			<EyeColor>glowing blue</EyeColor>
+			<EyeColor>glowing cyan</EyeColor>
+			<EyeColor>glowing gold</EyeColor>
+			<EyeColor>glowing green</EyeColor>
+			<EyeColor>glowing orange</EyeColor>
+			<EyeColor>glowing pink</EyeColor>
+			<EyeColor>glowing purple</EyeColor>
+			<EyeColor>glowing red</EyeColor>
+			<EyeColor>glowing violet</EyeColor>
+			<EyeColor>glowing white</EyeColor>
+			<EyeColor>glowing yellow</EyeColor>
+			<EyeColor>gold</EyeColor>
+			<EyeColor>gray</EyeColor>
+			<EyeColor>green</EyeColor>
+			<EyeColor>hazel</EyeColor>
+			<EyeColor>indigo</EyeColor>
+			<EyeColor>iridescent</EyeColor>
+			<EyeColor>jade</EyeColor>
+			<EyeColor>lapis</EyeColor>
+			<EyeColor>lavender</EyeColor>
+			<EyeColor>leaf green</EyeColor>
+			<EyeColor>lime green</EyeColor>
+			<EyeColor>luminous azure</EyeColor>
+			<EyeColor>luminous blue</EyeColor>
+			<EyeColor>luminous celeste</EyeColor>
+			<EyeColor>luminous cerulean</EyeColor>
+			<EyeColor>luminous green</EyeColor>
+			<EyeColor>luminous orange</EyeColor>
+			<EyeColor>luminous pink</EyeColor>
+			<EyeColor>luminous purple</EyeColor>
+			<EyeColor>luminous silver</EyeColor>
+			<EyeColor>luminous violet</EyeColor>
+			<EyeColor>luminous yellow</EyeColor>
+			<EyeColor>opal</EyeColor>
+			<EyeColor>orange</EyeColor>
+			<EyeColor>pale yellow</EyeColor>
+			<EyeColor>peach</EyeColor>
+			<EyeColor>pearl</EyeColor>
+			<EyeColor>peridot</EyeColor>
+			<EyeColor>pink</EyeColor>
+			<EyeColor>platinum</EyeColor>
+			<EyeColor>purple</EyeColor>
+			<EyeColor>red</EyeColor>
+			<EyeColor>red-orange</EyeColor>
+			<EyeColor>rose</EyeColor>
+			<EyeColor>ruby</EyeColor>
+			<EyeColor>sable</EyeColor>
+			<EyeColor>sapphire</EyeColor>
+			<EyeColor>sea blue</EyeColor>
+			<EyeColor>silver</EyeColor>
+			<EyeColor>teal</EyeColor>
+			<EyeColor>topaz</EyeColor>
+			<EyeColor>turquoise</EyeColor>
+			<EyeColor>varied</EyeColor>
+			<EyeColor>violet</EyeColor>
+			<EyeColor>white</EyeColor>
+			<EyeColor>yellow</EyeColor>
+			<EyeColor>yellow-green</EyeColor>
+			<EyeColor>yellow-orange</EyeColor>
+		</EyeColors>
+		<!-- ================================================================ -->
 		<EyeTypes>
 			<EyeType ID="0" Name="Human" />
 			<EyeType ID="4" Name="Feline" />
@@ -3141,6 +3223,11 @@
 			<StatusEffect Name="Egregiously Endowed" Description="Movement between rooms takes twice as long, and fleeing from combat is more difficult." IconName="Icon_Poison" />
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Endowment Immobilized" Description="Your endowments prevent you from moving." IconName="Icon_Poison" />
+-->
+			<StatusEffect Name="Force Fem Gender" Comment="Forces feminine descriptions" IsHidden="true" />
+			<StatusEffect Name="Force It Gender" Comment="Forces neuter/androgynous descriptions" IsHidden="true" />
+			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
+<!--
 			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
 			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />

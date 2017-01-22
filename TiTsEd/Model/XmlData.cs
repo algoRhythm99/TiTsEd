@@ -166,6 +166,9 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("EyeType")]
         public XmlEnum[] EyeTypes { get; set; }
 
+        [XmlArray, XmlArrayItem("EyeColor")]
+        public string[] EyeColors { get; set; }
+
         [XmlArray, XmlArrayItem("EarType")]
         public XmlEnum[] EarTypes { get; set; }
 

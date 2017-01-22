@@ -102,6 +102,24 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        public bool IsMale {
+            get {
+                return HasStatusEffect("Force Male Gender") || ("M" == GenderId) || (Feminity < 50);
+            }
+        }
+
+        public bool IsFemale {
+            get {
+                return HasStatusEffect("Force Fem Gender") || ("F" == GenderId) || (Feminity > 50);
+            }
+        }
+
+        public bool IsNeuter {
+            get {
+                return HasStatusEffect("Force It Gender") || ("N" == GenderId);
+            }
+        }
+
         #region GeneralPage
         public new string Name {
             get { return GetString("short"); }
@@ -266,22 +284,18 @@ namespace TiTsEd.ViewModel {
                     maxShields += (UpperUndergarment != null) ? UpperUndergarment.Xml.GetFieldValueAsInt("shields") : 0;
                     maxShields += (LowerUndergarment != null) ? LowerUndergarment.Xml.GetFieldValueAsInt("shields") : 0;
 
-                    if (HasPerk("Shield Tweaks"))
-                    {
+                    if (HasPerk("Shield Tweaks")) {
                         maxShields += Level * 2;
                     }
-                    if (HasPerk("Shield Booster"))
-                    {
+                    if (HasPerk("Shield Booster")) {
                         maxShields += Level * 8;
                     }
-                    if (HasPerk("Attack Drone"))
-                    {
+                    if (HasPerk("Attack Drone")) {
                         maxShields += (Level * 3);
                     }
 
                     //Debuffs!
-                    if (HasStatusEffect("Rusted Emitters"))
-                    {
+                    if (HasStatusEffect("Rusted Emitters")) {
                         maxShields = (int)Math.Round(maxShields * 0.75);
                     }
                 }
@@ -294,8 +308,9 @@ namespace TiTsEd.ViewModel {
             set { SetValue("HPRaw", value); }
         }
 
-        private int HPMod {
+        public int HPMod {
             get { return GetInt("HPMod"); }
+            set { SetValue("HPMod", value); }
         }
 
         public int MaxHP {
@@ -701,7 +716,7 @@ namespace TiTsEd.ViewModel {
 
         public string HipRatingTip {
             get {
-                var isMale = Feminity < 50;
+                var isMale = IsMale;
                 if (EffectiveHipRating >= 20) return isMale ? "inhumanly-wide" : "broodmother";
                 if (EffectiveHipRating >= 15) return isMale ? "voluptuous" : "child-bearing";
                 if (EffectiveHipRating >= 10) return isMale ? "wide" : "curvy";
@@ -1088,7 +1103,7 @@ namespace TiTsEd.ViewModel {
             var maxSlots = MaxInventoryItems;
             for (int i = 0; i < maxSlots; ++i) {
                 AmfObject item = (AmfObject)inv[i];
-                if(item == null) {
+                if (item == null) {
                     //just add an empty item, we'll fix it later maybe
                     item = new AmfObject(AmfTypes.Object);
                     item["classInstance"] = XmlItem.Empty.ID;
@@ -1156,45 +1171,31 @@ namespace TiTsEd.ViewModel {
 
         public List<KeyItemGroupVM> KeyItemGroups { get; set; }
 
-        public void UpdateKeyItems(bool reset = false) {
-            if (reset || (null == KeyItemGroups)) {
+        public void UpdateKeyItems() {
+            if (null == KeyItemGroups) {
                 KeyItemGroups = new List<KeyItemGroupVM>();
             }
-            if (null != Game.AllKeyItems) {
-                var charKeyItems = KeyItemsArray;
-                foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
-                    var keyItemVMs = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, charKeyItems, x)).ToArray();
-                    foreach (var keyItemVM in keyItemVMs) {
-                        bool found = false;
-                        foreach (var perk in Game.AllKeyItems) {
-                            if (perk.Name == keyItemVM.Name) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) {
-                            Game.AllKeyItems.Add(keyItemVM);
-                        }
+            var charKeyItems = KeyItemsArray;
+            foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
+                var keyItemVMs = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, charKeyItems, x)).ToArray();
+                foreach (var keyItemVM in keyItemVMs) {
+                    int indx = Game.AllKeyItems.FindIndex(f => f.Name == keyItemVM.Name);
+                    if (-1 == indx) {
+                        Game.AllKeyItems.Add(keyItemVM);
                     }
+                }
 
-                    var groupVM = new KeyItemGroupVM(Game, xmlGroup.Name, keyItemVMs);
-                    bool foundGroup = false;
-                    foreach (var group in KeyItemGroups) {
-                        if (group.Name == groupVM.Name) {
-                            foundGroup = true;
-                            break;
-                        }
-                    }
-                    if (!foundGroup) {
-                        KeyItemGroups.Add(groupVM);
-                    }
+                var groupVM = new KeyItemGroupVM(Game, xmlGroup.Name, keyItemVMs);
+                int idx = KeyItemGroups.FindIndex(f => f.Name == groupVM.Name);
+                if (-1 == idx) {
+                    KeyItemGroups.Add(groupVM);
                 }
             }
         }
 
         public bool HasKeyItem(string keyItemName) {
             var keyItem = GetKeyItem(keyItemName);
-            return keyItem != null ? keyItem.IsOwned : false;
+            return (null != keyItem) ? keyItem.IsOwned : false;
         }
 
         public void OnKeyItemAddedOrRemoved(string name, bool isOwned) {
@@ -1210,14 +1211,19 @@ namespace TiTsEd.ViewModel {
         /// </summary>
         public KeyItemVM GetKeyItem(string name, [CallerMemberName] string propertyName = null) {
             var keyItem = Game.AllKeyItems.First(x => x.Name == name);
-            if (null != propertyName) {
-                keyItem.GameVMProperties.Add(propertyName);
+            if (null != keyItem) {
+                if (null != propertyName) {
+                    keyItem.GameVMProperties.Add(propertyName);
+                }
+                return keyItem;
             }
-            return keyItem;
+            return null;
         }
 
         public void OnKeyItemChanged(string name) {
-            foreach (var prop in Game.AllKeyItems.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
+            foreach (var prop in Game.AllKeyItems.First(x => x.Name == name).GameVMProperties) {
+                OnPropertyChanged(prop);
+            }
         }
 
         #endregion
@@ -1230,45 +1236,31 @@ namespace TiTsEd.ViewModel {
 
         public List<PerkGroupVM> PerkGroups { get; set; }
 
-        public void UpdatePerks(bool reset = false) {
-            if (reset || (null == PerkGroups)) {
+        public void UpdatePerks() {
+            if (null == PerkGroups) {
                 PerkGroups = new List<PerkGroupVM>();
             }
-            if (null != Game.AllPerks) {
-                var perksArray = PerksArray;
-                foreach (var xmlGroup in XmlData.Current.PerkGroups) {
-                    var perkVMs = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, perksArray, x)).ToArray();
-                    foreach (var perkVM in perkVMs) {
-                        bool found = false;
-                        foreach (var perk in Game.AllPerks) {
-                            if (perk.Name == perkVM.Name) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) {
-                            Game.AllPerks.Add(perkVM);
-                        }
+            var perksArray = PerksArray;
+            foreach (var xmlGroup in XmlData.Current.PerkGroups) {
+                var perkVMs = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, perksArray, x)).ToArray();
+                foreach (var perkVM in perkVMs) {
+                    int indx = Game.AllPerks.FindIndex(f => f.Name == perkVM.Name);
+                    if (-1 == indx) {
+                        Game.AllPerks.Add(perkVM);
                     }
+                }
 
-                    var groupVM = new PerkGroupVM(Game, xmlGroup.Name, perkVMs);
-                    bool foundGroup = false;
-                    foreach (var group in PerkGroups)  {
-                        if (group.Name == groupVM.Name) {
-                            foundGroup = true;
-                            break;
-                        }
-                    }
-                    if (!foundGroup) {
-                        PerkGroups.Add(groupVM);
-                    }
+                var groupVM = new PerkGroupVM(Game, xmlGroup.Name, perkVMs);
+                int idx = PerkGroups.FindIndex(f => f.Name == groupVM.Name);
+                if (-1 == idx) {
+                    PerkGroups.Add(groupVM);
                 }
             }
         }
 
         public bool HasPerk(string perkName) {
             var perk = GetPerk(perkName);
-            return perk != null ? perk.IsOwned : false;
+            return (null != perk) ? perk.IsOwned : false;
         }
 
         public void OnPerkAddedOrRemoved(string name, bool isOwned) {
@@ -1301,16 +1293,21 @@ namespace TiTsEd.ViewModel {
         /// </summary>
         public PerkVM GetPerk(string name, [CallerMemberName] string propertyName = null) {
             var perk = Game.AllPerks.First(x => x.Name == name);
-            if (null != propertyName) {
-                perk.GameVMProperties.Add(propertyName);
+            if (null != perk) {
+                if (null != propertyName) {
+                    perk.GameVMProperties.Add(propertyName);
+                }
+                return perk;
             }
-            return perk;
+            return null;
         }
 
         // Whenever a PerkVM, FlagVM, or StatusVM is modified, it notifies GameVM with those functions so that it updates its dependent properties.
         // See also GetPerk, GetFlag, and GetStatus.
         public void OnPerkChanged(string name) {
-            foreach (var prop in Game.AllPerks.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
+            foreach (var prop in Game.AllPerks.First(x => x.Name == name).GameVMProperties) {
+                OnPropertyChanged(prop);
+            }
         }
 
         #endregion
@@ -1323,38 +1320,24 @@ namespace TiTsEd.ViewModel {
 
         public List<StatusGroupVM> StatusEffectGroups { get; set; }
 
-        public void UpdateStatusEffects(bool reset = false) {
-            if (reset || (null == StatusEffectGroups)) {
+        public void UpdateStatusEffects() {
+            if (null == StatusEffectGroups) {
                 StatusEffectGroups = new List<StatusGroupVM>();
             }
-            if (null != Game.AllStatusEffects) {
-                var charStatuses = StatusEffectsArray;
-                foreach (var xmlGroup in XmlData.Current.StatusEffectGroups) {
-                    var statusVMs = xmlGroup.StatusEffects.OrderBy(x => x.Name).Select(x => new StatusEffectVM(this, charStatuses, x)).ToArray();
-                    foreach (var statusVM in statusVMs) {
-                        bool found = false;
-                        foreach (var effect in Game.AllStatusEffects) {
-                            if (effect.Name == statusVM.Name) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) {
-                            Game.AllStatusEffects.Add(statusVM);
-                        }
+            var charStatuses = StatusEffectsArray;
+            foreach (var xmlGroup in XmlData.Current.StatusEffectGroups) {
+                var statusVMs = xmlGroup.StatusEffects.OrderBy(x => x.Name).Select(x => new StatusEffectVM(this, charStatuses, x)).ToArray();
+                foreach (var statusVM in statusVMs) {
+                    int indx = Game.AllStatusEffects.FindIndex(f => f.Name == statusVM.Name);
+                    if (-1 == indx) {
+                        Game.AllStatusEffects.Add(statusVM);
                     }
+                }
 
-                    var groupVM = new StatusGroupVM(Game, xmlGroup.Name, statusVMs);
-                    bool foundGroup = false;
-                    foreach (var group in StatusEffectGroups) {
-                        if (group.Name == groupVM.Name) {
-                            foundGroup = true;
-                            break;
-                        }
-                    }
-                    if (!foundGroup) {
-                        StatusEffectGroups.Add(groupVM);
-                    }
+                var groupVM = new StatusGroupVM(Game, xmlGroup.Name, statusVMs);
+                int idx = StatusEffectGroups.FindIndex(f => f.Name == groupVM.Name);
+                if (-1 == idx) {
+                    StatusEffectGroups.Add(groupVM);
                 }
             }
         }
@@ -1370,10 +1353,13 @@ namespace TiTsEd.ViewModel {
         /// </summary>
         public StatusEffectVM GetStatus(string name, [CallerMemberName] string propertyName = null) {
             var status = Game.AllStatusEffects.First(x => x.Name == name);
-            if (null != propertyName) {
-                status.GameVMProperties.Add(propertyName);
+            if (null != status) {
+                if (null != propertyName) {
+                    status.GameVMProperties.Add(propertyName);
+                }
+                return status;
             }
-            return status;
+            return null;
         }
 
         public void OnStatusAddedOrRemoved(string name, bool isOwned) {
@@ -1389,7 +1375,9 @@ namespace TiTsEd.ViewModel {
         }
 
         public void OnStatusChanged(string name) {
-            foreach (var prop in Game.AllStatusEffects.First(x => x.Name == name).GameVMProperties) OnPropertyChanged(prop);
+            foreach (var prop in Game.AllStatusEffects.First(x => x.Name == name).GameVMProperties) {
+                OnPropertyChanged(prop);
+            }
         }
 
         #endregion
