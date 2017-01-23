@@ -2148,9 +2148,9 @@
 		<Flag Name="FYN_TALKED_ABOUT_SAVEWORDS" />
 		<Flag Name="FYN_TALKED_ABOUT_SEX" />
 		<Flag Name="FYN_TAUGHT_DANCING" />
-		<Flag Name="GALOMAX_DOSES" />
-		<Flag Name="GAVE_LYS_FLOWER" />
 -->
+		<Flag Name="GALOMAX_DOSES" Description="undefined = none used&#xD;&#xA;1 == goo hair&#xD;&#xA;2 == goo fluids&#xD;&#xA;3 == goo genitals&#xD;&#xA;4 == goo skin&#xD;&#xA;5 == full goo" />
+		<Flag Name="GAVE_LYS_FLOWER" Description="Number of times you've given Lys a flower" />
 		<Flag Name="GAVE_SHEKKA_PROBE" Description="1 == You gave Shekka the probe" />
 <!--
 		<Flag Name="GENES_MODS_ENTERED" />
