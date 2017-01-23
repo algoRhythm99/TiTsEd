@@ -565,7 +565,6 @@ namespace TiTsEd.ViewModel {
                 } else {
                     SetValue("hairStyle", value);
                 }
-                
             }
         }
 
@@ -1362,10 +1361,49 @@ namespace TiTsEd.ViewModel {
             return null;
         }
 
+        public void RemoveStatus(string name) {
+            var status = GetStatus(name);
+            if (null != status) {
+                if (status.IsOwned) {
+                    status.IsOwned = false;
+                }
+            }
+        }
+
         public void OnStatusAddedOrRemoved(string name, bool isOwned) {
             // Grants/removes the appropriate bonuses when a status is added or removed.
             // We do not add stats however since the user can already change them easily.
             switch (name) {
+                case "Force Fem Gender":
+                    if (isOwned) {
+                        // there can be only one!
+                        RemoveStatus("Force It Gender");
+                        RemoveStatus("Force Male Gender");
+                    }
+                    OnPropertyChanged("IsMale");
+                    OnPropertyChanged("IsFemale");
+                    OnPropertyChanged("IsNeuter");
+                    break;
+                case "Force It Gender":
+                    if (isOwned) {
+                        // there can be only one!
+                        RemoveStatus("Force Fem Gender");
+                        RemoveStatus("Force Male Gender");
+                    }
+                    OnPropertyChanged("IsMale");
+                    OnPropertyChanged("IsFemale");
+                    OnPropertyChanged("IsNeuter");
+                    break;
+                case "Force Male Gender":
+                    if (isOwned) {
+                        // there can be only one!
+                        RemoveStatus("Force Fem Gender");
+                        RemoveStatus("Force It Gender");
+                    }
+                    OnPropertyChanged("IsMale");
+                    OnPropertyChanged("IsFemale");
+                    OnPropertyChanged("IsNeuter");
+                    break;
                 case "Rusted Emitters":
                     OnPropertyChanged("MaxShields");
                     break;
