@@ -208,6 +208,10 @@ namespace TiTsEd.ViewModel {
 
         protected readonly AmfObject _obj;
 
+        public AmfObject GetAmfObject() {
+            return _obj;
+        }
+
         protected ObjectVM(AmfObject obj) {
             _obj = obj;
         }

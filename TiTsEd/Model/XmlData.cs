@@ -46,8 +46,8 @@ namespace TiTsEd.Model {
                     var unknownStatusEffects = new XmlStatusEffectGroup { Name = "Unknown", StatusEffects = new List<XmlStorageClass>() };
                     fileData.StatusEffectGroups.Add(unknownStatusEffects);
 
-                    //var unknownItems = new XmlItemGroup { Name = "Unknown", Items = new List<XmlItem>(), Category = ItemCategories.Unknown };
-                    //fileData.ItemGroups.Add(unknownItems);
+                    var unknownItems = new XmlItemGroup { Name = "Unknown", Items = new List<XmlItem>() };
+                    fileData.ItemGroups.Add(unknownItems);
 
                     _files.Add(xmlFile, fileData);
                     if (_files.Count == 1) Select(xmlFile);
@@ -105,8 +105,11 @@ namespace TiTsEd.Model {
         [XmlElement("Body")]
         public XmlBodySet Body { get; set; }
 
-        [XmlArray("Items"), XmlArrayItem("ItemType")]
-        public List<XmlItemType> ItemTypes { get; set; }
+        [XmlArray, XmlArrayItem("ItemType")]
+        public XmlEnum[] ItemTypes { get; set; }
+
+        [XmlArray("Items"), XmlArrayItem("ItemGroup")]
+        public List<XmlItemGroup> ItemGroups { get; set; }
 
         [XmlArray("Perks"), XmlArrayItem("PerkGroup")]
         public List<XmlPerkGroup> PerkGroups { get; set; }
@@ -301,7 +304,7 @@ namespace TiTsEd.Model {
         }
     }
 
-    public sealed class XmlItemType {
+    public sealed class XmlItemGroup {
         [XmlAttribute]
         public string Name { get; set; }
 
@@ -326,6 +329,8 @@ namespace TiTsEd.Model {
         public string Tooltip { get; set; }
         [XmlAttribute]
         public int Stack { get; set; }
+        public int Version { get; set; }
+
         [XmlElement("ItemField")]
         public List<XmlObjectField> Fields { get; set; }
 

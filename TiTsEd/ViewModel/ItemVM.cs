@@ -76,12 +76,13 @@ namespace TiTsEd.ViewModel {
 
             XmlItem bestItem = XmlItem.Empty;
             int bestFieldMatch = -1;
-            foreach (XmlItemType type in XmlData.Current.ItemTypes) {
+            foreach (XmlItemGroup type in XmlData.Current.ItemGroups) {
                 foreach (XmlItem item in type.Items) {
                     //class name must match, otherwise skip it
                     if (item.ID == className) {
                         //if there are any fields, try and match them
                         int fieldMatch = 0;
+                        if (null != item.Fields) {
                         foreach (XmlObjectField field in item.Fields) {
                             //field.Name
                             if (HasValue(field.Name)) {
@@ -107,6 +108,7 @@ namespace TiTsEd.ViewModel {
                                         break;
                                 }
                             }
+                        }
                         }
                         if (fieldMatch > bestFieldMatch) {
                             bestFieldMatch = fieldMatch;
@@ -202,7 +204,11 @@ namespace TiTsEd.ViewModel {
 
         public int MaxQuantity {
             get {
-                return Xml.Stack;
+                int i = GetInt("stackSize", 0);
+                return (0 == i) ? Xml.Stack : i;
+            }
+            set {
+                SetValue("stackSize", value);
             }
         }
 
@@ -218,6 +224,11 @@ namespace TiTsEd.ViewModel {
                 OnPropertyChanged("DisplayName");
                 OnPropertyChanged("QuantityDescription");
             }
+        }
+
+        public int Version {
+            get { return GetInt("version"); }
+            set { SetValue("version", value); }
         }
 
         public string TypeID {
@@ -244,9 +255,32 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public string LongName { get; set; }
+        public string LongName {
+            get {
+                return GetString("longName") ?? Xml.LongName;
+            }
+            set {
+                SetValue("longName", value);
+            }
+        }
 
-        public string Tooltip { get; set; }
+        public string Tooltip {
+            get {
+                return GetString("tooltip") ?? Xml.Tooltip;
+            }
+            set {
+                SetValue("tooltip", value);
+            }
+        }
+
+        public bool HasRandomProperties {
+            get {
+                return GetBool("hasRandomProperties");
+            }
+            set {
+                SetValue("hasRandomProperties", value);
+            }
+        }
 
         public string DisplayName {
             get {
@@ -271,7 +305,7 @@ namespace TiTsEd.ViewModel {
             }
 
             //we made this easier now
-            foreach (XmlItemType type in XmlData.Current.ItemTypes) {
+            foreach (XmlItemGroup type in XmlData.Current.ItemGroups) {
                 if (type.Name == name) {
                     //only add items from this item set into the group
                     foreach (XmlItem xml in type.Items) {

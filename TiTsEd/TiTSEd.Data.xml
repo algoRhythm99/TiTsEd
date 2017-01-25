@@ -971,8 +971,29 @@
 		</GenitalSpotTypes>
 	</Body>
 	<!-- ================================================================ -->
+	<ItemTypes>
+		<ItemType ID="0"  Name="Pill" />
+		<ItemType ID="1"  Name="Food" />
+		<ItemType ID="2"  Name="Potion" />
+		<ItemType ID="3"  Name="Melee Weapon" />
+		<ItemType ID="4"  Name="Ranged Weapon" />
+		<ItemType ID="5"  Name="Armor" />
+		<ItemType ID="6"  Name="Shield" />
+		<ItemType ID="7"  Name="Upper Undergarment" />
+		<ItemType ID="8"  Name="Lower Undergarment" />
+		<ItemType ID="9"  Name="Accessory" />
+		<ItemType ID="10" Name="Drug" />
+		<ItemType ID="11" Name="Clothing" />
+		<ItemType ID="12" Name="All" />
+		<ItemType ID="13" Name="Gadget" />
+		<ItemType ID="14" Name="Explosive Consumable" />
+		<ItemType ID="15" Name="Quest Item" />
+		<ItemType ID="16" Name="Gem" />
+		<ItemType ID="17" Name="Sex Toy" />
+	</ItemTypes>
+	<!-- ================================================================ -->
 	<Items>
-		<ItemType Name="Accessory">
+		<ItemGroup Name="Accessory">
 			<Item Stack="1" Name="ACE Cannon" ID="classes.Items.Accessories::ACECannon" />
 			<Item Stack="1" Name="AimEyepiece" ID="classes.Items.Accessories::AimEyepiece" />
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
@@ -994,8 +1015,8 @@
 			<Item Stack="1" Name="Pink Leash" ID="classes.Items.Accessories::VarmintLeash" />
 			<Item Stack="1" Name="Cargobot" ID="classes.Items.Miscellaneous::Cargobot" />
 			<Item Stack="1" Name="PH Access." ID="classes.Items.Miscellaneous::PHAccess" />
-		</ItemType>
-		<ItemType Name="Clothing">
+		</ItemGroup>
+		<ItemGroup Name="Clothing">
 			<Item Stack="1" Name="Annos Blouse" ID="classes.Items.Apparel::AnnosBlouse" />
 			<Item Stack="1" Name="Bunny.O" ID="classes.Items.Apparel::BunnyOutfit" />
 			<Item Stack="1" Name="B.Clothes" ID="classes.Items.Apparel::BusinessClothes" />
@@ -1027,8 +1048,8 @@
 			<Item Stack="1" Name="UGC Uniform" ID="classes.Items.Apparel::UGCUniform" />
 			<Item Stack="1" Name="WaitressUniform" ID="classes.Items.Apparel::WaitressUniform" />
 			<Item Stack="1" Name="Winter G." ID="classes.Items.Apparel::WinterGear" />
-		</ItemType>
-		<ItemType Name="Armor">
+		</ItemGroup>
+		<ItemGroup Name="Armor">
 			<Item Stack="1" Name="ST. Catsuit" ID="classes.Items.Apparel::AnnosCatsuit" />
 			<Item Stack="1" Name="AtmaArmor" ID="classes.Items.Apparel::AtmaArmor" />
 			<Item Stack="1" Name="Catsuit" ID="classes.Items.Apparel::GenericCatsuit" />
@@ -1081,8 +1102,8 @@
 				<ItemField Name="shields" Type="int" Value="5" />
 			</Item>
 			<Item Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
-		</ItemType>
-		<ItemType Name="Upper Undergarment">
+		</ItemGroup>
+		<ItemGroup Name="Upper Undergarment">
 			<Item Stack="1" Name="BikiniTop" ID="classes.Items.Apparel::FrillyBikiniTop" />
 			<Item Stack="1" Name="NetTop" ID="classes.Items.Apparel::FishnetTop" />
 			<Item Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
@@ -1115,8 +1136,8 @@
 			<Item Stack="1" Name="Sports Bra" ID="classes.Items.Apparel::SportsBra" />
 			<Item Stack="1" Name="Underbust Corset" ID="classes.Items.Apparel::UnderbustCorset" />
 			<Item Stack="1" Name="Undershirt" ID="classes.Items.Apparel::Undershirt" />
-		</ItemType>
-		<ItemType Name="Lower Undergarment">
+		</ItemGroup>
+		<ItemGroup Name="Lower Undergarment">
 			<Item Stack="1" Name="BikiniBtm" ID="classes.Items.Apparel::FrillyBikiniBottom" />
 			<Item Stack="1" Name="BaggyShorts" ID="classes.Items.Apparel::BaggySwimShorts" />
 			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" />
@@ -1172,8 +1193,8 @@
 				<ItemField Name="basePrice" Type="int" Value="3550" />
 			</Item>
 			<Item Stack="1" Name="Z.Pouch" ID="classes.Items.Apparel::ZipPouch" />
-		</ItemType>
-		<ItemType Name="Combat">
+		</ItemGroup>
+		<ItemGroup Name="Combat">
 			<Item Stack="10" Name="EMP Gren."   ID="classes.Items.Miscellaneous::EMPGrenade" />
 			<Item Stack="10" Name="Flashbang"   ID="classes.Items.Miscellaneous::FlashGrenade" />
 			<Item Stack="10" Name="OS StimBoost"    ID="classes.Items.Miscellaneous::OSStimBoost" />
@@ -1185,8 +1206,8 @@
 			<Item Stack="5"  Name="L.Bubble"    ID="classes.Items.Toys.Bubbles::LargeCumBubble" />
 			<Item Stack="10" Name="M.Bubble"    ID="classes.Items.Toys.Bubbles::MediumCumBubble" />
 			<Item Stack="20" Name="S.Bubble"    ID="classes.Items.Toys.Bubbles::SmallCumBubble" />
-		</ItemType>
-		<ItemType Name="Consumable">
+		</ItemGroup>
+		<ItemGroup Name="Consumable">
 			<Item Stack="5"  Name="Crystal S." ID="classes.Items.Combat::CrystalShard" />
 			<Item Stack="1"  Name="H.Wine" ID="classes.Items.Drinks::HoneyWine" />
 			<Item Stack="10" Name="R.Venom" ID="classes.Items.Drinks::RedMyrVenom" />
@@ -1313,8 +1334,8 @@
 			<Item Stack="10" Name="Deerium" ID="classes.Items.Transformatives::TauricoVenidae" />
 			<Item Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
 			<Item Stack="10" Name="Virection" ID="classes.Items.Transformatives::Virection" />
-		</ItemType>
-		<ItemType Name="Gadget">
+		</ItemGroup>
+		<ItemGroup Name="Gadget">
 			<Item Stack="10" Name="A.Cock"      ID="classes.Items.Miscellaneous::ACock" />
 			<Item Stack="10" Name="A.D.Cock"    ID="classes.Items.Miscellaneous::ADCock" />
 			<Item Stack="10" Name="A.H.Cock"    ID="classes.Items.Miscellaneous::AHCock" />
@@ -1324,16 +1345,16 @@
 			<Item Stack="1"  Name="Hoverboard"  ID="classes.Items.Miscellaneous::Hoverboard" />
 			<Item Stack="1"  Name="M.Milker"    ID="classes.Items.Miscellaneous::MagicMilker" />
 			<Item Stack="10" Name="T.Pack"      ID="classes.Items.Miscellaneous::ThermalPack" />
-		</ItemType>
-		<ItemType Name="Toys">
+		</ItemGroup>
+		<ItemGroup Name="Toys">
 			<Item Stack="1" Name="B.Buddy"  ID="classes.Items.Toys::BubbleBuddy" />
 			<Item Stack="1" Name="G.Cuffs"  ID="classes.Items.Toys::GravCuffs" />
 			<Item Stack="1" Name="H.Hole"   ID="classes.Items.Toys::HoverHole" />
 			<Item Stack="1" Name="N.B.Hole" ID="classes.Items.Toys::NivasBionaHole" />
 			<Item Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
 			<Item Stack="1" Name="SukMastr" ID="classes.Items.Toys::SukMastr" />
-		</ItemType>
-		<ItemType Name="Melee Weapon">
+		</ItemGroup>
+		<ItemGroup Name="Melee Weapon">
 			<Item Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
 			<Item Stack="1" Name="B.Rapier" ID="classes.Items.Melee::BothriocRapier" />
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
@@ -1364,8 +1385,8 @@
 			<Item Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
 			<Item Stack="1" Name="Whip" ID="classes.Items.Melee::Whip" />
 			<Item Stack="1" Name="Y.Strap" ID="classes.Items.Melee::YappiStrap" />
-		</ItemType>
-		<ItemType Name="Ranged Weapon">
+		</ItemGroup>
+		<ItemGroup Name="Ranged Weapon">
 			<Item Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
 			<Item Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
 			<Item Stack="1" Name="B.Emitter" ID="classes.Items.Guns::BimboleumEmitter" />
@@ -1411,8 +1432,8 @@
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
 			<Item Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
 			<Item Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
-		</ItemType>
-		<ItemType Name="Shield">
+		</ItemGroup>
+		<ItemGroup Name="Shield">
 			<Item Stack="1" Name="AW Belt" ID="classes.Items.Protection::ArcticWarfareBelt">
 				<ItemField Name="shields" Type="int" Value="25" />
 			</Item>
@@ -1447,8 +1468,8 @@
 			<Item Stack="1" Name="S.Shield" ID="classes.Items.Protection::SalamanderShield">
 				<ItemField Name="shields" Type="int" Value="50" />
 			</Item>
-		</ItemType>
-		<ItemType Name="Other">
+		</ItemGroup>
+		<ItemGroup Name="Other">
 			<Item Stack="2"  Name="GemSack"     ID="classes.Items.Miscellaneous::GemSatchel" />
 			<Item Stack="20" Name="Kirkite"     ID="classes.Items.Miscellaneous::Kirkite" />
 			<Item Stack="10" Name="MilkBag"     ID="classes.Items.Miscellaneous::MilkBag" />
@@ -1462,16 +1483,16 @@
 			<Item Stack="10" Name="VenusPod"    ID="classes.Items.Miscellaneous::VenusPod" />
 			<Item Stack="5"  Name="W.Drone"     ID="classes.Items.Miscellaneous::WeatherDrone" />
 			<Item Stack="1"  Name="HLU"         ID="classes.Items.Upgrades::HardLightUpgrade" />
-		</ItemType>
-		<ItemType Name="Junk">
+		</ItemGroup>
+		<ItemGroup Name="Junk">
 			<Item Stack="10" Name="B.B.Melt"    ID="classes.Items.Junk::BrokenBrainmeltLamp" />
 			<Item Stack="1"  Name="VI Chip"     ID="classes.Items.Junk::DamagedVIChip" />
 			<Item Stack="10" Name="IQBGone"     ID="classes.Items.Junk::IQBGone" />
-		</ItemType>
-		<ItemType Name="Ship Upgrades">
+		</ItemGroup>
+		<ItemGroup Name="Ship Upgrades">
 			<Item Stack="10" Name="Dong D." ID="classes.Items.Transformatives::DongDesigner" />
 			<Item Stack="1"  Name="EggTrnr" ID="classes.Items.Toys::EggTrainer" />
-		</ItemType>
+		</ItemGroup>
 	</Items>
 	<!-- ================================================================ -->
 	<KeyItems>

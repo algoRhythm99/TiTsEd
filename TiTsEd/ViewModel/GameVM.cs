@@ -53,7 +53,7 @@ namespace TiTsEd.ViewModel {
             Flags = new UpdatableCollection<FlagVM>(_allFlags.Values.ToList().Where(x => x.Match(RawDataSearchText)));
         }
 
-        public static void ImportMissingNamedVectors(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, string nameProperty, Func<AmfObject, String> descriptionGetter = null, IList<XmlStorageClass> targetXmlList = null) {
+        public static void ImportUnknownStorageClassEntries(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, IList<XmlStorageClass> targetXmlList = null, string nameProperty = "storageName", Func<AmfObject, string> descriptionGetter = null) {
             if (targetXmlList == null) targetXmlList = (IList<XmlStorageClass>)xmlItems;
             var xmlNames = new HashSet<String>(xmlItems.Select(x => x.Name));
 
@@ -64,8 +64,60 @@ namespace TiTsEd.ViewModel {
                 xmlNames.Add(name);
 
                 var xml = new XmlStorageClass { Name = name };
-                if (descriptionGetter != null) xml.Description = descriptionGetter(itemObject);
+                if (descriptionGetter != null) {
+                    xml.Description = descriptionGetter(itemObject);
+                } else {
+                    xml.Description = itemObject.GetString("tooltip");
+                }
                 targetXmlList.Add(xml);
+            }
+        }
+
+        public static void ImportUnknownItems(List<ItemContainerVM> containers, List<String> types) {
+            var unknownItemGroup = XmlData.Current.ItemGroups.Last();
+
+            foreach (var slot in containers.SelectMany(x => x.Slots)) {
+                // Add this item to the DB if it does not exist
+                var type = slot.TypeID;
+                if (String.IsNullOrEmpty(type)) continue;
+                if ("classes.Items.Miscellaneous::EmptySlot" == type) continue;
+                if (XmlData.Current.ItemGroups.SelectMany(x => x.Items).Any(x => x.ID == type)) continue;
+
+                var shortName = slot.GetString("shortName");
+                var longName = slot.GetString("longName");
+                var stackSize = slot.GetInt("stackSize", 1);
+                var tooltip = slot.GetString("tooltip");
+                var version = slot.GetInt("version", 1);
+
+                var fields = new List<XmlObjectField>();
+                if (slot.HasRandomProperties) {
+                    var obj = slot.GetAmfObject();
+                    foreach (var prop in obj) {
+                        string key = prop.Key.ToString();
+                        string val = prop.Value.ToString();
+                        string propType = "string";
+                        switch (key) {
+                            case "shortName":
+                            case "version":
+                            case "classInstance":
+                            case "longName":
+                            case "tooltip":
+                            case "quantity":
+                            case "stackSize":
+                                break;
+                            default:
+                                bool boolResult = false;
+                                if (Boolean.TryParse(val, out boolResult) || prop.Value is bool) propType = "bool";
+                                int intResult = 0;
+                                if (Int32.TryParse(val, out intResult) || (prop.Value is uint) || (prop.Value is int)) propType = "int";
+                                fields.Add(new XmlObjectField { Name = key, Value = val, Type = propType });
+                                break;
+                        }
+                    }
+                }
+                var xml = new XmlItem { ID = type, Name = shortName, LongName = longName, Tooltip = tooltip, Version = version, Stack = stackSize, Fields = fields };
+                unknownItemGroup.Items.Add(xml);
+                slot.UpdateItemGroups();
             }
         }
 

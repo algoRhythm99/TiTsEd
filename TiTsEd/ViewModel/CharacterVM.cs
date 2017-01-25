@@ -31,33 +31,39 @@ namespace TiTsEd.ViewModel {
             // Perks
             var xmlPerks = XmlData.Current.PerkGroups.SelectMany(x => x.Perks).ToArray();
             var unknownPerkGroup = XmlData.Current.PerkGroups.Last();
-            GameVM.ImportMissingNamedVectors(PerksArray, xmlPerks, "storageName", x => x.GetString("tooltip"), unknownPerkGroup.Perks);
+            GameVM.ImportUnknownStorageClassEntries(PerksArray, xmlPerks, unknownPerkGroup.Perks);
             UpdatePerks();
 
             // KeyItems
             var xmlKeys = XmlData.Current.KeyItemGroups.SelectMany(x => x.KeyItems).ToArray();
             var unknownKeyItemGroup = XmlData.Current.KeyItemGroups.Last();
-            GameVM.ImportMissingNamedVectors(KeyItemsArray, xmlKeys, "storageName", x => x.GetString("tooltip"), unknownKeyItemGroup.KeyItems);
+            GameVM.ImportUnknownStorageClassEntries(KeyItemsArray, xmlKeys, unknownKeyItemGroup.KeyItems);
             UpdateKeyItems();
 
             // Statuses
             var xmlStatusEffects = XmlData.Current.StatusEffectGroups.SelectMany(x => x.StatusEffects).ToArray();
             var unknownStatusEffectsGroup = XmlData.Current.StatusEffectGroups.Last();
-            GameVM.ImportMissingNamedVectors(StatusEffectsArray, xmlStatusEffects, "storageName", x => x.GetString("tooltip"), unknownStatusEffectsGroup.StatusEffects);
+            GameVM.ImportUnknownStorageClassEntries(StatusEffectsArray, xmlStatusEffects, unknownStatusEffectsGroup.StatusEffects);
             UpdateStatusEffects();
 
             // inventory
             List<String> types = new List<String>();
-            foreach (XmlItemType type in XmlData.Current.ItemTypes) {
+            foreach (XmlItemGroup type in XmlData.Current.ItemGroups) {
                 types.Add(type.Name);
-            }
-            if (!types.Contains("Unknown")) {
-                types.Add("Unknown");
             }
 
             var containers = new List<ItemContainerVM>();
             _inventory = new ItemContainerVM(this, "Inventory", types);
+            AmfObject inv = GetObj("inventory");
+            var maxSlots = MaxInventoryItems;
+            for (int i = 0; i < maxSlots; ++i) {
+                AmfObject item = (AmfObject)inv[i];
+                if (null != item) {
+                    _inventory.Add(item);
+                }
+            }
             containers.Add(_inventory);
+            GameVM.ImportUnknownItems(containers, types);
             UpdateInventory();
 
             // Complete slots creation
