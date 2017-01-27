@@ -2224,7 +2224,9 @@
 		<Flag Name="GOO_ARMOR_HEAL_LEVEL" />
 		<Flag Name="GOO_ARMOR_ON_SHIP" />
 		<Flag Name="GOO_ARMOR_SWIMSUIT" />
-		<Flag Name="GOO_BIOMASS" />
+-->
+		<Flag Name="GOO_BIOMASS" Description="Your current goo mass, maximum is based on GALOMAX_DOSES" />
+<!--
 		<Flag Name="GOTTEN_AN_EMBRY_BJ" />
 		<Flag Name="GOTTEN_CUNNILINGUS_FROM_EMBRY" />
 		<Flag Name="GOTTEN_INTIMATE_WITH_JADE" />
@@ -3280,9 +3282,9 @@
 		<Flag Name="ZIL_CALLGIRL_PREG" />
 		<Flag Name="ZIL_CALLGIRL_SEXED" />
 		<Flag Name="ZIL_PROBLEM_DEALT_WITH" />
-		<Flag Name="ZODEE_GALOQUEST" />
-		<Flag Name="ZODEE_S2_CHOICE" />
 -->
+		<Flag Name="ZODEE_GALOQUEST" Description="1 == First Galomax given&#xD;&#xA;2 == Second Galomax given" />
+		<Flag Name="ZODEE_S2_CHOICE" Description="-1 == You don't want any Galomax&#xD;&#xA;0 == You bought the Galomax from Zo'dee&#xD;&#xA;1 == You helped Zo'dee out with her egg problem" />
 	</Flags>
 	<!-- ================================================================ -->
 	<StatusEffects>

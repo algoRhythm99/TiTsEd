@@ -1,34 +1,45 @@
 ﻿<UserControl x:Class="TiTsEd.View.TopBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-             d:DesignWidth="1024" d:DesignHeight="200">
-    
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Top"
+             HorizontalContentAlignment="Stretch"
+             VerticalContentAlignment="Top"
+             d:DesignHeight="200"
+             d:DesignWidth="1024"
+             mc:Ignorable="d">
+
     <UserControl.Resources>
         <Style x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}">
-            <Setter Property="Foreground" Value="#C0C0C0"/>
+            <Setter Property="Foreground" Value="#C0C0C0" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ToggleButton}">
                         <Border Margin="6,0,4,2" Background="#00FFFFFF">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="2"/>
-                                    <ColumnDefinition Width="16"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2" />
+                                    <ColumnDefinition Width="16" />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="{TemplateBinding Content}"/>
-                                <Path Grid.Column="2" Fill="{TemplateBinding Foreground}" Data="M 0 0 L 5 5 L 10 0 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,4,0,0" SnapsToDevicePixels="True"/>
+                                <TextBlock Text="{TemplateBinding Content}" />
+                                <Path Grid.Column="2"
+                                      Margin="0,4,0,0"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Data="M 0 0 L 5 5 L 10 0 Z"
+                                      Fill="{TemplateBinding Foreground}"
+                                      SnapsToDevicePixels="True" />
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Foreground" Value="#808080"/>
+                                <Setter Property="Foreground" Value="#808080" />
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="#FFFFFF"/>
+                                <Setter Property="Foreground" Value="#FFFFFF" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -36,107 +47,160 @@
             </Setter>
         </Style>
 
-        <Style x:Key="HighlightedSaveButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource {x:Type ToggleButton}}">
-            <Setter Property="Foreground" Value="#FFF56F12"/>
+        <Style x:Key="HighlightedSaveButton"
+               BasedOn="{StaticResource {x:Type ToggleButton}}"
+               TargetType="{x:Type ToggleButton}">
+            <Setter Property="Foreground" Value="#FFF56F12" />
         </Style>
 
         <DataTemplate x:Key="FileTemplate">
-            <StackPanel Orientation="Vertical" Margin="2,0,2,0">
-                <TextBlock Text="{Binding Label}" Foreground="{Binding Foreground}" FontSize="12"/>
-                <TextBlock Text="{Binding SubLabel}" Visibility="{Binding SubLabelVisibility}" Foreground="#606060" FontSize="11"/>
+            <StackPanel Margin="2,0,2,0" Orientation="Vertical">
+                <TextBlock FontSize="12"
+                           Foreground="{Binding Foreground}"
+                           Text="{Binding Label}" />
+                <TextBlock FontSize="11"
+                           Foreground="#606060"
+                           Text="{Binding SubLabel}"
+                           Visibility="{Binding SubLabelVisibility}" />
             </StackPanel>
         </DataTemplate>
 
         <DataTemplate x:Key="FolderTemplate">
-            <TextBlock Text="{Binding Label}" Foreground="{Binding Foreground}" FontSize="12"/>
+            <TextBlock FontSize="12"
+                       Foreground="{Binding Foreground}"
+                       Text="{Binding Label}" />
         </DataTemplate>
 
         <Style x:Key="SubMenuStyle" TargetType="{x:Type MenuItem}">
-            <EventSetter Event="Click" Handler="subMenu_Click"/>
-            <Setter Property="HeaderTemplate" Value="{StaticResource FileTemplate}"/>
-            <Setter Property="ToolTip" Value="{Binding Path}"/>
-            <Setter Property="Icon" Value="{Binding Icon}"/>
-            <Setter Property="Padding" Value="2,5"/>
+            <EventSetter Event="Click" Handler="subMenu_Click" />
+            <Setter Property="HeaderTemplate" Value="{StaticResource FileTemplate}" />
+            <Setter Property="ToolTip" Value="{Binding Path}" />
+            <Setter Property="Icon" Value="{Binding Icon}" />
+            <Setter Property="Padding" Value="2,5" />
         </Style>
 
         <Style x:Key="RootMenuStyle" TargetType="{x:Type MenuItem}">
-            <EventSetter Event="Click" Handler="menu_Click"/>
-            <Setter Property="ItemContainerStyle" Value="{StaticResource SubMenuStyle}"/>
-            <Setter Property="HeaderTemplate" Value="{StaticResource FolderTemplate}"/>
-            <Setter Property="Foreground" Value="{Binding Foreground}"/>
-            <Setter Property="Padding" Value="4,6"/>
+            <EventSetter Event="Click" Handler="menu_Click" />
+            <Setter Property="ItemContainerStyle" Value="{StaticResource SubMenuStyle}" />
+            <Setter Property="HeaderTemplate" Value="{StaticResource FolderTemplate}" />
+            <Setter Property="Foreground" Value="{Binding Foreground}" />
+            <Setter Property="Padding" Value="4,6" />
         </Style>
 
-        <!-- FlatButton styling (used by the update check button) -->
+        <!--  FlatButton styling (used by the update check button)  -->
         <Style x:Key="ButtonFocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                        <Rectangle Margin="2"
+                                   SnapsToDevicePixels="True"
+                                   Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                                   StrokeDashArray="1 2"
+                                   StrokeThickness="1" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
         <Style x:Key="FlatButton" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="Silver"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="6,2,6,4"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="Silver" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="6,2,6,4" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="{x:Null}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
-                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                            <Border x:Name="Border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}" />
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              RecognizesAccessKey="True" />
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Foreground" Value="#808080"/>
+                                <Setter Property="Foreground" Value="#808080" />
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="White"/>
-                                <!-- Setter Property="Background" Value="DimGray"/ -->
+                                <Setter Property="Foreground" Value="White" />
+                                <!--  Setter Property="Background" Value="DimGray"/  -->
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="HighlightedFlatButton" TargetType="{x:Type Button}" BasedOn="{StaticResource FlatButton}">
-            <Setter Property="Foreground" Value="#FFF56F12"/>
+        <Style x:Key="HighlightedFlatButton"
+               BasedOn="{StaticResource FlatButton}"
+               TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="#FFF56F12" />
         </Style>
     </UserControl.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <!-- StackPanel Orientation="Horizontal" Margin="5">
             <TextBlock Text="TiTsEd" FontSize="48" Margin="0,-16,0,0" FontWeight="Thin" Foreground="White"/>
 
             <TextBlock Text="0.9e" Margin="0,-4" VerticalAlignment="Top"/>
-        </StackPanel -->
-        
-        <StackPanel Orientation="Horizontal" Grid.Column="2">
-            <ToggleButton x:Name="openButton" Margin="0,1,0,0" Content="Open" BorderThickness="0" FontSize="12" Checked="openButton_StateChanged" Unchecked="openButton_StateChanged" HorizontalContentAlignment="Left" VerticalAlignment="Top" Background="Transparent">
+        </StackPanel-->
+
+        <StackPanel Grid.Column="2" Orientation="Horizontal">
+            <ToggleButton x:Name="openButton"
+                          Margin="0,1,0,0"
+                          VerticalAlignment="Top"
+                          HorizontalContentAlignment="Left"
+                          Background="Transparent"
+                          BorderThickness="0"
+                          Checked="openButton_StateChanged"
+                          Content="Open"
+                          FontSize="12"
+                          Unchecked="openButton_StateChanged">
                 <ToggleButton.ContextMenu>
-                    <ContextMenu x:Name="openMenu" Closed="openMenu_Closed" Placement="Bottom" MinWidth="150"/>
+                    <ContextMenu x:Name="openMenu"
+                                 MinWidth="150"
+                                 Closed="openMenu_Closed"
+                                 Placement="Bottom" />
                 </ToggleButton.ContextMenu>
             </ToggleButton>
 
-            <ToggleButton x:Name="saveButton" Margin="5,1,0,0" Content="Save As" BorderThickness="0" FontSize="12" Checked="saveButton_StateChanged" Unchecked="saveButton_StateChanged" HorizontalContentAlignment="Left" VerticalAlignment="Top" Background="Transparent" IsEnabled="{Binding HasData}">
+            <ToggleButton x:Name="saveButton"
+                          Margin="5,1,0,0"
+                          VerticalAlignment="Top"
+                          HorizontalContentAlignment="Left"
+                          Background="Transparent"
+                          BorderThickness="0"
+                          Checked="saveButton_StateChanged"
+                          Content="Save As"
+                          FontSize="12"
+                          IsEnabled="{Binding HasData}"
+                          Unchecked="saveButton_StateChanged">
                 <ToggleButton.ContextMenu>
-                    <ContextMenu x:Name="saveMenu" Closed="saveMenu_Closed" Placement="Bottom" MinWidth="150"/>
+                    <ContextMenu x:Name="saveMenu"
+                                 MinWidth="150"
+                                 Closed="saveMenu_Closed"
+                                 Placement="Bottom" />
                 </ToggleButton.ContextMenu>
             </ToggleButton>
+
+            <Button x:Name="updateButton"
+                    Margin="5,-1,0,0"
+                    Click="checkForUpdates_Click"
+                    Content="Update?"
+                    Style="{StaticResource FlatButton}"
+                    ToolTip="Check for updates to TiTsEd…" />
         </StackPanel>
     </Grid>
 </UserControl>

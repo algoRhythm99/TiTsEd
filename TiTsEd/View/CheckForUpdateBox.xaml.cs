@@ -1,24 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-//using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Interop;
-//using System.Windows.Media;
-//using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace TiTsEd.View
@@ -32,8 +20,6 @@ namespace TiTsEd.View
             Unknown,
         }
 
-        //Task _updateCheckTask;
-
         public CheckForUpdateBox()
         {
             InitializeComponent();
@@ -45,7 +31,6 @@ namespace TiTsEd.View
 
         void CheckForUpdateBox_Loaded(object sender, RoutedEventArgs e)
         {
-            //_updateCheckTask = Task.Factory.StartNew(new Action(() =>
             Task.Factory.StartNew(new Action(() =>
             {
                 // check for an update
@@ -61,7 +46,6 @@ namespace TiTsEd.View
 
         void close_Click(object sender, RoutedEventArgs e)
         {
-            //if (_updateCheckTask != null) _updateCheckTask.Dispose();
             Close();
         }
 
@@ -92,15 +76,16 @@ namespace TiTsEd.View
             HttpWebResponse response = null;
 
             // Create the request
-            // Old SF: https://sourceforge.net/p/TiTsEd/code/HEAD/tree/latest?format=raw
-            // New GH: https://raw.githubusercontent.com/tmedwards/TiTsEd/master/latest
-            string fileUrl = @"https://raw.githubusercontent.com/tmedwards/TiTsEd/master/latest";
+            string fileUrl = @"https://github.com/Chase-san/TiTsEd/releases/latest";
             try
             {
                 request = (HttpWebRequest)HttpWebRequest.Create(fileUrl);
             }
             catch { return UpdateCheckResult.Unknown; }
-            if (request == null) return UpdateCheckResult.Unknown;
+            if (request == null)
+            {
+                return UpdateCheckResult.Unknown;
+            }
             request.Method = "GET";
 
             UpdateCheckResult result = UpdateCheckResult.No;
@@ -109,7 +94,10 @@ namespace TiTsEd.View
             {
                 response = (HttpWebResponse)request.GetResponse();
 
-                if (response == null) return UpdateCheckResult.Unknown;
+                if (response == null)
+                {
+                    return UpdateCheckResult.Unknown;
+                }
 
                 // Check for an update
                 if (response.StatusCode == HttpStatusCode.OK)
@@ -128,11 +116,24 @@ namespace TiTsEd.View
                                 // Parse the contents and make the comparison
                                 var latest = ParseVersion(contents);
                                 var local = Assembly.GetExecutingAssembly().GetName().Version;
-                                if (latest[0] > local.Major) result = UpdateCheckResult.Yes;
+                                if (latest[0] > local.Major)
+                                {
+                                    result = UpdateCheckResult.Yes;
+                                }
                                 else if (latest[0] == local.Major)
-                                    if (latest[1] > local.Minor) result = UpdateCheckResult.Yes;
+                                {
+                                    if (latest[1] > local.Minor)
+                                    {
+                                        result = UpdateCheckResult.Yes;
+                                    }
                                     else if (latest[1] == local.Minor)
-                                        if (latest[2] > local.Build) result = UpdateCheckResult.Yes;
+                                    {
+                                        if (latest[2] > local.Build)
+                                        {
+                                            result = UpdateCheckResult.Yes;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -145,11 +146,17 @@ namespace TiTsEd.View
                     }
                 }
             }
-            catch { return UpdateCheckResult.Unknown; }
+            catch
+            {
+                return UpdateCheckResult.Unknown;
+            }
             finally
             {
                 // Close the response
-                response.Close();
+                if (null != response)
+                {
+                    response.Close();
+                }
             }
 
             return result;
@@ -162,7 +169,10 @@ namespace TiTsEd.View
 
             try
             {
-                for (int i = 0; i < 3; i++) latestVersion[i] = int.Parse(parts[i]);
+                for (int i = 0; i < 3; i++)
+                {
+                    latestVersion[i] = int.Parse(parts[i]);
+                }
             }
             catch { /* noop */ }
 
