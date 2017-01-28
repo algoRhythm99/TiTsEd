@@ -64,20 +64,30 @@ namespace TiTsEd.View {
             //a hack to select the new slot for an item we selected after we refresh our list
             if (lastSelectedIndex >= 0) {
                 //get our inventory item
-                var tvi = leftTree.ItemContainerGenerator.ContainerFromIndex(0) as TreeViewItem;
-                //fix for file load
-                if (tvi == null) {
-                    return;
-                }
-                //get our index within that inventory item
-                tvi = tvi.ItemContainerGenerator.ContainerFromIndex(lastSelectedIndex) as TreeViewItem;
-                //fix for file load
-                if (tvi == null) {
-                    return;
-                }
+                TreeViewItem tvi = null;
+
+                Action action = () =>
+                {
+                    tvi = leftTree.ItemContainerGenerator.ContainerFromIndex(0) as TreeViewItem;
+                    //fix for file load
+                    if (tvi == null)
+                    {
+                        return;
+                    }
+                    //get our index within that inventory item
+                    tvi = tvi.ItemContainerGenerator.ContainerFromIndex(lastSelectedIndex) as TreeViewItem;
+                    //fix for file load
+                    if (tvi == null) {
+                        return;
+                    }
+
+                };
+
                 //tell it to select that inventory item
-                MethodInfo selectMethod = typeof(TreeViewItem).GetMethod("Select", BindingFlags.NonPublic | BindingFlags.Instance);
-                selectMethod.Invoke(tvi, new object[] { true });
+                if (null != tvi)
+                {
+                    tvi.IsSelected = true;
+                }
             }
         }
     }

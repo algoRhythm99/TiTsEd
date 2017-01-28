@@ -342,7 +342,7 @@ namespace TiTsEd.Model {
     }
 
     public sealed class XmlItem {
-        public static XmlItem Empty = new XmlItem("classes.Items.Miscellaneous::EmptySlot", "<empty>", 0);
+        public static XmlItem Empty = new XmlItem("classes.Items.Miscellaneous::EmptySlot", "<empty>", 0, "nothing");
 
         [XmlAttribute]
         public string ID { get; set; }
@@ -363,10 +363,12 @@ namespace TiTsEd.Model {
 
         public XmlItem() { }
 
-        public XmlItem(string id, string name, int stack) {
+        public XmlItem(string id, string name, int stack, string longName)
+        {
             ID = id;
             Name = name;
             Stack = stack;
+            LongName = longName;
         }
 
         public string DisplayName {

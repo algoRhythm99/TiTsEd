@@ -11,13 +11,13 @@ namespace TiTsEd.ViewModel
     public class CharacterVM : CreatureVM
     {
         private ItemContainerVM _inventory;
-        private ItemSlotVM _shield;
-        private ItemSlotVM _meleeWeapon;
-        private ItemSlotVM _rangedWeapon;
-        private ItemSlotVM _accessory;
-        private ItemSlotVM _armor;
-        private ItemSlotVM _upperUndergarment;
-        private ItemSlotVM _lowerUndergarment;
+        private ItemContainerVM _shieldContainer;
+        private ItemContainerVM _meleeWeaponContainer;
+        private ItemContainerVM _rangedWeaponContainer;
+        private ItemContainerVM _accessoryContainer;
+        private ItemContainerVM _armorContainer;
+        private ItemContainerVM _upperUndergarmentContainer;
+        private ItemContainerVM _lowerUndergarmentContainer;
         private string _characterName;
 
         public enum CharacterClasses
@@ -60,12 +60,73 @@ namespace TiTsEd.ViewModel
 
             // inventory
             List<String> types = new List<String>();
+            List<String> shieldTypes = new List<String>();
+            List<String> rangedTypes = new List<String>();
+            List<String> meleeTypes = new List<String>();
+            List<String> armorTypes = new List<String>();
+            List<String> accessoryTypes = new List<String>();
+            List<String> upperGarmentTypes = new List<String>();
+            List<String> lowerGarmentTypes = new List<String>();
             foreach (XmlItemGroup type in XmlData.Current.ItemGroups)
             {
                 types.Add(type.Name);
+                switch (type.Name)
+                {
+                    case "Shields":
+                        shieldTypes.Add(type.Name);
+                        break;
+                    case "Weapons (Melee)":
+                        meleeTypes.Add(type.Name);
+                        break;
+                    case "Weapons (Ranged)":
+                        rangedTypes.Add(type.Name);
+                        break;
+                    case "Accessory":
+                        accessoryTypes.Add(type.Name);
+                        break;
+                    case "Clothing":
+                    case "Armor":
+                        armorTypes.Add(type.Name);
+                        break;
+                    case "Undergarment (Upper)":
+                        upperGarmentTypes.Add(type.Name);
+                        break;
+                    case "Undergarment (Lower)":
+                        lowerGarmentTypes.Add(type.Name);
+                        break;
+                }
             }
 
             var containers = new List<ItemContainerVM>();
+            // shield, weapons, accessory, armors
+            var shieldObj = GetObj("shield");
+            _shieldContainer = new ItemContainerVM(this, "Shield", shieldTypes);
+            _shieldContainer.Add(shieldObj);
+
+            var meleeWeaponObj = GetObj("meleeWeapon");
+            _meleeWeaponContainer = new ItemContainerVM(this, "Weapon (Melee)", meleeTypes);
+            _meleeWeaponContainer.Add(shieldObj);
+
+            var rangedWeaponObj = GetObj("rangedWeapon");
+            _rangedWeaponContainer = new ItemContainerVM(this, "Weapon (Ranged)", rangedTypes);
+            _rangedWeaponContainer.Add(shieldObj);
+
+            var armorObj = GetObj("armor");
+            _armorContainer = new ItemContainerVM(this, "Armor", armorTypes);
+            _armorContainer.Add(armorObj);
+
+            var _accessoryObj = GetObj("accessory");
+            _accessoryContainer = new ItemContainerVM(this, "Accessory", accessoryTypes);
+            _accessoryContainer.Add(_accessoryObj);
+
+            var _upperUndergarmentObj = GetObj("upperUndergarment");
+            _upperUndergarmentContainer = new ItemContainerVM(this, "Undergarment (Upper)", upperGarmentTypes);
+            _upperUndergarmentContainer.Add(_upperUndergarmentObj);
+
+            var _lowerUndergarmentObj = GetObj("lowerUndergarment");
+            _lowerUndergarmentContainer = new ItemContainerVM(this, "Undergarment (Lower)", lowerGarmentTypes);
+            _lowerUndergarmentContainer.Add(_lowerUndergarmentObj);
+
             _inventory = new ItemContainerVM(this, "Inventory", types);
             AmfObject inv = GetObj("inventory") ?? new AmfObject(AmfTypes.Array);
             var maxSlots = MaxInventoryItems;
@@ -78,20 +139,27 @@ namespace TiTsEd.ViewModel
                 }
             }
             containers.Add(_inventory);
+            containers.Add(_shieldContainer);
+            containers.Add(_meleeWeaponContainer);
+            containers.Add(_rangedWeaponContainer);
+            containers.Add(_armorContainer);
+            containers.Add(_accessoryContainer);
+            containers.Add(_upperUndergarmentContainer);
+            containers.Add(_lowerUndergarmentContainer);
+
             GameVM.ImportUnknownItems(containers, types);
+
+            UpdateContainer(_shieldContainer, shieldObj);
+            UpdateContainer(_meleeWeaponContainer, meleeWeaponObj);
+            UpdateContainer(_rangedWeaponContainer, rangedWeaponObj);
+            UpdateContainer(_armorContainer, armorObj);
+            UpdateContainer(_accessoryContainer, _accessoryObj);
+            UpdateContainer(_upperUndergarmentContainer, _upperUndergarmentObj);
+            UpdateContainer(_lowerUndergarmentContainer, _lowerUndergarmentObj);
             UpdateInventory();
 
             // Complete slots creation
             ItemContainers = new UpdatableCollection<ItemContainerVM>(containers);
-
-            // shield, weapons, accessory, armors
-            _shield = new ItemSlotVM(this, GetObj("shield"), types);
-            _meleeWeapon = new ItemSlotVM(this, GetObj("meleeWeapon"), types);
-            _rangedWeapon = new ItemSlotVM(this, GetObj("rangedWeapon"), types);
-            _armor = new ItemSlotVM(this, GetObj("armor"), types);
-            _accessory = new ItemSlotVM(this, GetObj("accessory"), types);
-            _upperUndergarment = new ItemSlotVM(this, GetObj("upperUndergarment"), types);
-            _lowerUndergarment = new ItemSlotVM(this, GetObj("lowerUndergarment"), types);
             UpdateInventory();
         }
 
@@ -2001,15 +2069,17 @@ namespace TiTsEd.ViewModel
             }
         }
 
-        public void UpdateInventory()
-        {
-            _inventory.Clear();
-            AmfObject inv = GetObj("inventory");
-            var maxSlots = MaxInventoryItems;
+        protected void UpdateContainer(ItemContainerVM container, AmfObject slotObject, int maxSlots = 1) {
+            container.Clear();
             for (int i = 0; i < maxSlots; ++i)
             {
-                AmfObject item = (AmfObject)inv[i];
-                if (item == null)
+                AmfObject item = null;
+                if (maxSlots > 1) {
+                    item = (AmfObject)slotObject[i];
+                } else {
+                    item = slotObject;
+                }
+                if (null == item)
                 {
                     //just add an empty item, we'll fix it later maybe
                     item = new AmfObject(AmfTypes.Object);
@@ -2017,10 +2087,18 @@ namespace TiTsEd.ViewModel
                     item["shortName"] = XmlItem.Empty.Name;
                     item["quantity"] = 0;
                     item["version"] = 1;
-                    inv.Push(item);
+                    if (maxSlots > 1) {
+                        slotObject.Push(item);
+                    } else {
+                        slotObject = item;
+                    }
                 }
-                _inventory.Add(item);
+                container.Add(item);
             }
+        }
+
+        public void UpdateInventory() {
+            UpdateContainer(_inventory, GetObj("inventory"), MaxInventoryItems);
         }
 
         public void CleanupInventory()
@@ -2046,37 +2124,37 @@ namespace TiTsEd.ViewModel
 
         public ItemSlotVM Shield
         {
-            get { return _shield; }
+            get { return _shieldContainer.Slots[0]; }
         }
 
         public ItemSlotVM MeleeWeapon
         {
-            get { return _meleeWeapon; }
+            get { return _meleeWeaponContainer.Slots[0]; }
         }
 
         public ItemSlotVM RangedWeapon
         {
-            get { return _rangedWeapon; }
+            get { return _rangedWeaponContainer.Slots[0]; }
         }
 
         public ItemSlotVM Accessory
         {
-            get { return _accessory; }
+            get { return _accessoryContainer.Slots[0]; }
         }
 
         public ItemSlotVM Armor
         {
-            get { return _armor; }
+            get { return _armorContainer.Slots[0]; }
         }
 
         public ItemSlotVM UpperUndergarment
         {
-            get { return _upperUndergarment; }
+            get { return _upperUndergarmentContainer.Slots[0]; }
         }
 
         public ItemSlotVM LowerUndergarment
         {
-            get { return _lowerUndergarment; }
+            get { return _lowerUndergarmentContainer.Slots[0]; }
         }
 
         #endregion
