@@ -65,6 +65,8 @@ namespace TiTsEd.View
                 case UpdateCheckResult.Unknown:
                     statusText.Text = "Check failed. An unexpected problem occurred.";
                     break;
+                default:
+                    break;
             }
             checkingGrid.Visibility = Visibility.Collapsed;
             statusGrid.Visibility = Visibility.Visible;
@@ -76,7 +78,7 @@ namespace TiTsEd.View
             HttpWebResponse response = null;
 
             // Create the request
-            string fileUrl = @"https://github.com/Chase-san/TiTsEd/releases/latest";
+            string fileUrl = @"https://raw.githubusercontent.com/Chase-san/TiTsEd/master/latest";
             try
             {
                 request = (HttpWebRequest)HttpWebRequest.Create(fileUrl);
