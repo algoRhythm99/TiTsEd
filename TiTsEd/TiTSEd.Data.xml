@@ -154,16 +154,21 @@
 			<SkinTone>black and blue</SkinTone>
 			<SkinTone>black and gold</SkinTone>
 			<SkinTone>black and red</SkinTone>
+			<SkinTone>black and white</SkinTone>
+			<SkinTone>black and yellow</SkinTone>
 			<SkinTone>black, blue and yellow</SkinTone>
 			<SkinTone>blue</SkinTone>
 			<SkinTone>blue-gray</SkinTone>
+			<SkinTone>brass</SkinTone>
 			<SkinTone>bright purple</SkinTone>
 			<SkinTone>bubblegum-pink</SkinTone>
+			<SkinTone>candy red</SkinTone>
 			<SkinTone>caramel</SkinTone>
 			<SkinTone>cerulean</SkinTone>
 			<SkinTone>chestnut</SkinTone>
 			<SkinTone>cherry</SkinTone>
 			<SkinTone>chocolate</SkinTone>
+			<SkinTone>cobalt</SkinTone>
 			<SkinTone>copper</SkinTone>
 			<SkinTone>crimson</SkinTone>
 			<SkinTone>cyan</SkinTone>
@@ -174,12 +179,28 @@
 			<SkinTone>dusky</SkinTone>
 			<SkinTone>dusky red</SkinTone>
 			<SkinTone>ebony</SkinTone>
+			<SkinTone>electric blue</SkinTone>
 			<SkinTone>emerald</SkinTone>
 			<SkinTone>fair</SkinTone>
+			<SkinTone>fiery blue</SkinTone>
 			<SkinTone>fir green</SkinTone>
+			<SkinTone>foxfire</SkinTone>
 			<SkinTone>garnet</SkinTone>
 			<SkinTone>glittering purple</SkinTone>
 			<SkinTone>glossy blue</SkinTone>
+			<SkinTone>glowing amber</SkinTone>
+			<SkinTone>glowing blue</SkinTone>
+			<SkinTone>glowing cyan</SkinTone>
+			<SkinTone>glowing ember</SkinTone>
+			<SkinTone>glowing gold</SkinTone>
+			<SkinTone>glowing green</SkinTone>
+			<SkinTone>glowing orange</SkinTone>
+			<SkinTone>glowing pink</SkinTone>
+			<SkinTone>glowing purple</SkinTone>
+			<SkinTone>glowing red</SkinTone>
+			<SkinTone>glowing violet</SkinTone>
+			<SkinTone>glowing white</SkinTone>
+			<SkinTone>glowing yellow</SkinTone>
 			<SkinTone>gold</SkinTone>
 			<SkinTone>gray</SkinTone>
 			<SkinTone>grayish brown</SkinTone>
@@ -242,6 +263,7 @@
 			<SkinTone>sapphire</SkinTone>
 			<SkinTone>scarlet</SkinTone>
 			<SkinTone>silver</SkinTone>
+			<SkinTone>sky-blue</SkinTone>
 			<SkinTone>slut red</SkinTone>
 			<SkinTone>steel gray</SkinTone>
 			<SkinTone>tanned</SkinTone>
@@ -254,6 +276,7 @@
 			<SkinTone>violet</SkinTone>
 			<SkinTone>viridescent</SkinTone>
 			<SkinTone>white</SkinTone>
+			<SkinTone>white-hot</SkinTone>
 			<SkinTone>yellow</SkinTone>
 			<SkinTone>yellow-green</SkinTone>
 			<SkinTone>yellow-orange</SkinTone>
@@ -280,12 +303,14 @@
 			<HairColor>blonde</HairColor>
 			<HairColor>blue</HairColor>
 			<HairColor>blue-white</HairColor>
+			<HairColor>brass</HairColor>
 			<HairColor>brown</HairColor>
 			<HairColor>brown and white</HairColor>
 			<HairColor>cerulean</HairColor>
 			<HairColor>chestnut</HairColor>
 			<HairColor>chocolate</HairColor>
 			<HairColor>clear</HairColor>
+			<HairColor>cobalt</HairColor>
 			<HairColor>copper</HairColor>
 			<HairColor>crimson</HairColor>
 			<HairColor>dark blonde</HairColor>
@@ -294,12 +319,14 @@
 			<HairColor>dirty blonde</HairColor>
 			<HairColor>emerald</HairColor>
 			<HairColor>electric blue</HairColor>
+			<HairColor>fiery blue</HairColor>
 			<HairColor>fiery orange</HairColor>
 			<HairColor>firey-red</HairColor>
 			<HairColor>forest green</HairColor>
 			<HairColor>glowing amber</HairColor>
 			<HairColor>glowing blue</HairColor>
 			<HairColor>glowing cyan</HairColor>
+			<HairColor>glowing ember</HairColor>
 			<HairColor>glowing gold</HairColor>
 			<HairColor>glowing green</HairColor>
 			<HairColor>glowing orange</HairColor>
@@ -340,6 +367,7 @@
 			<HairColor>pale green</HairColor>
 			<HairColor>peach</HairColor>
 			<HairColor>pink</HairColor>
+			<HairColor>platinum</HairColor>
 			<HairColor>purple</HairColor>
 			<HairColor>raven</HairColor>
 			<HairColor>red</HairColor>
@@ -359,6 +387,7 @@
 			<HairColor>verdant</HairColor>
 			<HairColor>vibrant purple</HairColor>
 			<HairColor>violet</HairColor>
+			<HairColor>viridescent</HairColor>
 			<HairColor>white</HairColor>
 			<HairColor>yellow</HairColor>
 			<HairColor>yellow and black striped</HairColor>
@@ -435,10 +464,12 @@
 			<EyeColor>electric blue</EyeColor>
 			<EyeColor>emerald</EyeColor>
 			<EyeColor>fir green</EyeColor>
+			<EyeColor>foxfire</EyeColor>
 			<EyeColor>garnet</EyeColor>
 			<EyeColor>glowing amber</EyeColor>
 			<EyeColor>glowing blue</EyeColor>
 			<EyeColor>glowing cyan</EyeColor>
+			<EyeColor>glowing ember</EyeColor>
 			<EyeColor>glowing gold</EyeColor>
 			<EyeColor>glowing green</EyeColor>
 			<EyeColor>glowing orange</EyeColor>
@@ -492,6 +523,7 @@
 			<EyeColor>turquoise</EyeColor>
 			<EyeColor>varied</EyeColor>
 			<EyeColor>violet</EyeColor>
+			<EyeColor>viridescent</EyeColor>
 			<EyeColor>white</EyeColor>
 			<EyeColor>yellow</EyeColor>
 			<EyeColor>yellow-green</EyeColor>
