@@ -193,8 +193,8 @@
                     <TextBlock              Text="Skin Tone"/>
                     <ComboBox               Text="{Binding Game.Character.SkinTone}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
 
-                    <TextBlock              Text="Skin Accent"/>
-                    <ComboBox               Text="{Binding Game.Character.SkinAccent}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" ToolTip="Used for: Vanae Markings color"/>
+                    <TextBlock              Text="Skin Accent" ToolTip="Used for: Vanae Markings color" />
+                    <ComboBox               Text="{Binding Game.Character.SkinAccent}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" ToolTip="Used for: Vanae Markings color" />
                 </common:AutoGrid>
                 <Expander Header="Skin Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.SkinFlags}" />

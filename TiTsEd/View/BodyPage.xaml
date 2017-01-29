@@ -53,28 +53,28 @@
                     <TextBlock />
                 </common:AutoGrid>
                 <common:AutoGrid>
-                    <TextBlock              Text="Arms"/>
+                    <TextBlock              Text="Arm Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.ArmType}" ItemsSource="{Binding Data.Body.ArmTypes}"/>
                 </common:AutoGrid>
                 <Expander Header="Arm Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.ArmFlags}" />
                 </Expander>
                 <common:AutoGrid>
+                    <TextBlock              Text="Leg Type"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.LegType}" ItemsSource="{Binding Data.Body.LegTypes}"/>
+
                     <TextBlock              Text="Leg Count"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.LegCount}" />
-
-                    <TextBlock              Text="Legs"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.LegType}" ItemsSource="{Binding Data.Body.LegTypes}"/>
                 </common:AutoGrid>
                 <Expander Header="Leg Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.LegFlags}" />
                 </Expander>
                 <common:AutoGrid>
-                    <TextBlock              Text="Wing Count"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.WingCount}" />
+                    <TextBlock              Text="Wing Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.WingType}" ItemsSource="{Binding Data.Body.WingTypes}" />
 
-                    <TextBlock              Text="Wing Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.WingType}" ItemsSource="{Binding Data.Body.WingTypes}"/>
+                    <TextBlock              Text="Wing Count" IsEnabled="{Binding Game.Character.WingOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.WingCount}" IsEnabled="{Binding Game.Character.WingOptionsEnabled}" />
                 </common:AutoGrid>
                 <common:AutoGrid>
                     <TextBlock              Text="Elasticity"/>
@@ -90,22 +90,22 @@
                     <TextBlock Text="Tail" Style="{StaticResource Header}"/>
                 </Border>
                 <common:AutoGrid>
-                    <TextBlock              Text="Tail Count"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.TailCount}" />
-
-                    <TextBlock              Text="Tail Type"/>
+                    <TextBlock              Text="Tail Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.TailType}" ItemsSource="{Binding Data.Body.TailTypes}"/>
 
-                    <TextBlock              Text="Tail Genital Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenital}" ItemsSource="{Binding Data.Body.TailGenitalTypes}" IsEnabled="False" />
+                    <TextBlock              Text="Tail Count" IsEnabled="{Binding Game.Character.TailOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.TailCount}" IsEnabled="{Binding Game.Character.TailOptionsEnabled}" />
 
-                    <TextBlock              Text="Tail Gential Race"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenitalRace}" ItemsSource="{Binding Data.Body.TailGenitalRaceTypes}" IsEnabled="{Binding Game.Character.TailGenitalEnable}" />
+                    <TextBlock              Text="Tail Genital Type" IsEnabled="{Binding Game.Character.TailGenitalEnabled}" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenital}" ItemsSource="{Binding Data.Body.TailGenitalTypes}" IsEnabled="{Binding Game.Character.TailGenitalEnabled}" />
 
-                    <TextBlock              Text="Tail Genital Color"/>
-                    <ComboBox               Text="{Binding Game.Character.TailGenitalColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" IsEnabled="{Binding Game.Character.TailGenitalEnable}"/>
+                    <TextBlock              Text="Tail Genital Race" IsEnabled="{Binding Game.Character.TailGenitalEnabled}" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenitalRace}" ItemsSource="{Binding Data.Body.TailGenitalRaceTypes}" IsEnabled="{Binding Game.Character.TailGenitalEnabled}" />
+
+                    <TextBlock              Text="Tail Genital Color" IsEnabled="{Binding Game.Character.TailGenitalEnabled}" />
+                    <ComboBox               Text="{Binding Game.Character.TailGenitalColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" IsEnabled="{Binding Game.Character.TailGenitalEnabled}"/>
                 </common:AutoGrid>
-                <Expander Header="Tail Flags" Margin="60,0,0,0">
+                <Expander Header="Tail Flags" Margin="60,0,0,0" IsEnabled="{Binding Game.Character.TailOptionsEnabled}">
                     <view:FlagBox ItemsSource="{Binding Game.Character.TailFlags}" />
                 </Expander>
             </StackPanel>
@@ -129,7 +129,7 @@
                 </common:AutoGrid>
 
                 <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Breasts" Style="{StaticResource Header}"/>
+                    <TextBlock Text="Chest" Style="{StaticResource Header}"/>
                 </Border>
 
                 <common:AutoGrid>
@@ -168,7 +168,7 @@
 
                 </common:AutoGrid>
 
-                <common:ArrayEditor Header="" Items="{Binding Game.Character.Breasts}" Capacity="5" MinCapacity="1">
+                <common:ArrayEditor Header="Breasts" Items="{Binding Game.Character.Breasts}" Capacity="5" MinCapacity="1">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Description}"/>
@@ -176,7 +176,7 @@
                     </common:ArrayEditor.ItemTemplate>
                     <common:AutoGrid>
                         <TextBlock              Text="Rating"/>
-                        <common:MyNumericBox    Value="{Binding Rating}" Min="0" Lower="0" Upper="{Binding MaxRating}" Tip="{Binding RatingDescription}"/>
+                        <common:MyNumericBox    Value="{Binding Rating}" Min="0" Lower="0" Upper="{Binding MaxRating}" />
 
                         <TextBlock              Text="Breast count"/>
                         <common:MyNumericBox    Value="{Binding BreastCount}" Lower="2" Min="2" Upper="8" Max="8" ToolTip="Just one doesn't make sense in the in game descriptions." />

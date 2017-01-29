@@ -37,38 +37,38 @@
                     <TextBlock Text="Head" Style="{StaticResource Header}"/>
                 </Border>
                 <common:AutoGrid>
-                    <TextBlock              Text="Hair Length"/>
+                    <TextBlock              Text="Hair Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.HairType}" ItemsSource="{Binding Data.Body.HairTypes}" />
+
+                    <TextBlock              Text="Hair Length" />
                     <common:MyNumericBox    Value="{Binding Game.Character.HairLength}" Type="Double" Unit="inches"/>
 
-                    <TextBlock              Text="Hair Color"/>
+                    <TextBlock              Text="Hair Color" />
                     <ComboBox Text="{Binding Game.Character.HairColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}" />
 
-                    <TextBlock              Text="Hair Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.HairType}" ItemsSource="{Binding Data.Body.HairTypes}"/>
-
-                    <TextBlock              Text="Hair Style"/>
+                    <TextBlock              Text="Hair Style" />
                     <ComboBox Text="{Binding Game.Character.HairStyle}" ItemsSource="{Binding Data.Body.HairStyles}" Style="{StaticResource EditableTextBox}" />
 
-                    <TextBlock              Text="Ear Length"/>
+                    <TextBlock              Text="Ear Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.EarType}" ItemsSource="{Binding Data.Body.EarTypes}" />
+
+                    <TextBlock              Text="Ear Length" IsEnabled="{Binding Game.Character.EarLengthEnabled}" />
                     <common:MyNumericBox    Value="{Binding Game.Character.EarLength}" IsEnabled="{Binding Game.Character.EarLengthEnabled}" />
 
-                    <TextBlock              Text="Ear Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.EarType}" ItemsSource="{Binding Data.Body.EarTypes}"/>
+                    <TextBlock              Text="Antennae Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.AntennaeType}" ItemsSource="{Binding Data.Body.AntennaeTypes}" />
 
-                    <TextBlock              Text="Antennae Count"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.AntennaeCount}" Max="2" Upper="2" />
+                    <TextBlock              Text="Antennae Count" IsEnabled="{Binding Game.Character.AntennaOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.AntennaeCount}" Max="2" Upper="2" IsEnabled="{Binding Game.Character.AntennaOptionsEnabled}" />
 
-                    <TextBlock              Text="Antennae Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.AntennaeType}" ItemsSource="{Binding Data.Body.AntennaeTypes}"/>
+                    <TextBlock              Text="Horn Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.HornType}" ItemsSource="{Binding Data.Body.HornTypes}" />
 
-                    <TextBlock              Text="Horn Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.HornType}" ItemsSource="{Binding Data.Body.HornTypes}"/>
-                    
-                    <TextBlock              Text="Horn Count"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.HornCount}" Max="8" Upper="8" />
+                    <TextBlock              Text="Horn Count" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.HornCount}" Max="8" Upper="8" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
 
-                    <TextBlock              Text="Horn Length"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.HornLength}" Max="30" Upper="30" Unit="inches" />
+                    <TextBlock              Text="Horn Length" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.HornLength}" Max="30" Upper="30" Unit="inches" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
                 </common:AutoGrid>
             </StackPanel>
             
@@ -77,31 +77,31 @@
                     <TextBlock Text="Face" Style="{StaticResource Header}"/>
                 </Border>
                 <common:AutoGrid>
-                    <TextBlock              Text="Face"/>
+                    <TextBlock              Text="Face Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.FaceType}" ItemsSource="{Binding Data.Body.FaceTypes}"/>
                 </common:AutoGrid>
                 <Expander Header="Face Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.FaceFlags}" />
                 </Expander>
                 <common:AutoGrid>
-                    <TextBlock              Text="Eye Color"/>
-                    <ComboBox               Text="{Binding Game.Character.EyeColor}" ItemsSource="{Binding Data.Body.EyeColors}" Style="{StaticResource EditableTextBox}"/>
+                    <TextBlock              Text="Eye Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.EyeType}" ItemsSource="{Binding Data.Body.EyeTypes}" />
 
-                    <TextBlock              Text="Eye Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.EyeType}" ItemsSource="{Binding Data.Body.EyeTypes}"/>
+                    <TextBlock              Text="Eye Color" />
+                    <ComboBox               Text="{Binding Game.Character.EyeColor}" ItemsSource="{Binding Data.Body.EyeColors}" Style="{StaticResource EditableTextBox}" />
 
-                    <TextBlock              Text="Tongue"/>
+                    <TextBlock              Text="Tongue Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.TongueType}" ItemsSource="{Binding Data.Body.TongueTypes}"/>
                 </common:AutoGrid>
                 <Expander Header="Tongue Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.TongueFlags}" />
                 </Expander>
                 <common:AutoGrid>
-                    <TextBlock              Text="Lip Mod"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.LipSize}" ToolTip="This is based on femininity as well." Tip="{Binding Game.Character.LipRatingTip}" />
-
                     <TextBlock              Text="Lip Color"/>
                     <ComboBox Text="{Binding Game.Character.LipColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+
+                    <TextBlock              Text="Lip Mod" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.LipSize}" ToolTip="This is based on femininity as well." Tip="{Binding Game.Character.LipRatingTip}" />
 
                     <TextBlock              Text="Beard Length"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.BeardLength}" Unit="inches" />

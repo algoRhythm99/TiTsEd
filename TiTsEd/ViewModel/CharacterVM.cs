@@ -530,7 +530,14 @@ namespace TiTsEd.ViewModel {
 
         public int AntennaeType {
             get { return GetInt("antennaeType"); }
-            set { SetValue("antennaeType", value); }
+            set {
+                SetValue("antennaeType", value);
+                OnPropertyChanged("AntennaOptionsEnabled");
+            }
+        }
+
+        public bool AntennaOptionsEnabled {
+            get { return (0 != AntennaeType); }
         }
 
         public int HornCount {
@@ -545,7 +552,14 @@ namespace TiTsEd.ViewModel {
 
         public int HornType {
             get { return GetInt("hornType"); }
-            set { SetValue("hornType", value); }
+            set {
+                SetValue("hornType", value);
+                OnPropertyChanged("HornOptionsEnabled");
+            }
+        }
+
+        public bool HornOptionsEnabled {
+            get { return (0 != HornType); }
         }
 
         public double HairLength {
@@ -810,7 +824,14 @@ namespace TiTsEd.ViewModel {
 
         public int WingType {
             get { return GetInt("wingType"); }
-            set { SetValue("wingType", value); }
+            set {
+                SetValue("wingType", value);
+                OnPropertyChanged("WingOptionsEnabled");
+            }
+        }
+
+        public bool WingOptionsEnabled {
+            get { return (0 != WingType); }
         }
 
         public int TailCount {
@@ -840,18 +861,23 @@ namespace TiTsEd.ViewModel {
                         }
                     }
                 }
+                OnPropertyChanged("TailOptionsEnabled");
             }
         }
 
-        public bool TailGenitalEnable {
-            get { return TailGenital != 0; }
+        public bool TailOptionsEnabled {
+            get { return (0 != TailType); }
+        }
+
+        public bool TailGenitalEnabled {
+            get { return (0 != TailGenital); }
         }
 
         public int TailGenital {
             get { return GetInt("tailGenital"); }
             set {
                 SetValue("tailGenital", value);
-                OnPropertyChanged("TailGenitalEnable");
+                OnPropertyChanged("TailGenitalEnabled");
             }
         }
 
