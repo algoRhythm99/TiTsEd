@@ -5,12 +5,12 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class KeyItemGroupVM : BindableBase {
-        readonly GameVM _game;
+        private readonly CharacterVM Character;
 
-        public KeyItemGroupVM(GameVM game, string name, KeyItemVM[] keyItems) {
-            _game = game;
+        public KeyItemGroupVM(CharacterVM character, string name, KeyItemVM[] keyItems) {
+            Character = character;
             Name = name;
-            KeyItems = new UpdatableCollection<KeyItemVM>(keyItems.Where(x => x.Match(_game.KeyItemSearchText)));
+            KeyItems = new UpdatableCollection<KeyItemVM>(keyItems.Where(x => x.Match(Character.Game.KeyItemSearchText)));
         }
 
         public new string Name {
@@ -39,11 +39,11 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            _character.OnKeyItemChanged(Name);
+            Character.OnKeyItemChanged(Name);
         }
 
         public override AmfObject GetItems() {
-            return _character.KeyItemsArray;
+            return Character.KeyItemsArray;
         }
 
         public override AmfObject GetObject() {
@@ -89,7 +89,7 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void OnIsOwnedChanged() {
-            _character.OnKeyItemAddedOrRemoved(Name, IsOwned);
+            Character.OnKeyItemAddedOrRemoved(Name, IsOwned);
         }
 
     }

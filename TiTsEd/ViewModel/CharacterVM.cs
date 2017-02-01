@@ -23,10 +23,10 @@ namespace TiTsEd.ViewModel {
             Game = game;
 
             // body parts
-            Breasts = new BreastArrayVM(game, GetObj("breastRows"));
-            Vaginas = new VaginaArrayVM(game, GetObj("vaginas"));
-            Cocks = new CockArrayVM(game, GetObj("cocks"));
-            Ass = new VaginaVM(game, GetObj("ass"));
+            Breasts = new BreastArrayVM(this, GetObj("breastRows"));
+            Vaginas = new VaginaArrayVM(this, GetObj("vaginas"));
+            Cocks = new CockArrayVM(this, GetObj("cocks"));
+            Ass = new VaginaVM(this, GetObj("ass"));
 
             // Perks
             var xmlPerks = XmlData.Current.PerkGroups.SelectMany(x => x.Perks).ToArray();
@@ -1190,7 +1190,7 @@ namespace TiTsEd.ViewModel {
                     }
                 }
 
-                var groupVM = new KeyItemGroupVM(Game, xmlGroup.Name, keyItemVMs);
+                var groupVM = new KeyItemGroupVM(this, xmlGroup.Name, keyItemVMs);
                 int idx = KeyItemGroups.FindIndex(f => f.Name == groupVM.Name);
                 if (-1 == idx) {
                     KeyItemGroups.Add(groupVM);
@@ -1255,7 +1255,7 @@ namespace TiTsEd.ViewModel {
                     }
                 }
 
-                var groupVM = new PerkGroupVM(Game, xmlGroup.Name, perkVMs);
+                var groupVM = new PerkGroupVM(this, xmlGroup.Name, perkVMs);
                 int idx = PerkGroups.FindIndex(f => f.Name == groupVM.Name);
                 if (-1 == idx) {
                     PerkGroups.Add(groupVM);
@@ -1339,7 +1339,7 @@ namespace TiTsEd.ViewModel {
                     }
                 }
 
-                var groupVM = new StatusGroupVM(Game, xmlGroup.Name, statusVMs);
+                var groupVM = new StatusGroupVM(this, xmlGroup.Name, statusVMs);
                 int idx = StatusEffectGroups.FindIndex(f => f.Name == groupVM.Name);
                 if (-1 == idx) {
                     StatusEffectGroups.Add(groupVM);

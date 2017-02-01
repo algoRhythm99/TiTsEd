@@ -7,12 +7,12 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class StatusGroupVM : BindableBase {
-        readonly GameVM _game;
+        private readonly CharacterVM Character;
 
-        public StatusGroupVM(GameVM game, string name, StatusEffectVM[] statusEffects) {
-            _game = game;
+        public StatusGroupVM(CharacterVM character, string name, StatusEffectVM[] statusEffects) {
+            Character = character;
             Name = name;
-            StatusEffects = new UpdatableCollection<StatusEffectVM>(statusEffects.Where(x => x.Match(_game.RawDataSearchText)));
+            StatusEffects = new UpdatableCollection<StatusEffectVM>(statusEffects.Where(x => x.Match(Character.Game.RawDataSearchText)));
         }
 
         public new string Name {
@@ -49,7 +49,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public override AmfObject GetItems() {
-            return _character.StatusEffectsArray;
+            return Character.StatusEffectsArray;
         }
 
         public override AmfObject GetObject() {
@@ -62,11 +62,11 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            _character.OnStatusChanged(Name);
+            Character.OnStatusChanged(Name);
         }
 
         protected override void OnIsOwnedChanged() {
-            _character.OnStatusAddedOrRemoved(Name, IsOwned);
+            Character.OnStatusAddedOrRemoved(Name, IsOwned);
         }
     }
 }

@@ -6,8 +6,8 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class BreastArrayVM : ArrayVM<BreastsVM> {
-        public BreastArrayVM(GameVM game, AmfObject obj)
-            : base(obj, x => new BreastsVM(game, x)) {
+        public BreastArrayVM(CharacterVM character, AmfObject obj)
+            : base(obj, x => new BreastsVM(character, x)) {
         }
 
         protected override AmfObject CreateNewObject() {
@@ -26,13 +26,13 @@ namespace TiTsEd.ViewModel {
     }
 
     public class BreastsVM : ObjectVM {
-        public BreastsVM(GameVM game, AmfObject obj)
+        public BreastsVM(CharacterVM character, AmfObject obj)
             : base(obj) {
 
-            _game = game;
+            _character = character;
         }
 
-        public GameVM _game { get; set; }
+        private CharacterVM _character { get; set; }
 
         public int Rating {
             get { return GetInt("breastRatingRaw"); }

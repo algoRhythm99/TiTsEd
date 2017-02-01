@@ -6,8 +6,8 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class VaginaArrayVM : ArrayVM<VaginaVM> {
-        public VaginaArrayVM(GameVM game, AmfObject obj)
-            : base(obj, x => new VaginaVM(game, x)) {
+        public VaginaArrayVM(CharacterVM character, AmfObject obj)
+            : base(obj, x => new VaginaVM(character, x)) {
         }
 
         protected override AmfObject CreateNewObject() {
@@ -45,12 +45,12 @@ namespace TiTsEd.ViewModel {
     }
 
     public class VaginaVM : ObjectVM {
-        public VaginaVM(GameVM game, AmfObject obj)
+        public VaginaVM(CharacterVM character, AmfObject obj)
             : base(obj) {
-            _game = game;
+            _character = character;
         }
 
-        public GameVM _game { get; set; }
+        private CharacterVM _character { get; set; }
 
         public int Clits {
             get { return GetInt("clits"); }

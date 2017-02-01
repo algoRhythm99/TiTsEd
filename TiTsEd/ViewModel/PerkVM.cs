@@ -7,12 +7,12 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class PerkGroupVM : BindableBase {
-        readonly GameVM _game;
+        private readonly CharacterVM Character;
 
-        public PerkGroupVM(GameVM game, string name, PerkVM[] perks) {
-            _game = game;
+        public PerkGroupVM(CharacterVM character, string name, PerkVM[] perks) {
+            Character = character;
             Name = name;
-            Perks = new UpdatableCollection<PerkVM>(perks.Where(x => x.Match(_game.PerkSearchText)));
+            Perks = new UpdatableCollection<PerkVM>(perks.Where(x => x.Match(Character.Game.PerkSearchText)));
         }
 
         public new string Name {
@@ -41,7 +41,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public override AmfObject GetItems() {
-            return _character.PerksArray;
+            return Character.PerksArray;
         }
 
         public override AmfObject GetObject() {
@@ -49,11 +49,11 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            _character.OnPerkChanged(Name);
+            Character.OnPerkChanged(Name);
         }
 
         protected override void OnIsOwnedChanged() {
-            _character.OnPerkAddedOrRemoved(Name, IsOwned);
+            Character.OnPerkAddedOrRemoved(Name, IsOwned);
         }
     }
 }

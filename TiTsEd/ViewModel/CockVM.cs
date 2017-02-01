@@ -6,8 +6,8 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class CockArrayVM : ArrayVM<CockVM> {
-        public CockArrayVM(GameVM game, AmfObject obj)
-            : base(obj, x => new CockVM(game, x)) {
+        public CockArrayVM(CharacterVM character, AmfObject obj)
+            : base(obj, x => new CockVM(character, x)) {
         }
 
         protected override AmfObject CreateNewObject() {
@@ -40,13 +40,13 @@ namespace TiTsEd.ViewModel {
     }
 
     public class CockVM : ObjectVM {
-        public CockVM(GameVM game, AmfObject obj)
+        public CockVM(CharacterVM character, AmfObject obj)
             : base(obj) {
 
-            _game = game;
+            _character = character;
         }
 
-        public GameVM _game { get; set; }
+        private CharacterVM _character { get; set; }
 
         public int Length {
             get { return GetInt("cLengthRaw"); }
