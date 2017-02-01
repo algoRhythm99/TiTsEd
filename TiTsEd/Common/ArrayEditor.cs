@@ -68,7 +68,8 @@ namespace TiTsEd.Common
             set { SetValue(CapacityProperty, value); }
         }
 
-        public int MinCapacity {
+        public int MinCapacity
+        {
             get { return (int)GetValue(MinCapacityProperty); }
             set { SetValue(MinCapacityProperty, value); }
         }
@@ -175,7 +176,7 @@ namespace TiTsEd.Common
 
         void removeButton_Click(object sender, RoutedEventArgs e)
         {
-            if(Items.Count == MinCapacity) return;
+            if (Items.Count == MinCapacity) return;
             int index = _listBox.SelectedIndex;
             _listBox.SelectedIndex = Math.Min(index + 1, Items.Count - 2);
             Items.Delete(index);
@@ -203,27 +204,40 @@ namespace TiTsEd.Common
         void OnContentChanged()
         {
             if (_listBox == null) return;
-            _addButton.IsEnabled = (Items != null && Items.Count < Capacity);
-            _removeButton.IsEnabled = (Items != null && Items.Count > MinCapacity);
+            _addButton.IsEnabled = (Items != null) && (Items.Count < Capacity);
+            _removeButton.IsEnabled = (Items != null) && (Items.Count > MinCapacity);
 
             var item = _listBox.SelectedItem;
+            if (null == item)
+            {
+                if (null != _listBox.Items)
+                {
+                    if (_listBox.Items.Count > 0)
+                    {
+                        _listBox.SelectedIndex = 0;
+                        _listBox.SelectedItem = _listBox.Items.GetItemAt(0);
+                        item = _listBox.SelectedItem;
+                    }
+                }
+            }
             if (item != null)
             {
                 ((FrameworkElement)Content).DataContext = item;
                 _contentBorder.Visibility = Visibility.Visible;
-                _removeButton.IsEnabled = true;
                 return;
             }
 
-            if(Items == null || Items.Count == MinCapacity)
+            if ((Items == null) || (Items.Count == MinCapacity))
             {
                 ((FrameworkElement)Content).DataContext = null;
                 _contentBorder.Visibility = Visibility.Collapsed;
-                _removeButton.IsEnabled = false;
                 return;
             }
 
-            if (_listBox.SelectedIndex == -1) _listBox.SelectedIndex = 0;
+            if (_listBox.SelectedIndex == -1)
+            {
+                _listBox.SelectedIndex = 0;
+            }
         }
     }
 }
