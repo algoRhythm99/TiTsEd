@@ -4,6 +4,7 @@
              xmlns:common="clr-namespace:TiTsEd.Common"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:TiTsEd.View"
              d:DesignHeight="600"
              d:DesignWidth="1024"
              mc:Ignorable="d">
