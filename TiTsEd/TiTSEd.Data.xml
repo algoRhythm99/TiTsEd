@@ -435,6 +435,7 @@
 			<FaceType ID="39" Name="Naleen" />
 			<FaceType ID="40" Name="Panda" />
 			<FaceType ID="45" Name="Badger" />
+			<FaceType ID="71" Name="Worg" />
 		</FaceTypes>
 		<!-- ================================================================ -->
 		<FaceFlags>
@@ -1029,6 +1030,7 @@
 			<Item Stack="1" Name="ACE Cannon" ID="classes.Items.Accessories::ACECannon" />
 			<Item Stack="1" Name="AimEyepiece" ID="classes.Items.Accessories::AimEyepiece" />
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
+			<Item Stack="1" Name="Scarf" ID="classes.Items.Accessories::BeatricesScarf" />
 			<Item Stack="1" Name="Exp. Cloak" ID="classes.Items.Accessories::ExplorersCloak" />
 			<Item Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
 			<Item Stack="1" Name="JungleLure" ID="classes.Items.Accessories::JungleLure" />
@@ -1118,6 +1120,7 @@
 			<Item Stack="1" Name="C.Plate" ID="classes.Items.Armor::ChitPlate" />
 			<Item Stack="1" Name="Gem Links" ID="classes.Items.Armor::GemstoneLinks" />
 			<Item Stack="1" Name="Goo Armor" ID="classes.Items.Armor::GooArmor" />
+			<Item Stack="1" Name="Hide V&amp;B" ID="classes.Items.Armor::HideVestAndBreeches" />
 			<Item Stack="1" Name="M.Suit" ID="classes.Items.Armor::MirroredJumpsuit" />
 			<Item Stack="1" Name="N.Chain" ID="classes.Items.Armor::NyreanChain" />
 			<Item Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
@@ -1287,6 +1290,7 @@
 			<Item Stack="10" Name="Pussybloom" ID="classes.Items.Miscellaneous::Pussybloom" />
 			<Item Stack="10" Name="Pussyblossom" ID="classes.Items.Miscellaneous::Pussyblossom" />
 			<Item Stack="20" Name="Rainbotox" ID="classes.Items.Miscellaneous::Rainbotox" />
+			<Item Stack="10" Name="Roast Z.B" ID="classes.Items.Miscellaneous::RoastedZhorBeast" />
 			<Item Stack="10" Name="SkySap" ID="classes.Items.Miscellaneous::SkySap" />
 			<Item Stack="12" Name="SmallEgg" ID="classes.Items.Miscellaneous::SmallEgg" />
 			<Item Stack="10" Name="Sterilex" ID="classes.Items.Miscellaneous::Sterilex" />
@@ -1304,6 +1308,7 @@
 			<Item Stack="5"  Name="BGreenPot" ID="classes.Items.Transformatives::BigGreenPotion" />
 			<Item Stack="10" Name="Bovinium" ID="classes.Items.Transformatives::Bovinium" />
 			<Item Stack="10" Name="BumpyRd." ID="classes.Items.Transformatives::BumpyRoad" />
+			<Item Stack="10" Name="CanineP" ID="classes.Items.Transformatives::CaninePoppers" />
 			<Item Stack="10" Name="Catnip" ID="classes.Items.Transformatives::Catnip" />
 			<Item Stack="10" Name="Cerespirin" ID="classes.Items.Transformatives::Cerespirin" />
 			<Item Stack="10" Name="Circumser" ID="classes.Items.Transformatives::Circumscriber" />
@@ -1351,12 +1356,14 @@
 			<Item Stack="10" Name="OvirAce" ID="classes.Items.Transformatives::OvirAce" />
 			<Item Stack="5"  Name="Ovir+" ID="classes.Items.Transformatives::OvirPositive" />
 			<Item Stack="10" Name="Peckermint" ID="classes.Items.Transformatives::Peckermint" />
+			<Item Stack="10" Name="PupperP" ID="classes.Items.Transformatives::PupperPoppers" />
 			<Item Stack="10" Name="RainbowG." ID="classes.Items.Transformatives::RainbowGaze" />
 			<Item Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
 			<Item Stack="10" Name="R.Made" ID="classes.Items.Transformatives::RubberMade" />
 			<Item Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
 			<Item Stack="10" Name="JawBreakr" ID="classes.Items.Transformatives::SaltyJawBreaker" />
 			<Item Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
+			<Item Stack="10" Name="S.Bites" ID="classes.Items.Transformatives::SharkBites" />
 			<Item Stack="10" Name="S.Clear" ID="classes.Items.Transformatives::SkinClear" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
 			<Item Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
@@ -1396,6 +1403,7 @@
 				<ItemField Name="shields" Type="int" Value="5" />
 			</Item>
 			<Item Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" LongName="Emmy's Vamp Blade" />
+			<Item Stack="1" Name="E.GSpear" ID="classes.Items.Melee::EssyraGreatspear" />
 			<Item Stack="1" Name="J.Hmmr." ID="classes.Items.Melee::Jolthammer" />
 			<Item Stack="1" Name="Knife" ID="classes.Items.Melee::Knife" />
 			<Item Stack="1" Name="L.Saber" ID="classes.Items.Melee::LavaSaber" />
@@ -1403,6 +1411,7 @@
 			<Item Stack="1" Name="M.Pick" ID="classes.Items.Melee::MilitaryPick" />
 			<Item Stack="1" Name="M.Saber" ID="classes.Items.Melee::MonofilamentSaber" />
 			<Item Stack="1" Name="N.Spear" ID="classes.Items.Melee::NyreanSpear" />
+			<Item Stack="1" Name="P.Hawk" ID="classes.Items.Melee::PlasmaHawk" />
 			<Item Stack="1" Name="P.Talons" ID="classes.Items.Melee::PredatorTalons" />
 			<Item Stack="1" Name="Wrench" ID="classes.Items.Melee::RaskvelWrench" />
 			<Item Stack="1" Name="Rock" ID="classes.Items.Melee::Rock" />
@@ -1507,6 +1516,7 @@
 			<Item Stack="10" Name="MilkBag"     ID="classes.Items.Miscellaneous::MilkBag" />
 			<Item Stack="20" Name="Picardine"   ID="classes.Items.Miscellaneous::Picardine" />
 			<Item Stack="20" Name="Satyrite"    ID="classes.Items.Miscellaneous::Satyrite" />
+			<Item Stack="20" Name="Savicite"    ID="classes.Items.Treasures::Savicite" />
 			<Item Stack="10" Name="Silicone"    ID="classes.Items.Miscellaneous::Silicone" />
 			<Item Stack="1"  Name="S.Egg"       ID="classes.Items.Miscellaneous::StrangeEgg" />
 			<Item Stack="10" Name="JokeBook"    ID="classes.Items.Miscellaneous::TarkusJokeBook" />
@@ -3427,6 +3437,9 @@
 <!--
 			<StatusEffect Name="Sexy Costume" Description="The outfit you are wearing is making you feel randier than usual." Value1="10" IconName="LustUp" IconShade="100" />
 			<StatusEffect Name="Sexy Moves" Description="Your recent lessons pay off, you feel as sexy as ever - and it shows." IconName="OffenseUp" MinutesLeft="4320" />
+-->
+			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
+<!--
 			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!\nExperience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
 			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
