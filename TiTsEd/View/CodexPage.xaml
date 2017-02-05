@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="TiTsEd.View.CodexPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:TiTsEd.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:TiTsEd.View"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/PageInclude.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="TextButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Background" Value="GhostWhite" />
+                <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" Margin="10,0,10,0">
+            <TextBlock TextAlignment="Center" Width="Auto">Actions</TextBlock>
+            <Button Style="{StaticResource TextButtonStyle}" Click="AllUnknown_Click">
+                <TextBlock VerticalAlignment="Center">All Unknown</TextBlock>
+            </Button>
+            <Button Style="{StaticResource TextButtonStyle}" Click="AllUnlocked_Click">
+                <TextBlock VerticalAlignment="Center">All Unlocked</TextBlock>
+            </Button>
+            <Button Style="{StaticResource TextButtonStyle}" Click="AllViewed_Click">
+                <TextBlock VerticalAlignment="Center">All Viewed</TextBlock>
+            </Button>
+        </StackPanel>
+        <DataGrid Name="CodexGrid"
+                  Grid.Column="1"
+                  AutoGenerateColumns="False"
+                  CanUserDeleteRows="False"
+                  GridLinesVisibility="None"
+                  ItemsSource="{Binding Game.CodexEntries}"
+                  Padding="10"
+                  Background="Transparent"
+                  BorderThickness="0"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="180"
+                                    Header="Name"
+                                    IsReadOnly="True"
+                                    Binding="{Binding Name}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Left" />
+                            <Setter Property="TextBlock.FontWeight" Value="{Binding DisplayFontWeight}" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Header="Unknown" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Path=IsUnknown, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Unlocked" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Path=IsUnlocked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Viewed" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Path=IsViewed, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

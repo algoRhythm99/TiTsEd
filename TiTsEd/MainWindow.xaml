@@ -184,6 +184,9 @@
             <TabItem Header="Status">
                 <view:StatusEffectsPage />
             </TabItem>
+            <TabItem Header="Codex">
+                <view:CodexPage />
+            </TabItem>
             <TabItem Header="Raw">
                 <view:RawStateViewPage />
             </TabItem>

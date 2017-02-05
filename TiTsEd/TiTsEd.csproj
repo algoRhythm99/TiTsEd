@@ -101,6 +101,7 @@
     <Compile Include="ViewModel\BreastsVM.cs" />
     <Compile Include="ViewModel\CharacterVM.cs" />
     <Compile Include="ViewModel\CockVM.cs" />
+    <Compile Include="ViewModel\CodexManagerVM.cs" />
     <Compile Include="ViewModel\CreatureVM.cs" />
     <Compile Include="ViewModel\PregnancyVM.cs" />
     <Compile Include="ViewModel\FlagVM.cs" />
@@ -129,6 +130,9 @@
     <Compile Include="View\CheckForUpdateBox.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>CheckForUpdateBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CodexPage.xaml.cs">
+      <DependentUpon>CodexPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ConfirmationBox.xaml.cs">
       <DependentUpon>ConfirmationBox.xaml</DependentUpon>
@@ -216,6 +220,10 @@
     <Page Include="View\CheckForUpdateBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CodexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ConfirmationBox.xaml">
       <SubType>Designer</SubType>

@@ -116,6 +116,9 @@ namespace TiTsEd.Model {
         [XmlElement("General")]
         public XmlGeneralSet General { get; set; }
 
+        [XmlArray("CodexEntries"), XmlArrayItem("CodexEntry")]
+        public List<XmlCodexEntry> CodexEntries { get; set; }
+
         [XmlElement("Body")]
         public XmlBodySet Body { get; set; }
 
@@ -281,6 +284,24 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("AreolaFlag")]
         public XmlEnum[] AreolaFlags { get; set; }
 
+    }
+
+    public sealed class XmlCodexEntry
+    {
+        [XmlText]
+        public string Name { get; set; }
+
+        public XmlCodexEntry() { }
+
+        public XmlCodexEntry(string entryName)
+        {
+            Name = entryName;
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public sealed class XmlPerkGroup {

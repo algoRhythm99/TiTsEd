@@ -13,7 +13,8 @@ using TiTsEd.Common;
 using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
-    public sealed partial class GameVM : ObjectVM {
+    public sealed partial class GameVM : ObjectVM
+    {
         private GeneralObjectVM _flags;
         private string _characterName;
         private bool _IsPC = true;
@@ -21,10 +22,12 @@ namespace TiTsEd.ViewModel {
         public readonly List<PerkVM> AllPerks = new List<PerkVM>();
         public readonly List<KeyItemVM> AllKeyItems = new List<KeyItemVM>();
         public readonly List<StatusEffectVM> AllStatusEffects = new List<StatusEffectVM>();
-        readonly SortedDictionary<string,FlagVM> _allFlags = new SortedDictionary<string,FlagVM>();
+        public readonly SortedDictionary<string,FlagVM> AllFlags = new SortedDictionary<string,FlagVM>();
+        public readonly SortedDictionary<string, CodexEntryVM> AllCodexEntries = new SortedDictionary<string, CodexEntryVM>();
 
         public GameVM(AmfFile file, GameVM previousVM)
-            : base(file) {
+            : base(file)
+        {
             SetCharacterOptions();
             setCharacter("PC");
             SaveFile = new AmfObjectVM(file);
@@ -36,23 +39,61 @@ namespace TiTsEd.ViewModel {
             _flags = new GeneralObjectVM(flagsObject);
             if (null != previousVM) {
                 _searchText = previousVM._searchText;
+                AllCodexEntries = previousVM.AllCodexEntries;
+                AllStatusEffects = previousVM.AllStatusEffects;
+                AllKeyItems = previousVM.AllKeyItems;
+                AllPerks = previousVM.AllPerks;
+                AllFlags = previousVM.AllFlags;
             }
 
             // Flags
             foreach (var xmlFlag in XmlData.Current.Flags) {
-                if (!_allFlags.ContainsKey(xmlFlag.Name)) {
-                    _allFlags[xmlFlag.Name] = new FlagVM(this, ref flagsObject, xmlFlag);
+                if (!AllFlags.ContainsKey(xmlFlag.Name)) {
+                    AllFlags[xmlFlag.Name] = new FlagVM(this, ref flagsObject, xmlFlag);
                 }
             }
+
             foreach (var flag in flagsObject) {
                 string flagName = flag.ToString();
-                if (!_allFlags.ContainsKey(flagName)) {
+                if (!AllFlags.ContainsKey(flagName)) {
                     XmlEnum data = new XmlEnum();
                     data.Name = flagName;
-                    _allFlags[flagName] = new FlagVM(this, ref flagsObject, data);
+                    AllFlags[flagName] = new FlagVM(this, ref flagsObject, data);
                 }
             }
-            Flags = new UpdatableCollection<FlagVM>(_allFlags.Values.ToList().Where(x => x.Match(SearchText)));
+
+            Flags = new UpdatableCollection<FlagVM>(AllFlags.Values.ToList().Where(x => x.Match(SearchText)));
+
+            // Codex
+            foreach (var xmlCodex in XmlData.Current.CodexEntries)
+            {
+                if (!AllCodexEntries.ContainsKey(xmlCodex.Name))
+                {
+                    AllCodexEntries[xmlCodex.Name] = new CodexEntryVM(this, xmlCodex);
+                }
+            }
+
+            foreach (var codexEntry in CodexUnlockedEntriesObj)
+            {
+                string codexName = codexEntry.Value.ToString();
+                if (!AllCodexEntries.ContainsKey(codexName))
+                {
+                    XmlCodexEntry data = new XmlCodexEntry(codexName);
+                    AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                }
+            }
+
+            foreach (var codexEntry in CodexViewedEntriesObj)
+            {
+                string codexName = codexEntry.Value.ToString();
+                if (!AllCodexEntries.ContainsKey(codexName))
+                {
+                    XmlCodexEntry data = new XmlCodexEntry(codexName);
+                    AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                }
+            }
+
+            CodexEntries = new UpdatableCollection<CodexEntryVM>(AllCodexEntries.Values.ToList().Where(x => x.Match(SearchText)));
         }
 
         public ShipArrayVM Ships { get; private set; }
@@ -207,14 +248,18 @@ namespace TiTsEd.ViewModel {
 
 
         public string Email {
-            get {
-                if (EmailEnabled) {
+            get
+            {
+                if (EmailEnabled)
+                {
                     return _flags.GetString("PC_EMAIL_ADDRESS");
                 }
                 return "N/A";
             }
-            set {
-                if (EmailEnabled) {
+            set
+            {
+                if (EmailEnabled)
+                {
                     var old = Email;
                     //ToAddressCache
                     //ContentCache
@@ -222,13 +267,16 @@ namespace TiTsEd.ViewModel {
                     _flags.SetValue("PC_EMAIL_ADDRESS", value);
 
                     //Update messages in the mail system!
-                    foreach (AmfPair pair in GetObj("mailSystem")) {
+                    foreach (AmfPair pair in GetObj("mailSystem"))
+                    {
                         ObjectVM vm = new GeneralObjectVM(pair.ValueAsObject);
-                        if (vm.HasValue("ToAddressCache")) {
+                        if (vm.HasValue("ToAddressCache"))
+                        {
                             var str = vm.GetString("ToAddressCache");
                             vm.SetValue("ToAddressCache", str.Replace(old, value));
                         }
-                        if (vm.HasValue("ContentCache")) {
+                        if (vm.HasValue("ContentCache"))
+                        {
                             var str = vm.GetString("ContentCache");
                             vm.SetValue("ContentCache", str.Replace(old, value));
                         }
@@ -237,28 +285,36 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public bool EmailEnabled {
-            get {
+        public bool EmailEnabled
+        {
+            get
+            {
                 return IsPC && _flags.HasValue("PC_EMAIL_ADDRESS");
             }
         }
 
-        public new string Name {
+        public new string Name
+        {
             get { return Character.Name; }
-            set {
+            set
+            {
                 var oldName = Name + " Steele";
                 Character.Name = value;
 
-                if (IsPC) {
+                if (IsPC)
+                {
                     var newName = value + " Steele";
                     //Update messages in the mail system!
-                    foreach (AmfPair pair in GetObj("mailSystem")) {
+                    foreach (AmfPair pair in GetObj("mailSystem"))
+                    {
                         ObjectVM vm = new GeneralObjectVM(pair.ValueAsObject);
-                        if (vm.HasValue("ToCache")) {
+                        if (vm.HasValue("ToCache"))
+                        {
                             var str = vm.GetString("ToCache");
                             vm.SetValue("ToCache", str.Replace(oldName, newName));
                         }
-                        if (vm.HasValue("ContentCache")) {
+                        if (vm.HasValue("ContentCache"))
+                        {
                             var str = vm.GetString("ContentCache");
                             vm.SetValue("ContentCache", str.Replace(oldName, newName));
                         }
@@ -309,75 +365,6 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int AssTease {
-            get {
-                if (IsPC && _flags.HasValue("TIMES_BUTT_TEASED")) {
-                    return _flags.GetInt("TIMES_BUTT_TEASED");
-                }
-                return 0;
-            }
-            set {
-                _flags.SetValue("TIMES_BUTT_TEASED", value);
-                OnFlagChanged("TIMES_BUTT_TEASED");
-            }
-        }
-
-        public int ChestTease {
-            get {
-                if (IsPC && _flags.HasValue("TIMES_CHEST_TEASED")) {
-                    return _flags.GetInt("TIMES_CHEST_TEASED");
-                }
-                return 0;
-            }
-            set {
-                _flags.SetValue("TIMES_CHEST_TEASED", value);
-                OnFlagChanged("TIMES_CHEST_TEASED");
-            }
-        }
-
-        public int CrotchTease {
-            get {
-                if (IsPC && _flags.HasValue("TIMES_CROTCH_TEASED")) {
-                    return _flags.GetInt("TIMES_CROTCH_TEASED");
-                }
-                return 0;
-            }
-            set {
-                _flags.SetValue("TIMES_CROTCH_TEASED", value);
-                OnFlagChanged("TIMES_CROTCH_TEASED");
-            }
-        }
-
-        public int HipsTease {
-            get {
-                if (IsPC && _flags.HasValue("TIMES_HIPS_TEASED")) {
-                    return _flags.GetInt("TIMES_HIPS_TEASED");
-                }
-                return 0;
-            }
-            set {
-                _flags.SetValue("TIMES_HIPS_TEASED", value);
-                OnFlagChanged("TIMES_HIPS_TEASED");
-            }
-        }
-
-        public int OralTease
-        {
-            get
-            {
-                if (IsPC && _flags.HasValue("TIMES_ORAL_TEASED"))
-                {
-                    return _flags.GetInt("TIMES_ORAL_TEASED");
-                }
-                return 0;
-            }
-            set
-            {
-                _flags.SetValue("TIMES_ORAL_TEASED", value);
-                OnFlagChanged("TIMES_ORAL_TEASED");
-            }
-        }
-
         string _searchText = "";
         public string SearchText
         {
@@ -399,6 +386,7 @@ namespace TiTsEd.ViewModel {
                 Character.UpdateKeyItemsVisibility();
                 Character.UpdateStatusEffectsVisibility();
                 Flags.Update();
+                CodexEntries.Update();
             }
         }
 
@@ -414,17 +402,22 @@ namespace TiTsEd.ViewModel {
         /// </summary>
         public FlagVM GetFlag(string name, string propertyName = null) {
             FlagVM flag = null;
-            if (_allFlags.ContainsKey(name)) {
-                flag = _allFlags[name];
+            if (AllFlags.ContainsKey(name)) {
+                flag = AllFlags[name];
                 flag.GameVMProperties.Add(propertyName);
             }
             return flag;
         }
 
         public void OnFlagChanged(string name) {
-            if (_allFlags.ContainsKey(name)) {
-                foreach (var prop in _allFlags[name].GameVMProperties) OnPropertyChanged(prop);
+            if (AllFlags.ContainsKey(name)) {
+                foreach (var prop in AllFlags[name].GameVMProperties)
+                {
+                    OnPropertyChanged(prop);
+                }
             }
+            OnPropertyChanged("Flags");
+            OnSavePropertyChanged("SaveFile");
         }
 
         public void RemoveFlag(FlagVM flag) {
@@ -444,6 +437,43 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        public AmfObject CodexUnlockedEntriesObj
+        {
+            get
+            {
+                return GetObj(CodexProperties.UNLOCKEDCODEXENTRIES) ?? new AmfObject(AmfTypes.Array);
+            }
+        }
+
+        public AmfObject CodexViewedEntriesObj
+        {
+            get
+            {
+                return GetObj(CodexProperties.VIEWEDCODEXENTRIES) ?? new AmfObject(AmfTypes.Array);
+            }
+        }
+
+        public UpdatableCollection<CodexEntryVM> CodexEntries
+        {
+            get;
+            private set;
+        }
+
+        public void OnCodexChanged(string name)
+        {
+            if (AllCodexEntries.ContainsKey(name))
+            {
+                foreach (var prop in AllCodexEntries[name].GameVMProperties)
+                {
+                    OnPropertyChanged(prop);
+                }
+            }
+            OnPropertyChanged("CodexEntries");
+            OnPropertyChanged("CodexViewedEntriesObj");
+            OnPropertyChanged("CodexUnlockedEntriesObj");
+            OnSavePropertyChanged("SaveFile");
+        }
+
         public AmfObjectVM SaveFile
         {
             get;
@@ -454,5 +484,34 @@ namespace TiTsEd.ViewModel {
         public RelayCommand<FlagVM> DeleteFlagCommand {
             get { return _deleteFlagCommand ?? (_deleteFlagCommand = new RelayCommand<FlagVM>(d => RemoveFlag(d))); }
         }
+
+
+        public void AllCodexUnknown()
+        {
+            foreach (var codexPair in AllCodexEntries)
+            {
+                codexPair.Value.IsUnlocked = false;
+                codexPair.Value.IsViewed = false;
+            }
+        }
+
+
+        public void AllCodexUnlocked()
+        {
+            foreach (var codexPair in AllCodexEntries)
+            {
+                codexPair.Value.IsUnlocked = true;
+            }
+        }
+
+
+        public void AllCodexViewed()
+        {
+            foreach (var codexPair in AllCodexEntries)
+            {
+                codexPair.Value.IsViewed = true;
+            }
+        }
+
     }
 }

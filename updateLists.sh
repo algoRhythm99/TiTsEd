@@ -95,7 +95,7 @@ declare -a colors=("fur"
                    "nipple"
                    "vagina"
                   )
-if [ 0 == 1 ]; then
+if [ 1 == 1 ]; then
     for bColor in "${colors[@]}"
     do
         echo "Checking ${bColor} colors"
@@ -143,7 +143,7 @@ fi
 
 
 # skinTone
-if [ 0 == 1 ]; then
+if [ 1 == 1 ]; then
     echo "Checking skinTones"
     propName="skinTone"
     rawFile="$newFolder/${propName}s.raw.txt"
@@ -405,5 +405,5 @@ fi
 if [ 0 == 1 ]; then
     echo "Checking for CodexEntries"
     newXmlFile="$newFolder/CodexEntries.xml"
-    perl -n -e'/[^\/]CodexManager\.addCodexEntry.+CodexManager\.CODEX_TYPE_(.+)[,].*["](.+)["][,].*["](.+)["].*[;]/ && { $type="$1"; $group="$2"; $entry="$3"; print "<CodexEntry Type=\"$type\" Group=\"$group\"><![CDATA[$entry]]></CodexEntry>\r\n"; }' "$SourceFolder/includes/CodexEntries.as" >$newXmlFile
+    perl -pe 's#CodexManager[.]addCodexEntry[(]\s*CodexManager[.]CODEX_TYPE_([\w_]+)\s*,\s*["](.+)["]\s*,\s*["](.+)["]\s*,\s*.+[)]#<CodexEntry Type="\1" Group="\2"><!\[CDATA\[\3\]\]></CodexEntry>\r\n#g;' $SourceFolder/classes/TiTS.as >$newXmlFile
 fi
