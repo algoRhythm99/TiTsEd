@@ -1550,6 +1550,7 @@
 			<KeyItem Name="Doctor Badger's Reprogrammed Bimbo Raygun - For use on the Badger!" />
 			<KeyItem Name="Hand So's Data Bead" />
 			<KeyItem Name="Hentai Magazine" />
+			<KeyItem Name="Inexorable Challenge Coin" Description="A small coin emblazoned with the name &lt;i&gt;S.S. Inexorable&lt;/i&gt;." />
 			<KeyItem Name="Kally's Bedroom Key" />
 			<KeyItem Name="Kaska's Detonator" />
 			<KeyItem Name="Key Card - R&amp;D Security Pass" />
@@ -1769,6 +1770,7 @@
 			<Perk Name="Mane" Description="Your hair grows out much like an equine's mane." />
 			<Perk Name="Mega Milk" Description="Allows you to instantly produce a good amount of milk, even when empty." />
 			<Perk Name="Myr Venom" Description="Grants a love-bite tease ability that deals a little lust damage to your opponent." />
+			<Perk Name="Omega Fever" Description="Your body will cycle through the stages of heat whenever your ass is not incubating." />
 			<Perk Name="Oviposition" Description="Causes you to regularly lay eggs when not otherwise pregnant." Label4="Timestamp" />
 			<Perk Name="Pheromone Sweat" Description="Slightly boosts tease attack and arousal while sweating" />
 			<Perk Name="Regal Mane" Description="You have an impressive mane bordering your neck." Label1="0 = No Collar&#xD;&#xA;20 = Fur Collar" Value1="20" />
@@ -1780,6 +1782,7 @@
 		<PerkGroup Name="General">
 			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs." Label1="Cum Quantity" Value1="500000" />
+			<Perk Name="Hollow Bones" Description="Your body weighs less than it should." Value1="10" />
 			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn" Label1="Attacks per turn" Value1="5" />
 			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn" Label1="Shots per turn" Value1="5" />
 			<Perk Name="Ranged Immune" Comment="Immune to ranged attacks" />
