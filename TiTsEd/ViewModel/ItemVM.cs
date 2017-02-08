@@ -207,9 +207,6 @@ namespace TiTsEd.ViewModel {
                 int i = GetInt("stackSize", 0);
                 return (0 == i) ? Xml.Stack : i;
             }
-            set {
-                SetValue("stackSize", value);
-            }
         }
 
         public int Quantity {
@@ -237,6 +234,7 @@ namespace TiTsEd.ViewModel {
             }
             set {
                 SetValue("classInstance", value);
+                OnPropertyChanged("DisplayName");
             }
         }
 
@@ -252,6 +250,7 @@ namespace TiTsEd.ViewModel {
             }
             set {
                 SetValue("shortName", value);
+                OnPropertyChanged("DisplayName");
             }
         }
 
@@ -261,6 +260,7 @@ namespace TiTsEd.ViewModel {
             }
             set {
                 SetValue("longName", value);
+                OnPropertyChanged("DisplayName");
             }
         }
 
