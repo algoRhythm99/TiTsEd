@@ -77,6 +77,9 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.WingCount}" IsEnabled="{Binding Game.Character.WingOptionsEnabled}" />
                 </common:AutoGrid>
                 <common:AutoGrid>
+                    <TextBlock              Text="Has Gills"/>
+                    <CheckBox IsChecked="{Binding Game.Character.HasGills}" />
+
                     <TextBlock              Text="Elasticity"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Elasticity}" Type="Double" />
 

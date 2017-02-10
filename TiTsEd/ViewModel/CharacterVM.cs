@@ -708,6 +708,11 @@ namespace TiTsEd.ViewModel {
 
         #region BodyPage
 
+        public bool HasGills {
+            get { return GetBool("gills"); }
+            set { SetValue("gills", value); }
+        }
+
         public double Elasticity {
             get { return GetDouble("elasticity"); }
             set { SetValue("elasticity", value); }
