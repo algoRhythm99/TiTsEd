@@ -124,12 +124,20 @@
                   SelectionMode="Single"
                   Style="{StaticResource DataGridWithLeftScrollBar}">
             <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding HasFlagMark}"
+                                    FontWeight="Bold"
+                                    MaxWidth="20" />
                 <DataGridTextColumn MinWidth="250"
                                     Binding="{Binding Name}"
                                     IsReadOnly="True">
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="{x:Type DataGridCell}">
                             <Setter Property="ToolTip" Value="{Binding Description}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasFlag}" Value="true" >
+                                    <Setter Property="FontWeight" Value="Bold" />
+                                </DataTrigger>
+                            </Style.Triggers>
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>

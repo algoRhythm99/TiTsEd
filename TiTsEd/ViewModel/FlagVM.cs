@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using TiTsEd.Model;
@@ -128,6 +129,18 @@ namespace TiTsEd.ViewModel {
         protected override void OnSavePropertyChanged([CallerMemberName] string propertyName = null) {
             base.OnSavePropertyChanged(propertyName);
             _game.OnFlagChanged(Name);
+        }
+
+        public bool HasFlag {
+            get {
+                return _flags.HasValue(Name);
+            }
+        }
+
+        public string HasFlagMark {
+            get {
+                return HasFlag ? "*" : " ";
+            }
         }
     }
 }
