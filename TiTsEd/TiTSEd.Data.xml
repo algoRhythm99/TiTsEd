@@ -421,6 +421,7 @@
 			<FaceType ID="4" Name="Feline" />
 			<FaceType ID="5" Name="Vulpine" />
 			<FaceType ID="9" Name="Lapine" />
+			<FaceType ID="10" Name="Avian" />
 			<FaceType ID="11" Name="Draconic" />
 			<FaceType ID="12" Name="Lizan" />
 			<FaceType ID="14" Name="Frog" />
@@ -537,6 +538,7 @@
 			<EyeType ID="5" Name="Vulpine" />
 			<EyeType ID="6" Name="Bee" />
 			<EyeType ID="7" Name="Arachnid" />
+			<EyeType ID="10" Name="Avian" />
 			<EyeType ID="13" Name="Naga" />
 			<EyeType ID="14" Name="Frog" />
 			<EyeType ID="15" Name="Demonic" />
@@ -558,6 +560,7 @@
 			<EarType ID="5" Name="Vulpine" />
 			<EarType ID="8" Name="Drider" />
 			<EarType ID="9" Name="Lapine" />
+			<EarType ID="10" Name="Avian" />
 			<EarType ID="11" Name="Draconic" />
 			<EarType ID="12" Name="Lizan" />
 			<EarType ID="14" Name="Frog" />
@@ -594,6 +597,7 @@
 			<TongueType ID="5" Name="Vulpine" />
 			<TongueType ID="6" Name="Bee" />
 			<TongueType ID="9" Name="Lapine" />
+			<TongueType ID="10" Name="Avian" />
 			<TongueType ID="11" Name="Draconic" />
 			<TongueType ID="13" Name="Naga" />
 			<TongueType ID="14" Name="Frog" />
@@ -901,6 +905,7 @@
 			<CockType ID="4" Name="Feline" />
 			<CockType ID="5" Name="Vulpine" />
 			<CockType ID="6" Name="Bee" />
+			<CockType ID="10" Name="Avian" />
 			<CockType ID="11" Name="Draconic" />
 			<CockType ID="13" Name="Naga" />
 			<CockType ID="15" Name="Demonic" />
@@ -954,6 +959,7 @@
 			<VaginaType ID="3" Name="Canine" />
 			<VaginaType ID="5" Name="Vulpine" /><!-- elizabeth -->
 			<VaginaType ID="6" Name="Bee" />
+			<VaginaType ID="10" Name="Avian" />
 			<VaginaType ID="13" Name="Naga" />
 			<VaginaType ID="16" Name="Gooey" />
 			<VaginaType ID="18" Name="Gabilani" />
