@@ -543,6 +543,7 @@
 			<EyeType ID="14" Name="Frog" />
 			<EyeType ID="15" Name="Demonic" />
 			<EyeType ID="18" Name="Gabilani" />
+			<EyeType ID="19" Name="Shark" />
 			<EyeType ID="49" Name="Leithan" />
 			<EyeType ID="51" Name="Synthetic" />
 			<EyeType ID="53" Name="Daynar" />
@@ -567,6 +568,7 @@
 			<EarType ID="15" Name="Demonic" />
 			<EarType ID="17" Name="Kangaroo" />
 			<EarType ID="18" Name="Gabilani" />
+			<EarType ID="19" Name="Shark" />
 			<EarType ID="21" Name="Deer" />
 			<EarType ID="24" Name="Kui-tan" />
 			<EarType ID="26" Name="Mouse" />
@@ -671,6 +673,7 @@
 			<ArmType ID="8" Name="Drider" />
 			<ArmType ID="10" Name="Avian" />
 			<ArmType ID="15" Name="Demonic" />
+			<ArmType ID="19" Name="Shark" />
 			<ArmType ID="24" Name="Kui-tan" />
 			<ArmType ID="40" Name="Panda" />
 			<ArmType ID="45" Name="Badger" />
@@ -715,6 +718,7 @@
 			<LegType ID="15" Name="Demonic" />
 			<LegType ID="16" Name="Gooey" />
 			<LegType ID="17" Name="Kangaroo" />
+			<LegType ID="19" Name="Shark" />
 			<LegType ID="21" Name="Deer" />
 			<LegType ID="24" Name="Kui-tan" />
 			<LegType ID="32" Name="MLP" />
@@ -911,6 +915,7 @@
 			<CockType ID="15" Name="Demonic" />
 			<CockType ID="17" Name="Kangaroo" />
 			<CockType ID="18" Name="Gabilani" />
+			<CockType ID="19" Name="Shark" />
 			<CockType ID="20" Name="Suula" />
 			<CockType ID="22" Name="Anemone" />
 			<CockType ID="23" Name="Tentacle" />
@@ -963,6 +968,7 @@
 			<VaginaType ID="13" Name="Naga" />
 			<VaginaType ID="16" Name="Gooey" />
 			<VaginaType ID="18" Name="Gabilani" />
+			<VaginaType ID="19" Name="Shark" />
 			<VaginaType ID="20" Name="Suula" />
 			<VaginaType ID="24" Name="Kui-tan" />
 			<VaginaType ID="44" Name="Lapinara" />
