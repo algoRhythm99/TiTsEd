@@ -3532,8 +3532,7 @@
 	<StatusEffects>
 		<StatusEffectGroup Name="Intoxicants-related">
 			<StatusEffect Name="Adorahol" Description="You’re feeling more affectionate that you otherwise would, no doubt the result of Kally’s ‘special’ drinks." Label1="Adorahol count" />
-			<StatusEffect Name="Alcohol" Label1="Alcohol belly level: 0-100" Label2="Alcohol blood level" IsHidden="true" />
-<!--
+			<StatusEffect Name="Alcohol" Comment="See Value1 and 2 for the alcohol levels" Label1="Alcohol belly level: 0-100" Label2="Alcohol blood level" IsHidden="true" />
 			<StatusEffect Name="Buzzed" Description="You're a little buzzed, leaving you feeling strong but a little slower of wit and weaker of will.\n\nThis status will expire as your alcohol levels drop." IconName="Icon_DizzyDrunk" IconShade="0" />
 			<StatusEffect Name="Crabbst" Description="Makes you stronger but at what cost?" Value2="1" IconName="Icon_DizzyDrunk" MinutesLeft="180" />
 			<StatusEffect Name="Drunk" Description="You're feeling a little drunk at the moment. Your faculties and reflexes are dulled, but you feel like you could arm wrestle the world if you were so inclined.\n\nThis status will expire as your alcohol levels drop." IconName="Icon_DizzyDrunk" IconShade="0" />
@@ -3541,15 +3540,11 @@
 			<StatusEffect Name="Quivering Quasar" Description="This top-shelf alcohol makes you feel stronger - so much so that your maximum physique is temporarily increased." Value2="5" IconName="Icon_DizzyDrunk" MinutesLeft="180" />
 			<StatusEffect Name="Roshan Blue" Description="You see everything so very clear now - if only you could focus a little better." IconName="Icon_DizzyDrunk" />
 			<StatusEffect Name="Sex On a Meteor" Description="This top-shelf alcohol makes you almost irresistible, but easily aroused as well." Value2="5" IconName="LustUp" MinutesLeft="180" />
--->
 			<StatusEffect Name="Tolerance" Comment="Value1 == alcohol tolerance" Label1="Alcohol Tolerance: 0-100" IsHidden="true" />
-<!--
 			<StatusEffect Name="Smashed" Description="You're three sheets to the wind, but you feel like you could flip a truck.\n\nThis status will expire as your alcohol levels drop." IconName="Icon_DizzyDrunk" IconShade="0" />
 			<StatusEffect Name="Tallavarian Tingler" Description="This top-shelf alcohol generates troublesome tingles on contact, making it easy for your foes to arouse you." Value2="5" IconName="LustUp" MinutesLeft="280" />
 			<StatusEffect Name="X-Zil-rate" Description="This top-shelf booze makes you feel strong... and horny." Value2="5" IconName="Icon_DizzyDrunk" MinutesLeft="180" />
--->
 		</StatusEffectGroup>
-<!--
 		<StatusEffectGroup Name="Lane's Effects">
 			<StatusEffect Name="Lane Detoxing Weakness" Description="Cutting yourself off from Lane's hypnotic treatments is taking its toll on your willpower." Value1="1" IconName="Charmed" />
 			<StatusEffect Name="Lane's Hypnosis - Aim" Description="Lane's hypnosis session has improved your aim!" Value1="5" IconName="Icon_DrugPill" MinutesLeft="1440" />
@@ -3590,41 +3585,29 @@
 			<StatusEffect Name="T.Pack" Description="You are protected from Uveto's harsh cold... for now!" IconName="Icon_Smelly" MinutesLeft="1440" />
 			<StatusEffect Name="The Mango" Description="You are irresistible!" IconName="Charmed" MinutesLeft="1440" IconShade="12030916" />
 		</StatusEffectGroup>
--->
 		<StatusEffectGroup Name="Miscellaneous">
-<!--
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
--->
 			<StatusEffect Name="Disarm Immune" IsHidden="true" />
-<!--
 			<StatusEffect Name="Egregiously Endowed" Description="Movement between rooms takes twice as long, and fleeing from combat is more difficult." IconName="Icon_Poison" />
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Endowment Immobilized" Description="Your endowments prevent you from moving." IconName="Icon_Poison" />
--->
 			<StatusEffect Name="Force Fem Gender" Comment="Forces feminine descriptions" IsHidden="true" />
 			<StatusEffect Name="Force It Gender" Comment="Forces neuter/androgynous descriptions" IsHidden="true" />
 			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
-<!--
 			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
 			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
--->
 			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
-<!--
 			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
--->
 			<StatusEffect Name="Latex Hair" IsHidden="true" />
 			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
-<!--
 			<StatusEffect Name="Lightning Moves" Description="Your recent fencing lessons give you an edge during fights." IconName="OffenseUp" MinutesLeft="4320" />
 			<StatusEffect Name="Ludicrously Endowed" Description="The shifting masses of your over-sized endowments cause you to gain fifty percent more lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
--->
 			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" IsHidden="true" />
-<!--
 			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
 			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!\nMinimum lust increased by 20." IconName="LustUp" IconShade="0" />
@@ -3632,24 +3615,17 @@
 			<StatusEffect Name="Psi Slave Collar" Description="This metal collar limits your intelligence capacity and willpower while worn, making you completely subservient to the will of the one who operates it." Value1="0.5" Type1="Double" Value2="0.5" Type2="Double" Value3="200" IconName="Radio" IconShade="16711680" />
 			<StatusEffect Name="Pussy Drenched" Value1="1" IconName="Icon_Water_Drop" IconShade="12030916" />
 			<StatusEffect Name="Quaramarta!" Description="Fazian's Quaramarta performance has sharpened your senses!\nCritical chance increased by 15%." IconName="OffenseUp" IconShade="0" />
--->
 			<StatusEffect Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IconName="DefenseDown" IconShade="0" />
-<!--
 			<StatusEffect Name="Sexy Costume" Description="The outfit you are wearing is making you feel randier than usual." Value1="10" IconName="LustUp" IconShade="100" />
 			<StatusEffect Name="Sexy Moves" Description="Your recent lessons pay off, you feel as sexy as ever - and it shows." IconName="OffenseUp" MinutesLeft="4320" />
--->
 			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
-<!--
 			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!\nExperience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
 			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
--->
 			<StatusEffect Name="Special Scrotum" Comment="Special scrotum description flag, see Value1" Label1="20 == FLAG_FURRED&#xD;&#xA;21 == FLAG_SCALED&#xD;&#xA;34 == FLAG_CHITINOUS&#xD;&#xA;35 == FLAG_FEATHERED&#xD;&#xA;37 == FLAG_GOOEY" Value1="20" IsHidden="true" />
 			<StatusEffect Name="Stun Immune" IsHidden="true" />
-<!--
 			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
--->
 			<StatusEffect Name="The Treatment" Description="You are currently under the effects of the Treatment. Who knows what havoc it will wreak upon your system." Comment="v1 - Gender settings.&#xD;&#xA;
 					0 - girl mode&#xD;&#xA;
 					1 - dude mode&#xD;&#xA;
@@ -3677,16 +3653,12 @@
 						v2 - horn size result&#xD;&#xA;
 						v3 - max cock size&#xD;&#xA;
 						v4 - futacock size (if any)" IsHidden="true" />
-<!--
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
--->
 			<StatusEffect Name="Vanae Markings" Comment="Vanae skin markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;Value4 = on balls too" Value4="1" Label4="1 = Ball Markings" IsHidden="true" />
-<!--
 			<StatusEffect Name="Varmint Buddy" Description="The pink wireless leash you hold will ensure that your varmint companion stays close by, joining alongside you in battle if necessary." IconName="Radio" IconShade="0" />
 			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Worn Out" Description="You are worn out and and unable to regain energy. Working out is also impossible in this state. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Zil Sting" Description="Reduces speed and increases libido." Value1="4" IconName="Poison" MinutesLeft="65" IconShade="40" />
--->
 		</StatusEffectGroup>
 	</StatusEffects>
 </TiTsEd>
