@@ -3608,6 +3608,10 @@
 			<StatusEffect Name="Force Fem Gender" Comment="Forces feminine descriptions" IsHidden="true" />
 			<StatusEffect Name="Force It Gender" Comment="Forces neuter/androgynous descriptions" IsHidden="true" />
 			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
+			<StatusEffect Name="Gel Body" IsHidden="true" />
+			<StatusEffect Name="Genital Slit" IsHidden="true" />
+			<StatusEffect Name="Goo Crotch" IsHidden="true" />
+			<StatusEffect Name="Goo Vent" IsHidden="true" />
 			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
 			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
