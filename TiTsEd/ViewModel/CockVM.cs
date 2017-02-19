@@ -13,7 +13,7 @@ namespace TiTsEd.ViewModel {
         protected override AmfObject CreateNewObject() {
             var obj = new AmfObject(AmfTypes.Object);
 
-            obj["cLengthRaw"] = 5;
+            obj["cLengthRaw"] = 5.0;
             obj["cLengthMod"] = 0;
 
             obj["cThicknessRatioRaw"] = 1.0;
@@ -22,7 +22,7 @@ namespace TiTsEd.ViewModel {
             obj["cType"] = 0;
             obj["cockColor"] = "pink";
 
-            obj["knotMultiplier"] = 1;
+            obj["knotMultiplier"] = 1.0;
             obj["flaccidMultiplier"] = 0.25;
             obj["virgin"] = true;
 
@@ -48,12 +48,24 @@ namespace TiTsEd.ViewModel {
 
         private CharacterVM _character { get; set; }
 
-        public int Length {
-            get { return GetInt("cLengthRaw"); }
+        public double Length {
+            get { return GetDouble("cLengthRaw"); }
             set {
                 SetValue("cLengthRaw", value);
                 OnPropertyChanged("Description");
             }
+        }
+
+        public int LengthMod {
+            get { return GetInt("cLengthMod"); }
+            set {
+                SetValue("cLengthMod", value);
+                OnPropertyChanged("Description");
+            }
+        }
+
+        public double EffectiveLength {
+            get { return Length + LengthMod; }
         }
 
         public double ThicknessRatio {
@@ -64,10 +76,20 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public string ThicknessTip {
-            get {
-                return Length/6*ThicknessRatio +"\"";
+        public int ThicknessRatioMod {
+            get { return GetInt("cThicknessRatioMod"); }
+            set {
+                SetValue("cThicknessRatioMod", value);
+                OnPropertyChanged("ThicknessTip");
             }
+        }
+
+        public double EffectiveThicknessRatio {
+            get { return ThicknessRatio + ThicknessRatioMod; }
+        }
+
+        public string ThicknessTip {
+            get { return Math.Round(EffectiveLength / 6 * EffectiveThicknessRatio, 2) + "\""; }
         }
 
         public int Virgin {
@@ -123,11 +145,11 @@ namespace TiTsEd.ViewModel {
 
                 output += CockColor + " ";
 
-                output += Length + "\" ";
+                output += EffectiveLength + "\" ";
 
                 string type = "unknown";
-                foreach(var vtype in CockTypes) {
-                    if(vtype.ID == CockType) {
+                foreach (var vtype in CockTypes) {
+                    if (vtype.ID == CockType) {
                         type = vtype.Name.ToLower();
                     }
                 }

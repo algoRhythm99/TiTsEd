@@ -53,7 +53,7 @@
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.EarType}" ItemsSource="{Binding Data.Body.EarTypes}" />
 
                     <TextBlock              Text="Ear Length" IsEnabled="{Binding Game.Character.EarLengthEnabled}" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.EarLength}" IsEnabled="{Binding Game.Character.EarLengthEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.EarLength}" Type="Double" IsEnabled="{Binding Game.Character.EarLengthEnabled}" />
 
                     <TextBlock              Text="Antennae Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.AntennaeType}" ItemsSource="{Binding Data.Body.AntennaeTypes}" />
@@ -65,10 +65,10 @@
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.HornType}" ItemsSource="{Binding Data.Body.HornTypes}" />
 
                     <TextBlock              Text="Horn Count" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.HornCount}" Max="8" Upper="8" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.HornCount}" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
 
                     <TextBlock              Text="Horn Length" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.HornLength}" Max="30" Upper="30" Unit="inches" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.HornLength}" Unit="inches" IsEnabled="{Binding Game.Character.HornOptionsEnabled}" />
                 </common:AutoGrid>
             </StackPanel>
             
@@ -104,7 +104,7 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.LipSize}" ToolTip="This is based on femininity as well." Tip="{Binding Game.Character.LipRatingTip}" />
 
                     <TextBlock              Text="Beard Length"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.BeardLength}" Unit="inches" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.BeardLength}" Type="Double" Unit="inches" />
 
                     <TextBlock              Text="Beard Style"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.BeardStyle}" ItemsSource="{Binding Data.Body.BeardStyles}" />

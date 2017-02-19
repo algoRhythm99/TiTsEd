@@ -61,11 +61,11 @@
                 <common:AutoGrid Columns="3">
 
                     <TextBlock              Text="Cum Multiplier"/>
-                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumMultiplier}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.CumMultiplier}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" ToolTip="Modifier" />
 
                     <TextBlock              Text="Cum Quality"/>
-                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.CumQuality}" Type="Double" ToolTip="Base" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.CumQuality}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumQualityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
                 <common:AutoGrid>
@@ -87,7 +87,7 @@
                             <ComboBox Text="{Binding CockColor}" ItemsSource="{Binding CockColors}" Style="{StaticResource EditableTextBox}"/>
 
                             <TextBlock              Text="Length"/>
-                            <common:MyNumericBox    Value="{Binding Length}" Unit="inches" />
+                            <common:MyNumericBox    Value="{Binding Length}" Type="Double" Unit="inches" />
 
                             <TextBlock              Text="Thickness Ratio"/>
                             <common:MyNumericBox    Value="{Binding ThicknessRatio}" Type="Double" Tip="{Binding ThicknessTip}" />
@@ -121,7 +121,7 @@
 
                 <common:AutoGrid Columns="3">
                     <TextBlock              Text="Fertility"/>
-                    <common:MyNumericBox    Width="150" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
                 <common:AutoGrid>
@@ -152,7 +152,7 @@
                             <common:MyNumericBox    Value="{Binding Wetness}" Min="1" Lower="1" />
 
                             <TextBlock              Text="Looseness"/>
-                            <common:MyNumericBox    Value="{Binding Looseness}" Min="1" Lower="1" />
+                            <common:MyNumericBox    Value="{Binding Looseness}" Min="{Binding MinLooseness}" Lower="{Binding MinLooseness}" />
 
                             <TextBlock              Text="Bonus Capacity"/>
                             <common:MyNumericBox    Value="{Binding BonusCapacity}" />

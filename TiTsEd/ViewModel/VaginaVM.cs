@@ -70,6 +70,11 @@ namespace TiTsEd.ViewModel {
             set { SetValue("loosenessRaw", value); }
         }
 
+        public int LoosenessMod {
+            get { return GetInt("loosenessMod"); }
+            set { SetValue("loosenessMod", value); }
+        }
+
         public int MinLooseness {
             get { return GetInt("minLooseness"); }
             set { SetValue("minLooseness", value); }
@@ -80,10 +85,19 @@ namespace TiTsEd.ViewModel {
             set { SetValue("wetnessRaw", value); }
         }
 
-        public int BonusCapacity
-        {
+        public int WetnessMod {
+            get { return GetInt("wetnessMod"); }
+            set { SetValue("wetnessMod", value); }
+        }
+
+        public int BonusCapacity {
             get { return GetInt("bonusCapacity"); }
             set { SetValue("bonusCapacity", value); }
+        }
+
+        public int ShrinkCounter {
+            get { return GetInt("shrinkCounter"); }
+            set { SetValue("shrinkCounter", value); }
         }
 
         public string VaginaColor {
@@ -121,15 +135,15 @@ namespace TiTsEd.ViewModel {
         public String Description {
             get {
                 string output = "a ";
-                if(Hymen) {
+                if (Hymen) {
                     output += "virgin ";
                 }
 
                 output += VaginaColor + " ";
 
                 string type = "unknown";
-                foreach(var vtype in VaginaTypes) {
-                    if(vtype.ID == VaginaType) {
+                foreach (var vtype in VaginaTypes) {
+                    if (vtype.ID == VaginaType) {
                         type = vtype.Name.ToLower();
                     }
                 }

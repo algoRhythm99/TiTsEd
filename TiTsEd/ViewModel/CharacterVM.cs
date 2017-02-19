@@ -602,8 +602,8 @@ namespace TiTsEd.ViewModel {
             get { return getFlagList(GetObj("faceFlags"), XmlData.Current.Body.FaceFlags); }
         }
 
-        public int EarLength {
-            get { return GetInt("earLength"); }
+        public double EarLength {
+            get { return GetDouble("earLength"); }
             set { SetValue("earLength", value); }
         }
 
@@ -694,8 +694,8 @@ namespace TiTsEd.ViewModel {
             set { SetValue("lipColor", value); }
         }
 
-        public int BeardLength {
-            get { return GetInt("beardLength"); }
+        public double BeardLength {
+            get { return GetDouble("beardLength"); }
             set { SetValue("beardLength", value); }
         }
 
@@ -1035,6 +1035,11 @@ namespace TiTsEd.ViewModel {
         public double BallSize {
             get { return GetDouble("ballSizeRaw"); }
             set { SetValue("ballSizeRaw", value); }
+        }
+
+        public double BallSizeMod {
+            get { return GetDouble("ballSizeMod"); }
+            set { SetValue("ballSizeMod", value); }
         }
 
         public int BallFullness {
