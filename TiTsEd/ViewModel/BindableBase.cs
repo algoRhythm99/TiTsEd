@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
+
 using System.Text;
 using System.Threading.Tasks;
 using TiTsEd.Model;
@@ -12,12 +12,12 @@ namespace TiTsEd.ViewModel
     public abstract class BindableBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected virtual void OnPropertyChanged(string propertyName = null)
         {
             if (null != PropertyChanged) PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        protected bool SetField<T>(ref T field, T value, string propertyName = null)
         {
             if (EqualityComparer<T>.Default.Equals(field, value)) return false;
             field = value;
@@ -25,12 +25,12 @@ namespace TiTsEd.ViewModel
             return true;
         }
 
-        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null)
+        protected bool SetProperty<T>(ref T storage, T value, String propertyName = null)
         {
             return SetField(ref storage, value, propertyName);
         }
 
-        public virtual bool SetValue(AmfObject obj, object key, object value, [CallerMemberName] string propertyName = null)
+        public virtual bool SetValue(AmfObject obj, object key, object value, string propertyName = null)
         {
             if (AreSame(obj[key], value)) return false;
 
@@ -53,17 +53,10 @@ namespace TiTsEd.ViewModel
             return object.Equals(x, y);
         }
 
-        protected virtual void OnSavePropertyChanged([CallerMemberName] string propertyName = null)
+        protected virtual void OnSavePropertyChanged(string propertyName = null)
         {
             OnPropertyChanged(propertyName);
             VM.Instance.NotifySaveRequiredChanged(true);
         }
-    }
-}
-
-namespace System.Runtime.CompilerServices
-{
-    public class CallerMemberNameAttribute : Attribute
-    {
     }
 }

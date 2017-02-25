@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
-using System.Runtime.CompilerServices;
+
 using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
@@ -126,7 +126,7 @@ namespace TiTsEd.ViewModel {
             return false;
         }
 
-        protected override void OnSavePropertyChanged([CallerMemberName] string propertyName = null) {
+        protected override void OnSavePropertyChanged(string propertyName = null) {
             base.OnSavePropertyChanged(propertyName);
             _game.OnFlagChanged(Name);
         }

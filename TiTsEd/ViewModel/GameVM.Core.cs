@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Runtime.CompilerServices;
+
 using System.Text;
 using TiTsEd.Model;
 
@@ -11,7 +11,7 @@ namespace TiTsEd.ViewModel {
 
 
         // Public helper for the various subordinate body part view models (e.g. CockVM)
-        public void NotifyPropertyChanged([CallerMemberName] string propertyName = null) {
+        public void NotifyPropertyChanged(string propertyName = null) {
             OnPropertyChanged(propertyName);
         }
 

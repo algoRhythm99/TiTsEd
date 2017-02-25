@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
+
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -416,7 +416,7 @@ namespace TiTsEd.ViewModel {
         /// Returns the flag with the specified name (even if not set in the save) AND registers a dependency between the caller property and this flag.
         /// That way, anytime the flag value is changed, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public FlagVM GetFlag(string name, [CallerMemberName] string propertyName = null) {
+        public FlagVM GetFlag(string name, string propertyName = null) {
             FlagVM flag = null;
             if (_allFlags.ContainsKey(name)) {
                 flag = _allFlags[name];

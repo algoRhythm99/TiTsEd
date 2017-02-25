@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
+
 using System.Windows;
 using TiTsEd.Common;
 using TiTsEd.Model;
@@ -275,12 +275,12 @@ namespace TiTsEd.ViewModel {
             return value;
         }
 
-        void SetDoubleOrIntValue(string key, double value, [CallerMemberName] string propertyName = null) {
+        void SetDoubleOrIntValue(string key, double value, string propertyName = null) {
             if (value == (int)value) SetValue(key, (int)value, propertyName);
             else SetValue(key, (double)value, propertyName);
         }
 
-        public bool SetValue(object key, object value, [CallerMemberName] string propertyName = null) {
+        public bool SetValue(object key, object value, string propertyName = null) {
             var obj = GetObject();
             if (obj == null) return false;
             bool success = SetValue(obj, key, value, propertyName);
@@ -313,7 +313,7 @@ namespace TiTsEd.ViewModel {
             return false;
         }
 
-        protected override void OnSavePropertyChanged([CallerMemberName] string propertyName = null) {
+        protected override void OnSavePropertyChanged(string propertyName = null) {
             base.OnSavePropertyChanged(propertyName);
             NotifyGameVM();
         }

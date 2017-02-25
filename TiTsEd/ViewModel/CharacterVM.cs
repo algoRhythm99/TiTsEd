@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
+
 using System.Text;
 using TiTsEd.Model;
 
@@ -1250,7 +1250,7 @@ namespace TiTsEd.ViewModel {
         /// Returns the key item with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this key item.
         /// That way, anytime the key item is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public KeyItemVM GetKeyItem(string name, [CallerMemberName] string propertyName = null) {
+        public KeyItemVM GetKeyItem(string name, string propertyName = null) {
             var keyItem = Game.AllKeyItems.First(x => x.Name == name);
             if (null != keyItem) {
                 if (null != propertyName) {
@@ -1332,7 +1332,7 @@ namespace TiTsEd.ViewModel {
         /// Returns the perk with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this perk.
         /// That way, anytime the perk is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public PerkVM GetPerk(string name, [CallerMemberName] string propertyName = null) {
+        public PerkVM GetPerk(string name, string propertyName = null) {
             var perk = Game.AllPerks.First(x => x.Name == name);
             if (null != perk) {
                 if (null != propertyName) {
@@ -1392,7 +1392,7 @@ namespace TiTsEd.ViewModel {
         /// Returns the status with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this status.
         /// That way, anytime the status is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public StatusEffectVM GetStatus(string name, [CallerMemberName] string propertyName = null) {
+        public StatusEffectVM GetStatus(string name, string propertyName = null) {
             var status = Game.AllStatusEffects.First(x => x.Name == name);
             if (null != status) {
                 if (null != propertyName) {

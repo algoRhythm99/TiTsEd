@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
+
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -244,11 +244,11 @@ namespace TiTsEd.ViewModel {
             return _obj.GetObj(key);
         }
 
-        public virtual bool SetValue(object key, object value, [CallerMemberName] string propertyName = null) {
+        public virtual bool SetValue(object key, object value, string propertyName = null) {
             return SetValue(_obj, key, value, propertyName);
         }
 
-        protected bool SetDouble(object key, double value, [CallerMemberName] string propertyName = null) {
+        protected bool SetDouble(object key, double value, string propertyName = null) {
             return SetValue(key, value, propertyName);
         }
     }
