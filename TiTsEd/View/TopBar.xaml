@@ -194,13 +194,14 @@
                                  Placement="Bottom" />
                 </ToggleButton.ContextMenu>
             </ToggleButton>
-
+<!--
             <Button x:Name="updateButton"
                     Margin="5,-1,0,0"
                     Click="checkForUpdates_Click"
                     Content="Update?"
                     Style="{StaticResource FlatButton}"
                     ToolTip="Check for updates to TiTsEd…" />
+-->
         </StackPanel>
     </Grid>
 </UserControl>

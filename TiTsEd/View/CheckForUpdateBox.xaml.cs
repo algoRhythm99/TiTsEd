@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.Net;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
@@ -74,6 +70,9 @@ namespace TiTsEd.View
 
         UpdateCheckResult CheckForUpdate()
         {
+            UpdateCheckResult result = UpdateCheckResult.No;
+
+/*
             HttpWebRequest request = null;
             HttpWebResponse response = null;
 
@@ -81,7 +80,7 @@ namespace TiTsEd.View
             string fileUrl = @"https://raw.githubusercontent.com/Chase-san/TiTsEd/master/latest";
             try
             {
-                request = (HttpWebRequest)HttpWebRequest.Create(fileUrl);
+                request = (HttpWebRequest) HttpWebRequest.Create(fileUrl);
             }
             catch { return UpdateCheckResult.Unknown; }
             if (request == null)
@@ -90,11 +89,10 @@ namespace TiTsEd.View
             }
             request.Method = "GET";
 
-            UpdateCheckResult result = UpdateCheckResult.No;
             // Get the response
             try
             {
-                response = (HttpWebResponse)request.GetResponse();
+                response = (HttpWebResponse) request.GetResponse();
 
                 if (response == null)
                 {
@@ -160,7 +158,7 @@ namespace TiTsEd.View
                     response.Close();
                 }
             }
-
+*/
             return result;
         }
 
