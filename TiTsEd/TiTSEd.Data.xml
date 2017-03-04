@@ -437,6 +437,7 @@
 			<FaceType ID="40" Name="Panda" />
 			<FaceType ID="45" Name="Badger" />
 			<FaceType ID="71" Name="Worg" />
+			<FaceType ID="72" Name="Swine" />
 		</FaceTypes>
 		<!-- ================================================================ -->
 		<FaceFlags>
@@ -581,6 +582,7 @@
 			<EarType ID="53" Name="Daynar" />
 			<EarType ID="58" Name="Sylvan" />
 			<EarType ID="65" Name="Gryvain" />
+			<EarType ID="72" Name="Swine" />
 		</EarTypes>
 		<EarLengthEnables>
 			<EarLengthEnable>Raskvel</EarLengthEnable>
@@ -605,6 +607,7 @@
 			<TongueType ID="14" Name="Frog" />
 			<TongueType ID="15" Name="Demonic" />
 			<TongueType ID="16" Name="Gooey" />
+			<TongueType ID="23" Name="Tentacle" />
 			<TongueType ID="40" Name="Panda" />
 			<TongueType ID="42" Name="Raskvel" />
 			<TongueType ID="45" Name="Badger" />
@@ -674,6 +677,7 @@
 			<ArmType ID="10" Name="Avian" />
 			<ArmType ID="15" Name="Demonic" />
 			<ArmType ID="19" Name="Shark" />
+			<ArmType ID="23" Name="Tentacle" />
 			<ArmType ID="24" Name="Kui-tan" />
 			<ArmType ID="40" Name="Panda" />
 			<ArmType ID="45" Name="Badger" />
@@ -720,6 +724,7 @@
 			<LegType ID="17" Name="Kangaroo" />
 			<LegType ID="19" Name="Shark" />
 			<LegType ID="21" Name="Deer" />
+			<LegType ID="23" Name="Tentacle" />
 			<LegType ID="24" Name="Kui-tan" />
 			<LegType ID="32" Name="MLP" />
 			<LegType ID="35" Name="Succubus" />
@@ -732,6 +737,7 @@
 			<LegType ID="57" Name="Ovir" />
 			<LegType ID="60" Name="Myr" />
 			<LegType ID="65" Name="Gryvain" />
+			<LegType ID="72" Name="Swine" />
 		</LegTypes>
 		<!-- ================================================================ -->
 		<LegFlags>
@@ -759,6 +765,7 @@
 			<WingType ID="11" Name="Draconic" />
 			<WingType ID="15" Name="Demonic" />
 			<WingType ID="19" Name="Shark" />
+			<WingType ID="23" Name="Tentacle" />
 			<WingType ID="28" Name="Dove" />
 			<WingType ID="31" Name="Dragonfly" />
 			<WingType ID="36" Name="Small Bee" />
@@ -792,6 +799,7 @@
 			<TailType ID="19" Name="Shark" />
 			<TailType ID="20" Name="Suula" />
 			<TailType ID="21" Name="Deer" />
+			<TailType ID="23" Name="Tentacle" />
 			<TailType ID="24" Name="Kui-tan" />
 			<TailType ID="26" Name="Mouse" />
 			<TailType ID="33" Name="Cuntsnake" />
@@ -807,6 +815,7 @@
 			<TailType ID="57" Name="Ovir" />
 			<TailType ID="60" Name="Myr" />
 			<TailType ID="65" Name="Gryvain" />
+			<TailType ID="72" Name="Swine" />
 		</TailTypes>
 		<!-- ================================================================ -->
 		<TailFlags>
@@ -831,6 +840,7 @@
 			<TailFlag ID="35" Name="Feathered" />
 			<TailFlag ID="37" Name="Gooey" />
 			<TailFlag ID="42" Name="Tailcunt" />
+			<TailFlag ID="44" Name="Corkscrewed" />
 		</TailFlags>
 		<!-- ================================================================ -->
 		<TailGenitalTypes>
@@ -847,6 +857,7 @@
 			<TailGenitalRaceType ID="5" Name="Vulpine" />
 			<TailGenitalRaceType ID="16" Name="Gooey" />
 			<TailGenitalRaceType ID="20" Name="Suula" />
+			<TailGenitalRaceType ID="23" Name="Tentacle" />
 			<TailGenitalRaceType ID="54" Name="Cockvine" />
 			<TailGenitalRaceType ID="65" Name="Gryvain" />
 			<TailGenitalRaceType ID="67" Name="Flower" />
@@ -934,6 +945,7 @@
 			<CockType ID="61" Name="Saurian" />
 			<CockType ID="64" Name="Hradian" />
 			<CockType ID="65" Name="Gryvain" />
+			<CockType ID="72" Name="Swine" />
 		</CockTypes>
 		<!-- ================================================================ -->
 		<CockFlags>
@@ -956,6 +968,7 @@
 			<CockFlag ID="33" Name="Ribbed" />
 			<CockFlag ID="36" Name="Double Headed" />
 			<CockFlag ID="37" Name="Gooey" />
+			<CockFlag ID="44" Name="Corkscrewed" />
 		</CockFlags>
 		<!-- ================================================================ -->
 		<VaginaTypes>
@@ -978,6 +991,7 @@
 			<VaginaType ID="55" Name="Nyrea" />
 			<VaginaType ID="65" Name="Gryvain" />
 			<VaginaType ID="67" Name="Flower" />
+			<VaginaType ID="72" Name="Swine" />
 		</VaginaTypes>
 		<!-- ================================================================ -->
 		<VaginaFlags>
@@ -989,6 +1003,7 @@
 			<VaginaFlag ID="37" Name="Gooey" />
 			<VaginaFlag ID="40" Name="Slightly Pumped" />
 			<VaginaFlag ID="41" Name="Fully Pumped" />
+			<VaginaFlag ID="44" Name="Corkscrewed" />
 		</VaginaFlags>
 		<!-- ================================================================ -->
 		<NippleTypes>
