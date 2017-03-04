@@ -1832,6 +1832,8 @@
 		<Flag Name="AINA_TALKED_ABOUT_HERSELF" />
 		<Flag Name="AINA_TALKED_ABOUT_TOYS" />
 		<Flag Name="AINA_WAND_FIXED" />
+		<Flag Name="ALISS_FIXED_HL" />
+		<Flag Name="ALISS_FIXED_HL_COUNT" />
 		<Flag Name="AMBER_SEED_USED" />
 		<Flag Name="ANALED_YAMMI" />
 		<Flag Name="ANARRIE_AMBUSH" />
@@ -1848,6 +1850,7 @@
 		<Flag Name="ANNO_MISSION_OFFER" Description="Undefined == Not started&#xD;&#xA;1 == Offered&#xD;&#xA;2 == In progress (Actually on Deck13)&#xD;&#xA;3 == Gray Prime resolved" />
 		<Flag Name="ANNO_NOVA_UPDATE" Description="1 == You've talked to Anno about the Nova after her quest" />
 		<Flag Name="ANNO_OWNS_LIGHT_STRAPON" Description="1 == Anno owns a hardlight strapon" />
+		<Flag Name="ANNO_PETPLAYED" />
 		<Flag Name="ANNO_REN_TUTOR" Description="1 == Anno tutors Terensha" />
 		<Flag Name="ANNO_SCRAP_DISABLED" Description="1 == Anno won't offer to buy junk" />
 		<Flag Name="ANNO_SCRITCHES_HAPPENED" Description="1 == You've rubbed Anno's ears" />
@@ -1954,7 +1957,6 @@
 		<Flag Name="BESS_EVENT_19" />
 		<Flag Name="BESS_EVENT_19_REJECTION" />
 		<Flag Name="BESS_EVENT_19_TIMES" />
-		<Flag Name="BESS_EVENT_19_TIMES]" />
 		<Flag Name="BESS_EVENT_1_TIMES" />
 		<Flag Name="BESS_EVENT_2" />
 		<Flag Name="BESS_EVENT_20" />
@@ -2170,6 +2172,7 @@
 		<Flag Name="DEERTAUR_GLORYHOLED" />
 		<Flag Name="DELAY_TAXES_ADDITION" />
 		<Flag Name="DEL_DISTRACT" />
+		<Flag Name="DEL_FACESAT" />
 		<Flag Name="DEL_TAIL_TRAINED" />
 		<Flag Name="DICKFUCKED_CAPN_KHORGAN" />
 		<Flag Name="DIDNT_ENGAGE_RIVAL_ON_MHENGA" />
@@ -2262,7 +2265,16 @@
 		<Flag Name="ENTERED_ACQUISITIONS" />
 		<Flag Name="ENTERED_BRYNNS_STALL" />
 		<Flag Name="ENTERED_NOMANSLAND" />
+		<Flag Name="ERRA_CUDDLED" />
+		<Flag Name="ERRA_D_TALK" />
+		<Flag Name="ERRA_HEARTBROKEN" />
+		<Flag Name="ERRA_LOVERS" />
+		<Flag Name="ERRA_NEW_INTROED" />
+		<Flag Name="ERRA_PAST_TALK" />
+		<Flag Name="ERRA_PETTED" />
+		<Flag Name="ERRA_RELATIONSHIP_TALK" />
 		<Flag Name="ERRA_SEXED" />
+		<Flag Name="ERRA_WALKIES" />
 		<Flag Name="FALL OF THE PHOENIX BRIDGE ACCESSIBLE" />
 		<Flag Name="FALL OF THE PHOENIX BRIDGE ENTERED" />
 		<Flag Name="FALL OF THE PHOENIX COMPUTER STATUS" />
@@ -2460,6 +2472,7 @@
 		<Flag Name="HELPED_AINA" />
 		<Flag Name="HERMAN_SPECIAL_ORDER" />
 		<Flag Name="HIT_A_ZILGIRL" />
+		<Flag Name="HL_BREAK_COUNTER" />
 		<Flag Name="HL_STRAPON_FAP_ADJUSTABLE" />
 		<Flag Name="HOLIDAY_OWEEN_ACTIVATED" />
 		<Flag Name="HOLIDAY_OWEEN_LEFT" />
@@ -2502,6 +2515,16 @@
 		<Flag Name="JADE_MUFFLINGS" />
 		<Flag Name="JADE_NIPPLE_TF_QUEUED" />
 		<Flag Name="JEROME_APPROACHED" />
+		<Flag Name="JERYNN_APPROACHED" />
+		<Flag Name="JERYNN_FUCKED" />
+		<Flag Name="JERYNN_PETSTUFF_FLIPFLOP" />
+		<Flag Name="JERYNN_PETSTUFF_LEVEL" />
+		<Flag Name="JERYNN_PETSTUFF_OPTIN_OFFERED" />
+		<Flag Name="JERYNN_RESPONSE_LIKED" />
+		<Flag Name="JERYNN_RESPONSE_LIMBS" />
+		<Flag Name="JERYNN_RESPONSE_SKIN" />
+		<Flag Name="JERYNN_RESPONSE_VOICE" />
+		<Flag Name="JERYNN_UNDERSLUNG_RIDES" />
 		<Flag Name="JULIANS_QUEST_DISABLED" />
 		<Flag Name="JUNGLE_STEP" />
 		<Flag Name="JURO_LYRALLA_CLOSET_SEEN" />
@@ -2821,6 +2844,7 @@
 		<Flag Name="MET_INFECTED_MYR_MALE" Description="Number of times you've encountered an infected Myr male" />
 		<Flag Name="MET_IRELLIA" Description="1 == You've met Queen Irellia" />
 		<Flag Name="MET_JEROME" Description="1 == You've met Jerome" />
+		<Flag Name="MET_JERYNN" />
 		<Flag Name="MET_JURO" Description="1 == You've met Ambassador Juro" />
 		<Flag Name="MET_KAEDE" Description="1 == You've met Kaede" />
 		<Flag Name="MET_KALLY" Description="1 == You've met Kally" />
@@ -2871,6 +2895,7 @@
 		<Flag Name="MET_SHOWER_GIRLS" />
 		<Flag Name="MET_SIMONE" Description="1 == You've met Simone" />
 		<Flag Name="MET_SYDIAN_MALE" Description="Number of times you've encountered a male Sydian" />
+		<Flag Name="MET_SYLVIE" />
 		<Flag Name="MET_SYRI" Description="1 == You've met Syri" />
 		<Flag Name="MET_TAIVRA" Description="1 == You've met Taivra" />
 		<Flag Name="MET_TERENSHA" Description="1 == You've met Terensha" />
@@ -2964,6 +2989,7 @@
 		<Flag Name="NO_ZAP_PENNY" />
 		<Flag Name="NT_BAD_END" />
 		<Flag Name="NT_BUILD_BOTTLE_PLANT" />
+		<Flag Name="NT_TAILCOCK_MILKINGS" />
 		<Flag Name="NURSERY_MATERNITY_WAIT_ACTIVE" />
 		<Flag Name="NURSERY_WATER_PRINCESS_VISTS" />
 		<Flag Name="NURSERY_ZIL_CALLGIRL_EVENT_DAY" />
@@ -3017,6 +3043,25 @@
 		<Flag Name="PEX_2BIG_BJ" />
 		<Flag Name="PEX_MILKED" />
 		<Flag Name="PEX_SOLOMILK" />
+		<Flag Name="PIPPA_ABUSIVE_SAT_ON" />
+		<Flag Name="PIPPA_AFFECTION" />
+		<Flag Name="PIPPA_ASS_FUCKED" />
+		<Flag Name="PIPPA_DOMINANCE" />
+		<Flag Name="PIPPA_FED" />
+		<Flag Name="PIPPA_FLIRTED" />
+		<Flag Name="PIPPA_HAPPY_ENDINGS" />
+		<Flag Name="PIPPA_HOTDOGGED" />
+		<Flag Name="PIPPA_NURU_TIMER" />
+		<Flag Name="PIPPA_RECRUITED" />
+		<Flag Name="PIPPA_SEXED" />
+		<Flag Name="PIPPA_SPECIAL_MASSAGE_RECIEVED" />
+		<Flag Name="PIPPA_STANDARD_MASSAGE_RECIEVED" />
+		<Flag Name="PIPPA_TALKED_CARBONADO" />
+		<Flag Name="PIPPA_TALKED_HER" />
+		<Flag Name="PIPPA_TALKED_MONEY" />
+		<Flag Name="PIPPA_TALKED_REAHA" />
+		<Flag Name="PIPPA_TALKED_YAMMI" />
+		<Flag Name="PIPPA_TALKED_YOU" />
 		<Flag Name="PITCHER_HYPO_SCORE" />
 		<Flag Name="PLANET_3_UNLOCKED" />
 		<Flag Name="PLAT190 USED AS NYREA BRIBE" />
@@ -3039,6 +3084,9 @@
 		<Flag Name="PURCHASED_GENES_GALO" Description="1 == You've bought Gene's GaloMax" />
 		<Flag Name="PURCHASED_SERAS_GALO" Description="1 == You've bought Sera's GaloMax" />
 		<Flag Name="PUT_LOAD_IN_CASS" />
+		<Flag Name="Queen Dream Last Day" />
+		<Flag Name="Queen Message Supression" />
+		<Flag Name="Queen Message Weight" />
 		<Flag Name="QUEENSGUARD_STAB_TIME" />
 		<Flag Name="QUEEN_OF_THE_DEEP_ENCOUNTERED" />
 		<Flag Name="QUEUE_EMBRY_STAGE_2_BIT" />
@@ -3104,7 +3152,9 @@
 		<Flag Name="RIVALCONFIGURED" />
 		<Flag Name="RIVAL_GOT_MYR_COORDS_FIRST" />
 		<Flag Name="RIYA_BLOCKED" />
+		<Flag Name="RIYA_CUNTPOUNDED_YOU" />
 		<Flag Name="RIYA_FUCKED_YA" />
+		<Flag Name="RIYA_GOT_BLOWN" />
 		<Flag Name="RIYA_PUNCHED" />
 		<Flag Name="RIYA_REPORTED" />
 		<Flag Name="RIYA_SUSPICION" />
@@ -3170,6 +3220,7 @@
 		<Flag Name="SEIFYN_TAIVRA_TALK" />
 		<Flag Name="SELLERA_OCCUPATION" />
 		<Flag Name="SELLERA_REBELS" />
+		<Flag Name="SELLESY_HL" />
 		<Flag Name="SEMITH_APARTMENT_ENTERED" />
 		<Flag Name="SEMITH_DAY_LAST_SMOKED" />
 		<Flag Name="SEMITH_HAS_PC_IN_APARTMENT" />
@@ -3185,6 +3236,7 @@
 		<Flag Name="SERA_BITCHENING_PUNISH_RATION" />
 		<Flag Name="SERA_BITCHENING_PUNISH_WALKIES" />
 		<Flag Name="SERA_BITCHENING_RIDE" />
+		<Flag Name="SERA_BITCHENING_SEXED" />
 		<Flag Name="SERA_BITCHENING_TEASE" />
 		<Flag Name="SERA_BITCHENING_TEASE_DENY" />
 		<Flag Name="SERA_BITCHENING_TEASE_RELEASE" />
@@ -3219,6 +3271,7 @@
 		<Flag Name="SERA_REPAID_LOAN" />
 		<Flag Name="SERA_SALARY_DATE" Description="Date of last salary pay" />
 		<Flag Name="SERA_SALARY_PAID" Description="Number of times paid salary" />
+		<Flag Name="SERA_SALARY_RESOLVED" />
 		<Flag Name="SERA_SERVANT_INTRO" />
 		<Flag Name="SERA_STUCK_IT_ALL_IN_BUTT" Description="Number of times Sera has stuffed your ass with dicks" />
 		<Flag Name="SERA_TAILED" Description="Number of times Sera has used her tail on you" />
@@ -3260,6 +3313,7 @@
 		<Flag Name="SEXED_QUENTON" />
 		<Flag Name="SEXED_SHADE" />
 		<Flag Name="SEXED_SIMONE" />
+		<Flag Name="SEXED_SYLVIE" />
 		<Flag Name="SEXED_VAANDE" />
 		<Flag Name="SEXED_VAHN" />
 		<Flag Name="SEXED_YAMMI" />
@@ -3285,7 +3339,7 @@
 		<Flag Name="SHADE_TALKED_ABOUT_MODS" />
 		<Flag Name="SHEKKA_SCRAP_DISABLED" Description="1 == Shekka's shop is not available" />
 		<Flag Name="SHEKKA_TALKED_HERSELF" Description="1 == You've talked to Shekka about herself" />
-		<Flag Name="SHEKKA_TALKED_HERSHOP" Description="1 == You've talked to Shekka about her shop"/>
+		<Flag Name="SHEKKA_TALKED_HERSHOP" Description="1 == You've talked to Shekka about her shop" />
 		<Flag Name="SHEKKA_TALKED_NOVAHOME" Description="1 == You've talked to Shekka about Novahome" />
 		<Flag Name="SHEKKA_TALKED_PLAN" Description="1 == You've talked to Shekka about her plans" />
 		<Flag Name="SHEKKA_TALKED_RASKVEL" Description="1 == You've talked to Shekka about Raskvel" />
@@ -3293,6 +3347,7 @@
 		<Flag Name="SHEKKA_TALKED_THE_MESS" Description="1 == You've talked to Shekka about the Mess" />
 		<Flag Name="SHEKKA_TALKED_WASTES" Description="1 == You've talked to Shekka about the wastes" />
 		<Flag Name="SHEKKA_TALK_COOLDOWN" Description="0 == Shekka can talk&#xD;&#xA;6 == Shekka is busy" />
+		<Flag Name="SHELLY_HL_SEX_BONUS" />
 		<Flag Name="SHIP_STORAGE_CONSUMABLES" />
 		<Flag Name="SHIP_STORAGE_EQUIPMENT" />
 		<Flag Name="SHIP_STORAGE_TOYS" />
@@ -3334,6 +3389,12 @@
 		<Flag Name="SUPRESS_COMBAT" />
 		<Flag Name="SUPRESS_TREATED_MILK_FAP_MESSAGE" />
 		<Flag Name="SYDIAN QUEST STARTED" />
+		<Flag Name="SYLVIE_BOOZE_BOUGHT" />
+		<Flag Name="SYLVIE_BOOZE_TIME" />
+		<Flag Name="SYLVIE_CHILLED" />
+		<Flag Name="SYLVIE_CUFFNFUCK" />
+		<Flag Name="SYLVIE_TAURMOUNT" />
+		<Flag Name="SYLVIE_THROBB_GIFT" />
 		<Flag Name="SYNTHSAP_UNLOCKED" Description="1 == Allows to buy SynthSap from Kelly" />
 		<Flag Name="SYNTHSHEATH_ACQUIRED" />
 		<Flag Name="SYNTHSHEATH_TWO_FOUND" />
@@ -3484,6 +3545,7 @@
 		<Flag Name="UVETO_HUSKAR_LAST_DAY" />
 		<Flag Name="UVETO_JEROME_RESCUES" />
 		<Flag Name="UVETO_JERYNN_RESCUES" />
+		<Flag Name="UVETO_JERYNN_RESCUE_LAST" />
 		<Flag Name="UVETO_LUNA_RESCUES" />
 		<Flag Name="UVETO_UNLOCKED" />
 		<Flag Name="UVETO_UPDATE" />
@@ -3527,7 +3589,6 @@
 		<Flag Name="XANTHE_TALKED_ABOUT_HER_SEX" />
 		<Flag Name="XANTHE_TALKED_ABOUT_SEX" />
 		<Flag Name="XANTHE_TALK_HAPPENED" />
-		<Flag Name="X_STORAGE" />
 		<Flag Name="YAMMI_BAD_DAY" />
 		<Flag Name="YAMMI_FLIRTED" />
 		<Flag Name="YAMMI_HELPED" />
