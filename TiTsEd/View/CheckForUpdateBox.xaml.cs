@@ -78,10 +78,10 @@ namespace TiTsEd.View
             HttpWebResponse response = null;
 
             // Create the request
-            string fileUrl = @"https://raw.githubusercontent.com/Chase-san/TiTsEd/master/latest";
+            string fileUrl = @"https://raw.githubusercontent.com/Chase-san/TiTsEd/master/latest.txt";
             try
             {
-                request = (HttpWebRequest)HttpWebRequest.Create(fileUrl);
+                request = (HttpWebRequest) HttpWebRequest.Create(fileUrl);
             }
             catch { return UpdateCheckResult.Unknown; }
             if (request == null)
@@ -94,7 +94,7 @@ namespace TiTsEd.View
             // Get the response
             try
             {
-                response = (HttpWebResponse)request.GetResponse();
+                response = (HttpWebResponse) request.GetResponse();
 
                 if (response == null)
                 {

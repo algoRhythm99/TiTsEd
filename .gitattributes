@@ -2,7 +2,7 @@
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
 * text=auto
-latest text=auto
+*.txt text=auto
 
 ###############################################################################
 # Set the merge driver for project and solution files
