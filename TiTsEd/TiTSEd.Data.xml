@@ -1047,6 +1047,7 @@
 			<Item Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
 			<Item Stack="1" Name="JungleLure" ID="classes.Items.Accessories::JungleLure" />
 			<Item Stack="1" Name="JungleRepel" ID="classes.Items.Accessories::JungleRepel" />
+			<Item Stack="1" Name="Leash" ID="classes.Items.Accessories::LeatherLeash" />
 			<Item Stack="1" Name="LeithaChrm" ID="classes.Items.Accessories::LeithaCharm" />
 			<Item Stack="1" Name="Lt.Jetpack" ID="classes.Items.Accessories::LightJetpack" />
 			<Item Stack="1" Name="L.Duster" ID="classes.Items.Accessories::LightningDuster" />
@@ -1173,6 +1174,7 @@
 			<Item Stack="1" Name="LilG.Bra" ID="classes.Items.Apparel::LittleGreenBra" />
 			<Item Stack="1" Name="LilG.Tee" ID="classes.Items.Apparel::LittleGreenShirt" />
 			<Item Stack="1" Name="LilG.Tank" ID="classes.Items.Apparel::LittleGreenTankTop" />
+			<Item Stack="1" Name="M.Harness" ID="classes.Items.Apparel::MagneticHarness" />
 			<Item Stack="1" Name="M.Shirt" ID="classes.Items.Apparel::MeshShirt" />
 			<Item Stack="1" Name="Pasties" ID="classes.Items.Apparel::Pasties" />
 			<Item Stack="1" Name="Bra" ID="classes.Items.Apparel::PlainBra" />
@@ -1368,6 +1370,7 @@
 			<Item Stack="10" Name="OvirAce" ID="classes.Items.Transformatives::OvirAce" />
 			<Item Stack="5"  Name="Ovir+" ID="classes.Items.Transformatives::OvirPositive" />
 			<Item Stack="10" Name="Peckermint" ID="classes.Items.Transformatives::Peckermint" />
+			<Item Stack="10" Name="P. Pal" ID="classes.Items.Transformatives::PleasurePalette" />
 			<Item Stack="10" Name="PupperP" ID="classes.Items.Transformatives::PupperPoppers" />
 			<Item Stack="10" Name="RainbowG." ID="classes.Items.Transformatives::RainbowGaze" />
 			<Item Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
@@ -1381,8 +1384,10 @@
 			<Item Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCreamWhite" />
 			<Item Stack="10" Name="SwtSweat" ID="classes.Items.Transformatives::SweetSweat" />
+			<Item Stack="10" Name="Swineapple" ID="classes.Items.Transformatives::Swineapple" />
 			<Item Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
 			<Item Stack="10" Name="Deerium" ID="classes.Items.Transformatives::TauricoVenidae" />
+			<Item Stack="10" Name="Tentacool" ID="classes.Items.Transformatives::Tentacool" />
 			<Item Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
 			<Item Stack="10" Name="Virection" ID="classes.Items.Transformatives::Virection" />
 		</ItemGroup>
@@ -1587,9 +1592,11 @@
 		</KeyItemGroup>
 		<KeyItemGroup Name="Panties">
 			<KeyItem Name="Panties - Aina's - Extra-large, striped green centaur panties." />
+			<KeyItem Name="Panties - Beatrice's - Silky, black panties with floral-patterned lace." />
 			<KeyItem Name="Panties - Briha's - Nylon, camo-print T-back panties." />
 			<KeyItem Name="Panties - Embry's - Plain, girly pink panties with little hearts." />
 			<KeyItem Name="Panties - Emmy's - Silky, purple, and cum-stained." />
+			<KeyItem Name="Panties - Erra's - Purple with a black paw-print on the crotch." />
 			<KeyItem Name="Panties - Kiro's - Lacy, black, and crotchless." />
 			<KeyItem Name="Panties - Lys's - Sheer black panties." />
 			<KeyItem Name="Panties - Penny's - Plain, blue, and crotchless." />
@@ -1597,24 +1604,29 @@
 			<KeyItem Name="Panties - Syri's - Sky blue, silky, and extra crotch room." />
 			<KeyItem Name="Panties - Xanthe's - Lacy, black siel-silk panties." />
 		</KeyItemGroup>
+		<KeyItemGroup Name="Collars">
+			<KeyItem Name="Acquisitions Starter Kit" Description="A collar-and-remote bundle from Sentient Acquisitions." />
+			<KeyItem Name="Ausar Collar - A custom collar for Erra." />
+			<KeyItem Name="Jerynn’s Collar" Description="A thick leather band, designed to cinch tightly yet comfortably around your neck." Value1="1" />
+		</KeyItemGroup>
 		<KeyItemGroup Name="Miscellaneous">
 			<KeyItem Name="Arbetz Travel Agency Membership" />
-			<KeyItem Name="Bulky Data-Core" />
+			<KeyItem Name="Bulky Data-Core" Label1="Actual Price" Value1="2000" />
 			<KeyItem Name="Federation Vibrator" />
 			<KeyItem Name="Frostwyrm Scales" />
 			<KeyItem Name="Gildenmere Pass" />
 			<KeyItem Name="Goozooka" Description="This modified Goovolver was built by the ausar tech specialist Anno Dorna for you. Rather than normal galotians, this heavy cannon fires vials of gray goo at your enemies, re-programmed to go straight for an enemy's most sensitive spots. Consumes a vial of gray goo per shot!" />
 			<KeyItem Name="Hardlight Strap-on Upgrades" />
 			<KeyItem Name="Holodisk: Horsecock Hell 2" Description="A pair of holodisks labeled '&lt;b&gt;Horsecock Hell 2: A Tail of Two Twats&lt;/b&gt;'. The cover makes a big deal out of the star of the show: 'Nivas Oxonef'" />
-			<KeyItem Name="Intact, Antique Android" />
+			<KeyItem Name="Intact, Antique Android" Label1="Actual Price" Value1="2000" />
 			<KeyItem Name="Kressia Pass" />
 			<KeyItem Name="Lasso" />
-			<KeyItem Name="Locked Metal Chest" />
+			<KeyItem Name="Locked Metal Chest" Label1="Actual Price" Value1="2000" />
 			<KeyItem Name="Pirate Datapad" />
 			<KeyItem Name="Platinum 190" />
 			<KeyItem Name="Republic Dildo" />
 			<KeyItem Name="Signed Steph Irson Photo" Description="A signed photograph of Steph Irson... given to you by Steph Irson." />
-			<KeyItem Name="Some Sort of Shining Spaceship Part" />
+			<KeyItem Name="Some Sort of Shining Spaceship Part" Label1="Actual Price" Value1="2000" />
 			<KeyItem Name="Ten Ton Gym Membership" />
 			<KeyItem Name="Vi's Vagina" />
 			<KeyItem Name="Water Princess Note" Description="This receipt by a child-recovery drone was doodled all over by the tiny water princesses you gave birth to. They've scrawled several affectionate drawings all over it, and written thank-yous for taking care of them. Looking at it gives you a warm, fuzzy feeling..." />
@@ -1775,6 +1787,7 @@
 			<Perk Name="Firing Blanks" Description="There’s no way you could get anyone or anything pregnant." />
 			<Perk Name="Flexibility" Description="You can bend and stretch more than most other creatures." />
 			<Perk Name="Flower Power" Description="Everything about being a pollen-producing flower nymph is deeply arousing. It has its upsides, though: the effect you have on most foes, for instance." Label1="Number of flowers active" Value1="4" Label2="Min Lust increase" Value2="20" Label3="Min Libido increase" Value3="45" />
+			<Perk Name="Hollow Bones" Description="Your body weighs less than it should." Value1="10" />
 			<Perk Name="Honeypot" Description="Allows your body to convert excess thickness into delicious, boob-filling goodness." />
 			<Perk Name="Hypermilky" Description="Lactation will not decrease from disuse or overfilling." />
 			<Perk Name="Icy Veins" Description="Your body has adapted to the extreme winter cold." Value1="1" />
@@ -1794,7 +1807,6 @@
 		<PerkGroup Name="General">
 			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs." Label1="Cum Quantity" Value1="500000" />
-			<Perk Name="Hollow Bones" Description="Your body weighs less than it should." Value1="10" />
 			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn" Label1="Attacks per turn" Value1="5" />
 			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn" Label1="Shots per turn" Value1="5" />
 			<Perk Name="Ranged Immune" Comment="Immune to ranged attacks" />
@@ -1808,6 +1820,7 @@
 		<Flag Name="ABLE_LICKNFUCKED" />
 		<Flag Name="ABLE_TALKED" />
 		<Flag Name="ACCEPTED_JULIANS_ZIL_CAPTURE_MISSION" />
+		<Flag Name="ACQUISITIONS_SLAVE_PURCHASES" />
 		<Flag Name="AINA_DAY_MET" />
 		<Flag Name="AINA_LAST_DAY_MET" />
 		<Flag Name="AINA_LAST_DAY_RELIEVED" />
@@ -2246,6 +2259,7 @@
 		<Flag Name="ENCOUNTERED_PARASITIC_LAPINARA" />
 		<Flag Name="ENCOUNTERED_ZIL" />
 		<Flag Name="ENCOUNTERS_DISABLED" />
+		<Flag Name="ENTERED_ACQUISITIONS" />
 		<Flag Name="ENTERED_BRYNNS_STALL" />
 		<Flag Name="ENTERED_NOMANSLAND" />
 		<Flag Name="ERRA_SEXED" />
@@ -2767,6 +2781,7 @@
 		<Flag Name="MET_CGOOS" Description="1 == You've met a crystal goo" />
 		<Flag Name="MET_CGOO_SHOPKEEP" Description="1 == You've met the crystal goo shopkeeper" />
 		<Flag Name="MET_CHARLES" />
+		<Flag Name="MET_CHRYSALIS_DRONE" />
 		<Flag Name="MET_COCKVINE_SEEDLING" Description="Number of times you've encountered cockvine seedling" />
 		<Flag Name="MET_CUNT_SNAKE" Description="Number of times you've encountered a cunt snake" />
 		<Flag Name="MET_DALLY" Description="1 == You've met Dally" />
@@ -3165,8 +3180,18 @@
 		<Flag Name="SEMITH_SEXED" />
 		<Flag Name="SEMITH_TALK_ROUND" />
 		<Flag Name="SERA FUCKED PCS TAILCUNT" Description="Number of times Sera has used your tailcunt" />
+		<Flag Name="SERA_ACQUIRED_DATE" />
+		<Flag Name="SERA_BITCHENING_BUTTFUCK" />
+		<Flag Name="SERA_BITCHENING_PUNISH_RATION" />
+		<Flag Name="SERA_BITCHENING_PUNISH_WALKIES" />
+		<Flag Name="SERA_BITCHENING_RIDE" />
+		<Flag Name="SERA_BITCHENING_TEASE" />
+		<Flag Name="SERA_BITCHENING_TEASE_DENY" />
+		<Flag Name="SERA_BITCHENING_TEASE_RELEASE" />
 		<Flag Name="SERA_BREED_TIMER" />
+		<Flag Name="SERA_BUSINESS_SETUP" />
 		<Flag Name="SERA_CREATE_VAG" Description="Sera has forced you to grow a vagina" />
+		<Flag Name="SERA_CREWMEMBER" />
 		<Flag Name="SERA_EXHIBITION_BLOWJOB" Description="Number of times Sera has made you a give a public blowjob" />
 		<Flag Name="SERA_FACE_RIDE_TRAINING" Description="Number of times Sera has ridden your face" />
 		<Flag Name="SERA_INCH_STEAL" Description="Number of inches Sera has absorbed from your penis" />
@@ -3175,10 +3200,14 @@
 		<Flag Name="SERA_INFULENCE" Description="Sera's influence score" />
 		<Flag Name="SERA_IN_JARDI_THREESOME" Description="Number of times in a threesome with Sera and Jardi" />
 		<Flag Name="SERA_MEET_BREED" />
+		<Flag Name="SERA_MERCHANT" />
 		<Flag Name="SERA_NAMED_KID" />
 		<Flag Name="SERA_NO_SEX" Description="-1 == Sex/Talk disabled until biggest cock &lt; 12 inces&#xD;&#xA;1 == Sera is refusing to have sex with you" />
 		<Flag Name="SERA_NURSERY_PLAY" />
 		<Flag Name="SERA_NURSERY_VISIT_4" />
+		<Flag Name="SERA_OBEDIENCE" />
+		<Flag Name="SERA_OBEDIENCE_MAX" />
+		<Flag Name="SERA_OBEDIENCE_MIN" />
 		<Flag Name="SERA_PARTY_ATTIRE" Description="corset&#xD;&#xA;jeans and blouse&#xD;&#xA;business suit&#xD;&#xA;dress" />
 		<Flag Name="SERA_PARTY_DATE" Description="Party finished timestamp" />
 		<Flag Name="SERA_PARTY_FUCKED" Description="Number of sexy times at the party with Sera" />
@@ -3187,12 +3216,15 @@
 		<Flag Name="SERA_PARTY_STAGE2" Description="Greeting type:&#xD;&#xA;hello&#xD;&#xA;bow&#xD;&#xA;curtsy&#xD;&#xA;appease&#xD;&#xA;nothing" />
 		<Flag Name="SERA_PARTY_STAGE3" Description="Answer to Sera's issue:&#xD;&#xA;nothing&#xD;&#xA;encourage&#xD;&#xA;relax" />
 		<Flag Name="SERA_PARTY_STAGE4" Description="Sex party option:jarvis&#xD;&#xA;stay&#xD;&#xA;sera&#xD;&#xA;vedice" />
+		<Flag Name="SERA_REPAID_LOAN" />
 		<Flag Name="SERA_SALARY_DATE" Description="Date of last salary pay" />
 		<Flag Name="SERA_SALARY_PAID" Description="Number of times paid salary" />
+		<Flag Name="SERA_SERVANT_INTRO" />
 		<Flag Name="SERA_STUCK_IT_ALL_IN_BUTT" Description="Number of times Sera has stuffed your ass with dicks" />
 		<Flag Name="SERA_TAILED" Description="Number of times Sera has used her tail on you" />
 		<Flag Name="SERA_TALKED_ABOUT_BEING_PISSED_OFF" Description="1 == Sera has talked about why she is angry" />
-		<Flag Name="SERA_TALKS_BREED" />
+		<Flag Name="SERA_TALKS_AMBITION" Description="1 == Sera has talked about her ambitions" />
+		<Flag Name="SERA_TALKS_BREED" Description="1 == Sera has talked about breeding&#xD;&#xA;2 == Sera has mentioned your womb bulge&#xD;&#xA;3 == Sera admits your pregnancy" />
 		<Flag Name="SERA_TALKS_DEMONS" Description="1 == Sera has talked about her appearance" />
 		<Flag Name="SERA_TALKS_FURRIES" Description="1 == Sera has talked about her hatred of furries" />
 		<Flag Name="SERA_TALKS_PAST" Description="1 == Sera has talked about her past" />
@@ -3204,6 +3236,7 @@
 		<Flag Name="SERA_UNLOCK_LUCIFIER" Description="1 == Sera will offer to sell Lucifier" />
 		<Flag Name="SERA_UNLOCK_SEMENS" Description="1 == Sera will offer to sell Semen's Friend" />
 		<Flag Name="SERA_URETHRA_TAILFUCKS" Description="Number of times Sera has tail-fucked your urethra" />
+		<Flag Name="SERA_VIRGINITY_TAKEN" />
 		<Flag Name="SET_XANTHE_SEX" />
 		<Flag Name="SEXBOTS_GENDER_SETTING" />
 		<Flag Name="SEXBOTS_GENDER_SETTINGS" />
@@ -3586,6 +3619,8 @@
 			<StatusEffect Name="Lapinara Prophylactic" Description="The spray currently effecting you will reduce encounters with lapinara." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Leitha Charm" Description="Your leitha charm necklace hangs from your neck, infusing your body with targeted transformative nanomachines." Value1="-360" IconName="Icon_DrugPill" />
 			<StatusEffect Name="Lucifier Candy" Description="The Lucifier’s candy sweetness linger on your tongue...." Value1="1440" Value2="1" IconName="Icon_DrugPill" MinutesLeft="1440" />
+			<StatusEffect Name="Omega Fever Delay" MinutesLeft="1440" IsHidden="true" />
+			<StatusEffect Name="Omega Oil" Description="Hidden status that actually tracks the lust mod so we only gotta check 1." Value1="15" MinutesLeft="4320" IsHidden="true" />
 			<StatusEffect Name="Ovilium" Description="You are under the effects of Ovilium." Value1="1" IconName="Icon_DrugPill" IsHidden="true" />
 			<StatusEffect Name="Raskvel Prophylactic" Description="The spray currently effecting you will reduce encounters with raskvel." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Red Myr Venom" Description="The red myr venom coursing through your veins is keeping your cheeks flushed with growing arousal. The longer it lasts, the more your mind gives over to its primal desires..." IconName="Icon_LustUp" MinutesLeft="720" IconShade="0" />
@@ -3623,6 +3658,7 @@
 			<StatusEffect Name="Ludicrously Endowed" Description="The shifting masses of your over-sized endowments cause you to gain fifty percent more lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
+			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" IsHidden="true" />
 			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
 			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
