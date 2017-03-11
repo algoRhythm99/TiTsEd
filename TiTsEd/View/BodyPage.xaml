@@ -118,18 +118,30 @@
                     <TextBlock Text="Butt" Style="{StaticResource Header}"/>
                 </Border>
                 <common:AutoGrid>
+
                     <TextBlock              Text="Anal Virgin"/>
                     <CheckBox IsChecked="{Binding Game.Character.AnalVirgin}" />
-
-                    <TextBlock              Text="Looseness"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.Looseness}" Min="1" Lower="1" />
 
                     <TextBlock              Text="Anal Bonus Capacity"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Ass.BonusCapacity}" />
 
-                    <TextBlock              Text="Anal Wetness"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.Wetness}" />
                 </common:AutoGrid>
+
+                <common:AutoGrid Columns="3">
+
+                    <TextBlock              Text="Looseness"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.Looseness}" Min="{Binding Game.Character.Ass.MinLooseness}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.LoosenessMod}" ToolTip="Modifier" />
+
+                    <TextBlock              Text="Anal Wetness"/>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.Wetness}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.WetnessMod}" ToolTip="Modifier" />
+
+                </common:AutoGrid>
+
+                <Expander Margin="60,0,0,0" Header="Ass Flags">
+                    <view:FlagBox ItemsSource="{Binding Game.Character.Ass.VaginaFlags}" />
+                </Expander>
 
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Chest" Style="{StaticResource Header}"/>
