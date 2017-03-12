@@ -891,6 +891,16 @@ namespace TiTsEd.ViewModel {
             set { SetValue("tailGenitalArg", value); }
         }
 
+        public int TailVenom {
+            get { return GetInt("tailVenom"); }
+            set { SetValue("tailVenom", value); }
+        }
+
+        public int TailRecharge {
+            get { return GetInt("tailRecharge"); }
+            set { SetValue("tailRecharge", value); }
+        }
+
         public String TailGenitalColor {
             get { return GetString("tailGenitalColor"); }
             set { SetValue("tailGenitalColor", value); }

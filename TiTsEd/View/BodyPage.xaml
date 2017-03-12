@@ -99,6 +99,12 @@
                     <TextBlock              Text="Tail Count" IsEnabled="{Binding Game.Character.TailOptionsEnabled}" />
                     <common:MyNumericBox    Value="{Binding Game.Character.TailCount}" IsEnabled="{Binding Game.Character.TailOptionsEnabled}" />
 
+                    <TextBlock              Text="Tail Venom" IsEnabled="{Binding Game.Character.TailOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.TailVenom}" IsEnabled="{Binding Game.Character.TailOptionsEnabled}" Max="100" Upper="100" />
+
+                    <TextBlock              Text="Tail Recharge" IsEnabled="{Binding Game.Character.TailOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.TailRecharge}" IsEnabled="{Binding Game.Character.TailOptionsEnabled}" />
+
                     <TextBlock              Text="Tail Genital Type" IsEnabled="{Binding Game.Character.TailGenitalEnabled}" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenital}" ItemsSource="{Binding Data.Body.TailGenitalTypes}" IsEnabled="{Binding Game.Character.TailGenitalEnabled}" />
 

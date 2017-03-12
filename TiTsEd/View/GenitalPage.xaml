@@ -39,39 +39,54 @@
                 </Border>
 
                 <common:AutoGrid>
+
                     <TextBlock              Text="Balls"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Balls}" />
 
-                    <TextBlock              Text="Ball Size"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.BallSize}" Type="Double" />
+                </common:AutoGrid>
 
-                    <TextBlock              Text="Ball Fullness"/>
+                <common:AutoGrid Columns="3">
+
+                    <TextBlock              Text="Ball Size" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.BallSize}" Type="Double" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.BallSizeMod}" ToolTip="Modifier" />
+
+                </common:AutoGrid>
+
+                <common:AutoGrid>
+
+                    <TextBlock              Text="Ball Fullness" />
                     <common:MyNumericBox    Value="{Binding Game.Character.BallFullness}" />
 
-                    <TextBlock              Text="Ball Efficiency"/>
+                    <TextBlock              Text="Ball Efficiency" />
                     <common:MyNumericBox    Value="{Binding Game.Character.BallEfficiency}" />
 
-                    <TextBlock              Text="Refractory Rate"/>
+                    <TextBlock              Text="Refractory Rate" />
                     <common:MyNumericBox    Value="{Binding Game.Character.RefractoryRate}" />
 
-                    <TextBlock              Text="Cum Type"/>
+                    <TextBlock              Text="Cum Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.CumType}" ItemsSource="{Binding Data.Body.CumTypes}"/>
 
                 </common:AutoGrid>
+
                 <common:AutoGrid Columns="3">
 
-                    <TextBlock              Text="Cum Multiplier"/>
+                    <TextBlock              Text="Cum Multiplier" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.CumMultiplier}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" ToolTip="Modifier" />
 
-                    <TextBlock              Text="Cum Quality"/>
+                    <TextBlock              Text="Cum Quality" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.CumQuality}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumQualityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
+
                 <common:AutoGrid>
+
                     <TextBlock              Text="Cock Virgin"/>
                     <CheckBox IsChecked="{Binding Game.Character.CockVirgin}" />
+
                 </common:AutoGrid>
+
                 <common:ArrayEditor Header="Cocks" Items="{Binding Game.Character.Cocks}" Capacity="5" MinCapacity="0">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>
@@ -148,12 +163,21 @@
                             <TextBlock              Text="Clits"/>
                             <common:MyNumericBox    Value="{Binding Clits}" Min="1" Lower="1" />
 
-                            <TextBlock              Text="Wetness"/>
-                            <common:MyNumericBox    Value="{Binding Wetness}" Min="1" Lower="1" />
+                        </common:AutoGrid>
+
+                        <common:AutoGrid Columns="3">
 
                             <TextBlock              Text="Looseness"/>
-                            <common:MyNumericBox    Value="{Binding Looseness}" Min="{Binding MinLooseness}" Lower="{Binding MinLooseness}" />
+                            <common:MyNumericBox    Width="100" Value="{Binding Looseness}" Min="{Binding MinLooseness}" ToolTip="Base" />
+                            <common:MyNumericBox    Width="100" Value="{Binding LoosenessMod}" ToolTip="Modifier" />
 
+                            <TextBlock              Text="Anal Wetness"/>
+                            <common:MyNumericBox    Width="100" Value="{Binding Wetness}" ToolTip="Base" />
+                            <common:MyNumericBox    Width="100" Value="{Binding WetnessMod}" ToolTip="Modifier" />
+
+                        </common:AutoGrid>
+
+                        <common:AutoGrid>
                             <TextBlock              Text="Bonus Capacity"/>
                             <common:MyNumericBox    Value="{Binding BonusCapacity}" />
 
