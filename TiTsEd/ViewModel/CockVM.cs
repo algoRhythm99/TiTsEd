@@ -68,6 +68,10 @@ namespace TiTsEd.ViewModel {
             get { return Length + LengthMod; }
         }
 
+        public string LengthTip {
+            get { return EffectiveLength + "\""; }
+        }
+
         public double ThicknessRatio {
             get { return GetDouble("cThicknessRatioRaw"); }
             set {
@@ -90,6 +94,11 @@ namespace TiTsEd.ViewModel {
 
         public string ThicknessTip {
             get { return Math.Round(EffectiveLength / 6 * EffectiveThicknessRatio, 2) + "\""; }
+        }
+
+        public int Pierced {
+            get { return GetInt("pierced"); }
+            set { SetValue("pierced", value); }
         }
 
         public int Virgin {

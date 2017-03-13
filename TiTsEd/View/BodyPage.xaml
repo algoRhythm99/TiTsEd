@@ -150,6 +150,29 @@
                 </Expander>
 
                 <Border Style="{StaticResource HeaderBorder}">
+                    <TextBlock Text="Lactation" Style="{StaticResource Header}"/>
+                </Border>
+
+                <common:AutoGrid>
+
+                    <TextBlock              Text="Milk Type" HorizontalAlignment="Right" Width="Auto"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.MilkType}" ItemsSource="{Binding Data.Body.MilkTypes}" />
+
+                    <TextBlock              Text="Milk Fullness" HorizontalAlignment="Right" Width="Auto"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.MilkFullness}" Type="Double" />
+
+                    <TextBlock              Text="Milk Rate" HorizontalAlignment="Right" Width="Auto"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.MilkRate}" />
+
+                    <TextBlock              Text="Milk Multiplier" HorizontalAlignment="Right" Width="Auto"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.MilkMultiplier}" />
+
+                    <TextBlock              Text="Milk Storage Multiplier" HorizontalAlignment="Right" Width="Auto"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.MilkStorageMultiplier}" />
+
+                </common:AutoGrid>
+
+                <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Chest" Style="{StaticResource Header}"/>
                 </Border>
 
@@ -171,22 +194,6 @@
 
                     <TextBlock              Text="Dick Nipple Multiplier" HorizontalAlignment="Right" Width="Auto"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.DickNippleMultiplier}" />
-
-                    <TextBlock              Text="Milk Type" HorizontalAlignment="Right" Width="Auto"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.MilkType}" ItemsSource="{Binding Data.Body.MilkTypes}" />
-
-                    <TextBlock              Text="Milk Fullness" HorizontalAlignment="Right" Width="Auto"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.MilkFullness}" Type="Double" />
-
-                    <TextBlock              Text="Milk Rate" HorizontalAlignment="Right" Width="Auto"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.MilkRate}" />
-
-                    <TextBlock              Text="Milk Multiplier" HorizontalAlignment="Right" Width="Auto"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.MilkMultiplier}" />
-
-                    <TextBlock              Text="Milk Storage Multiplier" HorizontalAlignment="Right" Width="Auto"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.MilkStorageMultiplier}" />
-
                 </common:AutoGrid>
 
                 <common:ArrayEditor Header="Breasts" Items="{Binding Game.Character.Breasts}" Capacity="5" MinCapacity="1">
