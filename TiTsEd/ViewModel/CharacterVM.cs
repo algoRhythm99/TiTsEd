@@ -699,6 +699,11 @@ namespace TiTsEd.ViewModel {
             set { SetValue("beardLength", value); }
         }
 
+        public int BeardType {
+            get { return GetInt("beardType"); }
+            set { SetValue("beardType", value); }
+        }
+
         public int BeardStyle {
             get { return GetInt("beardStyle"); }
             set { SetValue("beardStyle", value); }

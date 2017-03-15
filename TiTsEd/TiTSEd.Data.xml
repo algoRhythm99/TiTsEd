@@ -855,6 +855,7 @@
 			<TailGenitalRaceType ID="3" Name="Canine" />
 			<TailGenitalRaceType ID="4" Name="Feline" />
 			<TailGenitalRaceType ID="5" Name="Vulpine" />
+			<TailGenitalRaceType ID="15" Name="Demonic" />
 			<TailGenitalRaceType ID="16" Name="Gooey" />
 			<TailGenitalRaceType ID="20" Name="Suula" />
 			<TailGenitalRaceType ID="23" Name="Tentacle" />
