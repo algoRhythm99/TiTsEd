@@ -583,6 +583,7 @@
 			<EarType ID="58" Name="Sylvan" />
 			<EarType ID="65" Name="Gryvain" />
 			<EarType ID="72" Name="Swine" />
+			<EarType ID="73" Name="Laquine" />
 		</EarTypes>
 		<EarLengthEnables>
 			<EarLengthEnable>Raskvel</EarLengthEnable>
@@ -674,6 +675,7 @@
 			<ArmType ID="6" Name="Bee" />
 			<ArmType ID="7" Name="Arachnid" />
 			<ArmType ID="8" Name="Drider" />
+			<ArmType ID="9" Name="Lapine" />
 			<ArmType ID="10" Name="Avian" />
 			<ArmType ID="15" Name="Demonic" />
 			<ArmType ID="19" Name="Shark" />
@@ -1373,6 +1375,7 @@
 			<Item Stack="10" Name="HuskarTreat" ID="classes.Items.Transformatives::HuskarTreats" />
 			<Item Stack="10" Name="J.Trunk" ID="classes.Items.Transformatives::JunkTrunk" />
 			<Item Stack="10" Name="Kero.Ven." ID="classes.Items.Transformatives::KerokorasVenom" />
+			<Item Stack="10" Name="L. Ears" ID="classes.Items.Transformatives::LaquineEars" />
 			<Item Stack="10" Name="LipTease" ID="classes.Items.Transformatives::LipTease" />
 			<Item Stack="10" Name="Lucifier" ID="classes.Items.Transformatives::Lucifier" />
 			<Item Stack="10" Name="ManUp" ID="classes.Items.Transformatives::ManUp" />
