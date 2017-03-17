@@ -591,6 +591,8 @@
 			<EarLengthEnable>Demonic</EarLengthEnable>
 			<EarLengthEnable>Sylvan</EarLengthEnable>
 			<EarLengthEnable>Gabilani</EarLengthEnable>
+			<EarLengthEnable>Lapine</EarLengthEnable>
+			<EarLengthEnable>Laquine</EarLengthEnable>
 		</EarLengthEnables>
 		<!-- ================================================================ -->
 		<TongueTypes>
