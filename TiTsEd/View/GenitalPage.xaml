@@ -104,14 +104,14 @@
 
                         <common:AutoGrid Columns="4">
                             <TextBlock              Text="Length" />
-                            <common:MyNumericBox    Value="{Binding Length}" Type="Double" Unit="inches" ToolTip="Base" />
+                            <common:MyNumericBox    Width="155" Value="{Binding Length}" Type="Double" ToolTip="Base" />
                             <common:MyNumericBox    Width="100" Value="{Binding LengthMod}" ToolTip="Modifier" />
-                            <TextBlock Text="{Binding LengthTip}" Width="60" />
+                            <TextBlock              Width="40"  Text="{Binding LengthTip}" />
 
                             <TextBlock              Text="Thickness Ratio" />
-                            <common:MyNumericBox    Value="{Binding ThicknessRatio}" Unit="inches" Type="Double" ToolTip="Base" />
+                            <common:MyNumericBox    Width="155" Value="{Binding ThicknessRatio}" Type="Double" ToolTip="Base" />
                             <common:MyNumericBox    Width="100" Value="{Binding ThicknessRatioMod}" ToolTip="Modifier" />
-                            <TextBlock Text="{Binding ThicknessTip}" Width="60" />
+                            <TextBlock              Width="40"  Text="{Binding ThicknessTip}" />
                         </common:AutoGrid>
 
                         <common:AutoGrid>
@@ -179,11 +179,11 @@
                         <common:AutoGrid Columns="3">
 
                             <TextBlock              Text="Looseness" />
-                            <common:MyNumericBox    Width="100" Value="{Binding Looseness}" Min="{Binding MinLooseness}" ToolTip="Base" />
+                            <common:MyNumericBox    Width="155" Value="{Binding Looseness}" Min="{Binding MinLooseness}" ToolTip="Base" />
                             <common:MyNumericBox    Width="100" Value="{Binding LoosenessMod}" ToolTip="Modifier" />
 
-                            <TextBlock              Text="Anal Wetness" />
-                            <common:MyNumericBox    Width="100" Value="{Binding Wetness}" ToolTip="Base" />
+                            <TextBlock              Text="Wetness" />
+                            <common:MyNumericBox    Width="155" Value="{Binding Wetness}" ToolTip="Base" />
                             <common:MyNumericBox    Width="100" Value="{Binding WetnessMod}" ToolTip="Modifier" />
 
                         </common:AutoGrid>
