@@ -104,14 +104,14 @@
 
                         <common:AutoGrid Columns="4">
                             <TextBlock              Text="Length" />
-                            <common:MyNumericBox    Width="155" Value="{Binding Length}" Type="Double" ToolTip="Base" />
-                            <common:MyNumericBox    Width="100" Value="{Binding LengthMod}" ToolTip="Modifier" />
-                            <TextBlock              Width="40"  Text="{Binding LengthTip}" />
+                            <common:MyNumericBox    Width="155"  Value="{Binding Length}" Type="Double" ToolTip="Base" />
+                            <common:MyNumericBox    Width="100"  Value="{Binding LengthMod}" ToolTip="Modifier" />
+                            <TextBlock              Width="155"  Text="{Binding LengthTip}" IsEnabled="False" />
 
                             <TextBlock              Text="Thickness Ratio" />
-                            <common:MyNumericBox    Width="155" Value="{Binding ThicknessRatio}" Type="Double" ToolTip="Base" />
-                            <common:MyNumericBox    Width="100" Value="{Binding ThicknessRatioMod}" ToolTip="Modifier" />
-                            <TextBlock              Width="40"  Text="{Binding ThicknessTip}" />
+                            <common:MyNumericBox    Width="155"  Value="{Binding ThicknessRatio}" Type="Double" ToolTip="Base" />
+                            <common:MyNumericBox    Width="100"  Value="{Binding ThicknessRatioMod}" ToolTip="Modifier" />
+                            <TextBlock              Width="155"  Text="{Binding ThicknessTip}" IsEnabled="False" />
                         </common:AutoGrid>
 
                         <common:AutoGrid>
