@@ -6,6 +6,7 @@
         xmlns:vm="clr-namespace:TiTsEd.ViewModel" 
         Title="TiTsEd" 
         DataContext="{x:Static vm:VM.Instance}"
+        Icon="TiTsEd.ico"
         Width="1024" Height="700" MinWidth="1024" MinHeight="700">
     
     <Window.Resources>

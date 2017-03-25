@@ -42,7 +42,7 @@
     <StartupObject>TiTsEd.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>titsed.ico</ApplicationIcon>
+    <ApplicationIcon>TiTsEd.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -237,7 +237,7 @@
   <ItemGroup>
     <Resource Include="Assets\cross.png" />
     <Resource Include="Assets\search.png" />
-    <Resource Include="titsed.ico" />
+    <Resource Include="TiTsEd.ico" />
     <Content Include="TiTsEd.license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

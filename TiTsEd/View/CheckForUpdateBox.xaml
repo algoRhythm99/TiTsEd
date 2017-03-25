@@ -6,6 +6,7 @@
         Height="140"
         Loaded="CheckForUpdateBox_Loaded"
         ResizeMode="NoResize"
+        Icon="../TiTsEd.ico"
         ShowInTaskbar="False">
 
     <Window.Resources>

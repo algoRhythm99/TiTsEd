@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiTsEd", "TiTsEd\TiTSEd.csproj", "{83EF4E21-C7BB-4ED4-91BB-100DED08F950}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiTsEd", "TiTsEd\TiTsEd.csproj", "{83EF4E21-C7BB-4ED4-91BB-100DED08F950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

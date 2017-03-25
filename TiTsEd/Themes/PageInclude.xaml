@@ -1,5 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type Window}">
+        <Setter Property="Icon" Value="../TiTsEd.ico" />
+    </Style>
 
     <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}">
         <Setter Property="VerticalAlignment" Value="Center"/>
