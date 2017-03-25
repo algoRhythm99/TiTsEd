@@ -192,6 +192,9 @@
                             <TextBlock              Text="Bonus Capacity" />
                             <common:MyNumericBox    Value="{Binding BonusCapacity}" />
 
+                            <TextBlock              Text="Shrink Counter" />
+                            <common:MyNumericBox Value="{Binding ShrinkCounter}" />
+
                             <TextBlock              Text="Hymen" />
                             <CheckBox IsChecked="{Binding Hymen}" />
                         </common:AutoGrid>
