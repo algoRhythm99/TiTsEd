@@ -41,6 +41,11 @@ namespace TiTsEd.Common
             return replaced;
         }
 
+        public static string GetFeetAndCentimetersDescription(double inches) {
+            const double inchesToCM = 2.54;
+            if (inches >= 12) return String.Format("{1:0}\u2032 {2:0}\u2033 ; {0:0.0} cm", inches * inchesToCM, (int)(inches / 12), inches % 12);
+            return String.Format("{0:0.0} inches ; {1:0.0} cm", inches, inches * inchesToCM);
+        }
     }
 
 

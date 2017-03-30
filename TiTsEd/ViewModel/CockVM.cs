@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System.Text;
 using TiTsEd.Model;
+using TiTsEd.Common;
 
 namespace TiTsEd.ViewModel {
     public sealed class CockArrayVM : ArrayVM<CockVM> {
@@ -69,11 +70,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public string LengthTip {
-            get {
-                const double inchesToCM = 2.54;
-                if (EffectiveLength >= 12) return String.Format("{1:0}\u2032 {2:0}\u2033 ; {0:0.0} cm", EffectiveLength * inchesToCM, (int)(EffectiveLength / 12), EffectiveLength % 12);
-                return String.Format("{0:0.0} inches ; {1:0.0} cm", EffectiveLength, EffectiveLength * inchesToCM);
-            }
+            get { return Extensions.GetFeetAndCentimetersDescription(EffectiveLength); }
         }
 
         public double ThicknessRatio {
@@ -98,10 +95,8 @@ namespace TiTsEd.ViewModel {
 
         public string ThicknessTip {
             get {
-                const double inchesToCM = 2.54;
                 var thicknessValue = Math.Round((EffectiveLength / 6) * EffectiveThicknessRatio, 2);
-                if (thicknessValue >= 12) return String.Format("{1:0}\u2032 {2:0}\u2033 ; {0:0.0} cm", thicknessValue * inchesToCM, (int)(thicknessValue / 12), thicknessValue % 12);
-                return String.Format("{0:0.0} inches ; {1:0.0} cm", thicknessValue, thicknessValue * inchesToCM);
+                return Extensions.GetFeetAndCentimetersDescription(thicknessValue); 
             }
         }
 

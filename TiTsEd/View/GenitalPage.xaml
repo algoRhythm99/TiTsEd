@@ -56,13 +56,13 @@
                 <common:AutoGrid>
 
                     <TextBlock              Text="Ball Fullness" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.BallFullness}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.BallFullness}" Type="Double" />
 
                     <TextBlock              Text="Ball Efficiency" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.BallEfficiency}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.BallEfficiency}" Type="Double" />
 
                     <TextBlock              Text="Refractory Rate" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.RefractoryRate}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.RefractoryRate}" Type="Double" />
 
                     <TextBlock              Text="Cum Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.CumType}" ItemsSource="{Binding Data.Body.CumTypes}" />
@@ -72,7 +72,7 @@
                 <common:AutoGrid Columns="3">
 
                     <TextBlock              Text="Cum Multiplier" />
-                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.CumMultiplier}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.CumMultiplier}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" ToolTip="Modifier" />
 
                     <TextBlock              Text="Cum Quality" />

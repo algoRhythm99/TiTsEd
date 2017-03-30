@@ -1022,8 +1022,8 @@ namespace TiTsEd.ViewModel {
             set { SetValue("cumType", value); }
         }
 
-        public int CumMultiplier {
-            get { return GetInt("cumMultiplierRaw"); }
+        public double CumMultiplier {
+            get { return GetDouble("cumMultiplierRaw"); }
             set { SetValue("cumMultiplierRaw", value); }
         }
 
@@ -1057,18 +1057,18 @@ namespace TiTsEd.ViewModel {
             set { SetValue("ballSizeMod", value); }
         }
 
-        public int BallFullness {
-            get { return GetInt("ballFullness"); }
+        public double BallFullness {
+            get { return GetDouble("ballFullness"); }
             set { SetValue("ballFullness", value); }
         }
 
-        public int BallEfficiency {
-            get { return GetInt("ballEfficiency"); }
+        public double BallEfficiency {
+            get { return GetDouble("ballEfficiency"); }
             set { SetValue("ballEfficiency", value); }
         }
 
-        public int RefractoryRate {
-            get { return GetInt("refractoryRate"); }
+        public double RefractoryRate {
+            get { return GetDouble("refractoryRate"); }
             set { SetValue("refractoryRate", value); }
         }
 
