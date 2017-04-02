@@ -1358,6 +1358,7 @@
 			<Item Stack="24" Name="Sm.PinkEgg" ID="classes.Items.Transformatives::EggPinkSmall" />
 			<Item Stack="24" Name="Lg.WhtEgg" ID="classes.Items.Transformatives::EggWhiteLarge" />
 			<Item Stack="24" Name="Sm.WhtEgg" ID="classes.Items.Transformatives::EggWhiteSmall" />
+			<Item Stack="10" Name="FizzyFix" ID="classes.Items.Transformatives::FizzyFix" />
 			<Item Stack="1"  Name="Foxfire" ID="classes.Items.Transformatives::Foxfire" />
 			<Item Stack="1"  Name="Frostfire" ID="classes.Items.Transformatives::Frostfire" />
 			<Item Stack="10" Name="Furball" ID="classes.Items.Transformatives::Furball" />
@@ -1378,10 +1379,12 @@
 			<Item Stack="10" Name="J.Trunk" ID="classes.Items.Transformatives::JunkTrunk" />
 			<Item Stack="10" Name="Kero.Ven." ID="classes.Items.Transformatives::KerokorasVenom" />
 			<Item Stack="10" Name="L. Ears" ID="classes.Items.Transformatives::LaquineEars" />
+			<Item Stack="10" Name="Loftcake" ID="classes.Items.Transformatives::LemonLoftcake" />
 			<Item Stack="10" Name="LipTease" ID="classes.Items.Transformatives::LipTease" />
 			<Item Stack="10" Name="Lucifier" ID="classes.Items.Transformatives::Lucifier" />
 			<Item Stack="10" Name="ManUp" ID="classes.Items.Transformatives::ManUp" />
 			<Item Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
+			<Item Stack="10" Name="M.Stick" ID="classes.Items.Transformatives::Muffstick" />
 			<Item Stack="10" Name="Nepeta" ID="classes.Items.Transformatives::Nepeta" />
 			<Item Stack="10" Name="N.Butter" ID="classes.Items.Transformatives::NukiNutbutter" />
 			<Item Stack="10" Name="Nutnog" ID="classes.Items.Transformatives::Nutnog" />
@@ -1401,6 +1404,7 @@
 			<Item Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
 			<Item Stack="10" Name="S.Bites" ID="classes.Items.Transformatives::SharkBites" />
 			<Item Stack="10" Name="S.Clear" ID="classes.Items.Transformatives::SkinClear" />
+			<Item Stack="10" Name="Shortcake" ID="classes.Items.Transformatives::StrawberryShortcake" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
 			<Item Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCreamWhite" />
