@@ -149,35 +149,40 @@
 			<SkinTone>amber</SkinTone>
 			<SkinTone>amethyst</SkinTone>
 			<SkinTone>aqua</SkinTone>
+			<SkinTone>aquamarine</SkinTone>
 			<SkinTone>azure</SkinTone>
-			<SkinTone>black</SkinTone>
 			<SkinTone>black and blue</SkinTone>
 			<SkinTone>black and gold</SkinTone>
 			<SkinTone>black and red</SkinTone>
 			<SkinTone>black and white</SkinTone>
 			<SkinTone>black and yellow</SkinTone>
 			<SkinTone>black, blue and yellow</SkinTone>
-			<SkinTone>blue</SkinTone>
+			<SkinTone>black</SkinTone>
 			<SkinTone>blue-gray</SkinTone>
+			<SkinTone>blue</SkinTone>
 			<SkinTone>brass</SkinTone>
 			<SkinTone>bright purple</SkinTone>
+			<SkinTone>bronze</SkinTone>
+			<SkinTone>brown</SkinTone>
 			<SkinTone>bubblegum-pink</SkinTone>
 			<SkinTone>candy red</SkinTone>
 			<SkinTone>caramel</SkinTone>
 			<SkinTone>cerulean</SkinTone>
-			<SkinTone>chestnut</SkinTone>
 			<SkinTone>cherry</SkinTone>
+			<SkinTone>chestnut</SkinTone>
 			<SkinTone>chocolate</SkinTone>
+			<SkinTone>citrine</SkinTone>
 			<SkinTone>cobalt</SkinTone>
 			<SkinTone>copper</SkinTone>
 			<SkinTone>crimson</SkinTone>
 			<SkinTone>cyan</SkinTone>
-			<SkinTone>dark</SkinTone>
 			<SkinTone>dark blue</SkinTone>
 			<SkinTone>dark green</SkinTone>
 			<SkinTone>dark red</SkinTone>
-			<SkinTone>dusky</SkinTone>
+			<SkinTone>dark</SkinTone>
+			<SkinTone>deep purple</SkinTone>
 			<SkinTone>dusky red</SkinTone>
+			<SkinTone>dusky</SkinTone>
 			<SkinTone>ebony</SkinTone>
 			<SkinTone>electric blue</SkinTone>
 			<SkinTone>emerald</SkinTone>
@@ -186,7 +191,48 @@
 			<SkinTone>fir green</SkinTone>
 			<SkinTone>foxfire</SkinTone>
 			<SkinTone>garnet</SkinTone>
+			<SkinTone>glittering amber</SkinTone>
+			<SkinTone>glittering amethyst</SkinTone>
+			<SkinTone>glittering aquamarine</SkinTone>
+			<SkinTone>glittering black</SkinTone>
+			<SkinTone>glittering blue</SkinTone>
+			<SkinTone>glittering brown</SkinTone>
+			<SkinTone>glittering cerulean</SkinTone>
+			<SkinTone>glittering citrine</SkinTone>
+			<SkinTone>glittering copper</SkinTone>
+			<SkinTone>glittering crimson</SkinTone>
+			<SkinTone>glittering emerald</SkinTone>
+			<SkinTone>glittering garnet</SkinTone>
+			<SkinTone>glittering gold</SkinTone>
+			<SkinTone>glittering green</SkinTone>
+			<SkinTone>glittering hazel</SkinTone>
+			<SkinTone>glittering indigo</SkinTone>
+			<SkinTone>glittering jade</SkinTone>
+			<SkinTone>glittering lapis</SkinTone>
+			<SkinTone>glittering lavender</SkinTone>
+			<SkinTone>glittering opal</SkinTone>
+			<SkinTone>glittering orange</SkinTone>
+			<SkinTone>glittering peach</SkinTone>
+			<SkinTone>glittering pearl</SkinTone>
+			<SkinTone>glittering peridot</SkinTone>
+			<SkinTone>glittering pink</SkinTone>
+			<SkinTone>glittering platinum</SkinTone>
 			<SkinTone>glittering purple</SkinTone>
+			<SkinTone>glittering red-orange</SkinTone>
+			<SkinTone>glittering red</SkinTone>
+			<SkinTone>glittering rose</SkinTone>
+			<SkinTone>glittering ruby</SkinTone>
+			<SkinTone>glittering sable</SkinTone>
+			<SkinTone>glittering sapphire</SkinTone>
+			<SkinTone>glittering silver</SkinTone>
+			<SkinTone>glittering teal</SkinTone>
+			<SkinTone>glittering topaz</SkinTone>
+			<SkinTone>glittering turquoise</SkinTone>
+			<SkinTone>glittering violet</SkinTone>
+			<SkinTone>glittering white</SkinTone>
+			<SkinTone>glittering yellow-green</SkinTone>
+			<SkinTone>glittering yellow-orange</SkinTone>
+			<SkinTone>glittering yellow</SkinTone>
 			<SkinTone>glossy blue</SkinTone>
 			<SkinTone>glowing amber</SkinTone>
 			<SkinTone>glowing blue</SkinTone>
@@ -205,23 +251,28 @@
 			<SkinTone>gray</SkinTone>
 			<SkinTone>grayish brown</SkinTone>
 			<SkinTone>green</SkinTone>
-			<SkinTone>indigo</SkinTone>
+			<SkinTone>gunmetal</SkinTone>
 			<SkinTone>hazel</SkinTone>
+			<SkinTone>hot white</SkinTone>
+			<SkinTone>indigo</SkinTone>
 			<SkinTone>iridescent</SkinTone>
+			<SkinTone>jade</SkinTone>
+			<SkinTone>lapis</SkinTone>
 			<SkinTone>lavender</SkinTone>
 			<SkinTone>leaf green</SkinTone>
-			<SkinTone>light</SkinTone>
 			<SkinTone>light blue</SkinTone>
 			<SkinTone>light gray</SkinTone>
 			<SkinTone>light purple</SkinTone>
 			<SkinTone>light red</SkinTone>
-			<SkinTone>lime</SkinTone>
+			<SkinTone>light</SkinTone>
 			<SkinTone>lime green</SkinTone>
+			<SkinTone>lime</SkinTone>
 			<SkinTone>luminescent lime green</SkinTone>
 			<SkinTone>luminous azure</SkinTone>
 			<SkinTone>luminous blue</SkinTone>
 			<SkinTone>luminous celeste</SkinTone>
 			<SkinTone>luminous cerulean</SkinTone>
+			<SkinTone>luminous cyan</SkinTone>
 			<SkinTone>luminous green</SkinTone>
 			<SkinTone>luminous orange</SkinTone>
 			<SkinTone>luminous pink</SkinTone>
@@ -233,39 +284,46 @@
 			<SkinTone>maroon</SkinTone>
 			<SkinTone>mottled brown</SkinTone>
 			<SkinTone>neon green</SkinTone>
+			<SkinTone>neon pink</SkinTone>
+			<SkinTone>null</SkinTone>
 			<SkinTone>olive</SkinTone>
 			<SkinTone>onyx</SkinTone>
 			<SkinTone>opal</SkinTone>
-			<SkinTone>orange</SkinTone>
 			<SkinTone>orange and green</SkinTone>
-			<SkinTone>pale</SkinTone>
+			<SkinTone>orange</SkinTone>
 			<SkinTone>pale blue</SkinTone>
-			<SkinTone>pale gray</SkinTone>
 			<SkinTone>pale gold</SkinTone>
+			<SkinTone>pale gray</SkinTone>
 			<SkinTone>pale green</SkinTone>
 			<SkinTone>pale orange</SkinTone>
 			<SkinTone>pale pink</SkinTone>
 			<SkinTone>pale purple</SkinTone>
 			<SkinTone>pale violet</SkinTone>
 			<SkinTone>pale white</SkinTone>
+			<SkinTone>pale yellow</SkinTone>
+			<SkinTone>pale</SkinTone>
 			<SkinTone>peach</SkinTone>
 			<SkinTone>pearl</SkinTone>
+			<SkinTone>peridot</SkinTone>
 			<SkinTone>pink</SkinTone>
 			<SkinTone>platinum</SkinTone>
-			<SkinTone>purple</SkinTone>
 			<SkinTone>purple and white</SkinTone>
-			<SkinTone>red</SkinTone>
+			<SkinTone>purple</SkinTone>
 			<SkinTone>red and blue</SkinTone>
 			<SkinTone>red-orange</SkinTone>
+			<SkinTone>red</SkinTone>
 			<SkinTone>rose</SkinTone>
 			<SkinTone>ruby</SkinTone>
 			<SkinTone>sable</SkinTone>
 			<SkinTone>sapphire</SkinTone>
 			<SkinTone>scarlet</SkinTone>
 			<SkinTone>silver</SkinTone>
+			<SkinTone>sky blue</SkinTone>
 			<SkinTone>sky-blue</SkinTone>
 			<SkinTone>slut red</SkinTone>
 			<SkinTone>steel gray</SkinTone>
+			<SkinTone>steel</SkinTone>
+			<SkinTone>tan</SkinTone>
 			<SkinTone>tanned</SkinTone>
 			<SkinTone>teal</SkinTone>
 			<SkinTone>topaz</SkinTone>
@@ -275,11 +333,11 @@
 			<SkinTone>vermillion-red</SkinTone>
 			<SkinTone>violet</SkinTone>
 			<SkinTone>viridescent</SkinTone>
-			<SkinTone>white</SkinTone>
 			<SkinTone>white-hot</SkinTone>
-			<SkinTone>yellow</SkinTone>
+			<SkinTone>white</SkinTone>
 			<SkinTone>yellow-green</SkinTone>
 			<SkinTone>yellow-orange</SkinTone>
+			<SkinTone>yellow</SkinTone>
 		</SkinTones>
 		<!-- ================================================================ -->
 		<HairTypes>
@@ -350,6 +408,7 @@
 			<HairColor>luminous blue</HairColor>
 			<HairColor>luminous celeste</HairColor>
 			<HairColor>luminous cerulean</HairColor>
+			<HairColor>luminous cyan</HairColor>
 			<HairColor>luminous green</HairColor>
 			<HairColor>luminous orange</HairColor>
 			<HairColor>luminous pink</HairColor>
@@ -497,6 +556,7 @@
 			<EyeColor>luminous blue</EyeColor>
 			<EyeColor>luminous celeste</EyeColor>
 			<EyeColor>luminous cerulean</EyeColor>
+			<EyeColor>luminous cyan</EyeColor>
 			<EyeColor>luminous green</EyeColor>
 			<EyeColor>luminous orange</EyeColor>
 			<EyeColor>luminous pink</EyeColor>
@@ -583,7 +643,7 @@
 			<EarType ID="58" Name="Sylvan" />
 			<EarType ID="65" Name="Gryvain" />
 			<EarType ID="72" Name="Swine" />
-			<EarType ID="73" Name="Laquine" />
+			<EarType ID="73" Name="Quad Lapine" />
 		</EarTypes>
 		<EarLengthEnables>
 			<EarLengthEnable>Raskvel</EarLengthEnable>
@@ -592,7 +652,7 @@
 			<EarLengthEnable>Sylvan</EarLengthEnable>
 			<EarLengthEnable>Gabilani</EarLengthEnable>
 			<EarLengthEnable>Lapine</EarLengthEnable>
-			<EarLengthEnable>Laquine</EarLengthEnable>
+			<EarLengthEnable>Quad Lapine</EarLengthEnable>
 		</EarLengthEnables>
 		<!-- ================================================================ -->
 		<TongueTypes>
@@ -887,6 +947,7 @@
 			<CumType ID="25" Name="Fruit Cum" />
 			<CumType ID="27" Name="Eggnog" />
 			<CumType ID="28" Name="Peppermint Cum" />
+			<CumType ID="29" Name="Sugar" />
 		</CumTypes>
 		<!-- ================================================================ -->
 		<GirlCumTypes>
@@ -900,6 +961,7 @@
 			<GirlCumType ID="21" Name="Nyrea Girl Cum" />
 			<GirlCumType ID="23" Name="Hradian Cum" />
 			<GirlCumType ID="26" Name="Fruit Girl Cum" />
+			<GirlCumType ID="29" Name="Sugar" />
 		</GirlCumTypes>
 		<!-- ================================================================ -->
 		<MilkTypes>
@@ -916,6 +978,7 @@
 			<MilkType ID="13" Name="Leithan Milk" />
 			<MilkType ID="16" Name="Vanilla" />
 			<MilkType ID="22" Name="Blueberry Yogurt" />
+			<MilkType ID="29" Name="Sugar" />
 		</MilkTypes>
 		<!-- ================================================================ -->
 		<CockTypes>
@@ -997,6 +1060,7 @@
 			<VaginaType ID="65" Name="Gryvain" />
 			<VaginaType ID="67" Name="Flower" />
 			<VaginaType ID="72" Name="Swine" />
+			<VaginaType ID="74" Name="Mouthgina" />
 		</VaginaTypes>
 		<!-- ================================================================ -->
 		<VaginaFlags>
@@ -1009,6 +1073,7 @@
 			<VaginaFlag ID="40" Name="Slightly Pumped" />
 			<VaginaFlag ID="41" Name="Fully Pumped" />
 			<VaginaFlag ID="44" Name="Corkscrewed" />
+			<VaginaFlag ID="45" Name="Tongued" />
 		</VaginaFlags>
 		<!-- ================================================================ -->
 		<NippleTypes>
@@ -1373,6 +1438,7 @@
 			<Item Stack="10" Name="Red GB" ID="classes.Items.Transformatives::GooBallRed" />
 			<Item Stack="10" Name="Yellow GB" ID="classes.Items.Transformatives::GooBallYellow" />
 			<Item Stack="10" Name="Gush" ID="classes.Items.Transformatives::Gush" />
+			<Item Stack="10" Name="Holstaria" ID="classes.Items.Transformatives::Holstaria" />
 			<Item Stack="10" Name="H-izer" ID="classes.Items.Transformatives::Honeyizer" />
 			<Item Stack="10" Name="Hornitol" ID="classes.Items.Transformatives::Hornitol" />
 			<Item Stack="10" Name="HuskarTreat" ID="classes.Items.Transformatives::HuskarTreats" />
@@ -1382,6 +1448,7 @@
 			<Item Stack="10" Name="Loftcake" ID="classes.Items.Transformatives::LemonLoftcake" />
 			<Item Stack="10" Name="LipTease" ID="classes.Items.Transformatives::LipTease" />
 			<Item Stack="10" Name="Lucifier" ID="classes.Items.Transformatives::Lucifier" />
+			<Item Stack="10" Name="Lupinol" ID="classes.Items.Transformatives::Lupinol" />
 			<Item Stack="10" Name="ManUp" ID="classes.Items.Transformatives::ManUp" />
 			<Item Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
 			<Item Stack="10" Name="M.Stick" ID="classes.Items.Transformatives::Muffstick" />
@@ -1394,6 +1461,7 @@
 			<Item Stack="10" Name="OvirAce" ID="classes.Items.Transformatives::OvirAce" />
 			<Item Stack="5"  Name="Ovir+" ID="classes.Items.Transformatives::OvirPositive" />
 			<Item Stack="10" Name="Peckermint" ID="classes.Items.Transformatives::Peckermint" />
+			<Item Stack="10" Name="Pickment." ID="classes.Items.Transformatives::Pickmentation" />
 			<Item Stack="10" Name="P. Pal" ID="classes.Items.Transformatives::PleasurePalette" />
 			<Item Stack="10" Name="PupperP" ID="classes.Items.Transformatives::PupperPoppers" />
 			<Item Stack="10" Name="RainbowG." ID="classes.Items.Transformatives::RainbowGaze" />
@@ -1409,6 +1477,7 @@
 			<Item Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCreamWhite" />
 			<Item Stack="10" Name="SwtSweat" ID="classes.Items.Transformatives::SweetSweat" />
+			<Item Stack="5"  Name="SwtTreat" ID="classes.Items.Transformatives::SweetTreat" />
 			<Item Stack="10" Name="Swineapple" ID="classes.Items.Transformatives::Swineapple" />
 			<Item Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
 			<Item Stack="10" Name="Deerium" ID="classes.Items.Transformatives::TauricoVenidae" />
@@ -1468,6 +1537,7 @@
 			<Item Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
 			<Item Stack="1" Name="Whip" ID="classes.Items.Melee::Whip" />
 			<Item Stack="1" Name="Y.Strap" ID="classes.Items.Melee::YappiStrap" />
+			<Item Stack="1" Name="Z.Spear" ID="classes.Items.Melee::ZilSpear" />
 		</ItemGroup>
 		<ItemGroup Name="Ranged Weapon">
 			<Item Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
@@ -1514,6 +1584,7 @@
 			<Item Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
 			<Item Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
+			<Item Stack="1" Name="ZilBow" ID="classes.Items.Guns::ZilBow" />
 			<Item Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
 		</ItemGroup>
 		<ItemGroup Name="Shield">
@@ -1553,6 +1624,7 @@
 			</Item>
 		</ItemGroup>
 		<ItemGroup Name="Other">
+			<Item Stack="20" Name="AmberIdol"   ID="classes.Items.Treasures::AmberIdol" />
 			<Item Stack="2"  Name="GemSack"     ID="classes.Items.Miscellaneous::GemSatchel" />
 			<Item Stack="20" Name="Kirkite"     ID="classes.Items.Miscellaneous::Kirkite" />
 			<Item Stack="10" Name="MilkBag"     ID="classes.Items.Miscellaneous::MilkBag" />
@@ -1602,6 +1674,7 @@
 			<KeyItem Name="Parasite Cure" Description="A vial containing a potential cure for the parasite afflicting the crew of the Kashima." />
 			<KeyItem Name="Parasite Sample" Description="A small security hardcase containing a medical sample." />
 			<KeyItem Name="Red Myr Blood" Description="A vial of blood sampled from a red myr." />
+			<KeyItem Name="RK Lah - Captured" />
 			<KeyItem Name="Sexbot GPS Triangulator" />
 			<KeyItem Name="Silver Key" />
 			<KeyItem Name="Unification Rally Invite: 18:00, Mushroom Park" />
@@ -1799,6 +1872,7 @@
 		<PerkGroup Name="Other Items">
 			<Perk Name="'Nuki Drunk" Description="Get drunk twice as slow and sober up four times slower." />
 			<Perk Name="'Nuki Nuts" Description="Permanent ability allowing your gonads to swell with excess seed." Label2="1 == Permanent" Value2="1" />
+			<Perk Name="Alpha Scent" Description="Your body produces pheromones that give you a distinctively commanding scent." />
 			<Perk Name="Androgyny" Description="Your face is always androgynous." />
 			<!--
 			<Perk Name="Androgyny" Description="Your animalistic visage maintain an androgynous appearance that would befit either gender." Value1="1" />
