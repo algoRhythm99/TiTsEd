@@ -132,6 +132,10 @@ namespace TiTsEd.ViewModel {
             get { return getFlagList(GetObj("vagooFlags"), XmlData.Current.Body.VaginaFlags); }
         }
 
+        public List<FlagItem> AssFlags {
+            get { return getFlagList(GetObj("vagooFlags"), XmlData.Current.Body.AssFlags); }
+        }
+
         public String Description {
             get {
                 string output = "a ";

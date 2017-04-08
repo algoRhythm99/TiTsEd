@@ -146,7 +146,7 @@
                 </common:AutoGrid>
 
                 <Expander Margin="60,0,0,0" Header="Ass Flags">
-                    <view:FlagBox ItemsSource="{Binding Game.Character.Ass.VaginaFlags}" />
+                    <view:FlagBox ItemsSource="{Binding Game.Character.Ass.AssFlags}" />
                 </Expander>
 
                 <Border Style="{StaticResource HeaderBorder}">

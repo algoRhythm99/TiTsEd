@@ -238,12 +238,14 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("DickNippleType")]
         public XmlEnum[] DickNippleTypes { get; set; }
 
-
         [XmlArray, XmlArrayItem("VaginaType")]
         public XmlEnum[] VaginaTypes { get; set; }
 
         [XmlArray, XmlArrayItem("VaginaFlag")]
         public XmlEnum[] VaginaFlags { get; set; }
+
+        [XmlArray, XmlArrayItem("AssFlag")]
+        public XmlEnum[] AssFlags { get; set; }
 
         [XmlArray, XmlArrayItem("CockType")]
         public XmlEnum[] CockTypes { get; set; }

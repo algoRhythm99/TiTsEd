@@ -1076,6 +1076,15 @@
 			<VaginaFlag ID="45" Name="Tongued" />
 		</VaginaFlags>
 		<!-- ================================================================ -->
+		<AssFlags>
+			<AssFlag ID="3" Name="Lubricated" />
+			<AssFlag ID="11" Name="Aphrodisiac" />
+			<AssFlag ID="30" Name="Nubby" />
+			<AssFlag ID="37" Name="Gooey" />
+			<AssFlag ID="40" Name="Slightly Pumped" />
+			<AssFlag ID="41" Name="Fully Pumped" />
+		</AssFlags>
+		<!-- ================================================================ -->
 		<NippleTypes>
 			<NippleType ID="0" Name="Normal" />
 			<NippleType ID="1" Name="Cunt" />
@@ -1879,6 +1888,7 @@
 			-->
 			<Perk Name="Black Latex" Description="Gives you delightful latex skin, but keeps you slightly more aroused at all times." />
 			<Perk Name="Breed Hungry" Description="Increases speed that semen is created at and the pregnancy speed." Value1="15" />
+			<Perk Name="Bubble Butt" Description="Your ass is always soft, regardless of tone." />
 			<Perk Name="Cybernetic Synchronization" Description="Cybernetic enhancements will give you an additional intelligence capacity boost." Value1="5" />
 			<Perk Name="Drug Fucked" Description="Grants: +40 to minimum libido, +10 to minimum lust, halved intelligence gains, and doubled libido gains" />
 			<Perk Name="Easy" Description="Gain 20% more lust from combat sources." Value1="20" />
