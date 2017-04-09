@@ -161,8 +161,11 @@
 			<SkinTone>blue-gray</SkinTone>
 			<SkinTone>blue</SkinTone>
 			<SkinTone>brass</SkinTone>
+			<SkinTone>bright pink</SkinTone>
 			<SkinTone>bright purple</SkinTone>
 			<SkinTone>bronze</SkinTone>
+			<SkinTone>bronzed</SkinTone>
+			<SkinTone>brown-pink</SkinTone>
 			<SkinTone>brown</SkinTone>
 			<SkinTone>bubblegum-pink</SkinTone>
 			<SkinTone>candy red</SkinTone>
@@ -177,10 +180,14 @@
 			<SkinTone>crimson</SkinTone>
 			<SkinTone>cyan</SkinTone>
 			<SkinTone>dark blue</SkinTone>
+			<SkinTone>dark brown</SkinTone>
+			<SkinTone>dark gray</SkinTone>
 			<SkinTone>dark green</SkinTone>
 			<SkinTone>dark red</SkinTone>
 			<SkinTone>dark</SkinTone>
+			<SkinTone>deep emerald</SkinTone>
 			<SkinTone>deep purple</SkinTone>
+			<SkinTone>dusky blue</SkinTone>
 			<SkinTone>dusky red</SkinTone>
 			<SkinTone>dusky</SkinTone>
 			<SkinTone>ebony</SkinTone>
@@ -189,6 +196,7 @@
 			<SkinTone>fair</SkinTone>
 			<SkinTone>fiery blue</SkinTone>
 			<SkinTone>fir green</SkinTone>
+			<SkinTone>flesh-toned</SkinTone>
 			<SkinTone>foxfire</SkinTone>
 			<SkinTone>garnet</SkinTone>
 			<SkinTone>glittering amber</SkinTone>
@@ -233,6 +241,7 @@
 			<SkinTone>glittering yellow-green</SkinTone>
 			<SkinTone>glittering yellow-orange</SkinTone>
 			<SkinTone>glittering yellow</SkinTone>
+			<SkinTone>glittery pink</SkinTone>
 			<SkinTone>glossy blue</SkinTone>
 			<SkinTone>glowing amber</SkinTone>
 			<SkinTone>glowing blue</SkinTone>
@@ -253,18 +262,23 @@
 			<SkinTone>green</SkinTone>
 			<SkinTone>gunmetal</SkinTone>
 			<SkinTone>hazel</SkinTone>
+			<SkinTone>honey</SkinTone>
+			<SkinTone>hot pink</SkinTone>
 			<SkinTone>hot white</SkinTone>
 			<SkinTone>indigo</SkinTone>
 			<SkinTone>iridescent</SkinTone>
+			<SkinTone>ivory</SkinTone>
 			<SkinTone>jade</SkinTone>
 			<SkinTone>lapis</SkinTone>
 			<SkinTone>lavender</SkinTone>
 			<SkinTone>leaf green</SkinTone>
 			<SkinTone>light blue</SkinTone>
 			<SkinTone>light gray</SkinTone>
+			<SkinTone>light pink</SkinTone>
 			<SkinTone>light purple</SkinTone>
 			<SkinTone>light red</SkinTone>
 			<SkinTone>light</SkinTone>
+			<SkinTone>lilac</SkinTone>
 			<SkinTone>lime green</SkinTone>
 			<SkinTone>lime</SkinTone>
 			<SkinTone>luminescent lime green</SkinTone>
@@ -280,9 +294,13 @@
 			<SkinTone>luminous silver</SkinTone>
 			<SkinTone>luminous violet</SkinTone>
 			<SkinTone>luminous yellow</SkinTone>
+			<SkinTone>magenta</SkinTone>
 			<SkinTone>mahogany</SkinTone>
 			<SkinTone>maroon</SkinTone>
+			<SkinTone>metal</SkinTone>
 			<SkinTone>mottled brown</SkinTone>
+			<SkinTone>navy blue</SkinTone>
+			<SkinTone>navy</SkinTone>
 			<SkinTone>neon green</SkinTone>
 			<SkinTone>neon pink</SkinTone>
 			<SkinTone>null</SkinTone>
@@ -298,6 +316,7 @@
 			<SkinTone>pale orange</SkinTone>
 			<SkinTone>pale pink</SkinTone>
 			<SkinTone>pale purple</SkinTone>
+			<SkinTone>pale red</SkinTone>
 			<SkinTone>pale violet</SkinTone>
 			<SkinTone>pale white</SkinTone>
 			<SkinTone>pale yellow</SkinTone>
@@ -312,6 +331,7 @@
 			<SkinTone>red and blue</SkinTone>
 			<SkinTone>red-orange</SkinTone>
 			<SkinTone>red</SkinTone>
+			<SkinTone>rich pink</SkinTone>
 			<SkinTone>rose</SkinTone>
 			<SkinTone>ruby</SkinTone>
 			<SkinTone>sable</SkinTone>
@@ -321,6 +341,7 @@
 			<SkinTone>sky blue</SkinTone>
 			<SkinTone>sky-blue</SkinTone>
 			<SkinTone>slut red</SkinTone>
+			<SkinTone>sparkly pink</SkinTone>
 			<SkinTone>steel gray</SkinTone>
 			<SkinTone>steel</SkinTone>
 			<SkinTone>tan</SkinTone>
@@ -352,20 +373,24 @@
 		<!-- ================================================================ -->
 		<HairColors>
 			<HairColor>amber</HairColor>
-			<HairColor>auburn</HairColor>
 			<HairColor>aquamarine</HairColor>
-			<HairColor>black</HairColor>
+			<HairColor>auburn</HairColor>
+			<HairColor>black and brown</HairColor>
 			<HairColor>black and pink</HairColor>
 			<HairColor>black and white</HairColor>
-			<HairColor>blood-hued crimson</HairColor>
+			<HairColor>black and yellow</HairColor>
+			<HairColor>black</HairColor>
 			<HairColor>blonde</HairColor>
-			<HairColor>blue</HairColor>
+			<HairColor>blood-hued crimson</HairColor>
 			<HairColor>blue-white</HairColor>
+			<HairColor>blue</HairColor>
 			<HairColor>brass</HairColor>
-			<HairColor>brown</HairColor>
 			<HairColor>brown and white</HairColor>
+			<HairColor>brown-dappled</HairColor>
+			<HairColor>brown</HairColor>
 			<HairColor>cerulean</HairColor>
 			<HairColor>chestnut</HairColor>
+			<HairColor>chocolate-brown</HairColor>
 			<HairColor>chocolate</HairColor>
 			<HairColor>clear</HairColor>
 			<HairColor>cobalt</HairColor>
@@ -375,8 +400,8 @@
 			<HairColor>dark brown</HairColor>
 			<HairColor>dark green</HairColor>
 			<HairColor>dirty blonde</HairColor>
-			<HairColor>emerald</HairColor>
 			<HairColor>electric blue</HairColor>
+			<HairColor>emerald</HairColor>
 			<HairColor>fiery blue</HairColor>
 			<HairColor>fiery orange</HairColor>
 			<HairColor>firey-red</HairColor>
@@ -397,8 +422,9 @@
 			<HairColor>gold</HairColor>
 			<HairColor>gray</HairColor>
 			<HairColor>green</HairColor>
-			<HairColor>ivory</HairColor>
+			<HairColor>hazel</HairColor>
 			<HairColor>iridescent</HairColor>
+			<HairColor>ivory</HairColor>
 			<HairColor>jet-black</HairColor>
 			<HairColor>jungle green</HairColor>
 			<HairColor>lavender</HairColor>
@@ -422,6 +448,7 @@
 			<HairColor>none</HairColor>
 			<HairColor>onyx</HairColor>
 			<HairColor>orange</HairColor>
+			<HairColor>orangey-gray</HairColor>
 			<HairColor>pale blue</HairColor>
 			<HairColor>pale green</HairColor>
 			<HairColor>peach</HairColor>
@@ -431,26 +458,31 @@
 			<HairColor>raven</HairColor>
 			<HairColor>red</HairColor>
 			<HairColor>reddish purple</HairColor>
-			<HairColor>rose</HairColor>
 			<HairColor>rose gold</HairColor>
+			<HairColor>rose</HairColor>
 			<HairColor>rusty red</HairColor>
 			<HairColor>sable</HairColor>
+			<HairColor>silver-blue</HairColor>
 			<HairColor>silver</HairColor>
 			<HairColor>silvery-blue</HairColor>
 			<HairColor>silvery-white</HairColor>
 			<HairColor>steel gray</HairColor>
 			<HairColor>straw</HairColor>
 			<HairColor>strawberry blonde</HairColor>
+			<HairColor>tan</HairColor>
+			<HairColor>tawny</HairColor>
 			<HairColor>teal</HairColor>
 			<HairColor>transparent</HairColor>
 			<HairColor>verdant</HairColor>
 			<HairColor>vibrant purple</HairColor>
 			<HairColor>violet</HairColor>
 			<HairColor>viridescent</HairColor>
+			<HairColor>white and black</HairColor>
+			<HairColor>white-dappled brown</HairColor>
 			<HairColor>white</HairColor>
-			<HairColor>yellow</HairColor>
 			<HairColor>yellow and black striped</HairColor>
 			<HairColor>yellow-green</HairColor>
+			<HairColor>yellow</HairColor>
 		</HairColors>
 		<!-- ================================================================ -->
 		<HairStyles>
@@ -573,8 +605,8 @@
 			<EyeColor>pink</EyeColor>
 			<EyeColor>platinum</EyeColor>
 			<EyeColor>purple</EyeColor>
-			<EyeColor>red</EyeColor>
 			<EyeColor>red-orange</EyeColor>
+			<EyeColor>red</EyeColor>
 			<EyeColor>rose</EyeColor>
 			<EyeColor>ruby</EyeColor>
 			<EyeColor>sable</EyeColor>
@@ -588,9 +620,9 @@
 			<EyeColor>violet</EyeColor>
 			<EyeColor>viridescent</EyeColor>
 			<EyeColor>white</EyeColor>
-			<EyeColor>yellow</EyeColor>
 			<EyeColor>yellow-green</EyeColor>
 			<EyeColor>yellow-orange</EyeColor>
+			<EyeColor>yellow</EyeColor>
 		</EyeColors>
 		<!-- ================================================================ -->
 		<EyeTypes>
