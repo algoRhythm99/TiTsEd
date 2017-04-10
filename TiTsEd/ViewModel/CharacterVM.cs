@@ -127,6 +127,7 @@ namespace TiTsEd.ViewModel {
         }
 
         #region GeneralPage
+
         public new string Name {
             get { return GetString("short"); }
             set {
@@ -143,21 +144,21 @@ namespace TiTsEd.ViewModel {
             set { SetValue("credits", value); }
         }
 
-        public int Physique {
-            get { return GetInt("physiqueRaw"); }
+        public double Physique {
+            get { return GetDouble("physiqueRaw"); }
             set { SetValue("physiqueRaw", value);
                 OnPropertyChanged("PhysiquePercent");
             }
         }
 
-        public int PhysiqueMod {
-            get { return GetInt("physiqueMod"); }
+        public double PhysiqueMod {
+            get { return GetDouble("physiqueMod"); }
             set { SetValue("physiqueMod", value);
                 OnPropertyChanged("PhysiquePercent");
             }
         }
 
-        public int EffectivePhysique {
+        public double EffectivePhysique {
             get { return Physique + PhysiqueMod; }
         }
 
@@ -165,21 +166,21 @@ namespace TiTsEd.ViewModel {
             get { return Math.Round((EffectivePhysique / MaxCoreStat) * 100); }
         }
 
-        public int Reflexes {
-            get { return GetInt("reflexesRaw"); }
+        public double Reflexes {
+            get { return GetDouble("reflexesRaw"); }
             set { SetValue("reflexesRaw", value);
                 OnPropertyChanged("ReflexesPercent");
             }
         }
 
-        public int ReflexesMod {
-            get { return GetInt("reflexesMod"); }
+        public double ReflexesMod {
+            get { return GetDouble("reflexesMod"); }
             set { SetValue("reflexesMod", value);
                 OnPropertyChanged("ReflexesPercent");
             }
         }
 
-        public int EffectiveReflexes {
+        public double EffectiveReflexes {
             get { return Reflexes + ReflexesMod; }
         }
 
@@ -187,21 +188,21 @@ namespace TiTsEd.ViewModel {
             get { return Math.Round((EffectiveReflexes / MaxCoreStat) * 100); }
         }
 
-        public int Aim {
-            get { return GetInt("aimRaw"); }
+        public double Aim {
+            get { return GetDouble("aimRaw"); }
             set { SetValue("aimRaw", value);
                 OnPropertyChanged("AimPercent");
             }
         }
 
-        public int AimMod {
-            get { return GetInt("aimMod"); }
+        public double AimMod {
+            get { return GetDouble("aimMod"); }
             set { SetValue("aimMod", value);
                 OnPropertyChanged("AimPercent");
             }
         }
 
-        public int EffectiveAim {
+        public double EffectiveAim {
             get { return Aim + AimMod; }
         }
 
@@ -209,21 +210,21 @@ namespace TiTsEd.ViewModel {
             get { return Math.Round((EffectiveAim / MaxCoreStat) * 100); }
         }
 
-        public int Intelligence {
-            get { return GetInt("intelligenceRaw"); }
+        public double Intelligence {
+            get { return GetDouble("intelligenceRaw"); }
             set { SetValue("intelligenceRaw", value);
                 OnPropertyChanged("IntelligencePercent");
             }
         }
 
-        public int IntelligenceMod {
-            get { return GetInt("intelligenceMod"); }
+        public double IntelligenceMod {
+            get { return GetDouble("intelligenceMod"); }
             set { SetValue("intelligenceMod", value);
                 OnPropertyChanged("IntelligencePercent");
             }
         }
 
-        public int EffectiveIntelligence {
+        public double EffectiveIntelligence {
             get { return Intelligence + IntelligenceMod; }
         }
 
@@ -231,21 +232,21 @@ namespace TiTsEd.ViewModel {
             get { return Math.Round((EffectiveIntelligence / MaxCoreStat) * 100); }
         }
 
-        public int Willpower {
-            get { return GetInt("willpowerRaw"); }
+        public double Willpower {
+            get { return GetDouble("willpowerRaw"); }
             set { SetValue("willpowerRaw", value);
                 OnPropertyChanged("WillpowerPercent");
             }
         }
 
-        public int WillpowerMod {
-            get { return GetInt("willpowerMod"); }
+        public double WillpowerMod {
+            get { return GetDouble("willpowerMod"); }
             set { SetValue("willpowerMod", value);
                 OnPropertyChanged("WillpowerPercent");
             }
         }
 
-        public int EffectiveWillpower {
+        public double EffectiveWillpower {
             get { return Willpower + WillpowerMod; }
         }
 
@@ -258,8 +259,8 @@ namespace TiTsEd.ViewModel {
             set { SetValue("libidoRaw", value); }
         }
 
-        public int LibidoMod {
-            get { return GetInt("libidoMod"); }
+        public double LibidoMod {
+            get { return GetDouble("libidoMod"); }
             set { SetValue("libidoMod", value); }
         }
 
@@ -396,8 +397,8 @@ namespace TiTsEd.ViewModel {
             set { SetValue("lustRaw", value); }
         }
 
-        public int LustMod {
-            get { return GetInt("lustMod"); }
+        public double LustMod {
+            get { return GetDouble("lustMod"); }
             set { SetValue("lustMod", value); }
         }
 
@@ -412,13 +413,13 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int Energy {
-            get { return GetInt("energyRaw"); }
+        public double Energy {
+            get { return GetDouble("energyRaw"); }
             set { SetValue("energyRaw", value); }
         }
 
-        public int EnergyMod {
-            get { return GetInt("energyMod"); }
+        public double EnergyMod {
+            get { return GetDouble("energyMod"); }
             set { SetValue("energyMod", value); }
         }
 
@@ -449,8 +450,8 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int Exhibitionism {
-            get { return GetInt("exhibitionismRaw"); }
+        public double Exhibitionism {
+            get { return GetDouble("exhibitionismRaw"); }
             set { SetValue("exhibitionismRaw", value); }
         }
 

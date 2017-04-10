@@ -643,6 +643,7 @@
 			<EyeType ID="55" Name="Nyrea" />
 			<EyeType ID="60" Name="Myr" />
 			<EyeType ID="65" Name="Gryvain" />
+			<EyeType ID="71" Name="Worg" />
 		</EyeTypes>
 		<!-- ================================================================ -->
 		<EarTypes>
@@ -665,6 +666,7 @@
 			<EarType ID="21" Name="Deer" />
 			<EarType ID="24" Name="Kui-tan" />
 			<EarType ID="26" Name="Mouse" />
+			<EarType ID="29" Name="Floppy Dog" />
 			<EarType ID="40" Name="Panda" />
 			<EarType ID="42" Name="Raskvel" />
 			<EarType ID="45" Name="Badger" />
@@ -672,6 +674,7 @@
 			<EarType ID="49" Name="Leithan" />
 			<EarType ID="52" Name="Simii" />
 			<EarType ID="53" Name="Daynar" />
+			<EarType ID="57" Name="Ovir" />
 			<EarType ID="58" Name="Sylvan" />
 			<EarType ID="65" Name="Gryvain" />
 			<EarType ID="72" Name="Swine" />
@@ -771,6 +774,7 @@
 			<ArmType ID="8" Name="Drider" />
 			<ArmType ID="9" Name="Lapine" />
 			<ArmType ID="10" Name="Avian" />
+			<ArmType ID="14" Name="Frog" />
 			<ArmType ID="15" Name="Demonic" />
 			<ArmType ID="19" Name="Shark" />
 			<ArmType ID="23" Name="Tentacle" />
@@ -1786,6 +1790,9 @@
 			<Perk Name="Potent" Description="Increases the size of your orgasms and the speed at which you produce ejaculate." Value1="1" />
 			<Perk Name="Virile" Description="Increases the quality of your sperm." Value1="1.15" Type1="Double" />
 		</PerkGroup>
+		<PerkGroup Name="Level 1 Mercenary">
+			<Perk Name="Headbutt" Description="A physique-based attack that does not factor in weapon damage but has a chance of stunning your target." Comment="**Deprecated**"  />
+		</PerkGroup>
 		<PerkGroup Name="Level 2 Mercenary">
 			<Perk Name="Critical Blows" Description="Your strikes and shots gain a 10% chance of inflicting double damage on normal melee and ranged attacks." />
 			<Perk Name="Bloodthirsty" Description="Melee attacks restore a few points of energy." />
@@ -1815,6 +1822,9 @@
 			<Perk Name="Iron Will" Description="Allows your physical fortitude to contribute slightly to your willpower, granting one point of willpower for every five points of physique." />
 			<Perk Name="Cleave" Description="Grants an extra, low-accuracy swing when fighting groups of enemies or 'plural' type foes." />
 			<Perk Name="Concentrate Fire" Description="Allows consecutive ranged attacks to gain a bonus to damage." />
+		</PerkGroup>
+		<PerkGroup Name="Level 1 Smuggler">
+			<Perk Name="Flash Grenade" Description="Produce a rechargeable flash grenade and use it to blind your enemy. Better aim will increase the chance of success." Comment="**Deprecated**" />
 		</PerkGroup>
 		<PerkGroup Name="Level 2 Smuggler">
 			<Perk Name="Lucky Breaks" Description="Grants you an additional 10% evasion chance." />
@@ -1847,6 +1857,9 @@
 			<Perk Name="Take Advantage" Description="Increase sneak attack and aimed shot base bonuses by 100%." />
 			<Perk Name="Smuggled Stimulant" Description="Allows you to gain 25 energy per round for 3 rounds, once per combat encounter." />
 			<Perk Name="Burst of Energy" Description="Allows you to recover 60 energy, once per combat encounter." />
+		</PerkGroup>
+		<PerkGroup Name="Level 1 Tech Specialist">
+			<Perk Name="Paralyzing Shock" Description="An attack that allows you to paralyze a single foe. Characters with higher intelligence will have greater success using this skill." Comment="**Deprecated**"  />
 		</PerkGroup>
 		<PerkGroup Name="Level 2 Tech Specialist">
 			<Perk Name="Shield Tweaks" Description="Grants your shield generator an additional 2 points of shield protection per level." />
@@ -1947,9 +1960,10 @@
 		</PerkGroup>
 		<PerkGroup Name="General">
 			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
-			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs." Label1="Cum Quantity" Value1="500000" />
-			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn" Label1="Attacks per turn" Value1="5" />
-			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn" Label1="Shots per turn" Value1="5" />
+			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="Cum Quantity" Value1="500000" />
+			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn. See Value1" Label1="Attacks per turn" Value1="5" />
+			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn. See Value1" Label1="Shots per turn" Value1="5" />
+			<Perk Name="No Cum Leakage" />
 			<Perk Name="Ranged Immune" Comment="Immune to ranged attacks" />
 		</PerkGroup>
 	</Perks>
@@ -3809,6 +3823,7 @@
 			<StatusEffect Name="Condensol-A" Description="Any and all phalli are reduced in size by 50%." IconName="Icon_Penis" MinutesLeft="240" IconShade="0" />
 			<StatusEffect Name="Condensol-B" Description="Any and all phalli are reduced in size by 75%." IconName="Icon_Penis" MinutesLeft="240" IconShade="0" />
 			<StatusEffect Name="Crystal Coated" Description="Defense is raised by 4 points thanks to a coating of rock-hard crystals!" Value1="2" IconName="Icon_DefUp" MinutesLeft="1200" />
+			<StatusEffect Name="Curdsonwhey" Description="You are currently under the effects of the Curdsonwhey lozenge." IconName="Pill" MinutesLeft="240" />
 			<StatusEffect Name="Dumbfuck" Description="You are currently under the effects of &quot;dumbfuck,&quot; an illegal drug known for making its users more and more sex-crazed with every orgasm over a 24 hour period. Intelligence loss is also common." IconName="Icon_DrugPill" MinutesLeft="1440" IconShade="0" />
 			<StatusEffect Name="Egg Addled 1" Description="Your lust increases slightly faster over time as a result of the shifting egg inside you." IconName="Icon_DrugPill" />
 			<StatusEffect Name="Egg Addled 2" Description="Your lust will increase over time to the maximum - leading to instant combat loss, should you blunder into a fight while distracted by your egg." IconName="Icon_DrugPill" />
@@ -3835,6 +3850,8 @@
 			<StatusEffect Name="The Mango" Description="You are irresistible!" IconName="Charmed" MinutesLeft="1440" IconShade="12030916" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
+			<StatusEffect Name="Bothrioc Eggs" Description="You have been impregnated by a bothrioc. A warm, dense glow suffuses you that is not at all unpleasant..." IconName="Charmed" />
+			<StatusEffect Name="Bra Transparency" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
@@ -3847,6 +3864,7 @@
 			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
 			<StatusEffect Name="Gel Body" IsHidden="true" />
 			<StatusEffect Name="Genital Slit" IsHidden="true" />
+			<StatusEffect Name="Goo Armor Design" Description="none" IsHidden="true" />
 			<StatusEffect Name="Goo Crotch" IsHidden="true" />
 			<StatusEffect Name="Goo Vent" IsHidden="true" />
 			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
@@ -3891,6 +3909,8 @@
 					v2 special variants&#xD;&#xA;
 					v3 hour counter&#xD;&#xA;
 					Special variants - girls with bigger horns (size 5)!" IconName="Icon_Cow" MinutesLeft="10080" IconShade="0" />
+			<StatusEffect Name="Tickled Pink" IsHidden="true" />
+			<StatusEffect Name="Treated Amazon" IsHidden="true" />
 			<StatusEffect Name="Treated" Comment="VARIABLE DEPENDING ON GENDER&#xD;&#xA;
 					0 - Girl Mode:&#xD;&#xA;
 						v1 - boob size result&#xD;&#xA;
@@ -3907,10 +3927,14 @@
 						v2 - horn size result&#xD;&#xA;
 						v3 - max cock size&#xD;&#xA;
 						v4 - futacock size (if any)" IsHidden="true" />
+			<StatusEffect Name="Unarmored" IsHidden="true" />
+			<StatusEffect Name="Uniball" IsHidden="true" />
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
 			<StatusEffect Name="Vanae Markings" Comment="Vanae skin markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;Value4 = on balls too" Value4="1" Label4="1 = Ball Markings" IsHidden="true" />
 			<StatusEffect Name="Varmint Buddy" Description="The pink wireless leash you hold will ensure that your varmint companion stays close by, joining alongside you in battle if necessary." IconName="Radio" IconShade="0" />
 			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+			<StatusEffect Name="Wing Position" IsHidden="true" />
+			<StatusEffect Name="Won Haley's Credits" MinutesLeft="43200" IsHidden="true" />
 			<StatusEffect Name="Worn Out" Description="You are worn out and and unable to regain energy. Working out is also impossible in this state. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Zil Sting" Description="Reduces speed and increases libido." Value1="4" IconName="Poison" MinutesLeft="65" IconShade="40" />
 		</StatusEffectGroup>
