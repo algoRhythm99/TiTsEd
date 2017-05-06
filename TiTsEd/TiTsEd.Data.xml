@@ -529,6 +529,7 @@
 			<FaceType ID="45" Name="Badger" />
 			<FaceType ID="71" Name="Worg" />
 			<FaceType ID="72" Name="Swine" />
+			<FaceType ID="76" Name="Sheep" />
 		</FaceTypes>
 		<!-- ================================================================ -->
 		<FaceFlags>
@@ -537,6 +538,7 @@
 			<FaceFlag ID="14" Name="Muzzled" />
 			<FaceFlag ID="15" Name="Angular" />
 			<FaceFlag ID="43" Name="Beak" />
+			<FaceFlag ID="46" Name="Freckled" />
 		</FaceFlags>
 		<!-- ================================================================ -->
 		<EyeColors>
@@ -644,6 +646,7 @@
 			<EyeType ID="60" Name="Myr" />
 			<EyeType ID="65" Name="Gryvain" />
 			<EyeType ID="71" Name="Worg" />
+			<EyeType ID="76" Name="Sheep" />
 		</EyeTypes>
 		<!-- ================================================================ -->
 		<EarTypes>
@@ -679,6 +682,7 @@
 			<EarType ID="65" Name="Gryvain" />
 			<EarType ID="72" Name="Swine" />
 			<EarType ID="73" Name="Quad Lapine" />
+			<EarType ID="76" Name="Sheep" />
 		</EarTypes>
 		<EarLengthEnables>
 			<EarLengthEnable>Raskvel</EarLengthEnable>
@@ -746,6 +750,7 @@
 			<HornType ID="62" Name="Rhino" />
 			<HornType ID="63" Name="Narwhal" />
 			<HornType ID="65" Name="Gryvain" />
+			<HornType ID="76" Name="Sheep" />
 		</HornTypes>
 		<!-- ================================================================ -->
 		<BeardStyles>
@@ -838,6 +843,7 @@
 			<LegType ID="60" Name="Myr" />
 			<LegType ID="65" Name="Gryvain" />
 			<LegType ID="72" Name="Swine" />
+			<LegType ID="76" Name="Sheep" />
 		</LegTypes>
 		<!-- ================================================================ -->
 		<LegFlags>
@@ -902,6 +908,7 @@
 			<TailType ID="23" Name="Tentacle" />
 			<TailType ID="24" Name="Kui-tan" />
 			<TailType ID="26" Name="Mouse" />
+			<TailType ID="29" Name="Floppy Dog" />
 			<TailType ID="33" Name="Cuntsnake" />
 			<TailType ID="40" Name="Panda" />
 			<TailType ID="42" Name="Raskvel" />
@@ -916,6 +923,7 @@
 			<TailType ID="60" Name="Myr" />
 			<TailType ID="65" Name="Gryvain" />
 			<TailType ID="72" Name="Swine" />
+			<TailType ID="76" Name="Sheep" />
 		</TailTypes>
 		<!-- ================================================================ -->
 		<TailFlags>
@@ -983,7 +991,7 @@
 			<CumType ID="25" Name="Fruit Cum" />
 			<CumType ID="27" Name="Eggnog" />
 			<CumType ID="28" Name="Peppermint Cum" />
-			<CumType ID="29" Name="Sugar" />
+			<CumType ID="29" Name="Sugar Glaze" />
 		</CumTypes>
 		<!-- ================================================================ -->
 		<GirlCumTypes>
@@ -997,7 +1005,7 @@
 			<GirlCumType ID="21" Name="Nyrea Girl Cum" />
 			<GirlCumType ID="23" Name="Hradian Cum" />
 			<GirlCumType ID="26" Name="Fruit Girl Cum" />
-			<GirlCumType ID="29" Name="Sugar" />
+			<GirlCumType ID="29" Name="Sugar Glaze" />
 		</GirlCumTypes>
 		<!-- ================================================================ -->
 		<MilkTypes>
@@ -1014,7 +1022,7 @@
 			<MilkType ID="13" Name="Leithan Milk" />
 			<MilkType ID="16" Name="Vanilla" />
 			<MilkType ID="22" Name="Blueberry Yogurt" />
-			<MilkType ID="29" Name="Sugar" />
+			<MilkType ID="29" Name="Sugar Glaze" />
 		</MilkTypes>
 		<!-- ================================================================ -->
 		<CockTypes>
@@ -1339,6 +1347,8 @@
 			<Item Stack="1" Name="C.String" ID="classes.Items.Apparel::CString" />
 			<Item Stack="1" Name="NetBriefs" ID="classes.Items.Apparel::FishnetBriefs" />
 			<Item Stack="1" Name="G.Panties" ID="classes.Items.Apparel::GirlyPanties" />
+			<Item Stack="1" Name="HL Jock" ID="classes.Items.Apparel::HardlightAGJock" />
+			<Item Stack="1" Name="HL Thong" ID="classes.Items.Apparel::HardlightAGThong" />
 			<Item Stack="1" Name="HorseBxs" ID="classes.Items.Apparel::HorseshoeBoxers" />
 			<Item Stack="1" Name="LilG.Brief" ID="classes.Items.Apparel::LittleGreenBriefs" />
 			<Item Stack="1" Name="LilG.Panty" ID="classes.Items.Apparel::LittleGreenPanties" />
@@ -1448,9 +1458,14 @@
 			<Item Stack="10" Name="ZilHoney" ID="classes.Items.Miscellaneous::ZilHoney" />
 			<Item Stack="10" Name="ZilRation" ID="classes.Items.Miscellaneous::ZilRation" />
 			<Item Stack="10" Name="P.Saliva" ID="classes.Items.Recovery::PexigaSaliva" />
+			<Item Stack="10" Name="Amazona"     ID="classes.Items.Transformatives::Amazona" />
+			<Item Stack="12" Name="AmzIT.Clas"  ID="classes.Items.Transformatives::AmazonaClassic" />
+			<Item Stack="12" Name="AmzIT.Lite"  ID="classes.Items.Transformatives::AmazonaLite" />
+			<Item Stack="12" Name="AmzIT.Plus"  ID="classes.Items.Transformatives::AmazonaPlus" />
 			<Item Stack="10" Name="AmberSeed" ID="classes.Items.Transformatives::AmberSeed" />
 			<Item Stack="5"  Name="BGreenPot" ID="classes.Items.Transformatives::BigGreenPotion" />
 			<Item Stack="10" Name="Bovinium" ID="classes.Items.Transformatives::Bovinium" />
+			<Item Stack="10" Name="B.Bliss" ID="classes.Items.Transformatives::BreedersBliss" />
 			<Item Stack="10" Name="BumpyRd." ID="classes.Items.Transformatives::BumpyRoad" />
 			<Item Stack="10" Name="CanineP" ID="classes.Items.Transformatives::CaninePoppers" />
 			<Item Stack="10" Name="Catnip" ID="classes.Items.Transformatives::Catnip" />
@@ -1472,6 +1487,7 @@
 			<Item Stack="1"  Name="Foxfire" ID="classes.Items.Transformatives::Foxfire" />
 			<Item Stack="1"  Name="Frostfire" ID="classes.Items.Transformatives::Frostfire" />
 			<Item Stack="10" Name="Furball" ID="classes.Items.Transformatives::Furball" />
+			<Item Stack="12" Name="Futazona"    ID="classes.Items.Transformatives::Futazona" />
 			<Item Stack="10" Name="GaloMax" ID="classes.Items.Transformatives::GaloMax" />
 			<Item Stack="10" Name="Goblinola" ID="classes.Items.Transformatives::Goblinola" />
 			<Item Stack="10" Name="Gold Pill" ID="classes.Items.Transformatives::GoldPill" />
@@ -1516,6 +1532,7 @@
 			<Item Stack="10" Name="JawBreakr" ID="classes.Items.Transformatives::SaltyJawBreaker" />
 			<Item Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
 			<Item Stack="10" Name="S.Bites" ID="classes.Items.Transformatives::SharkBites" />
+			<Item Stack="10" Name="New Ewe" ID="classes.Items.Transformatives::SheepTF" LongName="New Ewe" />
 			<Item Stack="10" Name="S.Clear" ID="classes.Items.Transformatives::SkinClear" />
 			<Item Stack="10" Name="Shortcake" ID="classes.Items.Transformatives::StrawberryShortcake" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
@@ -1540,6 +1557,15 @@
 			<Item Stack="1"  Name="Hoverboard"  ID="classes.Items.Miscellaneous::Hoverboard" />
 			<Item Stack="1"  Name="M.Milker"    ID="classes.Items.Miscellaneous::MagicMilker" />
 			<Item Stack="10" Name="T.Pack"      ID="classes.Items.Miscellaneous::ThermalPack" />
+		</ItemGroup>
+		<ItemGroup Name="Stories">
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BecomingOneOfTheGirls"    LongName="code for “Becoming One...”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BXBIOne" LongName="code for “BXBI Chapter 1”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BXBITwo" LongName="code for “BXBI Chapter 2”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::CapturedByTheDemons"    LongName="code for “Captured...”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::EightClicks" LongName="code for “||||||||”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::FuckTheSystem"   LongName="code for “Fuck The System”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::SatyrSlave"  LongName="code for “Satyr Slave”" />
 		</ItemGroup>
 		<ItemGroup Name="Toys">
 			<Item Stack="1" Name="B.Buddy"  ID="classes.Items.Toys::BubbleBuddy" />
@@ -1630,6 +1656,7 @@
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
 			<Item Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
 			<Item Stack="1" Name="ZilBow" ID="classes.Items.Guns::ZilBow" />
+			<Item Stack="1" Name="Z.L.Rifle" ID="classes.Items.Guns::ZhouLingRifle" />
 			<Item Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
 		</ItemGroup>
 		<ItemGroup Name="Shield">
@@ -1731,6 +1758,7 @@
 			<KeyItem Name="Coupon - Estrobloom" Description="Save 10% on your next purchase of Estrobloom!" Label1="Discount Multiplier" Value1="0.9" Type1="Double" />
 			<KeyItem Name="Coupon - Lucifier" Description="Save 75% on your next purchase of Lucifier!"  Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
 			<KeyItem Name="Coupon - Semens F." Description="Save 75% on your next purchase of Semen’s Friend!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
+			<KeyItem Name="Coupon - Shear Beauty" Description="Save 50% on your next purchase or service at Shear Beauty!" Label1="Discount Multiplier" Value1="0.5" Type1="Double" />
 			<KeyItem Name="Coupon - TamaniCorp" Description="Save 10% on your next purchase from your local TamaniCorp retailer!" Label1="Discount Multiplier" Value1="0.9" Type1="Double" />
 		</KeyItemGroup>
 		<KeyItemGroup Name="Panties">
@@ -1751,6 +1779,8 @@
 			<KeyItem Name="Acquisitions Starter Kit" Description="A collar-and-remote bundle from Sentient Acquisitions." />
 			<KeyItem Name="Ausar Collar - A custom collar for Erra." />
 			<KeyItem Name="Jerynn’s Collar" Description="A thick leather band, designed to cinch tightly yet comfortably around your neck." Value1="1" />
+			<KeyItem Name="Sera’s Collar" />
+			<KeyItem Name="Sub-Tuner Collar" />
 		</KeyItemGroup>
 		<KeyItemGroup Name="Miscellaneous">
 			<KeyItem Name="Arbetz Travel Agency Membership" />
@@ -1781,7 +1811,7 @@
 			<Perk Name="Bulgy" Description="Increase the size of any gonads and the speed at which they are enhanced." />
 			<Perk Name="Elasticity" Description="Increases the elasticity of your orifices and renders them more resistant to stretching." />
 			<Perk Name="Extra Ardor" Description="Increases lust gain over time." />
-			<Perk Name="Fertility" Description="Increases your odds of getting pregnant." />
+			<Perk Name="Fertility" Description="Increases your odds of getting pregnant." Value1="1.15" Type1="Double" />
 			<Perk Name="Hung" Description="Increases the size of your penis and how fast it grows." />
 			<Perk Name="Ice Cold" Description="Slows lust gain over time." />
 			<Perk Name="Incubator" Description="Increases the speed at which your pregnancies progress." Value1="1" />
@@ -1897,6 +1927,7 @@
 			<Perk Name="Second Shot" Description="Allows you to make a second, low-accuracy attack whenever you shoot a ranged weapon." />
 		</PerkGroup>
 		<PerkGroup Name="Events">
+			<Perk Name="Barcoded" Description="A sleek black barcode is printed on your ass, left there by Dr. Belle for purely scientific purposes." />
 			<Perk Name="Buttslut" Description="Ensures your ass always remains bubbly and that fluids shot inside will heal your injuries." />
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
@@ -1937,15 +1968,17 @@
 			<Perk Name="Cybernetic Synchronization" Description="Cybernetic enhancements will give you an additional intelligence capacity boost." Value1="5" />
 			<Perk Name="Drug Fucked" Description="Grants: +40 to minimum libido, +10 to minimum lust, halved intelligence gains, and doubled libido gains" />
 			<Perk Name="Easy" Description="Gain 20% more lust from combat sources." Value1="20" />
+			<Perk Name="Energizing Libido" Description="Your insatiable libido energizes your body during sex, giving you more energy through sheer adrenaline." />
 			<Perk Name="Fecund Figure" Description="Your broodmare body permanently changes you more into a fertility goddess while you are pregnant." Value1="1" Value2="1" />
 			<Perk Name="Firing Blanks" Description="There’s no way you could get anyone or anything pregnant." />
-			<Perk Name="Flexibility" Description="You can bend and stretch more than most other creatures." />
+			<Perk Name="Flexibility" Description="You can bend and stretch more easily than normal." />
 			<Perk Name="Flower Power" Description="Everything about being a pollen-producing flower nymph is deeply arousing. It has its upsides, though: the effect you have on most foes, for instance." Label1="Number of flowers active" Value1="4" Label2="Min Lust increase" Value2="20" Label3="Min Libido increase" Value3="45" />
 			<Perk Name="Hollow Bones" Description="Your body weighs less than it should." Value1="10" />
 			<Perk Name="Honeypot" Description="Allows your body to convert excess thickness into delicious, boob-filling goodness." />
 			<Perk Name="Hypermilky" Description="Lactation will not decrease from disuse or overfilling." />
 			<Perk Name="Icy Veins" Description="Your body has adapted to the extreme winter cold." Value1="1" />
 			<Perk Name="Infertile" Description="You are unable to reproduce offspring naturally." />
+			<Perk Name="Jungle Queen Scent" Description="You smell like a mighty queen of the jungle. Boosts tease attacks." />
 			<Perk Name="Mane" Description="Your hair grows out much like an equine's mane." />
 			<Perk Name="Mega Milk" Description="Allows you to instantly produce a good amount of milk, even when empty." />
 			<Perk Name="Myr Venom" Description="Grants a love-bite tease ability that deals a little lust damage to your opponent." />
@@ -1954,9 +1987,11 @@
 			<Perk Name="Pheromone Sweat" Description="Slightly boosts tease attack and arousal while sweating" />
 			<Perk Name="Regal Mane" Description="You have an impressive mane bordering your neck." Label1="0 = No Collar&#xD;&#xA;20 = Fur Collar" Value1="20" />
 			<Perk Name="Resin" Description="Your heavy bark skin slows you all the way down, but provides plenty of protection. It also produces resin. Some flighty, energetic, needy species might find it difficult to resist wanting to plaster themselves all over you..." Label1="Max Reflexes multiplier" Value1="0.40" Type1="Double" />
+			<Perk Name="Snu-Snu Queen" Description="Your insatiable libido energizes your body during sex, giving you more energy through sheer adrenaline." Comment="Silly-mode version of Energizing Libido" />
 			<Perk Name="Sterile" Description="There’s no way anyone or anything could get you pregnant." />
 			<Perk Name="Venom Slut" Description="You're a total venom slut, raising your maximum lust while on red myr venom." />
 			<Perk Name="Weak Willed" Description="Willpower losses are doubled." />
+			<Perk Name="Wooly" Description="Your body naturally grows a thick layer of wool." />
 		</PerkGroup>
 		<PerkGroup Name="General">
 			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
@@ -3908,7 +3943,10 @@
 			<StatusEffect Name="Lane's Hypnosis - Willpower" Description="Lane's hypnosis session has improved your willpower!" Value1="5" IconName="Icon_DrugPill" MinutesLeft="1440" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Item-effects">
+			<StatusEffect Name="Amazona Disabled" IsHidden="true" />
+			<StatusEffect Name="Amazona Uses" IsHidden="true" />
 			<StatusEffect Name="Anal Lubricant" Description="Thanks to some YTR Lube, your anus is particularly slippery! ...at least for a while." IconName="Icon_Splatter" MinutesLeft="4320" />
+			<StatusEffect Name="Aphrodisiac Milk" Description="This milk is keeping your body more aroused than normal. You’ll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Blue Balls" Description="Take 25% more lust damage in combat!" IconName="Icon_Sperm_Hearts" IconShade="0" />
 			<StatusEffect Name="Boobswell Pads" Description="The applied boobswell pads are slowly but steadily working to fill out your chest. You can remove them at any point via the &quot;Remove Swell&quot; command in the &quot;Masturbation&quot; menu, but the pads will still be consumed. They're one use only." IconName="LustUp" MinutesLeft="4320" />
 			<StatusEffect Name="Cerespirin" Description="Your have injected yourself with an experimental drug..." Value2="1" IconName="Icon_DrugVial" MinutesLeft="1440" />
@@ -3925,6 +3963,7 @@
 			<StatusEffect Name="Focus Pill" Description="You feel sharper, more able to focus and process your senses." IconName="Icon_DrugPill" IconShade="0" />
 			<StatusEffect Name="Gabilani Prophylactic" Description="The spray currently effecting you will reduce encounters with gabilani." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Goblinola Bar" Description="Your stomach is a little unsettled by the health bar you ate..." Value1="60" Value2="1" IconName="Icon_Poison" MinutesLeft="60" />
+			<StatusEffect Name="Heat" Description="Your body is begging for impregnation, increasing your libido and fertility but also your ability to tease.&#xD;&#xA;&#xD;&#xA;+500% Fertility&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+10 Libido&#xD;&#xA;+3 Tease Damage" Value1="5" Value2="25" Value3="10" Value4="3" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
 			<StatusEffect Name="Horse Pill" Description="You are under the effects of at least one horse pill. Flashes of heat and tingly sensations randomly run across your body as you're slowly transformed into a more equine shape." Value1="720" Value2="1" IconName="Icon_Horse" MinutesLeft="720" IconShade="7200" />
 			<StatusEffect Name="Lapinara Prophylactic" Description="The spray currently effecting you will reduce encounters with lapinara." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Leitha Charm" Description="Your leitha charm necklace hangs from your neck, infusing your body with targeted transformative nanomachines." Value1="-360" IconName="Icon_DrugPill" />
@@ -3936,6 +3975,7 @@
 			<StatusEffect Name="Red Myr Venom" Description="The red myr venom coursing through your veins is keeping your cheeks flushed with growing arousal. The longer it lasts, the more your mind gives over to its primal desires..." IconName="Icon_LustUp" MinutesLeft="720" IconShade="0" />
 			<StatusEffect Name="Royal Nectar" Description="Irellia's nectar has you feeling far peppier than normal." Value1="40" IconName="Charmed" MinutesLeft="2880" />
 			<StatusEffect Name="Royal Nectar" Description="That honey wine packs a punch! You're feeling a lot peppier now." Value1="30" IconName="Icon_Wine" MinutesLeft="2880" IconShade="300" />
+			<StatusEffect Name="Rut" Description="Your body is driven for aggressive breeding, increasing your libido and virility, as well as boosting your minimum cum output.&#xD;&#xA;&#xD;&#xA;+5 Libido&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+1000mLs Minimum Cum&#xD;&#xA;+400% Virility" Value1="5" Value2="25" Value3="1000" Value4="4" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
 			<StatusEffect Name="Semen's Candy" Description="The Semen’s Friend candy is still in your system." Value1="1440" Value2="1" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Sweet Tooth" Description="Sucking seductively on a lollipop." IconName="Icon_Lollipop" MinutesLeft="720" />
 			<StatusEffect Name="Sydian Prophylactic" Description="The spray currently effecting you will reduce encounters with sydians." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
@@ -3946,6 +3986,7 @@
 			<StatusEffect Name="Bothrioc Eggs" Description="You have been impregnated by a bothrioc. A warm, dense glow suffuses you that is not at all unpleasant..." IconName="Charmed" />
 			<StatusEffect Name="Bra Transparency" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
+			<StatusEffect Name="Cum Paused" IsHidden="true" />
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
 			<StatusEffect Name="Disarm Immune" IsHidden="true" />
@@ -3955,21 +3996,28 @@
 			<StatusEffect Name="Force Fem Gender" Comment="Forces feminine descriptions" IsHidden="true" />
 			<StatusEffect Name="Force It Gender" Comment="Forces neuter/androgynous descriptions" IsHidden="true" />
 			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
+			<StatusEffect Name="frizzy hair" IsHidden="true" />
 			<StatusEffect Name="Gel Body" IsHidden="true" />
 			<StatusEffect Name="Genital Slit" IsHidden="true" />
 			<StatusEffect Name="Goo Armor Design" Description="none" IsHidden="true" />
 			<StatusEffect Name="Goo Crotch" IsHidden="true" />
 			<StatusEffect Name="Goo Vent" IsHidden="true" />
 			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
+			<StatusEffect Name="Hair Regoo" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
+			<StatusEffect Name="HL Thong" IsHidden="true" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
 			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
 			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
+			<StatusEffect Name="Jock Sexiness" IsHidden="true" />
 			<StatusEffect Name="Latex Hair" IsHidden="true" />
 			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
+			<StatusEffect Name="Liamme Disabled" IsHidden="true" />
+			<StatusEffect Name="LIAMME_OUTFIT" IsHidden="true" Value1="1" Label1="Liamme's outfit" />
 			<StatusEffect Name="Lightning Moves" Description="Your recent fencing lessons give you an edge during fights." IconName="OffenseUp" MinutesLeft="4320" />
 			<StatusEffect Name="Ludicrously Endowed" Description="The shifting masses of your over-sized endowments cause you to gain fifty percent more lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
+			<StatusEffect Name="Milk Paused" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" IsHidden="true" />
@@ -4027,6 +4075,7 @@
 			<StatusEffect Name="Varmint Buddy" Description="The pink wireless leash you hold will ensure that your varmint companion stays close by, joining alongside you in battle if necessary." IconName="Radio" IconShade="0" />
 			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Wing Position" IsHidden="true" />
+			<StatusEffect Name="Wool Removal" IsHidden="true" />
 			<StatusEffect Name="Won Haley's Credits" MinutesLeft="43200" IsHidden="true" />
 			<StatusEffect Name="Worn Out" Description="You are worn out and and unable to regain energy. Working out is also impossible in this state. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Zil Sting" Description="Reduces speed and increases libido." Value1="4" IconName="Poison" MinutesLeft="65" IconShade="40" />
