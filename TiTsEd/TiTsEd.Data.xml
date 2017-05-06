@@ -1975,6 +1975,7 @@
 		<Flag Name="ABLE_LICKNFUCKED" />
 		<Flag Name="ABLE_TALKED" />
 		<Flag Name="ACCEPTED_JULIANS_ZIL_CAPTURE_MISSION" />
+		<Flag Name="ACCUPITCH_VISIT" />
 		<Flag Name="ACQUISITIONS_SLAVE_PURCHASES" />
 		<Flag Name="AINA_DAY_MET" />
 		<Flag Name="AINA_LAST_DAY_MET" />
@@ -1989,6 +1990,7 @@
 		<Flag Name="AINA_WAND_FIXED" />
 		<Flag Name="ALISS_FIXED_HL" />
 		<Flag Name="ALISS_FIXED_HL_COUNT" />
+		<Flag Name="AMAZONA_DRINKS" />
 		<Flag Name="AMBER_SEED_USED" />
 		<Flag Name="ANALED_YAMMI" />
 		<Flag Name="ANARRIE_AMBUSH" />
@@ -2067,6 +2069,7 @@
 		<Flag Name="AURORA_SEEN_AFTER_SPLOSION" />
 		<Flag Name="BADGER_QUEST" Description="Undefined == Quest not started&#xD;&#xA;-2 == Turn the tables on Dr. Badger, zapping her with your reprogrammed raygun and turning her into a bimbo instead of Penny.&#xD;&#xA;-3 == Bimbo Badger&#xD;&#xA;1 == You've already accepted her “job offer.” Go find Penny!&#xD;&#xA;2 == You did what you were asked, time to get rewarded!&#xD;&#xA;3 == You already did her job." />
 		<Flag Name="BADGER_QUEST_TIMER" />
+		<Flag Name="BB_5FINGER_DISCOUNT" />
 		<Flag Name="BEATRICE_FAMILY_TALKED" />
 		<Flag Name="BEATRICE_HERSELF_TALKED" />
 		<Flag Name="BEATRICE_SHIP_TALKED" />
@@ -2190,6 +2193,10 @@
 		<Flag Name="BOTHRIOC_PIDEMME_DOCKED" />
 		<Flag Name="BOTHRIOC_PIDEMME_ENCOUNTERED" />
 		<Flag Name="BOTHRIOC_PIDEMME_FUCKED" />
+		<Flag Name="BRANDY_MISCREANTED" />
+		<Flag Name="BRANDY_MISSIONARY" />
+		<Flag Name="BRANDY_MODS" />
+		<Flag Name="BRANDY_STALLED" />
 		<Flag Name="BRIGET_FUCKED" />
 		<Flag Name="BRIGET_MET" />
 		<Flag Name="BRIHA_HARDLIGHT_STUFFED" />
@@ -2200,6 +2207,8 @@
 		<Flag Name="BRIHA_SECOND_OLDEST_SPAWN_AGE" />
 		<Flag Name="BRIHA_SPAWN_1_DEETS" />
 		<Flag Name="BRIHA_SPAWN_2_DEETS" />
+		<Flag Name="BRONCO_USED" />
+		<Flag Name="BrynnsStall" />
 		<Flag Name="BRYNN_AUTOENTER" />
 		<Flag Name="BRYNN_INTRODUCED" />
 		<Flag Name="BRYNN_MET_TODAY" />
@@ -2253,6 +2262,7 @@
 		<Flag Name="CELISE_EVER_SENT_AWAY" />
 		<Flag Name="CELISE_GIGAED" />
 		<Flag Name="CELISE_LARGE_BUBBED" />
+		<Flag Name="CELISE_NO_BED_SENPAI" />
 		<Flag Name="CELISE_ONBOARD" />
 		<Flag Name="CELISE_ROOMBA_GOO" />
 		<Flag Name="CERIA_BOUGHT" />
@@ -2272,6 +2282,8 @@
 		<Flag Name="CLEARED_YU" />
 		<Flag Name="COCKBOX_UPGRADE" />
 		<Flag Name="COCKVINE_SEEDLING_CAPTURED" />
+		<Flag Name="COCK_PAINTED_DESIGN" />
+		<Flag Name="COCK_PAINTED_EXHIB_EVENT" />
 		<Flag Name="CODEX_SPAM_BLOCKER" />
 		<Flag Name="CODEX_UVETO_TRACKER" />
 		<Flag Name="COLENSO_SCRAP_DISABLED" />
@@ -2295,6 +2307,7 @@
 		<Flag Name="CUNT_SNAKE_EGGS_FAXED_HOME" />
 		<Flag Name="CUNT_TAIL_PREGNANT_TIMER" />
 		<Flag Name="CURED_REAHA_NT_TALK" />
+		<Flag Name="CYNTHIA_SEXED" />
 		<Flag Name="C_REAHA_MODS_TALK_DISABLE" />
 		<Flag Name="C_REAHA_PAST_TALK" />
 		<Flag Name="DALLY_FAVORS" />
@@ -2572,6 +2585,14 @@
 		<Flag Name="GIANNA_TEMP" />
 		<Flag Name="GIANNA_TITFUCKS" />
 		<Flag Name="GIGACELISE" />
+		<Flag Name="GIL_BONUS_TALK" />
+		<Flag Name="GIL_DOSES" />
+		<Flag Name="GIL_HL" />
+		<Flag Name="GIL_HL_DEVIRGINED" />
+		<Flag Name="GIL_LOWER_BODY_REVEAL" />
+		<Flag Name="GIL_PUSS_FUCKED" />
+		<Flag Name="GIL_SEEN_BIGCLIT" />
+		<Flag Name="GIL_UPPER_BODY_REVEAL" />
 		<Flag Name="GIVEN_GIANNA_SILICONE" />
 		<Flag Name="GLORYHOLED_KAEDE" />
 		<Flag Name="GLORYHOLE_MOUNTER" />
@@ -2617,6 +2638,7 @@
 		<Flag Name="HAND_SO_LISTENED_TO" />
 		<Flag Name="HAND_SO_LOOTED" />
 		<Flag Name="HAND_SO_TALKED_DOWN" />
+		<Flag Name="HARDLIGHT_AG_THONG_VIBE" />
 		<Flag Name="HARDLIGHT_ANT_PROC" />
 		<Flag Name="HAS_BEEN_MYR_VENOMED" />
 		<Flag Name="HAS_HAD_LANE_HYPNOSIS" />
@@ -2669,6 +2691,7 @@
 		<Flag Name="IRELLIA_TITTYSNACK_OFFER" />
 		<Flag Name="JADE_MUFFLINGS" />
 		<Flag Name="JADE_NIPPLE_TF_QUEUED" />
+		<Flag Name="JAMES_SELF_TALK" />
 		<Flag Name="JEROME_APPROACHED" />
 		<Flag Name="JERYNN_APPROACHED" />
 		<Flag Name="JERYNN_FUCKED" />
@@ -2700,6 +2723,7 @@
 		<Flag Name="KALLY_BROED" />
 		<Flag Name="KALLY_FAP_2_KIRO" Description="Number of times you've seen Kally fap to Kiro" />
 		<Flag Name="KALLY_KISSED_KIRO" Description="1 == Kally kissed Kiro" />
+		<Flag Name="KANE_DEFEATED" />
 		<Flag Name="KARA_DEFEATED_WITH_SHADE" />
 		<Flag Name="KARA_PAID_YOU" />
 		<Flag Name="KASHIMA_BRIDGE" />
@@ -2748,6 +2772,7 @@
 		<Flag Name="KIRO_ORGIED" Description="Number of times you've gone to the orgy with Kiro" />
 		<Flag Name="KIRO_ORGY_DATE" Description="Last day number that you went to the orgy with Kiro" />
 		<Flag Name="KIRO_OTHER_SIBLINGS" />
+		<Flag Name="KIRO_PHONE_EVENT" />
 		<Flag Name="KIRO_ROUGH_BUTTFUCK" Description="Number of times Kiro has owned your ass" />
 		<Flag Name="KIRO_TRUST" Description="How much Kiro trusts you" />
 		<Flag Name="KIRO_X_SAEN_HAPPENED" Description="1 == You've had a threesome with Kiro and Saendra" />
@@ -2858,6 +2883,10 @@
 		<Flag Name="LANE_SELF_TALK" />
 		<Flag Name="LANE_SHOWN_SERVICES" />
 		<Flag Name="LANE_TIMES_HYPNOTISED" />
+		<Flag Name="LAQUINE_EAR_USES" />
+		<Flag Name="LAQUINE_GENT_BONED" />
+		<Flag Name="LAQUINE_LASS_BUNSCORED" />
+		<Flag Name="LAQUINE_LASS_TRYSTS" />
 		<Flag Name="LASH_BOMB" />
 		<Flag Name="LAST_ANT_ORGY" />
 		<Flag Name="LAST_FAP" />
@@ -2880,6 +2909,9 @@
 		<Flag Name="LET_SHADE_AND_KARA_DUKE_IT_OUT" />
 		<Flag Name="LEVEL_UP_AVAILABLE" />
 		<Flag Name="LEVEL_UP_POINTS" />
+		<Flag Name="LIAMME_TALK_MODS" />
+		<Flag Name="LIAMME_TALK_SELF" />
+		<Flag Name="LIAMME_TALK_TAVROS" />
 		<Flag Name="LIEVE_BLOOD_SAMPLE" />
 		<Flag Name="LIEVE_DATEPOINTS" />
 		<Flag Name="LIEVE_HAREM_DICKFUCK" />
@@ -2905,6 +2937,7 @@
 		<Flag Name="LIRIEL_TALK_STAND" />
 		<Flag Name="LIRIEL_TALK_YOURSELF" />
 		<Flag Name="LIRIEL_TITFUCKED" />
+		<Flag Name="LIVING_KEGGED" />
 		<Flag Name="LOOTED_COCKBOX" />
 		<Flag Name="LOOTED_MYR_RIFLE" />
 		<Flag Name="LOOTED_TAIVRAS_BEDROOM" />
@@ -2917,6 +2950,7 @@
 		<Flag Name="LYRALLA_JOB_TALK" />
 		<Flag Name="LYRALLA_WHAT_HAPPENED_TALK" />
 		<Flag Name="LYS_PANTY_OFFER" />
+		<Flag Name="MABBS_PURCHASES" />
 		<Flag Name="MADE_RENVRA_BEG" />
 		<Flag Name="MANOR_ADMINROOM_ENTERED" />
 		<Flag Name="MANOR_WARROOM_ENTERED" />
@@ -2942,11 +2976,13 @@
 		<Flag Name="MET_AURIN" Description="1 == You've met Aurin, moderate Myr male" />
 		<Flag Name="MET_AURORA" Description="1 == You've met Aurora" />
 		<Flag Name="MET_BEA_HUBBY" Description="1 == You've met Bea's husband" />
+		<Flag Name="MET_BELLE" />
 		<Flag Name="MET_BIG_T" Description="1 == You've met Big T" />
+		<Flag Name="MET_BRANDY" />
 		<Flag Name="MET_BRILLIG" Description="1 == You've met Brillig" />
 		<Flag Name="MET_BURT" Description="1 == You've met Burt" />
-		<Flag Name="MET_BUTCH" Description="1 == You've met Butch" />
 		<Flag Name="MET_BUSKY" Description="1 == You've met Busky" />
+		<Flag Name="MET_BUTCH" Description="1 == You've met Butch" />
 		<Flag Name="MET_CAMERON" Description="1 == You've met Cameron" />
 		<Flag Name="MET_CANDICE" Description="1 == You've met Candice" />
 		<Flag Name="MET_CARL" Description="1 == You've met Carl" />
@@ -2962,9 +2998,11 @@
 		<Flag Name="MET_CHRYSALIS_DRONE" />
 		<Flag Name="MET_COCKVINE_SEEDLING" Description="Number of times you've encountered cockvine seedling" />
 		<Flag Name="MET_CUNT_SNAKE" Description="Number of times you've encountered a cunt snake" />
+		<Flag Name="MET_CYNTHIA" />
 		<Flag Name="MET_DALLY" Description="1 == You've met Dally" />
 		<Flag Name="MET_DANE" Description="1 == You've met Dane" />
 		<Flag Name="MET_DEL" Description="1 == You've met Del" />
+		<Flag Name="MET_DEL_SHEMALE" />
 		<Flag Name="MET_DR_BADGER" Description="1 == You've met Dr Badger" />
 		<Flag Name="MET_DR_HASWELL" Description="1 == You've met Dr Haswell" />
 		<Flag Name="MET_DR_LASH" Description="1 == You've met Dr Lash" />
@@ -2983,6 +3021,7 @@
 		<Flag Name="MET_GEOFF" Description="1 == You've met Geoff" />
 		<Flag Name="MET_GIALA" Description="1 == You've met Giala" />
 		<Flag Name="MET_GIANNA" Description="1 == You've met Gianna" />
+		<Flag Name="MET_GIL" />
 		<Flag Name="MET_GIANNAS_TALK_MENU" Description="1 == You've talked to Gianna" />
 		<Flag Name="MET_GOLD_DESERTER" Description="1 == You've met the Gold Myr deserter Lys" />
 		<Flag Name="MET_GOO_KNIGHT" Description="Number of times you've encountered a crystal goo knight" />
@@ -2998,6 +3037,7 @@
 		<Flag Name="MET_INFECTED_MYR_FEMALE" Description="Number of times you've encountered an infected Myr female" />
 		<Flag Name="MET_INFECTED_MYR_MALE" Description="Number of times you've encountered an infected Myr male" />
 		<Flag Name="MET_IRELLIA" Description="1 == You've met Queen Irellia" />
+		<Flag Name="MET_JAMES" />
 		<Flag Name="MET_JEROME" Description="1 == You've met Jerome" />
 		<Flag Name="MET_JERYNN" />
 		<Flag Name="MET_JURO" Description="1 == You've met Ambassador Juro" />
@@ -3005,16 +3045,19 @@
 		<Flag Name="MET_KALLY" Description="1 == You've met Kally" />
 		<Flag Name="MET_KARA" Description="1 == You've met Kara" />
 		<Flag Name="MET_KAZRA_AND_LORRE" />
+		<Flag Name="MET_KEGS" />
 		<Flag Name="MET_KEROKORAS" Description="Number of times you've encountered a kerokoras" />
 		<Flag Name="MET_KIRILA" />
 		<Flag Name="MET_KIRO" Description="1 == You've met Kiro" />
 		<Flag Name="MET_KRYM" />
 		<Flag Name="MET_LANE" Description="1 == You've met Lane" />
 		<Flag Name="MET_LERRIS" Description="1 == You've met Lerris" />
+		<Flag Name="MET_LIAMME" />
 		<Flag Name="MET_LIEVE" Description="1 == You've met Lieve" />
 		<Flag Name="MET_LILIANA" Description="1 == You've met Liliana" />
 		<Flag Name="MET_LOLA" Description="1 == You've met Lola" />
 		<Flag Name="MET_LYRALLA" Description="1 == You've met Lyralla" />
+		<Flag Name="MET_MABBS" />
 		<Flag Name="MET_MALE_RASKVEL_GANG" Description="Number of times you've encountered the male Raskvel gang" />
 		<Flag Name="MET_MALE_SYDIAN" />
 		<Flag Name="MET_MCALLISTER" Description="1 == You've met Doctor McAllister" />
@@ -3031,11 +3074,13 @@
 		<Flag Name="MET_ORRYX" Description="1 == You've met Orryx" />
 		<Flag Name="MET_PENNY" Description="1 == You've met Penny" />
 		<Flag Name="MET_QUENTON" Description="1 == You've met Quenton" />
+		<Flag Name="MET_QUINN" />
 		<Flag Name="MET_RED_DESERTER" Description="1 == You've met the Red Myr deserter Briha" />
 		<Flag Name="MET_RENVRA" Description="1 == You've met Renvra" />
 		<Flag Name="MET_RHENESUNNE" Description="1 == You've met Anyxine Rhenesunne" />
 		<Flag Name="MET_RIYA" />
 		<Flag Name="MET_SAENDRA" Description="1 == You've met Saendra" />
+		<Flag Name="MET_SALLY" />
 		<Flag Name="MET_SEIFYN" Description="1 == You've met Seifyn" />
 		<Flag Name="MET_SELLERA" Description="1 == You've met Field Marshal Sellera" />
 		<Flag Name="MET_SELLESY" Description="1 == You've met Sellesy" />
@@ -3050,6 +3095,7 @@
 		<Flag Name="MET_SHOWER_GIRLS" />
 		<Flag Name="MET_SIMONE" Description="1 == You've met Simone" />
 		<Flag Name="MET_SYDIAN_MALE" Description="Number of times you've encountered a male Sydian" />
+		<Flag Name="MET_SYDNEY" />
 		<Flag Name="MET_SYLVIE" />
 		<Flag Name="MET_SYRI" Description="1 == You've met Syri" />
 		<Flag Name="MET_TAIVRA" Description="1 == You've met Taivra" />
@@ -3064,6 +3110,7 @@
 		<Flag Name="MET_VARMINT_PACK" Description="Number of times you've encountered a varmint pack" />
 		<Flag Name="MET_VI" Description="1 == You've met Vi" />
 		<Flag Name="MET_VKO" Description="1 == You've met V-Ko" />
+		<Flag Name="MET_WALT" />
 		<Flag Name="MET_WETRAXXEL_BRAWLER" Description="Number of times you've encountered a Wetraxxel brawler" />
 		<Flag Name="MET_WETRA_HOUND" Description="Number of times you've encountered a Wetra hound" />
 		<Flag Name="MET_XANTHE" Description="1 == You've met Xanthe" />
@@ -3092,6 +3139,7 @@
 		<Flag Name="MIMBRANE_HAND_REPRODUCTION_NOTICED" />
 		<Flag Name="MIMBRANE_PUSSY_REPRODUCTION_NOTICED" />
 		<Flag Name="MISCREANT_MANORED" />
+		<Flag Name="MUFFSTICK_COLORED" />
 		<Flag Name="MUSHROOM_GROWTH" />
 		<Flag Name="MUSHROOM_TRACKER" />
 		<Flag Name="MUSH_SEEN" />
@@ -3198,6 +3246,7 @@
 		<Flag Name="PEX_2BIG_BJ" />
 		<Flag Name="PEX_MILKED" />
 		<Flag Name="PEX_SOLOMILK" />
+		<Flag Name="PHOENIX RECROOM" />
 		<Flag Name="PIPPA_ABUSIVE_SAT_ON" />
 		<Flag Name="PIPPA_AFFECTION" />
 		<Flag Name="PIPPA_ASS_FUCKED" />
@@ -3219,11 +3268,34 @@
 		<Flag Name="PIPPA_TALKED_YOU" />
 		<Flag Name="PITCHER_HYPO_SCORE" />
 		<Flag Name="PLANET_3_UNLOCKED" />
+		<Flag Name="PLANTATION_QUEST" />
 		<Flag Name="PLAT190 USED AS NYREA BRIBE" />
 		<Flag Name="PLATINUM_TAKEN" />
 		<Flag Name="PLAYER_MIMBRANE_SPIT_ENABLED" />
 		<Flag Name="PLAYER_MIMBRANE_SWEAT_ENABLED" />
 		<Flag Name="POE_A_DISABLED" />
+		<Flag Name="PQUEST_ABLE_CUSTOMS_TALK" />
+		<Flag Name="PQUEST_ABLE_TALK_DISABLE" />
+		<Flag Name="PQUEST_ABLE_VALUE_TALK" />
+		<Flag Name="PQUEST_DELAY_TIMER" />
+		<Flag Name="PQUEST_FLY_BLOCKED" />
+		<Flag Name="PQUEST_LAH_CHAT" />
+		<Flag Name="PQUEST_WATERFALLED" />
+		<Flag Name="PQUEST_WHERE_CHAT" />
+		<Flag Name="PQ_BEAT_LAH" />
+		<Flag Name="PQ_CAME_OUT_WALLS" />
+		<Flag Name="PQ_CLIFF_FOOTED" />
+		<Flag Name="PQ_DIPLO_FAILS" />
+		<Flag Name="PQ_DIPLO_SUCCESS" />
+		<Flag Name="PQ_FOUGHT_TRIBE" />
+		<Flag Name="PQ_LET_QUINN_GO" />
+		<Flag Name="PQ_NALEENED" />
+		<Flag Name="PQ_PEACE_TIMESTAMP" />
+		<Flag Name="PQ_P_BURNED" />
+		<Flag Name="PQ_RESOLUTION" />
+		<Flag Name="PQ_SECURED_LAH" />
+		<Flag Name="PQ_TOOK_AMBER" />
+		<Flag Name="PQ_TRIBE_WREKT_TIMER" />
 		<Flag Name="PRAETORIAN_RESPAWN" />
 		<Flag Name="PREV_LOCATION" />
 		<Flag Name="PRINCESS_DEFEATED" />
@@ -3234,6 +3306,7 @@
 		<Flag Name="PUPPYSLUTMAS_2014_DRINKS" Description="Number of drinks PC has had at the party" />
 		<Flag Name="PUPPYSLUTMAS_2014_SYRI_CLOTHES" />
 		<Flag Name="PUPPYSLUTMAS_2014_SYRI_OFFER" Description="1 == Syri offered to take PC to family party" />
+		<Flag Name="PURCHASED_AMAZONA" />
 		<Flag Name="PURCHASED_FROM_EMS" Description="1 == You've bought something from Emmy" />
 		<Flag Name="PURCHASED_FROM_SERA" Description="1 == You've bought something from Sera" />
 		<Flag Name="PURCHASED_GENES_GALO" Description="1 == You've bought Gene's GaloMax" />
@@ -3397,6 +3470,7 @@
 		<Flag Name="SERA_BITCHENING_TEASE_RELEASE" />
 		<Flag Name="SERA_BREED_TIMER" />
 		<Flag Name="SERA_BUSINESS_SETUP" />
+		<Flag Name="SERA_COLLAR_FAPS" />
 		<Flag Name="SERA_CREATE_VAG" Description="Sera has forced you to grow a vagina" />
 		<Flag Name="SERA_CREWMEMBER" />
 		<Flag Name="SERA_EXHIBITION_BLOWJOB" Description="Number of times Sera has made you a give a public blowjob" />
@@ -3460,12 +3534,15 @@
 		<Flag Name="SEXED_GEOFF_MASC" />
 		<Flag Name="SEXED_GIALA" />
 		<Flag Name="SEXED_KARA" />
+		<Flag Name="SEXED_LIAMME" />
 		<Flag Name="SEXED_LOLA" />
 		<Flag Name="SEXED_MILODAN_MALE" />
 		<Flag Name="SEXED_MYR_VENOM" />
 		<Flag Name="SEXED_NEHZARA" />
 		<Flag Name="SEXED_PENNY" />
 		<Flag Name="SEXED_QUENTON" />
+		<Flag Name="SEXED_QUINN" />
+		<Flag Name="SEXED_SALLY" />
 		<Flag Name="SEXED_SHADE" />
 		<Flag Name="SEXED_SIMONE" />
 		<Flag Name="SEXED_SYLVIE" />
@@ -3531,10 +3608,13 @@
 		<Flag Name="STEPH_WATCHED" />
 		<Flag Name="STEPH_WORK_CHOICE" />
 		<Flag Name="STORED SHIP DESTINATION" />
+		<Flag Name="SUBTUNER_NAMED" />
+		<Flag Name="SUB_TUNERED" />
 		<Flag Name="SUCKED_BRYNN" />
 		<Flag Name="SUCKED_ELLIES_TITS" />
 		<Flag Name="SUCKED_FUNGUS" />
 		<Flag Name="SUCKED_HELLHOUND" />
+		<Flag Name="SUCKLED_BRANDY" />
 		<Flag Name="SUCKLED_LERRIS" />
 		<Flag Name="SUKMASTRED" />
 		<Flag Name="SUMA_CREAM_USES" />
@@ -3548,6 +3628,7 @@
 		<Flag Name="SYLVIE_BOOZE_TIME" />
 		<Flag Name="SYLVIE_CHILLED" />
 		<Flag Name="SYLVIE_CUFFNFUCK" />
+		<Flag Name="SYLVIE_MABBSED" />
 		<Flag Name="SYLVIE_TAURMOUNT" />
 		<Flag Name="SYLVIE_THROBB_GIFT" />
 		<Flag Name="SYNTHSAP_UNLOCKED" Description="1 == Allows to buy SynthSap from Kelly" />
@@ -3558,6 +3639,7 @@
 		<Flag Name="SYRI_BETTING_STORAGE" Description="Stores credit bet or 9001 if ass betting" />
 		<Flag Name="SYRI_BIONAHOLE_USES" />
 		<Flag Name="SYRI_BUTT_GAPE_ALERT" />
+		<Flag Name="SYRI_PETPLAY_LOST" />
 		<Flag Name="SYRI_SEEN_PCS_SHIP_CABIN" Description="1 == Syri has seen the PC's ship cabin" />
 		<Flag Name="SYRI_TALKS" Description="Stores what talk scene to display next in the sequence. Scene 1 never repeats. YAY!" />
 		<Flag Name="SYRI_WINBET_VAG" Description="1 == PC can get vaginal sex with condom from Syri" />
@@ -3713,6 +3795,14 @@
 		<Flag Name="VANAE_MILKBATH_TIMES" />
 		<Flag Name="VARMINTS_CAUGHT" />
 		<Flag Name="VARMINT_IS_CREW" />
+		<Flag Name="VAVA_GROOM_ROLE" />
+		<Flag Name="VAVA_GROOM_SERVICE_EROTIC_TRAINING" />
+		<Flag Name="VAVA_GROOM_SERVICE_GROOMING" />
+		<Flag Name="VAVA_GROOM_SERVICE_OBEDIENCE_TRAINING" />
+		<Flag Name="VAVA_GROOM_SPECIAL_MASTER" />
+		<Flag Name="VAVA_GROOM_SPECIAL_PET" />
+		<Flag Name="VAVA_GROOM_TALK" />
+		<Flag Name="VAVA_GROOM_VISIT" />
 		<Flag Name="VENOM_ADDICTION" />
 		<Flag Name="VENOM_PROGRESS" />
 		<Flag Name="VISITED_MYRELLION" />
@@ -3726,6 +3816,9 @@
 		<Flag Name="VI_PUSSY_TAKEN" />
 		<Flag Name="VI_SEXED" />
 		<Flag Name="VI_TITFUCKED" />
+		<Flag Name="WALT_HIMSELF" />
+		<Flag Name="WALT_LICK_EXHIBITIONISM" />
+		<Flag Name="WALT_SEXED" />
 		<Flag Name="WATCHED_LEE" />
 		<Flag Name="WATCHED_NICO" />
 		<Flag Name="WETRAXXEL_ENCOUNTER_WEIGHT" />
