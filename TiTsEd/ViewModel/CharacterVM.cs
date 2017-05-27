@@ -17,6 +17,13 @@ namespace TiTsEd.ViewModel {
         private ItemSlotVM _upperUndergarment;
         private ItemSlotVM _lowerUndergarment;
 
+        public enum CharacterClasses
+        {
+            Smuggler = 0
+          , Mercenary = 1
+          , Engineer = 2
+        }
+
         public CharacterVM(GameVM game, AmfObject obj)
             : base(obj) {
 
@@ -325,16 +332,31 @@ namespace TiTsEd.ViewModel {
                 var bonus = 0;
                 //TODO check items for fortification effects and add to bonus
 
-                var maxhp = 15 + (Level - 1) * 15 + HPMod + bonus;
+                double maxhp = 15 + (Level - 1) * 15 + HPMod + bonus;
 
-                //class mercenary
-                if (CharacterClass == 0) maxhp += Level * 5;
-                //class engineer
-                if (CharacterClass == 2) maxhp -= Level * 5;
+                // class bonuses
+                switch ((CharacterClasses)CharacterClass) {
 
-                //TODO check status conditions
+                    case CharacterClasses.Mercenary:
+                        maxhp += Level * 5;
+                        break;
+                    case CharacterClasses.Engineer:
+                        maxhp -= Level * 5;
+                        break;
+                }
 
-                return maxhp;
+                /// status effects
+                if (HasStatusEffect("Heart Tea")) {
+                    maxhp = maxhp * 1.1;
+                }
+                var status = GetStatus("Well-Groomed");
+                if ((null != status) && status.IsOwned) {
+                    if (status.Value1 != 0) {
+                        maxhp = maxhp * status.Value1;
+                    }
+                }
+
+                return (int)maxhp;
             }
         }
 
