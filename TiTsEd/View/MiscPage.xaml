@@ -94,6 +94,42 @@
             </StackPanel>
 
             <StackPanel Grid.Row="2"
+                        Grid.Column="3"
+                        Orientation="Vertical">
+
+                <common:ArrayEditor x:Name="WombsArray"
+                                    Header="Wombs"
+                                    Items="{Binding Game.Character.PregnancyData}"
+                                    Capacity="4">
+                    <common:ArrayEditor.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}" />
+                        </DataTemplate>
+                    </common:ArrayEditor.ItemTemplate>
+                    <StackPanel>
+                        <common:AutoGrid>
+                            <Label                  Content="Pregnancy Type" />
+                            <ComboBox               SelectedValue="{Binding PregnancyType}"
+                                                    ItemsSource="{Binding PregnancyTypes}" />
+
+                            <Label                  Content="Pregnancy Quantity" />
+                            <common:MyNumericBox    Value="{Binding PregnancyQuantity}" />
+
+                            <Label                  Content="Pregnancy Incubation Time" />
+                            <common:MyNumericBox    Value="{Binding PregnancyIncubation}" />
+
+                            <Label                  Content="Pregnancy Incubation Time Multiplier" />
+                            <common:MyNumericBox    Value="{Binding PregnancyIncubationMulti}" Type="Double" />
+
+                            <Label                  Content="Pregnancy Belly Rating Contribution" />
+                            <common:MyNumericBox    Value="{Binding PregnancyBellyRatingContribution}" Type="Double" />
+
+                        </common:AutoGrid>
+                    </StackPanel>
+                </common:ArrayEditor>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2"
                         Grid.Column="1"
                         Orientation="Vertical">
                 <Border Style="{StaticResource HeaderBorder}">

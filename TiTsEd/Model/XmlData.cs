@@ -244,6 +244,9 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("VaginaFlag")]
         public XmlEnum[] VaginaFlags { get; set; }
 
+        [XmlArray, XmlArrayItem("PregnancyType")]
+        public string[] PregnancyTypes { get; set; }
+
         [XmlArray, XmlArrayItem("AssFlag")]
         public XmlEnum[] AssFlags { get; set; }
 

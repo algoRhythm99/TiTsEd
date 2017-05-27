@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-
 using System.Text;
+using TiTsEd.Common;
 using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
@@ -34,6 +34,9 @@ namespace TiTsEd.ViewModel {
             Vaginas = new VaginaArrayVM(this, GetObj("vaginas"));
             Cocks = new CockArrayVM(this, GetObj("cocks"));
             Ass = new VaginaVM(this, GetObj("ass"));
+
+            // Wombs
+            PregnancyData = new PregnancyDataArrayVM(this, GetObj("pregnancyData"));
 
             // Perks
             var xmlPerks = XmlData.Current.PerkGroups.SelectMany(x => x.Perks).ToArray();
@@ -97,6 +100,8 @@ namespace TiTsEd.ViewModel {
         public VaginaArrayVM Vaginas { get; private set; }
         public CockArrayVM Cocks { get; private set; }
         public VaginaVM Ass { get; private set; }
+
+        public PregnancyDataArrayVM PregnancyData { get; private set; }
 
         public string GenderId {
             get {
@@ -1561,6 +1566,14 @@ namespace TiTsEd.ViewModel {
         public int PregnancyIncubationBonusFatherMod {
             get { return GetInt("pregnancyIncubationBonusFatherMod"); }
             set { SetValue("pregnancyIncubationBonusFatherMod", value); }
+        }
+
+        public int MaxWombCount {
+            get {
+                int count = 1;
+                count += Vaginas.Count;
+                return count;
+            }
         }
 
         #endregion

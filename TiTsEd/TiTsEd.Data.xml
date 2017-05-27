@@ -1162,6 +1162,32 @@
 			<AssFlag ID="41" Name="Fully Pumped" />
 		</AssFlags>
 		<!-- ================================================================ -->
+		<PregnancyTypes>
+			<PregnancyType></PregnancyType>
+			<PregnancyType>BothriocPregnancy</PregnancyType>
+			<PregnancyType>RahnPregnancyBreedwell</PregnancyType>
+			<PregnancyType>CockvinePregnancy</PregnancyType>
+			<PregnancyType>DeepQueenPregnancy</PregnancyType>
+			<PregnancyType>EggTrainerCarryTraining</PregnancyType>
+			<PregnancyType>EggTrainerFauxPreg</PregnancyType>
+			<PregnancyType>KorgonnePregnancy</PregnancyType>
+			<PregnancyType>LapinaraPregnancy</PregnancyType>
+			<PregnancyType>MilodanPregnancy</PregnancyType>
+			<PregnancyType>NyreaEggPregnancy</PregnancyType>
+			<PregnancyType>OvalastingEggPregnancy</PregnancyType>
+			<PregnancyType>OviliumEggPregnancy</PregnancyType>
+			<PregnancyType>PsychicTentacles</PregnancyType>
+			<PregnancyType>RenvraEggPregnancy</PregnancyType>
+			<PregnancyType>RenvraFullPregnancy</PregnancyType>
+			<PregnancyType>RiyaPregnancy</PregnancyType>
+			<PregnancyType>RoyalEggPregnancy</PregnancyType>
+			<PregnancyType>SeraSpawnPregnancy</PregnancyType>
+			<PregnancyType>SydianPregnancy</PregnancyType>
+			<PregnancyType>VenusPitcherFertilizedSeedCarrier</PregnancyType>
+			<PregnancyType>VenusPitcherSeedCarrier</PregnancyType>
+			<PregnancyType>ZaaltPregnancy</PregnancyType>
+		</PregnancyTypes>
+		<!-- ================================================================ -->
 		<NippleTypes>
 			<NippleType ID="0" Name="Normal" />
 			<NippleType ID="1" Name="Cunt" />
@@ -4138,7 +4164,6 @@
 			<StatusEffect Name="Amazona Uses" IsHidden="true" />
 			<StatusEffect Name="Anal Lubricant" Description="Thanks to some YTR Lube, your anus is particularly slippery! ...at least for a while." IconName="Icon_Splatter" MinutesLeft="4320" />
 			<StatusEffect Name="Aphrodisiac Milk" Description="This milk is keeping your body more aroused than normal. You’ll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
-			<StatusEffect Name="Blue Balls" Description="Take 25% more lust damage in combat!" IconName="Icon_Sperm_Hearts" IconShade="0" />
 			<StatusEffect Name="Boobswell Pads" Description="The applied boobswell pads are slowly but steadily working to fill out your chest. You can remove them at any point via the &quot;Remove Swell&quot; command in the &quot;Masturbation&quot; menu, but the pads will still be consumed. They're one use only." IconName="LustUp" MinutesLeft="4320" />
 			<StatusEffect Name="Cerespirin" Description="Your have injected yourself with an experimental drug..." Value2="1" IconName="Icon_DrugVial" MinutesLeft="1440" />
 			<StatusEffect Name="Clippex Gel" Description="Your nipples tingle by the gel you applied..." Value2="1" IconName="Icon_DrugPill" />
@@ -4147,10 +4172,6 @@
 			<StatusEffect Name="Crystal Coated" Description="Defense is raised by 4 points thanks to a coating of rock-hard crystals!" Value1="2" IconName="Icon_DefUp" MinutesLeft="1200" />
 			<StatusEffect Name="Curdsonwhey" Description="You are currently under the effects of the Curdsonwhey lozenge." IconName="Pill" MinutesLeft="240" />
 			<StatusEffect Name="Dumbfuck" Description="You are currently under the effects of &quot;dumbfuck,&quot; an illegal drug known for making its users more and more sex-crazed with every orgasm over a 24 hour period. Intelligence loss is also common." IconName="Icon_DrugPill" MinutesLeft="1440" IconShade="0" />
-			<StatusEffect Name="Egg Addled 1" Description="Your lust increases slightly faster over time as a result of the shifting egg inside you." IconName="Icon_DrugPill" />
-			<StatusEffect Name="Egg Addled 2" Description="Your lust will increase over time to the maximum - leading to instant combat loss, should you blunder into a fight while distracted by your egg." IconName="Icon_DrugPill" />
-			<StatusEffect Name="Egg Addled 3" Description="The endless stimulation of your internal faux egg is driving you mad with lust. Even the simple act of walking has become hellishly distracting." IconName="Icon_DrugPill" />
-			<StatusEffect Name="Eggy Belly" Description="You've got a nice belly full of eggs to enjoy, courtesy of the bright pink Egg Trainer back on your ship." IconName="Icon_DrugPill" />
 			<StatusEffect Name="Focus Pill" Description="You feel sharper, more able to focus and process your senses." IconName="Icon_DrugPill" IconShade="0" />
 			<StatusEffect Name="Gabilani Prophylactic" Description="The spray currently effecting you will reduce encounters with gabilani." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Goblinola Bar" Description="Your stomach is a little unsettled by the health bar you ate..." Value1="60" Value2="1" IconName="Icon_Poison" MinutesLeft="60" />
@@ -4170,82 +4191,9 @@
 			<StatusEffect Name="Semen's Candy" Description="The Semen’s Friend candy is still in your system." Value1="1440" Value2="1" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Sweet Tooth" Description="Sucking seductively on a lollipop." IconName="Icon_Lollipop" MinutesLeft="720" />
 			<StatusEffect Name="Sydian Prophylactic" Description="The spray currently effecting you will reduce encounters with sydians." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
+			<StatusEffect Name="Taken Estrobloom" IsHidden="true" />
 			<StatusEffect Name="T.Pack" Description="You are protected from Uveto's harsh cold... for now!" IconName="Icon_Smelly" MinutesLeft="1440" />
 			<StatusEffect Name="The Mango" Description="You are irresistible!" IconName="Charmed" MinutesLeft="1440" IconShade="12030916" />
-		</StatusEffectGroup>
-		<StatusEffectGroup Name="Mimbranes">
-			<StatusEffect Name="Mimbrane Ass"           IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Balls"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Boobs"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Cock"          IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Face"          IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Foot Left"     IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Foot Right"    IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Hand Left"     IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Hand Right"    IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-			<StatusEffect Name="Mimbrane Pussy"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
-		</StatusEffectGroup>
-		<StatusEffectGroup Name="Miscellaneous">
-			<StatusEffect Name="Backpack Upgrade" IsHidden="true" Value1="10" />
-			<StatusEffect Name="Bothrioc Eggs" Description="You have been impregnated by a bothrioc. A warm, dense glow suffuses you that is not at all unpleasant..." IconName="Charmed" />
-			<StatusEffect Name="Bra Transparency" IsHidden="true" />
-			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
-			<StatusEffect Name="Cumflation Immune" IsHidden="true" />
-			<StatusEffect Name="Cum Paused" IsHidden="true" />
-			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
-			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
-			<StatusEffect Name="Disarm Immune" IsHidden="true" />
-			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
-			<StatusEffect Name="Egregiously Endowed" Description="Movement between rooms takes twice as long, and fleeing from combat is more difficult." IconName="Icon_Poison" />
-			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
-			<StatusEffect Name="Endowment Immobilized" Description="Your endowments prevent you from moving." IconName="Icon_Poison" />
-			<StatusEffect Name="Force Fem Gender" Comment="Forces feminine descriptions" IsHidden="true" />
-			<StatusEffect Name="Force It Gender" Comment="Forces neuter/androgynous descriptions" IsHidden="true" />
-			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
-			<StatusEffect Name="frizzy hair" IsHidden="true" />
-			<StatusEffect Name="Gel Body" IsHidden="true" />
-			<StatusEffect Name="Genital Slit" IsHidden="true" />
-			<StatusEffect Name="Goo Armor Design" Description="none" IsHidden="true" />
-			<StatusEffect Name="Goo Crotch" IsHidden="true" />
-			<StatusEffect Name="Goo Vent" IsHidden="true" />
-			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
-			<StatusEffect Name="Hair Regoo" IsHidden="true" MinutesLeft="720" />
-			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
-			<StatusEffect Name="HL Thong" IsHidden="true" />
-			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
-			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
-			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
-			<StatusEffect Name="Jock Sexiness" IsHidden="true" />
-			<StatusEffect Name="Latex Hair" IsHidden="true" />
-			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
-			<StatusEffect Name="Liamme Disabled" IsHidden="true" />
-			<StatusEffect Name="LIAMME_OUTFIT" IsHidden="true" Value1="1" Label1="Liamme's outfit" />
-			<StatusEffect Name="Lightning Moves" Description="Your recent fencing lessons give you an edge during fights." IconName="OffenseUp" MinutesLeft="4320" />
-			<StatusEffect Name="Ludicrously Endowed" Description="The shifting masses of your over-sized endowments cause you to gain fifty percent more lust over time." IconName="Icon_Poison" />
-			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
-			<StatusEffect Name="Milk Paused" IsHidden="true" />
-			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
-			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
-			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" Label4="1 == Permanent, ignores racial score" Value4="1" IsHidden="true" />
-			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
-			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
-			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!&#xA;Minimum lust increased by 20." IconName="LustUp" IconShade="0" />
-			<StatusEffect Name="Perfect Simulant" Description="You were created by the scientists at Steele Tech to be the perfect heir, and as such, your maximum capabilities exceed even those of the luckiest terrans. You walk, talk, breathe, and eat, just like any living creature, even simulating DNA to allow you to emulate the effects of transformative items on true organics." IconName="Icon_Gears_Three" />
-			<StatusEffect Name="Psi Slave Collar" Description="This metal collar limits your intelligence capacity and willpower while worn, making you completely subservient to the will of the one who operates it." Value1="0.5" Type1="Double" Value2="0.5" Type2="Double" Value3="200" IconName="Radio" IconShade="16711680" />
-			<StatusEffect Name="Pussy Drenched" Value1="1" IconName="Icon_Water_Drop" IconShade="12030916" />
-			<StatusEffect Name="Quaramarta!" Description="Fazian's Quaramarta performance has sharpened your senses!&#xA;Critical chance increased by 15%." IconName="OffenseUp" IconShade="0" />
-			<StatusEffect Name="Roehm Slimed" Description="Direct physical contact with a roehm in heat results in stickiness, and smelling rather like an orgy in a vat of molasses." Value1="10" Value2="-5" Value3="15" IconName="Icon_Splatter" IconShade="12030916" MinutesLeft="720" />
-			<StatusEffect Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IconName="DefenseDown" IconShade="0" />
-			<StatusEffect Name="Sexy Costume" Description="The outfit you are wearing is making you feel randier than usual." Value1="10" IconName="LustUp" IconShade="100" />
-			<StatusEffect Name="Sexy Moves" Description="Your recent lessons pay off, you feel as sexy as ever - and it shows." IconName="OffenseUp" MinutesLeft="4320" />
-			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
-			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!&#xA;Experience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
-			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
-			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
-			<StatusEffect Name="Special Scrotum" Comment="Special scrotum description flag, see Value1" Label1="20 == FLAG_FURRED&#xD;&#xA;21 == FLAG_SCALED&#xD;&#xA;34 == FLAG_CHITINOUS&#xD;&#xA;35 == FLAG_FEATHERED&#xD;&#xA;37 == FLAG_GOOEY" Value1="20" IsHidden="true" />
-			<StatusEffect Name="Stun Immune" IsHidden="true" />
-			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
-			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
 			<StatusEffect Name="The Treatment" Description="You are currently under the effects of the Treatment. Who knows what havoc it will wreak upon your system." Comment="v1 - Gender settings.&#xD;&#xA;
 					0 - girl mode&#xD;&#xA;
 					1 - dude mode&#xD;&#xA;
@@ -4257,7 +4205,6 @@
 					v2 special variants&#xD;&#xA;
 					v3 hour counter&#xD;&#xA;
 					Special variants - girls with bigger horns (size 5)!" IconName="Icon_Cow" MinutesLeft="10080" IconShade="0" />
-			<StatusEffect Name="Tickled Pink" IsHidden="true" />
 			<StatusEffect Name="Treated Amazon" IsHidden="true" />
 			<StatusEffect Name="Treated" Comment="VARIABLE DEPENDING ON GENDER&#xD;&#xA;
 					0 - Girl Mode:&#xD;&#xA;
@@ -4275,9 +4222,124 @@
 						v2 - horn size result&#xD;&#xA;
 						v3 - max cock size&#xD;&#xA;
 						v4 - futacock size (if any)" IsHidden="true" />
-			<StatusEffect Name="Unarmored" IsHidden="true" />
-			<StatusEffect Name="Uniball" IsHidden="true" />
+		</StatusEffectGroup>
+		<StatusEffectGroup Name="Mimbranes">
+			<StatusEffect Name="Mimbrane Ass"           IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Balls"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Boobs"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Cock"          IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Face"          IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Foot Left"     IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Foot Right"    IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Hand Left"     IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Hand Right"    IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Pussy"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+		</StatusEffectGroup>
+		<StatusEffectGroup Name="Inventory">
+			<StatusEffect Name="Backpack Upgrade" IsHidden="true" Value1="10" />
+		</StatusEffectGroup>
+		<StatusEffectGroup Name="Equipment">
+			<StatusEffect Name="Accessory Slot Disabled" IconName="Blocked" IsHidden="true" />
+			<StatusEffect Name="Armor Slot Disabled" IconName="Blocked" IsHidden="true" />
+			<StatusEffect Name="Melee Weapon Slot Disabled" IconName="Blocked" IsHidden="true" />
+			<StatusEffect Name="Ranged Weapon Slot Disabled" IconName="Blocked" IsHidden="true" />
+			<StatusEffect Name="Shield Slot Disabled" IconName="Blocked" IsHidden="true" />
+			<StatusEffect Name="Lower Garment Slot Disabled" IconName="Blocked" IsHidden="true" />
+			<StatusEffect Name="Upper Garment Slot Disabled" IconName="Blocked" IsHidden="true" />
+			<StatusEffect Name="Bra Transparency" IsHidden="true" />
+			<StatusEffect Name="HL Thong" IsHidden="true" />
+		</StatusEffectGroup>
+		<StatusEffectGroup Name="Eggs and Pregnancy">
+			<StatusEffect Name="Bothrioc Eggs" Description="You have been impregnated by a bothrioc. A warm, dense glow suffuses you that is not at all unpleasant..." IconName="Charmed" />
+			<StatusEffect Name="Bulky Belly" Description="The size of your belly weighs you down, dropping your reflexes and evasion chances by 70%." IconName="Icon_Belly_Pregnant" />
+			<StatusEffect Name="Egg Addled 1" Description="Your lust increases slightly faster over time as a result of the shifting egg inside you." IconName="Icon_DrugPill" />
+			<StatusEffect Name="Egg Addled 2" Description="Your lust will increase over time to the maximum - leading to instant combat loss, should you blunder into a fight while distracted by your egg." IconName="Icon_DrugPill" />
+			<StatusEffect Name="Egg Addled 3" Description="The endless stimulation of your internal faux egg is driving you mad with lust. Even the simple act of walking has become hellishly distracting." IconName="Icon_DrugPill" />
+			<StatusEffect Name="Eggy Belly" Description="You've got a nice belly full of eggs to enjoy, courtesy of the bright pink Egg Trainer back on your ship." IconName="Icon_DrugPill" />
+			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
+			<StatusEffect Name="Milodan Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" Label4="1 == Permanent, ignores racial score" Value4="1" IsHidden="true" />
+			<StatusEffect Name="Nyrea Eggs Messages Available" IsHidden="true" />
+			<StatusEffect Name="Queen Pregnancy End" IsHidden="true" />
+			<StatusEffect Name="Queen Pregnancy State" IsHidden="true" />
+			<StatusEffect Name="Riya Spawn Reflex Mod" Value1="5" IsHidden="true" />
+			<StatusEffect Name="Riya Spawn Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Royal Eggs Messages Available" IsHidden="true" />
+			<StatusEffect Name="Sera Spawn Reflex Mod" Value1="5" IsHidden="true" />
+			<StatusEffect Name="Sera Spawn Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Sydian Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Venus Pitcher Egg Incubation Finished" IsHidden="true" />
+			<StatusEffect Name="Venus Pitcher Seed Residue" IsHidden="true" MinutesLeft="20160" />
+			<StatusEffect Name="Zaalt Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+		</StatusEffectGroup>
+		<StatusEffectGroup Name="Sex">
+			<StatusEffect Name="Anally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Donut" IconShade="12030916" />
+			<StatusEffect Name="Blue Balls" Description="Take 25% more lust damage in combat!" IconName="Icon_Sperm_Hearts" IconShade="0" />
+			<StatusEffect Name="Cum Cascade" Description="Side effect of ‘Nuki Nuts.." IconName="Icon_Sperm_Hearts" IconShade="12030916" IsHidden="true" />
+			<StatusEffect Name="Cum Paused" IsHidden="true" />
+			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
+			<StatusEffect Name="Cumflation Immune" IsHidden="true" />
+			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
+			<StatusEffect Name="Omit Cumflation Messages" Description="Cumflation messages are currently disabled." IsHidden="true" />
+			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
+			<StatusEffect Name="Priapism" Description="You are unnaturally hard and erect regardless of your arousal level. The added discomfort prevents you from covering up!" IconName="OffenseUp" IconShade="12030916" />
+			<StatusEffect Name="Pussy Drenched" Value1="1" IconName="Icon_Water_Drop" IconShade="12030916" />
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
+		</StatusEffectGroup>
+		<StatusEffectGroup Name="Combat">
+			<StatusEffect Name="Disarm Immune" IsHidden="true" />
+			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
+			<StatusEffect Name="Stun Immune" IsHidden="true" />
+			<StatusEffect Name="Unarmored" IsHidden="true" />
+		</StatusEffectGroup>
+		<StatusEffectGroup Name="Miscellaneous">
+			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
+			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
+			<StatusEffect Name="Egregiously Endowed" Description="Movement between rooms takes twice as long, and fleeing from combat is more difficult." IconName="Icon_Poison" />
+			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
+			<StatusEffect Name="Endowment Immobilized" Description="Your endowments prevent you from moving." IconName="Icon_Poison" />
+			<StatusEffect Name="Force Fem Gender" Comment="Forces feminine descriptions" IsHidden="true" />
+			<StatusEffect Name="Force It Gender" Comment="Forces neuter/androgynous descriptions" IsHidden="true" />
+			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
+			<StatusEffect Name="frizzy hair" IsHidden="true" />
+			<StatusEffect Name="Gel Body" IsHidden="true" />
+			<StatusEffect Name="Genital Slit" IsHidden="true" />
+			<StatusEffect Name="Goo Armor Design" Description="none" IsHidden="true" />
+			<StatusEffect Name="Goo Crotch" IsHidden="true" />
+			<StatusEffect Name="Goo Vent" IsHidden="true" />
+			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
+			<StatusEffect Name="Hair Regoo" IsHidden="true" MinutesLeft="720" />
+			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
+			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
+			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
+			<StatusEffect Name="Jock Sexiness" IsHidden="true" />
+			<StatusEffect Name="Latex Hair" IsHidden="true" />
+			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
+			<StatusEffect Name="Liamme Disabled" IsHidden="true" />
+			<StatusEffect Name="LIAMME_OUTFIT" IsHidden="true" Value1="1" Label1="Liamme's outfit" />
+			<StatusEffect Name="Lightning Moves" Description="Your recent fencing lessons give you an edge during fights." IconName="OffenseUp" MinutesLeft="4320" />
+			<StatusEffect Name="Ludicrously Endowed" Description="The shifting masses of your over-sized endowments cause you to gain fifty percent more lust over time." IconName="Icon_Poison" />
+			<StatusEffect Name="Milk Paused" IsHidden="true" />
+			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
+			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
+			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
+			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!&#xA;Minimum lust increased by 20." IconName="LustUp" IconShade="0" />
+			<StatusEffect Name="Perfect Simulant" Description="You were created by the scientists at Steele Tech to be the perfect heir, and as such, your maximum capabilities exceed even those of the luckiest terrans. You walk, talk, breathe, and eat, just like any living creature, even simulating DNA to allow you to emulate the effects of transformative items on true organics." IconName="Icon_Gears_Three" />
+			<StatusEffect Name="Psi Slave Collar" Description="This metal collar limits your intelligence capacity and willpower while worn, making you completely subservient to the will of the one who operates it." Value1="0.5" Type1="Double" Value2="0.5" Type2="Double" Value3="200" IconName="Radio" IconShade="16711680" />
+			<StatusEffect Name="Quaramarta!" Description="Fazian's Quaramarta performance has sharpened your senses!&#xA;Critical chance increased by 15%." IconName="OffenseUp" IconShade="0" />
+			<StatusEffect Name="Roehm Slimed" Description="Direct physical contact with a roehm in heat results in stickiness, and smelling rather like an orgy in a vat of molasses." Value1="10" Value2="-5" Value3="15" IconName="Icon_Splatter" IconShade="12030916" MinutesLeft="720" />
+			<StatusEffect Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IconName="DefenseDown" IconShade="0" />
+			<StatusEffect Name="Sexy Costume" Description="The outfit you are wearing is making you feel randier than usual." Value1="10" IconName="LustUp" IconShade="100" />
+			<StatusEffect Name="Sexy Moves" Description="Your recent lessons pay off, you feel as sexy as ever - and it shows." IconName="OffenseUp" MinutesLeft="4320" />
+			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
+			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!&#xA;Experience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
+			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
+			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+			<StatusEffect Name="Special Scrotum" Comment="Special scrotum description flag, see Value1" Label1="20 == FLAG_FURRED&#xD;&#xA;21 == FLAG_SCALED&#xD;&#xA;34 == FLAG_CHITINOUS&#xD;&#xA;35 == FLAG_FEATHERED&#xD;&#xA;37 == FLAG_GOOEY" Value1="20" IsHidden="true" />
+			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
+			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
+			<StatusEffect Name="Tickled Pink" IsHidden="true" />
+			<StatusEffect Name="Uniball" IsHidden="true" />
 			<StatusEffect Name="Vanae Markings" Comment="Vanae skin markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;Value4 = on balls too" Value4="1" Label4="1 = Ball Markings" IsHidden="true" />
 			<StatusEffect Name="Varmint Buddy" Description="The pink wireless leash you hold will ensure that your varmint companion stays close by, joining alongside you in battle if necessary." IconName="Radio" IconShade="0" />
 			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
