@@ -2000,6 +2000,7 @@
 			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn. See Value1" Label1="Shots per turn" Value1="5" />
 			<Perk Name="No Cum Leakage" />
 			<Perk Name="Ranged Immune" Comment="Immune to ranged attacks" />
+			<Perk Name="STD Immune" Comment="You are immune to sexually transmitted diseases." />
 		</PerkGroup>
 	</Perks>
 	<!-- ================================================================ -->
