@@ -530,6 +530,7 @@
 			<FaceType ID="71" Name="Worg" />
 			<FaceType ID="72" Name="Swine" />
 			<FaceType ID="76" Name="Sheep" />
+			<FaceType ID="77" Name="Lesser Panda" />
 		</FaceTypes>
 		<!-- ================================================================ -->
 		<FaceFlags>
@@ -683,6 +684,7 @@
 			<EarType ID="72" Name="Swine" />
 			<EarType ID="73" Name="Quad Lapine" />
 			<EarType ID="76" Name="Sheep" />
+			<EarType ID="77" Name="Lesser Panda" />
 		</EarTypes>
 		<EarLengthEnables>
 			<EarLengthEnable>Raskvel</EarLengthEnable>
@@ -793,6 +795,7 @@
 			<ArmType ID="57" Name="Ovir" />
 			<ArmType ID="60" Name="Myr" />
 			<ArmType ID="67" Name="Flower" />
+			<ArmType ID="77" Name="Lesser Panda" />
 		</ArmTypes>
 		<!-- ================================================================ -->
 		<ArmFlags>
@@ -844,6 +847,7 @@
 			<LegType ID="65" Name="Gryvain" />
 			<LegType ID="72" Name="Swine" />
 			<LegType ID="76" Name="Sheep" />
+			<LegType ID="77" Name="Lesser Panda" />
 		</LegTypes>
 		<!-- ================================================================ -->
 		<LegFlags>
@@ -924,6 +928,7 @@
 			<TailType ID="65" Name="Gryvain" />
 			<TailType ID="72" Name="Swine" />
 			<TailType ID="76" Name="Sheep" />
+			<TailType ID="77" Name="Lesser Panda" />
 		</TailTypes>
 		<!-- ================================================================ -->
 		<TailFlags>
@@ -1404,6 +1409,7 @@
 			<Item Stack="10" Name="AusarTreat" ID="classes.Items.Miscellaneous::AusarTreats" />
 			<Item Stack="10" Name="BBQ To-Go" ID="classes.Items.Miscellaneous::BBQToGo" />
 			<Item Stack="50" Name="Boobswell P." ID="classes.Items.Miscellaneous::BoobswellPads" />
+			<Item Stack="5"  Name="ChillPill" ID="classes.Items.Miscellaneous::ChillPill" />
 			<Item Stack="10" Name="Chocolac" ID="classes.Items.Miscellaneous::Chocolac" />
 			<Item Stack="10" Name="Condensol" ID="classes.Items.Miscellaneous::Condensol" />
 			<Item Stack="10" Name="Curdsonwhey" ID="classes.Items.Miscellaneous::Curdsonwhey" />
@@ -1485,6 +1491,7 @@
 			<Item Stack="24" Name="Sm.WhtEgg" ID="classes.Items.Transformatives::EggWhiteSmall" />
 			<Item Stack="10" Name="FizzyFix" ID="classes.Items.Transformatives::FizzyFix" />
 			<Item Stack="1"  Name="Foxfire" ID="classes.Items.Transformatives::Foxfire" />
+			<Item Stack="10" Name="FrontRack" ID="classes.Items.Transformatives::FrontRackCream" />
 			<Item Stack="1"  Name="Frostfire" ID="classes.Items.Transformatives::Frostfire" />
 			<Item Stack="10" Name="Furball" ID="classes.Items.Transformatives::Furball" />
 			<Item Stack="12" Name="Futazona"    ID="classes.Items.Transformatives::Futazona" />
@@ -1526,6 +1533,8 @@
 			<Item Stack="10" Name="P. Pal" ID="classes.Items.Transformatives::PleasurePalette" />
 			<Item Stack="10" Name="PupperP" ID="classes.Items.Transformatives::PupperPoppers" />
 			<Item Stack="10" Name="RainbowG." ID="classes.Items.Transformatives::RainbowGaze" />
+			<Item Stack="10" Name="R.Panda+"    ID="classes.Items.Transformatives::RedPandaneen" />
+			<Item Stack="10" Name="R.PandaPro+" ID="classes.Items.Transformatives::RedPandaPro" />
 			<Item Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
 			<Item Stack="10" Name="R.Made" ID="classes.Items.Transformatives::RubberMade" />
 			<Item Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
@@ -1586,9 +1595,11 @@
 			</Item>
 			<Item Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" LongName="Emmy's Vamp Blade" />
 			<Item Stack="1" Name="E.GSpear" ID="classes.Items.Melee::EssyraGreatspear" />
+			<Item Stack="1" Name="HL Dagger" ID="classes.Items.Melee::HardlightDagger" />
 			<Item Stack="1" Name="J.Hmmr." ID="classes.Items.Melee::Jolthammer" />
 			<Item Stack="1" Name="Knife" ID="classes.Items.Melee::Knife" />
 			<Item Stack="1" Name="L.Saber" ID="classes.Items.Melee::LavaSaber" />
+			<Item Stack="1" Name="L. Rod" ID="classes.Items.Melee::LightningRod" />
 			<Item Stack="1" Name="Machete" ID="classes.Items.Melee::Machette" />
 			<Item Stack="1" Name="M.Pick" ID="classes.Items.Melee::MilitaryPick" />
 			<Item Stack="1" Name="M.Saber" ID="classes.Items.Melee::MonofilamentSaber" />
@@ -1598,6 +1609,7 @@
 			<Item Stack="1" Name="Wrench" ID="classes.Items.Melee::RaskvelWrench" />
 			<Item Stack="1" Name="Rock" ID="classes.Items.Melee::Rock" />
 			<Item Stack="1" Name="R.Hammer" ID="classes.Items.Melee::RocketHammer" />
+			<Item Stack="1" Name="S.Hammer" ID="classes.Items.Melee::SaurmorianHammer" />
 			<Item Stack="1" Name="ShockBlade" ID="classes.Items.Melee::ShockBlade" />
 			<Item Stack="1" Name="Shortsword" ID="classes.Items.Melee::Shortsword" />
 			<Item Stack="1" Name="SurvAxe" ID="classes.Items.Melee::SurvivalAxe" />
@@ -1624,10 +1636,12 @@
 			<Item Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" LongName="Emmy's Salamander Rifle" />
 			<Item Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" LongName="Emmy's Tweaked Salamander Rifle" />
 			<Item Stack="1" Name="FlareGun" ID="classes.Items.Guns::FlareGun" />
+			<Item Stack="1" Name="FZR FSS"  ID="classes.Items.Guns::FZRFireSuppressionSystem" />
 			<Item Stack="1" Name="Goovolver" ID="classes.Items.Guns::Goovolver" />
 			<Item Stack="1" Name="Hammer C." ID="classes.Items.Guns::HammerCarbine" />
 			<Item Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistol" />
 			<Item Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistolScavenged" />
+			<Item Stack="1" Name="HL Bow"       ID="classes.Items.Guns::HardlightBow" />
 			<Item Stack="1" Name="Holdout H.P." ID="classes.Items.Guns::HoldoutHP" />
 			<Item Stack="1" Name="Hld.Pistol" ID="classes.Items.Guns::HoldOutPistol" />
 			<Item Stack="1" Name="H.Rifle" ID="classes.Items.Guns::HuntingRifle" />
@@ -1646,8 +1660,10 @@
 			<Item Stack="1" Name="Revolvr" ID="classes.Items.Guns::RudimentaryRevolver" />
 			<Item Stack="1" Name="SalPistl" ID="classes.Items.Guns::SalamanderPistol" />
 			<Item Stack="1" Name="SalRifle" ID="classes.Items.Guns::SalamanderRifle" />
+			<Item Stack="1" Name="S.Rail" ID="classes.Items.Guns::SaurmorianRifle" />
 			<Item Stack="1" Name="S.Pistol" ID="classes.Items.Guns::ScopedPistol" />
 			<Item Stack="1" Name="secureMP" ID="classes.Items.Guns::SecureMP" />
+			<Item Stack="1" Name="Shock Bow" ID="classes.Items.Guns::ShockBow" />
 			<Item Stack="1" Name="SlutRay" ID="classes.Items.Guns::SlutRay" />
 			<Item Stack="1" Name="A.SlutRay" ID="classes.Items.Guns::SlutRayAdvanced" />
 			<Item Stack="1" Name="SunFire" ID="classes.Items.Guns::SunFire" />
@@ -1853,6 +1869,16 @@
 			<Perk Name="Cleave" Description="Grants an extra, low-accuracy swing when fighting groups of enemies or 'plural' type foes." />
 			<Perk Name="Concentrate Fire" Description="Allows consecutive ranged attacks to gain a bonus to damage." />
 		</PerkGroup>
+		<PerkGroup Name="Level 9 Mercenary">
+			<Perk Name="Heavily Armored" Description="Reduces the effectiveness of Sunder (and Sunder-like effects) on you by 50%." />
+			<Perk Name="Rending Attacks" Description="Allows your Power Strike to apply Sunder (reducing armor by 50%) and your Rapid Fire to Stagger your opponents (reducing reflexes and aim)." />
+			<Perk Name="Giant Slayer" Description="Grants +5% chance to critical strike foes who are 7 feet or taller." />
+		</PerkGroup>
+		<PerkGroup Name="Level 10 Mercenary">
+			<Perk Name="Single Minded" Description="Increases willpower to maximum when your HP is below 50%." />
+			<Perk Name="Lunge" Description="Grants the ability to target most flying enemies with melee attacks and a low chance to stagger ground-bound foes." />
+			<Perk Name="Bigger Guns" Description="You can use Heavy weapons without needing to meet the physique requirements." />
+		</PerkGroup>
 		<PerkGroup Name="Level 1 Smuggler">
 			<Perk Name="Flash Grenade" Description="Produce a rechargeable flash grenade and use it to blind your enemy. Better aim will increase the chance of success." Comment="**Deprecated**" />
 		</PerkGroup>
@@ -1888,6 +1914,16 @@
 			<Perk Name="Smuggled Stimulant" Description="Allows you to gain 25 energy per round for 3 rounds, once per combat encounter." />
 			<Perk Name="Burst of Energy" Description="Allows you to recover 60 energy, once per combat encounter." />
 		</PerkGroup>
+		<PerkGroup Name="Level 9 Smuggler">
+			<Perk Name="Survival Instincts" Description="Removes Stunned, Staggered, and Knockdown effects when your HP drops below 50%. Also grants you a 100% escape chance if possible." />
+			<Perk Name="Alpha Strike" Description="Allows your first attack in any combat to be a critical hit." />
+			<Perk Name="Desperation" Description="Grants +7% critical hit chance when your HP drops below 50%." />
+		</PerkGroup>
+		<PerkGroup Name="Level 10 Smuggler">
+			<Perk Name="Cloak and Dagger" Description="Gain a small bonus to evasion for one turn after landing a basic attack hit (melee or ranged)." />
+			<Perk Name="Can Opener" Description="Grants a chance to sunder an enemy after landing a critical hit, reducing the effectiveness of their armor by 50%." />
+			<Perk Name="Mag Binders" Description="Grants the ability to throw a set of magnetic, self-guided restraints at the enemy, potentiall stunning them for 1-3 rounds and dealing light shocking damage." />
+		</PerkGroup>
 		<PerkGroup Name="Level 1 Tech Specialist">
 			<Perk Name="Paralyzing Shock" Description="An attack that allows you to paralyze a single foe. Characters with higher intelligence will have greater success using this skill." Comment="**Deprecated**"  />
 		</PerkGroup>
@@ -1899,7 +1935,8 @@
 		<PerkGroup Name="Level 3 Tech Specialist">
 			<Perk Name="Enhanced Dampeners" Description="Grants a 50% vulnerability reduction to damage absorbed by your shield generator." />
 			<Perk Name="Overcharge" Description="Grants the ability to perform a single ranged attack for 150% normal damage. If the target's shields have been depleted, the shot may stun the target. Requires an energy weapon." />
-			<Perk Name="Volley" Description="Grants the ability to perform an extra ranged attack with reduced accuracy, but a chance of causing blindness regardless. Requires an energy weapon." />
+			<Perk Name="Charge Weapon" Description="Grants the ability to charge your melee weapon with electricity for even deadlier strikes!" />
+			<Perk Name="Volley" Description="Grants the ability to perform an extra ranged attack with reduced accuracy, but a chance of causing blindness regardless. Requires an energy weapon." Comment="**Deprecated**" />
 		</PerkGroup>
 		<PerkGroup Name="Level 4 Tech Specialist">
 			<Perk Name="Armor Tweaks" Description="Grants a 20% bonus to defense values provided by equipped armor." />
@@ -1918,8 +1955,19 @@
 		</PerkGroup>
 		<PerkGroup Name="Level 7 Tech Specialist">
 			<Perk Name="Fight Smarter" Description="Improves melee and ranged accuracy by a small portion of your intelligence." />
-			<Perk Name="Weapon Hack" Description="Allows you to spend 15 energy to hack the enemy's energy weapons, preventing their use for four to five rounds" />
+			<Perk Name="Charge Shield" Description="Allows you to infuse your shield with a destructive electrical charge that can blind your foes when struck or damage melee attackers. Costs 15 energy and expires after being triggered twice." />
+			<Perk Name="Weapon Hack" Description="Allows you to spend 15 energy to hack the enemy's energy weapons, preventing their use for four to five rounds" Comment="**Deprecated**" />
 			<Perk Name="Shield Hack" Description="Allows you to spend 25 energy to hack an enemy's shield, dealing very high shield damage." />
+		</PerkGroup>
+		<PerkGroup Name="Level 9 Tech Specialist">
+			<Perk Name="Advanced Shielding" Description="Grants a defense bonus to your shields equal to 25% of your intelligence." />
+			<Perk Name="Drone Control" Description="Grants any drone you control (whether you made or acquired it) a damage bonus equal to 25% of your Intelligence." />
+			<Perk Name="Deadly Shock" Description="Boosts the amount of electrical current used for Paralyzing Shock, allowing it to do a moderate amount of electrical damage on top of the stun effect." />
+		</PerkGroup>
+		<PerkGroup Name="Level 10 Tech Specialist">
+			<Perk Name="Rapid Recharge" Description="Grants passive shield regeneration on any turn where no damage is taken." />
+			<Perk Name="Boosted Charges" Description="Enhances your gravidic and thermal charges' damage, and also provides secondary effects. Gravidic charge leaves a lingering field that reduces all kinetic damage dealt for three rounds. Thermal charge has a chance of lighting your foes on fire." />
+			<Perk Name="Linked Emitters" Description="Grants 5% critical hit chance with energy weapons while your shields are up." />
 		</PerkGroup>
 		<PerkGroup Name="Level 8">
 			<Perk Name="Heroic Reserves" Description="Raises your maximum energy reserves by 33, allowing you to use more special attacks before tiring." />
@@ -1996,11 +2044,14 @@
 		<PerkGroup Name="General">
 			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="Cum Quantity" Value1="500000" />
+			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
+			<Perk Name="Fixed MilkQ" Comment="Ensures you always lactate exactly {Value1} mLs. See Value1" Label1="Lactation Quantity" Value1="500000" />
 			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn. See Value1" Label1="Attacks per turn" Value1="5" />
 			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn. See Value1" Label1="Shots per turn" Value1="5" />
 			<Perk Name="No Cum Leakage" />
 			<Perk Name="Ranged Immune" Comment="Immune to ranged attacks" />
 			<Perk Name="STD Immune" Description="You are immune to sexually transmitted diseases." />
+			<Perk Name="Ultra-Exhibitionist" Description="The pleasures of exhibitionism have been seared into your body, locking your exhibitionism at max value. Also boosts minimum lust and lust gain when in civilization." Value1="1" />
 		</PerkGroup>
 	</Perks>
 	<!-- ================================================================ -->
