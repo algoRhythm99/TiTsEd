@@ -251,7 +251,7 @@ namespace TiTsEd.Model
                 // * No group of bits have been written yet.
                 // * Those 7 most signficant bits so far are zero
                 // * They are not the 7 least significant bits (we always need to write those to store the number 0).
-                if (b == 0 && numBytes == 0 && shift >= 0) continue;    
+                if (fourBytes && b == 0 && numBytes == 0 && shift >= 0) continue;    
                 ++numBytes;
 
                 // Write a continuation bit if those are not the least significant bits (shift would be <0 for those ones)
