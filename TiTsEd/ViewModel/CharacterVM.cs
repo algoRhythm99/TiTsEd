@@ -146,8 +146,8 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int Credits {
-            get { return GetInt("credits"); }
+        public double Credits {
+            get { return GetDouble("credits"); }
             set { SetValue("credits", value); }
         }
 
@@ -396,8 +396,8 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int XP {
-            get { return GetInt("XPRaw"); }
+        public double XP {
+            get { return GetDouble("XPRaw"); }
             set { SetValue("XPRaw", value); }
         }
 
