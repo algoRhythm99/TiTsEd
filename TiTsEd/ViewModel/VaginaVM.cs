@@ -29,6 +29,8 @@ namespace TiTsEd.ViewModel {
             obj["shrinkCounter"] = 0;
             obj["vagooFlags"] = new AmfObject(AmfTypes.Array);
 
+            obj["fullness"] = 0;
+
             obj["labiaPierced"] = 0;
             obj["labiaPLong"] = "";
             obj["labiaPShort"] = "";
@@ -65,34 +67,42 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int Looseness {
-            get { return GetInt("loosenessRaw"); }
+        public double Looseness {
+            get { return GetDouble("loosenessRaw"); }
             set { SetValue("loosenessRaw", value); }
         }
 
-        public int LoosenessMod {
-            get { return GetInt("loosenessMod"); }
+        public double LoosenessMod {
+            get { return GetDouble("loosenessMod"); }
             set { SetValue("loosenessMod", value); }
         }
 
-        public int MinLooseness {
-            get { return GetInt("minLooseness"); }
-            set { SetValue("minLooseness", value); }
+        public double MinLooseness {
+            get { return GetDouble("minLooseness"); }
+            set {
+                SetValue("minLooseness", value);
+                OnPropertyChanged("Looseness");
+            }
         }
 
-        public int Wetness {
-            get { return GetInt("wetnessRaw"); }
+        public double Wetness {
+            get { return GetDouble("wetnessRaw"); }
             set { SetValue("wetnessRaw", value); }
         }
 
-        public int WetnessMod {
-            get { return GetInt("wetnessMod"); }
+        public double WetnessMod {
+            get { return GetDouble("wetnessMod"); }
             set { SetValue("wetnessMod", value); }
         }
 
-        public int BonusCapacity {
-            get { return GetInt("bonusCapacity"); }
+        public double BonusCapacity {
+            get { return GetDouble("bonusCapacity"); }
             set { SetValue("bonusCapacity", value); }
+        }
+
+        public double Fullness {
+            get { return GetDouble("fullness"); }
+            set { SetValue("fullness", value); }
         }
 
         public int ShrinkCounter {

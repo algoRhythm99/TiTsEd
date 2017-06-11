@@ -176,6 +176,13 @@
 
                         </common:AutoGrid>
 
+                        <common:AutoGrid>
+
+                            <TextBlock              Text="Min Looseness" />
+                            <common:MyNumericBox    Value="{Binding MinLooseness}" />
+
+                        </common:AutoGrid>
+
                         <common:AutoGrid Columns="3">
 
                             <TextBlock              Text="Looseness" />
