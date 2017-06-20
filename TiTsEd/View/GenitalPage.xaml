@@ -87,7 +87,7 @@
 
                 </common:AutoGrid>
 
-                <common:ArrayEditor Header="Cocks" Items="{Binding Game.Character.Cocks}" Capacity="5" MinCapacity="0">
+                <common:ArrayEditor Header="Cocks" Items="{Binding Game.Character.Cocks}" Capacity="10" MinCapacity="0">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Description}" />
