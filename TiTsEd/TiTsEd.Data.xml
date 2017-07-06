@@ -1439,6 +1439,8 @@
 			<Item Stack="10" Name="MyrNectr" ID="classes.Items.Miscellaneous::MyrNectar" />
 			<Item Stack="10" Name="NaleenNip" ID="classes.Items.Miscellaneous::NaleenNip" />
 			<Item Stack="10" Name="Nuki C." ID="classes.Items.Miscellaneous::NukiCookies" />
+			<Item Stack="10" Name="Lg.OvaEgg" ID="classes.Items.Miscellaneous::OvalastingEggLarge" />
+			<Item Stack="10" Name="Sm.OvaEgg" ID="classes.Items.Miscellaneous::OvalastingEggSmall" />
 			<Item Stack="10" Name="Ovilium" ID="classes.Items.Miscellaneous::Ovilium" />
 			<Item Stack="10" Name="Pandaneen" ID="classes.Items.Miscellaneous::Pandaneen" />
 			<Item Stack="10" Name="Panda Pro" ID="classes.Items.Miscellaneous::PandaPro" />
@@ -1568,13 +1570,15 @@
 			<Item Stack="10" Name="T.Pack"      ID="classes.Items.Miscellaneous::ThermalPack" />
 		</ItemGroup>
 		<ItemGroup Name="Stories">
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BecomingOneOfTheGirls"    LongName="code for “Becoming One...”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BXBIOne" LongName="code for “BXBI Chapter 1”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BXBITwo" LongName="code for “BXBI Chapter 2”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::CapturedByTheDemons"    LongName="code for “Captured...”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::EightClicks" LongName="code for “||||||||”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::FuckTheSystem"   LongName="code for “Fuck The System”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::SatyrSlave"  LongName="code for “Satyr Slave”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BecomingOneOfTheGirls"    LongName="story download code for “Becoming One...”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BXBIOne" LongName="story download code for “BXBI Chapter 1”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BXBITwo" LongName="story download code for “BXBI Chapter 2”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::CapturedByTheDemons"    LongName="story download code for “Captured...”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::EightClicks" LongName="story download code for “||||||||”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::FuckTheSystem"   LongName="story download code for “Fuck The System”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::SatyrSlave"  LongName="story download code for “Satyr Slave”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::StolenGoods" LongName="story download code for “Stolen Goods”" />
+			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::TentaclesAndTanukis"     LongName="story download code for “Tentacles &amp; Tanukis”" />
 		</ItemGroup>
 		<ItemGroup Name="Toys">
 			<Item Stack="1" Name="B.Buddy"  ID="classes.Items.Toys::BubbleBuddy" />
