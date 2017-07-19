@@ -3998,6 +3998,16 @@
 			<StatusEffect Name="Lane's Hypnosis - Reflexes" Description="Lane's hypnosis session has improved your reflexes!" Value1="5" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Lane's Hypnosis - Willpower" Description="Lane's hypnosis session has improved your willpower!" Value1="5" IconName="Icon_DrugPill" MinutesLeft="1440" />
 		</StatusEffectGroup>
+		<StatusEffectGroup Name="SSTDs">
+			<StatusEffect Name="Furpies Simplex C" Description="You’ve been infected with Furpies Simplex C! If left untreated, it will slowly transform you into a furry cat-person (probably). Consult your Codex for more information." Value4="3" IconName="Icon_Dog_Paw" IconShade="16738740" MinutesLeft="17280" />
+			<StatusEffect Name="Furpies Simplex D" Description="You’ve been infected with Furpies Simplex D! If left untreated, it will slowly transform you into a furry dog-person (probably). Consult your Codex for more information." Value4="3" IconName="Icon_Dog_Paw" IconShade="16738740" MinutesLeft="17280" />
+			<StatusEffect Name="Furpies Simplex H" Description="You’ve been infected with Furpies Simplex H! If left untreated, it will slowly transform you into a furry horse-person (probably). Consult your Codex for more information." Value4="3" IconName="Icon_Horse" IconShade="16738740" MinutesLeft="17280" />
+			<StatusEffect Name="Undetected Furpies" IsHidden="true" />
+			<StatusEffect Name="Undetected Locofever" IsHidden="true" />
+			<StatusEffect Name="Locofever" Description="You’ve come down with a case of locofever, setting your mating instincts into overdrive. Your immune boosters should keep you from spreading it around any further.&#xD;&#xA;&#xD;&#xA;+{Value1} Libido" Label1="Libido modifier" Comment="See Value1" IconShade="16738740" MinutesLeft="17280" />
+			<StatusEffect Name="Sneezing Tits" Description="You have been infected!&#xD;&#xA;&#xD;&#xA;&lt;i&gt;&lt;b&gt;Caution:&lt;/b&gt; Sporadic sneezing may cause spontaneous breast growth.&lt;/i&gt;" Label3="0 = Breasts may grow&#xD;&#xA;1 = Breasts will grow" Value3="1" Value4="1" IconName="Icon_Boob_Torso" IconShade="16738740" MinutesLeft="9360" />
+			<StatusEffect Name="Undetected Sneezing Tits" Description="Hidden Sneezing Tits infection!" Label3="0 = Breasts may grow&#xD;&#xA;1= Breasts will grow" Value3="1" IconName="Icon_Boob_Torso" IconShade="16738740" MinutesLeft="10080" IsHidden="true" />
+		</StatusEffectGroup>
 		<StatusEffectGroup Name="Item-effects">
 			<StatusEffect Name="Amazona Disabled" IsHidden="true" />
 			<StatusEffect Name="Amazona Uses" IsHidden="true" />
