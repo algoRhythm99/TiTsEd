@@ -131,6 +131,9 @@
                     <TextBlock              Text="Anal Bonus Capacity"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Ass.BonusCapacity}" />
 
+                    <TextBlock              Text="Anal Min Looseness"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.MinLooseness}" />
+
                 </common:AutoGrid>
 
                 <common:AutoGrid Columns="3">
