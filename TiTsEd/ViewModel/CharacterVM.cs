@@ -876,41 +876,13 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("tailType"); }
             set {
                 SetValue("tailType", value);
-
-                TailGenital = 0;
-                XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.TailTypes, value);
-                if (datum != null) {
-                    var name = datum.Name;
-                    if (name == "Cuntsnake") {
-                        datum = XmlData.LookupEnumByName(XmlData.Current.Body.TailGenitalTypes, "Vagina");
-                        if(datum != null) {
-                            TailGenital = datum.ID;
-                        }
-                    }
-                    else if (name == "Cockvine") {
-                        datum = XmlData.LookupEnumByName(XmlData.Current.Body.TailGenitalTypes, "Cock");
-                        if (datum != null) {
-                            TailGenital = datum.ID;
-                        }
-                    }
-                }
-                OnPropertyChanged("TailOptionsEnabled");
             }
-        }
-
-        public bool TailOptionsEnabled {
-            get { return (0 != TailType); }
-        }
-
-        public bool TailGenitalEnabled {
-            get { return (0 != TailGenital); }
         }
 
         public int TailGenital {
             get { return GetInt("tailGenital"); }
             set {
                 SetValue("tailGenital", value);
-                OnPropertyChanged("TailGenitalEnabled");
             }
         }
 
