@@ -29,8 +29,6 @@ namespace TiTsEd.ViewModel {
             obj["shrinkCounter"] = 0;
             obj["vagooFlags"] = new AmfObject(AmfTypes.Array);
 
-            obj["fullness"] = 0;
-
             obj["labiaPierced"] = 0;
             obj["labiaPLong"] = "";
             obj["labiaPShort"] = "";
@@ -98,11 +96,6 @@ namespace TiTsEd.ViewModel {
         public double BonusCapacity {
             get { return GetDouble("bonusCapacity"); }
             set { SetValue("bonusCapacity", value); }
-        }
-
-        public double Fullness {
-            get { return GetDouble("fullness"); }
-            set { SetValue("fullness", value); }
         }
 
         public int ShrinkCounter {
