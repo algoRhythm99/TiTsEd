@@ -1767,6 +1767,7 @@
 			<KeyItem Name="Parasite Sample" Description="A small security hardcase containing a medical sample." />
 			<KeyItem Name="Red Myr Blood" Description="A vial of blood sampled from a red myr." />
 			<KeyItem Name="RK Lah - Captured" />
+			<KeyItem Name="Satellite Hard Drive" />
 			<KeyItem Name="Sexbot GPS Triangulator" />
 			<KeyItem Name="Silver Key" />
 			<KeyItem Name="Unification Rally Invite: 18:00, Mushroom Park" />
@@ -1981,10 +1982,12 @@
 		<PerkGroup Name="Events">
 			<Perk Name="Barcoded" Description="A sleek black barcode is printed on your ass, left there by Dr. Belle for purely scientific purposes." />
 			<Perk Name="Buttslut" Description="Ensures your ass always remains bubbly and that fluids shot inside will heal your injuries." />
+			<Perk Name="Calm Aim" Description="You’re a pretty good shot when things aren’t too hectic, so you gain +1 accuracy when above 50% health." Value1="1" Value2="50" />
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
 			<Perk Name="Peace of Mind" Description="You radiate an aura of Zen-like calm. You can offer enemies the chance to peacefully surrender. The lower their level, the better the chance will be. In turn, however, enemies that peacefully demand you submit to them may be very difficult to resist.... Additionally boosts minimum lust to 20." />
+			<Perk Name="Rage Aim" Description="You get so mad when you’re losing, you gain +1 accuracy when you’re below 50% health" Value1="1" Value2="50" />
 			<Perk Name="Slut Stamp" Description="A tattoo permanently emblazoned above your ass makes you horny faster while wearing anything clothing your lower body." Value1="10" Value2="10" Value3="10" />
 		</PerkGroup>
 		<PerkGroup Name="Treatment">
