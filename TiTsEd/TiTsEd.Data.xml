@@ -139,6 +139,7 @@
 			<SkinFlag ID="4" Name="Fluffy" />
 			<SkinFlag ID="5" Name="Squishy" />
 			<SkinFlag ID="6" Name="Smooth" />
+			<SkinFlag ID="11" Name="Aphrodisiac" />
 			<SkinFlag ID="12" Name="Sticky" />
 			<SkinFlag ID="13" Name="Thick" />
 			<SkinFlag ID="39" Name="Absorbent" />
@@ -488,20 +489,35 @@
 		<HairStyles>
 			<HairStyle />
 			<HairStyle>afro</HairStyle>
+			<HairStyle>backwards slick</HairStyle>
+			<HairStyle>bob cut</HairStyle>
 			<HairStyle>braided</HairStyle>
+			<HairStyle>crown braid</HairStyle>
 			<HairStyle>curls</HairStyle>
 			<HairStyle>curtains</HairStyle>
 			<HairStyle>fingerwave</HairStyle>
+			<HairStyle>front wave</HairStyle>
+			<HairStyle>hime cut</HairStyle>
 			<HairStyle>loose</HairStyle>
+			<HairStyle>mess of curls</HairStyle>
+			<HairStyle>messy chignon</HairStyle>
 			<HairStyle>mohawk</HairStyle>
+			<HairStyle>pigtail buns</HairStyle>
 			<HairStyle>pigtails</HairStyle>
 			<HairStyle>ponytail</HairStyle>
 			<HairStyle>quiff</HairStyle>
 			<HairStyle>ringlets</HairStyle>
+			<HairStyle>ruffled layers</HairStyle>
+			<HairStyle>side plait</HairStyle>
+			<HairStyle>simple part</HairStyle>
+			<HairStyle>single braid</HairStyle>
 			<HairStyle>spikehawk</HairStyle>
+			<HairStyle>spikes</HairStyle>
 			<HairStyle>straight</HairStyle>
 			<HairStyle>tentacle</HairStyle>
+			<HairStyle>tight chignon</HairStyle>
 			<HairStyle>topknot</HairStyle>
+			<HairStyle>twintails</HairStyle>
 		</HairStyles>
 		<!-- ================================================================ -->
 		<FaceTypes>
@@ -957,7 +973,7 @@
 		</TailFlags>
 		<!-- ================================================================ -->
 		<TailGenitalTypes>
-			<TailGenitalType ID="0" Name="None" />
+			<TailGenitalType ID="0" Name="Parasitic" />
 			<TailGenitalType ID="1" Name="Cock" />
 			<TailGenitalType ID="2" Name="Vagina" />
 		</TailGenitalTypes>
@@ -1264,10 +1280,10 @@
 			<Item Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" />
 			<Item Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" />
 			<Item Stack="1" Name="AZA Suit" ID="classes.Items.Armor::ArmstrongSuitBlue">
-				<ItemField Name="shields" Type="int" Value="5" />
+				<ItemField Name="shields" Type="int" Value="4" />
 			</Item>
 			<Item Stack="1" Name="UVA Suit" ID="classes.Items.Armor::ArmstrongSuitViolet">
-				<ItemField Name="shields" Type="int" Value="5" />
+				<ItemField Name="shields" Type="int" Value="4" />
 			</Item>
 			<Item Stack="1" Name="PWA Suit" ID="classes.Items.Armor::ArmstrongSuitWhite">
 				<ItemField Name="shields" Type="int" Value="20" />
@@ -1286,12 +1302,8 @@
 			<Item Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
 			<Item Stack="1" Name="WM Dress" ID="classes.Items.Armor::WeavemailDress" />
 			<Item Stack="1" Name="WM Shirt" ID="classes.Items.Armor::WeavemailShirt" />
-			<Item Stack="1" Name="O.Collar" ID="classes.Items.Armor.Unique::OmnisuitCollar">
-				<ItemField Name="shields" Type="int" Value="5" />
-			</Item>
-			<Item Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit">
-				<ItemField Name="shields" Type="int" Value="5" />
-			</Item>
+			<Item Stack="1" Name="O.Collar" ID="classes.Items.Armor.Unique::OmnisuitCollar" />
+			<Item Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit" />
 			<Item Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
 		</ItemGroup>
 		<ItemGroup Name="Upper Undergarment">
@@ -1466,10 +1478,12 @@
 			<Item Stack="10" Name="ZilHoney" ID="classes.Items.Miscellaneous::ZilHoney" />
 			<Item Stack="10" Name="ZilRation" ID="classes.Items.Miscellaneous::ZilRation" />
 			<Item Stack="10" Name="P.Saliva" ID="classes.Items.Recovery::PexigaSaliva" />
-			<Item Stack="10" Name="Amazona"     ID="classes.Items.Transformatives::Amazona" />
-			<Item Stack="12" Name="AmzIT.Clas"  ID="classes.Items.Transformatives::AmazonaClassic" />
-			<Item Stack="12" Name="AmzIT.Lite"  ID="classes.Items.Transformatives::AmazonaLite" />
-			<Item Stack="12" Name="AmzIT.Plus"  ID="classes.Items.Transformatives::AmazonaPlus" />
+<!--
+			<Item Stack="10" Name="Amazona"     ID="classes.Items.Transformatives::Amazona" LongName="Amazona Iced Tea" />
+-->
+			<Item Stack="12" Name="AmzIT.Clas"  ID="classes.Items.Transformatives::AmazonaClassic" LongName="Amazona Classic" />
+			<Item Stack="12" Name="AmzIT.Lite"  ID="classes.Items.Transformatives::AmazonaLite" LongName="Amazona Lite" />
+			<Item Stack="12" Name="AmzIT.Plus"  ID="classes.Items.Transformatives::AmazonaPlus" LongName="Amazona Plus" />
 			<Item Stack="10" Name="AmberSeed" ID="classes.Items.Transformatives::AmberSeed" />
 			<Item Stack="5"  Name="BGreenPot" ID="classes.Items.Transformatives::BigGreenPotion" />
 			<Item Stack="10" Name="Bovinium" ID="classes.Items.Transformatives::Bovinium" />
@@ -1545,6 +1559,7 @@
 			<Item Stack="10" Name="S.Bites" ID="classes.Items.Transformatives::SharkBites" />
 			<Item Stack="10" Name="New Ewe" ID="classes.Items.Transformatives::SheepTF" LongName="New Ewe" />
 			<Item Stack="10" Name="S.Clear" ID="classes.Items.Transformatives::SkinClear" />
+			<Item Stack="10" Name="Slutshroom" ID="classes.Items.Transformatives::SlutShroom" />
 			<Item Stack="10" Name="Shortcake" ID="classes.Items.Transformatives::StrawberryShortcake" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
 			<Item Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
@@ -1681,38 +1696,53 @@
 		</ItemGroup>
 		<ItemGroup Name="Shield">
 			<Item Stack="1" Name="AW Belt" ID="classes.Items.Protection::ArcticWarfareBelt">
-				<ItemField Name="shields" Type="int" Value="25" />
+				<ItemField Name="shields"       Type="int" Value="25" />
 			</Item>
 			<Item Stack="1" Name="BasicShld" ID="classes.Items.Protection::BasicShield">
-				<ItemField Name="shields" Type="int" Value="10" />
+				<ItemField Name="shields"       Type="int" Value="10" />
 			</Item>
 			<Item Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield">
-				<ItemField Name="shields" Type="int" Value="500" />
+				<ItemField Name="shields"       Type="int" Value="500" />
 			</Item>
 			<Item Stack="1" Name="Decent S." ID="classes.Items.Protection::DecentShield">
-				<ItemField Name="shields" Type="int" Value="18" />
+				<ItemField Name="shields"       Type="int" Value="18" />
 			</Item>
-			<Item Stack="1" Name="HeatBelt" ID="classes.Items.Protection::HeatBelt" />
+			<Item Stack="1" Name="H.Shield" ID="classes.Items.Protection::HammerShield">
+				<ItemField Name="shieldDefense" Type="int" Value="2" />
+				<ItemField Name="shields"       Type="int" Value="70" />
+			</Item>
+			<Item Stack="1" Name="HeatBelt" ID="classes.Items.Protection::HeatBelt">
+				<ItemField Name="shields"       Type="int" Value="15" />
+			</Item>
 			<Item Stack="1" Name="I.Shield" ID="classes.Items.Protection::ImprovisedShield">
-				<ItemField Name="shields" Type="int" Value="30" />
+				<ItemField Name="shieldDefense" Type="int" Value="3" />
+				<ItemField Name="shields"       Type="int" Value="40" />
 			</Item>
 			<Item Stack="1" Name="E.Shield" ID="classes.Items.Protection::JoyCoEliteShield">
-				<ItemField Name="shields" Type="int" Value="60" />
+				<ItemField Name="shieldDefense" Type="int" Value="7" />
+				<ItemField Name="shields"       Type="int" Value="60" />
 			</Item>
 			<Item Stack="1" Name="P.Shield" ID="classes.Items.Protection::JoyCoPremiumShield">
-				<ItemField Name="shields" Type="int" Value="40" />
+				<ItemField Name="shieldDefense" Type="int" Value="1" />
+				<ItemField Name="shields"       Type="int" Value="56" />
+			</Item>
+			<Item Stack="1" Name="N.Shield" ID="classes.Items.Protection::NovaShield">
+				<ItemField Name="shieldDefense" Type="int" Value="2" />
+				<ItemField Name="shields"       Type="int" Value="95" />
 			</Item>
 			<Item Stack="1" Name="O.Aegis" ID="classes.Items.Protection::OzoneAegis">
-				<ItemField Name="shields" Type="int" Value="50" />
+				<ItemField Name="shields"       Type="int" Value="70" />
 			</Item>
 			<Item Stack="1" Name="Mark IIS" ID="classes.Items.Protection::ReaperArmamentsMarkIIShield">
-				<ItemField Name="shields" Type="int" Value="100" />
+				<ItemField Name="shieldDefense" Type="int" Value="2" />
+				<ItemField Name="shields"       Type="int" Value="145" />
 			</Item>
 			<Item Stack="1" Name="Mark I.S." ID="classes.Items.Protection::ReaperArmamentsMarkIShield">
-				<ItemField Name="shields" Type="int" Value="80" />
+				<ItemField Name="shieldDefense" Type="int" Value="3" />
+				<ItemField Name="shields"       Type="int" Value="115" />
 			</Item>
 			<Item Stack="1" Name="S.Shield" ID="classes.Items.Protection::SalamanderShield">
-				<ItemField Name="shields" Type="int" Value="50" />
+				<ItemField Name="shields"       Type="int" Value="70" />
 			</Item>
 		</ItemGroup>
 		<ItemGroup Name="Other">
@@ -4051,14 +4081,28 @@
 			<StatusEffect Name="T.Pack" Description="You are protected from Uveto's harsh cold... for now!" IconName="Icon_Smelly" MinutesLeft="1440" />
 			<StatusEffect Name="The Mango" Description="You are irresistible!" IconName="Charmed" MinutesLeft="1440" IconShade="12030916" />
 		</StatusEffectGroup>
+		<StatusEffectGroup Name="Mimbranes">
+			<StatusEffect Name="Mimbrane Ass"           IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Balls"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Boobs"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Cock"          IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Face"          IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Foot Left"     IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Foot Right"    IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Hand Left"     IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Hand Right"    IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+			<StatusEffect Name="Mimbrane Pussy"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
+		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
 			<StatusEffect Name="Bothrioc Eggs" Description="You have been impregnated by a bothrioc. A warm, dense glow suffuses you that is not at all unpleasant..." IconName="Charmed" />
 			<StatusEffect Name="Bra Transparency" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
+			<StatusEffect Name="Cumflation Immune" IsHidden="true" />
 			<StatusEffect Name="Cum Paused" IsHidden="true" />
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
 			<StatusEffect Name="Disarm Immune" IsHidden="true" />
+			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Egregiously Endowed" Description="Movement between rooms takes twice as long, and fleeing from combat is more difficult." IconName="Icon_Poison" />
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Endowment Immobilized" Description="Your endowments prevent you from moving." IconName="Icon_Poison" />
@@ -4097,6 +4141,7 @@
 			<StatusEffect Name="Psi Slave Collar" Description="This metal collar limits your intelligence capacity and willpower while worn, making you completely subservient to the will of the one who operates it." Value1="0.5" Type1="Double" Value2="0.5" Type2="Double" Value3="200" IconName="Radio" IconShade="16711680" />
 			<StatusEffect Name="Pussy Drenched" Value1="1" IconName="Icon_Water_Drop" IconShade="12030916" />
 			<StatusEffect Name="Quaramarta!" Description="Fazian's Quaramarta performance has sharpened your senses!&#xA;Critical chance increased by 15%." IconName="OffenseUp" IconShade="0" />
+			<StatusEffect Name="Roehm Slimed" Description="Direct physical contact with a roehm in heat results in stickiness, and smelling rather like an orgy in a vat of molasses." Value1="10" Value2="-5" Value3="15" IconName="Icon_Splatter" IconShade="12030916" MinutesLeft="720" />
 			<StatusEffect Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IconName="DefenseDown" IconShade="0" />
 			<StatusEffect Name="Sexy Costume" Description="The outfit you are wearing is making you feel randier than usual." Value1="10" IconName="LustUp" IconShade="100" />
 			<StatusEffect Name="Sexy Moves" Description="Your recent lessons pay off, you feel as sexy as ever - and it shows." IconName="OffenseUp" MinutesLeft="4320" />
