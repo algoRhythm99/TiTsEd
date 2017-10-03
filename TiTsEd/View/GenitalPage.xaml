@@ -146,6 +146,11 @@
                 </common:AutoGrid>
 
                 <common:AutoGrid Columns="3">
+
+                    <TextBlock              Text="Girl Cum Multiplier" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.GirlCumMultiplier}" Type="Double" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.GirlCumMultiplierMod}" ToolTip="Modifier" />
+
                     <TextBlock              Text="Fertility" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
