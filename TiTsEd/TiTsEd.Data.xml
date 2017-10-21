@@ -1306,7 +1306,7 @@
 			<Item Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit" />
 			<Item Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
 		</ItemGroup>
-		<ItemGroup Name="Upper Undergarment">
+		<ItemGroup Name="Undergarment (Upper)">
 			<Item Stack="1" Name="BikiniTop" ID="classes.Items.Apparel::FrillyBikiniTop" />
 			<Item Stack="1" Name="NetTop" ID="classes.Items.Apparel::FishnetTop" />
 			<Item Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
@@ -1341,7 +1341,7 @@
 			<Item Stack="1" Name="Underbust Corset" ID="classes.Items.Apparel::UnderbustCorset" />
 			<Item Stack="1" Name="Undershirt" ID="classes.Items.Apparel::Undershirt" />
 		</ItemGroup>
-		<ItemGroup Name="Lower Undergarment">
+		<ItemGroup Name="Undergarment (Lower)">
 			<Item Stack="1" Name="BikiniBtm" ID="classes.Items.Apparel::FrillyBikiniBottom" />
 			<Item Stack="1" Name="BaggyShorts" ID="classes.Items.Apparel::BaggySwimShorts" />
 			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" />
@@ -1401,6 +1401,7 @@
 			<Item Stack="1" Name="Z.Pouch" ID="classes.Items.Apparel::ZipPouch" />
 		</ItemGroup>
 		<ItemGroup Name="Combat">
+			<Item Stack="5"  Name="Crystal S." ID="classes.Items.Combat::CrystalShard" />
 			<Item Stack="10" Name="EMP Gren."   ID="classes.Items.Miscellaneous::EMPGrenade" />
 			<Item Stack="10" Name="Flashbang"   ID="classes.Items.Miscellaneous::FlashGrenade" />
 			<Item Stack="10" Name="OS StimBoost"    ID="classes.Items.Miscellaneous::OSStimBoost" />
@@ -1414,59 +1415,65 @@
 			<Item Stack="20" Name="S.Bubble"    ID="classes.Items.Toys.Bubbles::SmallCumBubble" />
 		</ItemGroup>
 		<ItemGroup Name="Consumable">
-			<Item Stack="5"  Name="Crystal S." ID="classes.Items.Combat::CrystalShard" />
+<!--
+			<Item Stack="5"  Name="ChillPill" ID="classes.Items.Miscellaneous::ChillPill" />
+-->
+			<Item Stack="20" Name="Goblin P." ID="classes.Items.Miscellaneous::ProphylacticGoblin" />
+			<Item Stack="20" Name="LapinaraP" ID="classes.Items.Miscellaneous::ProphylacticLapinara" />
+			<Item Stack="20" Name="Rask P." ID="classes.Items.Miscellaneous::ProphylacticRaskvel" />
+			<Item Stack="20" Name="Sydian P." ID="classes.Items.Miscellaneous::ProphylacticSydian" />
+		</ItemGroup>
+		<ItemGroup Name="Restoratives">
+			<Item Stack="10" Name="BBQ To-Go" ID="classes.Items.Miscellaneous::BBQToGo" />
+			<Item Stack="10" Name="Curdsonwhey" ID="classes.Items.Miscellaneous::Curdsonwhey" />
+			<Item Stack="10" Name="FocusPill" ID="classes.Items.Miscellaneous::FocusPill" />
+			<Item Stack="5"  Name="F.Extract" ID="classes.Items.Miscellaneous::FungalExtract" />
+			<Item Stack="5"  Name="G.M.Bots" ID="classes.Items.Miscellaneous::GrayMicrobots" />
+			<Item Stack="10" Name="K.Crunch" ID="classes.Items.Miscellaneous::Kalocrunch" />
+			<Item Stack="12" Name="LargeEgg" ID="classes.Items.Miscellaneous::LargeEgg" />
+			<Item Stack="10" Name="M.Mango" ID="classes.Items.Miscellaneous::MhengaMango" />
+			<Item Stack="50" Name="Milk Gushers" ID="classes.Items.Miscellaneous::MilkCaramelGushers" />
+			<Item Stack="50" Name="Milk. Aid" ID="classes.Items.Miscellaneous::MilkmaidsAid" />
+			<Item Stack="10" Name="MyrNectr" ID="classes.Items.Miscellaneous::MyrNectar" />
+			<Item Stack="10" Name="Roast Z.B" ID="classes.Items.Miscellaneous::RoastedZhorBeast" />
+			<Item Stack="12" Name="SmallEgg" ID="classes.Items.Miscellaneous::SmallEgg" />
+			<Item Stack="10" Name="ZilHoney" ID="classes.Items.Miscellaneous::ZilHoney" />
+			<Item Stack="10" Name="P.Saliva" ID="classes.Items.Recovery::PexigaSaliva" />
 			<Item Stack="1"  Name="H.Wine" ID="classes.Items.Drinks::HoneyWine" />
 			<Item Stack="10" Name="R.Venom" ID="classes.Items.Drinks::RedMyrVenom" />
+			<Item Stack="10" Name="JawBreakr" ID="classes.Items.Transformatives::SaltyJawBreaker" />
+		</ItemGroup>
+		<ItemGroup Name="Transformatives">
 			<Item Stack="10" Name="Anusoft" ID="classes.Items.Miscellaneous::Anusoft" />
 			<Item Stack="10" Name="AusarTreat" ID="classes.Items.Miscellaneous::AusarTreats" />
-			<Item Stack="10" Name="BBQ To-Go" ID="classes.Items.Miscellaneous::BBQToGo" />
 			<Item Stack="50" Name="Boobswell P." ID="classes.Items.Miscellaneous::BoobswellPads" />
-			<Item Stack="5"  Name="ChillPill" ID="classes.Items.Miscellaneous::ChillPill" />
 			<Item Stack="10" Name="Chocolac" ID="classes.Items.Miscellaneous::Chocolac" />
 			<Item Stack="10" Name="Condensol" ID="classes.Items.Miscellaneous::Condensol" />
-			<Item Stack="10" Name="Curdsonwhey" ID="classes.Items.Miscellaneous::Curdsonwhey" />
 			<Item Stack="10" Name="Dumbfuck" ID="classes.Items.Miscellaneous::Dumbfuck" />
 			<Item Stack="10" Name="EasyFit" ID="classes.Items.Miscellaneous::EasyFit" />
 			<Item Stack="10" Name="Estrobloom" ID="classes.Items.Miscellaneous::Estrobloom" />
 			<Item Stack="10" Name="Fertite+" ID="classes.Items.Miscellaneous::FertitePlus" />
-			<Item Stack="10" Name="FocusPill" ID="classes.Items.Miscellaneous::FocusPill" />
-			<Item Stack="5"  Name="F.Extract" ID="classes.Items.Miscellaneous::FungalExtract" />
-			<Item Stack="5"  Name="G.M.Bots" ID="classes.Items.Miscellaneous::GrayMicrobots" />
 			<Item Stack="10" Name="Honeydew" ID="classes.Items.Miscellaneous::Honeydew" />
 			<Item Stack="10" Name="Honeypot" ID="classes.Items.Miscellaneous::Honeypot" />
 			<Item Stack="10" Name="Honeyseed" ID="classes.Items.Miscellaneous::HoneySeed" />
 			<Item Stack="10" Name="Horse-Cock" ID="classes.Items.Miscellaneous::HorseCock" />
 			<Item Stack="10" Name="HorsePill" ID="classes.Items.Miscellaneous::HorsePill" />
 			<Item Stack="10" Name="ImmBoost" ID="classes.Items.Miscellaneous::ImmunoBooster" />
-			<Item Stack="10" Name="K.Crunch" ID="classes.Items.Miscellaneous::Kalocrunch" />
 			<Item Stack="10" Name="KnotAProb" ID="classes.Items.Miscellaneous::KnotAProblem" />
 			<Item Stack="10" Name="Lactaid" ID="classes.Items.Miscellaneous::Lactaid" />
 			<Item Stack="10" Name="LactaidMT" ID="classes.Items.Miscellaneous::LactaidMilkTank" />
 			<Item Stack="10" Name="LactaidO" ID="classes.Items.Miscellaneous::LactaidOverdrive" />
-			<Item Stack="12" Name="LargeEgg" ID="classes.Items.Miscellaneous::LargeEgg" />
-			<Item Stack="10" Name="M.Mango" ID="classes.Items.Miscellaneous::MhengaMango" />
 			<Item Stack="10" Name="M.Tight" ID="classes.Items.Miscellaneous::MightyTight" />
-			<Item Stack="50" Name="Milk Gushers" ID="classes.Items.Miscellaneous::MilkCaramelGushers" />
-			<Item Stack="50" Name="Milk. Aid" ID="classes.Items.Miscellaneous::MilkmaidsAid" />
-			<Item Stack="10" Name="MyrNectr" ID="classes.Items.Miscellaneous::MyrNectar" />
 			<Item Stack="10" Name="NaleenNip" ID="classes.Items.Miscellaneous::NaleenNip" />
 			<Item Stack="10" Name="Nuki C." ID="classes.Items.Miscellaneous::NukiCookies" />
-			<Item Stack="10" Name="Lg.OvaEgg" ID="classes.Items.Miscellaneous::OvalastingEggLarge" />
-			<Item Stack="10" Name="Sm.OvaEgg" ID="classes.Items.Miscellaneous::OvalastingEggSmall" />
 			<Item Stack="10" Name="Ovilium" ID="classes.Items.Miscellaneous::Ovilium" />
 			<Item Stack="10" Name="Pandaneen" ID="classes.Items.Miscellaneous::Pandaneen" />
 			<Item Stack="10" Name="Panda Pro" ID="classes.Items.Miscellaneous::PandaPro" />
 			<Item Stack="10" Name="Priapin" ID="classes.Items.Miscellaneous::Priapin" />
-			<Item Stack="20" Name="Goblin P." ID="classes.Items.Miscellaneous::ProphylacticGoblin" />
-			<Item Stack="20" Name="LapinaraP" ID="classes.Items.Miscellaneous::ProphylacticLapinara" />
-			<Item Stack="20" Name="Rask P." ID="classes.Items.Miscellaneous::ProphylacticRaskvel" />
-			<Item Stack="20" Name="Sydian P." ID="classes.Items.Miscellaneous::ProphylacticSydian" />
 			<Item Stack="10" Name="Pussybloom" ID="classes.Items.Miscellaneous::Pussybloom" />
 			<Item Stack="10" Name="Pussyblossom" ID="classes.Items.Miscellaneous::Pussyblossom" />
 			<Item Stack="20" Name="Rainbotox" ID="classes.Items.Miscellaneous::Rainbotox" />
-			<Item Stack="10" Name="Roast Z.B" ID="classes.Items.Miscellaneous::RoastedZhorBeast" />
 			<Item Stack="10" Name="SkySap" ID="classes.Items.Miscellaneous::SkySap" />
-			<Item Stack="12" Name="SmallEgg" ID="classes.Items.Miscellaneous::SmallEgg" />
 			<Item Stack="10" Name="Sterilex" ID="classes.Items.Miscellaneous::Sterilex" />
 			<Item Stack="10" Name="SynthSap" ID="classes.Items.Miscellaneous::SynthSap" />
 			<Item Stack="10" Name="Human T." ID="classes.Items.Miscellaneous::TerranTreats" />
@@ -1475,9 +1482,7 @@
 			<Item Stack="10" Name="Treatment" ID="classes.Items.Miscellaneous::Treatment" />
 			<Item Stack="10" Name="UthraSap" ID="classes.Items.Miscellaneous::UthraSap" />
 			<Item Stack="10" Name="YT.Lube" ID="classes.Items.Miscellaneous::YTRLube" />
-			<Item Stack="10" Name="ZilHoney" ID="classes.Items.Miscellaneous::ZilHoney" />
 			<Item Stack="10" Name="ZilRation" ID="classes.Items.Miscellaneous::ZilRation" />
-			<Item Stack="10" Name="P.Saliva" ID="classes.Items.Recovery::PexigaSaliva" />
 <!--
 			<Item Stack="10" Name="Amazona"     ID="classes.Items.Transformatives::Amazona" LongName="Amazona Iced Tea" />
 -->
@@ -1554,7 +1559,6 @@
 			<Item Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
 			<Item Stack="10" Name="R.Made" ID="classes.Items.Transformatives::RubberMade" />
 			<Item Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
-			<Item Stack="10" Name="JawBreakr" ID="classes.Items.Transformatives::SaltyJawBreaker" />
 			<Item Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
 			<Item Stack="10" Name="S.Bites" ID="classes.Items.Transformatives::SharkBites" />
 			<Item Stack="10" Name="New Ewe" ID="classes.Items.Transformatives::SheepTF" LongName="New Ewe" />
@@ -1603,7 +1607,7 @@
 			<Item Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
 			<Item Stack="1" Name="SukMastr" ID="classes.Items.Toys::SukMastr" />
 		</ItemGroup>
-		<ItemGroup Name="Melee Weapon">
+		<ItemGroup Name="Weapons (Melee)">
 			<Item Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
 			<Item Stack="1" Name="B.Rapier" ID="classes.Items.Melee::BothriocRapier" />
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
@@ -1641,7 +1645,7 @@
 			<Item Stack="1" Name="Y.Strap" ID="classes.Items.Melee::YappiStrap" />
 			<Item Stack="1" Name="Z.Spear" ID="classes.Items.Melee::ZilSpear" />
 		</ItemGroup>
-		<ItemGroup Name="Ranged Weapon">
+		<ItemGroup Name="Weapons (Ranged)">
 			<Item Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
 			<Item Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
 			<Item Stack="1" Name="B.Emitter" ID="classes.Items.Guns::BimboleumEmitter" />
@@ -1694,7 +1698,7 @@
 			<Item Stack="1" Name="Z.L.Rifle" ID="classes.Items.Guns::ZhouLingRifle" />
 			<Item Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
 		</ItemGroup>
-		<ItemGroup Name="Shield">
+		<ItemGroup Name="Shields">
 			<Item Stack="1" Name="AW Belt" ID="classes.Items.Protection::ArcticWarfareBelt">
 				<ItemField Name="shields"       Type="int" Value="25" />
 			</Item>
@@ -1750,6 +1754,8 @@
 			<Item Stack="2"  Name="GemSack"     ID="classes.Items.Miscellaneous::GemSatchel" />
 			<Item Stack="20" Name="Kirkite"     ID="classes.Items.Miscellaneous::Kirkite" />
 			<Item Stack="10" Name="MilkBag"     ID="classes.Items.Miscellaneous::MilkBag" />
+			<Item Stack="10" Name="Lg.OvaEgg"	 ID="classes.Items.Miscellaneous::OvalastingEggLarge" />
+			<Item Stack="10" Name="Sm.OvaEgg"  ID="classes.Items.Miscellaneous::OvalastingEggSmall" />
 			<Item Stack="20" Name="Picardine"   ID="classes.Items.Miscellaneous::Picardine" />
 			<Item Stack="20" Name="Satyrite"    ID="classes.Items.Miscellaneous::Satyrite" />
 			<Item Stack="20" Name="Savicite"    ID="classes.Items.Treasures::Savicite" />
