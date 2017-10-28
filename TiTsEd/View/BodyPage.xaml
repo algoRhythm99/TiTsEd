@@ -36,6 +36,17 @@
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="General" Style="{StaticResource Header}"/>
                 </Border>
+                <common:AutoGrid>
+                    <TextBlock              Text="Has Gills"/>
+                    <CheckBox IsChecked="{Binding Game.Character.HasGills}" />
+
+                    <TextBlock              Text="Elasticity"/>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Elasticity}" Type="Double" />
+
+                    <TextBlock              Text="Genital Spot"/>
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.GenitalSpot}" ItemsSource="{Binding Data.Body.GenitalSpotTypes}"/>
+                </common:AutoGrid>
+
                 <common:AutoGrid Columns="4">
                     <TextBlock              Text="Hip Rating"/>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HipRating}" ToolTip="Base"  />
@@ -52,6 +63,17 @@
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.BellyRatingMod}" ToolTip="Modifier" />
                     <TextBlock />
                 </common:AutoGrid>
+
+                <TextBlock Text="Wings" Style="{StaticResource Header}"/>
+                <common:AutoGrid>
+                    <TextBlock              Text="Wing Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.WingType}" ItemsSource="{Binding Data.Body.WingTypes}" />
+
+                    <TextBlock              Text="Wing Count" IsEnabled="{Binding Game.Character.WingOptionsEnabled}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.WingCount}" IsEnabled="{Binding Game.Character.WingOptionsEnabled}" />
+                </common:AutoGrid>
+
+                <TextBlock Text="Arms" Style="{StaticResource Header}"/>
                 <common:AutoGrid>
                     <TextBlock              Text="Arm Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.ArmType}" ItemsSource="{Binding Data.Body.ArmTypes}"/>
@@ -59,6 +81,8 @@
                 <Expander Header="Arm Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.ArmFlags}" />
                 </Expander>
+
+                <TextBlock Text="Legs" Style="{StaticResource Header}"/>
                 <common:AutoGrid>
                     <TextBlock              Text="Leg Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.LegType}" ItemsSource="{Binding Data.Body.LegTypes}"/>
@@ -69,23 +93,7 @@
                 <Expander Header="Leg Flags" Margin="60,0,0,0">
                     <view:FlagBox ItemsSource="{Binding Game.Character.LegFlags}" />
                 </Expander>
-                <common:AutoGrid>
-                    <TextBlock              Text="Wing Type" />
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.WingType}" ItemsSource="{Binding Data.Body.WingTypes}" />
 
-                    <TextBlock              Text="Wing Count" IsEnabled="{Binding Game.Character.WingOptionsEnabled}" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.WingCount}" IsEnabled="{Binding Game.Character.WingOptionsEnabled}" />
-                </common:AutoGrid>
-                <common:AutoGrid>
-                    <TextBlock              Text="Has Gills"/>
-                    <CheckBox IsChecked="{Binding Game.Character.HasGills}" />
-
-                    <TextBlock              Text="Elasticity"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Elasticity}" Type="Double" />
-
-                    <TextBlock              Text="Genital Spot"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.GenitalSpot}" ItemsSource="{Binding Data.Body.GenitalSpotTypes}"/>
-                </common:AutoGrid>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
