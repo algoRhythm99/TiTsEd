@@ -84,6 +84,7 @@ namespace TiTsEd.ViewModel {
             _accessory = new ItemSlotVM(this, GetObj("accessory"), types);
             _upperUndergarment = new ItemSlotVM(this, GetObj("upperUndergarment"), types);
             _lowerUndergarment = new ItemSlotVM(this, GetObj("lowerUndergarment"), types);
+            UpdateInventory();
         }
 
         public void BeforeSerialization() {
@@ -1134,6 +1135,10 @@ namespace TiTsEd.ViewModel {
         public int MaxInventoryItems {
             get {
                 int max = 10;
+                var status = GetStatus("Backpack Upgrade");
+                if (status.IsOwned) {
+                    max += (int) status.Value1;
+                }
                 if (HasPerk("Hidden Loot")) {
                     max += 2;
                 }
