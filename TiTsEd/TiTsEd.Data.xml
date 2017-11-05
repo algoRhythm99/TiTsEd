@@ -1540,6 +1540,7 @@
 			<Item Stack="10" Name="Lupinol" ID="classes.Items.Transformatives::Lupinol" />
 			<Item Stack="10" Name="ManUp" ID="classes.Items.Transformatives::ManUp" />
 			<Item Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
+			<Item Stack="9"  Name="Mthrhusk"   ID="classes.Items.Transformatives::Motherhusk" />
 			<Item Stack="10" Name="M.Stick" ID="classes.Items.Transformatives::Muffstick" />
 			<Item Stack="10" Name="Nepeta" ID="classes.Items.Transformatives::Nepeta" />
 			<Item Stack="10" Name="N.Butter" ID="classes.Items.Transformatives::NukiNutbutter" />
@@ -1564,6 +1565,7 @@
 			<Item Stack="10" Name="New Ewe" ID="classes.Items.Transformatives::SheepTF" LongName="New Ewe" />
 			<Item Stack="10" Name="S.Clear" ID="classes.Items.Transformatives::SkinClear" />
 			<Item Stack="10" Name="Slutshroom" ID="classes.Items.Transformatives::SlutShroom" />
+			<Item Stack="9"  Name="Spunkshrm"  ID="classes.Items.Transformatives::SpunkShroom" />
 			<Item Stack="10" Name="Shortcake" ID="classes.Items.Transformatives::StrawberryShortcake" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
 			<Item Stack="12" Name="Suma Blk." ID="classes.Items.Transformatives::SumaCreamBlack" />
@@ -1646,18 +1648,38 @@
 			<Item Stack="1" Name="Z.Spear" ID="classes.Items.Melee::ZilSpear" />
 		</ItemGroup>
 		<ItemGroup Name="Weapons (Ranged)">
+			<Item Stack="1" Name="A.Lnchr" ID="classes.Items.Guns::AcidLauncher" />
+			<Item Stack="1" Name="AcidRfl" ID="classes.Items.Guns::AcidRifle" />
+			<Item Stack="1" Name="A.Thrwr" ID="classes.Items.Guns::AcidThrower" />
 			<Item Stack="1" Name="Aegis MG" ID="classes.Items.Guns::AegisLightMG" />
 			<Item Stack="1" Name="ArcCast." ID="classes.Items.Guns::ArcCaster" />
+			<Item Stack="1" Name="ApolloPR" ID="classes.Items.Guns::ApolloPlasmaRifle" />
+			<Item Stack="1" Name="A.S.G."   ID="classes.Items.Guns::AutoShotgun" />
+			<Item Stack="1" Name="A.SMG"    ID="classes.Items.Guns::AvengerSMG" />
 			<Item Stack="1" Name="B.Emitter" ID="classes.Items.Guns::BimboleumEmitter" />
 			<Item Stack="1" Name="B.Light" ID="classes.Items.Guns::BlackLight" />
+			<Item Stack="1" Name="BC.Thrwr" ID="classes.Items.Guns::BlizzardCryrothrower" />
 			<Item Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BoltActionRifle" />
 			<Item Stack="1" Name="B.Rifle" ID="classes.Items.Guns::BothriocRifle" />
+			<Item Stack="1" Name="Chaingn" ID="classes.Items.Guns::Chaingun" />
+			<Item Stack="1" Name="ChainLsr" ID="classes.Items.Guns::Chainlaser" />
+			<Item Stack="1" Name="Chiro"    ID="classes.Items.Guns::ChironexScourge" />
+			<Item Stack="1" Name="CryroL"   ID="classes.Items.Guns::Cryrolizer" />
+			<Item Stack="1" Name="CryroP"   ID="classes.Items.Guns::CryroPistol" />
+			<Item Stack="1" Name="CryroR"   ID="classes.Items.Guns::CryroRifle" />
+			<Item Stack="1" Name="Crucifer" ID="classes.Items.Guns::Crucifer">
+				<ItemField Name="fortification" Type="int" Value="-10" />
+			</Item>
 			<Item Stack="1" Name="Custom LP-17" ID="classes.Items.Guns::CustomLP17" LongName="Custom LP-17 Laser Pistol" />
 			<Item Stack="1" Name="E.Handgun" ID="classes.Items.Guns::EagleHandgun" />
 			<Item Stack="1" Name="Electrogun" ID="classes.Items.Guns::Electrogun" />
+			<Item Stack="1" Name="Electrogun" ID="classes.Items.Guns::ElectroLauncher" LongName="CTL-3 electric launcher" />
 			<Item Stack="1" Name="E's Pistol" ID="classes.Items.Guns::EmmysSalamanderPistol" LongName="Emmy's Salamander Pistol" />
 			<Item Stack="1" Name="E's Rifle" ID="classes.Items.Guns::EmmysSalamanderRifle" LongName="Emmy's Salamander Rifle" />
 			<Item Stack="1" Name="E's S.R." ID="classes.Items.Guns::EmmysSalamanderRifle2" LongName="Emmy's Tweaked Salamander Rifle" />
+			<Item Stack="1" Name="Entropy" ID="classes.Items.Guns::Entropy" LongName="LM19 “Entropy” kinetic decelerator" />
+			<Item Stack="1" Name="F.Thrwr"      ID="classes.Items.Guns::Flamethrower" />
+			<Item Stack="1" Name="F.ThrwrII"    ID="classes.Items.Guns::FlamethrowerII" />
 			<Item Stack="1" Name="FlareGun" ID="classes.Items.Guns::FlareGun" />
 			<Item Stack="1" Name="FZR FSS"  ID="classes.Items.Guns::FZRFireSuppressionSystem" />
 			<Item Stack="1" Name="Goovolver" ID="classes.Items.Guns::Goovolver" />
@@ -1665,6 +1687,10 @@
 			<Item Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistol" />
 			<Item Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistolScavenged" />
 			<Item Stack="1" Name="HL Bow"       ID="classes.Items.Guns::HardlightBow" />
+			<Item Stack="1" Name="HL Rifle"     ID="classes.Items.Guns::HardlightRifle" />
+			<Item Stack="1" Name="Hirudo"       ID="classes.Items.Guns::Hirudo">
+				<ItemField Name="fortification" Type="int" Value="-15" />
+			</Item>
 			<Item Stack="1" Name="Holdout H.P." ID="classes.Items.Guns::HoldoutHP" />
 			<Item Stack="1" Name="Hld.Pistol" ID="classes.Items.Guns::HoldOutPistol" />
 			<Item Stack="1" Name="H.Rifle" ID="classes.Items.Guns::HuntingRifle" />
@@ -1674,6 +1700,8 @@
 			<Item Stack="1" Name="Mag.Pistol" ID="classes.Items.Guns::MagnumPistol" />
 			<Item Stack="1" Name="Myr Bow" ID="classes.Items.Guns::MyrBow" />
 			<Item Stack="1" Name="M.Rifle" ID="classes.Items.Guns::MyrRifle" />
+			<Item Stack="1" Name="VnmThrwr" ID="classes.Items.Guns::MyrVenomThrower" />
+			<Item Stack="1" Name="NaN D." ID="classes.Items.Guns::NANDeconstructor" LongName="NaN Deconstructor" />
 			<Item Stack="1" Name="Nova Pstl." ID="classes.Items.Guns::NovaPistol" />
 			<Item Stack="1" Name="Nova Rifle" ID="classes.Items.Guns::NovaRifle" />
 			<Item Stack="1" Name="PlasmaBore" ID="classes.Items.Guns::PlasmaBore" />
@@ -1689,11 +1717,20 @@
 			<Item Stack="1" Name="Shock Bow" ID="classes.Items.Guns::ShockBow" />
 			<Item Stack="1" Name="SlutRay" ID="classes.Items.Guns::SlutRay" />
 			<Item Stack="1" Name="A.SlutRay" ID="classes.Items.Guns::SlutRayAdvanced" />
+			<Item Stack="1" Name="Spitter" ID="classes.Items.Guns::SpitterPistol" />
+			<Item Stack="1" Name="Strmbull" ID="classes.Items.Guns::Stormbull" />
 			<Item Stack="1" Name="SunFire" ID="classes.Items.Guns::SunFire" />
 			<Item Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" />
 			<Item Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
 			<Item Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
+			<Item Stack="1" Name="Vanquish" ID="classes.Items.Guns::Vanquisher" />
+			<Item Stack="1" Name="V.Pistol" ID="classes.Items.Guns::VenomPistol">
+				<ItemField Name="fortification" Type="int" Value="-4" />
+			</Item>
+			<Item Stack="1" Name="WardenS." ID="classes.Items.Guns::WardenShield">
+				<ItemField Name="fortification" Type="int" Value="20" />
+			</Item>
 			<Item Stack="1" Name="ZilBow" ID="classes.Items.Guns::ZilBow" />
 			<Item Stack="1" Name="Z.L.Rifle" ID="classes.Items.Guns::ZhouLingRifle" />
 			<Item Stack="1" Name="ZK Rifle" ID="classes.Items.Guns::ZKRifle" />
@@ -1766,6 +1803,9 @@
 			<Item Stack="1"  Name="V.Bloom"     ID="classes.Items.Miscellaneous::VenusBloom" />
 			<Item Stack="10" Name="VenusPod"    ID="classes.Items.Miscellaneous::VenusPod" />
 			<Item Stack="5"  Name="W.Drone"     ID="classes.Items.Miscellaneous::WeatherDrone" />
+			<Item Stack="1"  Name="(15s)Pack"   ID="classes.Items.Upgrades::ExpandedBackpackI"      LongName="large backpack" />
+			<Item Stack="1"  Name="(18s)Pack"   ID="classes.Items.Upgrades::ExpandedBackpackIPtV"   LongName="nyrean pack" />
+			<Item Stack="1"  Name="(20s)Pack"   ID="classes.Items.Upgrades::ExpandedBackpackII"     LongName="deluxe backpack" />
 			<Item Stack="1"  Name="HLU"         ID="classes.Items.Upgrades::HardLightUpgrade" />
 		</ItemGroup>
 		<ItemGroup Name="Junk">
@@ -2019,6 +2059,9 @@
 			<Perk Name="Barcoded" Description="A sleek black barcode is printed on your ass, left there by Dr. Belle for purely scientific purposes." />
 			<Perk Name="Buttslut" Description="Ensures your ass always remains bubbly and that fluids shot inside will heal your injuries." />
 			<Perk Name="Calm Aim" Description="You’re a pretty good shot when things aren’t too hectic, so you gain +1 accuracy when above 50% health." Value1="1" Value2="50" />
+<!--
+			<Perk Name="Chupacabro Slayer" Description="You defeated the legendary Chupacabro, and now do +10% damage against treated individuals." Value1="1" Value2="50" />
+-->
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
@@ -4100,6 +4143,7 @@
 			<StatusEffect Name="Mimbrane Pussy"         IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
+			<StatusEffect Name="Backpack Upgrade" IsHidden="true" Value1="10" />
 			<StatusEffect Name="Bothrioc Eggs" Description="You have been impregnated by a bothrioc. A warm, dense glow suffuses you that is not at all unpleasant..." IconName="Charmed" />
 			<StatusEffect Name="Bra Transparency" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
