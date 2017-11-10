@@ -50,10 +50,7 @@ namespace TiTsEd.Model
             var data = new AmfObject(AmfTypes.Object);
             foreach(var pair in file) data[pair.Key] = pair.Value;
 
-            var dataContainer = new AmfObject(AmfTypes.Object);
-            dataContainer["data"] = data;
-
-            WriteValue(dataContainer);
+            WriteValue(data);
         }
 
         void WriteStandardFile(AmfFile file, string newName)
