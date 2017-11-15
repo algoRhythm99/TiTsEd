@@ -139,7 +139,133 @@ namespace TiTsEd.ViewModel {
             set {
                 SetValue("cType", value);
                 OnPropertyChanged("Description");
+                UpdateFlags(value);
+                _character.Game.NotifyPropertyChanged(null);
             }
+        }
+        
+        public void UpdateFlags(int cType)
+        {
+            List<FlagItem> flags = this.CockFlags;
+            List<string> defaultFlags = GetDefaultFlags(cType);
+
+            foreach (FlagItem flag in flags)
+            {
+                if(defaultFlags.Contains(flag.ItemName))
+                {
+                    flag.ItemChecked = true;
+                }
+                else
+                {
+                    flag.ItemChecked = false;
+                }
+            }
+        }
+
+        public List<string> GetDefaultFlags(int cType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (cType)
+            {
+                case 0: //Human
+                case 10: //Avian
+                case 19: //Shark
+                case 20: //Suula
+                case 43: //Sydian
+                case 51: //Synthetic
+                case 52: //Simii
+                case 56: //Inhuman
+                case 57: //Ovir
+                case 61: //Saurian
+                case 72: //Swine
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+                case 1: //Equine
+                    defaultFlags.Add("Blunt");
+                    defaultFlags.Add("Flared");
+                    defaultFlags.Add("Sheathed");
+                    break;
+                case 3: //Canine
+                case 5: //Vulpine
+                    defaultFlags.Add("Knotted");
+                    defaultFlags.Add("Sheathed");
+                    defaultFlags.Add("Tapered");
+                    break;
+                case 4: //Feline
+                    defaultFlags.Add("Nubby");
+                    break;
+                case 6: //Bee
+                    defaultFlags.Add("Smooth");
+                    defaultFlags.Add("Foreskinned");
+                    break;
+                case 11: //Draconic
+                    defaultFlags.Add("Tapered");
+                    defaultFlags.Add("Knotted");
+                    break;
+                case 13: //Naga
+                    defaultFlags.Add("Smooth");
+                    defaultFlags.Add("Tapered");
+                    break;
+                case 15: //Demonic
+                    defaultFlags.Add("Knotted");
+                    defaultFlags.Add("Nubby");
+                    break;
+                case 17: //Kangaroo
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Tapered");
+                    break;
+                case 18: //Gabilani
+                    defaultFlags.Add("Double Headed");
+                    break;
+
+                case 22: //Anemone
+                    defaultFlags.Add("Aphrodisiac");
+                    defaultFlags.Add("Stinger Base");
+                    break;
+                case 23: //Tentacle
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Flared");
+                    defaultFlags.Add("Lubricated");
+                    break;
+                case 24: //Kui-tan
+                    defaultFlags.Add("Knotted");
+                    defaultFlags.Add("Sheathed");
+                    defaultFlags.Add("Tapered");
+                    break;
+                case 34: //Venus Pitcher
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Tapered");
+                    break;
+                case 42: //Raskvel
+                    defaultFlags.Add("Smooth");
+                    break;
+                case 46: //Vanae
+                    defaultFlags.Add("Smooth");
+                    defaultFlags.Add("Lubricated");
+                    break;
+                case 53: //Daynar
+                    defaultFlags.Add("Tapered");
+                    break;
+                case 54: //Cockvine
+                    defaultFlags.Add("Prehensile");
+                    break;
+                case 55: //Nyrea
+                    defaultFlags.Add("Flared");
+                    defaultFlags.Add("Knotted");
+                    defaultFlags.Add("Ovipositor");
+                    break;
+                case 64: //Hradian
+                    defaultFlags.Add("Foreskinned");
+                    defaultFlags.Add("Flared");
+                    break;
+                case 65: //Gryvain
+                    defaultFlags.Add("Knotted");
+                    defaultFlags.Add("Scaled");
+                    defaultFlags.Add("Ribbed");
+                    break;
+            }
+            return defaultFlags;
         }
 
         public XmlEnum[] CockTypes {
