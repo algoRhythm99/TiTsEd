@@ -15,7 +15,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+    <ScrollViewer>
         <Grid Margin="0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -146,6 +146,11 @@
                 </common:AutoGrid>
 
                 <common:AutoGrid Columns="3">
+
+                    <TextBlock              Text="Girl Cum Multiplier" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.GirlCumMultiplier}" Type="Double" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.GirlCumMultiplierMod}" ToolTip="Modifier" />
+
                     <TextBlock              Text="Fertility" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
@@ -173,6 +178,13 @@
 
                             <TextBlock              Text="Clits" />
                             <common:MyNumericBox    Value="{Binding Clits}" Min="1" Lower="1" />
+
+                        </common:AutoGrid>
+
+                        <common:AutoGrid>
+
+                            <TextBlock              Text="Min Looseness" />
+                            <common:MyNumericBox    Value="{Binding MinLooseness}" />
 
                         </common:AutoGrid>
 

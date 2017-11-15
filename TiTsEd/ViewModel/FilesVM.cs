@@ -215,15 +215,7 @@ namespace TiTsEd.ViewModel {
                     byte[] buffer = new byte[4];
                     fs.Read(buffer, 0, buffer.Length);
 
-                    byte[] titsMarker = { 0x0A, 0x0B, 0x01, 0x1D };
-
-                    if (path.EndsWith(".tits", StringComparison.InvariantCultureIgnoreCase)
-                     || titsMarker.SequenceEqual(buffer)) {
-                        MessageBoxImage icon = MessageBoxImage.Stop;
-                        MessageBox.Show("Save to File format is not currently supported", "File format not supported", MessageBoxButton.OK, icon);
-                    } else {
-                        VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported, createBackup: true);
-                    }
+                    VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported, createBackup: true);
                 }
             } catch (System.UnauthorizedAccessException ex) {
                 MessageBox.Show(ex.Message);

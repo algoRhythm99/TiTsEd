@@ -84,6 +84,7 @@ namespace TiTsEd.ViewModel {
             _accessory = new ItemSlotVM(this, GetObj("accessory"), types);
             _upperUndergarment = new ItemSlotVM(this, GetObj("upperUndergarment"), types);
             _lowerUndergarment = new ItemSlotVM(this, GetObj("lowerUndergarment"), types);
+            UpdateInventory();
         }
 
         public void BeforeSerialization() {
@@ -876,41 +877,13 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("tailType"); }
             set {
                 SetValue("tailType", value);
-
-                TailGenital = 0;
-                XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.TailTypes, value);
-                if (datum != null) {
-                    var name = datum.Name;
-                    if (name == "Cuntsnake") {
-                        datum = XmlData.LookupEnumByName(XmlData.Current.Body.TailGenitalTypes, "Vagina");
-                        if(datum != null) {
-                            TailGenital = datum.ID;
-                        }
-                    }
-                    else if (name == "Cockvine") {
-                        datum = XmlData.LookupEnumByName(XmlData.Current.Body.TailGenitalTypes, "Cock");
-                        if (datum != null) {
-                            TailGenital = datum.ID;
-                        }
-                    }
-                }
-                OnPropertyChanged("TailOptionsEnabled");
             }
-        }
-
-        public bool TailOptionsEnabled {
-            get { return (0 != TailType); }
-        }
-
-        public bool TailGenitalEnabled {
-            get { return (0 != TailGenital); }
         }
 
         public int TailGenital {
             get { return GetInt("tailGenital"); }
             set {
                 SetValue("tailGenital", value);
-                OnPropertyChanged("TailGenitalEnabled");
             }
         }
 
@@ -1005,6 +978,16 @@ namespace TiTsEd.ViewModel {
         public int GirlCumType {
             get { return GetInt("girlCumType"); }
             set { SetValue("girlCumType", value); }
+        }
+
+        public double GirlCumMultiplier {
+            get { return GetDouble("girlCumMultiplierRaw"); }
+            set { SetValue("girlCumMultiplierRaw", value); }
+        }
+
+        public double GirlCumMultiplierMod {
+            get { return GetDouble("girlCumMultiplierMod"); }
+            set { SetValue("girlCumMultiplierMod", value); }
         }
 
         public double Fertility {
@@ -1152,6 +1135,10 @@ namespace TiTsEd.ViewModel {
         public int MaxInventoryItems {
             get {
                 int max = 10;
+                var status = GetStatus("Backpack Upgrade");
+                if (status.IsOwned) {
+                    max += (int) status.Value1;
+                }
                 if (HasPerk("Hidden Loot")) {
                     max += 2;
                 }

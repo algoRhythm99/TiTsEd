@@ -16,10 +16,10 @@ namespace TiTsEd.ViewModel {
             obj["breastRatingRaw"] = 0;
             obj["breastRatingMod"] = 0;
             obj["breastRatingHoneypotMod"] = 0;
+            obj["breastRatingLactationMod"] = 0;
             obj["breasts"] = 2;
             obj["fullness"] = 0;
             obj["nippleType"] = 0;
-            obj["breastRatingLactationMod"] = 0;
             obj["classInstance"] = "classes::BreastRowClass";
             return obj;
         }
@@ -34,13 +34,46 @@ namespace TiTsEd.ViewModel {
 
         private CharacterVM _character { get; set; }
 
-        public int Rating {
-            get { return GetInt("breastRatingRaw"); }
+        public double Rating {
+            get { return GetDouble("breastRatingRaw"); }
             set {
                 SetValue("breastRatingRaw", value);
                 OnPropertyChanged("Description");
             }
         }
+
+        public double RatingMod {
+            get { return GetDouble("breastRatingMod"); }
+            set
+            {
+                SetValue("breastRatingMod", value);
+                OnPropertyChanged("Description");
+            }
+        }
+
+        public double RatingLactationMod {
+            get { return GetDouble("breastRatingLactationMod"); }
+            set {
+                SetValue("breastRatingLactationMod", value);
+                OnPropertyChanged("Description");
+            }
+        }
+
+        public double RatingHoneypotMod {
+            get { return GetDouble("breastRatingHoneypotMod"); }
+            set {
+                SetValue("breastRatingHoneypotMod", value);
+                OnPropertyChanged("Description");
+            }
+        }
+
+        public double CurrentRating {
+            get {
+                var num = Rating + RatingMod + RatingLactationMod + RatingHoneypotMod;
+                return (num < 0) ? 0 : num;
+            }
+        }
+
 
         public int MaxRating {
             get { return 199; }
@@ -65,20 +98,20 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int Fullness {
-            get { return GetInt("fullness"); }
+        public double Fullness {
+            get { return GetDouble("fullness"); }
             set { SetValue("fullness", value); }
         }
 
         public String Description {
             get {
-                return BreastCount + " " + CupDescription + " breasts.";
+                return (int)BreastCount + " " + CupDescription + " breasts.";
             }
         }
 
         private string CupDescription {
             get {
-                int check = Rating;
+                double check = CurrentRating;
                 if(check < 1) return "flat";
                 else if(check < 2) return "A-cup";
                 else if(check < 3) return "B-cup";

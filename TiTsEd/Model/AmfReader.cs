@@ -40,8 +40,7 @@ namespace TiTsEd.Model
         {
             name = Path.GetFileNameWithoutExtension(file.FilePath);
 
-            var dataContainer = (AmfObject)ReadValue();
-            var data = dataContainer.GetObj("data");
+            var data = (AmfObject)ReadValue();
             foreach (var pair in data) file[pair.Key] = pair.Value;
         }
 
