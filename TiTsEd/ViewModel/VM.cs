@@ -298,7 +298,7 @@ namespace TiTsEd.ViewModel {
         protected abstract AmfObject CreateNewObject();
     }
 
-    public class FlagItem {
+    public class FlagItem : BindableBase {
         readonly AmfObject _object;
         readonly XmlEnum _value;
         public FlagItem(AmfObject obj, XmlEnum value) {
@@ -346,6 +346,7 @@ namespace TiTsEd.ViewModel {
                         }
                     }
                 }
+                OnPropertyChanged("ItemChecked");
             }
         }
     }
