@@ -138,9 +138,8 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("cType"); }
             set {
                 SetValue("cType", value);
-                OnPropertyChanged("Description");
                 UpdateFlags(value);
-                _character.Game.NotifyPropertyChanged(null);
+                OnPropertyChanged("Description");
             }
         }
         
@@ -160,6 +159,7 @@ namespace TiTsEd.ViewModel {
                     flag.ItemChecked = false;
                 }
             }
+            OnPropertyChanged("CockFlags");
         }
 
         public List<string> GetDefaultFlags(int cType)
