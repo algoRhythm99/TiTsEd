@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 using System.Text;
@@ -121,9 +121,68 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("type"); }
             set {
                 SetValue("type", value);
+                UpdateFlags(value);
                 OnPropertyChanged("Description");
             }
         }
+
+        public void UpdateFlags(int cType)
+        {
+            List<string> defaultFlags = GetDefaultFlags(cType);
+
+            foreach (FlagItem flag in this.VaginaFlags)
+            {
+                if (defaultFlags.Contains(flag.ItemName))
+                {
+                    flag.ItemChecked = true;
+                }
+                else
+                {
+                    flag.ItemChecked = false;
+                }
+            }
+            OnPropertyChanged("VaginaFlags");
+        }
+
+        public List<string> GetDefaultFlags(int vType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (vType)
+            {
+                case 0: //Human
+                case 1: //Equine
+                case 3: //Canine
+                case 5: //Vulpine 
+                case 6: //Bee
+                case 10: //Avian
+                case 13: //Naga
+                case 16: //Gooey
+                case 19: //Shark
+                case 20: //Suula
+                case 24: //Kui-tan
+                case 44: //Lapinara
+                case 46: //Vanae
+                case 49: //Leithan
+                case 51: //Synthetic
+                case 72: //Swine
+                case 74: //Mouthgina
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+                case 18: //Gabilani
+                case 55: //Nyrea
+                    defaultFlags.Add("Lubricated");
+                    break;
+                case 65: //Gryvain
+                    defaultFlags.Add("Nubby");
+                    break;
+                case 67: //Flower
+                    defaultFlags.Add("Aphrodisiac");
+                    break;
+            }
+            return defaultFlags;
+        }
+
 
         public XmlEnum[] VaginaTypes {
             get {
