@@ -342,7 +342,7 @@ namespace TiTsEd.ViewModel {
                     while ((id = _object.GetInt(++i, -1234)) != -1234) {
                         if (id == _value.ID) {
                             _object.Pop(i);
-                            return;
+                            break;
                         }
                     }
                 }
