@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 using System.Text;
@@ -121,30 +121,12 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("type"); }
             set {
                 SetValue("type", value);
-                UpdateFlags(value);
+                UpdateFlags(value, this.VaginaFlags, "VaginaFlags");
                 OnPropertyChanged("Description");
             }
         }
 
-        public void UpdateFlags(int cType)
-        {
-            List<string> defaultFlags = GetDefaultFlags(cType);
-
-            foreach (FlagItem flag in this.VaginaFlags)
-            {
-                if (defaultFlags.Contains(flag.ItemName))
-                {
-                    flag.ItemChecked = true;
-                }
-                else
-                {
-                    flag.ItemChecked = false;
-                }
-            }
-            OnPropertyChanged("VaginaFlags");
-        }
-
-        public List<string> GetDefaultFlags(int vType)
+        protected override List<string> GetDefaultFlags(int vType, string propertyName = null)
         {
             List<string> defaultFlags = new List<string>();
             switch (vType)

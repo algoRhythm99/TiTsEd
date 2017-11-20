@@ -503,7 +503,61 @@ namespace TiTsEd.ViewModel {
 
         public int SkinType {
             get { return GetInt("skinType"); }
-            set { SetValue("skinType", value); }
+            set {
+                SetValue("skinType", value);
+                UpdateFlags(value, this.SkinFlags, "SkinFlags");
+            }
+        }
+
+        protected override List<string> GetDefaultFlags(int type, string propertyName = null)
+        {
+            if (propertyName.Equals("SkinFlags"))
+                return GetDefaultSkinFlags(type);
+            else if (propertyName.Equals("FaceFlags"))
+                return GetDefaultFaceFlags(type);
+            else if (propertyName.Equals("TongueFlags"))
+                return GetDefaultTongueFlags(type);
+            else if (propertyName.Equals("ArmFlags"))
+                return GetDefaultArmFlags(type);
+            else if (propertyName.Equals("LegFlags"))
+                return GetDefaultLegFlags(type);
+            else if (propertyName.Equals("TailFlags"))
+                return GetDefaultTailFlags(type);
+            else
+                return null;
+        }
+
+        private List<string> GetDefaultSkinFlags(int sType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (sType)
+            {
+                case 2: //Scales
+                case 4: //Chitin
+                case 5: //Feathers
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+                case 0: //Skin
+                case 6: //Latex
+                case 7: //Plant
+                    defaultFlags.Add("Smooth");
+                    break;
+                case 1: //Fur
+                    defaultFlags.Add("Fluffy");
+                    defaultFlags.Add("Thick");
+                    break;                
+                case 3: //Goo
+                    defaultFlags.Add("Squishy");
+                    defaultFlags.Add("Lubricated");
+                    defaultFlags.Add("Absorbent");
+                    break;
+                case 8: //Bark
+                    defaultFlags.Add("Thick");
+                    break;
+                
+            }
+            return defaultFlags;
         }
 
         public String SkinTone {
@@ -619,7 +673,61 @@ namespace TiTsEd.ViewModel {
 
         public int FaceType {
             get { return GetInt("faceType"); }
-            set { SetValue("faceType", value); }
+            set {
+                SetValue("faceType", value);
+                UpdateFlags(value, this.FaceFlags, "FaceFlags");
+            }
+        }
+
+        private List<string> GetDefaultFaceFlags(int fType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (fType)
+            {
+                case 3: //Canine
+                case 5: //Vulpine
+                case 9: //Lapine
+                case 10: //Avian
+                case 11: //Draconic
+                case 12: //Lizan
+                case 17: //Kangaroo
+                case 19: //Shark
+                case 20: //Suula
+                case 24: //Kui-tan
+                case 25: //Human Masked
+                case 26: //Mouse
+                case 27: //Mouseman  
+                case 71: //Worg
+                case 72: //Swine
+                case 76: //Sheep
+                case 77: //Lesser Panda
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+                case 0: //Human
+                case 39: //Naleen
+                    defaultFlags.Add("Smooth");
+                    break;
+                case 1: //Equine
+                case 2: //Bovine
+                    defaultFlags.Add("Long");
+                    defaultFlags.Add("Muzzled");
+                    break;
+                case 4: //Feline
+                case 40: //Panda
+                    defaultFlags.Add("Muzzled");
+                    break;
+                case 14: //Frog
+                    defaultFlags.Add("Smooth");
+                    break;
+                case 18: //Gabilani
+                    defaultFlags.Add("Angular");
+                    break;
+                case 45: //Badger
+                    defaultFlags.Add("Muzzled");
+                    break;
+            }
+            return defaultFlags;
         }
 
         public List<FlagItem> FaceFlags {
@@ -667,7 +775,65 @@ namespace TiTsEd.ViewModel {
 
         public int TongueType {
             get { return GetInt("tongueType"); }
-            set { SetValue("tongueType", value); }
+            set {
+                SetValue("tongueType", value);
+                UpdateFlags(value, this.TongueFlags, "TongueFlags");
+            }
+        }
+
+        private List<string> GetDefaultTongueFlags(int tType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (tType)
+            {
+                case 0: //Human
+                case 1: //Equine
+                case 2: //Bovine
+                case 3: //Canine
+                case 4: //Feline
+                case 5: //Vulpine
+                case 9: //Lapine
+                case 10: //Avian
+                case 11: //Draconic
+                case 13: //Naga
+                case 14: //Frog
+                case 16: //Gooey
+                case 40: //Panda
+                case 45: //Badger
+                
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+
+                case 6: //Bee
+                    defaultFlags.Add("Hollow");
+                    defaultFlags.Add("Long");
+                    break;
+                case 15: //Demonic
+                    defaultFlags.Add("Long");
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Tapered");
+                    break;
+                case 23: //Tentacle
+                    defaultFlags.Add("Long");
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Lubricated");
+                    break;
+                case 42: //Raskvel
+                    defaultFlags.Add("Long");
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Lubricated");
+                    defaultFlags.Add("Squishy");
+                    break;
+                case 49: //Leithan
+                    defaultFlags.Add("Long");
+                    defaultFlags.Add("Prehensile");
+                    break;
+                case 57: //Ovir
+                    defaultFlags.Add("Long");
+                    break;
+            }
+            return defaultFlags;
         }
 
         public List<FlagItem> TongueFlags {
@@ -830,7 +996,56 @@ namespace TiTsEd.ViewModel {
 
         public int ArmType {
             get { return GetInt("armType"); }
-            set { SetValue("armType", value); }
+            set {
+                SetValue("armType", value);
+                UpdateFlags(value, this.ArmFlags, "ArmFlags");
+            }
+        }
+
+        private List<string> GetDefaultArmFlags(int aType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (aType)
+            {
+                case 0: //Human
+                case 1: //Equine
+                case 5: //Vulpine
+                case 7: //Arachnid
+                case 8: //Drider
+                case 9: //Lapine
+                case 10: //Avian
+                case 14: //Frog               
+                case 19: //Shark
+                case 23: //Tentacle              
+                case 52: //Simii
+                case 53: //Daynar
+                case 67: //Flower
+                case 77: //Lesser Panda
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+                case 3: //Canine
+                case 4: //Feline
+                case 24: //Kui-tan
+                case 40: //Panda
+                case 45: //Badger
+                    defaultFlags.Add("Furred");
+                    break;
+                case 6: //Bee
+                case 49: //Leithan
+                case 55: //Nyrea
+                case 60: //Myr
+                    defaultFlags.Add("Chitinous");
+                    break;
+                case 15: //Demonic
+                    defaultFlags.Add("Chitinous");
+                    defaultFlags.Add("Spiked");
+                    break;
+                case 57: //Ovir
+                    defaultFlags.Add("Scaled");
+                    break;
+            }
+            return defaultFlags;
         }
 
         public List<FlagItem> ArmFlags {
@@ -844,7 +1059,108 @@ namespace TiTsEd.ViewModel {
 
         public int LegType {
             get { return GetInt("legType"); }
-            set { SetValue("legType", value); }
+            set {
+                SetValue("legType", value);
+                UpdateFlags(value, this.LegFlags, "LegFlags");
+            }
+        }
+
+        private List<string> GetDefaultLegFlags(int lType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (lType)
+            {
+                
+                case 4: //Feline
+                case 5: //Vulpine
+                case 7: //Arachnid
+                case 8: //Drider
+                case 9: //Lapine
+                case 10: //Avian
+                case 11: //Draconic
+                case 13: //Naga
+                case 17: //Kangaroo
+                case 19: //Shark
+                case 21: //Deer
+                case 23: //Tentacle
+                case 32: //MLP                
+                case 45: //Badger
+                case 52: //Simii
+                case 53: //Daynar
+                case 55: //Nyrea
+                case 72: //Swine
+                case 76: //Sheep
+                case 77: //Lesser Panda
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+                case 0: //Human
+                    defaultFlags.Add("Plantigrade");
+                    break;
+                case 1: //Equine
+                case 2: //Bovine
+                    defaultFlags.Add("Digitigrade");
+                    defaultFlags.Add("Hooves");
+                    break;
+                case 3: //Canine
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Paws");
+                    break;
+                case 6: //Bee
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Chitinous");
+                    defaultFlags.Add("Smooth");
+                    break;
+                case 12: //Lizan
+                    defaultFlags.Add("Digitigrade");
+                    defaultFlags.Add("Scaled");
+                    defaultFlags.Add("Paws");
+                    break;
+                case 14: //Frog
+                    defaultFlags.Add("Digitigrade");
+                    defaultFlags.Add("Smooth");
+                    defaultFlags.Add("Sticky");
+                    break;
+                case 15: //Demonic
+                    defaultFlags.Add("Plantigrade");
+                    break;
+                case 16: //Gooey
+                    defaultFlags.Add("Amorphous");
+                    break;
+                case 24: //Kui-tan
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Fluffy");
+                    break;
+                case 35: //Succubus
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Heels");
+                    break;
+                case 40: //Panda
+                    defaultFlags.Add("Digitigrade");
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Paws");
+                    break;
+                case 42: //Raskvel
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Scaled");
+                    break;
+                case 57: //Ovir
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Scaled");
+                    break;
+                case 60: //Myr
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Chitinous");
+                    break;
+                case 65: //Gryvain
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Scaled");
+                    break;
+
+            }
+            return defaultFlags;
         }
 
         public List<FlagItem> LegFlags {
@@ -877,7 +1193,104 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("tailType"); }
             set {
                 SetValue("tailType", value);
+                UpdateFlags(value, this.TailFlags, "TailFlags");
             }
+        }
+
+        private List<string> GetDefaultTailFlags(int tType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (tType)
+            {
+                case 0: //None
+                case 7: //Arachnid
+                case 8: //Drider
+                case 9: //Lapine
+                case 10: //Avian
+                case 11: //Draconic
+                case 13: //Naga
+                case 17: //Kangaroo
+                case 19: //Shark
+                case 20: //Suula
+                case 21: //Deer
+                case 23: //Tentacle
+                case 26: //Mouse
+                case 29: //Floppy Dog
+                case 43: //Sydian
+                case 51: //Synthetic
+                case 52: //Simii
+                case 53: //Daynar
+                case 72: //Swine
+                case 76: //Sheep
+                case 77: //Lesser Panda
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+
+                case 1: //Equine
+                    defaultFlags.Add("Long");
+                    break;
+                case 2: //Bovine
+                    defaultFlags.Add("Fluffy");
+                    defaultFlags.Add("Long");
+                    break;
+                case 3: //Canine
+                case 5: //Vulpine
+                case 24: //Kui-tan
+                    defaultFlags.Add("Fluffy");
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Long");
+                    break;
+                case 4: //Feline
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Long");
+                    break;                
+                case 6: //Bee
+                    defaultFlags.Add("Chitinous");
+                    defaultFlags.Add("Smooth");
+                    defaultFlags.Add("Stinger Tip");
+                    break;
+                case 12: //Lizan
+                case 42: //Raskvel
+                    defaultFlags.Add("Scaled");
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Long");
+                    break;
+                case 14: //Frog
+                    defaultFlags.Add("Smooth");
+                    defaultFlags.Add("Sticky");
+                    break;
+                case 15: //Demonic
+                case 46: //Vanae
+                case 54: //Cockvine
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Long");
+                    break;                
+                case 33: //Cuntsnake
+                    defaultFlags.Add("Thick");
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Long");
+                    break;
+                case 40: //Panda
+                case 45: //Badger
+                    defaultFlags.Add("Fluffy");
+                    defaultFlags.Add("Furred");
+                    break;
+                case 57: //Ovir
+                    defaultFlags.Add("Scaled");
+                    break;
+                case 60: //Myr
+                    defaultFlags.Add("Chitinous");
+                    defaultFlags.Add("Smooth");
+                    break;
+                case 65: //Gryvain
+                    defaultFlags.Add("Scaled");
+                    defaultFlags.Add("Prehensile");
+                    defaultFlags.Add("Long");
+                    defaultFlags.Add("Tapered");
+                    break;
+            }
+            return defaultFlags;
         }
 
         public int TailGenital {

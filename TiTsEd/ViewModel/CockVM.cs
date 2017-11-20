@@ -138,31 +138,12 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("cType"); }
             set {
                 SetValue("cType", value);
-                UpdateFlags(value);
+                UpdateFlags(value, this.CockFlags, "CockFlags");
                 OnPropertyChanged("Description");
             }
         }
-        
-        public void UpdateFlags(int cType)
-        {
-            List<FlagItem> flags = this.CockFlags;
-            List<string> defaultFlags = GetDefaultFlags(cType);
 
-            foreach (FlagItem flag in flags)
-            {
-                if(defaultFlags.Contains(flag.ItemName))
-                {
-                    flag.ItemChecked = true;
-                }
-                else
-                {
-                    flag.ItemChecked = false;
-                }
-            }
-            OnPropertyChanged("CockFlags");
-        }
-
-        public List<string> GetDefaultFlags(int cType)
+        protected override List<string> GetDefaultFlags(int cType, string propertyName = null)
         {
             List<string> defaultFlags = new List<string>();
             switch (cType)
@@ -180,6 +161,7 @@ namespace TiTsEd.ViewModel {
                 case 72: //Swine
                 default:
                     //All of the above have no default flags, so do nothing
+                    defaultFlags.Add("");
                     break;
                 case 1: //Equine
                     defaultFlags.Add("Blunt");
@@ -218,7 +200,6 @@ namespace TiTsEd.ViewModel {
                 case 18: //Gabilani
                     defaultFlags.Add("Double Headed");
                     break;
-
                 case 22: //Anemone
                     defaultFlags.Add("Aphrodisiac");
                     defaultFlags.Add("Stinger Base");
