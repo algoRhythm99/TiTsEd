@@ -161,7 +161,6 @@ namespace TiTsEd.ViewModel {
                 case 72: //Swine
                 default:
                     //All of the above have no default flags, so do nothing
-                    defaultFlags.Add("");
                     break;
                 case 1: //Equine
                     defaultFlags.Add("Blunt");
