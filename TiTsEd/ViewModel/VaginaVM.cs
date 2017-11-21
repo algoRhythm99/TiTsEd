@@ -121,9 +121,50 @@ namespace TiTsEd.ViewModel {
             get { return GetInt("type"); }
             set {
                 SetValue("type", value);
+                UpdateFlags(value, this.VaginaFlags, "VaginaFlags");
                 OnPropertyChanged("Description");
             }
         }
+
+        protected override List<string> GetDefaultFlags(int vType, string propertyName = null)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (vType)
+            {
+                case 0: //Human
+                case 1: //Equine
+                case 3: //Canine
+                case 5: //Vulpine 
+                case 6: //Bee
+                case 10: //Avian
+                case 13: //Naga
+                case 16: //Gooey
+                case 19: //Shark
+                case 20: //Suula
+                case 24: //Kui-tan
+                case 44: //Lapinara
+                case 46: //Vanae
+                case 49: //Leithan
+                case 51: //Synthetic
+                case 72: //Swine
+                case 74: //Mouthgina
+                default:
+                    //All of the above have no default flags, so do nothing
+                    break;
+                case 18: //Gabilani
+                case 55: //Nyrea
+                    defaultFlags.Add("Lubricated");
+                    break;
+                case 65: //Gryvain
+                    defaultFlags.Add("Nubby");
+                    break;
+                case 67: //Flower
+                    defaultFlags.Add("Aphrodisiac");
+                    break;
+            }
+            return defaultFlags;
+        }
+
 
         public XmlEnum[] VaginaTypes {
             get {

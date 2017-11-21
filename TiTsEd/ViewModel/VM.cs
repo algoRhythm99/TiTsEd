@@ -206,6 +206,29 @@ namespace TiTsEd.ViewModel {
             return flags;
         }
 
+        protected void UpdateFlags(int cType, List<FlagItem> flags, string propertyName = null)
+        {
+            List<string> defaultFlags = GetDefaultFlags(cType, propertyName);
+
+            foreach (FlagItem flag in flags)
+            {
+                if (defaultFlags.Contains(flag.ItemName))
+                {
+                    flag.ItemChecked = true;
+                }
+                else
+                {
+                    flag.ItemChecked = false;
+                }
+            }
+            OnPropertyChanged(propertyName);
+        }
+
+        protected virtual List<string> GetDefaultFlags(int type, string propertyName)
+        {
+            return null;
+        }
+
         protected readonly AmfObject _obj;
 
         public AmfObject GetAmfObject() {
@@ -342,7 +365,7 @@ namespace TiTsEd.ViewModel {
                     while ((id = _object.GetInt(++i, -1234)) != -1234) {
                         if (id == _value.ID) {
                             _object.Pop(i);
-                            return;
+                            break;
                         }
                     }
                 }
