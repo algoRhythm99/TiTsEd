@@ -28,11 +28,9 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
+            <StackPanel Grid.Column="1" Grid.Row="1">
 
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Male Organs" Style="{StaticResource Header}" />
@@ -134,7 +132,7 @@
                 </common:ArrayEditor>
             </StackPanel>
 
-            <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Grid.RowSpan="3">
+            <StackPanel Grid.Column="3" Grid.Row="1">
  
                 <Border Style="{StaticResource HeaderBorder}">
                     <TextBlock Text="Female Organs" Style="{StaticResource Header}" />
