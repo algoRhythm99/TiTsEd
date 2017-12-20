@@ -135,14 +135,15 @@
 		</SkinTypes>
 		<!-- ================================================================ -->
 		<SkinFlags>
-			<SkinFlag ID="3" Name="Lubricated" />
-			<SkinFlag ID="4" Name="Fluffy" />
-			<SkinFlag ID="5" Name="Squishy" />
-			<SkinFlag ID="6" Name="Smooth" />
+			<SkinFlag ID="3"  Name="Lubricated" />
+			<SkinFlag ID="4"  Name="Fluffy" />
+			<SkinFlag ID="5"  Name="Squishy" />
+			<SkinFlag ID="6"  Name="Smooth" />
 			<SkinFlag ID="11" Name="Aphrodisiac" />
 			<SkinFlag ID="12" Name="Sticky" />
 			<SkinFlag ID="13" Name="Thick" />
 			<SkinFlag ID="39" Name="Absorbent" />
+			<SkinFlag ID="46" Name="Freckled" />
 		</SkinFlags>
 		<!-- ================================================================ -->
 		<SkinTones>
@@ -521,13 +522,14 @@
 		</HairStyles>
 		<!-- ================================================================ -->
 		<FaceTypes>
-			<FaceType ID="0" Name="Human" />
-			<FaceType ID="1" Name="Equine" />
-			<FaceType ID="2" Name="Bovine" />
-			<FaceType ID="3" Name="Canine" />
-			<FaceType ID="4" Name="Feline" />
-			<FaceType ID="5" Name="Vulpine" />
-			<FaceType ID="9" Name="Lapine" />
+			<FaceType ID="0"  Name="Human" />
+			<FaceType ID="1"  Name="Equine" />
+			<FaceType ID="2"  Name="Bovine" />
+			<FaceType ID="3"  Name="Canine" />
+			<FaceType ID="4"  Name="Feline" />
+			<FaceType ID="5"  Name="Vulpine" />
+			<FaceType ID="7"  Name="Arachnid" />
+			<FaceType ID="9"  Name="Lapine" />
 			<FaceType ID="10" Name="Avian" />
 			<FaceType ID="11" Name="Draconic" />
 			<FaceType ID="12" Name="Lizan" />
@@ -550,8 +552,8 @@
 		</FaceTypes>
 		<!-- ================================================================ -->
 		<FaceFlags>
-			<FaceFlag ID="1" Name="Long" />
-			<FaceFlag ID="6" Name="Smooth" />
+			<FaceFlag ID="1"  Name="Long" />
+			<FaceFlag ID="6"  Name="Smooth" />
 			<FaceFlag ID="14" Name="Muzzled" />
 			<FaceFlag ID="15" Name="Angular" />
 			<FaceFlag ID="43" Name="Beak" />
@@ -645,11 +647,11 @@
 		</EyeColors>
 		<!-- ================================================================ -->
 		<EyeTypes>
-			<EyeType ID="0" Name="Human" />
-			<EyeType ID="4" Name="Feline" />
-			<EyeType ID="5" Name="Vulpine" />
-			<EyeType ID="6" Name="Bee" />
-			<EyeType ID="7" Name="Arachnid" />
+			<EyeType ID="0"  Name="Human" />
+			<EyeType ID="4"  Name="Feline" />
+			<EyeType ID="5"  Name="Vulpine" />
+			<EyeType ID="6"  Name="Bee" />
+			<EyeType ID="7"  Name="Arachnid" />
 			<EyeType ID="10" Name="Avian" />
 			<EyeType ID="13" Name="Naga" />
 			<EyeType ID="14" Name="Frog" />
@@ -659,6 +661,7 @@
 			<EyeType ID="49" Name="Leithan" />
 			<EyeType ID="51" Name="Synthetic" />
 			<EyeType ID="53" Name="Daynar" />
+			<EyeType ID="54" Name="Cockvine" />
 			<EyeType ID="55" Name="Nyrea" />
 			<EyeType ID="60" Name="Myr" />
 			<EyeType ID="65" Name="Gryvain" />
@@ -667,14 +670,14 @@
 		</EyeTypes>
 		<!-- ================================================================ -->
 		<EarTypes>
-			<EarType ID="0" Name="Human" />
-			<EarType ID="1" Name="Equine" />
-			<EarType ID="2" Name="Bovine" />
-			<EarType ID="3" Name="Canine" />
-			<EarType ID="4" Name="Feline" />
-			<EarType ID="5" Name="Vulpine" />
-			<EarType ID="8" Name="Drider" />
-			<EarType ID="9" Name="Lapine" />
+			<EarType ID="0"  Name="Human" />
+			<EarType ID="1"  Name="Equine" />
+			<EarType ID="2"  Name="Bovine" />
+			<EarType ID="3"  Name="Canine" />
+			<EarType ID="4"  Name="Feline" />
+			<EarType ID="5"  Name="Vulpine" />
+			<EarType ID="8"  Name="Drider" />
+			<EarType ID="9"  Name="Lapine" />
 			<EarType ID="10" Name="Avian" />
 			<EarType ID="11" Name="Draconic" />
 			<EarType ID="12" Name="Lizan" />
@@ -713,14 +716,15 @@
 		</EarLengthEnables>
 		<!-- ================================================================ -->
 		<TongueTypes>
-			<TongueType ID="0" Name="Human" />
-			<TongueType ID="1" Name="Equine" />
-			<TongueType ID="2" Name="Bovine" />
-			<TongueType ID="3" Name="Canine" />
-			<TongueType ID="4" Name="Feline" />
-			<TongueType ID="5" Name="Vulpine" />
-			<TongueType ID="6" Name="Bee" />
-			<TongueType ID="9" Name="Lapine" />
+			<TongueType ID="0"  Name="Human" />
+			<TongueType ID="1"  Name="Equine" />
+			<TongueType ID="2"  Name="Bovine" />
+			<TongueType ID="3"  Name="Canine" />
+			<TongueType ID="4"  Name="Feline" />
+			<TongueType ID="5"  Name="Vulpine" />
+			<TongueType ID="6"  Name="Bee" />
+			<TongueType ID="7"  Name="Arachnid" />
+			<TongueType ID="9"  Name="Lapine" />
 			<TongueType ID="10" Name="Avian" />
 			<TongueType ID="11" Name="Draconic" />
 			<TongueType ID="13" Name="Naga" />
@@ -736,10 +740,11 @@
 		</TongueTypes>
 		<!-- ================================================================ -->
 		<TongueFlags>
-			<TongueFlag ID="1" Name="Long" />
-			<TongueFlag ID="2" Name="Prehensile" />
-			<TongueFlag ID="3" Name="Lubricated" />
-			<TongueFlag ID="5" Name="Squishy" />
+			<TongueFlag ID="1"  Name="Long" />
+			<TongueFlag ID="2"  Name="Prehensile" />
+			<TongueFlag ID="3"  Name="Lubricated" />
+			<TongueFlag ID="5"  Name="Squishy" />
+			<TongueFlag ID="7"  Name="Tapered" />
 			<TongueFlag ID="11" Name="Aphrodisiac" />
 			<TongueFlag ID="12" Name="Sticky" />
 			<TongueFlag ID="30" Name="Nubby" />
@@ -748,8 +753,8 @@
 		</TongueFlags>
 		<!-- ================================================================ -->
 		<AntennaeTypes>
-			<AntennaeType ID="0" Name="None" />
-			<AntennaeType ID="6" Name="Bee" />
+			<AntennaeType ID="0"  Name="None" />
+			<AntennaeType ID="6"  Name="Bee" />
 			<AntennaeType ID="16" Name="Gooey" />
 			<AntennaeType ID="43" Name="Sydian" />
 			<AntennaeType ID="60" Name="Myr" />
@@ -757,8 +762,8 @@
 		</AntennaeTypes>
 		<!-- ================================================================ -->
 		<HornTypes>
-			<HornType ID="0" Name="None" />
-			<HornType ID="2" Name="Bovine" />
+			<HornType ID="0"  Name="None" />
+			<HornType ID="2"  Name="Bovine" />
 			<HornType ID="11" Name="Draconic" />
 			<HornType ID="12" Name="Lizan" />
 			<HornType ID="15" Name="Demonic" />
@@ -772,30 +777,30 @@
 		</HornTypes>
 		<!-- ================================================================ -->
 		<BeardStyles>
-			<BeardStyle ID="0" Name="unstyled" />
-			<BeardStyle ID="1" Name="braided" />
-			<BeardStyle ID="2" Name="curly" />
-			<BeardStyle ID="3" Name="untamed" />
-			<BeardStyle ID="4" Name="anchor" />
-			<BeardStyle ID="5" Name="mutton chops" />
-			<BeardStyle ID="6" Name="boxed" />
-			<BeardStyle ID="7" Name="chin strap" />
-			<BeardStyle ID="8" Name="mustache" />
-			<BeardStyle ID="9" Name="handlebars" />
+			<BeardStyle ID="0"  Name="unstyled" />
+			<BeardStyle ID="1"  Name="braided" />
+			<BeardStyle ID="2"  Name="curly" />
+			<BeardStyle ID="3"  Name="untamed" />
+			<BeardStyle ID="4"  Name="anchor" />
+			<BeardStyle ID="5"  Name="mutton chops" />
+			<BeardStyle ID="6"  Name="boxed" />
+			<BeardStyle ID="7"  Name="chin strap" />
+			<BeardStyle ID="8"  Name="mustache" />
+			<BeardStyle ID="9"  Name="handlebars" />
 			<BeardStyle ID="10" Name="goatee" />
 			<BeardStyle ID="11" Name="sideburns" />
 		</BeardStyles>
 		<!-- ================================================================ -->
 		<ArmTypes>
-			<ArmType ID="0" Name="Human" />
-			<ArmType ID="1" Name="Equine" />
-			<ArmType ID="3" Name="Canine" />
-			<ArmType ID="4" Name="Feline" />
-			<ArmType ID="5" Name="Vulpine" />
-			<ArmType ID="6" Name="Bee" />
-			<ArmType ID="7" Name="Arachnid" />
-			<ArmType ID="8" Name="Drider" />
-			<ArmType ID="9" Name="Lapine" />
+			<ArmType ID="0"  Name="Human" />
+			<ArmType ID="1"  Name="Equine" />
+			<ArmType ID="3"  Name="Canine" />
+			<ArmType ID="4"  Name="Feline" />
+			<ArmType ID="5"  Name="Vulpine" />
+			<ArmType ID="6"  Name="Bee" />
+			<ArmType ID="7"  Name="Arachnid" />
+			<ArmType ID="8"  Name="Drider" />
+			<ArmType ID="9"  Name="Lapine" />
 			<ArmType ID="10" Name="Avian" />
 			<ArmType ID="14" Name="Frog" />
 			<ArmType ID="15" Name="Demonic" />
@@ -815,7 +820,7 @@
 		</ArmTypes>
 		<!-- ================================================================ -->
 		<ArmFlags>
-			<ArmFlag ID="6" Name="Smooth" />
+			<ArmFlag ID="6"  Name="Smooth" />
 			<ArmFlag ID="12" Name="Sticky" />
 			<ArmFlag ID="19" Name="Amorphous" />
 			<ArmFlag ID="20" Name="Furred" />
@@ -828,16 +833,16 @@
 		</ArmFlags>
 		<!-- ================================================================ -->
 		<LegTypes>
-			<LegType ID="0" Name="Human" />
-			<LegType ID="1" Name="Equine" />
-			<LegType ID="2" Name="Bovine" />
-			<LegType ID="3" Name="Canine" />
-			<LegType ID="4" Name="Feline" />
-			<LegType ID="5" Name="Vulpine" />
-			<LegType ID="6" Name="Bee" />
-			<LegType ID="7" Name="Arachnid" />
-			<LegType ID="8" Name="Drider" />
-			<LegType ID="9" Name="Lapine" />
+			<LegType ID="0"  Name="Human" />
+			<LegType ID="1"  Name="Equine" />
+			<LegType ID="2"  Name="Bovine" />
+			<LegType ID="3"  Name="Canine" />
+			<LegType ID="4"  Name="Feline" />
+			<LegType ID="5"  Name="Vulpine" />
+			<LegType ID="6"  Name="Bee" />
+			<LegType ID="7"  Name="Arachnid" />
+			<LegType ID="8"  Name="Drider" />
+			<LegType ID="9"  Name="Lapine" />
 			<LegType ID="10" Name="Avian" />
 			<LegType ID="11" Name="Draconic" />
 			<LegType ID="12" Name="Lizan" />
@@ -867,8 +872,8 @@
 		</LegTypes>
 		<!-- ================================================================ -->
 		<LegFlags>
-			<LegFlag ID="2" Name="Prehensile" />
-			<LegFlag ID="6" Name="Smooth" />
+			<LegFlag ID="2"  Name="Prehensile" />
+			<LegFlag ID="6"  Name="Smooth" />
 			<LegFlag ID="12" Name="Sticky" />
 			<LegFlag ID="16" Name="Plantigrade" />
 			<LegFlag ID="17" Name="Digitgrade" />
@@ -885,8 +890,8 @@
 		</LegFlags>
 		<!-- ================================================================ -->
 		<WingTypes>
-			<WingType ID="0" Name="None" />
-			<WingType ID="6" Name="Bee" />
+			<WingType ID="0"  Name="None" />
+			<WingType ID="6"  Name="Bee" />
 			<WingType ID="10" Name="Avian" />
 			<WingType ID="11" Name="Draconic" />
 			<WingType ID="15" Name="Demonic" />
@@ -905,16 +910,16 @@
 		</WingTypes>
 		<!-- ================================================================ -->
 		<TailTypes>
-			<TailType ID="0" Name="None" />
-			<TailType ID="1" Name="Equine" />
-			<TailType ID="2" Name="Bovine" />
-			<TailType ID="3" Name="Canine" />
-			<TailType ID="4" Name="Feline" />
-			<TailType ID="5" Name="Vulpine" />
-			<TailType ID="6" Name="Bee" />
-			<TailType ID="7" Name="Arachnid" />
-			<TailType ID="8" Name="Drider" />
-			<TailType ID="9" Name="Lapine" />
+			<TailType ID="0"  Name="None" />
+			<TailType ID="1"  Name="Equine" />
+			<TailType ID="2"  Name="Bovine" />
+			<TailType ID="3"  Name="Canine" />
+			<TailType ID="4"  Name="Feline" />
+			<TailType ID="5"  Name="Vulpine" />
+			<TailType ID="6"  Name="Bee" />
+			<TailType ID="7"  Name="Arachnid" />
+			<TailType ID="8"  Name="Drider" />
+			<TailType ID="9"  Name="Lapine" />
 			<TailType ID="10" Name="Avian" />
 			<TailType ID="11" Name="Draconic" />
 			<TailType ID="12" Name="Lizan" />
@@ -948,13 +953,13 @@
 		</TailTypes>
 		<!-- ================================================================ -->
 		<TailFlags>
-			<TailFlag ID="1" Name="Long" />
-			<TailFlag ID="2" Name="Prehensile" />
-			<TailFlag ID="4" Name="Fluffy" />
-			<TailFlag ID="6" Name="Smooth" />
-			<TailFlag ID="7" Name="Tapered" />
-			<TailFlag ID="8" Name="Flared" />
-			<TailFlag ID="9" Name="Knotted" />
+			<TailFlag ID="1"  Name="Long" />
+			<TailFlag ID="2"  Name="Prehensile" />
+			<TailFlag ID="4"  Name="Fluffy" />
+			<TailFlag ID="6"  Name="Smooth" />
+			<TailFlag ID="7"  Name="Tapered" />
+			<TailFlag ID="8"  Name="Flared" />
+			<TailFlag ID="9"  Name="Knotted" />
 			<TailFlag ID="12" Name="Sticky" />
 			<TailFlag ID="13" Name="Thick" />
 			<TailFlag ID="20" Name="Furred" />
@@ -979,11 +984,11 @@
 		</TailGenitalTypes>
 		<!-- ================================================================ -->
 		<TailGenitalRaceTypes>
-			<TailGenitalRaceType ID="0" Name="Human" />
-			<TailGenitalRaceType ID="1" Name="Equine" />
-			<TailGenitalRaceType ID="3" Name="Canine" />
-			<TailGenitalRaceType ID="4" Name="Feline" />
-			<TailGenitalRaceType ID="5" Name="Vulpine" />
+			<TailGenitalRaceType ID="0"  Name="Human" />
+			<TailGenitalRaceType ID="1"  Name="Equine" />
+			<TailGenitalRaceType ID="3"  Name="Canine" />
+			<TailGenitalRaceType ID="4"  Name="Feline" />
+			<TailGenitalRaceType ID="5"  Name="Vulpine" />
 			<TailGenitalRaceType ID="15" Name="Demonic" />
 			<TailGenitalRaceType ID="16" Name="Gooey" />
 			<TailGenitalRaceType ID="20" Name="Suula" />
@@ -994,13 +999,14 @@
 		</TailGenitalRaceTypes>
 		<!-- ================================================================ -->
 		<CumTypes>
-			<CumType ID="0" Name="Milk" />
-			<CumType ID="1" Name="Honey" />
-			<CumType ID="2" Name="Cum" />
-			<CumType ID="6" Name="Cumsap" />
-			<CumType ID="7" Name="Chocolate Milk" />
-			<CumType ID="8" Name="Strawberry Milk" />
-			<CumType ID="9" Name="Sydian Cum" />
+			<CumType ID="0"  Name="Milk" />
+			<CumType ID="1"  Name="Honey" />
+			<CumType ID="2"  Name="Cum" />
+			<CumType ID="3"  Name="Oil" />
+			<CumType ID="6"  Name="Cumsap" />
+			<CumType ID="7"  Name="Chocolate Milk" />
+			<CumType ID="8"  Name="Strawberry Milk" />
+			<CumType ID="9"  Name="Sydian Cum" />
 			<CumType ID="14" Name="Gabilani Cum" />
 			<CumType ID="16" Name="Vanilla" />
 			<CumType ID="17" Name="Nyrea Cum" />
@@ -1016,10 +1022,10 @@
 		</CumTypes>
 		<!-- ================================================================ -->
 		<GirlCumTypes>
-			<GirlCumType ID="1" Name="Honey" />
-			<GirlCumType ID="5" Name="Girl Cum" />
-			<GirlCumType ID="7" Name="Chocolate Milk" />
-			<GirlCumType ID="8" Name="Strawberry Milk" />
+			<GirlCumType ID="1"  Name="Honey" />
+			<GirlCumType ID="5"  Name="Girl Cum" />
+			<GirlCumType ID="7"  Name="Chocolate Milk" />
+			<GirlCumType ID="8"  Name="Strawberry Milk" />
 			<GirlCumType ID="15" Name="Gabilani Girl Cum" />
 			<GirlCumType ID="16" Name="Vanilla" />
 			<GirlCumType ID="18" Name="Goo" />
@@ -1030,13 +1036,13 @@
 		</GirlCumTypes>
 		<!-- ================================================================ -->
 		<MilkTypes>
-			<MilkType ID="0" Name="Milk" />
-			<MilkType ID="1" Name="Honey" />
-			<MilkType ID="2" Name="Cum" />
-			<MilkType ID="4" Name="Milksap" />
-			<MilkType ID="5" Name="Girl Cum" />
-			<MilkType ID="7" Name="Chocolate Milk" />
-			<MilkType ID="8" Name="Strawberry Milk" />
+			<MilkType ID="0"  Name="Milk" />
+			<MilkType ID="1"  Name="Honey" />
+			<MilkType ID="2"  Name="Cum" />
+			<MilkType ID="4"  Name="Milksap" />
+			<MilkType ID="5"  Name="Girl Cum" />
+			<MilkType ID="7"  Name="Chocolate Milk" />
+			<MilkType ID="8"  Name="Strawberry Milk" />
 			<MilkType ID="10" Name="Vanae Maiden Milk" />
 			<MilkType ID="11" Name="Vanae Huntress Milk" />
 			<MilkType ID="12" Name="Nectar" />
@@ -1047,12 +1053,12 @@
 		</MilkTypes>
 		<!-- ================================================================ -->
 		<CockTypes>
-			<CockType ID="0" Name="Human" />
-			<CockType ID="1" Name="Equine" />
-			<CockType ID="3" Name="Canine" />
-			<CockType ID="4" Name="Feline" />
-			<CockType ID="5" Name="Vulpine" />
-			<CockType ID="6" Name="Bee" />
+			<CockType ID="0"  Name="Human" />
+			<CockType ID="1"  Name="Equine" />
+			<CockType ID="3"  Name="Canine" />
+			<CockType ID="4"  Name="Feline" />
+			<CockType ID="5"  Name="Vulpine" />
+			<CockType ID="6"  Name="Bee" />
 			<CockType ID="10" Name="Avian" />
 			<CockType ID="11" Name="Draconic" />
 			<CockType ID="13" Name="Naga" />
@@ -1082,12 +1088,12 @@
 		</CockTypes>
 		<!-- ================================================================ -->
 		<CockFlags>
-			<CockFlag ID="2" Name="Prehensile" />
-			<CockFlag ID="3" Name="Lubricated" />
-			<CockFlag ID="6" Name="Smooth" />
-			<CockFlag ID="7" Name="Tapered" />
-			<CockFlag ID="8" Name="Flared" />
-			<CockFlag ID="9" Name="Knotted" />
+			<CockFlag ID="2"  Name="Prehensile" />
+			<CockFlag ID="3"  Name="Lubricated" />
+			<CockFlag ID="6"  Name="Smooth" />
+			<CockFlag ID="7"  Name="Tapered" />
+			<CockFlag ID="8"  Name="Flared" />
+			<CockFlag ID="9"  Name="Knotted" />
 			<CockFlag ID="10" Name="Blunt" />
 			<CockFlag ID="11" Name="Aphrodisiac" />
 			<CockFlag ID="12" Name="Sticky" />
@@ -1105,11 +1111,12 @@
 		</CockFlags>
 		<!-- ================================================================ -->
 		<VaginaTypes>
-			<VaginaType ID="0" Name="Human" />
-			<VaginaType ID="1" Name="Equine" />
-			<VaginaType ID="3" Name="Canine" />
-			<VaginaType ID="5" Name="Vulpine" /><!-- elizabeth -->
-			<VaginaType ID="6" Name="Bee" />
+			<VaginaType ID="0"  Name="Human" />
+			<VaginaType ID="1"  Name="Equine" />
+			<VaginaType ID="3"  Name="Canine" />
+			<VaginaType ID="5"  Name="Vulpine" />
+			<VaginaType ID="6"  Name="Bee" />
+			<VaginaType ID="7"  Name="Arachnid" />
 			<VaginaType ID="10" Name="Avian" />
 			<VaginaType ID="13" Name="Naga" />
 			<VaginaType ID="16" Name="Gooey" />
@@ -1129,7 +1136,7 @@
 		</VaginaTypes>
 		<!-- ================================================================ -->
 		<VaginaFlags>
-			<VaginaFlag ID="3" Name="Lubricated" />
+			<VaginaFlag ID="3"  Name="Lubricated" />
 			<VaginaFlag ID="11" Name="Aphrodisiac" />
 			<VaginaFlag ID="18" Name="Tendril" />
 			<VaginaFlag ID="25" Name="Ovipositor" />
@@ -1142,7 +1149,7 @@
 		</VaginaFlags>
 		<!-- ================================================================ -->
 		<AssFlags>
-			<AssFlag ID="3" Name="Lubricated" />
+			<AssFlag ID="3"  Name="Lubricated" />
 			<AssFlag ID="11" Name="Aphrodisiac" />
 			<AssFlag ID="30" Name="Nubby" />
 			<AssFlag ID="37" Name="Gooey" />
@@ -1213,6 +1220,7 @@
 			<Item Stack="1" Name="M.Sweeper" ID="classes.Items.Accessories::Minesweeper" />
 			<Item Stack="1" Name="MuskLure" ID="classes.Items.Accessories::MuskLure" />
 			<Item Stack="1" Name="M.Repel" ID="classes.Items.Accessories::MuskRepel" />
+			<Item Stack="1" Name="MyrG.coat" ID="classes.Items.Accessories::MyrGreatcoat" />
 			<Item Stack="1" Name="S.Duster" ID="classes.Items.Accessories::SalamanderDuster" />
 			<Item Stack="1" Name="Siegwulfe" ID="classes.Items.Accessories::SiegwulfeItem" />
 			<Item Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolf" />
@@ -1401,9 +1409,10 @@
 			<Item Stack="1" Name="Z.Pouch" ID="classes.Items.Apparel::ZipPouch" />
 		</ItemGroup>
 		<ItemGroup Name="Combat">
-			<Item Stack="5"  Name="Crystal S." ID="classes.Items.Combat::CrystalShard" />
+			<Item Stack="5"  Name="Crystal S."  ID="classes.Items.Combat::CrystalShard" />
 			<Item Stack="10" Name="EMP Gren."   ID="classes.Items.Miscellaneous::EMPGrenade" />
 			<Item Stack="10" Name="Flashbang"   ID="classes.Items.Miscellaneous::FlashGrenade" />
+			<Item Stack="5"  Name="Lustoxin"    ID="classes.Items.Miscellaneous::Lustoxin" />
 			<Item Stack="10" Name="OS StimBoost"    ID="classes.Items.Miscellaneous::OSStimBoost" />
 			<Item Stack="5"  Name="S.Booster"   ID="classes.Items.Miscellaneous::ShieldBooster" />
 			<Item Stack="5"  Name="S.Boost M2"  ID="classes.Items.Recovery::ShieldBoosterMkII" />
@@ -1538,7 +1547,8 @@
 			<Item Stack="10" Name="LipTease" ID="classes.Items.Transformatives::LipTease" />
 			<Item Stack="10" Name="Lucifier" ID="classes.Items.Transformatives::Lucifier" />
 			<Item Stack="10" Name="Lupinol" ID="classes.Items.Transformatives::Lupinol" />
-			<Item Stack="10" Name="ManUp" ID="classes.Items.Transformatives::ManUp" />
+			<Item Stack="10" Name="ManDown" ID="classes.Items.Miscellaneous::ManDown" />
+			<Item Stack="10" Name="ManUp"   ID="classes.Items.Transformatives::ManUp" />
 			<Item Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
 			<Item Stack="9"  Name="Mthrhusk"   ID="classes.Items.Transformatives::Motherhusk" />
 			<Item Stack="10" Name="M.Stick" ID="classes.Items.Transformatives::Muffstick" />
@@ -1791,9 +1801,10 @@
 			<Item Stack="2"  Name="GemSack"     ID="classes.Items.Miscellaneous::GemSatchel" />
 			<Item Stack="20" Name="Kirkite"     ID="classes.Items.Miscellaneous::Kirkite" />
 			<Item Stack="10" Name="MilkBag"     ID="classes.Items.Miscellaneous::MilkBag" />
-			<Item Stack="10" Name="Lg.OvaEgg"	 ID="classes.Items.Miscellaneous::OvalastingEggLarge" />
-			<Item Stack="10" Name="Sm.OvaEgg"  ID="classes.Items.Miscellaneous::OvalastingEggSmall" />
+			<Item Stack="10" Name="Lg.OvaEgg"   ID="classes.Items.Miscellaneous::OvalastingEggLarge" />
+			<Item Stack="10" Name="Sm.OvaEgg"   ID="classes.Items.Miscellaneous::OvalastingEggSmall" />
 			<Item Stack="20" Name="Picardine"   ID="classes.Items.Miscellaneous::Picardine" />
+			<Item Stack="20" Name="Q.Necklace"  ID="classes.Items.Treasures::QueenlyNecklace" />
 			<Item Stack="20" Name="Satyrite"    ID="classes.Items.Miscellaneous::Satyrite" />
 			<Item Stack="20" Name="Savicite"    ID="classes.Items.Treasures::Savicite" />
 			<Item Stack="10" Name="Silicone"    ID="classes.Items.Miscellaneous::Silicone" />
@@ -1837,10 +1848,12 @@
 			<KeyItem Name="Kaska's Detonator" />
 			<KeyItem Name="Key Card - R&amp;D Security Pass" />
 			<KeyItem Name="Khorgan's Detonator" />
+			<KeyItem Name="Myr Heavy Tranquilizer Dart" />
 			<KeyItem Name="Myr Security Radio" />
 			<KeyItem Name="Orange Myr Data" />
 			<KeyItem Name="Parasite Cure" Description="A vial containing a potential cure for the parasite afflicting the crew of the Kashima." />
 			<KeyItem Name="Parasite Sample" Description="A small security hardcase containing a medical sample." />
+			<KeyItem Name="Pirate Datapad" />
 			<KeyItem Name="Red Myr Blood" Description="A vial of blood sampled from a red myr." />
 			<KeyItem Name="RK Lah - Captured" />
 			<KeyItem Name="Satellite Hard Drive" />
@@ -1849,6 +1862,7 @@
 			<KeyItem Name="Unification Rally Invite: 18:00, Mushroom Park" />
 			<KeyItem Name="Uveto A.I. Cores" Description="A.I. Cores recovered from Captain Zaalt Kandar, destined to be delivered to Uveto." />
 			<KeyItem Name="Xanthe's Silk" Description="You're supposed to give this to Inessa. She'll supposedly know what it means." />
+			<KeyItem Name="Xenogen Datapad" />
 		</KeyItemGroup>
 		<KeyItemGroup Name="Coupons">
 			<KeyItem Name="Coupon - Clippex" Description="Save 75% on your next purchase of Clippex!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
@@ -2079,7 +2093,7 @@
 			<Perk Name="Ditz Speech" Description="Alters dialogue in certain scenes." />
 			<Perk Name="Dumb4Cum" Description="Grants extra intelligence after acquiring cum, but reduces it otherwise." />
 			<Perk Name="Fuck Sense" Description="Allows your sense ability to base success off your libido instead of intelligence." Value1="15" />
-			<Perk Name="Inhuman Desire" Description="Increases maximum lust by {Value1}." Label1="Maximum Lust Mod" Value1="20" />
+			<Perk Name="Inhuman Desire" Description="Increases maximum lust by {Value1}." Label1="Maximum Lust Mod" Value1="20" Comment="You can set the perk Value1 to set your max lust" />
 			<Perk Name="Milk Fountain" Description="Allows you to squirt milk with the greatest of ease." />
 			<Perk Name="Panic Ejaculation" Description="Allows you to squirt out a little cum while grappled, easing your escape!" />
 			<Perk Name="Pheromone Cloud" Description="Boosts tease attack and arousal." />
@@ -2115,9 +2129,12 @@
 			<Perk Name="Jungle Queen Scent" Description="You smell like a mighty queen of the jungle. Boosts tease attacks." />
 			<Perk Name="Mane" Description="Your hair grows out much like an equine's mane." />
 			<Perk Name="Mega Milk" Description="Allows you to instantly produce a good amount of milk, even when empty." />
+			<Perk Name="Musky Pheromones" Description="Boosts tease attack and arousal." />
 			<Perk Name="Myr Venom" Description="Grants a love-bite tease ability that deals a little lust damage to your opponent." />
+			<Perk Name="Nyrea Eggs" Description="Your body naturally produces nyrea eggs." />
 			<Perk Name="Omega Fever" Description="Your body will cycle through the stages of heat whenever your ass is not incubating." />
 			<Perk Name="Oviposition" Description="Causes you to regularly lay eggs when not otherwise pregnant." Label4="Timestamp" />
+			<Perk Name="Perma-cute" Description="Your masculinity is permanently fixed to retain a cute, boyish appearance." />
 			<Perk Name="Pheromone Sweat" Description="Slightly boosts tease attack and arousal while sweating" />
 			<Perk Name="Regal Mane" Description="You have an impressive mane bordering your neck." Label1="0 = No Collar&#xD;&#xA;20 = Fur Collar" Value1="20" />
 			<Perk Name="Resin" Description="Your heavy bark skin slows you all the way down, but provides plenty of protection. It also produces resin. Some flighty, energetic, needy species might find it difficult to resist wanting to plaster themselves all over you..." Label1="Max Reflexes multiplier" Value1="0.40" Type1="Double" />
@@ -2606,16 +2623,16 @@
 		<Flag Name="ENTERED_ACQUISITIONS" />
 		<Flag Name="ENTERED_BRYNNS_STALL" />
 		<Flag Name="ENTERED_NOMANSLAND" />
-		<Flag Name="ERRA_CUDDLED" />
+		<Flag Name="ERRA_CUDDLED"   Description="Times Erra has been cuddled" />
 		<Flag Name="ERRA_D_TALK" />
-		<Flag Name="ERRA_HEARTBROKEN" />
-		<Flag Name="ERRA_LOVERS" />
+		<Flag Name="ERRA_HEARTBROKEN" Description="1 indicates you broke her heart and she will not appear any longer." />
+		<Flag Name="ERRA_LOVERS"    Description="1 indicates lover status. 2 indicates lovers & she is collared" />
 		<Flag Name="ERRA_NEW_INTROED" />
 		<Flag Name="ERRA_PAST_TALK" />
-		<Flag Name="ERRA_PETTED" />
+		<Flag Name="ERRA_PETTED"    Description="How many times have you done the erra petting sex scene? undefined if 0" />
 		<Flag Name="ERRA_RELATIONSHIP_TALK" />
-		<Flag Name="ERRA_SEXED" />
-		<Flag Name="ERRA_WALKIES" />
+		<Flag Name="ERRA_SEXED"     Description="times sexed. Undefined if unsexed" />
+		<Flag Name="ERRA_WALKIES"   Description="Times Erra has been Walked" />
 		<Flag Name="FALL OF THE PHOENIX BRIDGE ACCESSIBLE" />
 		<Flag Name="FALL OF THE PHOENIX BRIDGE ENTERED" />
 		<Flag Name="FALL OF THE PHOENIX COMPUTER STATUS" />
@@ -2646,6 +2663,7 @@
 		<Flag Name="FAZIAN_QUEST_SUCCESSES" />
 		<Flag Name="FAZIAN_QUEST_TIMER" />
 		<Flag Name="FAZIAN_SHOW" />
+        <Flag Name="FEDERATION_QUEST" Description="0 - Quest denied&#xD;&#xA;1 - Quest begun&#xD;&#xA;2 - Final Fight ready to proc&#xD;&#xA;3 - Defeated Queen, captured&#xD;&#xA;4 - Defeated Queen, let go&#xD;&#xA;5 - Rebels leave and agree to stop attacking&#xD;&#xA;6 - Rebels leave and plan to hook up with Kuitan&#xD;&#xA;7 - Rebels leave with Kara taking them to Mhenga&#xD;&#xA;8 - Rebels leave with PC pledging to take them to Mhenga&#xD;&#xA;9 - Rebels leave with PC paying for them to be taken to Mhenga&#xD;&#xA;10- Follow up to 8, PC succesfully took the rebels to Mhenga themselves" />
 		<Flag Name="FERTILITY_PRIESTESSES_FOUGHT" />
 		<Flag Name="FERTILITY_PRIESTESSES_FUCKED" />
 		<Flag Name="FIELDS_STEP" />
@@ -2832,6 +2850,7 @@
 		<Flag Name="HUGGED_FLAHNE" />
 		<Flag Name="HUNGOUT_CFS" />
 		<Flag Name="HUNG_WITH_KAEDE_AFTER_MEETING_CASS" />
+		<Flag Name="HWEEN_BIT_FLAGS" />
 		<Flag Name="HYPNO_EFFECT_OUTPUT_DONE" />
 		<Flag Name="HYPNO_EFFECT_SMALL_MESSAGES" />
 		<Flag Name="ICEQUEEN COMPLETE" />
@@ -3127,6 +3146,7 @@
 		<Flag Name="MADE_RENVRA_BEG" />
 		<Flag Name="MANOR_ADMINROOM_ENTERED" />
 		<Flag Name="MANOR_WARROOM_ENTERED" />
+        <Flag Name="MARIK_FLIRTED" Description="1 == Flirted with Marik" />
 		<Flag Name="MCALLISTER_GOLD_MYR_TALK" />
 		<Flag Name="MCALLISTER_MEETING_TIMESTAMP" />
 		<Flag Name="MCALLISTER_MYR_HYBRIDITY" />
@@ -3183,7 +3203,7 @@
 		<Flag Name="MET_ELLIE" Description="1 == You've met Ellie" />
 		<Flag Name="MET_EMBRY" Description="1 == You've met Embry" />
 		<Flag Name="MET_EMMY" Description="1 == You know each other's name" />
-		<Flag Name="MET_ERRA" />
+		<Flag Name="MET_ERRA" Description="1 == You've met Erra" />
 		<Flag Name="MET_ETHELN" Description="1 == You've met Etheln the Feminine Myr male" />
 		<Flag Name="MET_FEMALE_RASKVEL" Description="Number of times you've encountered a female Raskvel" />
 		<Flag Name="MET_FEMALE_SYDIAN" />
@@ -3275,6 +3295,7 @@
 		<Flag Name="MET_TERENSHA" Description="1 == You've met Terensha" />
 		<Flag Name="MET_TLAKO" Description="1 == You've met Tlako" />
 		<Flag Name="MET_UGC_TROOPER_AT_CHASMFALL" Description="1 == You've met Sergeant Horace Decker at the Stellar Tether" />
+        <Flag Name="MET_ULA" Description="1 == You've met Ula the Korgonne princess" />
 		<Flag Name="MET_VAANDE" Description="1 == You've met Vaande" />
 		<Flag Name="MET_VAHN" Description="1 == You've met Vahn" />
 		<Flag Name="MET_VANAE_HUNTRESS" Description="Number of times you've encountered a Vanae huntress" />
@@ -3764,7 +3785,7 @@
 		<Flag Name="SIERVA_TALK" />
 		<Flag Name="SILENCE_RESCUED_CONNIE" />
 		<Flag Name="SIMONE_TEASED" />
-		<Flag Name="SISTER_MILK_ACT" />
+		<Flag Name="SISTER_MILK_ACT" Description="Milk multiplier" />
 		<Flag Name="SIXTYNINED_GIANNA" />
 		<Flag Name="SOLD_BESS" />
 		<Flag Name="SPAM_MSG_COV8" />
@@ -3934,6 +3955,7 @@
 		<Flag Name="TRIPPED_ON_SHADE" />
 		<Flag Name="TUNDRA_STEP" />
 		<Flag Name="TURNED_DOWN_SEXBOT" />
+        <Flag Name="ULA_SAVED" />
 		<Flag Name="UNA_MET" />
 		<Flag Name="UNA_TALKED" />
 		<Flag Name="UNLOCKED_JUNKYARD_PLANET" />
@@ -4183,7 +4205,7 @@
 			<StatusEffect Name="Milk Paused" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
-			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" IsHidden="true" />
+			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" Label4="1 == Permanent, ignores racial score" Value4="1" IsHidden="true" />
 			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
 			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!&#xA;Minimum lust increased by 20." IconName="LustUp" IconShade="0" />
