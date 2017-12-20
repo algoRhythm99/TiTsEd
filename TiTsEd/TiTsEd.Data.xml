@@ -2626,7 +2626,7 @@
 		<Flag Name="ERRA_CUDDLED"   Description="Times Erra has been cuddled" />
 		<Flag Name="ERRA_D_TALK" />
 		<Flag Name="ERRA_HEARTBROKEN" Description="1 indicates you broke her heart and she will not appear any longer." />
-		<Flag Name="ERRA_LOVERS"    Description="1 indicates lover status. 2 indicates lovers & she is collared" />
+		<Flag Name="ERRA_LOVERS"    Description="1 indicates lover status. 2 indicates lovers &amp; she is collared" />
 		<Flag Name="ERRA_NEW_INTROED" />
 		<Flag Name="ERRA_PAST_TALK" />
 		<Flag Name="ERRA_PETTED"    Description="How many times have you done the erra petting sex scene? undefined if 0" />
