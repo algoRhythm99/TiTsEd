@@ -715,6 +715,7 @@ namespace TiTsEd.ViewModel {
                     break;
                 case 4: //Feline
                 case 40: //Panda
+                case 75: //Lupine
                     defaultFlags.Add("Muzzled");
                     break;
                 case 14: //Frog
@@ -830,6 +831,7 @@ namespace TiTsEd.ViewModel {
                     defaultFlags.Add("Prehensile");
                     break;
                 case 57: //Ovir
+                case 75: //Lupine
                     defaultFlags.Add("Long");
                     break;
             }
@@ -1029,6 +1031,7 @@ namespace TiTsEd.ViewModel {
                 case 24: //Kui-tan
                 case 40: //Panda
                 case 45: //Badger
+                case 75: //Lupine
                     defaultFlags.Add("Furred");
                     break;
                 case 6: //Bee
@@ -1138,6 +1141,7 @@ namespace TiTsEd.ViewModel {
                     defaultFlags.Add("Heels");
                     break;
                 case 40: //Panda
+                case 75: //Lupine
                     defaultFlags.Add("Digitigrade");
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Paws");
@@ -1237,6 +1241,7 @@ namespace TiTsEd.ViewModel {
                 case 3: //Canine
                 case 5: //Vulpine
                 case 24: //Kui-tan
+                case 75: //Lupine
                     defaultFlags.Add("Fluffy");
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Long");

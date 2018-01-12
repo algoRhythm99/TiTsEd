@@ -548,6 +548,7 @@
 			<FaceType ID="71" Name="Worg" />
 			<FaceType ID="72" Name="Swine" />
 			<FaceType ID="76" Name="Sheep" />
+			<FaceType ID="75" Name="Lupine" />
 			<FaceType ID="77" Name="Lesser Panda" />
 		</FaceTypes>
 		<!-- ================================================================ -->
@@ -702,6 +703,7 @@
 			<EarType ID="65" Name="Gryvain" />
 			<EarType ID="72" Name="Swine" />
 			<EarType ID="73" Name="Quad Lapine" />
+			<EarType ID="75" Name="Lupine" />
 			<EarType ID="76" Name="Sheep" />
 			<EarType ID="77" Name="Lesser Panda" />
 		</EarTypes>
@@ -816,6 +818,7 @@
 			<ArmType ID="57" Name="Ovir" />
 			<ArmType ID="60" Name="Myr" />
 			<ArmType ID="67" Name="Flower" />
+			<ArmType ID="75" Name="Lupine" />
 			<ArmType ID="77" Name="Lesser Panda" />
 		</ArmTypes>
 		<!-- ================================================================ -->
@@ -867,6 +870,7 @@
 			<LegType ID="60" Name="Myr" />
 			<LegType ID="65" Name="Gryvain" />
 			<LegType ID="72" Name="Swine" />
+			<LegType ID="75" Name="Lupine" />
 			<LegType ID="76" Name="Sheep" />
 			<LegType ID="77" Name="Lesser Panda" />
 		</LegTypes>
@@ -948,6 +952,7 @@
 			<TailType ID="60" Name="Myr" />
 			<TailType ID="65" Name="Gryvain" />
 			<TailType ID="72" Name="Swine" />
+			<TailType ID="75" Name="Lupine" />
 			<TailType ID="76" Name="Sheep" />
 			<TailType ID="77" Name="Lesser Panda" />
 		</TailTypes>
