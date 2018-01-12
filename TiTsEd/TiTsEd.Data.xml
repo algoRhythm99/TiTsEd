@@ -2199,6 +2199,7 @@
 		<Flag Name="ANNO_CREWMEMBER" Description="0/Undefined == Not Recruited&#xD;&#xA;1 == Is Crewmember&#xD;&#xA;2 == Recruited but kicked off the ship" />
 		<Flag Name="ANNO_CREWMEMBER_INITIALSCENE" Description="1 == You've seen Anno's recruitment scene" />
 		<Flag Name="ANNO_EVER_STRAPONED" Description="1 == Anno has used a strapon on the PC" />
+		<Flag Name="ANNO_GIFT_WRAPPED" />
 		<Flag Name="ANNO_MISSION_OFFER" Description="Undefined == Not started&#xD;&#xA;1 == Offered&#xD;&#xA;2 == In progress (Actually on Deck13)&#xD;&#xA;3 == Gray Prime resolved" />
 		<Flag Name="ANNO_NOVA_UPDATE" Description="1 == You've talked to Anno about the Nova after her quest" />
 		<Flag Name="ANNO_OWNS_LIGHT_STRAPON" Description="1 == Anno owns a hardlight strapon" />
@@ -2392,6 +2393,7 @@
 		<Flag Name="BRANDY_MISSIONARY" />
 		<Flag Name="BRANDY_MODS" />
 		<Flag Name="BRANDY_STALLED" />
+		<Flag Name="BREEDING_SOLSTICED" Description="1 == you have been solstice bred by milodans" />
 		<Flag Name="BRIGET_FUCKED" />
 		<Flag Name="BRIGET_MET" />
 		<Flag Name="BRIHA_HARDLIGHT_STUFFED" />
@@ -2465,6 +2467,7 @@
 		<Flag Name="CERIA_EAR_TOUCH_UNLOCKED" />
 		<Flag Name="CERIA_MOUTH_FLOOD" />
 		<Flag Name="CFS_HANGOUT_EVENT_PENDING" />
+		<Flag Name="CFS_HOLIDAY_SHOPPING" Description="1 == you have gone shopping with Gwen" />
 		<Flag Name="CFS_TALKED_EIMEAR_REL" />
 		<Flag Name="CFS_TALKED_FASHION" />
 		<Flag Name="CFS_TALKED_PUAZI" />
@@ -2473,6 +2476,7 @@
 		<Flag Name="CHARLES_TALKED_FIX" />
 		<Flag Name="CHECKED_GEAR_AT_OGGY" />
 		<Flag Name="CHIEF_NEYKKAR_WITH_PC" />
+		<Flag Name="CIARAN_MET" />
 		<Flag Name="CLEARED_XENOGEN_CAMP_BODIES" />
 		<Flag Name="CLEARED_YU" />
 		<Flag Name="COCKBOX_UPGRADE" />
@@ -2628,6 +2632,7 @@
 		<Flag Name="ENTERED_ACQUISITIONS" />
 		<Flag Name="ENTERED_BRYNNS_STALL" />
 		<Flag Name="ENTERED_NOMANSLAND" />
+		<Flag Name="ERIKA_TALKED_ABOUT_HER" />
 		<Flag Name="ERRA_CUDDLED"   Description="Times Erra has been cuddled" />
 		<Flag Name="ERRA_D_TALK" />
 		<Flag Name="ERRA_HEARTBROKEN" Description="1 indicates you broke her heart and she will not appear any longer." />
@@ -2668,7 +2673,7 @@
 		<Flag Name="FAZIAN_QUEST_SUCCESSES" />
 		<Flag Name="FAZIAN_QUEST_TIMER" />
 		<Flag Name="FAZIAN_SHOW" />
-        <Flag Name="FEDERATION_QUEST" Description="0 - Quest denied&#xD;&#xA;1 - Quest begun&#xD;&#xA;2 - Final Fight ready to proc&#xD;&#xA;3 - Defeated Queen, captured&#xD;&#xA;4 - Defeated Queen, let go&#xD;&#xA;5 - Rebels leave and agree to stop attacking&#xD;&#xA;6 - Rebels leave and plan to hook up with Kuitan&#xD;&#xA;7 - Rebels leave with Kara taking them to Mhenga&#xD;&#xA;8 - Rebels leave with PC pledging to take them to Mhenga&#xD;&#xA;9 - Rebels leave with PC paying for them to be taken to Mhenga&#xD;&#xA;10- Follow up to 8, PC succesfully took the rebels to Mhenga themselves" />
+		<Flag Name="FEDERATION_QUEST" Description="0 - Quest denied&#xD;&#xA;1 - Quest begun&#xD;&#xA;2 - Final Fight ready to proc&#xD;&#xA;3 - Defeated Queen, captured&#xD;&#xA;4 - Defeated Queen, let go&#xD;&#xA;5 - Rebels leave and agree to stop attacking&#xD;&#xA;6 - Rebels leave and plan to hook up with Kuitan&#xD;&#xA;7 - Rebels leave with Kara taking them to Mhenga&#xD;&#xA;8 - Rebels leave with PC pledging to take them to Mhenga&#xD;&#xA;9 - Rebels leave with PC paying for them to be taken to Mhenga&#xD;&#xA;10- Follow up to 8, PC succesfully took the rebels to Mhenga themselves" />
 		<Flag Name="FERTILITY_PRIESTESSES_FOUGHT" />
 		<Flag Name="FERTILITY_PRIESTESSES_FUCKED" />
 		<Flag Name="FIELDS_STEP" />
@@ -2741,6 +2746,7 @@
 		<Flag Name="FYN_TALKED_ABOUT_SAVEWORDS" />
 		<Flag Name="FYN_TALKED_ABOUT_SEX" />
 		<Flag Name="FYN_TAUGHT_DANCING" />
+		<Flag Name="FYN_VILDARII_TALK" />
 		<Flag Name="GALOMAX_DOSES" Description="undefined = none used&#xD;&#xA;1 == goo hair&#xD;&#xA;2 == goo fluids&#xD;&#xA;3 == goo genitals&#xD;&#xA;4 == goo skin&#xD;&#xA;5 == full goo" />
 		<Flag Name="GAVE_LYS_FLOWER" Description="Number of times you've given Lys a flower" />
 		<Flag Name="GAVE_SHEKKA_PROBE" Description="1 == You gave Shekka the probe" />
@@ -2923,6 +2929,7 @@
 		<Flag Name="KANE_DEFEATED" />
 		<Flag Name="KARA_DEFEATED_WITH_SHADE" />
 		<Flag Name="KARA_PAID_YOU" />
+		<Flag Name="KASE_MATHED" />
 		<Flag Name="KASHIMA_BRIDGE" />
 		<Flag Name="KASHIMA_HOLMES_DEFEATED" />
 		<Flag Name="KASHIMA_STATE" />
@@ -3106,6 +3113,8 @@
 		<Flag Name="LET_SHADE_AND_KARA_DUKE_IT_OUT" />
 		<Flag Name="LEVEL_UP_AVAILABLE" />
 		<Flag Name="LEVEL_UP_POINTS" />
+		<Flag Name="LIAMME_ALISS_PROC" />
+		<Flag Name="LIAMME_EXHIB" />
 		<Flag Name="LIAMME_TALK_MODS" />
 		<Flag Name="LIAMME_TALK_SELF" />
 		<Flag Name="LIAMME_TALK_TAVROS" />
@@ -3151,7 +3160,7 @@
 		<Flag Name="MADE_RENVRA_BEG" />
 		<Flag Name="MANOR_ADMINROOM_ENTERED" />
 		<Flag Name="MANOR_WARROOM_ENTERED" />
-        <Flag Name="MARIK_FLIRTED" Description="1 == Flirted with Marik" />
+		<Flag Name="MARIK_FLIRTED" Description="1 == Flirted with Marik" />
 		<Flag Name="MCALLISTER_GOLD_MYR_TALK" />
 		<Flag Name="MCALLISTER_MEETING_TIMESTAMP" />
 		<Flag Name="MCALLISTER_MYR_HYBRIDITY" />
@@ -3183,6 +3192,7 @@
 		<Flag Name="MET_BUTCH" Description="1 == You've met Butch" />
 		<Flag Name="MET_CAMERON" Description="1 == You've met Cameron" />
 		<Flag Name="MET_CANDICE" Description="1 == You've met Candice" />
+		<Flag Name="MET_CANDY" Description="1 == You've met Candy the rahn" />
 		<Flag Name="MET_CARL" Description="1 == You've met Carl" />
 		<Flag Name="MET_CASS" Description="1 == You've met Cass" />
 		<Flag Name="MET_CERIA" Description="1 == You've met Ceria" />
@@ -3209,6 +3219,7 @@
 		<Flag Name="MET_EMBRY" Description="1 == You've met Embry" />
 		<Flag Name="MET_EMMY" Description="1 == You know each other's name" />
 		<Flag Name="MET_ERRA" Description="1 == You've met Erra" />
+		<Flag Name="MET_ERIKA" />
 		<Flag Name="MET_ETHELN" Description="1 == You've met Etheln the Feminine Myr male" />
 		<Flag Name="MET_FEMALE_RASKVEL" Description="Number of times you've encountered a female Raskvel" />
 		<Flag Name="MET_FEMALE_SYDIAN" />
@@ -3247,6 +3258,7 @@
 		<Flag Name="MET_KEROKORAS" Description="Number of times you've encountered a kerokoras" />
 		<Flag Name="MET_KIRILA" />
 		<Flag Name="MET_KIRO" Description="1 == You've met Kiro" />
+		<Flag Name="MET_KORG_MALE" />
 		<Flag Name="MET_KRYM" />
 		<Flag Name="MET_LANE" Description="1 == You've met Lane" />
 		<Flag Name="MET_LERRIS" Description="1 == You've met Lerris" />
@@ -3300,7 +3312,7 @@
 		<Flag Name="MET_TERENSHA" Description="1 == You've met Terensha" />
 		<Flag Name="MET_TLAKO" Description="1 == You've met Tlako" />
 		<Flag Name="MET_UGC_TROOPER_AT_CHASMFALL" Description="1 == You've met Sergeant Horace Decker at the Stellar Tether" />
-        <Flag Name="MET_ULA" Description="1 == You've met Ula the Korgonne princess" />
+		<Flag Name="MET_ULA" Description="1 == You've met Ula the Korgonne princess" />
 		<Flag Name="MET_VAANDE" Description="1 == You've met Vaande" />
 		<Flag Name="MET_VAHN" Description="1 == You've met Vahn" />
 		<Flag Name="MET_VANAE_HUNTRESS" Description="Number of times you've encountered a Vanae huntress" />
@@ -3525,6 +3537,8 @@
 		<Flag Name="RAMIS_SEXED_TRAP" />
 		<Flag Name="RAMIS_TIMES_BENDER" />
 		<Flag Name="RAMIS_TIMES_DRINK" />
+		<Flag Name="RANDY_CLAWS" />
+		<Flag Name="RANDY_CLAWS_EMAIL_THIS_YEAR" />
 		<Flag Name="RASKVEL_EGG_COUNT" />
 		<Flag Name="RASKVEL_PREG_TIMER" />
 		<Flag Name="REAHA_ADDICTION" />
@@ -3768,6 +3782,7 @@
 		<Flag Name="SHADE_TALKED_ABOUT_FAMILY" />
 		<Flag Name="SHADE_TALKED_ABOUT_LIGHTNING" />
 		<Flag Name="SHADE_TALKED_ABOUT_MODS" />
+		<Flag Name="SHADE_XMAS" Description="Year you last had xmas fun with Shade" />
 		<Flag Name="SHEKKA_SCRAP_DISABLED" Description="1 == Shekka's shop is not available" />
 		<Flag Name="SHEKKA_TALKED_HERSELF" Description="1 == You've talked to Shekka about herself" />
 		<Flag Name="SHEKKA_TALKED_HERSHOP" Description="1 == You've talked to Shekka about her shop" />
@@ -3807,6 +3822,7 @@
 		<Flag Name="STEPH_WATCHED" />
 		<Flag Name="STEPH_WORK_CHOICE" />
 		<Flag Name="STORED SHIP DESTINATION" />
+		<Flag Name="STRAPONED_LIAMME" />
 		<Flag Name="SUBTUNER_NAMED" />
 		<Flag Name="SUB_TUNERED" />
 		<Flag Name="SUCKED_BRYNN" />
@@ -3960,7 +3976,7 @@
 		<Flag Name="TRIPPED_ON_SHADE" />
 		<Flag Name="TUNDRA_STEP" />
 		<Flag Name="TURNED_DOWN_SEXBOT" />
-        <Flag Name="ULA_SAVED" />
+		<Flag Name="ULA_SAVED" />
 		<Flag Name="UNA_MET" />
 		<Flag Name="UNA_TALKED" />
 		<Flag Name="UNLOCKED_JUNKYARD_PLANET" />
