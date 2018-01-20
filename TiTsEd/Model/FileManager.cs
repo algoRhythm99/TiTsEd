@@ -79,10 +79,14 @@ namespace TiTsEd.Model
 
             bool insertSeparatorBeforeInMenu = false;
 
+            // AIR handles: the AIR version
             // Standard handles: Firefox, Netscape Suite, Internet Explorer (desktop, not metro/tablet), Opera (v≤23; NPAPI).
             // Chrome handles: Google Chrome (maybe Chromium).
             // Opera handles: Opera (v≥24; PPAPI).
             // Edge/Metro handles: Edge and Internet Explorer (metro/tablet, not desktop).
+            BuildAIRPath("Local (AIR {0})", ref insertSeparatorBeforeInMenu);
+
+            insertSeparatorBeforeInMenu = true;
 
             BuildNpapiPath("Local (Standard{0})", @"localhost", ref insertSeparatorBeforeInMenu);
             BuildPpapiPath("Local (Chrome{0})", Environment.SpecialFolder.LocalApplicationData, chromeAppPath, chromeProfilePattern, @"localhost", ref insertSeparatorBeforeInMenu);
@@ -102,6 +106,58 @@ namespace TiTsEd.Model
             BuildPpapiPath("Online (Chrome{0})", Environment.SpecialFolder.LocalApplicationData, chromeAppPath, chromeProfilePattern, @"www.fenoxo.com", ref insertSeparatorBeforeInMenu);
             BuildPpapiPath("Online (Opera{0})", Environment.SpecialFolder.ApplicationData, operaAppPath, operaProfilePattern, @"www.fenoxo.com", ref insertSeparatorBeforeInMenu);
             BuildNpapiPath("Online (Edge/Metro{0})", @"#AppContainer\www.fenoxo.com", ref insertSeparatorBeforeInMenu);
+        }
+
+        static void BuildAIRPath(string nameFormat, ref bool separatorBefore)
+        {
+            string path = "";
+            try
+            {
+                // …\AppData\Roaming
+                path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                if (path == null) return;
+
+                // ..\AppData\Roaming\com.taintedspace.tits\Local Store\#SharedObjects
+                path = Path.Combine(path, @"com.taintedspace.tits\Local Store\#SharedObjects\");
+                if (!Directory.Exists(path)) return;
+                string parentPath = path;
+
+                var dirs = new Dictionary<string, string>();
+                dirs.Add("main", path);
+
+                var airSaveSets = Directory.GetDirectories(path);
+                foreach (var folder in airSaveSets)
+                {
+                    if (folder == parentPath) continue;
+                    path = folder;
+                    var folderName = Path.GetFileName(folder);
+                    dirs.Add(String.Format("Save Set {0}", folderName), folder);
+                }
+
+                // Create items now that we know how many of them there are.
+                foreach (KeyValuePair<string, string> pair in dirs)
+                {
+                    var name = String.Format(nameFormat, pair.Key);
+                    var flash = new FlashDirectory(name, pair.Value, separatorBefore, DirectoryKind.Regular);
+                    separatorBefore = false;
+                    _directories.Add(flash);
+                }
+            }
+            catch (SecurityException)
+            {
+                Result = FileEnumerationResult.NoPermission;
+                ResultPath = path;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Result = FileEnumerationResult.NoPermission;
+                ResultPath = path;
+            }
+            catch (IOException)
+            {
+                Result = FileEnumerationResult.Unreadable;
+                ResultPath = path;
+            }
         }
 
         static void BuildNpapiPath(string nameFormat, string suffix, ref bool separatorBefore)
