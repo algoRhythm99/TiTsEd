@@ -504,8 +504,11 @@ namespace TiTsEd.ViewModel {
         public int SkinType {
             get { return GetInt("skinType"); }
             set {
-                SetValue("skinType", value);
-                UpdateFlags(value, this.SkinFlags, "SkinFlags");
+                if (value != SkinType)
+                {
+                    SetValue("skinType", value);
+                    UpdateFlags(value, this.SkinFlags, "SkinFlags");
+                }
             }
         }
 
@@ -674,8 +677,11 @@ namespace TiTsEd.ViewModel {
         public int FaceType {
             get { return GetInt("faceType"); }
             set {
-                SetValue("faceType", value);
-                UpdateFlags(value, this.FaceFlags, "FaceFlags");
+                if (value != FaceType)
+                {
+                    SetValue("faceType", value);
+                    UpdateFlags(value, this.FaceFlags, "FaceFlags");
+                }
             }
         }
 
@@ -777,8 +783,11 @@ namespace TiTsEd.ViewModel {
         public int TongueType {
             get { return GetInt("tongueType"); }
             set {
-                SetValue("tongueType", value);
-                UpdateFlags(value, this.TongueFlags, "TongueFlags");
+                if (value != TongueType)
+                {
+                    SetValue("tongueType", value);
+                    UpdateFlags(value, this.TongueFlags, "TongueFlags");
+                }
             }
         }
 
@@ -999,8 +1008,11 @@ namespace TiTsEd.ViewModel {
         public int ArmType {
             get { return GetInt("armType"); }
             set {
-                SetValue("armType", value);
-                UpdateFlags(value, this.ArmFlags, "ArmFlags");
+                if (value != ArmType)
+                {
+                    SetValue("armType", value);
+                    UpdateFlags(value, this.ArmFlags, "ArmFlags");
+                }
             }
         }
 
@@ -1063,8 +1075,11 @@ namespace TiTsEd.ViewModel {
         public int LegType {
             get { return GetInt("legType"); }
             set {
-                SetValue("legType", value);
-                UpdateFlags(value, this.LegFlags, "LegFlags");
+                if (value != LegType)
+                {
+                    SetValue("legType", value);
+                    UpdateFlags(value, this.LegFlags, "LegFlags");
+                }
             }
         }
 
@@ -1196,8 +1211,11 @@ namespace TiTsEd.ViewModel {
         public int TailType {
             get { return GetInt("tailType"); }
             set {
-                SetValue("tailType", value);
-                UpdateFlags(value, this.TailFlags, "TailFlags");
+                if (value != TailType)
+                {
+                    SetValue("tailType", value);
+                    UpdateFlags(value, this.TailFlags, "TailFlags");
+                }
             }
         }
 

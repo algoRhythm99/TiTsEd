@@ -137,9 +137,12 @@ namespace TiTsEd.ViewModel {
         public int CockType {
             get { return GetInt("cType"); }
             set {
-                SetValue("cType", value);
-                UpdateFlags(value, this.CockFlags, "CockFlags");
-                OnPropertyChanged("Description");
+                if (value != CockType)
+                {
+                    SetValue("cType", value);
+                    UpdateFlags(value, this.CockFlags, "CockFlags");
+                    OnPropertyChanged("Description");
+                }
             }
         }
 

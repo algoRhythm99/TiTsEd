@@ -120,9 +120,12 @@ namespace TiTsEd.ViewModel {
         public int VaginaType {
             get { return GetInt("type"); }
             set {
-                SetValue("type", value);
-                UpdateFlags(value, this.VaginaFlags, "VaginaFlags");
-                OnPropertyChanged("Description");
+                if (value != VaginaType)
+                {
+                    SetValue("type", value);
+                    UpdateFlags(value, this.VaginaFlags, "VaginaFlags");
+                    OnPropertyChanged("Description");
+                }
             }
         }
 

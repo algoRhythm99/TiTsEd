@@ -100,6 +100,7 @@ namespace TiTsEd.Common
             if (_listBox != null) _listBox.SelectionChanged += listBox_SelectionChanged;
             if (_removeButton != null) _removeButton.Click += removeButton_Click;
             if (_addButton != null) _addButton.Click += addButton_Click;
+
             OnContentChanged();
         }
 
@@ -131,14 +132,18 @@ namespace TiTsEd.Common
         Object MoveDraggedItem(IDataObject dataObject, int targetIndex)
         {
             if (_draggedType == null) return null;
+
             var droppedData = dataObject.GetData(_draggedType);
+
             if (droppedData == null) return null;
 
             int sourceIndex = Items.IndexOf(droppedData);
 
             if (sourceIndex == targetIndex) return null;
+
             Items.MoveItemToIndex(sourceIndex, targetIndex);
             _listBox.SelectedIndex = targetIndex;
+
             return Items[targetIndex];
         }
 
@@ -169,24 +174,30 @@ namespace TiTsEd.Common
         void addButton_Click(object sender, RoutedEventArgs e)
         {
             if (Items.Count == Capacity) return;
+
             Items.Create();
             _listBox.SelectedIndex = Items.Count - 1;
+
             OnContentChanged();
         }
 
         void removeButton_Click(object sender, RoutedEventArgs e)
         {
             if (Items.Count == MinCapacity) return;
+
             int index = _listBox.SelectedIndex;
             _listBox.SelectedIndex = Math.Min(index + 1, Items.Count - 2);
             Items.Delete(index);
+
             OnContentChanged();
         }
 
         static void OnPropertiesChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
             ArrayEditor box = (ArrayEditor)obj;
+
             if (box._listBox == null) return;
+
             box.OnContentChanged();
         }
 
@@ -198,12 +209,14 @@ namespace TiTsEd.Common
         protected override void OnContentChanged(object oldContent, object newContent)
         {
             ((FrameworkElement)Content).DataContext = null;
+
             OnContentChanged();
         }
 
         void OnContentChanged()
         {
             if (_listBox == null) return;
+
             _addButton.IsEnabled = (Items != null) && (Items.Count < Capacity);
             _removeButton.IsEnabled = (Items != null) && (Items.Count > MinCapacity);
 
@@ -220,6 +233,7 @@ namespace TiTsEd.Common
                     }
                 }
             }
+
             if (item != null)
             {
                 ((FrameworkElement)Content).DataContext = item;
