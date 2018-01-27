@@ -38,6 +38,8 @@ namespace TiTsEd.Common
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register("Header", typeof(string), typeof(ArrayEditor), new PropertyMetadata("", OnPropertiesChanged));
         public static readonly DependencyProperty CapacityProperty = DependencyProperty.Register("Capacity", typeof(int), typeof(ArrayEditor), new PropertyMetadata(Int32.MaxValue, OnPropertiesChanged));
         public static readonly DependencyProperty MinCapacityProperty = DependencyProperty.Register("MinCapacity", typeof(int), typeof(ArrayEditor), new PropertyMetadata(0, OnPropertiesChanged));
+        public static readonly DependencyProperty SelectedItemObjectProperty = DependencyProperty.Register("SelectedItemObject", typeof(object), typeof(ArrayEditor), new PropertyMetadata(null, OnPropertiesChanged));
+        public static readonly DependencyProperty SelectedIndexProperty = DependencyProperty.Register("SelectedIndex", typeof(int), typeof(ArrayEditor), new PropertyMetadata(-1, OnPropertiesChanged));
 
         static ArrayEditor()
         {
@@ -72,6 +74,26 @@ namespace TiTsEd.Common
         {
             get { return (int)GetValue(MinCapacityProperty); }
             set { SetValue(MinCapacityProperty, value); }
+        }
+
+        public object SelectedItemObject
+        {
+            get
+            {
+                return (null != _listBox) ? Items[_listBox.SelectedIndex] : null;
+            }
+        }
+
+        public int SelectedIndex
+        {
+            get
+            {
+                return (null != _listBox) ? _listBox.SelectedIndex : -1;
+            }
+            set
+            {
+                _listBox.SelectedIndex = value;
+            }
         }
 
         ListBox _listBox;

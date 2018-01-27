@@ -393,6 +393,9 @@
                     <Popup x:Name="popup" Placement="Bottom" StaysOpen="False">
                         <Border Background="White" BorderBrush="Black" BorderThickness="1">
                             <common:AutoGrid Margin="20">
+                                <TextBlock Text="Description" Foreground="#606060" VerticalAlignment="Center" />
+                                <TextBox Text="{Binding Description}" Margin="6,2,0,2" MaxWidth="250" TextWrapping="WrapWithOverflow" />
+
                                 <TextBlock Text="{Binding Label1}" Foreground="#606060" VerticalAlignment="Center"/>
                                 <common:MyNumericBox Value="{Binding Value1}" Type="{Binding Type1}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70"/>
 

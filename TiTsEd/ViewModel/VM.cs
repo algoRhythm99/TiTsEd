@@ -294,20 +294,20 @@ namespace TiTsEd.ViewModel {
             Add(node);
         }
 
-        protected TResult Add(AmfObject node) {
+        protected virtual TResult Add(AmfObject node) {
             _object.Push(node);
             Update();
             VM.Instance.NotifySaveRequiredChanged(true);
             return this[_object.DenseCount - 1];
         }
 
-        public void Delete(int index) {
+        public virtual void Delete(int index) {
             _object.Pop(index);
             Update();
             VM.Instance.NotifySaveRequiredChanged(true);
         }
 
-        public void MoveItemToIndex(int sourceIndex, int destIndex) {
+        public virtual void MoveItemToIndex(int sourceIndex, int destIndex) {
             if (sourceIndex == destIndex) return;
             _object.Move(sourceIndex, destIndex);
             Update();

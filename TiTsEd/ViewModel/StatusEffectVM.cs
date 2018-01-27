@@ -48,6 +48,18 @@ namespace TiTsEd.ViewModel {
             get { return Visibility.Visible; }
         }
 
+        public override Visibility IconNameVisibility {
+            get { return Visibility.Visible; }
+        }
+
+        public override Visibility IconShadeVisibility {
+            get { return Visibility.Visible; }
+        }
+
+        public override Visibility IsCombatOnlyVisibility {
+            get { return Visibility.Visible; }
+        }
+
         public override AmfObject GetItems() {
             return Character.StatusEffectsArray;
         }
