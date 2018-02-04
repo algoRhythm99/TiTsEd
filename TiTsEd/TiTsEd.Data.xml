@@ -1151,6 +1151,7 @@
 			<VaginaFlag ID="41" Name="Fully Pumped" />
 			<VaginaFlag ID="44" Name="Corkscrewed" />
 			<VaginaFlag ID="45" Name="Tongued" />
+			<VaginaFlag ID="47" Name="Plugged" />
 		</VaginaFlags>
 		<!-- ================================================================ -->
 		<AssFlags>
@@ -1160,6 +1161,7 @@
 			<AssFlag ID="37" Name="Gooey" />
 			<AssFlag ID="40" Name="Slightly Pumped" />
 			<AssFlag ID="41" Name="Fully Pumped" />
+			<AssFlag ID="47" Name="Plugged" />
 		</AssFlags>
 		<!-- ================================================================ -->
 		<PregnancyTypes>
