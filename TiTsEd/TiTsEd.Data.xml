@@ -666,6 +666,7 @@
 			<EyeType ID="55" Name="Nyrea" />
 			<EyeType ID="60" Name="Myr" />
 			<EyeType ID="65" Name="Gryvain" />
+			<EyeType ID="66" Name="Korgonne" />
 			<EyeType ID="71" Name="Worg" />
 			<EyeType ID="76" Name="Sheep" />
 		</EyeTypes>
@@ -701,6 +702,7 @@
 			<EarType ID="57" Name="Ovir" />
 			<EarType ID="58" Name="Sylvan" />
 			<EarType ID="65" Name="Gryvain" />
+			<EarType ID="66" Name="Korgonne" />
 			<EarType ID="72" Name="Swine" />
 			<EarType ID="73" Name="Quad Lapine" />
 			<EarType ID="75" Name="Lupine" />
@@ -806,6 +808,7 @@
 			<ArmType ID="10" Name="Avian" />
 			<ArmType ID="14" Name="Frog" />
 			<ArmType ID="15" Name="Demonic" />
+			<ArmType ID="16" Name="Gooey" />
 			<ArmType ID="19" Name="Shark" />
 			<ArmType ID="23" Name="Tentacle" />
 			<ArmType ID="24" Name="Kui-tan" />
@@ -817,6 +820,7 @@
 			<ArmType ID="55" Name="Nyrea" />
 			<ArmType ID="57" Name="Ovir" />
 			<ArmType ID="60" Name="Myr" />
+			<ArmType ID="66" Name="Korgonne" />
 			<ArmType ID="67" Name="Flower" />
 			<ArmType ID="75" Name="Lupine" />
 			<ArmType ID="77" Name="Lesser Panda" />
@@ -869,6 +873,7 @@
 			<LegType ID="57" Name="Ovir" />
 			<LegType ID="60" Name="Myr" />
 			<LegType ID="65" Name="Gryvain" />
+			<LegType ID="66" Name="Korgonne" />
 			<LegType ID="72" Name="Swine" />
 			<LegType ID="75" Name="Lupine" />
 			<LegType ID="76" Name="Sheep" />
@@ -951,6 +956,7 @@
 			<TailType ID="57" Name="Ovir" />
 			<TailType ID="60" Name="Myr" />
 			<TailType ID="65" Name="Gryvain" />
+			<TailType ID="66" Name="Korgonne" />
 			<TailType ID="72" Name="Swine" />
 			<TailType ID="75" Name="Lupine" />
 			<TailType ID="76" Name="Sheep" />
@@ -1242,6 +1248,7 @@
 			<Item Stack="1" Name="AimEyepiece" ID="classes.Items.Accessories::AimEyepiece" />
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
 			<Item Stack="1" Name="Scarf" ID="classes.Items.Accessories::BeatricesScarf" />
+			<Item Stack="1" Name="B.D.S." ID="classes.Items.Accessories::BimboleumDefenseSystem" />
 			<Item Stack="1" Name="Exp. Cloak" ID="classes.Items.Accessories::ExplorersCloak" />
 			<Item Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
 			<Item Stack="1" Name="JungleLure" ID="classes.Items.Accessories::JungleLure" />
@@ -1254,11 +1261,13 @@
 			<Item Stack="1" Name="MuskLure" ID="classes.Items.Accessories::MuskLure" />
 			<Item Stack="1" Name="M.Repel" ID="classes.Items.Accessories::MuskRepel" />
 			<Item Stack="1" Name="MyrG.coat" ID="classes.Items.Accessories::MyrGreatcoat" />
+			<Item Stack="1" Name="S.D.S." ID="classes.Items.Accessories::SalamanderDefenseSystem" />
 			<Item Stack="1" Name="S.Duster" ID="classes.Items.Accessories::SalamanderDuster" />
 			<Item Stack="1" Name="Siegwulfe" ID="classes.Items.Accessories::SiegwulfeItem" />
 			<Item Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolf" />
 			<Item Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolfDamaged" />
 			<Item Stack="1" Name="TamWolf2.0" ID="classes.Items.Accessories::TamWolfII" />
+			<Item Stack="1" Name="T.Cloak" ID="classes.Items.Accessories::TravelersCloak" />
 			<Item Stack="1" Name="Pink Leash" ID="classes.Items.Accessories::VarmintLeash" />
 			<Item Stack="1" Name="Cargobot" ID="classes.Items.Miscellaneous::Cargobot" />
 			<Item Stack="1" Name="PH Access." ID="classes.Items.Miscellaneous::PHAccess" />
@@ -1331,6 +1340,13 @@
 			</Item>
 			<Item Stack="1" Name="C.Armor" ID="classes.Items.Armor::ChitinArmor" />
 			<Item Stack="1" Name="C.Plate" ID="classes.Items.Armor::ChitPlate" />
+			<Item Stack="1" Name="FB.Bikini" ID="classes.Items.Armor::FrostbaneBikini" />
+			<Item Stack="1" Name="FB.Mail" ID="classes.Items.Armor::FrostbaneMail">
+				<ItemField Name="fortification" Type="int" Value="20" />
+			</Item>
+			<Item Stack="1" Name="FB.Plate" ID="classes.Items.Armor::FrostbanePlate">
+				<ItemField Name="fortification" Type="int" Value="30" />
+			</Item>
 			<Item Stack="1" Name="Gem Links" ID="classes.Items.Armor::GemstoneLinks" />
 			<Item Stack="1" Name="Goo Armor" ID="classes.Items.Armor::GooArmor" />
 			<Item Stack="1" Name="Hide V&amp;B" ID="classes.Items.Armor::HideVestAndBreeches" />
@@ -1362,11 +1378,13 @@
 			<Item Stack="1" Name="Corset" ID="classes.Items.Apparel::Corset" />
 			<Item Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
 			<Item Stack="1" Name="CowShirt" ID="classes.Items.Apparel::CowPrintedShirt" />
+			<Item Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra2" />
 			<Item Stack="1" Name="Girly Bra" ID="classes.Items.Apparel::GirlyBra" />
 			<Item Stack="1" Name="HL Bra" ID="classes.Items.Apparel::HardlightAGBra" />
 			<Item Stack="1" Name="Harness" ID="classes.Items.Apparel::Harness" />
 			<Item Stack="1" Name="HoneyBra" ID="classes.Items.Apparel::HoneypotBra" />
 			<Item Stack="1" Name="Lacy Bra" ID="classes.Items.Apparel::LacyBra" />
+			<Item Stack="1" Name="LthrBra" ID="classes.Items.Apparel::LeatherBra" />
 			<Item Stack="1" Name="LilG.Bra" ID="classes.Items.Apparel::LittleGreenBra" />
 			<Item Stack="1" Name="LilG.Tee" ID="classes.Items.Apparel::LittleGreenShirt" />
 			<Item Stack="1" Name="LilG.Tank" ID="classes.Items.Apparel::LittleGreenTankTop" />
@@ -1383,6 +1401,9 @@
 			<Item Stack="1" Name="Undershirt" ID="classes.Items.Apparel::Undershirt" />
 		</ItemGroup>
 		<ItemGroup Name="Undergarment (Lower)">
+			<Item Stack="1" Name="AP-Panties" ID="classes.Items.Apparel::AnalPrincessPanties" />
+			<Item Stack="1" Name="AMB-Briefs" ID="classes.Items.Apparel::AssManBoxers" />
+			<Item Stack="1" Name="BB-Slutwear" ID="classes.Items.Apparel::BackdoorBoiSlutwear" />
 			<Item Stack="1" Name="BikiniBtm" ID="classes.Items.Apparel::FrillyBikiniBottom" />
 			<Item Stack="1" Name="BaggyShorts" ID="classes.Items.Apparel::BaggySwimShorts" />
 			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" />
@@ -1403,11 +1424,14 @@
 			<Item Stack="1" Name="Cow Panties" ID="classes.Items.Apparel::CowPrintPantiesAndGarter" />
 			<Item Stack="1" Name="CowShorts" ID="classes.Items.Apparel::CowPrintedShorts" />
 			<Item Stack="1" Name="C.String" ID="classes.Items.Apparel::CString" />
+			<Item Stack="1" Name="CCB-Shorts" ID="classes.Items.Apparel::CumflationControlBoyshorts" />
 			<Item Stack="1" Name="NetBriefs" ID="classes.Items.Apparel::FishnetBriefs" />
+			<Item Stack="1" Name="F.Loin" ID="classes.Items.Apparel::FurryLoincloth" />
 			<Item Stack="1" Name="G.Panties" ID="classes.Items.Apparel::GirlyPanties" />
 			<Item Stack="1" Name="HL Jock" ID="classes.Items.Apparel::HardlightAGJock" />
 			<Item Stack="1" Name="HL Thong" ID="classes.Items.Apparel::HardlightAGThong" />
 			<Item Stack="1" Name="HorseBxs" ID="classes.Items.Apparel::HorseshoeBoxers" />
+			<Item Stack="1" Name="LthrPnty" ID="classes.Items.Apparel::LeatherPanties" />
 			<Item Stack="1" Name="LilG.Brief" ID="classes.Items.Apparel::LittleGreenBriefs" />
 			<Item Stack="1" Name="LilG.Panty" ID="classes.Items.Apparel::LittleGreenPanties" />
 			<Item Stack="1" Name="LilG.Thong" ID="classes.Items.Apparel::LittleGreenThong" />
@@ -1426,6 +1450,7 @@
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3920" />
 			</Item>
+			<Item Stack="1" Name="SS-Thong" ID="classes.Items.Apparel::SlutSealThong" />
 			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" />
 			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" LongName="Stockings HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
@@ -1442,6 +1467,7 @@
 			<Item Stack="1" Name="Z.Pouch" ID="classes.Items.Apparel::ZipPouch" />
 		</ItemGroup>
 		<ItemGroup Name="Combat">
+			<Item Stack="2"  Name="AphroD."  ID="classes.Items.Combat::AphroDaisy" />
 			<Item Stack="5"  Name="Crystal S."  ID="classes.Items.Combat::CrystalShard" />
 			<Item Stack="10" Name="EMP Gren."   ID="classes.Items.Miscellaneous::EMPGrenade" />
 			<Item Stack="10" Name="Flashbang"   ID="classes.Items.Miscellaneous::FlashGrenade" />
@@ -1471,6 +1497,7 @@
 			<Item Stack="10" Name="FocusPill" ID="classes.Items.Miscellaneous::FocusPill" />
 			<Item Stack="5"  Name="F.Extract" ID="classes.Items.Miscellaneous::FungalExtract" />
 			<Item Stack="5"  Name="G.M.Bots" ID="classes.Items.Miscellaneous::GrayMicrobots" />
+			<Item Stack="5"  Name="H.P."     ID="classes.Items.Recovery::HealingPoultice" />
 			<Item Stack="10" Name="K.Crunch" ID="classes.Items.Miscellaneous::Kalocrunch" />
 			<Item Stack="12" Name="LargeEgg" ID="classes.Items.Miscellaneous::LargeEgg" />
 			<Item Stack="10" Name="M.Mango" ID="classes.Items.Miscellaneous::MhengaMango" />
@@ -1575,6 +1602,7 @@
 			<Item Stack="10" Name="HuskarTreat" ID="classes.Items.Transformatives::HuskarTreats" />
 			<Item Stack="10" Name="J.Trunk" ID="classes.Items.Transformatives::JunkTrunk" />
 			<Item Stack="10" Name="Kero.Ven." ID="classes.Items.Transformatives::KerokorasVenom" />
+			<Item Stack="10" Name="K.Snax"    ID="classes.Items.Transformatives::KorgonneSnacks" />
 			<Item Stack="10" Name="L. Ears" ID="classes.Items.Transformatives::LaquineEars" />
 			<Item Stack="10" Name="Loftcake" ID="classes.Items.Transformatives::LemonLoftcake" />
 			<Item Stack="10" Name="LipTease" ID="classes.Items.Transformatives::LipTease" />
@@ -1663,12 +1691,14 @@
 			</Item>
 			<Item Stack="1" Name="E's Blade" ID="classes.Items.Melee::EmmysVampBlade" LongName="Emmy's Vamp Blade" />
 			<Item Stack="1" Name="E.GSpear" ID="classes.Items.Melee::EssyraGreatspear" />
+			<Item Stack="1" Name="F.Spire" ID="classes.Items.Melee::FrozenSpire" />
 			<Item Stack="1" Name="HL Dagger" ID="classes.Items.Melee::HardlightDagger" />
 			<Item Stack="1" Name="J.Hmmr." ID="classes.Items.Melee::Jolthammer" />
 			<Item Stack="1" Name="Knife" ID="classes.Items.Melee::Knife" />
 			<Item Stack="1" Name="L.Saber" ID="classes.Items.Melee::LavaSaber" />
 			<Item Stack="1" Name="L. Rod" ID="classes.Items.Melee::LightningRod" />
 			<Item Stack="1" Name="Machete" ID="classes.Items.Melee::Machette" />
+			<Item Stack="1" Name="MW.Yappi" ID="classes.Items.Melee::MasterworkYappiStrap" />
 			<Item Stack="1" Name="M.Pick" ID="classes.Items.Melee::MilitaryPick" />
 			<Item Stack="1" Name="M.Saber" ID="classes.Items.Melee::MonofilamentSaber" />
 			<Item Stack="1" Name="N.Spear" ID="classes.Items.Melee::NyreanSpear" />
@@ -1678,6 +1708,7 @@
 			<Item Stack="1" Name="Rock" ID="classes.Items.Melee::Rock" />
 			<Item Stack="1" Name="R.Hammer" ID="classes.Items.Melee::RocketHammer" />
 			<Item Stack="1" Name="S.Hammer" ID="classes.Items.Melee::SaurmorianHammer" />
+			<Item Stack="1" Name="Sav.Maul" ID="classes.Items.Melee::SaviciteLightMaul" />
 			<Item Stack="1" Name="ShockBlade" ID="classes.Items.Melee::ShockBlade" />
 			<Item Stack="1" Name="Shortsword" ID="classes.Items.Melee::Shortsword" />
 			<Item Stack="1" Name="SurvAxe" ID="classes.Items.Melee::SurvivalAxe" />
@@ -1687,6 +1718,7 @@
 			<Item Stack="1" Name="Vanae Spear" ID="classes.Items.Melee::VanaeSpear" />
 			<Item Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
 			<Item Stack="1" Name="Whip" ID="classes.Items.Melee::Whip" />
+			<Item Stack="1" Name="WidowsKiss" ID="classes.Items.Melee::WidowsKiss" />
 			<Item Stack="1" Name="Y.Strap" ID="classes.Items.Melee::YappiStrap" />
 			<Item Stack="1" Name="Z.Spear" ID="classes.Items.Melee::ZilSpear" />
 		</ItemGroup>
@@ -1738,6 +1770,7 @@
 			<Item Stack="1" Name="Hld.Pistol" ID="classes.Items.Guns::HoldOutPistol" />
 			<Item Stack="1" Name="H.Rifle" ID="classes.Items.Guns::HuntingRifle" />
 			<Item Stack="1" Name="Khans AC." ID="classes.Items.Guns::KhansArcCaster" />
+			<Item Stack="1" Name="KorgBow" ID="classes.Items.Guns::KorgGreatBow" />
 			<Item Stack="1" Name="Laser C." ID="classes.Items.Guns::LaserCarbine" />
 			<Item Stack="1" Name="LaserPistol" ID="classes.Items.Guns::LaserPistol" />
 			<Item Stack="1" Name="Mag.Pistol" ID="classes.Items.Guns::MagnumPistol" />
@@ -1858,8 +1891,9 @@
 			<Item Stack="10" Name="IQBGone"     ID="classes.Items.Junk::IQBGone" />
 		</ItemGroup>
 		<ItemGroup Name="Ship Upgrades">
-			<Item Stack="10" Name="Dong D." ID="classes.Items.Transformatives::DongDesigner" />
-			<Item Stack="1"  Name="EggTrnr" ID="classes.Items.Toys::EggTrainer" />
+			<Item Stack="10" Name="Dong D."   ID="classes.Items.Transformatives::DongDesigner" />
+			<Item Stack="1"  Name="EggTrnr"   ID="classes.Items.Toys::EggTrainer" />
+			<Item Stack="10" Name="SleepFap." ID="classes.Items.Miscellaneous::SleepFapnea" />
 		</ItemGroup>
 	</Items>
 	<!-- ================================================================ -->
@@ -1869,6 +1903,9 @@
 			<KeyItem Name="Ben’s Friendship Bracelet" />
 			<KeyItem Name="Bess’ Friendship Bracelet" />
 -->
+			<KeyItem Name="Bothrioc Fake Counteragent" />
+			<KeyItem Name="Bothrioc Genealogy" />
+			<KeyItem Name="Bothrioc Pheromone Counteragent" />
 			<KeyItem Name="Capture Harness" />
 			<KeyItem Name="Broken Psi Amp" Description="A broken Psionic Amplifier, removed from Captain Zaalt Kandar's skull. After it went &lt;i&gt;slightly&lt;/i&gt; batshit." />
 			<KeyItem Name="Doctor Badger's Bimbo Raygun - Programmed for use on Penny." />
@@ -1881,6 +1918,7 @@
 			<KeyItem Name="Kaska's Detonator" />
 			<KeyItem Name="Key Card - R&amp;D Security Pass" />
 			<KeyItem Name="Khorgan's Detonator" />
+			<KeyItem Name="Korgonne Medical Kit" />
 			<KeyItem Name="Myr Heavy Tranquilizer Dart" />
 			<KeyItem Name="Myr Security Radio" />
 			<KeyItem Name="Orange Myr Data" />
@@ -1914,6 +1952,7 @@
 			<KeyItem Name="Panties - Erra's - Purple with a black paw-print on the crotch." />
 			<KeyItem Name="Panties - Kiro's - Lacy, black, and crotchless." />
 			<KeyItem Name="Panties - Lys's - Sheer black panties." />
+			<KeyItem Name="Panties - Myrna's - Green with fur lining and a pepperminty scent." />
 			<KeyItem Name="Panties - Penny's - Plain, blue, and crotchless." />
 			<KeyItem Name="Panties - Saendra's - Ultra-tight and bright pink." />
 			<KeyItem Name="Panties - Syri's - Sky blue, silky, and extra crotch room." />
@@ -2104,12 +2143,14 @@
 		</PerkGroup>
 		<PerkGroup Name="Events">
 			<Perk Name="Barcoded" Description="A sleek black barcode is printed on your ass, left there by Dr. Belle for purely scientific purposes." />
+			<Perk Name="Broodmother" Description="Increases the maximum gestation quantity of pregnancies, where possible." Value1="0.5" Value2="2" />
 			<Perk Name="Buttslut" Description="Ensures your ass always remains bubbly and that fluids shot inside will heal your injuries." />
 			<Perk Name="Calm Aim" Description="You’re a pretty good shot when things aren’t too hectic, so you gain +1 accuracy when above 50% health." Value1="1" Value2="50" />
 <!--
 			<Perk Name="Chupacabro Slayer" Description="You defeated the legendary Chupacabro, and now do +10% damage against treated individuals." Value1="1" Value2="50" />
 -->
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
+			<Perk Name="Limber" Description="Grants an addition 20% chance to escape from grapples!" />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
 			<Perk Name="Peace of Mind" Description="You radiate an aura of Zen-like calm. You can offer enemies the chance to peacefully surrender. The lower their level, the better the chance will be. In turn, however, enemies that peacefully demand you submit to them may be very difficult to resist.... Additionally boosts minimum lust to 20." />
@@ -2264,6 +2305,7 @@
 		<Flag Name="ARAKEI_ADDICTION_40" />
 		<Flag Name="ARAKEI_ADDICTION_50" />
 		<Flag Name="ARAKEI_ADDICTION_70" />
+		<Flag Name="ARAKEI_CLOSED_OFF" />
 		<Flag Name="ARAKEI_FLIRTED" />
 		<Flag Name="ARAKEI_FLIRTED_59_ADDICTION" />
 		<Flag Name="ARAKEI_FLIRTED_99_ADDICTION" />
@@ -2417,6 +2459,18 @@
 		<Flag Name="BOTHRIOC_PIDEMME_DOCKED" />
 		<Flag Name="BOTHRIOC_PIDEMME_ENCOUNTERED" />
 		<Flag Name="BOTHRIOC_PIDEMME_FUCKED" />
+		<Flag Name="BOTHRIOC_QUEST" />
+		<Flag Name="BOTHRIOC_QUEST_COMPLETE" />
+		<Flag Name="BOTHRIOC_QUEST_DOCTOR" />
+		<Flag Name="BOTHRIOC_QUEST_GENEALOGY" />
+		<Flag Name="BOTHRIOC_QUEST_NYREA_CATCH_COORD" />
+		<Flag Name="BOTHRIOC_QUEST_NYREA_CATCH_STEPS" />
+		<Flag Name="BOTHRIOC_QUEST_SUMMIT_DATE" />
+		<Flag Name="BOTHRIOC_QUEST_TALK_LASH" />
+		<Flag Name="BOTHRIOC_QUEST_TALK_LESSAU" />
+		<Flag Name="BOTHRIOC_QUEST_TALK_HASWELL" />
+		<Flag Name="BOTHRIOC_QUEST_TALK_MCALLISTER" />
+		<Flag Name="BOTHRIOC_QUEST_RESEARCH" />
 		<Flag Name="BRANDY_MISCREANTED" />
 		<Flag Name="BRANDY_MISSIONARY" />
 		<Flag Name="BRANDY_MODS" />
@@ -2775,6 +2829,11 @@
 		<Flag Name="FYN_TALKED_ABOUT_SEX" />
 		<Flag Name="FYN_TAUGHT_DANCING" />
 		<Flag Name="FYN_VILDARII_TALK" />
+		<Flag Name="FZIL_EVER_PREG_MET" />
+		<Flag Name="FZIL_PREG_FUCKED" />
+		<Flag Name="FZIL_PREG_TIMER" />
+		<Flag Name="FZIL_THIS_PREG_MET" />
+		<Flag Name="FZIL_TOTAL_KIDS" />
 		<Flag Name="GALOMAX_DOSES" Description="undefined = none used&#xD;&#xA;1 == goo hair&#xD;&#xA;2 == goo fluids&#xD;&#xA;3 == goo genitals&#xD;&#xA;4 == goo skin&#xD;&#xA;5 == full goo" />
 		<Flag Name="GAVE_LYS_FLOWER" Description="Number of times you've given Lys a flower" />
 		<Flag Name="GAVE_SHEKKA_PROBE" Description="1 == You gave Shekka the probe" />
@@ -2974,6 +3033,16 @@
 		<Flag Name="KELLY_SEXED" Description="Number of times you've had sexy times with Kelly" />
 		<Flag Name="KELLY_SKYSAP_COLLECT" Description="Undefined == quest not started&#xD;&#xA; 5 &lt;= Unlock SynthSap Research" />
 		<Flag Name="KELLY_TIMES_DOUBLESTUFFED_THE_PC" Description="Number of times Kelly has DP'd you" />
+		<Flag Name="KHORGAN_BABY_GENDERS" />
+		<Flag Name="KHORGAN_BABY_GENES" />
+		<Flag Name="KHORGAN_GAST_PREG_TIMER" />
+		<Flag Name="KHORGAN_NUM_BABIES" />
+		<Flag Name="KHORGAN_PREG_EMAIL1" />
+		<Flag Name="KHORGAN_PREG_EMAIL2" />
+		<Flag Name="KHORGAN_PREG_EMAIL3" />
+		<Flag Name="KHORGAN_PREG_EMAIL4" />
+		<Flag Name="KHORGAN_PREG_EMAIL_CUSTOM" />
+		<Flag Name="KHORGAN_TOTAL_KIDS" />
 		<Flag Name="KIE5_SEARCHED" />
 		<Flag Name="KIG3_SEARCHED" />
 		<Flag Name="KII3_CRACKED" />
@@ -3256,6 +3325,7 @@
 		<Flag Name="MET_FROSTWYRM" />
 		<Flag Name="MET_FYN" Description="1 == You've met Fyn" />
 		<Flag Name="MET_GEOFF" Description="1 == You've met Geoff" />
+		<Flag Name="MET_GEL_ZON" />
 		<Flag Name="MET_GIALA" Description="1 == You've met Giala" />
 		<Flag Name="MET_GIANNA" Description="1 == You've met Gianna" />
 		<Flag Name="MET_GIL" />
@@ -3302,6 +3372,7 @@
 		<Flag Name="MET_MERCHANT_QUEEN" Description="1 == You've met the Gold Myr merchant queen" />
 		<Flag Name="MET_MILLIE" Description="1 == You've met Millie" />
 		<Flag Name="MET_MILODAN_MALE" />
+		<Flag Name="MET_MYRNA" />
 		<Flag Name="MET_NAYNA" Description="1 == You've met Nayna Triverre" />
 		<Flag Name="MET_NEHZARA" Description="1 == You've met Nehzara" />
 		<Flag Name="MET_NERRASA" Description="1 == You've met Nerrasa" />
@@ -3384,6 +3455,11 @@
 		<Flag Name="MUSH_SEEN" />
 		<Flag Name="MYRELLION_EMBASSY_VISITED" />
 		<Flag Name="MYRELLION_PROBE_CASH_GOT" />
+		<Flag Name="MYRNA_BELONGINGS" />
+		<Flag Name="MYRNA_GIFT_CD" />
+		<Flag Name="MYRNA_GIFT_COUNT" />
+		<Flag Name="MYRNA_MYRNA_TALK" />
+		<Flag Name="MYRNA_YEAR" />
 		<Flag Name="NALEEN_SNUGGLED" />
 		<Flag Name="NATALIE_MET" />
 		<Flag Name="NATALIE_NEED_SILICONE" />
@@ -3666,6 +3742,16 @@
 		<Flag Name="SAENDRA_XPACK1_TIMER" />
 		<Flag Name="SAEN_X_SERA_THREESOME" />
 		<Flag Name="SALVAGED VANAE CAMP" />
+		<Flag Name="SAM_BABY_GENDERS" />
+		<Flag Name="SAM_BABY_GENES" />
+		<Flag Name="SAM_GAST_PREG_TIMER" />
+		<Flag Name="SAM_NUM_BABIES" />
+		<Flag Name="SAM_PREG_EMAIL1" />
+		<Flag Name="SAM_PREG_EMAIL2" />
+		<Flag Name="SAM_PREG_EMAIL3" />
+		<Flag Name="SAM_PREG_EMAIL4" />
+		<Flag Name="SAM_PREG_EMAIL_CUSTOM" />
+		<Flag Name="SAM_TOTAL_KIDS" />
 		<Flag Name="SCRAPYARD_SEEN" />
 		<Flag Name="SECOND_CAPTURED_ZIL_REPORTED_ON" />
 		<Flag Name="SEEN_ANNO_BUY_MENU" Description="1 == You've seen Anno's shopping catalog" />
@@ -3779,11 +3865,13 @@
 		<Flag Name="SEXED_LOLA" />
 		<Flag Name="SEXED_MILODAN_MALE" />
 		<Flag Name="SEXED_MYR_VENOM" />
+		<Flag Name="SEXED_MYRNA" />
 		<Flag Name="SEXED_NEHZARA" />
 		<Flag Name="SEXED_PENNY" />
 		<Flag Name="SEXED_QUENTON" />
 		<Flag Name="SEXED_QUINN" />
 		<Flag Name="SEXED_SALLY" />
+		<Flag Name="SEXED_SG_MALE" />
 		<Flag Name="SEXED_SHADE" />
 		<Flag Name="SEXED_SIMONE" />
 		<Flag Name="SEXED_SYLVIE" />
@@ -3835,6 +3923,10 @@
 		<Flag Name="SIMONE_TEASED" />
 		<Flag Name="SISTER_MILK_ACT" Description="Milk multiplier" />
 		<Flag Name="SIXTYNINED_GIANNA" />
+		<Flag Name="SLEEP_FAPNEA_ACTIVE" />
+		<Flag Name="SLEEP_FAPNEA_DREAMCATCHER" />
+		<Flag Name="SLEEP_FAPNEA_INSTALLED" />
+		<Flag Name="SLEEP_FAPNEA_REPEAT" />
 		<Flag Name="SOLD_BESS" />
 		<Flag Name="SPAM_MSG_COV8" />
 		<Flag Name="STARTED_KHORGAN_FIGHT" />
@@ -3932,6 +4024,16 @@
 		<Flag Name="TALK_WITH_PENNY_ABOUT_YOUTH" />
 		<Flag Name="TALK_YARASTAS_SECRETS" />
 		<Flag Name="TAMANI_HOLED" />
+		<Flag Name="TAMTAM_BABY_GENDERS" />
+		<Flag Name="TAMTAM_BABY_GENES" />
+		<Flag Name="TAMTAM_GAST_PREG_TIMER" />
+		<Flag Name="TAMTAM_NUM_BABIES" />
+		<Flag Name="TAMTAM_PREG_EMAIL1" />
+		<Flag Name="TAMTAM_PREG_EMAIL2" />
+		<Flag Name="TAMTAM_PREG_EMAIL3" />
+		<Flag Name="TAMTAM_PREG_EMAIL4" />
+		<Flag Name="TAMTAM_PREG_EMAIL_CUSTOM" />
+		<Flag Name="TAMTAM_TOTAL_KIDS" />
 		<Flag Name="TAMWOLF_DAMAGE_UPGRADE" />
 		<Flag Name="TAMWOLF_FIXED_IN_KENNEL" />
 		<Flag Name="TAM_DISABLE_METHOD" />
@@ -4224,6 +4326,7 @@
 						v2 - horn size result&#xD;&#xA;
 						v3 - max cock size&#xD;&#xA;
 						v4 - futacock size (if any)" IsHidden="true" />
+			<StatusEffect Name="Twink-ease Doses" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Mimbranes">
 			<StatusEffect Name="Mimbrane Ass"           IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
@@ -4284,6 +4387,7 @@
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
 			<StatusEffect Name="Omit Cumflation Messages" Description="Cumflation messages are currently disabled." IsHidden="true" />
 			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
+			<StatusEffect Name="Painted Penis" Description="With your phallus professionally painted, you feel slightly more libidinous. Your crotch-based teases will likely be more effective against those vulnerable to them.\n\n+2 Tease Damage\n+5 Tease Damage Cap\n+5 Libido" IconName="LustUp" IconShade="12030916" MinutesLeft="28800" />
 			<StatusEffect Name="Priapism" Description="You are unnaturally hard and erect regardless of your arousal level. The added discomfort prevents you from covering up!" IconName="OffenseUp" IconShade="12030916" />
 			<StatusEffect Name="Pussy Drenched" Value1="1" IconName="Icon_Water_Drop" IconShade="12030916" />
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
@@ -4295,11 +4399,17 @@
 			<StatusEffect Name="Unarmored" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
+			<StatusEffect Name="Anno x Kaede Bar" IsHidden="true" />
+			<StatusEffect Name="Anno Bar Busy" IsHidden="true" MinutesLeft="135" />
+			<StatusEffect Name="Azra CD" IsHidden="true" />
+			<StatusEffect Name="Azra Sex CD" IsHidden="true" />
+			<StatusEffect Name="Bait Beta Nyrea" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Egregiously Endowed" Description="Movement between rooms takes twice as long, and fleeing from combat is more difficult." IconName="Icon_Poison" />
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Endowment Immobilized" Description="Your endowments prevent you from moving." IconName="Icon_Poison" />
+			<StatusEffect Name="Fail Quadomme Diplomacy" IsHidden="true" />
 			<StatusEffect Name="Force Fem Gender" Comment="Forces feminine descriptions" IsHidden="true" />
 			<StatusEffect Name="Force It Gender" Comment="Forces neuter/androgynous descriptions" IsHidden="true" />
 			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
@@ -4315,16 +4425,20 @@
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
 			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
 			<StatusEffect Name="Jock Sexiness" IsHidden="true" />
+			<StatusEffect Name="Kara Fuck Alternate Path" IsHidden="true" />
 			<StatusEffect Name="Latex Hair" IsHidden="true" />
 			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
 			<StatusEffect Name="Liamme Disabled" IsHidden="true" />
 			<StatusEffect Name="LIAMME_OUTFIT" IsHidden="true" Value1="1" Label1="Liamme's outfit" />
 			<StatusEffect Name="Lightning Moves" Description="Your recent fencing lessons give you an edge during fights." IconName="OffenseUp" MinutesLeft="4320" />
+			<StatusEffect Name="LimberTime" IsHidden="true" />
 			<StatusEffect Name="Ludicrously Endowed" Description="The shifting masses of your over-sized endowments cause you to gain fifty percent more lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="Milk Paused" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
 			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
+			<StatusEffect Name="PAIGE_COMA_CD" IsHidden="true" />
+			<StatusEffect Name="PAIGE_COMA_EMAIL_CD" IsHidden="true" />
 			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!&#xA;Minimum lust increased by 20." IconName="LustUp" IconShade="0" />
 			<StatusEffect Name="Perfect Simulant" Description="You were created by the scientists at Steele Tech to be the perfect heir, and as such, your maximum capabilities exceed even those of the luckiest terrans. You walk, talk, breathe, and eat, just like any living creature, even simulating DNA to allow you to emulate the effects of transformative items on true organics." IconName="Icon_Gears_Three" />
 			<StatusEffect Name="Psi Slave Collar" Description="This metal collar limits your intelligence capacity and willpower while worn, making you completely subservient to the will of the one who operates it." Value1="0.5" Type1="Double" Value2="0.5" Type2="Double" Value3="200" IconName="Radio" IconShade="16711680" />
@@ -4335,11 +4449,13 @@
 			<StatusEffect Name="Sexy Moves" Description="Your recent lessons pay off, you feel as sexy as ever - and it shows." IconName="OffenseUp" MinutesLeft="4320" />
 			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
 			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!&#xA;Experience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
+			<StatusEffect Name="Sleep Fapnea Dream" IsHidden="true" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
 			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Special Scrotum" Comment="Special scrotum description flag, see Value1" Label1="20 == FLAG_FURRED&#xD;&#xA;21 == FLAG_SCALED&#xD;&#xA;34 == FLAG_CHITINOUS&#xD;&#xA;35 == FLAG_FEATHERED&#xD;&#xA;37 == FLAG_GOOEY" Value1="20" IsHidden="true" />
 			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
+			<StatusEffect Name="The Lusty Ausar Maid" IsHidden="true" MinutesLeft="1440" />
 			<StatusEffect Name="Tickled Pink" IsHidden="true" />
 			<StatusEffect Name="Uniball" IsHidden="true" />
 			<StatusEffect Name="Vanae Markings" Comment="Vanae skin markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;Value4 = on balls too" Value4="1" Label4="1 = Ball Markings" IsHidden="true" />
