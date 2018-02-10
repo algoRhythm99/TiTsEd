@@ -52,6 +52,7 @@ namespace TiTsEd.View
         void requestNavigate(object sender, RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            Close();
         }
 
         void UpdateStatus(UpdateCheckResult status)
