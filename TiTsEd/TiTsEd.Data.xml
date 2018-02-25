@@ -1171,7 +1171,7 @@
 		</AssFlags>
 		<!-- ================================================================ -->
 		<PregnancyTypes>
-			<PregnancyType></PregnancyType>
+			<PregnancyType>(None)</PregnancyType>
 			<PregnancyType>BothriocPregnancy</PregnancyType>
 			<PregnancyType>RahnPregnancyBreedwell</PregnancyType>
 			<PregnancyType>CockvinePregnancy</PregnancyType>
@@ -4436,6 +4436,8 @@
 			<StatusEffect Name="Milk Paused" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
+			<StatusEffect Name="Nym-Foe Injections" Label1="Hips" Label2="Ass" Label3="Breasts" Label4="Lips" IsHidden="true" />
+			<StatusEffect Name="Orange Myr Sighting Delay" IsHidden="true" MinutesLeft="20160" />
 			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
 			<StatusEffect Name="PAIGE_COMA_CD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_COMA_EMAIL_CD" IsHidden="true" />

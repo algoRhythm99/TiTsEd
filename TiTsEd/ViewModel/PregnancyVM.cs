@@ -32,12 +32,15 @@ namespace TiTsEd.ViewModel {
             return pregCount;
         }
 
-        public override void Delete(int index) {
-            base.Delete(index);
-            foreach (var pregType in XmlData.Current.Body.PregnancyTypes) {
-                switch (pregType) {
+        public void UpdatePregnancyStatuses()
+        {
+            foreach (var pregType in XmlData.Current.Body.PregnancyTypes)
+            {
+                switch (pregType)
+                {
                     case "BothriocPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Bothrioc Eggs");
                         }
                         break;
@@ -46,7 +49,8 @@ namespace TiTsEd.ViewModel {
                     case "CockvinePregnancy":
                         break;
                     case "DeepQueenPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Queen Pregnancy End");
                             _character.RemoveStatus("Queen Pregnancy State");
                         }
@@ -60,12 +64,14 @@ namespace TiTsEd.ViewModel {
                     case "LapinaraPregnancy":
                         break;
                     case "MilodanPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Milodan Pregnancy Ends");
                         }
                         break;
                     case "NyreaEggPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Nyrea Eggs Messages Available");
                         }
                         break;
@@ -80,36 +86,42 @@ namespace TiTsEd.ViewModel {
                     case "RenvraFullPregnancy":
                         break;
                     case "RiyaPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Riya Spawn Reflex Mod");
                             _character.RemoveStatus("Riya Spawn Pregnancy Ends");
                         }
                         break;
                     case "RoyalEggPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Royal Eggs Messages Available");
                         }
                         break;
                     case "SeraSpawnPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Sera Spawn Reflex Mod");
                             _character.RemoveStatus("Sera Spawn Pregnancy Ends");
                         }
                         break;
                     case "SydianPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Sydian Pregnancy Ends");
                         }
                         break;
                     case "VenusPitcherFertilizedSeedCarrier":
                     case "VenusPitcherSeedCarrier":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Venus Pitcher Egg Incubation Finished");
                             _character.RemoveStatus("Venus Pitcher Seed Residue");
                         }
                         break;
                     case "ZaaltPregnancy":
-                        if (0 == PregCountByType(pregType)) {
+                        if (0 == PregCountByType(pregType))
+                        {
                             _character.RemoveStatus("Zaalt Pregnancy Ends");
                         }
                         break;
@@ -117,6 +129,17 @@ namespace TiTsEd.ViewModel {
                         break;
                 }
             }
+        }
+
+        public override void Delete(int index) {
+            base.Delete(index);
+            Create();
+            var last = (Count - 1) >= 0 ? Count - 1 : 0;
+            if (last != index)
+            {
+                MoveItemToIndex(last, index);
+            }
+            UpdatePregnancyStatuses();
         }
 
     }
@@ -132,6 +155,7 @@ namespace TiTsEd.ViewModel {
         public string SlotDescription { get; set; }
 
         public static void Reset(AmfObject obj) {
+            obj["classInstance"] = "classes::PregnancyData";
             obj["pregnancyType"] = "";
             obj["pregnancyIncubation"] = 0;
             obj["pregnancyQuantity"] = 0;
@@ -167,10 +191,28 @@ namespace TiTsEd.ViewModel {
         }
 
         public string PregnancyType  {
-            get { return GetString("pregnancyType"); }
+            get {
+                string val = GetString("pregnancyType");
+                if ("".Equals(val))
+                {
+                    val = "(None)";
+                }
+                return val;
+            }
             set {
-                SetValue("pregnancyType", value);
-                OnPropertyChanged("Description");
+                if (value != PregnancyType)
+                {
+                    string val = value;
+                    if ("(None)".Equals(val))
+                    {
+                        val = "";
+                        Reset();
+                        OnPropertyChanged(null);
+                    }
+                    _character.PregnancyData.UpdatePregnancyStatuses();
+                    SetValue("pregnancyType", val);
+                    OnPropertyChanged("Description");
+                }
             }
         }
 

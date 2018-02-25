@@ -96,10 +96,12 @@
             <StackPanel Grid.Row="2"
                         Grid.Column="3"
                         Orientation="Vertical">
-
+                <TextBlock Text="*** Experimental ***" Foreground="Red" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Width="Auto" />
                 <common:ArrayEditor x:Name="WombsArray"
                                     Header="Wombs"
                                     Items="{Binding Game.Character.PregnancyData}"
+                                    AllowDrop="False"
+                                    AllowReorder="False"
                                     Capacity="4">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>
@@ -113,10 +115,10 @@
                                                     ItemsSource="{Binding PregnancyTypes}" />
 
                             <Label                  Content="Pregnancy Quantity" />
-                            <common:MyNumericBox    Value="{Binding PregnancyQuantity}" />
+                            <common:MyNumericBox    Value="{Binding PregnancyQuantity}" Type="UInt" />
 
                             <Label                  Content="Pregnancy Incubation Time" />
-                            <common:MyNumericBox    Value="{Binding PregnancyIncubation}" />
+                            <common:MyNumericBox    Value="{Binding PregnancyIncubation}" Type="UInt" />
 
                             <Label                  Content="Pregnancy Incubation Time Multiplier" />
                             <common:MyNumericBox    Value="{Binding PregnancyIncubationMulti}" Type="Double" />

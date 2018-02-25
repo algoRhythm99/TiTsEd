@@ -40,6 +40,7 @@ namespace TiTsEd.Common
         public static readonly DependencyProperty MinCapacityProperty = DependencyProperty.Register("MinCapacity", typeof(int), typeof(ArrayEditor), new PropertyMetadata(0, OnPropertiesChanged));
         public static readonly DependencyProperty SelectedItemObjectProperty = DependencyProperty.Register("SelectedItemObject", typeof(object), typeof(ArrayEditor), new PropertyMetadata(null, OnPropertiesChanged));
         public static readonly DependencyProperty SelectedIndexProperty = DependencyProperty.Register("SelectedIndex", typeof(int), typeof(ArrayEditor), new PropertyMetadata(-1, OnPropertiesChanged));
+        public static readonly DependencyProperty AllowReorderProperty = DependencyProperty.Register("AllowReorder", typeof(bool), typeof(ArrayEditor), new PropertyMetadata(true, OnPropertiesChanged));
 
         static ArrayEditor()
         {
@@ -62,6 +63,12 @@ namespace TiTsEd.Common
         {
             get { return (DataTemplate)GetValue(ItemTemplateProperty); }
             set { SetValue(ItemTemplateProperty, value); }
+        }
+
+        public bool AllowReorder
+        {
+            get { return (bool)GetValue(AllowReorderProperty); }
+            set { SetValue(AllowReorderProperty, value); }
         }
 
         public int Capacity
@@ -102,10 +109,21 @@ namespace TiTsEd.Common
         Border _contentBorder;
         public override void OnApplyTemplate()
         {
-            if (_listBox != null) _listBox.DragOver -= listBox_DragOver;
-            if (_listBox != null) _listBox.DragEnter -= listBox_DragOver;
-            if (_listBox != null) _listBox.PreviewMouseMove -= listBox_PreviewMouseMove;
-            if (_listBox != null) _listBox.PreviewMouseLeftButtonDown -= listBox_PreviewMouseLeftButtonDown;
+            if (AllowReorder)
+            {
+                if (_listBox != null) _listBox.DragOver -= listBox_DragOver;
+                if (_listBox != null) _listBox.DragEnter -= listBox_DragOver;
+                if (_listBox != null) _listBox.PreviewMouseMove -= listBox_PreviewMouseMove;
+                if (_listBox != null) _listBox.PreviewMouseLeftButtonDown -= listBox_PreviewMouseLeftButtonDown;
+            }
+            else
+            {
+                if (_listBox != null)
+                {
+                    _listBox.AllowDrop = false;
+                    _listBox.ToolTip = null;
+                }
+            }
             if (_listBox != null) _listBox.SelectionChanged -= listBox_SelectionChanged;
             if (_removeButton != null) _removeButton.Click -= removeButton_Click;
             if (_addButton != null) _addButton.Click -= addButton_Click;
@@ -115,10 +133,21 @@ namespace TiTsEd.Common
             _removeButton = GetTemplateChild("removeButton") as Button;
             _contentBorder = GetTemplateChild("contentBorder") as Border;
 
-            if (_listBox != null) _listBox.DragOver += listBox_DragOver;
-            if (_listBox != null) _listBox.DragEnter += listBox_DragOver;
-            if (_listBox != null) _listBox.PreviewMouseMove += listBox_PreviewMouseMove;
-            if (_listBox != null) _listBox.PreviewMouseLeftButtonDown += listBox_PreviewMouseLeftButtonDown;
+            if (AllowReorder)
+            {
+                if (_listBox != null) _listBox.DragOver += listBox_DragOver;
+                if (_listBox != null) _listBox.DragEnter += listBox_DragOver;
+                if (_listBox != null) _listBox.PreviewMouseMove += listBox_PreviewMouseMove;
+                if (_listBox != null) _listBox.PreviewMouseLeftButtonDown += listBox_PreviewMouseLeftButtonDown;
+            }
+            else
+            {
+                if (_listBox != null)
+                {
+                    _listBox.AllowDrop = false;
+                    _listBox.ToolTip = null;
+                }
+            }
             if (_listBox != null) _listBox.SelectionChanged += listBox_SelectionChanged;
             if (_removeButton != null) _removeButton.Click += removeButton_Click;
             if (_addButton != null) _addButton.Click += addButton_Click;
