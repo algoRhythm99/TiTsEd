@@ -695,9 +695,9 @@ namespace TiTsEd.ViewModel {
             List<string> defaultFlags = new List<string>();
             switch (fType)
             {
-                case 3: //Canine
-                case 5: //Vulpine
-                case 9: //Lapine
+                case 3:  //Canine
+                case 5:  //Vulpine
+                case 9:  //Lapine
                 case 10: //Avian
                 case 11: //Draconic
                 case 12: //Lizan
@@ -715,16 +715,17 @@ namespace TiTsEd.ViewModel {
                 default:
                     //All of the above have no default flags, so do nothing
                     break;
-                case 0: //Human
+                case 0:  //Human
                 case 39: //Naleen
                     defaultFlags.Add("Smooth");
                     break;
-                case 1: //Equine
-                case 2: //Bovine
+                case 1:  //Equine
+                case 2:  //Bovine
+                case 50: //Goat
                     defaultFlags.Add("Long");
                     defaultFlags.Add("Muzzled");
                     break;
-                case 4: //Feline
+                case 4:  //Feline
                 case 40: //Panda
                 case 75: //Lupine
                     defaultFlags.Add("Muzzled");
@@ -733,10 +734,16 @@ namespace TiTsEd.ViewModel {
                     defaultFlags.Add("Smooth");
                     break;
                 case 18: //Gabilani
+                case 81: //Mothrine
                     defaultFlags.Add("Angular");
                     break;
                 case 45: //Badger
                     defaultFlags.Add("Muzzled");
+                    break;
+                case 66: //Korgonne
+                    defaultFlags.Add("Muzzled");
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Fluffy");
                     break;
             }
             return defaultFlags;
@@ -819,8 +826,8 @@ namespace TiTsEd.ViewModel {
                 default:
                     //All of the above have no default flags, so do nothing
                     break;
-
-                case 6: //Bee
+                case 6:  //Bee
+                case 81: //Mothrine
                     defaultFlags.Add("Hollow");
                     defaultFlags.Add("Long");
                     break;
@@ -845,6 +852,7 @@ namespace TiTsEd.ViewModel {
                     defaultFlags.Add("Prehensile");
                     break;
                 case 57: //Ovir
+                case 66: //Korgonne
                 case 75: //Lupine
                     defaultFlags.Add("Long");
                     break;
@@ -1055,6 +1063,7 @@ namespace TiTsEd.ViewModel {
                 case 49: //Leithan
                 case 55: //Nyrea
                 case 60: //Myr
+                case 81: //Mothrine
                     defaultFlags.Add("Chitinous");
                     break;
                 case 15: //Demonic
@@ -1063,6 +1072,10 @@ namespace TiTsEd.ViewModel {
                     break;
                 case 57: //Ovir
                     defaultFlags.Add("Scaled");
+                    break;
+                case 66: //Korgonne
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Paws");
                     break;
             }
             return defaultFlags;
@@ -1117,20 +1130,21 @@ namespace TiTsEd.ViewModel {
                 default:
                     //All of the above have no default flags, so do nothing
                     break;
-                case 0: //Human
+                case 0:  //Human
                     defaultFlags.Add("Plantigrade");
                     break;
-                case 1: //Equine
-                case 2: //Bovine
+                case 1:  //Equine
+                case 2:  //Bovine
                     defaultFlags.Add("Digitigrade");
                     defaultFlags.Add("Hooves");
                     break;
-                case 3: //Canine
+                case 3:  //Canine
                     defaultFlags.Add("Plantigrade");
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Paws");
                     break;
-                case 6: //Bee
+                case 6:  //Bee
+                case 81: //Mothrine
                     defaultFlags.Add("Plantigrade");
                     defaultFlags.Add("Chitinous");
                     defaultFlags.Add("Smooth");
@@ -1170,6 +1184,11 @@ namespace TiTsEd.ViewModel {
                     defaultFlags.Add("Plantigrade");
                     defaultFlags.Add("Scaled");
                     break;
+                case 50: //Goat
+                    defaultFlags.Add("Digitigrade");
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Hooves");
+                    break;
                 case 57: //Ovir
                     defaultFlags.Add("Plantigrade");
                     defaultFlags.Add("Scaled");
@@ -1181,6 +1200,11 @@ namespace TiTsEd.ViewModel {
                 case 65: //Gryvain
                     defaultFlags.Add("Plantigrade");
                     defaultFlags.Add("Scaled");
+                    break;
+                case 66: //Korgonne
+                    defaultFlags.Add("Digitigrade");
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Paws");
                     break;
 
             }
@@ -1316,6 +1340,10 @@ namespace TiTsEd.ViewModel {
                     defaultFlags.Add("Prehensile");
                     defaultFlags.Add("Long");
                     defaultFlags.Add("Tapered");
+                    break;
+                case 66: //Korgonne
+                    defaultFlags.Add("Fluffy");
+                    defaultFlags.Add("Furred");
                     break;
             }
             return defaultFlags;

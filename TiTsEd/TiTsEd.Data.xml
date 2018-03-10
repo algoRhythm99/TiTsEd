@@ -547,11 +547,13 @@
 			<FaceType ID="39" Name="Naleen" />
 			<FaceType ID="40" Name="Panda" />
 			<FaceType ID="45" Name="Badger" />
+			<FaceType ID="66" Name="Korgonne" />
 			<FaceType ID="71" Name="Worg" />
 			<FaceType ID="72" Name="Swine" />
 			<FaceType ID="76" Name="Sheep" />
 			<FaceType ID="75" Name="Lupine" />
 			<FaceType ID="77" Name="Lesser Panda" />
+			<FaceType ID="81" Name="Mothrine" />
 		</FaceTypes>
 		<!-- ================================================================ -->
 		<FaceFlags>
@@ -748,6 +750,8 @@
 			<TongueType ID="45" Name="Badger" />
 			<TongueType ID="49" Name="Leithan" />
 			<TongueType ID="57" Name="Ovir" />
+			<TongueType ID="66" Name="Korgonne" />
+			<TongueType ID="81" Name="Mothrine" />
 		</TongueTypes>
 		<!-- ================================================================ -->
 		<TongueFlags>
@@ -770,6 +774,7 @@
 			<AntennaeType ID="43" Name="Sydian" />
 			<AntennaeType ID="60" Name="Myr" />
 			<AntennaeType ID="64" Name="Hradian" />
+			<AntennaeType ID="81" Name="Mothrine" />
 		</AntennaeTypes>
 		<!-- ================================================================ -->
 		<HornTypes>
@@ -831,6 +836,7 @@
 			<ArmType ID="67" Name="Flower" />
 			<ArmType ID="75" Name="Lupine" />
 			<ArmType ID="77" Name="Lesser Panda" />
+			<ArmType ID="81" Name="Mothrine" />
 		</ArmTypes>
 		<!-- ================================================================ -->
 		<ArmFlags>
@@ -925,6 +931,7 @@
 			<WingType ID="59" Name="Dark Sylvan" />
 			<WingType ID="60" Name="Myr" />
 			<WingType ID="65" Name="Gryvain" />
+			<WingType ID="81" Name="Mothrine" />
 		</WingTypes>
 		<!-- ================================================================ -->
 		<TailTypes>
@@ -1106,6 +1113,7 @@
 			<CockType ID="64" Name="Hradian" />
 			<CockType ID="65" Name="Gryvain" />
 			<CockType ID="72" Name="Swine" />
+			<CockType ID="81" Name="Mothrine" />
 		</CockTypes>
 		<!-- ================================================================ -->
 		<CockFlags>
@@ -1151,6 +1159,7 @@
 			<VaginaType ID="51" Name="Synthetic" />
 			<VaginaType ID="55" Name="Nyrea" />
 			<VaginaType ID="65" Name="Gryvain" />
+			<VaginaType ID="66" Name="Korgonne" />
 			<VaginaType ID="67" Name="Flower" />
 			<VaginaType ID="72" Name="Swine" />
 			<VaginaType ID="74" Name="Mouthgina" />
@@ -3125,6 +3134,7 @@
 		<Flag Name="KNOW_RED_MYR_NAME" />
 		<Flag Name="KNOW_SHELLYS_NAME" />
 		<Flag Name="KORGI_BIG_DICKED" />
+		<Flag Name="KORGI_TRANSLATING" />
 		<Flag Name="KORGI_VICTORY_COUNT" />
 		<Flag Name="KQ2_BARRACKS_ENTRANCE_ENTERED" />
 		<Flag Name="KQ2_BARRACKS_INTERIOR_ENTERED" />
@@ -3278,6 +3288,10 @@
 		<Flag Name="LYS_PANTY_OFFER" />
 		<Flag Name="MABBS_PURCHASES" />
 		<Flag Name="MADE_RENVRA_BEG" />
+		<Flag Name="MAJA_RENT" />
+		<Flag Name="MAJA_SPACE_TALK" />
+		<Flag Name="MAJA_TAMING_TALK" />
+		<Flag Name="MAJA_TRUST_TALK" />
 		<Flag Name="MANOR_ADMINROOM_ENTERED" />
 		<Flag Name="MANOR_WARROOM_ENTERED" />
 		<Flag Name="MARIK_FLIRTED" Description="1 == Flirted with Marik" />
@@ -3360,6 +3374,7 @@
 		<Flag Name="MET_HANA" Description="1 == You've met Hana the bartender" />
 		<Flag Name="MET_HEPANE" Description="1 == You've met Hepane" />
 		<Flag Name="MET_HERMAN" Description="1 == You've met Herman the chef" />
+		<Flag Name="MET_HEIDRUN" />
 		<Flag Name="MET_HUNTERS_DREAM_SHOPKEEP" />
 		<Flag Name="MET_ILARIA" Description="1 == You've met Ilaria" />
 		<Flag Name="MET_ILODEN" Description="1 == You've met Iloden the Muscular Myr male" />
@@ -3506,6 +3521,11 @@
 		<Flag Name="NEHZARA_CLOSET_FUCKED" />
 		<Flag Name="NEHZ_PREGGO_RUB_HAPPENED" />
 		<Flag Name="NEHZ_WARRIORS_HONOR_SCENE_HAPPENED" />
+		<Flag Name="NENNE_BELLY_RUBS" />
+		<Flag Name="NENNE_COOKIES" />
+		<Flag Name="NENNE_FAMILY" />
+		<Flag Name="NENNE_SHOP_TALK" />
+		<Flag Name="NENNE_UVETO_TALK" />
 		<Flag Name="NEPH_AFFECTION" />
 		<Flag Name="NERRASAS_PET" />
 		<Flag Name="NERRASA_FUCKED" />
@@ -3890,6 +3910,7 @@
 		<Flag Name="SEXED_MYR_VENOM" />
 		<Flag Name="SEXED_MYRNA" />
 		<Flag Name="SEXED_NEHZARA" />
+		<Flag Name="SEXED_NENNE" />
 		<Flag Name="SEXED_PENNY" />
 		<Flag Name="SEXED_QUENTON" />
 		<Flag Name="SEXED_QUINN" />
@@ -4129,7 +4150,30 @@
 		<Flag Name="TRIPPED_ON_SHADE" />
 		<Flag Name="TUNDRA_STEP" />
 		<Flag Name="TURNED_DOWN_SEXBOT" />
+		<Flag Name="TUUVA_COOKIES" />
+		<Flag Name="TUUVA_DICK_TALK" />
+		<Flag Name="TUUVA_SAVED" />
+		<Flag Name="TUUVA_SCAVENGING_TALK" />
+		<Flag Name="TUUVA_SELF_TALK" />
+		<Flag Name="TUUVA_SMITHING_TALK" />
+		<Flag Name="ULA_BIRTH_TIMER" />
+		<Flag Name="ULA_CAVE" />
+		<Flag Name="ULA_CREDIT_TALK" />
+		<Flag Name="ULA_DEFLOWERED" />
+		<Flag Name="ULA_ELECTRICITY_TALK" />
+		<Flag Name="ULA_GUN_TALK" />
+		<Flag Name="ULA_LEAVE_TIMER" />
+		<Flag Name="ULA_MINING_TALKED" />
+		<Flag Name="ULA_NUM_BABIES" />
+		<Flag Name="ULA_OTHER_TRIBES" />
+		<Flag Name="ULA_PREG_TIMER" />
+		<Flag Name="ULA_RPED" />
 		<Flag Name="ULA_SAVED" />
+		<Flag Name="ULA_SAVICITE_TALK" />
+		<Flag Name="ULA_STARTALK" />
+		<Flag Name="ULA_THIS_PREG_MET" />
+		<Flag Name="ULA_TOTAL_KIDS" />
+		<Flag Name="ULAS_ROLE" />
 		<Flag Name="UNA_MET" />
 		<Flag Name="UNA_TALKED" />
 		<Flag Name="UNLOCKED_JUNKYARD_PLANET" />
@@ -4456,9 +4500,10 @@
 			<StatusEffect Name="Hair Regoo" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
-			<StatusEffect Name="Horn Style" Label1="Style" Label2="Material" IsHidden="true" />
+			<StatusEffect Name="Horn Style" Label1="Style" Label2="Material" IsHidden="true" Comment="Description/Tooltip is color" />
 			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
 			<StatusEffect Name="Jock Sexiness" IsHidden="true" />
+			<StatusEffect Name="JuroXLyrallaCooldown" IsHidden="true" />
 			<StatusEffect Name="Kara Fuck Alternate Path" IsHidden="true" />
 			<StatusEffect Name="Latex Hair" IsHidden="true" />
 			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
@@ -4508,6 +4553,7 @@
 			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Well-Groomed" Description="Your body feels extraordinarily rested and refreshed.&#xD;&#xA;&#xD;&#xA;+20% Max HP&#xD;&#xA;+20% Tease Damage" Value1="1.2" Type1="Double" Value2="1.2" Type2="Double" IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Wing Position" IsHidden="true" />
+			<StatusEffect Name="Wing Style" Label1="Shape" IsHidden="true" Comment="Description/Tooltip is color" />
 			<StatusEffect Name="Wool Removal" IsHidden="true" />
 			<StatusEffect Name="Won Haley's Credits" MinutesLeft="43200" IsHidden="true" />
 			<StatusEffect Name="Worn Out" Description="You are worn out and and unable to regain energy. Working out is also impossible in this state. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
