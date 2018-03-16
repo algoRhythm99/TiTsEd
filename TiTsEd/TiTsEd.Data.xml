@@ -547,6 +547,7 @@
 			<FaceType ID="39" Name="Naleen" />
 			<FaceType ID="40" Name="Panda" />
 			<FaceType ID="45" Name="Badger" />
+			<FaceType ID="50" Name="Goat" />
 			<FaceType ID="66" Name="Korgonne" />
 			<FaceType ID="71" Name="Worg" />
 			<FaceType ID="72" Name="Swine" />
@@ -1143,6 +1144,7 @@
 			<VaginaType ID="0"  Name="Human" />
 			<VaginaType ID="1"  Name="Equine" />
 			<VaginaType ID="3"  Name="Canine" />
+			<VaginaType ID="4"  Name="Feline" />
 			<VaginaType ID="5"  Name="Vulpine" />
 			<VaginaType ID="6"  Name="Bee" />
 			<VaginaType ID="7"  Name="Arachnid" />
@@ -2951,6 +2953,7 @@
 		<Flag Name="HAD_PENNY_GOAL_CHAT" />
 		<Flag Name="HAD_STRAWBERRY" />
 		<Flag Name="HAD_YOKTO" />
+		<Flag Name="HALLOWEEN_REJECTED_1" />
 		<Flag Name="HANA_TALKED_EYEPATCH" />
 		<Flag Name="HANA_TALKED_IRESTEAD" />
 		<Flag Name="HANDIED_VAHN" />
@@ -3048,7 +3051,21 @@
 		<Flag Name="KANE_DEFEATED" />
 		<Flag Name="KARA_DEFEATED_WITH_SHADE" />
 		<Flag Name="KARA_PAID_YOU" />
+		<Flag Name="KASE_INTRO" Description="1 if player has met Kase at the bar and knows his name" />
+		<Flag Name="KASE_TIMER" Description="timestamp of when player first meets Kase at bar, after 1 week he gone 5evar" />
+		<Flag Name="KASE_CREW" Description="1 if Kase is a new crew member, 2 if crew member, 0 if evicted" />
+		<Flag Name="KASE_STRESS" Description="1 if PC gave Kase stress relief this encounter" />
+		<Flag Name="KASE_JOB" Description="1 if talked to Kase about jobs" />
 		<Flag Name="KASE_MATHED" />
+		<Flag Name="KASE_OUTFIT" Description="0 for Pyrite outfit, 1 for SteeleTech outfit" />
+		<Flag Name="KASE_HEALED" Description="1 if his arm is healed" />
+		<Flag Name="KASE_SEXED" Description="number of times done sex stuff with Kase" />
+		<Flag Name="KASE_3SUM_ANNO" Description="number of times done the Anno 3some" />
+		<Flag Name="KASE_SCRITCH" Description="number of times scritched his ears" />
+		<Flag Name="KASE_SLEEPWITH_DOMORNING" />
+		<Flag Name="KASE_SNOOZED" Description="1 if had sleepy times with Kase before" />
+		<Flag Name="KASE_STEELETECH" />
+		<Flag Name="KASE_STRESS" />
 		<Flag Name="KASHIMA_BRIDGE" />
 		<Flag Name="KASHIMA_HOLMES_DEFEATED" />
 		<Flag Name="KASHIMA_STATE" />
@@ -3376,6 +3393,7 @@
 		<Flag Name="MET_HERMAN" Description="1 == You've met Herman the chef" />
 		<Flag Name="MET_HEIDRUN" />
 		<Flag Name="MET_HUNTERS_DREAM_SHOPKEEP" />
+		<Flag Name="MET_IDDI" />
 		<Flag Name="MET_ILARIA" Description="1 == You've met Ilaria" />
 		<Flag Name="MET_ILODEN" Description="1 == You've met Iloden the Muscular Myr male" />
 		<Flag Name="MET_INESSA" Description="1 == You've met Inessa" />
@@ -3577,6 +3595,20 @@
 		<Flag Name="OVILIUM_TF_PREGGCELLERATION" />
 		<Flag Name="OVIR_TEASED" />
 		<Flag Name="OXONIUM_FOUND" />
+		<Flag Name="PAIGE_ANAL" />
+		<Flag Name="PAIGE_CREW" />
+		<Flag Name="PAIGE_FTFHB1" />
+		<Flag Name="PAIGE_GHOSTED" />
+		<Flag Name="PAIGE_GOO_WARNING" />
+		<Flag Name="PAIGE_POLYAMORY" />
+		<Flag Name="PAIGE_RIMMING" Description="yield, loss, or win" />
+		<Flag Name="PAIGE_SHIP_GREETING" />
+		<Flag Name="PAIGE_SPAR_RESULT" />
+		<Flag Name="PAIGE_TALK_SELF" />
+		<Flag Name="PAIGE_VISIT_DAY" />
+		<Flag Name="PAIGE_YOGA" />
+		<Flag Name="PAIGE_YOGA_DAY" />
+		<Flag Name="PAIGES_WINES" />
 		<Flag Name="PC_EMAIL_ADDRESS" />
 		<Flag Name="PC_PAYS_LANE_ERRY_DAY" />
 		<Flag Name="PC_SELF_SUCKED_STANDARD" />
@@ -3624,6 +3656,9 @@
 		<Flag Name="PIPPA_TALKED_REAHA" />
 		<Flag Name="PIPPA_TALKED_YAMMI" />
 		<Flag Name="PIPPA_TALKED_YOU" />
+		<Flag Name="PIPPA_YAMMI_KITCHEN" />
+		<Flag Name="PIPPA_YAMMI_THREESOME" />
+		<Flag Name="PIPPA_YAMMI_THREESOME_DOM" />
 		<Flag Name="PITCHER_HYPO_SCORE" />
 		<Flag Name="PLANET_3_UNLOCKED" />
 		<Flag Name="PLANTATION_QUEST" />
@@ -3795,6 +3830,7 @@
 		<Flag Name="SAM_PREG_EMAIL4" />
 		<Flag Name="SAM_PREG_EMAIL_CUSTOM" />
 		<Flag Name="SAM_TOTAL_KIDS" />
+		<Flag Name="SATELLITE_QUEST" />
 		<Flag Name="SCRAPYARD_SEEN" />
 		<Flag Name="SECOND_CAPTURED_ZIL_REPORTED_ON" />
 		<Flag Name="SEEN_ANNO_BUY_MENU" Description="1 == You've seen Anno's shopping catalog" />
@@ -3911,6 +3947,7 @@
 		<Flag Name="SEXED_MYRNA" />
 		<Flag Name="SEXED_NEHZARA" />
 		<Flag Name="SEXED_NENNE" />
+		<Flag Name="SEXED_PAIGE" />
 		<Flag Name="SEXED_PENNY" />
 		<Flag Name="SEXED_QUENTON" />
 		<Flag Name="SEXED_QUINN" />
@@ -4268,6 +4305,8 @@
 		<Flag Name="YARASTA_SCHEDULE_TALK" />
 		<Flag Name="YARASTA_TALKED" />
 		<Flag Name="YARASTA_THOLLUM_TALKED" />
+		<Flag Name="YOGA_HARD" />
+		<Flag Name="YOGA_MEDIUM" />
 		<Flag Name="ZAALT DISARMED" />
 		<Flag Name="ZAALT FLIRTED" />
 		<Flag Name="ZAALT_DISABLED" />
@@ -4348,6 +4387,7 @@
 			<StatusEffect Name="Focus Pill" Description="You feel sharper, more able to focus and process your senses." IconName="Icon_DrugPill" IconShade="0" />
 			<StatusEffect Name="Gabilani Prophylactic" Description="The spray currently effecting you will reduce encounters with gabilani." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Goblinola Bar" Description="Your stomach is a little unsettled by the health bar you ate..." Value1="60" Value2="1" IconName="Icon_Poison" MinutesLeft="60" />
+			<StatusEffect Name="Foxfire" Label1="1 == Frostfire variant" Label2="0 == On Head&#xD;&#xA;1 == On Tail" MinutesLeft="119" IsHidden="true" />
 			<StatusEffect Name="Heat" Description="Your body is begging for impregnation, increasing your libido and fertility but also your ability to tease.&#xD;&#xA;&#xD;&#xA;+500% Fertility&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+10 Libido&#xD;&#xA;+3 Tease Damage" Value1="5" Value2="25" Value3="10" Value4="3" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
 			<StatusEffect Name="Horse Pill" Description="You are under the effects of at least one horse pill. Flashes of heat and tingly sensations randomly run across your body as you're slowly transformed into a more equine shape." Value1="720" Value2="1" IconName="Icon_Horse" MinutesLeft="720" IconShade="7200" />
 			<StatusEffect Name="Lagonic Rut" Description="Your body is driven for aggressive breeding, increasing your libido and virility, as well as boosting your minimum cum output.&#xD;&#xA;&#xD;&#xA;+5 Libido&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+2000mLs Minimum Cum&#xD;&#xA;+500% Virility" Value1="5" Value2="25" Value3="2000" Value4="5" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
@@ -4436,6 +4476,7 @@
 			<StatusEffect Name="Milodan Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" Label4="1 == Permanent, ignores racial score" Value4="1" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs Messages Available" IsHidden="true" />
+			<StatusEffect Name="Ovilium Effect" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy End" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy State" IsHidden="true" />
 			<StatusEffect Name="Riya Spawn Reflex Mod" Value1="5" IsHidden="true" />
@@ -4476,6 +4517,7 @@
 			<StatusEffect Name="Anno x Kaede Bar" IsHidden="true" />
 			<StatusEffect Name="Anno Bar Busy" IsHidden="true" MinutesLeft="135" />
 			<StatusEffect Name="Anno-Erra Cooldown" MinutesLeft="4320" IsHidden="true" />
+			<StatusEffect Name="Arm Flower" IsHidden="true" Comment="Description = flower color" />
 			<StatusEffect Name="Azra CD" IsHidden="true" />
 			<StatusEffect Name="Azra Sex CD" IsHidden="true" />
 			<StatusEffect Name="Bait Beta Nyrea" IsHidden="true" />
@@ -4497,6 +4539,7 @@
 			<StatusEffect Name="Goo Crotch" IsHidden="true" />
 			<StatusEffect Name="Goo Vent" IsHidden="true" />
 			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
+			<StatusEffect Name="Hair Flower" Label1="Num Flowers" Value="1" IsHidden="true" Comment="Description = flower color" />
 			<StatusEffect Name="Hair Regoo" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />

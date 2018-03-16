@@ -50,7 +50,7 @@
 
                 <common:AutoGrid>
                     <TextBlock              Text="Name" Width="Auto"/>
-                    <TextBox                Text="{Binding Game.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBox                Text="{Binding Game.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding Game.Character.CharacterName}" />
 
                     <TextBlock              Text="E-Mail" Width="Auto" IsEnabled="{Binding Game.EmailEnabled}" />
                     <TextBox                Text="{Binding Game.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Game.EmailEnabled}"  />

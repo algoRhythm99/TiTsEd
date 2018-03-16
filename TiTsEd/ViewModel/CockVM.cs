@@ -5,13 +5,17 @@ using System.Text;
 using TiTsEd.Model;
 using TiTsEd.Common;
 
-namespace TiTsEd.ViewModel {
-    public sealed class CockArrayVM : ArrayVM<CockVM> {
+namespace TiTsEd.ViewModel
+{
+    public sealed class CockArrayVM : ArrayVM<CockVM>
+    {
         public CockArrayVM(CharacterVM character, AmfObject obj)
-            : base(obj, x => new CockVM(character, x)) {
+            : base(obj, x => new CockVM(character, x))
+        {
         }
 
-        protected override AmfObject CreateNewObject() {
+        protected override AmfObject CreateNewObject()
+        {
             var obj = new AmfObject(AmfTypes.Object);
 
             obj["cLengthRaw"] = 5.0;
@@ -40,103 +44,128 @@ namespace TiTsEd.ViewModel {
         }
     }
 
-    public class CockVM : ObjectVM {
+    public class CockVM : ObjectVM
+    {
         public CockVM(CharacterVM character, AmfObject obj)
-            : base(obj) {
+            : base(obj)
+        {
 
             _character = character;
         }
 
         private CharacterVM _character { get; set; }
 
-        public double Length {
+        public double Length
+        {
             get { return GetDouble("cLengthRaw"); }
-            set {
+            set
+            {
                 SetValue("cLengthRaw", value);
                 OnPropertyChanged("Description");
             }
         }
 
-        public int LengthMod {
+        public int LengthMod
+        {
             get { return GetInt("cLengthMod"); }
-            set {
+            set
+            {
                 SetValue("cLengthMod", value);
                 OnPropertyChanged("Description");
             }
         }
 
-        public double EffectiveLength {
+        public double EffectiveLength
+        {
             get { return Length + LengthMod; }
         }
 
-        public string LengthTip {
+        public string LengthTip
+        {
             get { return Extensions.GetFeetAndCentimetersDescription(EffectiveLength); }
         }
 
-        public double ThicknessRatio {
+        public double ThicknessRatio
+        {
             get { return GetDouble("cThicknessRatioRaw"); }
-            set {
+            set
+            {
                 SetValue("cThicknessRatioRaw", value);
                 OnPropertyChanged("ThicknessTip");
             }
         }
 
-        public int ThicknessRatioMod {
+        public int ThicknessRatioMod
+        {
             get { return GetInt("cThicknessRatioMod"); }
-            set {
+            set
+            {
                 SetValue("cThicknessRatioMod", value);
                 OnPropertyChanged("ThicknessTip");
             }
         }
 
-        public double EffectiveThicknessRatio {
+        public double EffectiveThicknessRatio
+        {
             get { return ThicknessRatio + ThicknessRatioMod; }
         }
 
-        public string ThicknessTip {
-            get {
+        public string ThicknessTip
+        {
+            get
+            {
                 var thicknessValue = Math.Round((EffectiveLength / 6) * EffectiveThicknessRatio, 2);
-                return Extensions.GetFeetAndCentimetersDescription(thicknessValue); 
+                return Extensions.GetFeetAndCentimetersDescription(thicknessValue);
             }
         }
 
-        public int Pierced {
+        public int Pierced
+        {
             get { return GetInt("pierced"); }
             set { SetValue("pierced", value); }
         }
 
-        public int Virgin {
+        public int Virgin
+        {
             get { return GetInt("virgin"); }
             set { SetValue("virgin", value); }
         }
 
-        public double KnotMultiplier {
+        public double KnotMultiplier
+        {
             get { return GetDouble("knotMultiplier"); }
             set { SetValue("knotMultiplier", value); }
         }
 
-        public double FlaccidMultiplier {
+        public double FlaccidMultiplier
+        {
             get { return GetDouble("flaccidMultiplier"); }
             set { SetValue("flaccidMultiplier", value); }
         }
 
-        public string CockColor {
+        public string CockColor
+        {
             get { return GetString("cockColor"); }
-            set {
+            set
+            {
                 SetValue("cockColor", value);
                 OnPropertyChanged("Description");
             }
         }
 
-        public string[] CockColors {
-            get {
+        public string[] CockColors
+        {
+            get
+            {
                 return XmlData.Current.Body.SkinTones;
             }
         }
 
-        public int CockType {
+        public int CockType
+        {
             get { return GetInt("cType"); }
-            set {
+            set
+            {
                 if (value != CockType)
                 {
                     SetValue("cType", value);
@@ -151,7 +180,7 @@ namespace TiTsEd.ViewModel {
             List<string> defaultFlags = new List<string>();
             switch (cType)
             {
-                case 0: //Human
+                case 0:  //Human
                 case 10: //Avian
                 case 19: //Shark
                 case 20: //Suula
@@ -165,21 +194,21 @@ namespace TiTsEd.ViewModel {
                 default:
                     //All of the above have no default flags, so do nothing
                     break;
-                case 1: //Equine
+                case 1:  //Equine
                     defaultFlags.Add("Blunt");
                     defaultFlags.Add("Flared");
                     defaultFlags.Add("Sheathed");
                     break;
-                case 3: //Canine
-                case 5: //Vulpine
+                case 3:  //Canine
+                case 5:  //Vulpine
                     defaultFlags.Add("Knotted");
                     defaultFlags.Add("Sheathed");
                     defaultFlags.Add("Tapered");
                     break;
-                case 4: //Feline
+                case 4:  //Feline
                     defaultFlags.Add("Nubby");
                     break;
-                case 6: //Bee
+                case 6:  //Bee
                     defaultFlags.Add("Smooth");
                     defaultFlags.Add("Foreskinned");
                     break;
@@ -251,18 +280,23 @@ namespace TiTsEd.ViewModel {
             return defaultFlags;
         }
 
-        public XmlEnum[] CockTypes {
-            get {
+        public XmlEnum[] CockTypes
+        {
+            get
+            {
                 return XmlData.Current.Body.CockTypes;
             }
         }
 
-        public List<FlagItem> CockFlags {
+        public List<FlagItem> CockFlags
+        {
             get { return getFlagList(GetObj("cockFlags"), XmlData.Current.Body.CockFlags); }
         }
 
-        public String Description {
-            get {
+        public String Description
+        {
+            get
+            {
                 string output = "a ";
 
                 output += CockColor + " ";
@@ -270,8 +304,10 @@ namespace TiTsEd.ViewModel {
                 output += EffectiveLength + "\" ";
 
                 string type = "unknown";
-                foreach (var vtype in CockTypes) {
-                    if (vtype.ID == CockType) {
+                foreach (var vtype in CockTypes)
+                {
+                    if (vtype.ID == CockType)
+                    {
                         type = vtype.Name.ToLower();
                     }
                 }

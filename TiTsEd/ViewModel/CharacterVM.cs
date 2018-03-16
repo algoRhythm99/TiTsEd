@@ -6,8 +6,10 @@ using System.Text;
 using TiTsEd.Common;
 using TiTsEd.Model;
 
-namespace TiTsEd.ViewModel {
-    public class CharacterVM : ObjectVM {
+namespace TiTsEd.ViewModel
+{
+    public class CharacterVM : ObjectVM
+    {
         private ItemContainerVM _inventory;
         private ItemSlotVM _shield;
         private ItemSlotVM _meleeWeapon;
@@ -16,16 +18,18 @@ namespace TiTsEd.ViewModel {
         private ItemSlotVM _armor;
         private ItemSlotVM _upperUndergarment;
         private ItemSlotVM _lowerUndergarment;
+        private string _characterName;
 
         public enum CharacterClasses
         {
-            Smuggler = 0
-          , Mercenary = 1
-          , Engineer = 2
+            Smuggler    = 0
+          , Mercenary   = 1
+          , Engineer    = 2
         }
 
         public CharacterVM(GameVM game, AmfObject obj)
-            : base(obj) {
+            : base(obj)
+        {
 
             Game = game;
 
@@ -58,7 +62,8 @@ namespace TiTsEd.ViewModel {
 
             // inventory
             List<String> types = new List<String>();
-            foreach (XmlItemGroup type in XmlData.Current.ItemGroups) {
+            foreach (XmlItemGroup type in XmlData.Current.ItemGroups)
+            {
                 types.Add(type.Name);
             }
 
@@ -66,9 +71,11 @@ namespace TiTsEd.ViewModel {
             _inventory = new ItemContainerVM(this, "Inventory", types);
             AmfObject inv = GetObj("inventory");
             var maxSlots = MaxInventoryItems;
-            for (int i = 0; i < maxSlots; ++i) {
+            for (int i = 0; i < maxSlots; ++i)
+            {
                 AmfObject item = (AmfObject)inv[i];
-                if (null != item) {
+                if (null != item)
+                {
                     _inventory.Add(item);
                 }
             }
@@ -90,7 +97,8 @@ namespace TiTsEd.ViewModel {
             UpdateInventory();
         }
 
-        public void BeforeSerialization() {
+        public void BeforeSerialization()
+        {
             CleanupInventory();
         }
 
@@ -103,198 +111,273 @@ namespace TiTsEd.ViewModel {
 
         public PregnancyDataArrayVM PregnancyData { get; private set; }
 
-        public string GenderId {
-            get {
+        public string GenderId
+        {
+            get
+            {
                 var gender = "N";
-                if (Vaginas.Count > 0 && Cocks.Count > 0) {
+                if (Vaginas.Count > 0 && Cocks.Count > 0)
+                {
                     gender = "H";
-                } else if (Cocks.Count > 0 && Feminity >= 50) {
+                }
+                else if (Cocks.Count > 0 && Feminity >= 50)
+                {
                     gender = "T";
-                } else if (Vaginas.Count > 0 && Feminity < 50) {
+                }
+                else if (Vaginas.Count > 0 && Feminity < 50)
+                {
                     gender = "C";
-                } else if (Cocks.Count > 0) {
+                }
+                else if (Cocks.Count > 0)
+                {
                     gender = "M";
-                } else if (Vaginas.Count > 0) {
+                }
+                else if (Vaginas.Count > 0)
+                {
                     gender = "F";
                 }
                 return gender;
             }
         }
 
-        public bool IsMale {
-            get {
+        public bool IsMale
+        {
+            get
+            {
                 return HasStatusEffect("Force Male Gender") || ("M" == GenderId) || (Feminity < 50);
             }
         }
 
-        public bool IsFemale {
-            get {
+        public bool IsFemale
+        {
+            get
+            {
                 return HasStatusEffect("Force Fem Gender") || ("F" == GenderId) || (Feminity > 50);
             }
         }
 
-        public bool IsNeuter {
-            get {
+        public bool IsNeuter
+        {
+            get
+            {
                 return HasStatusEffect("Force It Gender") || ("N" == GenderId);
             }
         }
 
         #region GeneralPage
 
-        public new string Name {
+        public new string Name
+        {
             get { return GetString("short"); }
-            set {
+            set
+            {
                 SetValue("short", value);
                 //SetValue("uniqueName", value);
-                if (Game.IsPC) {
+                if (Game.IsPC)
+                {
                     Game.SetValue("saveName", value);
                 }
             }
         }
 
-        public double Credits {
+        public string CharacterName
+        {
+            get { return _characterName; }
+            set { _characterName = value; }
+        }
+
+        public double Credits
+        {
             get { return GetDouble("credits"); }
             set { SetValue("credits", value); }
         }
 
-        public double Physique {
+        public double Physique
+        {
             get { return GetDouble("physiqueRaw"); }
-            set { SetValue("physiqueRaw", value);
+            set
+            {
+                SetValue("physiqueRaw", value);
                 OnPropertyChanged("PhysiquePercent");
             }
         }
 
-        public double PhysiqueMod {
+        public double PhysiqueMod
+        {
             get { return GetDouble("physiqueMod"); }
-            set { SetValue("physiqueMod", value);
+            set
+            {
+                SetValue("physiqueMod", value);
                 OnPropertyChanged("PhysiquePercent");
             }
         }
 
-        public double EffectivePhysique {
+        public double EffectivePhysique
+        {
             get { return Physique + PhysiqueMod; }
         }
 
-        public double PhysiquePercent {
+        public double PhysiquePercent
+        {
             get { return Math.Round((EffectivePhysique / MaxCoreStat) * 100); }
         }
 
-        public double Reflexes {
+        public double Reflexes
+        {
             get { return GetDouble("reflexesRaw"); }
-            set { SetValue("reflexesRaw", value);
+            set
+            {
+                SetValue("reflexesRaw", value);
                 OnPropertyChanged("ReflexesPercent");
             }
         }
 
-        public double ReflexesMod {
+        public double ReflexesMod
+        {
             get { return GetDouble("reflexesMod"); }
-            set { SetValue("reflexesMod", value);
+            set
+            {
+                SetValue("reflexesMod", value);
                 OnPropertyChanged("ReflexesPercent");
             }
         }
 
-        public double EffectiveReflexes {
+        public double EffectiveReflexes
+        {
             get { return Reflexes + ReflexesMod; }
         }
 
-        public double ReflexesPercent {
+        public double ReflexesPercent
+        {
             get { return Math.Round((EffectiveReflexes / MaxCoreStat) * 100); }
         }
 
-        public double Aim {
+        public double Aim
+        {
             get { return GetDouble("aimRaw"); }
-            set { SetValue("aimRaw", value);
+            set
+            {
+                SetValue("aimRaw", value);
                 OnPropertyChanged("AimPercent");
             }
         }
 
-        public double AimMod {
+        public double AimMod
+        {
             get { return GetDouble("aimMod"); }
-            set { SetValue("aimMod", value);
+            set
+            {
+                SetValue("aimMod", value);
                 OnPropertyChanged("AimPercent");
             }
         }
 
-        public double EffectiveAim {
+        public double EffectiveAim
+        {
             get { return Aim + AimMod; }
         }
 
-        public double AimPercent {
+        public double AimPercent
+        {
             get { return Math.Round((EffectiveAim / MaxCoreStat) * 100); }
         }
 
-        public double Intelligence {
+        public double Intelligence
+        {
             get { return GetDouble("intelligenceRaw"); }
-            set { SetValue("intelligenceRaw", value);
+            set
+            {
+                SetValue("intelligenceRaw", value);
                 OnPropertyChanged("IntelligencePercent");
             }
         }
 
-        public double IntelligenceMod {
+        public double IntelligenceMod
+        {
             get { return GetDouble("intelligenceMod"); }
-            set { SetValue("intelligenceMod", value);
+            set
+            {
+                SetValue("intelligenceMod", value);
                 OnPropertyChanged("IntelligencePercent");
             }
         }
 
-        public double EffectiveIntelligence {
+        public double EffectiveIntelligence
+        {
             get { return Intelligence + IntelligenceMod; }
         }
 
-        public double IntelligencePercent {
+        public double IntelligencePercent
+        {
             get { return Math.Round((EffectiveIntelligence / MaxCoreStat) * 100); }
         }
 
-        public double Willpower {
+        public double Willpower
+        {
             get { return GetDouble("willpowerRaw"); }
-            set { SetValue("willpowerRaw", value);
+            set
+            {
+                SetValue("willpowerRaw", value);
                 OnPropertyChanged("WillpowerPercent");
             }
         }
 
-        public double WillpowerMod {
+        public double WillpowerMod
+        {
             get { return GetDouble("willpowerMod"); }
-            set { SetValue("willpowerMod", value);
+            set
+            {
+                SetValue("willpowerMod", value);
                 OnPropertyChanged("WillpowerPercent");
             }
         }
 
-        public double EffectiveWillpower {
+        public double EffectiveWillpower
+        {
             get { return Willpower + WillpowerMod; }
         }
 
-        public double WillpowerPercent {
+        public double WillpowerPercent
+        {
             get { return Math.Round((EffectiveWillpower / MaxCoreStat) * 100); }
         }
 
-        public double Libido {
+        public double Libido
+        {
             get { return GetDouble("libidoRaw"); }
             set { SetValue("libidoRaw", value); }
         }
 
-        public double LibidoMod {
+        public double LibidoMod
+        {
             get { return GetDouble("libidoMod"); }
             set { SetValue("libidoMod", value); }
         }
 
-        public int MaxLibido {
+        public int MaxLibido
+        {
             get { return 100; }
         }
 
-        public double MaxCoreStat {
+        public double MaxCoreStat
+        {
             get { return Level * 5; }
         }
 
-        public int Shields {
+        public int Shields
+        {
             get { return GetInt("shieldsRaw"); }
             set { SetValue("shieldsRaw", value); }
         }
 
-        public int MaxShields {
-            get {
+        public int MaxShields
+        {
+            get
+            {
                 int maxShields = 0;
                 int shields = (Shield != null) ? Shield.Xml.GetFieldValueAsInt("shields") : 0;
-                if (shields > 0) {
+                if (shields > 0)
+                {
                     maxShields += shields;
 
                     maxShields += (MeleeWeapon != null) ? MeleeWeapon.Xml.GetFieldValueAsInt("shields") : 0;
@@ -304,18 +387,22 @@ namespace TiTsEd.ViewModel {
                     maxShields += (UpperUndergarment != null) ? UpperUndergarment.Xml.GetFieldValueAsInt("shields") : 0;
                     maxShields += (LowerUndergarment != null) ? LowerUndergarment.Xml.GetFieldValueAsInt("shields") : 0;
 
-                    if (HasPerk("Shield Tweaks")) {
+                    if (HasPerk("Shield Tweaks"))
+                    {
                         maxShields += Level * 2;
                     }
-                    if (HasPerk("Shield Booster")) {
+                    if (HasPerk("Shield Booster"))
+                    {
                         maxShields += Level * 8;
                     }
-                    if (HasPerk("Attack Drone")) {
+                    if (HasPerk("Attack Drone"))
+                    {
                         maxShields += (Level * 3);
                     }
 
                     //Debuffs!
-                    if (HasStatusEffect("Rusted Emitters")) {
+                    if (HasStatusEffect("Rusted Emitters"))
+                    {
                         maxShields = (int)Math.Round(maxShields * 0.75);
                     }
                 }
@@ -323,25 +410,30 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int HP {
+        public int HP
+        {
             get { return GetInt("HPRaw"); }
             set { SetValue("HPRaw", value); }
         }
 
-        public int HPMod {
+        public int HPMod
+        {
             get { return GetInt("HPMod"); }
             set { SetValue("HPMod", value); }
         }
 
-        public int MaxHP {
-            get {
+        public int MaxHP
+        {
+            get
+            {
                 var bonus = 0;
                 //TODO check items for fortification effects and add to bonus
 
                 double maxhp = 15 + (Level - 1) * 15 + HPMod + bonus;
 
                 // class bonuses
-                switch ((CharacterClasses)CharacterClass) {
+                switch ((CharacterClasses)CharacterClass)
+                {
 
                     case CharacterClasses.Mercenary:
                         maxhp += Level * 5;
@@ -352,12 +444,15 @@ namespace TiTsEd.ViewModel {
                 }
 
                 /// status effects
-                if (HasStatusEffect("Heart Tea")) {
+                if (HasStatusEffect("Heart Tea"))
+                {
                     maxhp = maxhp * 1.1;
                 }
                 var status = GetStatus("Well-Groomed");
-                if ((null != status) && status.IsOwned) {
-                    if (status.Value1 != 0) {
+                if ((null != status) && status.IsOwned)
+                {
+                    if (status.Value1 != 0)
+                    {
                         maxhp = maxhp * status.Value1;
                     }
                 }
@@ -366,9 +461,11 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int Level {
+        public int Level
+        {
             get { return GetInt("level"); }
-            set {
+            set
+            {
                 SetValue("level", value);
                 OnPropertyChanged("MaxXP");
                 OnPropertyChanged("MaxXPLabel");
@@ -378,137 +475,172 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int CharacterClass {
+        public int CharacterClass
+        {
             get { return GetInt("characterClass"); }
             set { SetValue("characterClass", value); }
         }
 
-        public int PerkPoints {
+        public int PerkPoints
+        {
             get { return GetInt("unclaimedClassPerks"); }
             set { SetValue("unclaimedClassPerks", value); }
         }
 
-        public int StatPoints {
-            get {
-                if (Game.IsPC) {
+        public int StatPoints
+        {
+            get
+            {
+                if (Game.IsPC)
+                {
                     return GetInt("unspentStatPoints");
                 }
                 return 0;
             }
-            set {
-                if (Game.IsPC) {
+            set
+            {
+                if (Game.IsPC)
+                {
                     SetValue("unspentStatPoints", value);
                 }
             }
         }
 
-        public double XP {
+        public double XP
+        {
             get { return GetDouble("XPRaw"); }
             set { SetValue("XPRaw", value); }
         }
 
-        public int MaxXP {
+        public int MaxXP
+        {
             get { return Level * Level * Level * Level * 100; }
         }
 
-        public String MaxXPLabel {
-            get {
-                if (MaxXP > 1000) {
+        public String MaxXPLabel
+        {
+            get
+            {
+                if (MaxXP > 1000)
+                {
                     return MaxXP / 100 + "k";
                 }
                 return "" + MaxXP;
             }
         }
 
-        public double Lust {
+        public double Lust
+        {
             get { return GetDouble("lustRaw"); }
             set { SetValue("lustRaw", value); }
         }
 
-        public double LustMod {
+        public double LustMod
+        {
             get { return GetDouble("lustMod"); }
             set { SetValue("lustMod", value); }
         }
 
-        public int MaxLust {
-            get {
+        public int MaxLust
+        {
+            get
+            {
                 int max = 100;
                 var perk = GetPerk("Inhuman Desire", "MaxLust");
-                if (perk.IsOwned) {
-                    max += (int) perk.Value1;
+                if (perk.IsOwned)
+                {
+                    max += (int)perk.Value1;
                 }
                 return max;
             }
         }
 
-        public double Energy {
+        public double Energy
+        {
             get { return GetDouble("energyRaw"); }
             set { SetValue("energyRaw", value); }
         }
 
-        public double EnergyMod {
+        public double EnergyMod
+        {
             get { return GetDouble("energyMod"); }
             set { SetValue("energyMod", value); }
         }
 
-        public int MaxEnergy {
-            get {
+        public int MaxEnergy
+        {
+            get
+            {
                 int max = 100;
                 var perk = GetPerk("Heroic Reserves", "MaxEnergy");
-                if (perk.IsOwned) {
+                if (perk.IsOwned)
+                {
                     max += 33;
                 }
                 return max;
             }
         }
 
-        public int Personality {
+        public int Personality
+        {
             get { return GetInt("personality"); }
-            set {
+            set
+            {
                 SetValue("personality", value);
                 OnPropertyChanged("PersonalityTip");
             }
         }
 
-        public String PersonalityTip {
-            get {
+        public String PersonalityTip
+        {
+            get
+            {
                 if (Personality <= 33) return "Nice";
                 if (Personality <= 66) return "Mischievous";
                 return "Ass";
             }
         }
 
-        public double Exhibitionism {
+        public double Exhibitionism
+        {
             get { return GetDouble("exhibitionismRaw"); }
             set { SetValue("exhibitionismRaw", value); }
         }
 
-        public int Tallness {
+        public int Tallness
+        {
             get { return GetInt("tallness"); }
             set { SetValue("tallness", value); }
         }
 
-        public int Thickness {
+        public int Thickness
+        {
             get { return GetInt("thickness"); }
             set { SetValue("thickness", value); }
         }
 
-        public int Feminity {
+        public int Feminity
+        {
             get { return GetInt("femininity"); }
-            set { SetValue("femininity", value);
+            set
+            {
+                SetValue("femininity", value);
                 OnPropertyChanged("LipRating");
                 OnPropertyChanged("LipRatingTip");
             }
         }
 
-        public int Tone {
+        public int Tone
+        {
             get { return GetInt("tone"); }
             set { SetValue("tone", value); }
         }
 
-        public int SkinType {
+        public int SkinType
+        {
             get { return GetInt("skinType"); }
-            set {
+            set
+            {
                 if (value != SkinType)
                 {
                     SetValue("skinType", value);
@@ -554,7 +686,7 @@ namespace TiTsEd.ViewModel {
                 case 1: //Fur
                     defaultFlags.Add("Fluffy");
                     defaultFlags.Add("Thick");
-                    break;                
+                    break;
                 case 3: //Goo
                     defaultFlags.Add("Squishy");
                     defaultFlags.Add("Lubricated");
@@ -563,43 +695,52 @@ namespace TiTsEd.ViewModel {
                 case 8: //Bark
                     defaultFlags.Add("Thick");
                     break;
-                
+
             }
             return defaultFlags;
         }
 
-        public String SkinTone {
+        public String SkinTone
+        {
             get { return GetString("skinTone"); }
             set { SetValue("skinTone", value); }
         }
 
-        public String SkinAccent {
+        public String SkinAccent
+        {
             get { return GetString("skinAccent"); }
             set { SetValue("skinAccent", value); }
         }
 
-        public List<FlagItem> SkinFlags {
+        public List<FlagItem> SkinFlags
+        {
             get { return getFlagList(GetObj("skinFlags"), XmlData.Current.Body.SkinFlags); }
         }
 
-        public String FurColor {
+        public String FurColor
+        {
             get { return GetString("furColor"); }
             set { SetValue("furColor", value); }
         }
 
-        public String ScaleColor {
+        public String ScaleColor
+        {
             get { return GetString("scaleColor"); }
             set { SetValue("scaleColor", value); }
         }
 
-        public int AlcoholTolerance {
-            get {
+        public int AlcoholTolerance
+        {
+            get
+            {
                 var toleranceStat = GetStatus("Tolerance", "AlcoholTolerance");
                 return (int)toleranceStat.Value1;
             }
-            set {
+            set
+            {
                 var toleranceStat = GetStatus("Tolerance", "AlcoholTolerance");
-                if (!toleranceStat.IsOwned) {
+                if (!toleranceStat.IsOwned)
+                {
                     toleranceStat.IsOwned = true;
                 }
                 toleranceStat.Value1 = value;
@@ -609,79 +750,100 @@ namespace TiTsEd.ViewModel {
         #endregion
 
         #region HeadPage
-        public int AntennaeCount {
+        public int AntennaeCount
+        {
             get { return GetInt("antennae"); }
             set { SetValue("antennae", value); }
         }
 
-        public int AntennaeType {
+        public int AntennaeType
+        {
             get { return GetInt("antennaeType"); }
-            set {
+            set
+            {
                 SetValue("antennaeType", value);
                 OnPropertyChanged("AntennaOptionsEnabled");
             }
         }
 
-        public bool AntennaOptionsEnabled {
+        public bool AntennaOptionsEnabled
+        {
             get { return (0 != AntennaeType); }
         }
 
-        public int HornCount {
+        public int HornCount
+        {
             get { return GetInt("horns"); }
             set { SetValue("horns", value); }
         }
 
-        public int HornLength {
+        public int HornLength
+        {
             get { return GetInt("hornLength"); }
             set { SetValue("hornLength", value); }
         }
 
-        public int HornType {
+        public int HornType
+        {
             get { return GetInt("hornType"); }
-            set {
+            set
+            {
                 SetValue("hornType", value);
                 OnPropertyChanged("HornOptionsEnabled");
             }
         }
 
-        public bool HornOptionsEnabled {
+        public bool HornOptionsEnabled
+        {
             get { return (0 != HornType); }
         }
 
-        public double HairLength {
+        public double HairLength
+        {
             get { return GetDouble("hairLength"); }
             set { SetValue("hairLength", value); }
         }
 
-        public String HairColor {
+        public String HairColor
+        {
             get { return GetString("hairColor"); }
             set { SetValue("hairColor", value); }
         }
 
-        public String HairStyle {
-            get {
-                if (GetString("hairStyle") == "null") {
+        public String HairStyle
+        {
+            get
+            {
+                if (GetString("hairStyle") == "null")
+                {
                     return "";
                 }
                 return GetString("hairStyle");
             }
-            set {
-                if (value == null || value.Length == 0) {
+            set
+            {
+                if (value == null || value.Length == 0)
+                {
                     SetValue("hairStyle", "null");
-                } else {
+                }
+                else
+                {
                     SetValue("hairStyle", value);
                 }
             }
         }
 
-        public int HairType {
+        public int HairType
+        {
             get { return GetInt("hairType"); }
             set { SetValue("hairType", value); }
         }
 
-        public int FaceType {
+        public int FaceType
+        {
             get { return GetInt("faceType"); }
-            set {
+            set
+            {
                 if (value != FaceType)
                 {
                     SetValue("faceType", value);
@@ -695,7 +857,6 @@ namespace TiTsEd.ViewModel {
             List<string> defaultFlags = new List<string>();
             switch (fType)
             {
-                case 3:  //Canine
                 case 5:  //Vulpine
                 case 9:  //Lapine
                 case 10: //Avian
@@ -707,8 +868,7 @@ namespace TiTsEd.ViewModel {
                 case 24: //Kui-tan
                 case 25: //Human Masked
                 case 26: //Mouse
-                case 27: //Mouseman  
-                case 71: //Worg
+                case 27: //Mouseman
                 case 72: //Swine
                 case 76: //Sheep
                 case 77: //Lesser Panda
@@ -725,8 +885,11 @@ namespace TiTsEd.ViewModel {
                     defaultFlags.Add("Long");
                     defaultFlags.Add("Muzzled");
                     break;
+                case 3:  //Canine
                 case 4:  //Feline
                 case 40: //Panda
+                case 45: //Badger
+                case 71: //Worg
                 case 75: //Lupine
                     defaultFlags.Add("Muzzled");
                     break;
@@ -737,9 +900,6 @@ namespace TiTsEd.ViewModel {
                 case 81: //Mothrine
                     defaultFlags.Add("Angular");
                     break;
-                case 45: //Badger
-                    defaultFlags.Add("Muzzled");
-                    break;
                 case 66: //Korgonne
                     defaultFlags.Add("Muzzled");
                     defaultFlags.Add("Furred");
@@ -749,23 +909,30 @@ namespace TiTsEd.ViewModel {
             return defaultFlags;
         }
 
-        public List<FlagItem> FaceFlags {
+        public List<FlagItem> FaceFlags
+        {
             get { return getFlagList(GetObj("faceFlags"), XmlData.Current.Body.FaceFlags); }
         }
 
-        public double EarLength {
+        public double EarLength
+        {
             get { return GetDouble("earLength"); }
             set { SetValue("earLength", value); }
         }
 
-        public bool EarLengthEnabled {
-            get {
+        public bool EarLengthEnabled
+        {
+            get
+            {
                 //lookup ear type
                 XmlEnum datum = XmlData.LookupEnumByID(XmlData.Current.Body.EarTypes, EarType);
-                if (datum != null) {
+                if (datum != null)
+                {
                     //check if in ear length
-                    foreach (string name in XmlData.Current.Body.EarLengthEnables) {
-                        if (name.Equals(datum.Name)) {
+                    foreach (string name in XmlData.Current.Body.EarLengthEnables)
+                    {
+                        if (name.Equals(datum.Name))
+                        {
                             return true;
                         }
                     }
@@ -774,27 +941,33 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int EarType {
+        public int EarType
+        {
             get { return GetInt("earType"); }
-            set {
+            set
+            {
                 SetValue("earType", value);
                 OnPropertyChanged("EarLengthEnabled");
             }
         }
 
-        public int EyeType {
+        public int EyeType
+        {
             get { return GetInt("eyeType"); }
             set { SetValue("eyeType", value); }
         }
 
-        public String EyeColor {
+        public String EyeColor
+        {
             get { return GetString("eyeColor"); }
             set { SetValue("eyeColor", value); }
         }
 
-        public int TongueType {
+        public int TongueType
+        {
             get { return GetInt("tongueType"); }
-            set {
+            set
+            {
                 if (value != TongueType)
                 {
                     SetValue("tongueType", value);
@@ -808,13 +981,12 @@ namespace TiTsEd.ViewModel {
             List<string> defaultFlags = new List<string>();
             switch (tType)
             {
-                case 0: //Human
-                case 1: //Equine
-                case 2: //Bovine
-                case 3: //Canine
-                case 4: //Feline
-                case 5: //Vulpine
-                case 9: //Lapine
+                case 0:  //Human
+                case 1:  //Equine
+                case 2:  //Bovine
+                case 3:  //Canine
+                case 5:  //Vulpine
+                case 9:  //Lapine
                 case 10: //Avian
                 case 11: //Draconic
                 case 13: //Naga
@@ -822,7 +994,7 @@ namespace TiTsEd.ViewModel {
                 case 16: //Gooey
                 case 40: //Panda
                 case 45: //Badger
-                
+
                 default:
                     //All of the above have no default flags, so do nothing
                     break;
@@ -847,6 +1019,7 @@ namespace TiTsEd.ViewModel {
                     defaultFlags.Add("Lubricated");
                     defaultFlags.Add("Squishy");
                     break;
+                case 4:  //Feline
                 case 49: //Leithan
                     defaultFlags.Add("Long");
                     defaultFlags.Add("Prehensile");
@@ -860,65 +1033,93 @@ namespace TiTsEd.ViewModel {
             return defaultFlags;
         }
 
-        public List<FlagItem> TongueFlags {
+        public List<FlagItem> TongueFlags
+        {
             get { return getFlagList(GetObj("tongueFlags"), XmlData.Current.Body.TongueFlags); }
         }
 
-        public int LipSize {
+        public int LipSize
+        {
             get { return GetInt("lipMod"); }
-            set { SetValue("lipMod", value);
+            set
+            {
+                SetValue("lipMod", value);
                 OnPropertyChanged("LipRating");
                 OnPropertyChanged("LipRatingTip");
             }
         }
 
-        public int LipRating {
+        public int LipRating
+        {
             get { return LipSize + (Feminity / 25); }
         }
 
-        public string LipRatingTip {
-            get {
+        public string LipRatingTip
+        {
+            get
+            {
                 string result = "";
                 int lips = LipRating;
-                if (lips <= 1) {
+                if (lips <= 1)
+                {
                     result = "pencil-thin";
-                } else if (lips <= 2) {
+                }
+                else if (lips <= 2)
+                {
                     result = "supple";
-                } else if (lips <= 3) {
+                }
+                else if (lips <= 3)
+                {
                     result = "plump";
-                } else if (lips <= 4) {
+                }
+                else if (lips <= 4)
+                {
                     result = "luscious";
-                } else if (lips <= 5) {
+                }
+                else if (lips <= 5)
+                {
                     result = "swollen";
-                } else if (lips <= 6) {
+                }
+                else if (lips <= 6)
+                {
                     result = "exquisitely large";
-                } else if (lips <= 7) {
+                }
+                else if (lips <= 7)
+                {
                     result = "bloated";
-                } else if (lips <= 8) {
+                }
+                else if (lips <= 8)
+                {
                     result = "whorish";
-                } else {
+                }
+                else
+                {
                     result = "scylla-tier";
                 }
                 return result;
             }
         }
 
-        public String LipColor {
+        public String LipColor
+        {
             get { return GetString("lipColor"); }
             set { SetValue("lipColor", value); }
         }
 
-        public double BeardLength {
+        public double BeardLength
+        {
             get { return GetDouble("beardLength"); }
             set { SetValue("beardLength", value); }
         }
 
-        public int BeardType {
+        public int BeardType
+        {
             get { return GetInt("beardType"); }
             set { SetValue("beardType", value); }
         }
 
-        public int BeardStyle {
+        public int BeardStyle
+        {
             get { return GetInt("beardStyle"); }
             set { SetValue("beardStyle", value); }
         }
@@ -927,38 +1128,47 @@ namespace TiTsEd.ViewModel {
 
         #region BodyPage
 
-        public bool HasGills {
+        public bool HasGills
+        {
             get { return GetBool("gills"); }
             set { SetValue("gills", value); }
         }
 
-        public double Elasticity {
+        public double Elasticity
+        {
             get { return GetDouble("elasticity"); }
             set { SetValue("elasticity", value); }
         }
 
-        public int HipRating {
+        public int HipRating
+        {
             get { return GetInt("hipRatingRaw"); }
-            set {
+            set
+            {
                 SetValue("hipRatingRaw", value);
                 OnPropertyChanged("HipRatingTip");
             }
         }
 
-        public int HipRatingMod {
+        public int HipRatingMod
+        {
             get { return GetInt("hipRatingMod"); }
-            set {
+            set
+            {
                 SetValue("hipRatingMod", value);
                 OnPropertyChanged("HipRatingTip");
             }
         }
 
-        public int EffectiveHipRating {
+        public int EffectiveHipRating
+        {
             get { return HipRating + HipRatingMod; }
         }
 
-        public string HipRatingTip {
-            get {
+        public string HipRatingTip
+        {
+            get
+            {
                 var isMale = IsMale;
                 if (EffectiveHipRating >= 20) return isMale ? "inhumanly-wide" : "broodmother";
                 if (EffectiveHipRating >= 15) return isMale ? "voluptuous" : "child-bearing";
@@ -970,28 +1180,35 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int ButtRating {
+        public int ButtRating
+        {
             get { return GetInt("buttRatingRaw"); }
-            set {
+            set
+            {
                 SetValue("buttRatingRaw", value);
                 OnPropertyChanged("ButtRatingTip");
             }
         }
 
-        public int ButtRatingMod {
+        public int ButtRatingMod
+        {
             get { return GetInt("buttRatingMod"); }
-            set {
+            set
+            {
                 SetValue("buttRatingMod", value);
                 OnPropertyChanged("ButtRatingTip");
             }
         }
 
-        public int EffectiveButtRating {
+        public int EffectiveButtRating
+        {
             get { return ButtRating + ButtRatingMod; }
         }
 
-        public string ButtRatingTip {
-            get {
+        public string ButtRatingTip
+        {
+            get
+            {
                 if (EffectiveButtRating >= 20) return "colossal";
                 if (EffectiveButtRating >= 16) return "huge";
                 if (EffectiveButtRating >= 13) return "voluminous";
@@ -1004,23 +1221,28 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public int BellyRating {
+        public int BellyRating
+        {
             get { return GetInt("bellyRatingRaw"); }
             set { SetValue("bellyRatingRaw", value); }
         }
 
-        public int BellyRatingMod {
+        public int BellyRatingMod
+        {
             get { return GetInt("bellyRatingMod"); }
             set { SetValue("bellyRatingMod", value); }
         }
 
-        public int EffectiveBellyRating {
+        public int EffectiveBellyRating
+        {
             get { return BellyRating + BellyRatingMod; }
         }
 
-        public int ArmType {
+        public int ArmType
+        {
             get { return GetInt("armType"); }
-            set {
+            set
+            {
                 if (value != ArmType)
                 {
                     SetValue("armType", value);
@@ -1034,16 +1256,16 @@ namespace TiTsEd.ViewModel {
             List<string> defaultFlags = new List<string>();
             switch (aType)
             {
-                case 0: //Human
-                case 1: //Equine
-                case 5: //Vulpine
-                case 7: //Arachnid
-                case 8: //Drider
-                case 9: //Lapine
+                case 0:  //Human
+                case 1:  //Equine
+                case 5:  //Vulpine
+                case 7:  //Arachnid
+                case 8:  //Drider
+                case 9:  //Lapine
                 case 10: //Avian
-                case 14: //Frog               
+                case 14: //Frog
                 case 19: //Shark
-                case 23: //Tentacle              
+                case 23: //Tentacle
                 case 52: //Simii
                 case 53: //Daynar
                 case 67: //Flower
@@ -1051,15 +1273,15 @@ namespace TiTsEd.ViewModel {
                 default:
                     //All of the above have no default flags, so do nothing
                     break;
-                case 3: //Canine
-                case 4: //Feline
+                case 3:  //Canine
+                case 4:  //Feline
                 case 24: //Kui-tan
                 case 40: //Panda
                 case 45: //Badger
                 case 75: //Lupine
                     defaultFlags.Add("Furred");
                     break;
-                case 6: //Bee
+                case 6:  //Bee
                 case 49: //Leithan
                 case 55: //Nyrea
                 case 60: //Myr
@@ -1081,18 +1303,22 @@ namespace TiTsEd.ViewModel {
             return defaultFlags;
         }
 
-        public List<FlagItem> ArmFlags {
+        public List<FlagItem> ArmFlags
+        {
             get { return getFlagList(GetObj("armFlags"), XmlData.Current.Body.ArmFlags); }
         }
 
-        public int LegCount {
+        public int LegCount
+        {
             get { return GetInt("legCount"); }
             set { SetValue("legCount", value); }
         }
 
-        public int LegType {
+        public int LegType
+        {
             get { return GetInt("legType"); }
-            set {
+            set
+            {
                 if (value != LegType)
                 {
                     SetValue("legType", value);
@@ -1106,12 +1332,12 @@ namespace TiTsEd.ViewModel {
             List<string> defaultFlags = new List<string>();
             switch (lType)
             {
-                
-                case 4: //Feline
-                case 5: //Vulpine
-                case 7: //Arachnid
-                case 8: //Drider
-                case 9: //Lapine
+
+                case 4:  //Feline
+                case 5:  //Vulpine
+                case 7:  //Arachnid
+                case 8:  //Drider
+                case 9:  //Lapine
                 case 10: //Avian
                 case 11: //Draconic
                 case 13: //Naga
@@ -1119,7 +1345,7 @@ namespace TiTsEd.ViewModel {
                 case 19: //Shark
                 case 21: //Deer
                 case 23: //Tentacle
-                case 32: //MLP                
+                case 32: //MLP
                 case 45: //Badger
                 case 52: //Simii
                 case 53: //Daynar
@@ -1211,35 +1437,43 @@ namespace TiTsEd.ViewModel {
             return defaultFlags;
         }
 
-        public List<FlagItem> LegFlags {
+        public List<FlagItem> LegFlags
+        {
             get { return getFlagList(GetObj("legFlags"), XmlData.Current.Body.LegFlags); }
         }
 
-        public int WingCount {
+        public int WingCount
+        {
             get { return GetInt("wingCount"); }
             set { SetValue("wingCount", value); }
         }
 
-        public int WingType {
+        public int WingType
+        {
             get { return GetInt("wingType"); }
-            set {
+            set
+            {
                 SetValue("wingType", value);
                 OnPropertyChanged("WingOptionsEnabled");
             }
         }
 
-        public bool WingOptionsEnabled {
+        public bool WingOptionsEnabled
+        {
             get { return (0 != WingType); }
         }
 
-        public int TailCount {
+        public int TailCount
+        {
             get { return GetInt("tailCount"); }
             set { SetValue("tailCount", value); }
         }
 
-        public int TailType {
+        public int TailType
+        {
             get { return GetInt("tailType"); }
-            set {
+            set
+            {
                 if (value != TailType)
                 {
                     SetValue("tailType", value);
@@ -1253,10 +1487,10 @@ namespace TiTsEd.ViewModel {
             List<string> defaultFlags = new List<string>();
             switch (tType)
             {
-                case 0: //None
-                case 7: //Arachnid
-                case 8: //Drider
-                case 9: //Lapine
+                case 0:  //None
+                case 7:  //Arachnid
+                case 8:  //Drider
+                case 9:  //Lapine
                 case 10: //Avian
                 case 11: //Draconic
                 case 13: //Naga
@@ -1278,26 +1512,26 @@ namespace TiTsEd.ViewModel {
                     //All of the above have no default flags, so do nothing
                     break;
 
-                case 1: //Equine
+                case 1:  //Equine
                     defaultFlags.Add("Long");
                     break;
-                case 2: //Bovine
+                case 2:  //Bovine
                     defaultFlags.Add("Fluffy");
                     defaultFlags.Add("Long");
                     break;
-                case 3: //Canine
-                case 5: //Vulpine
+                case 3:  //Canine
+                case 5:  //Vulpine
                 case 24: //Kui-tan
                 case 75: //Lupine
                     defaultFlags.Add("Fluffy");
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Long");
                     break;
-                case 4: //Feline
+                case 4:  //Feline
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Long");
-                    break;                
-                case 6: //Bee
+                    break;
+                case 6:  //Bee
                     defaultFlags.Add("Chitinous");
                     defaultFlags.Add("Smooth");
                     defaultFlags.Add("Stinger Tip");
@@ -1317,7 +1551,7 @@ namespace TiTsEd.ViewModel {
                 case 54: //Cockvine
                     defaultFlags.Add("Prehensile");
                     defaultFlags.Add("Long");
-                    break;                
+                    break;
                 case 33: //Cuntsnake
                     defaultFlags.Add("Thick");
                     defaultFlags.Add("Prehensile");
@@ -1349,93 +1583,112 @@ namespace TiTsEd.ViewModel {
             return defaultFlags;
         }
 
-        public int TailGenital {
+        public int TailGenital
+        {
             get { return GetInt("tailGenital"); }
-            set {
+            set
+            {
                 SetValue("tailGenital", value);
             }
         }
 
-        public int TailGenitalRace {
+        public int TailGenitalRace
+        {
             get { return GetInt("tailGenitalArg"); }
             set { SetValue("tailGenitalArg", value); }
         }
 
-        public int TailVenom {
+        public int TailVenom
+        {
             get { return GetInt("tailVenom"); }
             set { SetValue("tailVenom", value); }
         }
 
-        public int TailRecharge {
+        public int TailRecharge
+        {
             get { return GetInt("tailRecharge"); }
             set { SetValue("tailRecharge", value); }
         }
 
-        public String TailGenitalColor {
+        public String TailGenitalColor
+        {
             get { return GetString("tailGenitalColor"); }
             set { SetValue("tailGenitalColor", value); }
         }
 
-        public List<FlagItem> TailFlags {
+        public List<FlagItem> TailFlags
+        {
             get { return getFlagList(GetObj("tailFlags"), XmlData.Current.Body.TailFlags); }
         }
 
-        public int GenitalSpot {
+        public int GenitalSpot
+        {
             get { return GetInt("genitalSpot"); }
             set { SetValue("genitalSpot", value); }
         }
 
-        public String NippleColor {
+        public String NippleColor
+        {
             get { return GetString("nippleColor"); }
             set { SetValue("nippleColor", value); }
         }
 
-        public int NipplesPerBreast {
+        public int NipplesPerBreast
+        {
             get { return GetInt("nipplesPerBreast"); }
             set { SetValue("nipplesPerBreast", value); }
         }
 
-        public double NippleLengthRatio {
+        public double NippleLengthRatio
+        {
             get { return GetDouble("nippleLengthRatio"); }
             set { SetValue("nippleLengthRatio", value); }
         }
 
-        public double NippleWidthRatio {
+        public double NippleWidthRatio
+        {
             get { return GetDouble("nippleWidthRatio"); }
             set { SetValue("nippleWidthRatio", value); }
         }
 
-        public int DickNippleType {
+        public int DickNippleType
+        {
             get { return GetInt("dickNippleType"); }
             set { SetValue("dickNippleType", value); }
         }
 
-        public int DickNippleMultiplier {
+        public int DickNippleMultiplier
+        {
             get { return GetInt("dickNippleMultiplier"); }
             set { SetValue("dickNippleMultiplier", value); }
         }
 
-        public int MilkType {
+        public int MilkType
+        {
             get { return GetInt("milkType"); }
             set { SetValue("milkType", value); }
         }
 
-        public double MilkFullness {
+        public double MilkFullness
+        {
             get { return GetDouble("milkFullness"); }
             set { SetValue("milkFullness", value); }
         }
 
-        public int MilkRate {
+        public int MilkRate
+        {
             get { return GetInt("milkRate"); }
             set { SetValue("milkRate", value); }
         }
 
-        public int MilkMultiplier {
+        public int MilkMultiplier
+        {
             get { return GetInt("milkMultiplier"); }
             set { SetValue("milkMultiplier", value); }
         }
 
-        public int MilkStorageMultiplier {
+        public int MilkStorageMultiplier
+        {
             get { return GetInt("milkStorageMultiplier"); }
             set { SetValue("milkStorageMultiplier", value); }
         }
@@ -1444,105 +1697,126 @@ namespace TiTsEd.ViewModel {
 
         #region GenitalPage
 
-        public int GirlCumType {
+        public int GirlCumType
+        {
             get { return GetInt("girlCumType"); }
             set { SetValue("girlCumType", value); }
         }
 
-        public double GirlCumMultiplier {
+        public double GirlCumMultiplier
+        {
             get { return GetDouble("girlCumMultiplierRaw"); }
             set { SetValue("girlCumMultiplierRaw", value); }
         }
 
-        public double GirlCumMultiplierMod {
+        public double GirlCumMultiplierMod
+        {
             get { return GetDouble("girlCumMultiplierMod"); }
             set { SetValue("girlCumMultiplierMod", value); }
         }
 
-        public double Fertility {
+        public double Fertility
+        {
             get { return GetDouble("fertilityRaw"); }
             set { SetValue("fertilityRaw", value); }
         }
 
-        public int FertilityMod {
+        public int FertilityMod
+        {
             get { return GetInt("fertilityMod"); }
             set { SetValue("fertilityMod", value); }
         }
 
-        public double ClitLength {
+        public double ClitLength
+        {
             get { return GetDouble("clitLength"); }
             set { SetValue("clitLength", value); }
         }
 
-        public bool AnalVirgin {
+        public bool AnalVirgin
+        {
             get { return GetBool("analVirgin"); }
-            set {
+            set
+            {
                 SetValue("analVirgin", value);
                 Ass.Hymen = value;
             }
         }
 
-        public bool VaginalVirgin {
+        public bool VaginalVirgin
+        {
             get { return GetBool("vaginalVirgin"); }
             set { SetValue("vaginalVirgin", value); }
         }
 
-        public bool CockVirgin {
+        public bool CockVirgin
+        {
             get { return GetBool("cockVirgin"); }
             set { SetValue("cockVirgin", value); }
         }
 
-        public int CumType {
+        public int CumType
+        {
             get { return GetInt("cumType"); }
             set { SetValue("cumType", value); }
         }
 
-        public double CumMultiplier {
+        public double CumMultiplier
+        {
             get { return GetDouble("cumMultiplierRaw"); }
             set { SetValue("cumMultiplierRaw", value); }
         }
 
-        public int CumMultiplierMod {
+        public int CumMultiplierMod
+        {
             get { return GetInt("cumMultiplierMod"); }
             set { SetValue("cumMultiplierMod", value); }
         }
 
-        public double CumQuality {
+        public double CumQuality
+        {
             get { return GetDouble("cumQualityRaw"); }
             set { SetValue("cumQualityRaw", value); }
         }
 
-        public int CumQualityMod {
+        public int CumQualityMod
+        {
             get { return GetInt("cumQualityMod"); }
             set { SetValue("cumQualityMod", value); }
         }
 
-        public int Balls {
+        public int Balls
+        {
             get { return GetInt("balls"); }
             set { SetValue("balls", value); }
         }
 
-        public double BallSize {
+        public double BallSize
+        {
             get { return GetDouble("ballSizeRaw"); }
             set { SetValue("ballSizeRaw", value); }
         }
 
-        public double BallSizeMod {
+        public double BallSizeMod
+        {
             get { return GetDouble("ballSizeMod"); }
             set { SetValue("ballSizeMod", value); }
         }
 
-        public double BallFullness {
+        public double BallFullness
+        {
             get { return GetDouble("ballFullness"); }
             set { SetValue("ballFullness", value); }
         }
 
-        public double BallEfficiency {
+        public double BallEfficiency
+        {
             get { return GetDouble("ballEfficiency"); }
             set { SetValue("ballEfficiency", value); }
         }
 
-        public double RefractoryRate {
+        public double RefractoryRate
+        {
             get { return GetDouble("refractoryRate"); }
             set { SetValue("refractoryRate", value); }
         }
@@ -1551,53 +1825,64 @@ namespace TiTsEd.ViewModel {
 
         #region MiscPage
 
-        public String Affinity {
+        public String Affinity
+        {
             get { return GetString("affinity"); }
             set { SetValue("affinity", value); }
         }
 
-        public String OriginalRace {
+        public String OriginalRace
+        {
             get { return GetString("originalRace"); }
             set { SetValue("originalRace", value); }
         }
 
-        public string ImpregnationType {
+        public string ImpregnationType
+        {
             get { return GetString("impregnationType"); }
             set { SetValue("impregnationType", value); }
         }
 
-        public int PregnancyMultiplierRaw {
+        public int PregnancyMultiplierRaw
+        {
             get { return GetInt("pregnancyMultiplierRaw"); }
             set { SetValue("pregnancyMultiplierRaw", value); }
         }
 
-        public int PregnancyMultiplierMod {
+        public int PregnancyMultiplierMod
+        {
             get { return GetInt("pregnancyMultiplierMod"); }
             set { SetValue("pregnancyMultiplierMod", value); }
         }
 
-        public int PregnancyIncubationBonusMotherRaw {
+        public int PregnancyIncubationBonusMotherRaw
+        {
             get { return GetInt("pregnancyIncubationBonusMotherRaw"); }
             set { SetValue("pregnancyIncubationBonusMotherRaw", value); }
         }
 
-        public int PregnancyIncubationBonusMotherMod {
+        public int PregnancyIncubationBonusMotherMod
+        {
             get { return GetInt("pregnancyIncubationBonusMotherMod"); }
             set { SetValue("pregnancyIncubationBonusMotherMod", value); }
         }
 
-        public int PregnancyIncubationBonusFatherRaw {
+        public int PregnancyIncubationBonusFatherRaw
+        {
             get { return GetInt("pregnancyIncubationBonusFatherRaw"); }
             set { SetValue("pregnancyIncubationBonusFatherRaw", value); }
         }
 
-        public int PregnancyIncubationBonusFatherMod {
+        public int PregnancyIncubationBonusFatherMod
+        {
             get { return GetInt("pregnancyIncubationBonusFatherMod"); }
             set { SetValue("pregnancyIncubationBonusFatherMod", value); }
         }
 
-        public int MaxWombCount {
-            get {
+        public int MaxWombCount
+        {
+            get
+            {
                 int count = 1;
                 count += Vaginas.Count;
                 return count;
@@ -1609,23 +1894,31 @@ namespace TiTsEd.ViewModel {
         #region ItemPage
         public UpdatableCollection<ItemContainerVM> ItemContainers { get; private set; }
 
-        public int MaxInventoryItems {
-            get {
+        public int MaxInventoryItems
+        {
+            get
+            {
                 int max = 10;
                 var status = GetStatus("Backpack Upgrade");
-                if (status.IsOwned) {
-                    max += (int) status.Value1;
+                if (status.IsOwned)
+                {
+                    max += (int)status.Value1;
                 }
-                if (HasPerk("Hidden Loot")) {
+                if (HasPerk("Hidden Loot"))
+                {
                     max += 2;
                 }
-                if (null != Accessory) {
-                    if ("Cargobot" == Accessory.Name) {
+                if (null != Accessory)
+                {
+                    if ("Cargobot" == Accessory.Name)
+                    {
                         max += 2;
                     }
                 }
-                if (null != Armor) {
-                    if ("I.Coat" == Armor.Name) {
+                if (null != Armor)
+                {
+                    if ("I.Coat" == Armor.Name)
+                    {
                         max++;
                     }
                 }
@@ -1633,20 +1926,25 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public void UpdateItemList() {
+        public void UpdateItemList()
+        {
             //need to find a way to make search only apply to currently selected item somehow
-            foreach(var slot in _inventory.Slots) {
+            foreach (var slot in _inventory.Slots)
+            {
                 slot.UpdateItemGroups();
             }
         }
 
-        public void UpdateInventory() {
+        public void UpdateInventory()
+        {
             _inventory.Clear();
             AmfObject inv = GetObj("inventory");
             var maxSlots = MaxInventoryItems;
-            for (int i = 0; i < maxSlots; ++i) {
+            for (int i = 0; i < maxSlots; ++i)
+            {
                 AmfObject item = (AmfObject)inv[i];
-                if (item == null) {
+                if (item == null)
+                {
                     //just add an empty item, we'll fix it later maybe
                     item = new AmfObject(AmfTypes.Object);
                     item["classInstance"] = XmlItem.Empty.ID;
@@ -1659,48 +1957,59 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public void CleanupInventory() {
+        public void CleanupInventory()
+        {
             //shift all the items around in the inventory
             AmfObject inv = GetObj("inventory");
             var maxSlots = MaxInventoryItems;
             AmfObject nInv = new AmfObject(AmfTypes.Array);
-            for (int i = 0; i < maxSlots; ++i) {
+            for (int i = 0; i < maxSlots; ++i)
+            {
                 AmfObject item = (AmfObject)inv[i];
-                if (item == null) {
+                if (item == null)
+                {
                     continue;
                 }
-                if (item.GetString("classInstance") != XmlItem.Empty.ID) {
+                if (item.GetString("classInstance") != XmlItem.Empty.ID)
+                {
                     nInv.Push(item);
                 }
             }
             SetValue("inventory", nInv);
         }
 
-        public ItemSlotVM Shield {
+        public ItemSlotVM Shield
+        {
             get { return _shield; }
         }
 
-        public ItemSlotVM MeleeWeapon {
+        public ItemSlotVM MeleeWeapon
+        {
             get { return _meleeWeapon; }
         }
 
-        public ItemSlotVM RangedWeapon {
+        public ItemSlotVM RangedWeapon
+        {
             get { return _rangedWeapon; }
         }
 
-        public ItemSlotVM Accessory {
+        public ItemSlotVM Accessory
+        {
             get { return _accessory; }
         }
 
-        public ItemSlotVM Armor {
+        public ItemSlotVM Armor
+        {
             get { return _armor; }
         }
 
-        public ItemSlotVM UpperUndergarment {
+        public ItemSlotVM UpperUndergarment
+        {
             get { return _upperUndergarment; }
         }
 
-        public ItemSlotVM LowerUndergarment {
+        public ItemSlotVM LowerUndergarment
+        {
             get { return _lowerUndergarment; }
         }
 
@@ -1708,41 +2017,51 @@ namespace TiTsEd.ViewModel {
 
         #region KeyItemsPage
 
-        public AmfObject KeyItemsArray {
+        public AmfObject KeyItemsArray
+        {
             get { return GetObj("keyItems"); }
         }
 
         public List<KeyItemGroupVM> KeyItemGroups { get; set; }
 
-        public void UpdateKeyItems() {
-            if (null == KeyItemGroups) {
+        public void UpdateKeyItems()
+        {
+            if (null == KeyItemGroups)
+            {
                 KeyItemGroups = new List<KeyItemGroupVM>();
             }
             var charKeyItems = KeyItemsArray;
-            foreach (var xmlGroup in XmlData.Current.KeyItemGroups) {
+            foreach (var xmlGroup in XmlData.Current.KeyItemGroups)
+            {
                 var keyItemVMs = xmlGroup.KeyItems.OrderBy(x => x.Name).Select(x => new KeyItemVM(this, charKeyItems, x)).ToArray();
-                foreach (var keyItemVM in keyItemVMs) {
+                foreach (var keyItemVM in keyItemVMs)
+                {
                     int indx = Game.AllKeyItems.FindIndex(f => f.Name == keyItemVM.Name);
-                    if (-1 == indx) {
+                    if (-1 == indx)
+                    {
                         Game.AllKeyItems.Add(keyItemVM);
                     }
                 }
 
                 var groupVM = new KeyItemGroupVM(this, xmlGroup.Name, keyItemVMs);
                 int idx = KeyItemGroups.FindIndex(f => f.Name == groupVM.Name);
-                if (-1 == idx) {
+                if (-1 == idx)
+                {
                     KeyItemGroups.Add(groupVM);
                 }
             }
         }
 
-        public bool HasKeyItem(string keyItemName) {
+        public bool HasKeyItem(string keyItemName)
+        {
             var keyItem = GetKeyItem(keyItemName);
             return (null != keyItem) ? keyItem.IsOwned : false;
         }
 
-        public void OnKeyItemAddedOrRemoved(string name, bool isOwned) {
-            switch (name) {
+        public void OnKeyItemAddedOrRemoved(string name, bool isOwned)
+        {
+            switch (name)
+            {
                 default:
                     break;
             }
@@ -1752,10 +2071,13 @@ namespace TiTsEd.ViewModel {
         /// Returns the key item with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this key item.
         /// That way, anytime the key item is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public KeyItemVM GetKeyItem(string name, string propertyName = null) {
+        public KeyItemVM GetKeyItem(string name, string propertyName = null)
+        {
             var keyItem = Game.AllKeyItems.First(x => x.Name == name);
-            if (null != keyItem) {
-                if (null != propertyName) {
+            if (null != keyItem)
+            {
+                if (null != propertyName)
+                {
                     keyItem.GameVMProperties.Add(propertyName);
                 }
                 return keyItem;
@@ -1763,8 +2085,10 @@ namespace TiTsEd.ViewModel {
             return null;
         }
 
-        public void OnKeyItemChanged(string name) {
-            foreach (var prop in Game.AllKeyItems.First(x => x.Name == name).GameVMProperties) {
+        public void OnKeyItemChanged(string name)
+        {
+            foreach (var prop in Game.AllKeyItems.First(x => x.Name == name).GameVMProperties)
+            {
                 OnPropertyChanged(prop);
             }
         }
@@ -1773,43 +2097,53 @@ namespace TiTsEd.ViewModel {
 
         #region PerksPage
 
-        public AmfObject PerksArray {
+        public AmfObject PerksArray
+        {
             get { return GetObj("perks"); }
         }
 
         public List<PerkGroupVM> PerkGroups { get; set; }
 
-        public void UpdatePerks() {
-            if (null == PerkGroups) {
+        public void UpdatePerks()
+        {
+            if (null == PerkGroups)
+            {
                 PerkGroups = new List<PerkGroupVM>();
             }
             var perksArray = PerksArray;
-            foreach (var xmlGroup in XmlData.Current.PerkGroups) {
+            foreach (var xmlGroup in XmlData.Current.PerkGroups)
+            {
                 var perkVMs = xmlGroup.Perks.OrderBy(x => x.Name).Select(x => new PerkVM(this, perksArray, x)).ToArray();
-                foreach (var perkVM in perkVMs) {
+                foreach (var perkVM in perkVMs)
+                {
                     int indx = Game.AllPerks.FindIndex(f => f.Name == perkVM.Name);
-                    if (-1 == indx) {
+                    if (-1 == indx)
+                    {
                         Game.AllPerks.Add(perkVM);
                     }
                 }
 
                 var groupVM = new PerkGroupVM(this, xmlGroup.Name, perkVMs);
                 int idx = PerkGroups.FindIndex(f => f.Name == groupVM.Name);
-                if (-1 == idx) {
+                if (-1 == idx)
+                {
                     PerkGroups.Add(groupVM);
                 }
             }
         }
 
-        public bool HasPerk(string perkName) {
+        public bool HasPerk(string perkName)
+        {
             var perk = GetPerk(perkName);
             return (null != perk) ? perk.IsOwned : false;
         }
 
-        public void OnPerkAddedOrRemoved(string name, bool isOwned) {
+        public void OnPerkAddedOrRemoved(string name, bool isOwned)
+        {
             // Grants/removes the appropriate bonuses when a perk is added or removed.
             // We do not add stats however since the user can already change them easily.
-            switch (name) {
+            switch (name)
+            {
                 case "Shield Tweaks":
                 case "Shield Booster":
                 case "Attack Drone":
@@ -1834,10 +2168,13 @@ namespace TiTsEd.ViewModel {
         /// Returns the perk with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this perk.
         /// That way, anytime the perk is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public PerkVM GetPerk(string name, string propertyName = null) {
+        public PerkVM GetPerk(string name, string propertyName = null)
+        {
             var perk = Game.AllPerks.First(x => x.Name == name);
-            if (null != perk) {
-                if (null != propertyName) {
+            if (null != perk)
+            {
+                if (null != propertyName)
+                {
                     perk.GameVMProperties.Add(propertyName);
                 }
                 return perk;
@@ -1847,8 +2184,10 @@ namespace TiTsEd.ViewModel {
 
         // Whenever a PerkVM, FlagVM, or StatusVM is modified, it notifies GameVM with those functions so that it updates its dependent properties.
         // See also GetPerk, GetFlag, and GetStatus.
-        public void OnPerkChanged(string name) {
-            foreach (var prop in Game.AllPerks.First(x => x.Name == name).GameVMProperties) {
+        public void OnPerkChanged(string name)
+        {
+            foreach (var prop in Game.AllPerks.First(x => x.Name == name).GameVMProperties)
+            {
                 OnPropertyChanged(prop);
             }
         }
@@ -1857,35 +2196,43 @@ namespace TiTsEd.ViewModel {
 
         #region RawPage
 
-        public AmfObject StatusEffectsArray {
+        public AmfObject StatusEffectsArray
+        {
             get { return GetObj("statusEffects"); }
         }
 
         public List<StatusGroupVM> StatusEffectGroups { get; set; }
 
-        public void UpdateStatusEffects() {
-            if (null == StatusEffectGroups) {
+        public void UpdateStatusEffects()
+        {
+            if (null == StatusEffectGroups)
+            {
                 StatusEffectGroups = new List<StatusGroupVM>();
             }
             var charStatuses = StatusEffectsArray;
-            foreach (var xmlGroup in XmlData.Current.StatusEffectGroups) {
+            foreach (var xmlGroup in XmlData.Current.StatusEffectGroups)
+            {
                 var statusVMs = xmlGroup.StatusEffects.OrderBy(x => x.Name).Select(x => new StatusEffectVM(this, charStatuses, x)).ToArray();
-                foreach (var statusVM in statusVMs) {
+                foreach (var statusVM in statusVMs)
+                {
                     int indx = Game.AllStatusEffects.FindIndex(f => f.Name == statusVM.Name);
-                    if (-1 == indx) {
+                    if (-1 == indx)
+                    {
                         Game.AllStatusEffects.Add(statusVM);
                     }
                 }
 
                 var groupVM = new StatusGroupVM(this, xmlGroup.Name, statusVMs);
                 int idx = StatusEffectGroups.FindIndex(f => f.Name == groupVM.Name);
-                if (-1 == idx) {
+                if (-1 == idx)
+                {
                     StatusEffectGroups.Add(groupVM);
                 }
             }
         }
 
-        public bool HasStatusEffect(string statusEffectName) {
+        public bool HasStatusEffect(string statusEffectName)
+        {
             var statusEffect = GetStatus(statusEffectName);
             return statusEffect != null ? statusEffect.IsOwned : false;
         }
@@ -1894,10 +2241,13 @@ namespace TiTsEd.ViewModel {
         /// Returns the status with the specified name (even if not owned by the character) AND registers a dependency between the caller property and this status.
         /// That way, anytime the status is modified, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public StatusEffectVM GetStatus(string name, string propertyName = null) {
+        public StatusEffectVM GetStatus(string name, string propertyName = null)
+        {
             var status = Game.AllStatusEffects.First(x => x.Name == name);
-            if (null != status) {
-                if (null != propertyName) {
+            if (null != status)
+            {
+                if (null != propertyName)
+                {
                     status.GameVMProperties.Add(propertyName);
                 }
                 return status;
@@ -1905,21 +2255,27 @@ namespace TiTsEd.ViewModel {
             return null;
         }
 
-        public void RemoveStatus(string name) {
+        public void RemoveStatus(string name)
+        {
             var status = GetStatus(name);
-            if (null != status) {
-                if (status.IsOwned) {
+            if (null != status)
+            {
+                if (status.IsOwned)
+                {
                     status.IsOwned = false;
                 }
             }
         }
 
-        public void OnStatusAddedOrRemoved(string name, bool isOwned) {
+        public void OnStatusAddedOrRemoved(string name, bool isOwned)
+        {
             // Grants/removes the appropriate bonuses when a status is added or removed.
             // We do not add stats however since the user can already change them easily.
-            switch (name) {
+            switch (name)
+            {
                 case "Force Fem Gender":
-                    if (isOwned) {
+                    if (isOwned)
+                    {
                         // there can be only one!
                         RemoveStatus("Force It Gender");
                         RemoveStatus("Force Male Gender");
@@ -1929,7 +2285,8 @@ namespace TiTsEd.ViewModel {
                     OnPropertyChanged("IsNeuter");
                     break;
                 case "Force It Gender":
-                    if (isOwned) {
+                    if (isOwned)
+                    {
                         // there can be only one!
                         RemoveStatus("Force Fem Gender");
                         RemoveStatus("Force Male Gender");
@@ -1939,7 +2296,8 @@ namespace TiTsEd.ViewModel {
                     OnPropertyChanged("IsNeuter");
                     break;
                 case "Force Male Gender":
-                    if (isOwned) {
+                    if (isOwned)
+                    {
                         // there can be only one!
                         RemoveStatus("Force Fem Gender");
                         RemoveStatus("Force It Gender");
@@ -1956,8 +2314,10 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public void OnStatusChanged(string name) {
-            foreach (var prop in Game.AllStatusEffects.First(x => x.Name == name).GameVMProperties) {
+        public void OnStatusChanged(string name)
+        {
+            foreach (var prop in Game.AllStatusEffects.First(x => x.Name == name).GameVMProperties)
+            {
                 OnPropertyChanged(prop);
             }
         }

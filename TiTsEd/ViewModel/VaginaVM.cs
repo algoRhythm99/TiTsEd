@@ -4,13 +4,17 @@ using System.Collections.Generic;
 using System.Text;
 using TiTsEd.Model;
 
-namespace TiTsEd.ViewModel {
-    public sealed class VaginaArrayVM : ArrayVM<VaginaVM> {
+namespace TiTsEd.ViewModel
+{
+    public sealed class VaginaArrayVM : ArrayVM<VaginaVM>
+    {
         public VaginaArrayVM(CharacterVM character, AmfObject obj)
-            : base(obj, x => new VaginaVM(character, x)) {
+            : base(obj, x => new VaginaVM(character, x))
+        {
         }
 
-        protected override AmfObject CreateNewObject() {
+        protected override AmfObject CreateNewObject()
+        {
             var obj = new AmfObject(AmfTypes.Object);
 
             obj["type"] = 0;
@@ -44,82 +48,101 @@ namespace TiTsEd.ViewModel {
         }
     }
 
-    public class VaginaVM : ObjectVM {
+    public class VaginaVM : ObjectVM
+    {
         public VaginaVM(CharacterVM character, AmfObject obj)
-            : base(obj) {
+            : base(obj)
+        {
             _character = character;
         }
 
         private CharacterVM _character { get; set; }
 
-        public int Clits {
+        public int Clits
+        {
             get { return GetInt("clits"); }
             set { SetValue("clits", value); }
         }
 
-        public bool Hymen {
+        public bool Hymen
+        {
             get { return GetBool("hymen"); }
-            set {
+            set
+            {
                 SetValue("hymen", value);
                 OnPropertyChanged("Description");
             }
         }
 
-        public double Looseness {
+        public double Looseness
+        {
             get { return GetDouble("loosenessRaw"); }
             set { SetValue("loosenessRaw", value); }
         }
 
-        public double LoosenessMod {
+        public double LoosenessMod
+        {
             get { return GetDouble("loosenessMod"); }
             set { SetValue("loosenessMod", value); }
         }
 
-        public double MinLooseness {
+        public double MinLooseness
+        {
             get { return GetDouble("minLooseness"); }
-            set {
+            set
+            {
                 SetValue("minLooseness", value);
                 OnPropertyChanged("Looseness");
             }
         }
 
-        public double Wetness {
+        public double Wetness
+        {
             get { return GetDouble("wetnessRaw"); }
             set { SetValue("wetnessRaw", value); }
         }
 
-        public double WetnessMod {
+        public double WetnessMod
+        {
             get { return GetDouble("wetnessMod"); }
             set { SetValue("wetnessMod", value); }
         }
 
-        public double BonusCapacity {
+        public double BonusCapacity
+        {
             get { return GetDouble("bonusCapacity"); }
             set { SetValue("bonusCapacity", value); }
         }
 
-        public int ShrinkCounter {
+        public int ShrinkCounter
+        {
             get { return GetInt("shrinkCounter"); }
             set { SetValue("shrinkCounter", value); }
         }
 
-        public string VaginaColor {
+        public string VaginaColor
+        {
             get { return GetString("vaginaColor"); }
-            set {
+            set
+            {
                 SetValue("vaginaColor", value);
                 OnPropertyChanged("Description");
             }
         }
 
-        public string[] VaginaColors {
-            get {
+        public string[] VaginaColors
+        {
+            get
+            {
                 return XmlData.Current.Body.SkinTones;
             }
         }
 
-        public int VaginaType {
+        public int VaginaType
+        {
             get { return GetInt("type"); }
-            set {
+            set
+            {
                 if (value != VaginaType)
                 {
                     SetValue("type", value);
@@ -134,11 +157,11 @@ namespace TiTsEd.ViewModel {
             List<string> defaultFlags = new List<string>();
             switch (vType)
             {
-                case 0: //Human
-                case 1: //Equine
-                case 3: //Canine
-                case 5: //Vulpine 
-                case 6: //Bee
+                case 0:  //Human
+                case 1:  //Equine
+                case 3:  //Canine
+                case 5:  //Vulpine
+                case 6:  //Bee
                 case 10: //Avian
                 case 13: //Naga
                 case 16: //Gooey
@@ -169,32 +192,41 @@ namespace TiTsEd.ViewModel {
         }
 
 
-        public XmlEnum[] VaginaTypes {
-            get {
+        public XmlEnum[] VaginaTypes
+        {
+            get
+            {
                 return XmlData.Current.Body.VaginaTypes;
             }
         }
 
-        public List<FlagItem> VaginaFlags {
+        public List<FlagItem> VaginaFlags
+        {
             get { return getFlagList(GetObj("vagooFlags"), XmlData.Current.Body.VaginaFlags); }
         }
 
-        public List<FlagItem> AssFlags {
+        public List<FlagItem> AssFlags
+        {
             get { return getFlagList(GetObj("vagooFlags"), XmlData.Current.Body.AssFlags); }
         }
 
-        public String Description {
-            get {
+        public String Description
+        {
+            get
+            {
                 string output = "a ";
-                if (Hymen) {
+                if (Hymen)
+                {
                     output += "virgin ";
                 }
 
                 output += VaginaColor + " ";
 
                 string type = "unknown";
-                foreach (var vtype in VaginaTypes) {
-                    if (vtype.ID == VaginaType) {
+                foreach (var vtype in VaginaTypes)
+                {
+                    if (vtype.ID == VaginaType)
+                    {
                         type = vtype.Name.ToLower();
                     }
                 }

@@ -155,6 +155,8 @@ namespace TiTsEd.ViewModel {
                 IsPC = false;
             }
 
+            Character.CharacterName = _characterName;
+
             Character.UpdateKeyItems();
 
             Character.UpdatePerks();
