@@ -864,7 +864,6 @@ namespace TiTsEd.ViewModel
                 case 12: //Lizan
                 case 17: //Kangaroo
                 case 19: //Shark
-                case 20: //Suula
                 case 24: //Kui-tan
                 case 25: //Human Masked
                 case 26: //Mouse
@@ -887,6 +886,7 @@ namespace TiTsEd.ViewModel
                     break;
                 case 3:  //Canine
                 case 4:  //Feline
+                case 20: //Suula
                 case 40: //Panda
                 case 45: //Badger
                 case 71: //Worg
@@ -1299,6 +1299,9 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Paws");
                     break;
+                case 20: //Suula
+                    defaultFlags.Add("Feathered");
+                    break;
             }
             return defaultFlags;
         }
@@ -1415,6 +1418,7 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Hooves");
                     break;
+                case 20: //Suula
                 case 57: //Ovir
                     defaultFlags.Add("Plantigrade");
                     defaultFlags.Add("Scaled");
@@ -1496,7 +1500,6 @@ namespace TiTsEd.ViewModel
                 case 13: //Naga
                 case 17: //Kangaroo
                 case 19: //Shark
-                case 20: //Suula
                 case 21: //Deer
                 case 23: //Tentacle
                 case 26: //Mouse
@@ -1578,6 +1581,10 @@ namespace TiTsEd.ViewModel
                 case 66: //Korgonne
                     defaultFlags.Add("Fluffy");
                     defaultFlags.Add("Furred");
+                    break;
+                case 20: //Suula
+                    defaultFlags.Add("Long");
+                    defaultFlags.Add("Scaled");
                     break;
             }
             return defaultFlags;
