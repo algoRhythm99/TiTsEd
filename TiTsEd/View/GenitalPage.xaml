@@ -38,14 +38,14 @@
 
                 <common:AutoGrid>
 
-                    <TextBlock              Text="Balls" />
+                    <Label                  Content="Balls" />
                     <common:MyNumericBox    Value="{Binding Game.Character.Balls}" />
 
                 </common:AutoGrid>
 
                 <common:AutoGrid Columns="3">
 
-                    <TextBlock              Text="Ball Size" />
+                    <Label                  Content="Ball Size" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.BallSize}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.BallSizeMod}" ToolTip="Modifier" />
 
@@ -53,34 +53,34 @@
 
                 <common:AutoGrid>
 
-                    <TextBlock              Text="Ball Fullness" />
+                    <Label                  Content="Ball Fullness" />
                     <common:MyNumericBox    Value="{Binding Game.Character.BallFullness}" Type="Double" />
 
-                    <TextBlock              Text="Ball Efficiency" />
+                    <Label                  Content="Ball Efficiency" />
                     <common:MyNumericBox    Value="{Binding Game.Character.BallEfficiency}" Type="Double" />
 
-                    <TextBlock              Text="Refractory Rate" />
+                    <Label                  Content="Refractory Rate" />
                     <common:MyNumericBox    Value="{Binding Game.Character.RefractoryRate}" Type="Double" />
 
-                    <TextBlock              Text="Cum Type" />
+                    <Label                  Content="Cum Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.CumType}" ItemsSource="{Binding Data.Body.CumTypes}" />
 
                 </common:AutoGrid>
 
                 <common:AutoGrid Columns="3">
 
-                    <TextBlock              Text="Cum Multiplier" />
+                    <Label                  Content="Cum Multiplier" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.CumMultiplier}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumMultiplierMod}" ToolTip="Modifier" />
 
-                    <TextBlock              Text="Cum Quality" />
+                    <Label                  Content="Cum Quality" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.CumQuality}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.CumQualityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
 
                 <common:AutoGrid>
 
-                    <TextBlock              Text="Cock Virgin" />
+                    <Label                  Content="Cock Virgin" />
                     <CheckBox IsChecked="{Binding Game.Character.CockVirgin}" />
 
                 </common:AutoGrid>
@@ -93,36 +93,36 @@
                     </common:ArrayEditor.ItemTemplate>
                     <StackPanel>
                         <common:AutoGrid>
-                            <TextBlock              Text="Type" />
+                            <Label                  Content="Type" />
                             <common:MyComboBox      SelectedValue="{Binding CockType}" ItemsSource="{Binding CockTypes}" />
 
-                            <TextBlock              Text="Color" />
+                            <Label                  Content="Color" />
                             <ComboBox Text="{Binding CockColor}" ItemsSource="{Binding CockColors}" Style="{StaticResource EditableTextBox}" />
                         </common:AutoGrid>
 
                         <common:AutoGrid Columns="4">
-                            <TextBlock              Text="Length" />
+                            <Label                  Content="Length" />
                             <common:MyNumericBox    Width="155"  Value="{Binding Length}" Type="Double" ToolTip="Base" />
                             <common:MyNumericBox    Width="100"  Value="{Binding LengthMod}" ToolTip="Modifier" />
                             <TextBlock              Width="155"  Text="{Binding LengthTip}" IsEnabled="False" />
 
-                            <TextBlock              Text="Thickness Ratio" />
+                            <Label                  Content="Thickness Ratio" />
                             <common:MyNumericBox    Width="155"  Value="{Binding ThicknessRatio}" Type="Double" ToolTip="Base" />
                             <common:MyNumericBox    Width="100"  Value="{Binding ThicknessRatioMod}" ToolTip="Modifier" />
                             <TextBlock              Width="155"  Text="{Binding ThicknessTip}" IsEnabled="False" />
                         </common:AutoGrid>
 
                         <common:AutoGrid>
-                            <TextBlock              Text="Knot Multiplier" />
+                            <Label                  Content="Knot Multiplier" />
                             <common:MyNumericBox    Value="{Binding KnotMultiplier}" Type="Double" />
 
-                            <TextBlock              Text="Flaccid Multiplier" />
+                            <Label                  Content="Flaccid Multiplier" />
                             <common:MyNumericBox    Value="{Binding FlaccidMultiplier}" Type="Double" />
 
-                            <TextBlock              Text="Pierced" />
+                            <Label                  Content="Pierced" />
                             <CheckBox IsChecked="{Binding Pierced}" />
 
-                            <TextBlock              Text="Virgin" />
+                            <Label                  Content="Virgin" />
                             <CheckBox IsChecked="{Binding Virgin}" />
                         </common:AutoGrid>
                         <Expander Header="Flags">
@@ -139,25 +139,25 @@
                 </Border>
 
                 <common:AutoGrid>
-                    <TextBlock              Text="Girl Cum Type" />
+                    <Label                  Content="Girl Cum Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}" />
                 </common:AutoGrid>
 
                 <common:AutoGrid Columns="3">
 
-                    <TextBlock              Text="Girl Cum Multiplier" />
+                    <Label                  Content="Girl Cum Multiplier" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.GirlCumMultiplier}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.GirlCumMultiplierMod}" ToolTip="Modifier" />
 
-                    <TextBlock              Text="Fertility" />
+                    <Label                  Content="Fertility" />
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
                 <common:AutoGrid>
-                    <TextBlock              Text="Vaginal Virgin" />
+                    <Label                  Content="Vaginal Virgin" />
                     <CheckBox IsChecked="{Binding Game.Character.VaginalVirgin}" />
 
-                    <TextBlock              Text="Clit Length" />
+                    <Label                  Content="Clit Length" />
                     <common:MyNumericBox    Value="{Binding Game.Character.ClitLength}" Type="Double" Unit="inches" />
                 </common:AutoGrid>
                 <common:ArrayEditor Header="Vaginas" Items="{Binding Game.Character.Vaginas}" Capacity="3" MinCapacity="0">
@@ -168,44 +168,44 @@
                     </common:ArrayEditor.ItemTemplate>
                     <StackPanel>
                         <common:AutoGrid>
-                            <TextBlock              Text="Type" />
+                            <Label                  Content="Type" />
                             <common:MyComboBox      SelectedValue="{Binding VaginaType}" ItemsSource="{Binding VaginaTypes}" />
 
-                            <TextBlock              Text="Color" />
+                            <Label                  Content="Color" />
                             <ComboBox Text="{Binding VaginaColor}" ItemsSource="{Binding VaginaColors}" Style="{StaticResource EditableTextBox}" />
 
-                            <TextBlock              Text="Clits" />
+                            <Label                  Content="Clits" />
                             <common:MyNumericBox    Value="{Binding Clits}" Min="1" Lower="1" />
 
                         </common:AutoGrid>
 
                         <common:AutoGrid>
 
-                            <TextBlock              Text="Min Looseness" />
+                            <Label                  Content="Min Looseness" />
                             <common:MyNumericBox    Value="{Binding MinLooseness}" />
 
                         </common:AutoGrid>
 
                         <common:AutoGrid Columns="3">
 
-                            <TextBlock              Text="Looseness" />
+                            <Label                  Content="Looseness" />
                             <common:MyNumericBox    Width="155" Value="{Binding Looseness}" Min="{Binding MinLooseness}" ToolTip="Base" />
                             <common:MyNumericBox    Width="100" Value="{Binding LoosenessMod}" ToolTip="Modifier" />
 
-                            <TextBlock              Text="Wetness" />
+                            <Label                  Content="Wetness" />
                             <common:MyNumericBox    Width="155" Value="{Binding Wetness}" ToolTip="Base" />
                             <common:MyNumericBox    Width="100" Value="{Binding WetnessMod}" ToolTip="Modifier" />
 
                         </common:AutoGrid>
 
                         <common:AutoGrid>
-                            <TextBlock              Text="Bonus Capacity" />
+                            <Label                  Content="Bonus Capacity" />
                             <common:MyNumericBox    Value="{Binding BonusCapacity}" />
 
-                            <TextBlock              Text="Shrink Counter" />
+                            <Label                  Content="Shrink Counter" />
                             <common:MyNumericBox Value="{Binding ShrinkCounter}" />
 
-                            <TextBlock              Text="Hymen" />
+                            <Label                  Content="Hymen" />
                             <CheckBox IsChecked="{Binding Hymen}" />
                         </common:AutoGrid>
                         <Expander Header="Flags">

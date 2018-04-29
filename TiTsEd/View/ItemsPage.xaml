@@ -161,7 +161,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <common:AutoGrid Grid.Column="0" HorizontalAlignment="Center">
-                    <TextBlock              Text="Quantity" Width="Auto" Margin="-26,0,0,0"/>
+                    <Label              Content="Quantity" Width="Auto" Margin="-26,0,0,0"/>
                     <common:MyNumericBox    Value="{Binding Path=SelectedItem.Quantity, ElementName=leftTree}"
                                             Max="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}"
                                             Upper="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}" />
