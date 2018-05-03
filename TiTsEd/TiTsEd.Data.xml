@@ -1211,11 +1211,13 @@
 			<PregnancyType>OvalastingEggPregnancy</PregnancyType>
 			<PregnancyType>OviliumEggPregnancy</PregnancyType>
 			<PregnancyType>PsychicTentacles</PregnancyType>
+			<PregnancyType>RaskvelPregnancy</PregnancyType>
 			<PregnancyType>RenvraEggPregnancy</PregnancyType>
 			<PregnancyType>RenvraFullPregnancy</PregnancyType>
 			<PregnancyType>RiyaPregnancy</PregnancyType>
 			<PregnancyType>RoyalEggPregnancy</PregnancyType>
 			<PregnancyType>SeraSpawnPregnancy</PregnancyType>
+			<PregnancyType>ShekkaPregnancy</PregnancyType>
 			<PregnancyType>SydianPregnancy</PregnancyType>
 			<PregnancyType>VenusPitcherFertilizedSeedCarrier</PregnancyType>
 			<PregnancyType>VenusPitcherSeedCarrier</PregnancyType>
@@ -1348,6 +1350,7 @@
 			<Item Stack="1" Name="R.Bdysuit" ID="classes.Items.Apparel::ReinforcedBodysuit" />
 			<Item Stack="1" Name="R.F.Armor" ID="classes.Items.Apparel::RevealingFemaleArmor" />
 			<Item Stack="1" Name="R.M.Armor" ID="classes.Items.Apparel::RevealingMaleArmor" />
+			<Item Stack="1" Name="ShekkaSuit"   ID="classes.Items.Apparel::ShekkasCatsuit" />
 			<Item Stack="1" Name="Smartclothes" ID="classes.Items.Apparel::Smartclothes">
 				<ItemField Name="shields" Type="int" Value="12" />
 			</Item>
@@ -1428,6 +1431,7 @@
 			<Item Stack="1" Name="Sk.Bra" ID="classes.Items.Apparel::SkullPatternBra" />
 			<Item Stack="1" Name="Featherbra" ID="classes.Items.Apparel::SlepraDownBra" />
 			<Item Stack="1" Name="Sports Bra" ID="classes.Items.Apparel::SportsBra" />
+			<Item Stack="1" Name="W.BkniTop"    ID="classes.Items.Apparel::StrappyWhiteBikiniTop" />
 			<Item Stack="1" Name="Underbust Corset" ID="classes.Items.Apparel::UnderbustCorset" />
 			<Item Stack="1" Name="Undershirt" ID="classes.Items.Apparel::Undershirt" />
 		</ItemGroup>
@@ -1488,7 +1492,9 @@
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3850" />
 			</Item>
+			<Item Stack="1" Name="W.BkniBtm" ID="classes.Items.Apparel::StrappyWhiteBikiniBottom" />
 			<Item Stack="1" Name="ThmUndies" ID="classes.Items.Apparel::ThermalUnderwear" />
+			<Item Stack="1" Name="TightShorts"  ID="classes.Items.Apparel::TightSwimShorts" />
 			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" />
 			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" LongName="Thong HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
@@ -1697,6 +1703,7 @@
 			<Item Stack="1"  Name="M.Milker"    ID="classes.Items.Miscellaneous::MagicMilker" />
 			<Item Stack="1"  Name="MGBK"        ID="classes.Items.Treasures::MiniatureGiantBabyKordiiak" />
 			<Item Stack="10" Name="T.Pack"      ID="classes.Items.Miscellaneous::ThermalPack" />
+			<Item Stack="1"  Name="MW Visor"    ID="classes.Items.Toys::MindwashVisor" />
 		</ItemGroup>
 		<ItemGroup Name="Stories">
 			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BecomingOneOfTheGirls"    LongName="story download code for “Becoming One...”" />
@@ -2009,6 +2016,7 @@
 		</KeyItemGroup>
 		<KeyItemGroup Name="Miscellaneous">
 			<KeyItem Name="Arbetz Travel Agency Membership" />
+			<KeyItem Name="Beach ‘n Surf Lifetime Pass" />
 			<KeyItem Name="Bulky Data-Core" Label1="Actual Price" Value1="2000" />
 			<KeyItem Name="Federation Vibrator" />
 			<KeyItem Name="Frostwyrm Scales" />
@@ -4537,20 +4545,27 @@
 			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Exhibitionist Blurb Cooldown" IsHidden="true" />
 			<StatusEffect Name="Hair Regoo" IsHidden="true" MinutesLeft="720" />
+			<StatusEffect Name="Jesse Bar Cooldown" IsHidden="true" MinutesLeft="1440" />
 			<StatusEffect Name="JuroXLyrallaCooldown" IsHidden="true" />
 			<StatusEffect Name="Kally Cummed Out" IsHidden="true" />
 			<StatusEffect Name="Lieve Disabled" MinutesLeft="180" IsHidden="true" />
+			<StatusEffect Name="LimberTime" IsHidden="true" />
 			<StatusEffect Name="LUND_DICKED_CD" IsHidden="true" />
 			<StatusEffect Name="MAJA_FUCK_RECOVERY" IsHidden="true" />
 			<StatusEffect Name="MufflingsCD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_COMA_CD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_COMA_EMAIL_CD" IsHidden="true" />
+			<StatusEffect Name="PAIGE_KIRO_CHILDHOOD_CD" IsHidden="true" />
+			<StatusEffect Name="PAIGE_KIRO_GOSSIP_CD" IsHidden="true" />
+			<StatusEffect Name="PAIGE_KIRO_PIRACY_CD" IsHidden="true" />
 			<StatusEffect Name="RIYA_CANADIA_CD" IsHidden="true" />
 			<StatusEffect Name="Riya Treat CD" IsHidden="true" MinutesLeft="10080" />
 			<StatusEffect Name="Sera No Sex Cooldown" IsHidden="true" MinutesLeft="120" />
 			<StatusEffect Name="Sera Tease Cooldown" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Sera's TailCock Cooldown" IsHidden="true" MinutesLeft="720" />
+			<StatusEffect Name="SHEKKA_CHEATING_ON_YOU_CD" IsHidden="true" />
 			<StatusEffect Name="Shekka_Cure_CD" IsHidden="true" />
+			<StatusEffect Name="SHEKKA_GYM_CD" IsHidden="true" />
 			<StatusEffect Name="Shekka_Pay_CD" IsHidden="true" />
 			<StatusEffect Name="Shelly Assist Cooldown" IsHidden="true" />
 			<StatusEffect Name="Shelly Leave Egg CD" MinutesLeft="8640" IsHidden="true" />
@@ -4563,6 +4578,7 @@
 			<StatusEffect Name="Tuuva Pooped" IsHidden="true" />
 			<StatusEffect Name="Ula Kiddo Pets Cooldown" IsHidden="true" />
 			<StatusEffect Name="Won Haley's Credits" MinutesLeft="43200" IsHidden="true" />
+			<StatusEffect Name="Yoma Cooldown" IsHidden="true" MinutesLeft="1440" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Endowments">
 			<StatusEffect Name="Egregiously Endowed" Description="Movement between rooms takes twice as long, and fleeing from combat is more difficult." IconName="Icon_Poison" />
@@ -4596,7 +4612,9 @@
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
 			<StatusEffect Name="Afraid of Ula Pussy" IsHidden="true" />
+			<StatusEffect Name="BadgerMindwash" IsHidden="true" />
 			<StatusEffect Name="Bait Beta Nyrea" IsHidden="true" />
+			<StatusEffect Name="Buttfucking Paige" IsHidden="true" />
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Exhibitionism Reserve" Description="Tracker for bonus exhibitionism gains." IconName="LustUp" IsHidden="true" />
 			<StatusEffect Name="Fail Quadomme Diplomacy" IsHidden="true" />
@@ -4610,6 +4628,8 @@
 			<StatusEffect Name="KALLY_SCHLICK" IsHidden="true" />
 			<StatusEffect Name="KallyKiro" IsHidden="true" />
 			<StatusEffect Name="Kara Fuck Alternate Path" IsHidden="true" />
+			<StatusEffect Name="KIRO_FUCKING_PAIGE" IsHidden="true" />
+			<StatusEffect Name="KIRO_FUCKING_PC" IsHidden="true" />
 			<StatusEffect Name="KIRO_TEMP_DISABLED" IsHidden="true" />
 			<StatusEffect Name="Latex Hair" IsHidden="true" />
 			<StatusEffect Name="Latex Skin" Value1="1" IsHidden="true" />
@@ -4617,10 +4637,12 @@
 			<StatusEffect Name="LIAMME_OUTFIT" IsHidden="true" Value1="1" Label1="Liamme's outfit" />
 			<StatusEffect Name="Lightning Moves" Description="Your recent fencing lessons give you an edge during fights." IconName="OffenseUp" MinutesLeft="4320" />
 			<StatusEffect Name="LimberTime" IsHidden="true" />
+			<StatusEffect Name="LucasMindwash" IsHidden="true" />
 			<StatusEffect Name="Milk Paused" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
 			<StatusEffect Name="Nym-Foe Injections" Label1="Hips" Label2="Ass" Label3="Breasts" Label4="Lips" IsHidden="true" />
 			<StatusEffect Name="Orange Myr Sighting Delay" IsHidden="true" MinutesLeft="20160" />
+			<StatusEffect Name="PAIGE_KIRO_COCKPATH" IsHidden="true" />
 			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!&#xA;Minimum lust increased by 20." IconName="LustUp" IconShade="0" />
 			<StatusEffect Name="Perfect Simulant" Description="You were created by the scientists at Steele Tech to be the perfect heir, and as such, your maximum capabilities exceed even those of the luckiest terrans. You walk, talk, breathe, and eat, just like any living creature, even simulating DNA to allow you to emulate the effects of transformative items on true organics." IconName="Icon_Gears_Three" />
 			<StatusEffect Name="Primorditatts Queued" IsHidden="true" />
@@ -4636,9 +4658,13 @@
 			<StatusEffect Name="Seranigans Punishment" IsHidden="true" />
 			<StatusEffect Name="Sexy Costume" Description="The outfit you are wearing is making you feel randier than usual." Value1="10" IconName="LustUp" IconShade="100" />
 			<StatusEffect Name="Sexy Moves" Description="Your recent lessons pay off, you feel as sexy as ever - and it shows." IconName="OffenseUp" MinutesLeft="4320" />
+			<StatusEffect Name="Shekka_Cum_Playing" IsHidden="true" />
 			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!&#xA;Experience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
 			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+			<StatusEffect Name="STELLA_SEX_FATIGUE" IsHidden="true" />
+			<StatusEffect Name="StellaSickOfTalk" IsHidden="true" />
+			<StatusEffect Name="SURFPASS" IsHidden="true" />
 			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
 			<StatusEffect Name="Ula Pussthirst" IsHidden="true" />
@@ -4650,6 +4676,7 @@
 			<StatusEffect Name="Wing Position" IsHidden="true" />
 			<StatusEffect Name="Wool Removal" IsHidden="true" />
 			<StatusEffect Name="Worn Out" Description="You are worn out and and unable to regain energy. Working out is also impossible in this state. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+			<StatusEffect Name="Yoma Sex Disabled" IsHidden="true" />
 			<StatusEffect Name="Zil Sting" Description="Reduces speed and increases libido." Value1="4" IconName="Poison" MinutesLeft="65" IconShade="40" />
 		</StatusEffectGroup>
 	</StatusEffects>
