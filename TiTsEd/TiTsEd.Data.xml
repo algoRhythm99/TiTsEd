@@ -548,7 +548,9 @@
 			<FaceType ID="40" Name="Panda" />
 			<FaceType ID="45" Name="Badger" />
 			<FaceType ID="50" Name="Goat" />
+			<FaceType ID="57" Name="Ovir" />
 			<FaceType ID="66" Name="Korgonne" />
+			<FaceType ID="69" Name="Bothrioc" />
 			<FaceType ID="71" Name="Worg" />
 			<FaceType ID="72" Name="Swine" />
 			<FaceType ID="76" Name="Sheep" />
@@ -674,6 +676,7 @@
 			<EyeType ID="60" Name="Myr" />
 			<EyeType ID="65" Name="Gryvain" />
 			<EyeType ID="66" Name="Korgonne" />
+			<EyeType ID="69" Name="Bothrioc" />
 			<EyeType ID="71" Name="Worg" />
 			<EyeType ID="76" Name="Sheep" />
 			<EyeType ID="80" Name="Adremmalex" />
@@ -755,6 +758,7 @@
 			<TongueType ID="49" Name="Leithan" />
 			<TongueType ID="57" Name="Ovir" />
 			<TongueType ID="66" Name="Korgonne" />
+			<TongueType ID="69" Name="Bothrioc" />
 			<TongueType ID="81" Name="Mothrine" />
 		</TongueTypes>
 		<!-- ================================================================ -->
@@ -838,6 +842,7 @@
 			<ArmType ID="57" Name="Ovir" />
 			<ArmType ID="60" Name="Myr" />
 			<ArmType ID="66" Name="Korgonne" />
+			<ArmType ID="69" Name="Bothrioc" />
 			<ArmType ID="67" Name="Flower" />
 			<ArmType ID="75" Name="Lupine" />
 			<ArmType ID="77" Name="Lesser Panda" />
@@ -894,6 +899,7 @@
 			<LegType ID="60" Name="Myr" />
 			<LegType ID="65" Name="Gryvain" />
 			<LegType ID="66" Name="Korgonne" />
+			<LegType ID="69" Name="Bothrioc" />
 			<LegType ID="72" Name="Swine" />
 			<LegType ID="75" Name="Lupine" />
 			<LegType ID="76" Name="Sheep" />
@@ -979,6 +985,7 @@
 			<TailType ID="60" Name="Myr" />
 			<TailType ID="65" Name="Gryvain" />
 			<TailType ID="66" Name="Korgonne" />
+			<TailType ID="69" Name="Bothrioc" />
 			<TailType ID="72" Name="Swine" />
 			<TailType ID="75" Name="Lupine" />
 			<TailType ID="76" Name="Sheep" />
@@ -1118,6 +1125,7 @@
 			<CockType ID="61" Name="Saurian" />
 			<CockType ID="64" Name="Hradian" />
 			<CockType ID="65" Name="Gryvain" />
+			<CockType ID="69" Name="Bothrioc" />
 			<CockType ID="72" Name="Swine" />
 			<CockType ID="81" Name="Mothrine" />
 		</CockTypes>
@@ -1168,6 +1176,7 @@
 			<VaginaType ID="65" Name="Gryvain" />
 			<VaginaType ID="66" Name="Korgonne" />
 			<VaginaType ID="67" Name="Flower" />
+			<VaginaType ID="69" Name="Bothrioc" />
 			<VaginaType ID="72" Name="Swine" />
 			<VaginaType ID="74" Name="Mouthgina" />
 		</VaginaTypes>
@@ -2589,6 +2598,9 @@
 		<Flag Name="CARRIE_SMALLCOCK_SUX" />
 		<Flag Name="CARRY_TRAINING_BONUS_PROC" />
 		<Flag Name="CARRY_TRAINING_TIMES" />
+		<Flag Name="CARVER_DEL_TALK" />
+		<Flag Name="CARVER_HANDJOBBED_U" />
+		<Flag Name="CARVER_TARKUS_TALK" />
 		<Flag Name="CATNIP_USED" />
 		<Flag Name="CELISE_BEDSTUFF_HAPPENED" />
 		<Flag Name="CELISE_EVER_SENT_AWAY" />
@@ -2671,10 +2683,11 @@
 		<Flag Name="DECK13_TAKEN_RIFLE" />
 		<Flag Name="DEEPTHROATED_BRYNN" />
 		<Flag Name="DEEP_CAVES_TAXI_UNLOCKED" />
-		<Flag Name="DEERTAUR_GLORYHOLED" />
+		<Flag Name="DEERTAUR_GLORYHOLED" Description="Number of times you've gloryholed the deertaur" />
 		<Flag Name="DELAY_TAXES_ADDITION" />
 		<Flag Name="DEL_DISTRACT" />
 		<Flag Name="DEL_FACESAT" />
+		<Flag Name="DEL_HORSE_OFFERED" />
 		<Flag Name="DEL_TAIL_TRAINED" />
 		<Flag Name="DICKFUCKED_CAPN_KHORGAN" />
 		<Flag Name="DIDNT_ENGAGE_RIVAL_ON_MHENGA" />
@@ -2936,7 +2949,7 @@
 		<Flag Name="GIL_SEEN_BIGCLIT" />
 		<Flag Name="GIL_UPPER_BODY_REVEAL" />
 		<Flag Name="GIVEN_GIANNA_SILICONE" />
-		<Flag Name="GLORYHOLED_KAEDE" />
+		<Flag Name="GLORYHOLED_KAEDE"   Description="Counts time gloryholed Kaede" />
 		<Flag Name="GLORYHOLE_MOUNTER" />
 		<Flag Name="GLORYHOLE_SERVER" />
 		<Flag Name="GOBBLES_2014_EDITION" />
@@ -3047,12 +3060,29 @@
 		<Flag Name="JERYNN_RESPONSE_SKIN" />
 		<Flag Name="JERYNN_RESPONSE_VOICE" />
 		<Flag Name="JERYNN_UNDERSLUNG_RIDES" />
+		<Flag Name="JESSE_PC_TITLE"         Description="0 = pc.name&#xD;&#xA;1 = Mister/Miss Steele" />
+		<Flag Name="JESSE_PC_TITLE_SEX"     Description="0 = pc.name&#xD;&#xA;1 = Mister/Miss Steele&#xD;&#xA;2 = Sir/Madam" />
+		<Flag Name="JESSE_TEASE_STATE"      Description="0 = hasnt accesses the tease scenes&#xD;&#xA;1 = first scene played&#xD;&#xA;2 = second scene played" />
+		<Flag Name="JESSE_TALK_HER"         Description="1 = Talked about Jesse" />
+		<Flag Name="JESSE_TALK_INTERESTS"   Description="1 = Talked about her interests" />
+		<Flag Name="JESSE_TALK_WORK"        Description="1 = Talked about her work" />
+		<Flag Name="JESSE_TALK_PRUDE"       Description="1 = Talked about her prudeness" />
+		<Flag Name="JESSE_TALK_BODY"        Description="1 = Talked about her body" />
+		<Flag Name="JESSE_TIMES_SEXED"      Description="times the PC accessed the sex menu/had sex" />
+		<Flag Name="JESSE_TIMES_RP"         Description="times the PC had the roleplay sex scene with jesse" />
+		<Flag Name="JESSE_TIMES_COWGIRL"    Description="times the PC had the reverse cowgirl sex scene with jesse" />
+		<Flag Name="JESSE_TIMES_FACE"       Description="times the PC had the face sex scene with jesse" />
+		<Flag Name="JESSE_TIMES_TRICKS"     Description="times the PC had the bag o tricks sex scene with jesse" />
+		<Flag Name="JESSE_TIMES_TRAP"       Description="times the PC had the trap fun sex scene with jesse" />
+		<Flag Name="JESSE_TIMES_REVERSAL"   Description="times the PC had the role reversal sex scene with jesse" />
 		<Flag Name="JULIANS_QUEST_DISABLED" />
 		<Flag Name="JUNGLE_STEP" />
 		<Flag Name="JURO_LYRALLA_CLOSET_SEEN" />
-		<Flag Name="KAEDE_CANADA_MET" />
+		<Flag Name="KAEDE_CANADA_MET" Description="has met her on station." />
 		<Flag Name="KAEDE_CS_COUNTDOWN" />
+		<Flag Name="KAEDE_DEL_TRAINING" />
 		<Flag Name="KAEDE_ENCOUNTERSEX_UVETO_OVERRIDE" />
+		<Flag Name="KAEDE_EXHIBITIONISM" />
 		<Flag Name="KAEDE_FUCKED" />
 		<Flag Name="KAEDE_MET_ON_UVETO" />
 		<Flag Name="KAEDE_MYRELLION_ENCOUNTER" />
@@ -3072,11 +3102,11 @@
 		<Flag Name="KARA_PAID_YOU" />
 		<Flag Name="KASE_INTRO" Description="1 if player has met Kase at the bar and knows his name" />
 		<Flag Name="KASE_TIMER" Description="timestamp of when player first meets Kase at bar, after 1 week he gone 5evar" />
-		<Flag Name="KASE_CREW" Description="1 if Kase is a new crew member, 2 if crew member, 0 if evicted" />
+		<Flag Name="KASE_CREW" Description="1 if Kase is a new crew member&#xD;&#xA;2 if crew member&#xD;&#xA;0 if evicted" />
 		<Flag Name="KASE_STRESS" Description="1 if PC gave Kase stress relief this encounter" />
 		<Flag Name="KASE_JOB" Description="1 if talked to Kase about jobs" />
 		<Flag Name="KASE_MATHED" />
-		<Flag Name="KASE_OUTFIT" Description="0 for Pyrite outfit, 1 for SteeleTech outfit" />
+		<Flag Name="KASE_OUTFIT" Description="0 for Pyrite outfit&#xD;&#xA;1 for SteeleTech outfit" />
 		<Flag Name="KASE_HEALED" Description="1 if his arm is healed" />
 		<Flag Name="KASE_SEXED" Description="number of times done sex stuff with Kase" />
 		<Flag Name="KASE_3SUM_ANNO" Description="number of times done the Anno 3some" />
@@ -3134,14 +3164,16 @@
 		<Flag Name="KIRO_INCEST_TEASED" Description="1 == You've made Kiro admit she wants her sister" />
 		<Flag Name="KIRO_INTERRUPT_KALLYBEEJ" Description="1 == Kiro has interrupted your bimbo suckoff of Kally" />
 		<Flag Name="KIRO_KALLY_BOASTED" Description="1 == You boasted about Kiro's sexual prowess to Kally" />
+		<Flag Name="KIRO_KALLY_EMAIL"   Description="Timestamp of Kally email" />
 		<Flag Name="KIRO_KALLY_PICARDINE_QUEST" Description="-2 == Kally knows the truth but is keeping it a secret&#xD;&#xA;-1 == You decided not to discuss it&#xD;&#xA;undefined/0 == Not started&#xD;&#xA;1 == You told Kiro to tell the truth&#xD;&#xA;2 == You told Kiro Kally would feel loved&#xD;&#xA;3 == You told Kally and she kissed Kiro" />
+		<Flag Name="KIRO_KALLY_TEAM_MILKED" />
 		<Flag Name="KIRO_KALLY_THREESOMES" Description="Number of times you've had a threesome with Kiro and Kally" />
 		<Flag Name="KIRO_MET_KALLY" Description="0 == Kiro hasn't met Kally yet&#xD;&#xA;1 == Airlock discussion&#xD;&#xA;2 = Hallway discussion&#xD;&#xA;3 == Outside the bar&#xD;&#xA;4 == Introductions complete" />
 		<Flag Name="KIRO_NUN_NUMBER" />
 		<Flag Name="KIRO_ORGIED" Description="Number of times you've gone to the orgy with Kiro" />
 		<Flag Name="KIRO_ORGY_DATE" Description="Last day number that you went to the orgy with Kiro" />
 		<Flag Name="KIRO_OTHER_SIBLINGS" />
-		<Flag Name="KIRO_PHONE_EVENT" />
+		<Flag Name="KIRO_PHONE_EVENT" Description="1 = WINGMANNED AND SENT TO RECIPIENT.&#xD;&#xA;2 = SENT TO KALLY!&#xD;&#xA;-1 = FUCKED THIS SHIT, YOU'RE OUT."/>
 		<Flag Name="KIRO_ROUGH_BUTTFUCK" Description="Number of times Kiro has owned your ass" />
 		<Flag Name="KIRO_TRUST" Description="How much Kiro trusts you" />
 		<Flag Name="KIRO_X_SAEN_HAPPENED" Description="1 == You've had a threesome with Kiro and Saendra" />
@@ -3317,6 +3349,7 @@
 		<Flag Name="LOST_TO_DANE_ON_MHENGA" />
 		<Flag Name="LOST_TO_MYR_DESERTS" />
 		<Flag Name="LOST_TO_SHADE_WITH_KARA" />
+		<Flag Name="LUCAS_MINDWASH" />
 		<Flag Name="LYRALLA_AND_JURO_RELATIONSHIP_HINTED_AT" />
 		<Flag Name="LYRALLA_DISCUSSED_HER_QUEEN" />
 		<Flag Name="LYRALLA_JOB_TALK" />
@@ -3354,6 +3387,7 @@
 		<Flag Name="MET_AURORA" Description="1 == You've met Aurora" />
 		<Flag Name="MET_BEA_HUBBY" Description="1 == You've met Bea's husband" />
 		<Flag Name="MET_BELLE" />
+		<Flag Name="MET_BETH_CARVER" />
 		<Flag Name="MET_BIG_T" Description="1 == You've met Big T" />
 		<Flag Name="MET_BRANDY" />
 		<Flag Name="MET_BRILLIG" Description="1 == You've met Brillig" />
@@ -3380,7 +3414,7 @@
 		<Flag Name="MET_DALLY" Description="1 == You've met Dally" />
 		<Flag Name="MET_DANE" Description="1 == You've met Dane" />
 		<Flag Name="MET_DEL" Description="1 == You've met Del" />
-		<Flag Name="MET_DEL_SHEMALE" />
+		<Flag Name="MET_DEL_SHEMALE" Description="1 == You've met shemale Del" />
 		<Flag Name="MET_DR_BADGER" Description="1 == You've met Dr Badger" />
 		<Flag Name="MET_DR_HASWELL" Description="1 == You've met Dr Haswell" />
 		<Flag Name="MET_DR_LASH" Description="1 == You've met Dr Lash" />
@@ -3422,6 +3456,7 @@
 		<Flag Name="MET_JAMES" />
 		<Flag Name="MET_JEROME" Description="1 == You've met Jerome" />
 		<Flag Name="MET_JERYNN" />
+		<Flag Name="MET_JESSE" Description="undefined = hasnt meet her&#xD;&#xA;0 = pc left when she got angry&#xD;&#xA;1 = give access to her menu" />
 		<Flag Name="MET_JURO" Description="1 == You've met Ambassador Juro" />
 		<Flag Name="MET_KAEDE" Description="1 == You've met Kaede" />
 		<Flag Name="MET_KALLY" Description="1 == You've met Kally" />
@@ -3439,6 +3474,7 @@
 		<Flag Name="MET_LIEVE" Description="1 == You've met Lieve" />
 		<Flag Name="MET_LILIANA" Description="1 == You've met Liliana" />
 		<Flag Name="MET_LOLA" Description="1 == You've met Lola" />
+		<Flag Name="MET_LUCA" />
 		<Flag Name="MET_LYRALLA" Description="1 == You've met Lyralla" />
 		<Flag Name="MET_MABBS" />
 		<Flag Name="MET_MALE_RASKVEL_GANG" Description="Number of times you've encountered the male Raskvel gang" />
@@ -3493,6 +3529,7 @@
 		<Flag Name="MET_VANAE_MAIDEN" Description="Number of times you've encountered a Vanae maiden" />
 		<Flag Name="MET_VARMINT" Description="Number of times you've encountered a varmint" />
 		<Flag Name="MET_VARMINT_PACK" Description="Number of times you've encountered a varmint pack" />
+		<Flag Name="MET_VESPERIAN_DEL" Description="1 = Met Del on Vesperia" />
 		<Flag Name="MET_VI" Description="1 == You've met Vi" />
 		<Flag Name="MET_VKO" Description="1 == You've met V-Ko" />
 		<Flag Name="MET_WALT" />
@@ -3999,7 +4036,18 @@
 		<Flag Name="SHADE_TALKED_ABOUT_LIGHTNING" />
 		<Flag Name="SHADE_TALKED_ABOUT_MODS" />
 		<Flag Name="SHADE_XMAS" Description="Year you last had xmas fun with Shade" />
+		<Flag Name="SHEKKA_ANNO_NERDOFF" />
+		<Flag Name="SHEKKA_ONBOARD" />
+		<Flag Name="SHEKKA_BEEN_MYRELLION" />
+		<Flag Name="SHEKKA_BEEN_NT" />
+		<Flag Name="SHEKKA_BEEN_TAVROS" />
+		<Flag Name="SHEKKA_BEEN_UVETO" />
+		<Flag Name="SHEKKA_RECRUITED" />
 		<Flag Name="SHEKKA_SCRAP_DISABLED" Description="1 == Shekka's shop is not available" />
+		<Flag Name="SHEKKA_SLEEPWITH_INTRODUCED" />
+		<Flag Name="SHEKKA_SPIT_ADDICTION" />
+		<Flag Name="SHEKKA_SPIT_TIME" />
+		<Flag Name="SHEKKA_SPITDICTED" />
 		<Flag Name="SHEKKA_TALKED_HERSELF" Description="1 == You've talked to Shekka about herself" />
 		<Flag Name="SHEKKA_TALKED_HERSHOP" Description="1 == You've talked to Shekka about her shop" />
 		<Flag Name="SHEKKA_TALKED_NOVAHOME" Description="1 == You've talked to Shekka about Novahome" />
@@ -4020,6 +4068,7 @@
 		<Flag Name="SIERVA_LATEGOODBYE_RESPONSE" />
 		<Flag Name="SIERVA_TALK" />
 		<Flag Name="SILENCE_RESCUED_CONNIE" />
+		<Flag Name="SIMM_PATH" Description="A or B"/>
 		<Flag Name="SIMONE_TEASED" />
 		<Flag Name="SISTER_MILK_ACT" Description="Milk multiplier" />
 		<Flag Name="SIXTYNINED_GIANNA" />
@@ -4240,6 +4289,14 @@
 		<Flag Name="USED_GUSH" />
 		<Flag Name="USED_MILKER" />
 		<Flag Name="USED_NURSERY_COMPUTER" />
+		<Flag Name="USHA_MET3"      Description="1 if met Ushamee in Room 3" />
+		<Flag Name="USHA_STATE"     Description="1 == LoverChief&#xD;&#xA;2 == ChiefWantsItBad" />
+		<Flag Name="USHA_SEXED"     Description="0-INFINITY&#xD;&#xA;undefined if never sexed" />
+		<Flag Name="USHA_BUMLOVE"   Description="0-INFINITY&#xD;&#xA;undefined if never put it in her bum" />
+		<Flag Name="USHA_VAG"       Description="0-INFINITY&#xD;&#xA;undefined if never been in her pussy" />
+		<Flag Name="USHA_ORAL"      Description="0-INFINITY&#xD;&#xA;undefined if never done the ol’ lickaroo" />
+		<Flag Name="USHA_MOUNT"     Description="0-INFINITY&#xD;&#xA;undefined if never been on top of her" />
+		<Flag Name="USHA_DATE"      Description="1-2, last date went on with Usha&#xD;&#xA;undefined if never dated Usha" />
 		<Flag Name="UTHRA HARVEST DAY" />
 		<Flag Name="UVETOCOAST_STEP" />
 		<Flag Name="UVETO_ELEVATORED" />
@@ -4285,6 +4342,7 @@
 		<Flag Name="VI_PUSSY_TAKEN" />
 		<Flag Name="VI_SEXED" />
 		<Flag Name="VI_TITFUCKED" />
+		<Flag Name="VR_SIMMED" />
 		<Flag Name="WALT_HIMSELF" />
 		<Flag Name="WALT_LICK_EXHIBITIONISM" />
 		<Flag Name="WALT_SEXED" />
@@ -4326,6 +4384,16 @@
 		<Flag Name="YARASTA_THOLLUM_TALKED" />
 		<Flag Name="YOGA_HARD" />
 		<Flag Name="YOGA_MEDIUM" />
+		<Flag Name="YOMA_MET" />
+		<Flag Name="YOMA_SEEN_NAKED" />
+		<Flag Name="YOMA_TIMES_ORALED" />
+		<Flag Name="YOMA_TIMES_EATEN_OUT" />
+		<Flag Name="YOMA_TIMES_VAGINAL" />
+		<Flag Name="YOMA_TIMES_TAILFUCKED" />
+		<Flag Name="YOMA_TALKED_ABOUT_HIMSELF" />
+		<Flag Name="YOMA_TALKED_ABOUT_MASTER" />
+		<Flag Name="YOMA_GAMES_PLAYED" />
+		<Flag Name="YOMA_AVAIBLE_ENEMIES" />
 		<Flag Name="ZAALT DISARMED" />
 		<Flag Name="ZAALT FLIRTED" />
 		<Flag Name="ZAALT_DISABLED" />
