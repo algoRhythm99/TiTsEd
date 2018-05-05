@@ -2272,6 +2272,7 @@
 		</PerkGroup>
 		<PerkGroup Name="General">
 			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
+			<Perk Name="Corrupted" Description="Increases your maximum libido but prevents the loss of taint." />
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="Cum Quantity" Value1="500000" />
 			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
 			<Perk Name="Fixed MilkQ" Comment="Ensures you always lactate exactly {Value1} mLs. See Value1" Label1="Lactation Quantity" Value1="500000" />
@@ -4571,6 +4572,7 @@
 			<StatusEffect Name="Shelly Leave Egg CD" MinutesLeft="8640" IsHidden="true" />
 			<StatusEffect Name="Sleep Fapnea Dream" IsHidden="true" />
 			<StatusEffect Name="SYLVIE WORKING" IsHidden="true" />
+			<StatusEffect Name="Taint_CD" MinutesLeft="4320" IsHidden="true" />
 			<StatusEffect Name="Tapped Kally" IsHidden="true" IconName="Icon_Wine" MinutesLeft="1000" />
 			<StatusEffect Name="The Lusty Ausar Maid" IsHidden="true" MinutesLeft="1440" />
 			<StatusEffect Name="Tickled Pink" IsHidden="true" />

@@ -247,11 +247,11 @@ namespace TiTsEd.ViewModel {
             return _obj[key];
         }
 
-        public double GetDouble(object key) {
-            return _obj.GetDouble(key);
+        public double GetDouble(object key, double? defaultValue = 0)  {
+            return _obj.GetDouble(key, defaultValue);
         }
 
-        public int GetInt(object key, int? defaultValue = null) {
+        public int GetInt(object key, int? defaultValue = 0) {
             return _obj.GetInt(key, defaultValue);
         }
 
@@ -259,8 +259,8 @@ namespace TiTsEd.ViewModel {
             return _obj.GetString(key);
         }
 
-        public bool GetBool(object key) {
-            return _obj.GetBool(key);
+        public bool GetBool(object key, bool? defaultValue = false) {
+            return _obj.GetBool(key, defaultValue);
         }
 
         public AmfObject GetObj(object key) {

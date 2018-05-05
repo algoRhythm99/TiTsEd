@@ -551,8 +551,24 @@ namespace TiTsEd.ViewModel
                 {
                     max += (int)perk.Value1;
                 }
+                if (HasPerk("Corrupted") && (100 + max < 200))
+                {
+                    max = 200;
+                }
                 return max;
             }
+        }
+
+        public double Taint
+        {
+            get { return GetDouble("_taintRaw"); }
+            set { SetValue("_taintRaw", value); }
+        }
+
+        public double TaintMod
+        {
+            get { return GetDouble("taintMod"); }
+            set { SetValue("taintMod", value); }
         }
 
         public double Energy
