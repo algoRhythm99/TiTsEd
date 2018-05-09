@@ -561,8 +561,8 @@ namespace TiTsEd.ViewModel
 
         public double Taint
         {
-            get { return GetDouble("_taintRaw"); }
-            set { SetValue("_taintRaw", value); }
+            get { return GetDouble("taintRaw"); }
+            set { SetValue("taintRaw", value); }
         }
 
         public double TaintMod
