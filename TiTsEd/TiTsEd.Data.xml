@@ -1128,6 +1128,7 @@
 			<CockType ID="69" Name="Bothrioc" />
 			<CockType ID="72" Name="Swine" />
 			<CockType ID="81" Name="Mothrine" />
+			<CockType ID="82" Name="Frostwyrm" />
 		</CockTypes>
 		<!-- ================================================================ -->
 		<CockFlags>
@@ -1179,6 +1180,7 @@
 			<VaginaType ID="69" Name="Bothrioc" />
 			<VaginaType ID="72" Name="Swine" />
 			<VaginaType ID="74" Name="Mouthgina" />
+			<VaginaType ID="82" Name="Frostwyrm" />
 		</VaginaTypes>
 		<!-- ================================================================ -->
 		<VaginaFlags>
@@ -1213,6 +1215,7 @@
 			<PregnancyType>DeepQueenPregnancy</PregnancyType>
 			<PregnancyType>EggTrainerCarryTraining</PregnancyType>
 			<PregnancyType>EggTrainerFauxPreg</PregnancyType>
+			<PregnancyType>FrostwyrmPregnancy</PregnancyType>
 			<PregnancyType>KorgonnePregnancy</PregnancyType>
 			<PregnancyType>LapinaraPregnancy</PregnancyType>
 			<PregnancyType>MilodanPregnancy</PregnancyType>
@@ -1334,6 +1337,12 @@
 			<Item Stack="1" Name="MaidO." ID="classes.Items.Apparel::MaidOutfit" />
 			<Item Stack="1" Name="Maid U." ID="classes.Items.Apparel::MaidUniform" />
 			<Item Stack="1" Name="M.Doctor" ID="classes.Items.Apparel::MaleDoctorOutfit" />
+			<Item Stack="1" Name="CowCost."     ID="classes.Items.Apparel::MitziCowFetishCostume" />
+			<Item Stack="1" Name="M.Dress"      ID="classes.Items.Apparel::MitzisDress" />
+			<Item Stack="1" Name="Lib.Outft"    ID="classes.Items.Apparel::MitzisLibrarianOutfit" />
+			<Item Stack="1" Name="NunCost."     ID="classes.Items.Apparel::MitziNunFetishCostume" />
+			<Item Stack="1" Name="SlutBkni"     ID="classes.Items.Apparel::MitzisSuccBikini" />
+			<Item Stack="1" Name="YogaBik"      ID="classes.Items.Apparel::MitzisYogaBikini" />
 			<Item Stack="1" Name="NurseO." ID="classes.Items.Apparel::NurseOutfit" />
 			<Item Stack="1" Name="O.Swimsuit" ID="classes.Items.Apparel::OnePieceSwimsuit" />
 			<Item Stack="1" Name="PeasantDress" ID="classes.Items.Apparel::PeasantDress" />
@@ -1370,8 +1379,8 @@
 			<Item Stack="1" Name="ThmJacket" ID="classes.Items.Apparel::ThermalJacket" />
 			<Item Stack="1" Name="T.Zipsuit" ID="classes.Items.Apparel::TransparentZipsuit" />
 			<Item Stack="1" Name="T.Armor" ID="classes.Items.Apparel::TrashArmor" />
-			<Item Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" />
-			<Item Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" />
+			<Item Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" Comment="Debug Item" />
+			<Item Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" LongName="TS-T armor plating mark II" Comment="Debug Item" />
 			<Item Stack="1" Name="AZA Suit" ID="classes.Items.Armor::ArmstrongSuitBlue">
 				<ItemField Name="shields" Type="int" Value="4" />
 			</Item>
@@ -1398,6 +1407,7 @@
 			<Item Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
 			<Item Stack="1" Name="Void Plates" ID="classes.Items.Armor::VoidPlateArmor" />
 			<Item Stack="1" Name="I.Coat" ID="classes.Items.Armor::InsulatedCoat" />
+			<Item Stack="1" Name="RattyArmor"   ID="classes.Items.Armor::RattyArmor" />
 			<Item Stack="1" Name="S.Parka" ID="classes.Items.Armor::SleekParka" />
 			<Item Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
 			<Item Stack="1" Name="WM Dress" ID="classes.Items.Armor::WeavemailDress" />
@@ -1488,6 +1498,7 @@
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3040" />
 			</Item>
+			<Item Stack="1" Name="Sav.Panty"    ID="classes.Items.Apparel::SavicitePanties" />
 			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" />
 			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" LongName="Shibari Bottom HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
@@ -1515,14 +1526,15 @@
 		<ItemGroup Name="Combat">
 			<Item Stack="2"  Name="AphroD."  ID="classes.Items.Combat::AphroDaisy" />
 			<Item Stack="5"  Name="Crystal S."  ID="classes.Items.Combat::CrystalShard" />
+			<Item Stack="2"  Name='"Rutting"'   ID="classes.Items.Combat::RuttingPerfume" />
 			<Item Stack="10" Name="EMP Gren."   ID="classes.Items.Miscellaneous::EMPGrenade" />
 			<Item Stack="10" Name="Flashbang"   ID="classes.Items.Miscellaneous::FlashGrenade" />
 			<Item Stack="5"  Name="Lustoxin"    ID="classes.Items.Miscellaneous::Lustoxin" />
 			<Item Stack="10" Name="OS StimBoost"    ID="classes.Items.Miscellaneous::OSStimBoost" />
 			<Item Stack="5"  Name="S.Booster"   ID="classes.Items.Miscellaneous::ShieldBooster" />
 			<Item Stack="5"  Name="S.Boost M2"  ID="classes.Items.Recovery::ShieldBoosterMkII" />
-			<Item Stack="10" Name="T.Gren"      ID="classes.Items.Miscellaneous::TestGrenade" />
-			<Item Stack="10" Name="HP Boost"    ID="classes.Items.Miscellaneous::TestHPBooster" />
+			<Item Stack="10" Name="T.Gren"      ID="classes.Items.Miscellaneous::TestGrenade" Comment="Debug Item" />
+			<Item Stack="10" Name="HP Boost"    ID="classes.Items.Miscellaneous::TestHPBooster" Comment="Debug Item" />
 			<Item Stack="1"  Name="H.Bubble"    ID="classes.Items.Toys.Bubbles::HugeCumBubble" />
 			<Item Stack="5"  Name="L.Bubble"    ID="classes.Items.Toys.Bubbles::LargeCumBubble" />
 			<Item Stack="10" Name="M.Bubble"    ID="classes.Items.Toys.Bubbles::MediumCumBubble" />
@@ -1678,6 +1690,7 @@
 			<Item Stack="10" Name="R.Panda+"    ID="classes.Items.Transformatives::RedPandaneen" />
 			<Item Stack="10" Name="R.PandaPro+" ID="classes.Items.Transformatives::RedPandaPro" />
 			<Item Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
+			<Item Stack="5"  Name="ReductPro"   ID="classes.Items.Miscellaneous::ReductPro" />
 			<Item Stack="10" Name="R.Made" ID="classes.Items.Transformatives::RubberMade" />
 			<Item Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
 			<Item Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
@@ -1697,6 +1710,7 @@
 			<Item Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
 			<Item Stack="10" Name="Deerium" ID="classes.Items.Transformatives::TauricoVenidae" />
 			<Item Stack="10" Name="Tentacool" ID="classes.Items.Transformatives::Tentacool" />
+			<Item Stack="10" Name="ThicShake" ID="classes.Items.Transformatives::ThiccNShake" />
 			<Item Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
 			<Item Stack="10" Name="Uthra+" ID="classes.Items.Transformatives::UthraPlus" />
 			<Item Stack="10" Name="Virection" ID="classes.Items.Transformatives::Virection" />
@@ -1705,6 +1719,7 @@
 			<Item Stack="10" Name="A.Cock"      ID="classes.Items.Miscellaneous::ACock" />
 			<Item Stack="10" Name="A.D.Cock"    ID="classes.Items.Miscellaneous::ADCock" />
 			<Item Stack="10" Name="A.H.Cock"    ID="classes.Items.Miscellaneous::AHCock" />
+			<Item Stack="1"  Name="BrandyNote"  ID="classes.Items.Miscellaneous::BrandyLetter" />
 			<Item Stack="1"  Name="ClimbKit"    ID="classes.Items.Miscellaneous::ClimbingKit" />
 			<Item Stack="10" Name="Fish.Rod"    ID="classes.Items.Miscellaneous::FishingRod" />
 			<Item Stack="10" Name="Horse-Cock"  ID="classes.Items.Miscellaneous::HorseCock" />
@@ -1729,6 +1744,7 @@
 			<Item Stack="1" Name="B.Buddy"  ID="classes.Items.Toys::BubbleBuddy" />
 			<Item Stack="1" Name="G.Cuffs"  ID="classes.Items.Toys::GravCuffs" />
 			<Item Stack="1" Name="H.Hole"   ID="classes.Items.Toys::HoverHole" />
+			<Item Stack="1" Name="M B.Hole" ID="classes.Items.Toys::MitziBionaHole" />
 			<Item Stack="1" Name="N.B.Hole" ID="classes.Items.Toys::NivasBionaHole" />
 			<Item Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
 			<Item Stack="1" Name="SukMastr" ID="classes.Items.Toys::SukMastr" />
@@ -1738,6 +1754,7 @@
 			<Item Stack="1" Name="B.Rapier" ID="classes.Items.Melee::BothriocRapier" />
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
 			<Item Stack="1" Name="Cutlass" ID="classes.Items.Melee::Cutlass" />
+			<Item Stack="1" Name="D.Flash" ID="classes.Items.Melee::DancingFlashblade" />
 			<Item Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" LongName="Emmy's Jolthammer" />
 			<Item Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" LongName="Emmy's Lava Saber">
 				<ItemField Name="shields" Type="int" Value="5" />
@@ -1755,6 +1772,10 @@
 			<Item Stack="1" Name="M.Pick" ID="classes.Items.Melee::MilitaryPick" />
 			<Item Stack="1" Name="M.Saber" ID="classes.Items.Melee::MonofilamentSaber" />
 			<Item Stack="1" Name="N.Spear" ID="classes.Items.Melee::NyreanSpear" />
+			<Item Stack="1" Name="PhasicWhipM" ID="classes.Items.Melee::PetraMerc" />
+			<Item Stack="1" Name="PhasicWhipS" ID="classes.Items.Melee::PetraSmuggler" />
+			<Item Stack="1" Name="PhasicWhipT" ID="classes.Items.Melee::PetraTech" />
+			<Item Stack="1" Name="PhasicWhip"  ID="classes.Items.Melee::PetraWhip" />
 			<Item Stack="1" Name="P.Hawk" ID="classes.Items.Melee::PlasmaHawk" />
 			<Item Stack="1" Name="P.Talons" ID="classes.Items.Melee::PredatorTalons" />
 			<Item Stack="1" Name="Wrench" ID="classes.Items.Melee::RaskvelWrench" />
@@ -1814,6 +1835,7 @@
 			<Item Stack="1" Name="Hammer C." ID="classes.Items.Guns::HammerCarbine" />
 			<Item Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistol" />
 			<Item Stack="1" Name="Hammer Pstl." ID="classes.Items.Guns::HammerPistolScavenged" />
+			<Item Stack="1" Name="H.Cannon"     ID="classes.Items.Guns::HandCannon" />
 			<Item Stack="1" Name="HL Bow"       ID="classes.Items.Guns::HardlightBow" />
 			<Item Stack="1" Name="HL Rifle"     ID="classes.Items.Guns::HardlightRifle" />
 			<Item Stack="1" Name="Hirudo"       ID="classes.Items.Guns::Hirudo">
@@ -1826,6 +1848,7 @@
 			<Item Stack="1" Name="KorgBow" ID="classes.Items.Guns::KorgGreatBow" />
 			<Item Stack="1" Name="Laser C." ID="classes.Items.Guns::LaserCarbine" />
 			<Item Stack="1" Name="LaserPistol" ID="classes.Items.Guns::LaserPistol" />
+			<Item Stack="1" Name="L.Cann" ID="classes.Items.Guns::LashCannon" />
 			<Item Stack="1" Name="Mag.Pistol" ID="classes.Items.Guns::MagnumPistol" />
 			<Item Stack="1" Name="Myr Bow" ID="classes.Items.Guns::MyrBow" />
 			<Item Stack="1" Name="M.Rifle" ID="classes.Items.Guns::MyrRifle" />
@@ -1849,7 +1872,7 @@
 			<Item Stack="1" Name="Spitter" ID="classes.Items.Guns::SpitterPistol" />
 			<Item Stack="1" Name="Strmbull" ID="classes.Items.Guns::Stormbull" />
 			<Item Stack="1" Name="SunFire" ID="classes.Items.Guns::SunFire" />
-			<Item Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" />
+			<Item Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" Comment="Debug Item" />
 			<Item Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
 			<Item Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
@@ -1871,7 +1894,7 @@
 			<Item Stack="1" Name="BasicShld" ID="classes.Items.Protection::BasicShield">
 				<ItemField Name="shields"       Type="int" Value="10" />
 			</Item>
-			<Item Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield">
+			<Item Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield" Comment="Debug Item">
 				<ItemField Name="shields"       Type="int" Value="500" />
 			</Item>
 			<Item Stack="1" Name="Decent S." ID="classes.Items.Protection::DecentShield">
@@ -1896,12 +1919,18 @@
 				<ItemField Name="shieldDefense" Type="int" Value="1" />
 				<ItemField Name="shields"       Type="int" Value="56" />
 			</Item>
+			<Item Stack="1" Name="JumpShield"   ID="classes.Items.Protection::JumperShield">
+				<ItemField Name="shields"       Type="int" Value="100" />
+			</Item>
 			<Item Stack="1" Name="N.Shield" ID="classes.Items.Protection::NovaShield">
 				<ItemField Name="shieldDefense" Type="int" Value="2" />
 				<ItemField Name="shields"       Type="int" Value="95" />
 			</Item>
 			<Item Stack="1" Name="O.Aegis" ID="classes.Items.Protection::OzoneAegis">
 				<ItemField Name="shields"       Type="int" Value="70" />
+			</Item>
+			<Item Stack="1" Name="JumpShield"   ID="classes.Items.Protection::ProtoShield">
+				<ItemField Name="shields"       Type="int" Value="200" />
 			</Item>
 			<Item Stack="1" Name="Mark IIS" ID="classes.Items.Protection::ReaperArmamentsMarkIIShield">
 				<ItemField Name="shieldDefense" Type="int" Value="2" />
@@ -1949,7 +1978,8 @@
 			<Item Stack="10" Name="SleepFap." ID="classes.Items.Miscellaneous::SleepFapnea" />
 		</ItemGroup>
 		<ItemGroup Name="Piercings">
-			<Item Stack="1"     Name="L.Rings"  ID="classes.Items.Piercings::LundsRings" />
+			<Item Stack="1"     Name="L.Rings"      ID="classes.Items.Piercings::LundsRings" />
+			<Item Stack="1"     Name="Opal Ring"    ID="classes.Items.Piercings::OpalRingPiercing" />
 		</ItemGroup>
 	</Items>
 	<!-- ================================================================ -->
@@ -1962,6 +1992,7 @@
 			<KeyItem Name="Bothrioc Fake Counteragent" />
 			<KeyItem Name="Bothrioc Genealogy" />
 			<KeyItem Name="Bothrioc Pheromone Counteragent" />
+			<KeyItem Name="Brandy's Letter" Description="A red envelope containing a hand-written letter from Brandy." />
 			<KeyItem Name="Capture Harness" />
 			<KeyItem Name="Broken Psi Amp" Description="A broken Psionic Amplifier, removed from Captain Zaalt Kandar's skull. After it went &lt;i&gt;slightly&lt;/i&gt; batshit." />
 			<KeyItem Name="Doctor Badger's Bimbo Raygun - Programmed for use on Penny." />
@@ -1988,6 +2019,7 @@
 			<KeyItem Name="Silver Key" />
 			<KeyItem Name="Unification Rally Invite: 18:00, Mushroom Park" />
 			<KeyItem Name="Uveto A.I. Cores" Description="A.I. Cores recovered from Captain Zaalt Kandar, destined to be delivered to Uveto." />
+			<KeyItem Name="Vial of Frostwyrm Blood" />
 			<KeyItem Name="Xanthe's Silk" Description="You're supposed to give this to Inessa. She'll supposedly know what it means." />
 			<KeyItem Name="Xenogen Datapad" />
 		</KeyItemGroup>
@@ -2201,6 +2233,7 @@
 			<Perk Name="Second Shot" Description="Allows you to make a second, low-accuracy attack whenever you shoot a ranged weapon." />
 		</PerkGroup>
 		<PerkGroup Name="Events">
+			<Perk Name="Akane's Painslut" Description="Your body is attuned to Akane’s methods of pleasurable pain. You have a chance to gain bonus Defense every time you take HP damage which increases with lower health... but you’ll also take additional lust damage. With higher lust, you gain bonus defence!" />
 			<Perk Name="Barcoded" Description="A sleek black barcode is printed on your ass, left there by Dr. Belle for purely scientific purposes." />
 			<Perk Name="Broodmother" Description="Increases the maximum gestation quantity of pregnancies, where possible." Value1="0.5" Value2="2" />
 			<Perk Name="Buttslut" Description="Ensures your ass always remains bubbly and that fluids shot inside will heal your injuries." />
@@ -2256,6 +2289,7 @@
 			<Perk Name="Firing Blanks" Description="There’s no way you could get anyone or anything pregnant." />
 			<Perk Name="Flexibility" Description="You can bend and stretch more easily than normal." />
 			<Perk Name="Flower Power" Description="Everything about being a pollen-producing flower nymph is deeply arousing. It has its upsides, though: the effect you have on most foes, for instance." Label1="Number of flowers active" Value1="4" Label2="Min Lust increase" Value2="20" Label3="Min Libido increase" Value3="45" />
+			<Perk Name="Hips Don't Lie" Description="Your hips will always remain wide and girthy to give you the appearance of a fertility goddess." />
 			<Perk Name="Hollow Bones" Description="Your body weighs less than it should." Value1="10" />
 			<Perk Name="Honeypot" Description="Allows your body to convert excess thickness into delicious, boob-filling goodness." />
 			<Perk Name="Hypermilky" Description="Lactation will not decrease from disuse or overfilling." />
@@ -4562,6 +4596,7 @@
 			<StatusEffect Name="Egg Addled 3" Description="The endless stimulation of your internal faux egg is driving you mad with lust. Even the simple act of walking has become hellishly distracting." IconName="Icon_DrugPill" />
 			<StatusEffect Name="Eggy Belly" Description="You've got a nice belly full of eggs to enjoy, courtesy of the bright pink Egg Trainer back on your ship." IconName="Icon_DrugPill" />
 			<StatusEffect Name="Fisi Breeding Cooldown" IsHidden="true" MinutesLeft="720" />
+			<StatusEffect Name="Frostwyrm Pregnancy Ends" Label1="Preg Slot" Label2="Babies" Value="1" IsHidden="true" />
 			<StatusEffect Name="Give Sera Priapin" IsHidden="true" />
 			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
 			<StatusEffect Name="Milodan Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
@@ -4668,6 +4703,7 @@
 			<StatusEffect Name="Goo Crotch" IsHidden="true" />
 			<StatusEffect Name="Goo Vent" IsHidden="true" />
 			<StatusEffect Name="Hair Flower" Label1="Num Flowers" Value="1" IsHidden="true" Comment="Description = flower color" />
+			<StatusEffect Name="Horn Bumps" IsHidden="true" />
 			<StatusEffect Name="Horn Style" Label1="Style" Label2="Material" IsHidden="true" Comment="Description/Tooltip is color" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
 			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
@@ -4709,6 +4745,9 @@
 			<StatusEffect Name="LimberTime" IsHidden="true" />
 			<StatusEffect Name="LucasMindwash" IsHidden="true" />
 			<StatusEffect Name="Milk Paused" IsHidden="true" />
+			<StatusEffect Name="Mitzi Dressed" IsHidden="true" />
+			<StatusEffect Name="Mitzi_Gushed_Out" IsHidden="true" />
+			<StatusEffect Name="Mitzi_Gush_Thankyou" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
 			<StatusEffect Name="Nym-Foe Injections" Label1="Hips" Label2="Ass" Label3="Breasts" Label4="Lips" IsHidden="true" />
 			<StatusEffect Name="Orange Myr Sighting Delay" IsHidden="true" MinutesLeft="20160" />
@@ -4721,6 +4760,7 @@
 			<StatusEffect Name="Roehm Slimed" Description="Direct physical contact with a roehm in heat results in stickiness, and smelling rather like an orgy in a vat of molasses." Value1="10" Value2="-5" Value3="15" IconName="Icon_Splatter" IconShade="12030916" MinutesLeft="720" />
 			<StatusEffect Name="RefractBoost" IsHidden="true" />
 			<StatusEffect Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IconName="DefenseDown" IconShade="0" />
+			<StatusEffect Name="SeenMitzi" IsHidden="true" />
 			<StatusEffect Name="Sera Debt Repaid" IsHidden="true" />
 			<StatusEffect Name="Sera Morning Sickness" IsHidden="true" MinutesLeft="120" />
 			<StatusEffect Name="Seranigans" IsHidden="true" />
@@ -4738,6 +4778,8 @@
 			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
 			<StatusEffect Name="Ula Pussthirst" IsHidden="true" />
+			<StatusEffect Name="URBOLG_DISABLED" IsHidden="true" />
+			<StatusEffect Name="URBOLG_DISABLED_BY_COOKIES" IsHidden="true" />
 			<StatusEffect Name="Uveto Cloudy" IsHidden="true" />
 			<StatusEffect Name="Varmint Buddy" Description="The pink wireless leash you hold will ensure that your varmint companion stays close by, joining alongside you in battle if necessary." IconName="Radio" IconShade="0" />
 			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
