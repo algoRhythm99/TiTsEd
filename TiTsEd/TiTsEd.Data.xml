@@ -1217,6 +1217,7 @@
 			<PregnancyType>EggTrainerFauxPreg</PregnancyType>
 			<PregnancyType>FrostwyrmPregnancy</PregnancyType>
 			<PregnancyType>KorgonnePregnancy</PregnancyType>
+			<PregnancyType>LahPregnancy</PregnancyType>
 			<PregnancyType>LapinaraPregnancy</PregnancyType>
 			<PregnancyType>MilodanPregnancy</PregnancyType>
 			<PregnancyType>NyreaEggPregnancy</PregnancyType>
@@ -1292,6 +1293,7 @@
 			<Item Stack="1" Name="B.D.S." ID="classes.Items.Accessories::BimboleumDefenseSystem" />
 			<Item Stack="1" Name="Exp. Cloak" ID="classes.Items.Accessories::ExplorersCloak" />
 			<Item Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
+			<Item Stack="1" Name="GooCore" ID="classes.Items.Accessories::GooCore" />
 			<Item Stack="1" Name="G.Leash" ID="classes.Items.Accessories::GrunchLeash" />
 			<Item Stack="1" Name="JungleLure" ID="classes.Items.Accessories::JungleLure" />
 			<Item Stack="1" Name="JungleRepel" ID="classes.Items.Accessories::JungleRepel" />
@@ -1300,6 +1302,9 @@
 			<Item Stack="1" Name="LeithaChrm" ID="classes.Items.Accessories::LeithaCharm" />
 			<Item Stack="1" Name="Lt.Jetpack" ID="classes.Items.Accessories::LightJetpack" />
 			<Item Stack="1" Name="L.Duster" ID="classes.Items.Accessories::LightningDuster" />
+			<Item Stack="1" Name="Sl.Collar" ID="classes.Items.Accessories::MaikesCollar">
+				<ItemField Name="fortification" Type="int" Value="-10" />
+			</Item>
 			<Item Stack="1" Name="M.Sweeper" ID="classes.Items.Accessories::Minesweeper" />
 			<Item Stack="1" Name="MuskLure" ID="classes.Items.Accessories::MuskLure" />
 			<Item Stack="1" Name="M.Repel" ID="classes.Items.Accessories::MuskRepel" />
@@ -1350,6 +1355,9 @@
 			<Item Stack="1" Name="S.Girl C." ID="classes.Items.Apparel::SchoolgirlCostume" />
 			<Item Stack="1" Name="S.Girl O." ID="classes.Items.Apparel::SchoolgirlOutfit" />
 			<Item Stack="1" Name="S.Dress" ID="classes.Items.Apparel::SilkDress" />
+			<Item Stack="1" Name="Slave U."     ID="classes.Items.Apparel::Slavesuit">
+				<ItemField Name="fortification" Type="int" Value="15" />
+			</Item>
 			<Item Stack="1" Name="T.Bodysuit" ID="classes.Items.Apparel::ThermalBodysuit" />
 			<Item Stack="1" Name="TopNSkirt." ID="classes.Items.Apparel::TopNSkirt" />
 			<Item Stack="1" Name="UGC Uniform" ID="classes.Items.Apparel::UGCUniform" />
@@ -1409,9 +1417,16 @@
 			<Item Stack="1" Name="I.Coat" ID="classes.Items.Armor::InsulatedCoat" />
 			<Item Stack="1" Name="RattyArmor"   ID="classes.Items.Armor::RattyArmor" />
 			<Item Stack="1" Name="S.Parka" ID="classes.Items.Armor::SleekParka" />
+			<Item Stack="1" Name="Spacesuit"    ID="classes.Items.Armor::SpacesuitComplete">
+				<ItemField Name="fortification" Type="int" Value="15" />
+			</Item>
+			<Item Stack="1" Name="Spacesuit(I)" ID="classes.Items.Armor::SpacesuitIncomplete">
+				<ItemField Name="fortification" Type="int" Value="10" />
+			</Item>
 			<Item Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
 			<Item Stack="1" Name="WM Dress" ID="classes.Items.Armor::WeavemailDress" />
 			<Item Stack="1" Name="WM Shirt" ID="classes.Items.Armor::WeavemailShirt" />
+			<Item Stack="1" Name="Y.Clothes"    ID="classes.Items.Armor::YellowClothes" />
 			<Item Stack="1" Name="O.Collar" ID="classes.Items.Armor.Unique::OmnisuitCollar" />
 			<Item Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit" />
 			<Item Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
@@ -1541,13 +1556,14 @@
 			<Item Stack="20" Name="S.Bubble"    ID="classes.Items.Toys.Bubbles::SmallCumBubble" />
 		</ItemGroup>
 		<ItemGroup Name="Consumable">
-<!--
 			<Item Stack="5"  Name="ChillPill" ID="classes.Items.Miscellaneous::ChillPill" />
--->
+			<Item Stack="10" Name="D.Fruit" ID="classes.Items.Miscellaneous::DispassionFruit" />
 			<Item Stack="20" Name="Goblin P." ID="classes.Items.Miscellaneous::ProphylacticGoblin" />
 			<Item Stack="20" Name="LapinaraP" ID="classes.Items.Miscellaneous::ProphylacticLapinara" />
 			<Item Stack="20" Name="Rask P." ID="classes.Items.Miscellaneous::ProphylacticRaskvel" />
 			<Item Stack="20" Name="Sydian P." ID="classes.Items.Miscellaneous::ProphylacticSydian" />
+			<Item Stack="10" Name="Peprika"     ID="classes.Items.Miscellaneous::Peprika" />
+			<Item Stack="10" Name="Plumpkin"    ID="classes.Items.Miscellaneous::Plumpkin" />
 		</ItemGroup>
 		<ItemGroup Name="Restoratives">
 			<Item Stack="10" Name="BBQ To-Go" ID="classes.Items.Miscellaneous::BBQToGo" />
@@ -1631,6 +1647,7 @@
 			<Item Stack="10" Name="DendroGro" ID="classes.Items.Transformatives::DendroGro" />
 			<Item Stack="10" Name="Dove Balm" ID="classes.Items.Transformatives::DoveBalm" />
 			<Item Stack="10" Name="DracoG." ID="classes.Items.Transformatives::DracoGuard" />
+			<Item Stack="10" Name="D. Spell"    ID="classes.Items.Transformatives::DrySpell" />
 			<Item Stack="10" Name="Equilicum" ID="classes.Items.Transformatives::Equilicum" />
 			<Item Stack="24" Name="Lg.BluEgg" ID="classes.Items.Transformatives::EggBlueLarge" />
 			<Item Stack="24" Name="Sm.BluEgg" ID="classes.Items.Transformatives::EggBlueSmall" />
@@ -1725,7 +1742,9 @@
 			<Item Stack="10" Name="Horse-Cock"  ID="classes.Items.Miscellaneous::HorseCock" />
 			<Item Stack="1"  Name="Hoverboard"  ID="classes.Items.Miscellaneous::Hoverboard" />
 			<Item Stack="1"  Name="M.Milker"    ID="classes.Items.Miscellaneous::MagicMilker" />
+			<Item Stack="20" Name="M.Key"       ID="classes.Items.Miscellaneous::MaikesKeycard" />
 			<Item Stack="1"  Name="MGBK"        ID="classes.Items.Treasures::MiniatureGiantBabyKordiiak" />
+			<Item Stack="1"  Name="Sp.Helmet"   ID="classes.Items.Treasures::SpacesuitHelmet" />
 			<Item Stack="10" Name="T.Pack"      ID="classes.Items.Miscellaneous::ThermalPack" />
 			<Item Stack="1"  Name="MW Visor"    ID="classes.Items.Toys::MindwashVisor" />
 		</ItemGroup>
@@ -1784,6 +1803,9 @@
 			<Item Stack="1" Name="S.Hammer" ID="classes.Items.Melee::SaurmorianHammer" />
 			<Item Stack="1" Name="Sav.Maul" ID="classes.Items.Melee::SaviciteLightMaul" />
 			<Item Stack="1" Name="ShockBlade" ID="classes.Items.Melee::ShockBlade" />
+			<Item Stack="1" Name="C.S.Gear"     ID="classes.Items.Melee::ShockGear">
+				<ItemField Name="fortification" Type="int" Value="10" />
+			</Item>
 			<Item Stack="1" Name="Shortsword" ID="classes.Items.Melee::Shortsword" />
 			<Item Stack="1" Name="SurvAxe" ID="classes.Items.Melee::SurvivalAxe" />
 			<Item Stack="1" Name="T.Spear" ID="classes.Items.Melee::TaivrasSpear" />
@@ -2006,6 +2028,8 @@
 			<KeyItem Name="Key Card - R&amp;D Security Pass" />
 			<KeyItem Name="Khorgan's Detonator" />
 			<KeyItem Name="Korgonne Medical Kit" />
+			<KeyItem Name="Maike’s Keycard" />
+			<KeyItem Name="Mhen'ga Comms Relay" Description="The comms relay the U.G.C. Scout Authority on Mhen’ga gave you. As long as you set it up in the right place, it’ll act as a beacon for taxis." />
 			<KeyItem Name="Myr Heavy Tranquilizer Dart" />
 			<KeyItem Name="Myr Security Radio" />
 			<KeyItem Name="Orange Myr Data" />
@@ -2368,7 +2392,7 @@
 		<Flag Name="ANNO_MISSION_OFFER" Description="Undefined == Not started&#xD;&#xA;1 == Offered&#xD;&#xA;2 == In progress (Actually on Deck13)&#xD;&#xA;3 == Gray Prime resolved" />
 		<Flag Name="ANNO_NOVA_UPDATE" Description="1 == You've talked to Anno about the Nova after her quest" />
 		<Flag Name="ANNO_OWNS_LIGHT_STRAPON" Description="1 == Anno owns a hardlight strapon" />
-		<Flag Name="ANNO_PETPLAYED" />
+		<Flag Name="ANNO_PETPLAYED" Description="Number of times you've petplayed with Anno" />
 		<Flag Name="ANNO_REN_TUTOR" Description="1 == Anno tutors Terensha" />
 		<Flag Name="ANNO_SCRAP_DISABLED" Description="1 == Anno won't offer to buy junk" />
 		<Flag Name="ANNO_SCRITCHES_HAPPENED" Description="1 == You've rubbed Anno's ears" />
@@ -3384,6 +3408,23 @@
 		<Flag Name="LOST_TO_MYR_DESERTS" />
 		<Flag Name="LOST_TO_SHADE_WITH_KARA" />
 		<Flag Name="LUCAS_MINDWASH" />
+		<Flag Name="LUND_ADVANCED_SUBMISSION" />
+		<Flag Name="LUND_ANUSOFT" />
+		<Flag Name="LUND_BROKEN" />
+		<Flag Name="LUND_COVERED_4" />
+		<Flag Name="LUND_DICKED_DOWN" />
+		<Flag Name="LUND_DICKED_REACTION" />
+		<Flag Name="LUND_FUCKED_OFF" />
+		<Flag Name="LUND_GO_AWAY" />
+		<Flag Name="LUND_LAST_SEX" />
+		<Flag Name="LUND_LEFT_FOOLISH" />
+		<Flag Name="LUND_LUND_TALK" />
+		<Flag Name="LUND_MADE_U_SUBMIT" />
+		<Flag Name="LUND_OUTSIDE_BIMBO_BJED" />
+		<Flag Name="LUND_OUTSIDE_TALK" />
+		<Flag Name="LUND_PB" />
+		<Flag Name="LUND_PIERCED" />
+		<Flag Name="LUND_RIDE_HIMMED" />
 		<Flag Name="LYRALLA_AND_JURO_RELATIONSHIP_HINTED_AT" />
 		<Flag Name="LYRALLA_DISCUSSED_HER_QUEEN" />
 		<Flag Name="LYRALLA_JOB_TALK" />
@@ -3395,6 +3436,11 @@
 		<Flag Name="MAJA_SPACE_TALK" />
 		<Flag Name="MAJA_TAMING_TALK" />
 		<Flag Name="MAJA_TRUST_TALK" />
+		<Flag Name="MAJIN_LAST_FLIGHT" />
+		<Flag Name="MAJIN_LAST_SHIFT" />
+		<Flag Name="MAJIN_MET" />
+		<Flag Name="MAJIN_SHIZZY_LOC" />
+		<Flag Name="MAJIN_SHIZZY_SLEEP_TIMESTAMP" />
 		<Flag Name="MANOR_ADMINROOM_ENTERED" />
 		<Flag Name="MANOR_WARROOM_ENTERED" />
 		<Flag Name="MARIK_FLIRTED" Description="1 == Flirted with Marik" />
@@ -3509,6 +3555,7 @@
 		<Flag Name="MET_LILIANA" Description="1 == You've met Liliana" />
 		<Flag Name="MET_LOLA" Description="1 == You've met Lola" />
 		<Flag Name="MET_LUCA" />
+		<Flag Name="MET_LUND" />
 		<Flag Name="MET_LYRALLA" Description="1 == You've met Lyralla" />
 		<Flag Name="MET_MABBS" />
 		<Flag Name="MET_MALE_RASKVEL_GANG" Description="Number of times you've encountered the male Raskvel gang" />
@@ -4032,6 +4079,7 @@
 		<Flag Name="SEXED_KARA" />
 		<Flag Name="SEXED_LIAMME" />
 		<Flag Name="SEXED_LOLA" />
+		<Flag Name="SEXED_LUND" />
 		<Flag Name="SEXED_MILODAN_MALE" />
 		<Flag Name="SEXED_MYR_VENOM" />
 		<Flag Name="SEXED_MYRNA" />
@@ -4097,6 +4145,26 @@
 		<Flag Name="SHIP_STORAGE_TOYS" />
 		<Flag Name="SHIP_STORAGE_VALUABLES" />
 		<Flag Name="SHIP_STORAGE_WARDROBE" />
+		<Flag Name="SHIZZY_ANNO_MENTIONED_AKKADI" />
+		<Flag Name="SHIZZY_BEEN_ROUGH" />
+		<Flag Name="SHIZZY_CUNT_SNAKE_RECIPE" />
+		<Flag Name="SHIZZY_KIRO_TALK" />
+		<Flag Name="SHIZZY_LAST_TIFFAD" />
+		<Flag Name="SHIZZY_MET" />
+		<Flag Name="SHIZZY_MET_ANNO" />
+		<Flag Name="SHIZZY_NOMMED_MIKA" />
+		<Flag Name="SHIZZY_OUTFIT_STATE" />
+		<Flag Name="SHIZZY_SEEN_FLESHLIGHT" />
+		<Flag Name="SHIZZY_SEXED" />
+		<Flag Name="SHIZZY_SHARON_TALK" />
+		<Flag Name="SHIZZY_STUFFED" />
+		<Flag Name="SHIZZY_TALKED_HERSELF" />
+		<Flag Name="SHIZZY_TALKED_OVERDOSE" />
+		<Flag Name="SHIZZY_TALKED_TREATMENT" />
+		<Flag Name="SHIZZY_TALKED_WINSTON" />
+		<Flag Name="SHIZZY_TRAP_ENCOUNTERED" />
+		<Flag Name="SHIZZY_WINSTON_CRASH" />
+		<Flag Name="SHIZZY_YAMMI_AT_TRAP" />
 		<Flag Name="SHOWER_SANDWICH" />
 		<Flag Name="SHUTTER_STATUS" />
 		<Flag Name="SIERVA_LATEGOODBYE_RESPONSE" />
@@ -4230,6 +4298,27 @@
 		<Flag Name="TASTED_THE_FLAME" />
 		<Flag Name="TAURFUCKED_DANE" />
 		<Flag Name="TEXAS_GRAVCUFFS_COWORGY" />
+		<Flag Name="TESSA_ALONE" />
+		<Flag Name="TESSA_BJS" />
+		<Flag Name="TESSA_BREAST" />
+		<Flag Name="TESSA_BREASTPLAY" />
+		<Flag Name="TESSA_DATAPAD" />
+		<Flag Name="TESSA_DRINK" />
+		<Flag Name="TESSA_FLIRT" />
+		<Flag Name="TESSA_FOOT" />
+		<Flag Name="TESSA_GENDER" />
+		<Flag Name="TESSA_H2H1" />
+		<Flag Name="TESSA_H2H2" />
+		<Flag Name="TESSA_HERSELF" />
+		<Flag Name="TESSA_JOB" />
+		<Flag Name="TESSA_MET" />
+		<Flag Name="TESSA_ORAL" />
+		<Flag Name="TESSA_ORAL_SCENE" />
+		<Flag Name="TESSA_PCNEEDS" />
+		<Flag Name="TESSA_PROF" />
+		<Flag Name="TESSA_SHOWER_BREAST" />
+		<Flag Name="TESSA_SPECIES" />
+		<Flag Name="TESSA_TRUST" />
 		<Flag Name="THARE_MANOR_ENTERED" />
 		<Flag Name="THOLLUM_PASS_REQUESTED" />
 		<Flag Name="THOLLUM_TOURED" />
@@ -4599,6 +4688,8 @@
 			<StatusEffect Name="Frostwyrm Pregnancy Ends" Label1="Preg Slot" Label2="Babies" Value="1" IsHidden="true" />
 			<StatusEffect Name="Give Sera Priapin" IsHidden="true" />
 			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
+			<StatusEffect Name="Lah Pregnancy Reflex Mod" Value1="5" IsHidden="true" />
+			<StatusEffect Name="Lah Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" IsHidden="true" />
 			<StatusEffect Name="Milodan Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" Label4="1 == Permanent, ignores racial score" Value4="1" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs Messages Available" IsHidden="true" />
