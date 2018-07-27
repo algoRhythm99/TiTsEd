@@ -7,6 +7,7 @@
 			<Upbringing ID="2" Name="Bookworm" />
 			<Upbringing ID="3" Name="Austere" />
 			<Upbringing ID="4" Name="Balanced" />
+			<Upbringing ID="5" Name="Slutty" />
 		</Upbringings>
 		<OriginalRaces>
 			<OriginalRace>half-ausar</OriginalRace>
@@ -22,6 +23,7 @@
 			<Affinity>physique</Affinity>
 			<Affinity>reflexes</Affinity>
 			<Affinity>willpower</Affinity>
+			<Affinity>none</Affinity>
 		</Affinities>
 		<ClassTypes>
 			<ClassType ID="0" Name="Smuggler" />
