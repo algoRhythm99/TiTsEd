@@ -191,6 +191,7 @@
 			<SkinTone>dark</SkinTone>
 			<SkinTone>deep emerald</SkinTone>
 			<SkinTone>deep purple</SkinTone>
+			<SkinTone>dull pink</SkinTone>
 			<SkinTone>dusky blue</SkinTone>
 			<SkinTone>dusky red</SkinTone>
 			<SkinTone>dusky</SkinTone>
@@ -472,6 +473,7 @@
 			<HairColor>silver</HairColor>
 			<HairColor>silvery-blue</HairColor>
 			<HairColor>silvery-white</HairColor>
+			<HairColor>smoky</HairColor>
 			<HairColor>steel gray</HairColor>
 			<HairColor>straw</HairColor>
 			<HairColor>strawberry blonde</HairColor>
@@ -1129,6 +1131,8 @@
 			<CockType ID="65" Name="Gryvain" />
 			<CockType ID="69" Name="Bothrioc" />
 			<CockType ID="72" Name="Swine" />
+			<CockType ID="78" Name="Rahn" />
+			<CockType ID="79" Name="Thraggen" />
 			<CockType ID="81" Name="Mothrine" />
 			<CockType ID="82" Name="Frostwyrm" />
 		</CockTypes>
@@ -1237,6 +1241,7 @@
 			<PregnancyType>VenusPitcherFertilizedSeedCarrier</PregnancyType>
 			<PregnancyType>VenusPitcherSeedCarrier</PregnancyType>
 			<PregnancyType>ZaaltPregnancy</PregnancyType>
+			<PregnancyType>ZephyrPregnancy</PregnancyType>
 			<PregnancyType>ZilPregnancy</PregnancyType>
 		</PregnancyTypes>
 		<!-- ================================================================ -->
@@ -1412,12 +1417,15 @@
 			<Item Stack="1" Name="Gem Links" ID="classes.Items.Armor::GemstoneLinks" />
 			<Item Stack="1" Name="Goo Armor" ID="classes.Items.Armor::GooArmor" />
 			<Item Stack="1" Name="Hide V&amp;B" ID="classes.Items.Armor::HideVestAndBreeches" />
+			<Item Stack="1" Name="JJ-Suit"      ID="classes.Items.Armor::JumperJumpsuit" />
+			<Item Stack="1" Name="SJJ-Suit"     ID="classes.Items.Armor::JumperJumpsuitSlutty" />
 			<Item Stack="1" Name="M.Suit" ID="classes.Items.Armor::MirroredJumpsuit" />
 			<Item Stack="1" Name="N.Chain" ID="classes.Items.Armor::NyreanChain" />
 			<Item Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
 			<Item Stack="1" Name="Void Plates" ID="classes.Items.Armor::VoidPlateArmor" />
 			<Item Stack="1" Name="I.Coat" ID="classes.Items.Armor::InsulatedCoat" />
 			<Item Stack="1" Name="RattyArmor"   ID="classes.Items.Armor::RattyArmor" />
+			<Item Stack="1" Name="R.PwrArmr"    ID="classes.Items.Armor::RozPowerArmor" />
 			<Item Stack="1" Name="S.Parka" ID="classes.Items.Armor::SleekParka" />
 			<Item Stack="1" Name="Spacesuit"    ID="classes.Items.Armor::SpacesuitComplete">
 				<ItemField Name="fortification" Type="int" Value="15" />
@@ -1709,6 +1717,7 @@
 			<Item Stack="10" Name="R.Panda+"    ID="classes.Items.Transformatives::RedPandaneen" />
 			<Item Stack="10" Name="R.PandaPro+" ID="classes.Items.Transformatives::RedPandaPro" />
 			<Item Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
+			<Item Stack="10" Name="R.Rocket" ID="classes.Items.Transformatives::RedRocket" />
 			<Item Stack="5"  Name="ReductPro"   ID="classes.Items.Miscellaneous::ReductPro" />
 			<Item Stack="10" Name="R.Made" ID="classes.Items.Transformatives::RubberMade" />
 			<Item Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
@@ -1776,6 +1785,7 @@
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
 			<Item Stack="1" Name="Cutlass" ID="classes.Items.Melee::Cutlass" />
 			<Item Stack="1" Name="D.Flash" ID="classes.Items.Melee::DancingFlashblade" />
+			<Item Stack="1" Name="Shock Staff"  ID="classes.Items.Melee::ElectroSheepstick" />
 			<Item Stack="1" Name="E's Hmmr" ID="classes.Items.Melee::EmmysJolthammer" LongName="Emmy's Jolthammer" />
 			<Item Stack="1" Name="E'sSaber" ID="classes.Items.Melee::EmmysLavaSaber" LongName="Emmy's Lava Saber">
 				<ItemField Name="shields" Type="int" Value="5" />
@@ -2002,6 +2012,7 @@
 			<Item Stack="10" Name="SleepFap." ID="classes.Items.Miscellaneous::SleepFapnea" />
 		</ItemGroup>
 		<ItemGroup Name="Piercings">
+			<Item Stack="1"     Name="Ged. Ring"    ID="classes.Items.Piercings::GeddaniumRingPiercing" />
 			<Item Stack="1"     Name="L.Rings"      ID="classes.Items.Piercings::LundsRings" />
 			<Item Stack="1"     Name="Opal Ring"    ID="classes.Items.Piercings::OpalRingPiercing" />
 		</ItemGroup>
@@ -2042,6 +2053,7 @@
 			<KeyItem Name="RK Lah - Captured" />
 			<KeyItem Name="Satellite Hard Drive" />
 			<KeyItem Name="Sexbot GPS Triangulator" />
+			<KeyItem Name="Siegwulfe Datacore" Description="A fist-sized data storage containing the personality of your former Siegwulfe [wulfe.name]." />
 			<KeyItem Name="Silver Key" />
 			<KeyItem Name="Unification Rally Invite: 18:00, Mushroom Park" />
 			<KeyItem Name="Uveto A.I. Cores" Description="A.I. Cores recovered from Captain Zaalt Kandar, destined to be delivered to Uveto." />
@@ -2363,6 +2375,7 @@
 		<Flag Name="ACCEPTED_JULIANS_ZIL_CAPTURE_MISSION" />
 		<Flag Name="ACCUPITCH_VISIT" />
 		<Flag Name="ACQUISITIONS_SLAVE_PURCHASES" />
+		<Flag Name="AGROSH_WHUPPED" />
 		<Flag Name="AINA_DAY_MET" />
 		<Flag Name="AINA_LAST_DAY_MET" />
 		<Flag Name="AINA_LAST_DAY_RELIEVED" />
@@ -2448,6 +2461,8 @@
 		<Flag Name="ARBETZ_SEX_ORAL" />
 		<Flag Name="ARBETZ_SEX_TWO_BOYS" />
 		<Flag Name="ARBETZ_SEX_UNLOCKED" />
+		<Flag Name="ARDIA_BUTTLOVED" />
+		<Flag Name="ARDIA_WHACKED_OFF_AGROSH" />
 		<Flag Name="ASENNIA_COCK_OFFERED" />
 		<Flag Name="ASKED_AFTER_THE_GIRLS" />
 		<Flag Name="ASKED_ALEX_WHAT_HE_IS" />
@@ -3434,6 +3449,7 @@
 		<Flag Name="LYS_PANTY_OFFER" />
 		<Flag Name="MABBS_PURCHASES" />
 		<Flag Name="MADE_RENVRA_BEG" />
+		<Flag Name="MAIKE_SLAVES_RELEASED" />
 		<Flag Name="MAJA_RENT" />
 		<Flag Name="MAJA_SPACE_TALK" />
 		<Flag Name="MAJA_TAMING_TALK" />
@@ -3584,6 +3600,7 @@
 		<Flag Name="MET_RIYA" />
 		<Flag Name="MET_SAENDRA" Description="1 == You've met Saendra" />
 		<Flag Name="MET_SALLY" />
+		<Flag Name="MET_SCHORA" Description="1 = saw her in the shower but didnt approach&#xD;&#xA;2 = watched her and left&#xD;&#xA;3 = talked to her but she left because of the alert&#xD;&#xA;4 = treated her right&#xD;&#xA;5 = treated her rough" />
 		<Flag Name="MET_SEIFYN" Description="1 == You've met Seifyn" />
 		<Flag Name="MET_SELLERA" Description="1 == You've met Field Marshal Sellera" />
 		<Flag Name="MET_SELLESY" Description="1 == You've met Sellesy" />
@@ -3604,6 +3621,7 @@
 		<Flag Name="MET_TAIVRA" Description="1 == You've met Taivra" />
 		<Flag Name="MET_TERENSHA" Description="1 == You've met Terensha" />
 		<Flag Name="MET_TLAKO" Description="1 == You've met Tlako" />
+		<Flag Name="MET_TORRA" Description="meet Torra (and fucked her)" />
 		<Flag Name="MET_UGC_TROOPER_AT_CHASMFALL" Description="1 == You've met Sergeant Horace Decker at the Stellar Tether" />
 		<Flag Name="MET_ULA" Description="1 == You've met Ula the Korgonne princess" />
 		<Flag Name="MET_VAANDE" Description="1 == You've met Vaande" />
@@ -3851,6 +3869,18 @@
 		<Flag Name="QUEEN_OF_THE_DEEP_ENCOUNTERED" />
 		<Flag Name="QUEUE_EMBRY_STAGE_2_BIT" />
 		<Flag Name="QUEUE_UP_STAGE_1_TF_DESC" />
+		<Flag Name="QUINN_EVERY_HOLED" />
+		<Flag Name="QUINN_KID_AGE" />
+		<Flag Name="QUINN_KID_NAME" />
+		<Flag Name="QUINN_KID_PLAYS" />
+		<Flag Name="QUINN_KID_SEX" />
+		<Flag Name="QUINN_PREG_APPROACH" />
+		<Flag Name="QUINN_SIRED_KID" />
+		<Flag Name="QUINN_TALK_ESBETH" />
+		<Flag Name="QUINN_TALK_HERBS" />
+		<Flag Name="QUINN_TALK_HERSELF" />
+		<Flag Name="QUINN_TALK_NALEEN" />
+		<Flag Name="QUINN_TOTAL_KIDS" />
 		<Flag Name="RAMIS_FIRST_IMPRESSION" />
 		<Flag Name="RAMIS_MET" />
 		<Flag Name="RAMIS_SEXED" />
@@ -4071,6 +4101,7 @@
 		<Flag Name="SEXBOT_FACTORY_DISABLED" />
 		<Flag Name="SEXBOT_QUEST_STATUS" />
 		<Flag Name="SEXED_ANYXXINE" />
+		<Flag Name="SEXED_ARDIA" />
 		<Flag Name="SEXED_BIG_T" />
 		<Flag Name="SEXED_CAMERON" />
 		<Flag Name="SEXED_CASS" />
@@ -4126,7 +4157,11 @@
 		<Flag Name="SHEKKA_BEEN_NT" />
 		<Flag Name="SHEKKA_BEEN_TAVROS" />
 		<Flag Name="SHEKKA_BEEN_UVETO" />
+		<Flag Name="SHEKKA_GYMMED" />
+		<Flag Name="SHEKKA_ONAHOLED" />
+		<Flag Name="SHEKKA_OVIED" />
 		<Flag Name="SHEKKA_RECRUITED" />
+		<Flag Name="SHEKKA_REMOVED_COLLAR" />
 		<Flag Name="SHEKKA_SCRAP_DISABLED" Description="1 == Shekka's shop is not available" />
 		<Flag Name="SHEKKA_SLEEPWITH_INTRODUCED" />
 		<Flag Name="SHEKKA_SPIT_ADDICTION" />
@@ -4141,6 +4176,7 @@
 		<Flag Name="SHEKKA_TALKED_THE_MESS" Description="1 == You've talked to Shekka about the Mess" />
 		<Flag Name="SHEKKA_TALKED_WASTES" Description="1 == You've talked to Shekka about the wastes" />
 		<Flag Name="SHEKKA_TALK_COOLDOWN" Description="0 == Shekka can talk&#xD;&#xA;6 == Shekka is busy" />
+		<Flag Name="SHEKKA_TRIED_2_BREED_U" />
 		<Flag Name="SHELLY_HL_SEX_BONUS" />
 		<Flag Name="SHIP_STORAGE_CONSUMABLES" />
 		<Flag Name="SHIP_STORAGE_EQUIPMENT" />
@@ -4231,6 +4267,20 @@
 		<Flag Name="SYRI_SEEN_PCS_SHIP_CABIN" Description="1 == Syri has seen the PC's ship cabin" />
 		<Flag Name="SYRI_TALKS" Description="Stores what talk scene to display next in the sequence. Scene 1 never repeats. YAY!" />
 		<Flag Name="SYRI_WINBET_VAG" Description="1 == PC can get vaginal sex with condom from Syri" />
+		<Flag Name="SYRIQUEST_STATE" Description="-1 = never accepted the quest&#xD;&#xA;1 = run into Syri at the station&#xD;&#xA;2 = Syri told PC her plan&#xD;&#xA;3 = PC accepted plan&#xD;&#xA;4 = PC entered the base&#xD;&#xA;5 = unlocked elevator lab access&#xD;&#xA;8 = unlocked Warp Lab (either went there with Calnor or invited by Valden)&#xD;&#xA;9 = opened Warp Lab door&#xD;&#xA;10 = Valden has a body&#xD;&#xA;21 = killed Valden (didnt tell Syri)&#xD;&#xA;22 = killed Valden and told Syri&#xD;&#xA;23 = helped Valden (see SYRIQUEST_VALDEN_BODY_CHOICE for more info)" />
+		<Flag Name="SYRIQUEST_LOCK_BYPASS" Description="-1 = failed at hacking&#xD;&#xA;1 = hacked&#xD;&#xA;2 = stealthed" />
+		<Flag Name="SYRIQUEST_POWER_STATE" Description="0 = off&#xD;&#xA;1 = on&#xD;&#xA;2 on (overload)" />
+		<Flag Name="SYRIQUEST_ELEVATOR_STATE" Description="-1/undefined = locked&#xD;&#xA;0 = entered elevator/on base floor&#xD;&#xA;1 = staff rooms&#xD;&#xA;2 = secret lab" />
+		<Flag Name="SYRIQUEST_DATA_STOLEN" Description="1 = stole data from the archives" />
+		<Flag Name="SYRIQUEST_CALNOR_TALK_VALDEN" Description="unlocks talk options" />
+		<Flag Name="SYRIQUEST_CALNOR_TALK_HELP_HIM" Description="unlocks talk options" />
+		<Flag Name="SYRIQUEST_VALDEN_BODY_CHOICE" Description="1 = Calnor&#xD;&#xA;2 = Bimbo Wolfe&#xD;&#xA;3 = normal Wolfe" />
+		<Flag Name="SYRIQUEST_SYRI_ONAHOLE" Description="undefined = never found it&#xD;&#xA;1 = found it&#xD;&#xA;2 = gave it to Syri" />
+		<Flag Name="SYRIQUEST_POST_GAME_TALK_PENIS" Description="1 = talked about Valden&#xD;&#xA;2 = talked about Syris cock&#xD;&#xA;3 = talked about Syris cock sleeve" />
+		<Flag Name="SYRIQUEST_POST_GAME_TALK_LOVE" Description="1 = told her love her&#xD;&#xA;2 = stay friends" />
+		<Flag Name="SYRIQUEST_AKKADI_BASE_STEPS" />
+		<Flag Name="SYRIQUEST_SIEGWULFE_NAME" Description="name of the Siegwulfe you gave to Valden" />
+		<Flag Name="SYRIQUEST_CALNOR_ICON" Description="1 if valden should show an icon in S17" />
 		<Flag Name="S_RELIEF_ANN" />
 		<Flag Name="TAGGED_MHENGA_OXONIUM_DEPOSIT" />
 		<Flag Name="TAIVRA_CHAMBER_SEX" />
@@ -4522,9 +4572,19 @@
 		<Flag Name="ZAALT DISARMED" />
 		<Flag Name="ZAALT FLIRTED" />
 		<Flag Name="ZAALT_DISABLED" />
+		<Flag Name="ZEPHYR_BETS_LOST" />
 		<Flag Name="ZEPHYR_FUCKED_PC" />
+		<Flag Name="ZEPHYR_FUCKED_PC_PUSSY" />
+		<Flag Name="ZEPHYR_KIDS_BIRTHED" />
+		<Flag Name="ZEPHYR_KIDS_DAYCOUNTER" />
+		<Flag Name="ZEPHYR_KIDS_KNOWN" />
+		<Flag Name="ZEPHYR_PICSWTHEKIDS" />
 		<Flag Name="ZEPHYR_PISSED" />
+		<Flag Name="ZEPHYR_RAWDOGGED_PUSS" />
+		<Flag Name="ZEPHYR_TALKED_BETS" />
 		<Flag Name="ZEPHYR_TREATMENT_TALKED" />
+		<Flag Name="ZHENG_SHI_SLAVE_SNUCK" />
+		<Flag Name="ZHENG_SLAVE_SNEAK_DISABLED" />
 		<Flag Name="ZHENIYA_LAST_HONEY_TIMESTAMP" />
 		<Flag Name="ZIL_CALLGIRL_AT_NURSERY" />
 		<Flag Name="ZIL_CALLGIRL_BIRTH_MEETING_REQ" />
@@ -4698,6 +4758,7 @@
 			<StatusEffect Name="Ovilium Effect" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy End" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy State" IsHidden="true" />
+			<StatusEffect Name="Quinn Post-Pregnancy" IsHidden="true" />
 			<StatusEffect Name="Riya Spawn Reflex Mod" Value1="5" IsHidden="true" />
 			<StatusEffect Name="Riya Spawn Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Royal Eggs Messages Available" IsHidden="true" />
@@ -4807,13 +4868,16 @@
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Events">
 			<StatusEffect Name="Dark Chrysalis Closed" IsHidden="true" />
+			<StatusEffect Name="DisabledRoz" IsHidden="true" />
 			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
 			<StatusEffect Name="Afraid of Ula Pussy" IsHidden="true" />
 			<StatusEffect Name="BadgerMindwash" IsHidden="true" />
 			<StatusEffect Name="Bait Beta Nyrea" IsHidden="true" />
+			<StatusEffect Name="Beta's Satisfaction" Description="You've recently sated your desire for your alpha's cum, and can think only of her. You take less damage from lust-damaging attacks." IconName="Icon_Charmed" Value1="2" IconShade="16738740" />
 			<StatusEffect Name="Buttfucking Paige" IsHidden="true" />
+			<StatusEffect Name="Dzaan Addicted" IsHidden="true" />
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Exhibitionism Reserve" Description="Tracker for bonus exhibitionism gains." IconName="LustUp" IsHidden="true" />
 			<StatusEffect Name="Fail Quadomme Diplomacy" IsHidden="true" />
