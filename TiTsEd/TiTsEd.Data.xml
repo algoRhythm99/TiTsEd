@@ -1394,8 +1394,8 @@
 			<Item Stack="1" Name="ThmJacket" ID="classes.Items.Apparel::ThermalJacket" />
 			<Item Stack="1" Name="T.Zipsuit" ID="classes.Items.Apparel::TransparentZipsuit" />
 			<Item Stack="1" Name="T.Armor" ID="classes.Items.Apparel::TrashArmor" />
-			<Item Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" Comment="Debug Item" />
-			<Item Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" LongName="TS-T armor plating mark II" Comment="Debug Item" />
+			<Item Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" Comment="Debug Item" Tooltip="Debug Item" />
+			<Item Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" LongName="TS-T armor plating mark II" Comment="Debug Item" Tooltip="Debug Item" />
 			<Item Stack="1" Name="AZA Suit" ID="classes.Items.Armor::ArmstrongSuitBlue">
 				<ItemField Name="shields" Type="int" Value="4" />
 			</Item>
@@ -1447,12 +1447,12 @@
 			<Item Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
 			<Item Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
 			<Item Stack="1" Name="Bounty Bra" ID="classes.Items.Apparel::BountyBra" />
-			<Item Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirtV1" LongName="Corny T-Shirt v1" />
-			<Item Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirtV2" LongName="Corny T-Shirt v2" />
-			<Item Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirtV3" LongName="Corny T-Shirt v3" />
-			<Item Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirtV4" LongName="Corny T-Shirt v4" />
-			<Item Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirtV5" LongName="Corny T-Shirt v5" />
-			<Item Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirtV6" LongName="Corny T-Shirt v6" />
+			<Item Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirtV1" LongName="corny T-shirt" EditorName="Corny T-Shirt v1" />
+			<Item Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirtV2" LongName="corny T-shirt" EditorName="Corny T-Shirt v2" />
+			<Item Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirtV3" LongName="corny T-shirt" EditorName="Corny T-Shirt v3" />
+			<Item Stack="1" Name="CrnyShirtV4" ID="classes.Items.Apparel::CornyTShirtV4" LongName="corny T-shirt" EditorName="Corny T-Shirt v4" />
+			<Item Stack="1" Name="CrnyShirtV5" ID="classes.Items.Apparel::CornyTShirtV5" LongName="corny T-shirt" EditorName="Corny T-Shirt v5" />
+			<Item Stack="1" Name="CrnyShirtV6" ID="classes.Items.Apparel::CornyTShirtV6" LongName="corny T-shirt" EditorName="Corny T-Shirt v6" />
 			<Item Stack="1" Name="Corset" ID="classes.Items.Apparel::Corset" />
 			<Item Stack="1" Name="Cow Bra" ID="classes.Items.Apparel::CowPrintBra" />
 			<Item Stack="1" Name="CowShirt" ID="classes.Items.Apparel::CowPrintedShirt" />
@@ -1486,13 +1486,13 @@
 			<Item Stack="1" Name="BikiniBtm" ID="classes.Items.Apparel::FrillyBikiniBottom" />
 			<Item Stack="1" Name="BaggyShorts" ID="classes.Items.Apparel::BaggySwimShorts" />
 			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" />
-			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" LongName="Boxers HL" Tooltip="Hardlight Version">
+			<Item Stack="1" Name="Boxers" ID="classes.Items.Apparel::Boxers" EditorName="Boxers HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3130" />
 			</Item>
 			<Item Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts" />
-			<Item Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts" LongName="Boyshorts HL" Tooltip="Hardlight Version">
+			<Item Stack="1" Name="Boyshorts" ID="classes.Items.Apparel::Boyshorts" EditorName="Boyshorts HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3180" />
@@ -1518,21 +1518,21 @@
 			<Item Stack="1" Name="GuyTights" ID="classes.Items.Apparel::MaleTights" />
 			<Item Stack="1" Name="Briefs" ID="classes.Items.Apparel::PlainBriefs" />
 			<Item Stack="1" Name="Panties" ID="classes.Items.Apparel::PlainPanties" />
-			<Item Stack="1" Name="Panties" ID="classes.Items.Apparel::PlainPanties" LongName="Plain Panties HL" Tooltip="Hardlight Version">
+			<Item Stack="1" Name="Panties" ID="classes.Items.Apparel::PlainPanties" EditorName="Plain Panties HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3040" />
 			</Item>
 			<Item Stack="1" Name="Sav.Panty"    ID="classes.Items.Apparel::SavicitePanties" />
 			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" />
-			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" LongName="Shibari Bottom HL" Tooltip="Hardlight Version">
+			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" EditorName="Shibari Bottom HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3920" />
 			</Item>
 			<Item Stack="1" Name="SS-Thong" ID="classes.Items.Apparel::SlutSealThong" />
 			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" />
-			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" LongName="Stockings HL" Tooltip="Hardlight Version">
+			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" EditorName="Stockings HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3850" />
@@ -1541,7 +1541,7 @@
 			<Item Stack="1" Name="ThmUndies" ID="classes.Items.Apparel::ThermalUnderwear" />
 			<Item Stack="1" Name="TightShorts"  ID="classes.Items.Apparel::TightSwimShorts" />
 			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" />
-			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" LongName="Thong HL" Tooltip="Hardlight Version">
+			<Item Stack="1" Name="Thong" ID="classes.Items.Apparel::Thong" EditorName="Thong HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3550" />
@@ -1558,8 +1558,8 @@
 			<Item Stack="10" Name="OS StimBoost"    ID="classes.Items.Miscellaneous::OSStimBoost" />
 			<Item Stack="5"  Name="S.Booster"   ID="classes.Items.Miscellaneous::ShieldBooster" />
 			<Item Stack="5"  Name="S.Boost M2"  ID="classes.Items.Recovery::ShieldBoosterMkII" />
-			<Item Stack="10" Name="T.Gren"      ID="classes.Items.Miscellaneous::TestGrenade" Comment="Debug Item" />
-			<Item Stack="10" Name="HP Boost"    ID="classes.Items.Miscellaneous::TestHPBooster" Comment="Debug Item" />
+			<Item Stack="10" Name="T.Gren"      ID="classes.Items.Miscellaneous::TestGrenade" Comment="Debug Item" Tooltip="Debug Item" />
+			<Item Stack="10" Name="HP Boost"    ID="classes.Items.Miscellaneous::TestHPBooster" Comment="Debug Item" Tooltip="Debug Item" />
 			<Item Stack="1"  Name="H.Bubble"    ID="classes.Items.Toys.Bubbles::HugeCumBubble" />
 			<Item Stack="5"  Name="L.Bubble"    ID="classes.Items.Toys.Bubbles::LargeCumBubble" />
 			<Item Stack="10" Name="M.Bubble"    ID="classes.Items.Toys.Bubbles::MediumCumBubble" />
@@ -1906,7 +1906,7 @@
 			<Item Stack="1" Name="Spitter" ID="classes.Items.Guns::SpitterPistol" />
 			<Item Stack="1" Name="Strmbull" ID="classes.Items.Guns::Stormbull" />
 			<Item Stack="1" Name="SunFire" ID="classes.Items.Guns::SunFire" />
-			<Item Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" Comment="Debug Item" />
+			<Item Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" Comment="Debug Item" Tooltip="Debug Item" />
 			<Item Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
 			<Item Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
@@ -1928,7 +1928,7 @@
 			<Item Stack="1" Name="BasicShld" ID="classes.Items.Protection::BasicShield">
 				<ItemField Name="shields"       Type="int" Value="10" />
 			</Item>
-			<Item Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield" Comment="Debug Item">
+			<Item Stack="1" Name="DBG Shield" ID="classes.Items.Protection::DBGShield" Comment="Debug Item" Tooltip="Debug Item">
 				<ItemField Name="shields"       Type="int" Value="500" />
 			</Item>
 			<Item Stack="1" Name="Decent S." ID="classes.Items.Protection::DecentShield">

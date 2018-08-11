@@ -330,6 +330,8 @@ namespace TiTsEd.Model {
         public string Name { get; set; }
         [XmlAttribute]
         public string LongName { get; set; }
+		[XmlAttribute]
+        public string EditorName { get; set; }
         [XmlAttribute]
         public string Tooltip { get; set; }
         [XmlAttribute]
@@ -361,6 +363,12 @@ namespace TiTsEd.Model {
             if (item == Empty && typeId == Empty.ID) {
                 return item.Name;
             }
+			var _editorName = item.EditorName;
+			if(null != _editorName) {
+				//return the editor specific name that is NEVER EVER saved to a game save.
+				//this is used for unique item variants that have no name differences in game.
+                return _editorName;
+			}
             var _longName = longName ?? item.LongName;
             if (null != _longName) {
                 //skip the side show and just return the long name
