@@ -403,8 +403,11 @@
 			<HairColor>copper</HairColor>
 			<HairColor>crimson</HairColor>
 			<HairColor>dark blonde</HairColor>
+			<HairColor>dark blue</HairColor>
 			<HairColor>dark brown</HairColor>
+			<HairColor>dark gray</HairColor>
 			<HairColor>dark green</HairColor>
+			<HairColor>dark red</HairColor>
 			<HairColor>dirty blonde</HairColor>
 			<HairColor>electric blue</HairColor>
 			<HairColor>emerald</HairColor>
@@ -457,7 +460,10 @@
 			<HairColor>orange</HairColor>
 			<HairColor>orangey-gray</HairColor>
 			<HairColor>pale blue</HairColor>
+			<HairColor>pale blonde</HairColor>
+			<HairColor>pale gray</HairColor>
 			<HairColor>pale green</HairColor>
+			<HairColor>pale red</HairColor>
 			<HairColor>peach</HairColor>
 			<HairColor>pink</HairColor>
 			<HairColor>platinum</HairColor>
@@ -1433,6 +1439,7 @@
 			<Item Stack="1" Name="Spacesuit(I)" ID="classes.Items.Armor::SpacesuitIncomplete">
 				<ItemField Name="fortification" Type="int" Value="10" />
 			</Item>
+			<Item Stack="1" Name="SVS-Wear"     ID="classes.Items.Armor::StarViperSlutwear" />
 			<Item Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
 			<Item Stack="1" Name="WM Dress" ID="classes.Items.Armor::WeavemailDress" />
 			<Item Stack="1" Name="WM Shirt" ID="classes.Items.Armor::WeavemailShirt" />
@@ -1760,15 +1767,17 @@
 			<Item Stack="1"  Name="MW Visor"    ID="classes.Items.Toys::MindwashVisor" />
 		</ItemGroup>
 		<ItemGroup Name="Stories">
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BecomingOneOfTheGirls"    LongName="story download code for “Becoming One...”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BXBIOne" LongName="story download code for “BXBI Chapter 1”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::BXBITwo" LongName="story download code for “BXBI Chapter 2”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::CapturedByTheDemons"    LongName="story download code for “Captured...”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::EightClicks" LongName="story download code for “||||||||”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::FuckTheSystem"   LongName="story download code for “Fuck The System”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::SatyrSlave"  LongName="story download code for “Satyr Slave”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::StolenGoods" LongName="story download code for “Stolen Goods”" />
-			<Item Stack="10"    Name="A Story"  ID="classes.Items.Stories::TentaclesAndTanukis"     LongName="story download code for “Tentacles &amp; Tanukis”" />
+			<Item Stack="1"     Name="Story:B.One"      ID="classes.Items.Stories::BecomingOneOfTheGirls"    LongName="code for “Becoming One...”" />
+			<Item Stack="1"     Name="Story:BXBI1"      ID="classes.Items.Stories::BXBIOne"         LongName="code for “BXBI Chapter 1”" />
+			<Item Stack="1"     Name="Story:BXBI2"      ID="classes.Items.Stories::BXBITwo"         LongName="code for “BXBI Chapter 2”" />
+			<Item Stack="1"     Name="Story:Captr"      ID="classes.Items.Stories::CapturedByTheDemons"    LongName="code for “Captured...”" />
+			<Item Stack="1"     Name="Story: Cow S."    ID="classes.Items.Stories::CowStuff"        LongName="code for “Cow Stuff”" />
+			<Item Stack="1"     Name="Story:||||||||"   ID="classes.Items.Stories::EightClicks"     LongName="code for “||||||||”" />
+			<Item Stack="1"     Name="Story:F.Sys"      ID="classes.Items.Stories::FuckTheSystem"   LongName="code for “Fuck The System”" />
+			<Item Stack="1"     Name="Story:Satyr"      ID="classes.Items.Stories::SatyrSlave"      LongName="code for “Satyr Slave”" />
+			<Item Stack="1"     Name="Story:Goods"      ID="classes.Items.Stories::StolenGoods"     LongName="code for “Stolen Goods”" />
+			<Item Stack="1"     Name="Story:Ts&amp;Ts"      ID="classes.Items.Stories::TentaclesAndTanukis"     LongName="code for “Tentacles &amp; Tanukis”" />
+			<Item Stack="1"     Name="Story: ToT"       ID="classes.Items.Stories::TowerOfTrials"   LongName="code for “Tower of Trials”" />
 		</ItemGroup>
 		<ItemGroup Name="Toys">
 			<Item Stack="1" Name="B.Buddy"  ID="classes.Items.Toys::BubbleBuddy" />
@@ -1802,6 +1811,7 @@
 			<Item Stack="1" Name="MW.Yappi" ID="classes.Items.Melee::MasterworkYappiStrap" />
 			<Item Stack="1" Name="M.Pick" ID="classes.Items.Melee::MilitaryPick" />
 			<Item Stack="1" Name="M.Saber" ID="classes.Items.Melee::MonofilamentSaber" />
+			<Item Stack="1" Name="N.Spear" ID="classes.Items.Melee::NaleenSpear" />
 			<Item Stack="1" Name="N.Spear" ID="classes.Items.Melee::NyreanSpear" />
 			<Item Stack="1" Name="PhasicWhipM" ID="classes.Items.Melee::PetraMerc" />
 			<Item Stack="1" Name="PhasicWhipS" ID="classes.Items.Melee::PetraSmuggler" />
@@ -1903,6 +1913,7 @@
 			<Item Stack="1" Name="Shock Bow" ID="classes.Items.Guns::ShockBow" />
 			<Item Stack="1" Name="SlutRay" ID="classes.Items.Guns::SlutRay" />
 			<Item Stack="1" Name="A.SlutRay" ID="classes.Items.Guns::SlutRayAdvanced" />
+			<Item Stack="1" Name="H.SlutRay" ID="classes.Items.Guns::SlutRayHeavy" />
 			<Item Stack="1" Name="Spitter" ID="classes.Items.Guns::SpitterPistol" />
 			<Item Stack="1" Name="Strmbull" ID="classes.Items.Guns::Stormbull" />
 			<Item Stack="1" Name="SunFire" ID="classes.Items.Guns::SunFire" />
@@ -2013,8 +2024,17 @@
 		</ItemGroup>
 		<ItemGroup Name="Piercings">
 			<Item Stack="1"     Name="Ged. Ring"    ID="classes.Items.Piercings::GeddaniumRingPiercing" />
+			<Item Stack="1"     Name="G.Ring"       ID="classes.Items.Piercings::GoldRingPiercing" />
+			<Item Stack="1"     Name="G.Rings"      ID="classes.Items.Piercings::GoldRingPiercings" />
+			<Item Stack="1"     Name="G.Stud"       ID="classes.Items.Piercings::GoldStudPiercing" />
+			<Item Stack="1"     Name="G.Studs"      ID="classes.Items.Piercings::GoldStudPiercings" />
 			<Item Stack="1"     Name="L.Rings"      ID="classes.Items.Piercings::LundsRings" />
 			<Item Stack="1"     Name="Opal Ring"    ID="classes.Items.Piercings::OpalRingPiercing" />
+			<Item Stack="1"     Name="S.Ring"       ID="classes.Items.Piercings::SilverRingPiercing" />
+			<Item Stack="1"     Name="S.Rings"      ID="classes.Items.Piercings::SilverRingPiercings" />
+			<Item Stack="1"     Name="S.Stud"       ID="classes.Items.Piercings::SilverStudPiercing" />
+			<Item Stack="1"     Name="S.Studs"      ID="classes.Items.Piercings::SilverStudPiercings" />
+			<Item Stack="1"     Name="UrtaRing"     ID="classes.Items.Piercings::UrtaniumRingPiercing" />
 		</ItemGroup>
 	</Items>
 	<!-- ================================================================ -->
@@ -2092,6 +2112,7 @@
 			<KeyItem Name="Jerynn’s Collar" Description="A thick leather band, designed to cinch tightly yet comfortably around your neck." Value1="1" />
 			<KeyItem Name="Sera’s Collar" />
 			<KeyItem Name="Sub-Tuner Collar" />
+			<KeyItem Name="Vark's Collar" Label2="1==VARK_SEXED==7" />
 		</KeyItemGroup>
 		<KeyItemGroup Name="Miscellaneous">
 			<KeyItem Name="Arbetz Travel Agency Membership" />
@@ -2319,6 +2340,7 @@
 			<Perk Name="Black Latex" Description="Gives you delightful latex skin, but keeps you slightly more aroused at all times." />
 			<Perk Name="Breed Hungry" Description="Increases speed that semen is created at and the pregnancy speed." Value1="15" />
 			<Perk Name="Bubble Butt" Description="Your ass is always soft, regardless of tone." />
+			<Perk Name="Cum Cascade" Description="Your ‘Nuki Nuts will jump into overdrive while you have semen orally ingested." />
 			<Perk Name="Cybernetic Synchronization" Description="Cybernetic enhancements will give you an additional intelligence capacity boost." Value1="5" />
 			<Perk Name="Drug Fucked" Description="Grants: +40 to minimum libido, +10 to minimum lust, halved intelligence gains, and doubled libido gains" />
 			<Perk Name="Easy" Description="Gain 20% more lust from combat sources." Value1="20" />
@@ -4756,6 +4778,7 @@
 			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" Label4="1 == Permanent, ignores racial score" Value4="1" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs Messages Available" IsHidden="true" />
 			<StatusEffect Name="Ovilium Effect" IsHidden="true" />
+			<StatusEffect Name="Pregnancy Pending" Description="Your pregnancy is ready to deliver! Head to the nursery as soon as you can!" IconName="Icon_Belly_Pregnant" />
 			<StatusEffect Name="Queen Pregnancy End" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy State" IsHidden="true" />
 			<StatusEffect Name="Quinn Post-Pregnancy" IsHidden="true" />
@@ -4768,6 +4791,7 @@
 			<StatusEffect Name="Venus Pitcher Egg Incubation Finished" IsHidden="true" />
 			<StatusEffect Name="Venus Pitcher Seed Residue" IsHidden="true" MinutesLeft="20160" />
 			<StatusEffect Name="Zaalt Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Zephyr Preg Alert" IconName="Icon_Belly_Pregnant" IsHidden="true" />
 			<StatusEffect Name="Zil Pheromones" Description="Your body is emitting a fertile zil’s scent." IconName="Icon_Smelly" IconShade="12030916" />
 			<StatusEffect Name="Zil Pregnancy Reflex Mod" IsHidden="true" />
 		</StatusEffectGroup>
@@ -4775,6 +4799,7 @@
 			<StatusEffect Name="Anally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Donut" IconShade="12030916" />
 			<StatusEffect Name="Blue Balls" Description="Take 25% more lust damage in combat!" IconName="Icon_Sperm_Hearts" IconShade="0" />
 			<StatusEffect Name="Cum Cascade" Description="Side effect of ‘Nuki Nuts.." IconName="Icon_Sperm_Hearts" IconShade="12030916" IsHidden="true" />
+			<StatusEffect Name="Cum Cascade Suppressant" IsHidden="true" />
 			<StatusEffect Name="Cum Paused" IsHidden="true" />
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Cumflation Immune" IsHidden="true" />
@@ -4785,6 +4810,7 @@
 			<StatusEffect Name="Priapism" Description="You are unnaturally hard and erect regardless of your arousal level. The added discomfort prevents you from covering up!" IconName="OffenseUp" IconShade="12030916" />
 			<StatusEffect Name="Pussy Drenched" Value1="1" IconName="Icon_Water_Drop" IconShade="12030916" />
 			<StatusEffect Name="Riya Breed No Sex" IsHidden="true" />
+			<StatusEffect Name="SlyverenFacefuckForce" IsHidden="true" />
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Combat">
