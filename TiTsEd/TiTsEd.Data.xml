@@ -165,8 +165,12 @@
 			<SkinTone>blue-gray</SkinTone>
 			<SkinTone>blue</SkinTone>
 			<SkinTone>brass</SkinTone>
+			<SkinTone>bright blue</SkinTone>
+			<SkinTone>bright green</SkinTone>
 			<SkinTone>bright pink</SkinTone>
 			<SkinTone>bright purple</SkinTone>
+			<SkinTone>bright red</SkinTone>
+			<SkinTone>bright yellow</SkinTone>
 			<SkinTone>bronze</SkinTone>
 			<SkinTone>bronzed</SkinTone>
 			<SkinTone>brown-pink</SkinTone>
@@ -293,10 +297,12 @@
 			<SkinTone>luminous celeste</SkinTone>
 			<SkinTone>luminous cerulean</SkinTone>
 			<SkinTone>luminous cyan</SkinTone>
+			<SkinTone>luminous gold</SkinTone>
 			<SkinTone>luminous green</SkinTone>
 			<SkinTone>luminous orange</SkinTone>
 			<SkinTone>luminous pink</SkinTone>
 			<SkinTone>luminous purple</SkinTone>
+			<SkinTone>luminous red</SkinTone>
 			<SkinTone>luminous silver</SkinTone>
 			<SkinTone>luminous violet</SkinTone>
 			<SkinTone>luminous yellow</SkinTone>
@@ -378,9 +384,12 @@
 		</HairTypes>
 		<!-- ================================================================ -->
 		<HairColors>
+			<HairColor />
 			<HairColor>amber</HairColor>
 			<HairColor>aquamarine</HairColor>
 			<HairColor>auburn</HairColor>
+			<HairColor>auburn and black</HairColor>
+			<HairColor>azure</HairColor>
 			<HairColor>black and brown</HairColor>
 			<HairColor>black and pink</HairColor>
 			<HairColor>black and white</HairColor>
@@ -391,6 +400,7 @@
 			<HairColor>blue-white</HairColor>
 			<HairColor>blue</HairColor>
 			<HairColor>brass</HairColor>
+			<HairColor>brown and black</HairColor>
 			<HairColor>brown and white</HairColor>
 			<HairColor>brown-dappled</HairColor>
 			<HairColor>brown</HairColor>
@@ -439,6 +449,7 @@
 			<HairColor>jungle green</HairColor>
 			<HairColor>lavender</HairColor>
 			<HairColor>light brown</HairColor>
+			<HairColor>light pink</HairColor>
 			<HairColor>light red</HairColor>
 			<HairColor>luminous azure</HairColor>
 			<HairColor>luminous blue</HairColor>
@@ -470,6 +481,7 @@
 			<HairColor>purple</HairColor>
 			<HairColor>raven</HairColor>
 			<HairColor>red</HairColor>
+			<HairColor>red and black</HairColor>
 			<HairColor>reddish purple</HairColor>
 			<HairColor>rose gold</HairColor>
 			<HairColor>rose</HairColor>
@@ -556,6 +568,7 @@
 			<FaceType ID="27" Name="Mouseman" />
 			<FaceType ID="39" Name="Naleen" />
 			<FaceType ID="40" Name="Panda" />
+			<FaceType ID="42" Name="Raskvel" />
 			<FaceType ID="45" Name="Badger" />
 			<FaceType ID="50" Name="Goat" />
 			<FaceType ID="57" Name="Ovir" />
@@ -574,6 +587,7 @@
 			<FaceFlag ID="6"  Name="Smooth" />
 			<FaceFlag ID="14" Name="Muzzled" />
 			<FaceFlag ID="15" Name="Angular" />
+			<FaceFlag ID="20" Name="Furred" />
 			<FaceFlag ID="43" Name="Beak" />
 			<FaceFlag ID="46" Name="Freckled" />
 		</FaceFlags>
@@ -677,6 +691,7 @@
 			<EyeType ID="18" Name="Gabilani" />
 			<EyeType ID="19" Name="Shark" />
 			<EyeType ID="20" Name="Suula" />
+			<EyeType ID="42" Name="Raskvel" />
 			<EyeType ID="49" Name="Leithan" />
 			<EyeType ID="50" Name="Goat" />
 			<EyeType ID="51" Name="Synthetic" />
@@ -1305,6 +1320,7 @@
 			<Item Stack="1" Name="Scarf" ID="classes.Items.Accessories::BeatricesScarf" />
 			<Item Stack="1" Name="B.D.S." ID="classes.Items.Accessories::BimboleumDefenseSystem" />
 			<Item Stack="1" Name="Exp. Cloak" ID="classes.Items.Accessories::ExplorersCloak" />
+			<Item Stack="1" Name="Fedora"       ID="classes.Items.Accessories::Fedora" />
 			<Item Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
 			<Item Stack="1" Name="GooCore" ID="classes.Items.Accessories::GooCore" />
 			<Item Stack="1" Name="G.Leash" ID="classes.Items.Accessories::GrunchLeash" />
@@ -1410,6 +1426,9 @@
 			</Item>
 			<Item Stack="1" Name="PWA Suit" ID="classes.Items.Armor::ArmstrongSuitWhite">
 				<ItemField Name="shields" Type="int" Value="20" />
+			</Item>
+			<Item Stack="1" Name="AugArmor" ID="classes.Items.Armor::AugmentWeaveArmor">
+				<ItemField Name="shields" Type="int" Value="50" />
 			</Item>
 			<Item Stack="1" Name="C.Armor" ID="classes.Items.Armor::ChitinArmor" />
 			<Item Stack="1" Name="C.Plate" ID="classes.Items.Armor::ChitPlate" />
@@ -1606,6 +1625,7 @@
 		<ItemGroup Name="Transformatives">
 			<Item Stack="10" Name="Anusoft" ID="classes.Items.Miscellaneous::Anusoft" />
 			<Item Stack="10" Name="AusarTreat" ID="classes.Items.Miscellaneous::AusarTreats" />
+			<Item Stack="50" Name="Ass Patch"   ID="classes.Items.Miscellaneous::AssSlapPatch" />
 			<Item Stack="50" Name="Boobswell P." ID="classes.Items.Miscellaneous::BoobswellPads" />
 			<Item Stack="10" Name="Chocolac" ID="classes.Items.Miscellaneous::Chocolac" />
 			<Item Stack="10" Name="Condensol" ID="classes.Items.Miscellaneous::Condensol" />
@@ -1734,6 +1754,7 @@
 			<Item Stack="10" Name="S.Bounty" ID="classes.Items.Transformatives::SirensBounty" LongName="Siren’s Bounty" />
 			<Item Stack="10" Name="S.Clear" ID="classes.Items.Transformatives::SkinClear" />
 			<Item Stack="10" Name="Slutshroom" ID="classes.Items.Transformatives::SlutShroom" />
+			<Item Stack="10" Name="SnakeByte"   ID="classes.Items.Transformatives::SnakeByte" />
 			<Item Stack="9"  Name="Spunkshrm"  ID="classes.Items.Transformatives::SpunkShroom" />
 			<Item Stack="10" Name="Shortcake" ID="classes.Items.Transformatives::StrawberryShortcake" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
@@ -1919,6 +1940,7 @@
 			<Item Stack="1" Name="SunFire" ID="classes.Items.Guns::SunFire" />
 			<Item Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" Comment="Debug Item" Tooltip="Debug Item" />
 			<Item Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
+			<Item Stack="1" Name="HvyPlasma"    ID="classes.Items.Guns::TeyaalsHeavyPlasmaCaster" />
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
 			<Item Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
 			<Item Stack="1" Name="Vanquish" ID="classes.Items.Guns::Vanquisher" />
@@ -2030,6 +2052,7 @@
 			<Item Stack="1"     Name="G.Studs"      ID="classes.Items.Piercings::GoldStudPiercings" />
 			<Item Stack="1"     Name="L.Rings"      ID="classes.Items.Piercings::LundsRings" />
 			<Item Stack="1"     Name="Opal Ring"    ID="classes.Items.Piercings::OpalRingPiercing" />
+			<Item Stack="1"     Name="S.CockBell"   ID="classes.Items.Piercings::SilkyCockBell" />
 			<Item Stack="1"     Name="S.Ring"       ID="classes.Items.Piercings::SilverRingPiercing" />
 			<Item Stack="1"     Name="S.Rings"      ID="classes.Items.Piercings::SilverRingPiercings" />
 			<Item Stack="1"     Name="S.Stud"       ID="classes.Items.Piercings::SilverStudPiercing" />
@@ -2075,11 +2098,13 @@
 			<KeyItem Name="Sexbot GPS Triangulator" />
 			<KeyItem Name="Siegwulfe Datacore" Description="A fist-sized data storage containing the personality of your former Siegwulfe [wulfe.name]." />
 			<KeyItem Name="Silver Key" />
+			<KeyItem Name="Teyaal’s Key Card" />
 			<KeyItem Name="Unification Rally Invite: 18:00, Mushroom Park" />
 			<KeyItem Name="Uveto A.I. Cores" Description="A.I. Cores recovered from Captain Zaalt Kandar, destined to be delivered to Uveto." />
 			<KeyItem Name="Vial of Frostwyrm Blood" />
 			<KeyItem Name="Xanthe's Silk" Description="You're supposed to give this to Inessa. She'll supposedly know what it means." />
 			<KeyItem Name="Xenogen Datapad" />
+			<KeyItem Name="Zheng Shi RFID Badge" />
 		</KeyItemGroup>
 		<KeyItemGroup Name="Coupons">
 			<KeyItem Name="Coupon - Clippex" Description="Save 75% on your next purchase of Clippex!" Label1="Discount Multiplier" Value1="0.25" Type1="Double" />
@@ -2118,6 +2143,7 @@
 			<KeyItem Name="Arbetz Travel Agency Membership" />
 			<KeyItem Name="Beach ‘n Surf Lifetime Pass" />
 			<KeyItem Name="Bulky Data-Core" Label1="Actual Price" Value1="2000" />
+			<KeyItem Name="Butt Bug (Male)" Description="A bio-sustaining canister that houses a living male butt bug." />
 			<KeyItem Name="Federation Vibrator" />
 			<KeyItem Name="Frostwyrm Scales" />
 			<KeyItem Name="Gildenmere Pass" />
@@ -2133,6 +2159,7 @@
 			<KeyItem Name="Republic Dildo" />
 			<KeyItem Name="Signed Steph Irson Photo" Description="A signed photograph of Steph Irson... given to you by Steph Irson." />
 			<KeyItem Name="Some Sort of Shining Spaceship Part" Label1="Actual Price" Value1="2000" />
+			<KeyItem Name="Taur-centric Ship Equipment" Description="Equipment to accommodate a taur living on your ship." />
 			<KeyItem Name="Ten Ton Gym Membership" />
 			<KeyItem Name="Vi's Vagina" />
 			<KeyItem Name="Water Princess Note" Description="This receipt by a child-recovery drone was doodled all over by the tiny water princesses you gave birth to. They've scrawled several affectionate drawings all over it, and written thank-yous for taking care of them. Looking at it gives you a warm, fuzzy feeling..." />
@@ -2340,6 +2367,7 @@
 			<Perk Name="Black Latex" Description="Gives you delightful latex skin, but keeps you slightly more aroused at all times." />
 			<Perk Name="Breed Hungry" Description="Increases speed that semen is created at and the pregnancy speed." Value1="15" />
 			<Perk Name="Bubble Butt" Description="Your ass is always soft, regardless of tone." />
+			<Perk Name="Buns of Steel" Description="Your ass is always firm, regardless of tone." />
 			<Perk Name="Cum Cascade" Description="Your ‘Nuki Nuts will jump into overdrive while you have semen orally ingested." />
 			<Perk Name="Cybernetic Synchronization" Description="Cybernetic enhancements will give you an additional intelligence capacity boost." Value1="5" />
 			<Perk Name="Drug Fucked" Description="Grants: +40 to minimum libido, +10 to minimum lust, halved intelligence gains, and doubled libido gains" />
@@ -4486,6 +4514,7 @@
 		<Flag Name="USED_GUSH" />
 		<Flag Name="USED_MILKER" />
 		<Flag Name="USED_NURSERY_COMPUTER" />
+		<Flag Name="USED_SNAKEBYTE" Description="1 == used the SnakeByte" />
 		<Flag Name="USHA_MET3"      Description="1 if met Ushamee in Room 3" />
 		<Flag Name="USHA_STATE"     Description="1 == LoverChief&#xD;&#xA;2 == ChiefWantsItBad" />
 		<Flag Name="USHA_SEXED"     Description="0-INFINITY&#xD;&#xA;undefined if never sexed" />
@@ -4670,6 +4699,7 @@
 			<StatusEffect Name="Amazona Uses" IsHidden="true" />
 			<StatusEffect Name="Anal Lubricant" Description="Thanks to some YTR Lube, your anus is particularly slippery! ...at least for a while." IconName="Icon_Splatter" MinutesLeft="4320" />
 			<StatusEffect Name="Aphrodisiac Milk" Description="This milk is keeping your body more aroused than normal. You’ll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
+			<StatusEffect Name="Ass Slap Patch" Description="The applied Ass Slap patch is gradually working to fill out your butt cheeks. You can remove it at any point via the “Remove Ass Slap Patch” command in the “Masturbation” menu, but the patch will still be consumed. It’s one use only." Value1="1" IconName="LustUp" MinutesLeft="4320" />
 			<StatusEffect Name="Boobswell Pads" Description="The applied boobswell pads are slowly but steadily working to fill out your chest. You can remove them at any point via the &quot;Remove Swell&quot; command in the &quot;Masturbation&quot; menu, but the pads will still be consumed. They're one use only." IconName="LustUp" MinutesLeft="4320" />
 			<StatusEffect Name="Cerespirin" Description="Your have injected yourself with an experimental drug..." Value2="1" IconName="Icon_DrugVial" MinutesLeft="1440" />
 			<StatusEffect Name="Clippex Gel" Description="Your nipples tingle by the gel you applied..." Value2="1" IconName="Icon_DrugPill" />
@@ -4836,6 +4866,7 @@
 			<StatusEffect Name="LimberTime" IsHidden="true" />
 			<StatusEffect Name="LUND_DICKED_CD" IsHidden="true" />
 			<StatusEffect Name="MAJA_FUCK_RECOVERY" IsHidden="true" />
+			<StatusEffect Name="Maus CD" IsHidden="true" />
 			<StatusEffect Name="MufflingsCD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_COMA_CD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_COMA_EMAIL_CD" IsHidden="true" />
@@ -4907,9 +4938,11 @@
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Exhibitionism Reserve" Description="Tracker for bonus exhibitionism gains." IconName="LustUp" IsHidden="true" />
 			<StatusEffect Name="Fail Quadomme Diplomacy" IsHidden="true" />
+			<StatusEffect Name="Flee Disabled" IsHidden="true" />
 			<StatusEffect Name="Force Fem Gender" Comment="Forces feminine descriptions" IsHidden="true" />
 			<StatusEffect Name="Force It Gender" Comment="Forces neuter/androgynous descriptions" IsHidden="true" />
 			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
+			<StatusEffect Name="Forced Gender" IsHidden="true" />
 			<StatusEffect Name="Goo Armor Design" Description="none" IsHidden="true" />
 			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
 			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
@@ -4941,6 +4974,7 @@
 			<StatusEffect Name="Psi Slave Collar" Description="This metal collar limits your intelligence capacity and willpower while worn, making you completely subservient to the will of the one who operates it." Value1="0.5" Type1="Double" Value2="0.5" Type2="Double" Value3="200" IconName="Radio" IconShade="16711680" />
 			<StatusEffect Name="Quaramarta!" Description="Fazian's Quaramarta performance has sharpened your senses!&#xA;Critical chance increased by 15%." IconName="OffenseUp" IconShade="0" />
 			<StatusEffect Name="Roehm Slimed" Description="Direct physical contact with a roehm in heat results in stickiness, and smelling rather like an orgy in a vat of molasses." Value1="10" Value2="-5" Value3="15" IconName="Icon_Splatter" IconShade="12030916" MinutesLeft="720" />
+			<StatusEffect Name="Ramis Sated" IsHidden="true" />
 			<StatusEffect Name="RefractBoost" IsHidden="true" />
 			<StatusEffect Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IconName="DefenseDown" IconShade="0" />
 			<StatusEffect Name="SeenMitzi" IsHidden="true" />
