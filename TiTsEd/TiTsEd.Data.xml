@@ -1216,6 +1216,7 @@
 			<VaginaFlag ID="18" Name="Tendril" />
 			<VaginaFlag ID="25" Name="Ovipositor" />
 			<VaginaFlag ID="30" Name="Nubby" />
+			<VaginaFlag ID="33" Name="Ribbed" />
 			<VaginaFlag ID="37" Name="Gooey" />
 			<VaginaFlag ID="40" Name="Slightly Pumped" />
 			<VaginaFlag ID="41" Name="Fully Pumped" />
