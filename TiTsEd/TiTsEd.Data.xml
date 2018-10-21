@@ -875,8 +875,10 @@
 		</ArmTypes>
 		<!-- ================================================================ -->
 		<ArmFlags>
+			<ArmFlag ID="4"  Name="Fluffy" />
 			<ArmFlag ID="6"  Name="Smooth" />
 			<ArmFlag ID="12" Name="Sticky" />
+			<ArmFlag ID="13" Name="Thick" />
 			<ArmFlag ID="19" Name="Amorphous" />
 			<ArmFlag ID="20" Name="Furred" />
 			<ArmFlag ID="21" Name="Scaled" />
@@ -934,8 +936,10 @@
 		<!-- ================================================================ -->
 		<LegFlags>
 			<LegFlag ID="2"  Name="Prehensile" />
+			<LegFlag ID="4"  Name="Fluffy" />
 			<LegFlag ID="6"  Name="Smooth" />
 			<LegFlag ID="12" Name="Sticky" />
+			<LegFlag ID="13" Name="Thick" />
 			<LegFlag ID="16" Name="Plantigrade" />
 			<LegFlag ID="17" Name="Digitgrade" />
 			<LegFlag ID="18" Name="Tendril" />
