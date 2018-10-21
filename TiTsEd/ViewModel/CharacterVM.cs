@@ -97,6 +97,20 @@ namespace TiTsEd.ViewModel
             UpdateInventory();
         }
 
+        public void UpdateAll(string name = null)
+        {
+            if (null != name)
+            {
+                CharacterName = name;
+            }
+
+            UpdateKeyItems();
+
+            UpdatePerks();
+
+            UpdateStatusEffects();
+        }
+
         public void BeforeSerialization()
         {
             CleanupInventory();

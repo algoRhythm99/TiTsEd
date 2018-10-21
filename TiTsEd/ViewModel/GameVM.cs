@@ -155,13 +155,7 @@ namespace TiTsEd.ViewModel {
                 IsPC = false;
             }
 
-            Character.CharacterName = _characterName;
-
-            Character.UpdateKeyItems();
-
-            Character.UpdatePerks();
-
-            Character.UpdateStatusEffects();
+            Character.UpdateAll( _characterName );
         }
 
         public CharacterVM Character { get; private set; }
