@@ -935,6 +935,11 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Fluffy");
                     break;
+                case 82: //Frostwyrm
+                    defaultFlags.Add("Angular");
+                    defaultFlags.Add("Long");
+                    defaultFlags.Add("Muzzled");
+                    break;
             }
             return defaultFlags;
         }
@@ -1044,6 +1049,7 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Lubricated");
                     break;
                 case 42: //Raskvel
+                case 82: //Frostwyrm
                     defaultFlags.Add("Long");
                     defaultFlags.Add("Prehensile");
                     defaultFlags.Add("Lubricated");
@@ -1332,6 +1338,10 @@ namespace TiTsEd.ViewModel
                 case 20: //Suula
                     defaultFlags.Add("Feathered");
                     break;
+                case 82: //Frostwyrm
+                    defaultFlags.Add("Scaled");
+                    defaultFlags.Add("Smooth");
+                    break;
             }
             return defaultFlags;
         }
@@ -1465,6 +1475,15 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Digitigrade");
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Paws");
+                    break;
+                case 82: //Frostwyrm
+                    defaultFlags.Add("Digitigrade");
+                    defaultFlags.Add("Furred");
+                    break;
+                case 85: //Janeria
+                    defaultFlags.Add("Amorphous");
+                    defaultFlags.Add("Plantigrade");
+                    defaultFlags.Add("Smooth");
                     break;
 
             }
@@ -1603,6 +1622,7 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Smooth");
                     break;
                 case 65: //Gryvain
+                case 82: //Frostwyrm
                     defaultFlags.Add("Scaled");
                     defaultFlags.Add("Prehensile");
                     defaultFlags.Add("Long");

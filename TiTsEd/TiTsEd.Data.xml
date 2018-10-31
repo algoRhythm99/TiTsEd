@@ -164,6 +164,7 @@
 			<SkinTone>black</SkinTone>
 			<SkinTone>blue-gray</SkinTone>
 			<SkinTone>blue</SkinTone>
+			<SkinTone>bluish-pink</SkinTone>
 			<SkinTone>brass</SkinTone>
 			<SkinTone>bright blue</SkinTone>
 			<SkinTone>bright green</SkinTone>
@@ -442,6 +443,7 @@
 			<HairColor>gray</HairColor>
 			<HairColor>green</HairColor>
 			<HairColor>hazel</HairColor>
+			<HairColor>honey-blonde</HairColor>
 			<HairColor>iridescent</HairColor>
 			<HairColor>ivory</HairColor>
 			<HairColor>jade green</HairColor>
@@ -580,6 +582,7 @@
 			<FaceType ID="75" Name="Lupine" />
 			<FaceType ID="77" Name="Lesser Panda" />
 			<FaceType ID="81" Name="Mothrine" />
+			<FaceType ID="82" Name="Frostwyrm" />
 		</FaceTypes>
 		<!-- ================================================================ -->
 		<FaceFlags>
@@ -706,6 +709,8 @@
 			<EyeType ID="76" Name="Sheep" />
 			<EyeType ID="80" Name="Adremmalex" />
 			<EyeType ID="81" Name="Mothrine" />
+			<EyeType ID="82" Name="Frostwyrm" />
+			<EyeType ID="85" Name="Janeria" />
 		</EyeTypes>
 		<!-- ================================================================ -->
 		<EarTypes>
@@ -748,6 +753,7 @@
 			<EarType ID="76" Name="Sheep" />
 			<EarType ID="77" Name="Lesser Panda" />
 			<EarType ID="81" Name="Mothrine" />
+			<EarType ID="82" Name="Frostwyrm" />
 		</EarTypes>
 		<EarLengthEnables>
 			<EarLengthEnable>Raskvel</EarLengthEnable>
@@ -785,6 +791,7 @@
 			<TongueType ID="66" Name="Korgonne" />
 			<TongueType ID="69" Name="Bothrioc" />
 			<TongueType ID="81" Name="Mothrine" />
+			<TongueType ID="82" Name="Frostwyrm" />
 		</TongueTypes>
 		<!-- ================================================================ -->
 		<TongueFlags>
@@ -823,6 +830,7 @@
 			<HornType ID="63" Name="Narwhal" />
 			<HornType ID="65" Name="Gryvain" />
 			<HornType ID="76" Name="Sheep" />
+			<HornType ID="82" Name="Frostwyrm" />
 		</HornTypes>
 		<!-- ================================================================ -->
 		<BeardStyles>
@@ -872,6 +880,7 @@
 			<ArmType ID="75" Name="Lupine" />
 			<ArmType ID="77" Name="Lesser Panda" />
 			<ArmType ID="81" Name="Mothrine" />
+			<ArmType ID="82" Name="Frostwyrm" />
 		</ArmTypes>
 		<!-- ================================================================ -->
 		<ArmFlags>
@@ -932,6 +941,8 @@
 			<LegType ID="76" Name="Sheep" />
 			<LegType ID="77" Name="Lesser Panda" />
 			<LegType ID="81" Name="Mothrine" />
+			<LegType ID="82" Name="Frostwyrm" />
+			<LegType ID="85" Name="Janeria" />
 		</LegTypes>
 		<!-- ================================================================ -->
 		<LegFlags>
@@ -973,6 +984,8 @@
 			<WingType ID="60" Name="Myr" />
 			<WingType ID="65" Name="Gryvain" />
 			<WingType ID="81" Name="Mothrine" />
+			<WingType ID="82" Name="Frostwyrm" />
+			<WingType ID="85" Name="Janeria" />
 		</WingTypes>
 		<!-- ================================================================ -->
 		<TailTypes>
@@ -1019,6 +1032,7 @@
 			<TailType ID="75" Name="Lupine" />
 			<TailType ID="76" Name="Sheep" />
 			<TailType ID="77" Name="Lesser Panda" />
+			<TailType ID="82" Name="Frostwyrm" />
 		</TailTypes>
 		<!-- ================================================================ -->
 		<TailFlags>
@@ -1160,6 +1174,7 @@
 			<CockType ID="79" Name="Thraggen" />
 			<CockType ID="81" Name="Mothrine" />
 			<CockType ID="82" Name="Frostwyrm" />
+			<CockType ID="85" Name="Janeria" />
 		</CockTypes>
 		<!-- ================================================================ -->
 		<CockFlags>
@@ -1242,6 +1257,10 @@
 		<PregnancyTypes>
 			<PregnancyType>(None)</PregnancyType>
 			<PregnancyType>BothriocPregnancy</PregnancyType>
+			<PregnancyType>ButtBugPregnancy</PregnancyType>
+			<PregnancyType>ButtBugPregnancy0</PregnancyType>
+			<PregnancyType>ButtBugPregnancy1</PregnancyType>
+			<PregnancyType>ButtBugPregnancy2</PregnancyType>
 			<PregnancyType>RahnPregnancyBreedwell</PregnancyType>
 			<PregnancyType>CockvinePregnancy</PregnancyType>
 			<PregnancyType>DeepQueenPregnancy</PregnancyType>
@@ -1321,6 +1340,7 @@
 		<ItemGroup Name="Accessory">
 			<Item Stack="1" Name="ACE Cannon" ID="classes.Items.Accessories::ACECannon" />
 			<Item Stack="1" Name="AimEyepiece" ID="classes.Items.Accessories::AimEyepiece" />
+			<Item Stack="1" Name="AimEyeII"     ID="classes.Items.Accessories::AimEyepieceMkII" />
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
 			<Item Stack="1" Name="Scarf" ID="classes.Items.Accessories::BeatricesScarf" />
 			<Item Stack="1" Name="B.D.S." ID="classes.Items.Accessories::BimboleumDefenseSystem" />
@@ -1346,6 +1366,10 @@
 			<Item Stack="1" Name="NW.Leash" ID="classes.Items.Accessories::NogwichLeash" />
 			<Item Stack="1" Name="S.D.S." ID="classes.Items.Accessories::SalamanderDefenseSystem" />
 			<Item Stack="1" Name="S.Duster" ID="classes.Items.Accessories::SalamanderDuster" />
+			<Item Stack="1" Name="Sh.Bracs" ID="classes.Items.Accessories::ShieldAugBracers">
+				<ItemField Name="shieldDefense" Type="int" Value="1" />
+				<ItemField Name="shields" Type="int" Value="50" />
+			</Item>
 			<Item Stack="1" Name="SG.Leash" ID="classes.Items.Accessories::ShoulderGrunchLeash" />
 			<Item Stack="1" Name="Siegwulfe" ID="classes.Items.Accessories::SiegwulfeItem" />
 			<Item Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolf" />
@@ -1686,6 +1710,7 @@
 			<Item Stack="10" Name="Circumser" ID="classes.Items.Transformatives::Circumscriber" />
 			<Item Stack="10" Name="ClearYu" ID="classes.Items.Transformatives::ClearYu" />
 			<Item Stack="10" Name="Clippex" ID="classes.Items.Transformatives::Clippex" />
+			<Item Stack="10" Name="Crk. Jelly"  ID="classes.Items.Transformatives::CrackleJelly" />
 			<Item Stack="10" Name="DendroGro" ID="classes.Items.Transformatives::DendroGro" />
 			<Item Stack="10" Name="Dove Balm" ID="classes.Items.Transformatives::DoveBalm" />
 			<Item Stack="10" Name="DracoG." ID="classes.Items.Transformatives::DracoGuard" />
@@ -1701,6 +1726,7 @@
 			<Item Stack="1"  Name="Foxfire" ID="classes.Items.Transformatives::Foxfire" />
 			<Item Stack="10" Name="FrontRack" ID="classes.Items.Transformatives::FrontRackCream" />
 			<Item Stack="1"  Name="Frostfire" ID="classes.Items.Transformatives::Frostfire" />
+			<Item Stack="10" Name="Frst. Ichor" ID="classes.Items.Transformatives::FrostwyrmIchor" />
 			<Item Stack="10" Name="Furball" ID="classes.Items.Transformatives::Furball" />
 			<Item Stack="12" Name="Futazona"    ID="classes.Items.Transformatives::Futazona" />
 			<Item Stack="10" Name="GaloMax" ID="classes.Items.Transformatives::GaloMax" />
@@ -2064,6 +2090,15 @@
 			<Item Stack="1"     Name="S.Studs"      ID="classes.Items.Piercings::SilverStudPiercings" />
 			<Item Stack="1"     Name="UrtaRing"     ID="classes.Items.Piercings::UrtaniumRingPiercing" />
 		</ItemGroup>
+		<ItemGroup Name="Halloween Items">
+			<Item Stack="1" Name="PK.Armor" ID="classes.Items.HalloweenItems::PumpkingArmor">
+				<ItemField Name="fortification" Type="int" Value="50" />
+			</Item>
+			<Item Stack="1" Name="W.Corset" ID="classes.Items.HalloweenItems::WitchsCorset" />
+			<Item Stack="1" Name="Witch.O"  ID="classes.Items.HalloweenItems::WitchsOutfit" />
+			<Item Stack="1" Name="W.Panty"  ID="classes.Items.HalloweenItems::WitchsPanty" />
+			<Item Stack="1" Name="Witch.R"  ID="classes.Items.HalloweenItems::WitchsRobe" />
+		</ItemGroup>
 	</Items>
 	<!-- ================================================================ -->
 	<KeyItems>
@@ -2333,6 +2368,7 @@
 			<Perk Name="Chupacabro Slayer" Description="You defeated the legendary Chupacabro, and now do +10% damage against treated individuals." Value1="1" Value2="50" />
 -->
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
+			<Perk Name="Face Fucker" Description="Increases minimum lust and cum output, thanks to that strange VR adventure..." Value1="5" />
 			<Perk Name="Limber" Description="Grants an addition 20% chance to escape from grapples!" />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
