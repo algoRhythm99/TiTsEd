@@ -1275,6 +1275,7 @@
 			<PregnancyType>OvalastingEggPregnancy</PregnancyType>
 			<PregnancyType>OviliumEggPregnancy</PregnancyType>
 			<PregnancyType>PsychicTentacles</PregnancyType>
+			<PregnancyType>RahnPregnancyBreedwell</PregnancyType>
 			<PregnancyType>RaskvelPregnancy</PregnancyType>
 			<PregnancyType>RenvraEggPregnancy</PregnancyType>
 			<PregnancyType>RenvraFullPregnancy</PregnancyType>
@@ -1418,6 +1419,9 @@
 			</Item>
 			<Item Stack="1" Name="T.Bodysuit" ID="classes.Items.Apparel::ThermalBodysuit" />
 			<Item Stack="1" Name="TopNSkirt." ID="classes.Items.Apparel::TopNSkirt" />
+			<Item Stack="1" Name="Penny Casual" ID="classes.Items.Apparel::UGCCasualOutfit">
+				<ItemField Name="fortification" Type="int" Value="15" />
+			</Item>
 			<Item Stack="1" Name="UGC Uniform" ID="classes.Items.Apparel::UGCUniform" />
 			<Item Stack="1" Name="WaitressUniform" ID="classes.Items.Apparel::WaitressUniform" />
 			<Item Stack="1" Name="Winter G." ID="classes.Items.Apparel::WinterGear" />
@@ -1629,6 +1633,7 @@
 			<Item Stack="20" Name="Sydian P." ID="classes.Items.Miscellaneous::ProphylacticSydian" />
 			<Item Stack="10" Name="Peprika"     ID="classes.Items.Miscellaneous::Peprika" />
 			<Item Stack="10" Name="Plumpkin"    ID="classes.Items.Miscellaneous::Plumpkin" />
+			<Item Stack="10" Name="WffOWsp"     ID="classes.Items.Miscellaneous::WhiffOWisp" />
 		</ItemGroup>
 		<ItemGroup Name="Restoratives">
 			<Item Stack="10" Name="BBQ To-Go" ID="classes.Items.Miscellaneous::BBQToGo" />
@@ -1710,7 +1715,9 @@
 			<Item Stack="10" Name="Circumser" ID="classes.Items.Transformatives::Circumscriber" />
 			<Item Stack="10" Name="ClearYu" ID="classes.Items.Transformatives::ClearYu" />
 			<Item Stack="10" Name="Clippex" ID="classes.Items.Transformatives::Clippex" />
-			<Item Stack="10" Name="Crk. Jelly"  ID="classes.Items.Transformatives::CrackleJelly" />
+<!-- cannot be obtained currently, errors if you try to add to inventory
+			<Item Stack="10" Name="Crk. Jelly"  ID="classes.Items.Transformatives::CrackleJelly" LongName="Crackle Jelly" />
+-->
 			<Item Stack="10" Name="DendroGro" ID="classes.Items.Transformatives::DendroGro" />
 			<Item Stack="10" Name="Dove Balm" ID="classes.Items.Transformatives::DoveBalm" />
 			<Item Stack="10" Name="DracoG." ID="classes.Items.Transformatives::DracoGuard" />
@@ -1726,7 +1733,9 @@
 			<Item Stack="1"  Name="Foxfire" ID="classes.Items.Transformatives::Foxfire" />
 			<Item Stack="10" Name="FrontRack" ID="classes.Items.Transformatives::FrontRackCream" />
 			<Item Stack="1"  Name="Frostfire" ID="classes.Items.Transformatives::Frostfire" />
-			<Item Stack="10" Name="Frst. Ichor" ID="classes.Items.Transformatives::FrostwyrmIchor" />
+<!-- cannot be obtained currently, errors if you try to add to inventory
+			<Item Stack="10" Name="Frst. Ichor" ID="classes.Items.Transformatives::FrostwyrmIchor" LongName="Frostwyrm Ichor" />
+-->
 			<Item Stack="10" Name="Furball" ID="classes.Items.Transformatives::Furball" />
 			<Item Stack="12" Name="Futazona"    ID="classes.Items.Transformatives::Futazona" />
 			<Item Stack="10" Name="GaloMax" ID="classes.Items.Transformatives::GaloMax" />
@@ -1872,6 +1881,7 @@
 			<Item Stack="1" Name="P.Hawk" ID="classes.Items.Melee::PlasmaHawk" />
 			<Item Stack="1" Name="P.Talons" ID="classes.Items.Melee::PredatorTalons" />
 			<Item Stack="1" Name="Wrench" ID="classes.Items.Melee::RaskvelWrench" />
+			<Item Stack="1" Name="RatBaton" ID="classes.Items.Melee::ReaperStunBaton" />
 			<Item Stack="1" Name="Rock" ID="classes.Items.Melee::Rock" />
 			<Item Stack="1" Name="R.Hammer" ID="classes.Items.Melee::RocketHammer" />
 			<Item Stack="1" Name="S.Hammer" ID="classes.Items.Melee::SaurmorianHammer" />
@@ -1884,6 +1894,7 @@
 			<Item Stack="1" Name="SurvAxe" ID="classes.Items.Melee::SurvivalAxe" />
 			<Item Stack="1" Name="T.Spear" ID="classes.Items.Melee::TaivrasSpear" />
 			<Item Stack="1" Name="T.Scalpel" ID="classes.Items.Melee::ThermalScalpel" />
+			<Item Stack="1" Name="tonfas"   ID="classes.Items.Melee::Tonfas" />
 			<Item Stack="1" Name="V.Blade" ID="classes.Items.Melee::VampBlade" />
 			<Item Stack="1" Name="Vanae Spear" ID="classes.Items.Melee::VanaeSpear" />
 			<Item Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
@@ -1934,6 +1945,7 @@
 			<Item Stack="1" Name="H.Cannon"     ID="classes.Items.Guns::HandCannon" />
 			<Item Stack="1" Name="HL Bow"       ID="classes.Items.Guns::HardlightBow" />
 			<Item Stack="1" Name="HL Rifle"     ID="classes.Items.Guns::HardlightRifle" />
+			<Item Stack="1" Name="HeavyLaser"   ID="classes.Items.Guns::HeavyLaser" />
 			<Item Stack="1" Name="Hirudo"       ID="classes.Items.Guns::Hirudo">
 				<ItemField Name="fortification" Type="int" Value="-15" />
 			</Item>
@@ -4885,6 +4897,7 @@
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Combat">
+			<StatusEffect Name="Blind Immune" IsHidden="true" />
 			<StatusEffect Name="Disarm Immune" IsHidden="true" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
 			<StatusEffect Name="Stun Immune" IsHidden="true" />
@@ -4945,7 +4958,7 @@
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Body Effects">
 			<StatusEffect Name="Arm Flower" IsHidden="true" Comment="Description = flower color" />
-			<StatusEffect Name="Body Markings" Comment="Body markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 == Stripes&#xD;&#xA;3 == Blotch" IsHidden="true" />
+			<StatusEffect Name="Body Markings" Comment="Body markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="0" Label1="0 == Vanae&#xD;&#xA;1 == Stripes&#xD;&#xA;3 == Blotch" IsHidden="true" />
 			<StatusEffect Name="Ceria Dye Wings" IsHidden="true" />
 			<StatusEffect Name="Ceria Dye Balls" IsHidden="true" />
 			<StatusEffect Name="frizzy hair" IsHidden="true" />
