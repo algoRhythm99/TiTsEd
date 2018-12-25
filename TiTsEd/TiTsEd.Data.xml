@@ -866,6 +866,7 @@
 			<ArmType ID="20" Name="Suula" />
 			<ArmType ID="23" Name="Tentacle" />
 			<ArmType ID="24" Name="Kui-tan" />
+			<ArmType ID="26" Name="Mouse" />
 			<ArmType ID="40" Name="Panda" />
 			<ArmType ID="45" Name="Badger" />
 			<ArmType ID="49" Name="Leithan" />
@@ -922,6 +923,7 @@
 			<LegType ID="21" Name="Deer" />
 			<LegType ID="23" Name="Tentacle" />
 			<LegType ID="24" Name="Kui-tan" />
+			<LegType ID="26" Name="Mouse" />
 			<LegType ID="32" Name="MLP" />
 			<LegType ID="35" Name="Succubus" />
 			<LegType ID="40" Name="Panda" />
@@ -1275,6 +1277,7 @@
 			<PregnancyType>OvalastingEggPregnancy</PregnancyType>
 			<PregnancyType>OviliumEggPregnancy</PregnancyType>
 			<PregnancyType>PsychicTentacles</PregnancyType>
+			<PregnancyType>QuaellePregnancy</PregnancyType>
 			<PregnancyType>RahnPregnancyBreedwell</PregnancyType>
 			<PregnancyType>RaskvelPregnancy</PregnancyType>
 			<PregnancyType>RenvraEggPregnancy</PregnancyType>
@@ -1367,6 +1370,10 @@
 			<Item Stack="1" Name="NW.Leash" ID="classes.Items.Accessories::NogwichLeash" />
 			<Item Stack="1" Name="S.D.S." ID="classes.Items.Accessories::SalamanderDefenseSystem" />
 			<Item Stack="1" Name="S.Duster" ID="classes.Items.Accessories::SalamanderDuster" />
+			<Item Stack="1" Name="SantaHat" ID="classes.Items.Accessories::SantaHat" />
+			<Item Stack="1" Name="S.Drone" ID="classes.Items.Accessories::ShelterDrone">
+				<ItemField Name="shields" Type="int" Value="-50" />
+			</Item>
 			<Item Stack="1" Name="Sh.Bracs" ID="classes.Items.Accessories::ShieldAugBracers">
 				<ItemField Name="shieldDefense" Type="int" Value="1" />
 				<ItemField Name="shields" Type="int" Value="50" />
@@ -1465,6 +1472,10 @@
 			</Item>
 			<Item Stack="1" Name="C.Armor" ID="classes.Items.Armor::ChitinArmor" />
 			<Item Stack="1" Name="C.Plate" ID="classes.Items.Armor::ChitPlate" />
+			<Item Stack="1" Name="D.Threads"    ID="classes.Items.Armor::DaedalusThreads">
+				<ItemField Name="shields" Type="int" Value="50" />
+			</Item>
+			<Item Stack="1" Name="E.Threads"    ID="classes.Items.Armor::EmpusaThreads" />
 			<Item Stack="1" Name="FB.Bikini" ID="classes.Items.Armor::FrostbaneBikini" />
 			<Item Stack="1" Name="FB.Mail" ID="classes.Items.Armor::FrostbaneMail">
 				<ItemField Name="fortification" Type="int" Value="20" />
@@ -1477,7 +1488,9 @@
 			<Item Stack="1" Name="Hide V&amp;B" ID="classes.Items.Armor::HideVestAndBreeches" />
 			<Item Stack="1" Name="JJ-Suit"      ID="classes.Items.Armor::JumperJumpsuit" />
 			<Item Stack="1" Name="SJJ-Suit"     ID="classes.Items.Armor::JumperJumpsuitSlutty" />
+			<Item Stack="1" Name="JJ-SSuit" ID="classes.Items.Armor::JumperSpacesuit" />
 			<Item Stack="1" Name="M.Suit" ID="classes.Items.Armor::MirroredJumpsuit" />
+			<Item Stack="1" Name="N.Threads"    ID="classes.Items.Armor::NemeanThreads" />
 			<Item Stack="1" Name="N.Chain" ID="classes.Items.Armor::NyreanChain" />
 			<Item Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
 			<Item Stack="1" Name="Void Plates" ID="classes.Items.Armor::VoidPlateArmor" />
@@ -1491,6 +1504,7 @@
 			<Item Stack="1" Name="Spacesuit(I)" ID="classes.Items.Armor::SpacesuitIncomplete">
 				<ItemField Name="fortification" Type="int" Value="10" />
 			</Item>
+			<Item Stack="1" Name="S.Threads"    ID="classes.Items.Armor::StrixThreads" />
 			<Item Stack="1" Name="SVS-Wear"     ID="classes.Items.Armor::StarViperSlutwear" />
 			<Item Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
 			<Item Stack="1" Name="WM Dress" ID="classes.Items.Armor::WeavemailDress" />
@@ -1520,6 +1534,7 @@
 			<Item Stack="1" Name="HL Bra" ID="classes.Items.Apparel::HardlightAGBra" />
 			<Item Stack="1" Name="Harness" ID="classes.Items.Apparel::Harness" />
 			<Item Stack="1" Name="HoneyBra" ID="classes.Items.Apparel::HoneypotBra" />
+			<Item Stack="1" Name="I.Ushirt" ID="classes.Items.Apparel::InsulatingUndershirt" />
 			<Item Stack="1" Name="Lacy Bra" ID="classes.Items.Apparel::LacyBra" />
 			<Item Stack="1" Name="LthrBra" ID="classes.Items.Apparel::LeatherBra" />
 			<Item Stack="1" Name="LilG.Bra" ID="classes.Items.Apparel::LittleGreenBra" />
@@ -1569,6 +1584,7 @@
 			<Item Stack="1" Name="HL Jock" ID="classes.Items.Apparel::HardlightAGJock" />
 			<Item Stack="1" Name="HL Thong" ID="classes.Items.Apparel::HardlightAGThong" />
 			<Item Stack="1" Name="HorseBxs" ID="classes.Items.Apparel::HorseshoeBoxers" />
+			<Item Stack="1" Name="I.Briefs" ID="classes.Items.Apparel::InsulatingBriefs" />
 			<Item Stack="1" Name="LthrPnty" ID="classes.Items.Apparel::LeatherPanties" />
 			<Item Stack="1" Name="LilG.Brief" ID="classes.Items.Apparel::LittleGreenBriefs" />
 			<Item Stack="1" Name="LilG.Panty" ID="classes.Items.Apparel::LittleGreenPanties" />
@@ -1767,6 +1783,7 @@
 			<Item Stack="10" Name="ManUp"   ID="classes.Items.Transformatives::ManUp" />
 			<Item Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
 			<Item Stack="9"  Name="Mthrhusk"   ID="classes.Items.Transformatives::Motherhusk" />
+			<Item Stack="10" Name="MouseCh"   ID="classes.Items.Transformatives::MousearellaCheese" />
 			<Item Stack="10" Name="M.Stick" ID="classes.Items.Transformatives::Muffstick" />
 			<Item Stack="10" Name="Nepeta" ID="classes.Items.Transformatives::Nepeta" />
 			<Item Stack="10" Name="N.Butter" ID="classes.Items.Transformatives::NukiNutbutter" />
@@ -2171,6 +2188,7 @@
 			<KeyItem Name="Panties - Anno's - Blue boxer briefs." />
 			<KeyItem Name="Panties - Beatrice's - Silky, black panties with floral-patterned lace." />
 			<KeyItem Name="Panties - Briha's - Nylon, camo-print T-back panties." />
+			<KeyItem Name="Panties - Claes's - Silky white panties with green ribbon ties." />
 			<KeyItem Name="Panties - Embry's - Plain, girly pink panties with little hearts." />
 			<KeyItem Name="Panties - Emmy's - Silky, purple, and cum-stained." />
 			<KeyItem Name="Panties - Erra's - Purple with a black paw-print on the crotch." />
