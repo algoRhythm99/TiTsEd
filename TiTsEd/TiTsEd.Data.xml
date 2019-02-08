@@ -134,6 +134,7 @@
 			<SkinType ID="6" Name="Latex" />
 			<SkinType ID="7" Name="Plant" />
 			<SkinType ID="8" Name="Bark" />
+			<SkinType ID="9" Name="Gel" />
 		</SkinTypes>
 		<!-- ================================================================ -->
 		<SkinFlags>
@@ -146,6 +147,7 @@
 			<SkinFlag ID="13" Name="Thick" />
 			<SkinFlag ID="39" Name="Absorbent" />
 			<SkinFlag ID="46" Name="Freckled" />
+			<SkinFlag ID="48" Name="Partially Scaled" />
 		</SkinFlags>
 		<!-- ================================================================ -->
 		<SkinTones>
@@ -583,6 +585,8 @@
 			<FaceType ID="77" Name="Lesser Panda" />
 			<FaceType ID="81" Name="Mothrine" />
 			<FaceType ID="82" Name="Frostwyrm" />
+			<FaceType ID="87" Name="Xhelarfog" />
+			<FaceType ID="88" Name="Saurmorian" />
 		</FaceTypes>
 		<!-- ================================================================ -->
 		<FaceFlags>
@@ -711,6 +715,8 @@
 			<EyeType ID="81" Name="Mothrine" />
 			<EyeType ID="82" Name="Frostwyrm" />
 			<EyeType ID="85" Name="Janeria" />
+			<EyeType ID="87" Name="Xhelarfog" />
+			<EyeType ID="88" Name="Saurmorian" />
 		</EyeTypes>
 		<!-- ================================================================ -->
 		<EarTypes>
@@ -754,6 +760,7 @@
 			<EarType ID="77" Name="Lesser Panda" />
 			<EarType ID="81" Name="Mothrine" />
 			<EarType ID="82" Name="Frostwyrm" />
+			<EarType ID="88" Name="Saurmorian" />
 		</EarTypes>
 		<EarLengthEnables>
 			<EarLengthEnable>Raskvel</EarLengthEnable>
@@ -792,6 +799,7 @@
 			<TongueType ID="69" Name="Bothrioc" />
 			<TongueType ID="81" Name="Mothrine" />
 			<TongueType ID="82" Name="Frostwyrm" />
+			<TongueType ID="88" Name="Saurmorian" />
 		</TongueTypes>
 		<!-- ================================================================ -->
 		<TongueFlags>
@@ -831,6 +839,8 @@
 			<HornType ID="65" Name="Gryvain" />
 			<HornType ID="76" Name="Sheep" />
 			<HornType ID="82" Name="Frostwyrm" />
+			<HornType ID="87" Name="Xhelarfog" />
+			<HornType ID="88" Name="Saurmorian" />
 		</HornTypes>
 		<!-- ================================================================ -->
 		<BeardStyles>
@@ -882,6 +892,7 @@
 			<ArmType ID="77" Name="Lesser Panda" />
 			<ArmType ID="81" Name="Mothrine" />
 			<ArmType ID="82" Name="Frostwyrm" />
+			<ArmType ID="88" Name="Saurmorian" />
 		</ArmTypes>
 		<!-- ================================================================ -->
 		<ArmFlags>
@@ -945,6 +956,7 @@
 			<LegType ID="81" Name="Mothrine" />
 			<LegType ID="82" Name="Frostwyrm" />
 			<LegType ID="85" Name="Janeria" />
+			<LegType ID="88" Name="Saurmorian" />
 		</LegTypes>
 		<!-- ================================================================ -->
 		<LegFlags>
@@ -1035,6 +1047,8 @@
 			<TailType ID="76" Name="Sheep" />
 			<TailType ID="77" Name="Lesser Panda" />
 			<TailType ID="82" Name="Frostwyrm" />
+			<TailType ID="87" Name="Xhelarfog" />
+			<TailType ID="88" Name="Saurmorian" />
 		</TailTypes>
 		<!-- ================================================================ -->
 		<TailFlags>
@@ -1060,6 +1074,7 @@
 			<TailFlag ID="37" Name="Gooey" />
 			<TailFlag ID="42" Name="Tailcunt" />
 			<TailFlag ID="44" Name="Corkscrewed" />
+			<TailFlag ID="49" Name="Short" />
 		</TailFlags>
 		<!-- ================================================================ -->
 		<TailGenitalTypes>
@@ -1177,6 +1192,7 @@
 			<CockType ID="81" Name="Mothrine" />
 			<CockType ID="82" Name="Frostwyrm" />
 			<CockType ID="85" Name="Janeria" />
+			<CockType ID="88" Name="Saurmorian" />
 		</CockTypes>
 		<!-- ================================================================ -->
 		<CockFlags>
@@ -1229,6 +1245,7 @@
 			<VaginaType ID="72" Name="Swine" />
 			<VaginaType ID="74" Name="Mouthgina" />
 			<VaginaType ID="82" Name="Frostwyrm" />
+			<VaginaType ID="88" Name="Saurmorian" />
 		</VaginaTypes>
 		<!-- ================================================================ -->
 		<VaginaFlags>
@@ -1483,12 +1500,21 @@
 			<Item Stack="1" Name="FB.Plate" ID="classes.Items.Armor::FrostbanePlate">
 				<ItemField Name="fortification" Type="int" Value="30" />
 			</Item>
+			<Item Stack="1" Name="FS.Hauberk"   ID="classes.Items.Armor::FrostscaleArmor">
+				<ItemField Name="fortification" Type="int" Value="25" />
+			</Item>
+			<Item Stack="1" Name="FS.Breastplate"   ID="classes.Items.Armor::FrostscalePlate">
+				<ItemField Name="fortification" Type="int" Value="20" />
+			</Item>
 			<Item Stack="1" Name="Gem Links" ID="classes.Items.Armor::GemstoneLinks" />
 			<Item Stack="1" Name="Goo Armor" ID="classes.Items.Armor::GooArmor" />
 			<Item Stack="1" Name="Hide V&amp;B" ID="classes.Items.Armor::HideVestAndBreeches" />
 			<Item Stack="1" Name="JJ-Suit"      ID="classes.Items.Armor::JumperJumpsuit" />
 			<Item Stack="1" Name="SJJ-Suit"     ID="classes.Items.Armor::JumperJumpsuitSlutty" />
 			<Item Stack="1" Name="JJ-SSuit" ID="classes.Items.Armor::JumperSpacesuit" />
+			<Item Stack="1" Name="KH.Armor" ID="classes.Items.Armor::KordiiakHideArmor">
+				<ItemField Name="fortification" Type="int" Value="40" />
+			</Item>
 			<Item Stack="1" Name="M.Suit" ID="classes.Items.Armor::MirroredJumpsuit" />
 			<Item Stack="1" Name="N.Threads"    ID="classes.Items.Armor::NemeanThreads" />
 			<Item Stack="1" Name="N.Chain" ID="classes.Items.Armor::NyreanChain" />
@@ -1631,6 +1657,7 @@
 			<Item Stack="10" Name="Flashbang"   ID="classes.Items.Miscellaneous::FlashGrenade" />
 			<Item Stack="5"  Name="Lustoxin"    ID="classes.Items.Miscellaneous::Lustoxin" />
 			<Item Stack="10" Name="OS StimBoost"    ID="classes.Items.Miscellaneous::OSStimBoost" />
+			<Item Stack="10" Name="PI-Stim"     ID="classes.Items.Recovery::PyriteIssuedStim" />
 			<Item Stack="5"  Name="S.Booster"   ID="classes.Items.Miscellaneous::ShieldBooster" />
 			<Item Stack="5"  Name="S.Boost M2"  ID="classes.Items.Recovery::ShieldBoosterMkII" />
 			<Item Stack="10" Name="T.Gren"      ID="classes.Items.Miscellaneous::TestGrenade" Comment="Debug Item" Tooltip="Debug Item" />
@@ -1791,6 +1818,7 @@
 			<Item Stack="10" Name="N.Candy" ID="classes.Items.Transformatives::NyreanCandy" />
 			<Item Stack="10" Name="O. Oil" ID="classes.Items.Transformatives::OmegaOil" />
 			<Item Stack="10" Name="Orange P." ID="classes.Items.Transformatives::OrangePill" />
+			<Item Stack="20" Name="O.F. Shard"  ID="classes.Items.Transformatives::OrefishShard" />
 			<Item Stack="10" Name="OvirAce" ID="classes.Items.Transformatives::OvirAce" />
 			<Item Stack="5"  Name="Ovir+" ID="classes.Items.Transformatives::OvirPositive" />
 			<Item Stack="10" Name="Peckermint" ID="classes.Items.Transformatives::Peckermint" />
@@ -1803,6 +1831,7 @@
 			<Item Stack="10" Name="Red Pill" ID="classes.Items.Transformatives::RedPill" />
 			<Item Stack="10" Name="R.Rocket" ID="classes.Items.Transformatives::RedRocket" />
 			<Item Stack="5"  Name="ReductPro"   ID="classes.Items.Miscellaneous::ReductPro" />
+			<Item Stack="20" Name="Reptilum" ID="classes.Items.Transformatives::Reptilum" />
 			<Item Stack="10" Name="R.Made" ID="classes.Items.Transformatives::RubberMade" />
 			<Item Stack="10" Name="Ruskvel" ID="classes.Items.Transformatives::Ruskvel" />
 			<Item Stack="10" Name="Semens F." ID="classes.Items.Transformatives::SemensFriend" />
@@ -1827,6 +1856,7 @@
 			<Item Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
 			<Item Stack="10" Name="Uthra+" ID="classes.Items.Transformatives::UthraPlus" />
 			<Item Stack="10" Name="Virection" ID="classes.Items.Transformatives::Virection" />
+			<Item Stack="10" Name="X.fog+"  ID="classes.Items.Transformatives::XhelarfogPlus" />
 		</ItemGroup>
 		<ItemGroup Name="Gadget">
 			<Item Stack="10" Name="A.Cock"      ID="classes.Items.Miscellaneous::ACock" />
@@ -1897,6 +1927,7 @@
 			<Item Stack="1" Name="PhasicWhip"  ID="classes.Items.Melee::PetraWhip" />
 			<Item Stack="1" Name="P.Hawk" ID="classes.Items.Melee::PlasmaHawk" />
 			<Item Stack="1" Name="P.Talons" ID="classes.Items.Melee::PredatorTalons" />
+			<Item Stack="1" Name="PIP Blade"    ID="classes.Items.Melee::PyriteIndustriesPlasmaBlade" />
 			<Item Stack="1" Name="Wrench" ID="classes.Items.Melee::RaskvelWrench" />
 			<Item Stack="1" Name="RatBaton" ID="classes.Items.Melee::ReaperStunBaton" />
 			<Item Stack="1" Name="Rock" ID="classes.Items.Melee::Rock" />
@@ -1984,6 +2015,7 @@
 			<Item Stack="1" Name="PlasmaBore" ID="classes.Items.Guns::PlasmaBore" />
 			<Item Stack="1" Name="Plasma P." ID="classes.Items.Guns::PlasmaPistol" />
 			<Item Stack="1" Name="P.Bow" ID="classes.Items.Guns::PrimitiveBow" />
+			<Item Stack="1" Name="SCL Pistol"   ID="classes.Items.Guns::PyriteIndustriesSuperchargedLaserPistol" />
 			<Item Stack="1" Name="Royal Bow" ID="classes.Items.Guns::QueensBow" />
 			<Item Stack="1" Name="Revolvr" ID="classes.Items.Guns::RudimentaryRevolver" />
 			<Item Stack="1" Name="SalPistl" ID="classes.Items.Guns::SalamanderPistol" />
@@ -2197,6 +2229,7 @@
 			<KeyItem Name="Panties - Lys's - Sheer black panties." />
 			<KeyItem Name="Panties - Myrna's - Green with fur lining and a pepperminty scent." />
 			<KeyItem Name="Panties - Penny's - Plain, blue, and crotchless." />
+			<KeyItem Name="Panties - Ramis's - Black, tight-fit, frictionless undies." />
 			<KeyItem Name="Panties - Saendra's - Ultra-tight and bright pink." />
 			<KeyItem Name="Panties - Syri's - Sky blue, silky, and extra crotch room." />
 			<KeyItem Name="Panties - Xanthe's - Lacy, black siel-silk panties." />
