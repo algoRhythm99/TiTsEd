@@ -687,6 +687,7 @@
 		<!-- ================================================================ -->
 		<EyeTypes>
 			<EyeType ID="0"  Name="Human" />
+			<EyeType ID="3"  Name="Canine" />
 			<EyeType ID="4"  Name="Feline" />
 			<EyeType ID="5"  Name="Vulpine" />
 			<EyeType ID="6"  Name="Bee" />
@@ -5097,6 +5098,8 @@
 			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!&#xA;Experience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
 			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+			<StatusEffect Name="Sore Counter" IsHidden="true" />
+			<StatusEffect Name="STELLA_PREGNANT" IsHidden="true" />
 			<StatusEffect Name="STELLA_SEX_FATIGUE" IsHidden="true" />
 			<StatusEffect Name="StellaSickOfTalk" IsHidden="true" />
 			<StatusEffect Name="SURFPASS" IsHidden="true" />
