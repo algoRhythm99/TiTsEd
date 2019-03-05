@@ -3984,8 +3984,10 @@
 		<Flag Name="PQUEST_DELAY_TIMER" />
 		<Flag Name="PQUEST_FLY_BLOCKED" />
 		<Flag Name="PQUEST_LAH_CHAT" />
+		<Flag Name="PQUEST_PENNY_PODDED" />
 		<Flag Name="PQUEST_WATERFALLED" />
 		<Flag Name="PQUEST_WHERE_CHAT" />
+		<Flag Name="PQUEST_ZILTRAP_RESULTS" />
 		<Flag Name="PQ_BEAT_LAH" />
 		<Flag Name="PQ_CAME_OUT_WALLS" />
 		<Flag Name="PQ_CLIFF_FOOTED" />
@@ -5032,6 +5034,7 @@
 			<StatusEffect Name="Dark Chrysalis Closed" IsHidden="true" />
 			<StatusEffect Name="DisabledRoz" IsHidden="true" />
 			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
+			<StatusEffect Name="IQBGoneTimer" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
 			<StatusEffect Name="Afraid of Ula Pussy" IsHidden="true" />
