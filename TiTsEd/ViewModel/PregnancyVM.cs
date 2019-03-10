@@ -44,24 +44,12 @@ namespace TiTsEd.ViewModel {
                             _character.RemoveStatus("Bothrioc Eggs");
                         }
                         break;
-                    case "RahnPregnancyBreedwell":
-                        break;
-                    case "CockvinePregnancy":
-                        break;
                     case "DeepQueenPregnancy":
                         if (0 == PregCountByType(pregType))
                         {
                             _character.RemoveStatus("Queen Pregnancy End");
                             _character.RemoveStatus("Queen Pregnancy State");
                         }
-                        break;
-                    case "EggTrainerCarryTraining":
-                        break;
-                    case "EggTrainerFauxPreg":
-                        break;
-                    case "KorgonnePregnancy":
-                        break;
-                    case "LapinaraPregnancy":
                         break;
                     case "MilodanPregnancy":
                         if (0 == PregCountByType(pregType))
@@ -74,16 +62,6 @@ namespace TiTsEd.ViewModel {
                         {
                             _character.RemoveStatus("Nyrea Eggs Messages Available");
                         }
-                        break;
-                    case "OvalastingEggPregnancy":
-                        break;
-                    case "OviliumEggPregnancy":
-                        break;
-                    case "PsychicTentacles":
-                        break;
-                    case "RenvraEggPregnancy":
-                        break;
-                    case "RenvraFullPregnancy":
                         break;
                     case "RiyaPregnancy":
                         if (0 == PregCountByType(pregType))
@@ -109,6 +87,12 @@ namespace TiTsEd.ViewModel {
                         if (0 == PregCountByType(pregType))
                         {
                             _character.RemoveStatus("Sydian Pregnancy Ends");
+                        }
+                        break;
+                    case "SiegwulfeEggnancy":
+                        if (0 == PregCountByType(pregType))
+                        {
+                            _character.RemoveStatus("Siegwulfe Eggnancy Stage");
                         }
                         break;
                     case "VenusPitcherFertilizedSeedCarrier":

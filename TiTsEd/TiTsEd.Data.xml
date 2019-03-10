@@ -1304,6 +1304,7 @@
 			<PregnancyType>RoyalEggPregnancy</PregnancyType>
 			<PregnancyType>SeraSpawnPregnancy</PregnancyType>
 			<PregnancyType>ShekkaPregnancy</PregnancyType>
+			<PregnancyType>SiegwulfeEggnancy</PregnancyType>
 			<PregnancyType>SydianPregnancy</PregnancyType>
 			<PregnancyType>VenusPitcherFertilizedSeedCarrier</PregnancyType>
 			<PregnancyType>VenusPitcherSeedCarrier</PregnancyType>
@@ -1607,6 +1608,11 @@
 			<Item Stack="1" Name="CCB-Shorts" ID="classes.Items.Apparel::CumflationControlBoyshorts" />
 			<Item Stack="1" Name="NetBriefs" ID="classes.Items.Apparel::FishnetBriefs" />
 			<Item Stack="1" Name="F.Loin" ID="classes.Items.Apparel::FurryLoincloth" />
+			<Item Stack="1" Name="G.Panties"    ID="classes.Items.Apparel::GabilaniPanties" EditorName="Gabilani Panties">
+				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
+				<ItemField Name="sexiness" Type="int" Value="5" />
+				<ItemField Name="basePrice" Type="int" Value="800" />
+            </Item>
 			<Item Stack="1" Name="G.Panties" ID="classes.Items.Apparel::GirlyPanties" />
 			<Item Stack="1" Name="HL Jock" ID="classes.Items.Apparel::HardlightAGJock" />
 			<Item Stack="1" Name="HL Thong" ID="classes.Items.Apparel::HardlightAGThong" />
@@ -2131,6 +2137,7 @@
 			<Item Stack="10" Name="B.B.Melt"    ID="classes.Items.Junk::BrokenBrainmeltLamp" />
 			<Item Stack="1"  Name="VI Chip"     ID="classes.Items.Junk::DamagedVIChip" />
 			<Item Stack="10" Name="IQBGone"     ID="classes.Items.Junk::IQBGone" />
+			<Item Stack="10" Name="SexbotChip"  ID="classes.Items.Junk::SexbotChip" />
 		</ItemGroup>
 		<ItemGroup Name="Ship Upgrades">
 			<Item Stack="10" Name="Dong D."   ID="classes.Items.Transformatives::DongDesigner" />
@@ -2433,6 +2440,7 @@
 -->
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Face Fucker" Description="Increases minimum lust and cum output, thanks to that strange VR adventure..." Value1="5" />
+			<Perk Name="Implant-tastic" Description="Your body will convert most of the mass in your breasts, butt cheeks, hips and lips into silicone." />
 			<Perk Name="Limber" Description="Grants an addition 20% chance to escape from grapples!" />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
@@ -2491,7 +2499,7 @@
 			<Perk Name="Jungle Queen Scent" Description="You smell like a mighty queen of the jungle. Boosts tease attacks." />
 			<Perk Name="Mane" Description="Your hair grows out much like an equine's mane." />
 			<Perk Name="Mega Milk" Description="Allows you to instantly produce a good amount of milk, even when empty." />
-			<Perk Name="Musky Pheromones" Description="Boosts tease attack and arousal." />
+			<Perk Name="Musky Pheromones" Description="Grants a +5 musk bonus to tease attacks." />
 			<Perk Name="Myr Venom" Description="Grants a love-bite tease ability that deals a little lust damage to your opponent." />
 			<Perk Name="Nyrea Eggs" Description="Your body naturally produces nyrea eggs." />
 			<Perk Name="Omega Fever" Description="Your body will cycle through the stages of heat whenever your ass is not incubating." />
@@ -4823,6 +4831,7 @@
 			<StatusEffect Name="Heat" Description="Your body is begging for impregnation, increasing your libido and fertility but also your ability to tease.&#xD;&#xA;&#xD;&#xA;+500% Fertility&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+10 Libido&#xD;&#xA;+3 Tease Damage" Value1="5" Value2="25" Value3="10" Value4="3" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
 			<StatusEffect Name="Horse Pill" Description="You are under the effects of at least one horse pill. Flashes of heat and tingly sensations randomly run across your body as you're slowly transformed into a more equine shape." Value1="720" Value2="1" IconName="Icon_Horse" MinutesLeft="720" IconShade="7200" />
+			<StatusEffect Name="Lactaid Overdrive Uses" Label1="Uses" IsHidden="true" />
 			<StatusEffect Name="Lagonic Rut" Description="Your body is driven for aggressive breeding, increasing your libido and virility, as well as boosting your minimum cum output.&#xD;&#xA;&#xD;&#xA;+5 Libido&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+2000mLs Minimum Cum&#xD;&#xA;+500% Virility" Value1="5" Value2="25" Value3="2000" Value4="5" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
 			<StatusEffect Name="Lapinara Prophylactic" Description="The spray currently effecting you will reduce encounters with lapinara." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Laquine Ears" Description="You are wearing Laquine Ears and will slowly transform into a Laquine over time, so long as the ears’ supply of microsurgeons holds out." IconName="Pill" MinutesLeft="1440" />
@@ -4837,6 +4846,7 @@
 			<StatusEffect Name="Royal Nectar" Description="That honey wine packs a punch! You're feeling a lot peppier now." Value1="30" IconName="Icon_Wine" MinutesLeft="2880" IconShade="300" />
 			<StatusEffect Name="Rut" Description="Your body is driven for aggressive breeding, increasing your libido and virility, as well as boosting your minimum cum output.&#xD;&#xA;&#xD;&#xA;+5 Libido&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+1000mLs Minimum Cum&#xD;&#xA;+400% Virility" Value1="5" Value2="25" Value3="1000" Value4="4" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
 			<StatusEffect Name="Semen's Candy" Description="The Semen’s Friend candy is still in your system." Value1="1440" Value2="1" IconName="Icon_DrugPill" MinutesLeft="1440" />
+			<StatusEffect Name="Stretchy Sexiness" IsHidden="true" Value1="3" Label1="Bonus" />
 			<StatusEffect Name="Sweet Tooth" Description="Sucking seductively on a lollipop." IconName="Icon_Lollipop" MinutesLeft="720" />
 			<StatusEffect Name="Sydian Prophylactic" Description="The spray currently effecting you will reduce encounters with sydians." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Taken Estrobloom" IsHidden="true" />
@@ -4916,6 +4926,7 @@
 			<StatusEffect Name="Nyrea Eggs Messages Available" IsHidden="true" />
 			<StatusEffect Name="Ovilium Effect" IsHidden="true" />
 			<StatusEffect Name="Pregnancy Pending" Description="Your pregnancy is ready to deliver! Head to the nursery as soon as you can!" IconName="Icon_Belly_Pregnant" />
+			<StatusEffect Name="Quaelle Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy End" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy State" IsHidden="true" />
 			<StatusEffect Name="Quinn Post-Pregnancy" IsHidden="true" />
@@ -4924,6 +4935,8 @@
 			<StatusEffect Name="Royal Eggs Messages Available" IsHidden="true" />
 			<StatusEffect Name="Sera Spawn Reflex Mod" Value1="5" IsHidden="true" />
 			<StatusEffect Name="Sera Spawn Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Siegwulfe Eggnancy Ends" IsHidden="true" />
+            <StatusEffect Name="Siegwulfe Eggnancy Stage" Label1="stage" IsHidden="true" />
 			<StatusEffect Name="Sydian Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Venus Pitcher Egg Incubation Finished" IsHidden="true" />
 			<StatusEffect Name="Venus Pitcher Seed Residue" IsHidden="true" MinutesLeft="20160" />
@@ -4940,6 +4953,7 @@
 			<StatusEffect Name="Cum Paused" IsHidden="true" />
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Cumflation Immune" IsHidden="true" />
+			<StatusEffect Name="Cupid’s Kiss" Description="You’re feeling more affectionate that you otherwise would, no doubt the result of Mitzi’s drug.\n\nTake +30% more tease damage.\n+200% XP\n+300% rare drop chance." Value1="1" IconName="Icon_DrugVial" IconShade="12030916" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
 			<StatusEffect Name="Omit Cumflation Messages" Description="Cumflation messages are currently disabled." IsHidden="true" />
 			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
@@ -4949,6 +4963,7 @@
 			<StatusEffect Name="Riya Breed No Sex" IsHidden="true" />
 			<StatusEffect Name="SlyverenFacefuckForce" IsHidden="true" />
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
+			<StatusEffect Name="Wulfe Lust Cooldown" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Combat">
 			<StatusEffect Name="Blind Immune" IsHidden="true" />
@@ -4963,6 +4978,7 @@
 			<StatusEffect Name="Anno-Erra Cooldown" MinutesLeft="4320" IsHidden="true" />
 			<StatusEffect Name="Azra CD" IsHidden="true" />
 			<StatusEffect Name="Azra Sex CD" IsHidden="true" />
+			<StatusEffect Name="Betsy and Victoria CD" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Exhibitionist Blurb Cooldown" IsHidden="true" />
@@ -4970,6 +4986,7 @@
 			<StatusEffect Name="Jesse Bar Cooldown" IsHidden="true" MinutesLeft="1440" />
 			<StatusEffect Name="JuroXLyrallaCooldown" IsHidden="true" />
 			<StatusEffect Name="Kally Cummed Out" IsHidden="true" />
+			<StatusEffect Name="Kimber Bating" IsHidden="true" />
 			<StatusEffect Name="Lieve Disabled" MinutesLeft="180" IsHidden="true" />
 			<StatusEffect Name="LimberTime" IsHidden="true" />
 			<StatusEffect Name="LUND_DICKED_CD" IsHidden="true" />
@@ -5096,6 +5113,7 @@
 			<StatusEffect Name="Sexy Moves" Description="Your recent lessons pay off, you feel as sexy as ever - and it shows." IconName="OffenseUp" MinutesLeft="4320" />
 			<StatusEffect Name="Shekka_Cum_Playing" IsHidden="true" />
 			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!&#xA;Experience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
+			<StatusEffect Name="Siegwulfe's Leash" IsHidden="true" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
 			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Sore Counter" IsHidden="true" />
