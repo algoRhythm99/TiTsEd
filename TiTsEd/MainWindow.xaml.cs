@@ -33,10 +33,6 @@ namespace TiTsEd
             RestoreSizeAndState();
 
             ((FrameworkElement)Content).QueryContinueDrag += OnQueryContinueDrag;
-
-            var version = Assembly.GetExecutingAssembly().GetName().Version;
-            if (version.Build == 0) versionLabel.Text = version.Major + "." + version.Minor;
-            else versionLabel.Text = version.Major + "." + version.Minor + "." + version.Build;
         }
 
         void OnQueryContinueDrag(object sender, QueryContinueDragEventArgs e)
@@ -47,6 +43,11 @@ namespace TiTsEd
             }
         }
 
+        private void CopyToPC_Clicked(object sender, RoutedEventArgs e)
+        {
+            VM.Instance.Game.copyCharacterToPC();
+            VM.Instance.Game.CharacterSelection = "PC";
+        }
 
 #if !DEBUG
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)

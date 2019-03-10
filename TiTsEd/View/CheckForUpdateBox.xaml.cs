@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 using System.Windows.Threading;
+using TiTsEd.Common;
 
 namespace TiTsEd.View
 {
@@ -27,6 +28,7 @@ namespace TiTsEd.View
             WindowStartupLocation = WindowStartupLocation.CenterOwner;
             checkingGrid.Visibility = Visibility.Visible;
             statusGrid.Visibility = Visibility.Collapsed;
+            versionLabel.Text = VersionInfo.Version;
         }
 
         void CheckForUpdateBox_Loaded(object sender, RoutedEventArgs e)

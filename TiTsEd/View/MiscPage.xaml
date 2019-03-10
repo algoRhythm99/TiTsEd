@@ -17,33 +17,14 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <ScrollViewer>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <WrapPanel Margin="10"
+               MaxWidth="800">
 
-        <Grid Margin="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock Style="{StaticResource Header}" Text="History" />
 
-            <StackPanel Grid.Row="1"
-                        Grid.Column="1"
-                        Orientation="Vertical">
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Style="{StaticResource Header}" Text="History" />
-                </Border>
-                <common:AutoGrid Columns="2">
+                <common:AutoGrid>
                     <Label Content="Upbringing" />
                     <common:MyComboBox ItemsSource="{Binding Data.General.Upbringings}"
                                        SelectedValue="{Binding Game.PCUpbringing}" />
@@ -58,15 +39,32 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Grid.Row="1"
-                        Grid.Column="3"
-                        Orientation="Vertical">
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Style="{StaticResource Header}" Text="Pregnancy" />
-                </Border>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock Style="{StaticResource Header}" Text="Tease Stats" />
+
+                <common:AutoGrid>
+                    <Label Content="Ass" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.AssTease}" />
+
+                    <Label Content="Chest" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.ChestTease}" />
+
+                    <Label Content="Crotch" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.CrotchTease}" />
+
+                    <Label Content="Hips" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.HipsTease}" />
+                </common:AutoGrid>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock Style="{StaticResource Header}" Text="Misc Stats" />
+
                 <common:AutoGrid Columns="3">
 
-                    <Label Content="Multiplier" />
+                    <Label>
+                        <TextBlock TextWrapping="WrapWithOverflow">Pregnancy Multiplier</TextBlock>
+                    </Label>
                     <common:MyNumericBox Width="100"
                                          ToolTip="Base"
                                          Value="{Binding Game.Character.PregnancyMultiplierRaw}" />
@@ -74,7 +72,9 @@
                                          ToolTip="Modifier"
                                          Value="{Binding Game.Character.PregnancyMultiplierMod}" />
 
-                    <Label Content="Incubation Bonus Mother" />
+                    <Label>
+                        <TextBlock TextWrapping="WrapWithOverflow">Pregnancy Incubation Bonus Mother</TextBlock>
+                    </Label>
                     <common:MyNumericBox Width="100"
                                          ToolTip="Base"
                                          Value="{Binding Game.Character.PregnancyIncubationBonusMotherRaw}" />
@@ -82,7 +82,9 @@
                                          ToolTip="Modifier"
                                          Value="{Binding Game.Character.PregnancyIncubationBonusMotherMod}" />
 
-                    <Label Content="Incubation Bonus Father" />
+                    <Label>
+                        <TextBlock TextWrapping="WrapWithOverflow">Pregnancy Incubation Bonus Father</TextBlock>
+                    </Label>
                     <common:MyNumericBox Width="100"
                                          ToolTip="Base"
                                          Value="{Binding Game.Character.PregnancyIncubationBonusFatherRaw}" />
@@ -93,9 +95,7 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Grid.Row="2"
-                        Grid.Column="3"
-                        Orientation="Vertical">
+            <StackPanel Orientation="Vertical" Margin="10">
                 <TextBlock Text="*** Experimental ***" Foreground="Red" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Width="Auto" />
                 <common:ArrayEditor x:Name="WombsArray"
                                     Header="Wombs"
@@ -131,27 +131,6 @@
                 </common:ArrayEditor>
             </StackPanel>
 
-            <StackPanel Grid.Row="2"
-                        Grid.Column="1"
-                        Orientation="Vertical">
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Style="{StaticResource Header}" Text="Tease Stats" />
-                </Border>
-                <common:AutoGrid Columns="2">
-                    <Label Content="Ass" />
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.AssTease}" />
-
-                    <Label Content="Chest" />
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.ChestTease}" />
-
-                    <Label Content="Crotch" />
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.CrotchTease}" />
-
-                    <Label Content="Hips" />
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.HipsTease}" />
-                </common:AutoGrid>
-            </StackPanel>
-        </Grid>
+        </WrapPanel>
     </ScrollViewer>
-
 </UserControl>

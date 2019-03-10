@@ -25,7 +25,7 @@ namespace TiTsEd.ViewModel
             return true;
         }
 
-        protected bool SetProperty<T>(ref T storage, T value, String propertyName = null)
+        protected bool SetProperty<T>(ref T storage, T value, string propertyName = null)
         {
             return SetField(ref storage, value, propertyName);
         }

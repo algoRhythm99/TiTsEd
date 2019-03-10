@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Update Check"
         Width="400"
-        Height="140"
+        Height="170"
         Loaded="CheckForUpdateBox_Loaded"
         ResizeMode="NoResize"
         Icon="../TiTsEd.ico"
@@ -23,11 +23,20 @@
           VerticalAlignment="Stretch"
           Background="White">
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid x:Name="checkingGrid"
+        <Grid x:Name="About"
               Grid.Row="0"
+              Margin="20,0,0,0">
+            <StackPanel Orientation="Horizontal">
+            <Label Content="Current Version" Target="{Binding ElementName=versionLabel}" />
+            <TextBlock Name="versionLabel" VerticalAlignment="Center" />
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="checkingGrid"
+              Grid.Row="1"
               Margin="20,10,10,10"
               VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
@@ -51,13 +60,14 @@
                          Value="0" />
         </Grid>
         <Grid x:Name="statusGrid"
-              Grid.Row="0"
+              Grid.Row="1"
               Margin="20,10,10,10"
               VerticalAlignment="Center"
               Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+
             <TextBlock x:Name="statusText"
                        Grid.Column="0"
                        Margin="10,0,10,0"
@@ -68,7 +78,7 @@
                 </Hyperlink>
             </TextBlock>
         </Grid>
-        <StackPanel Grid.Row="2"
+        <StackPanel Grid.Row="3"
                     Margin="10"
                     HorizontalAlignment="Right"
                     Orientation="Horizontal">

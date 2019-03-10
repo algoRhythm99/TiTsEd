@@ -72,9 +72,8 @@
             <common:SearchBox Text="{Binding Game.RawDataSearchText}" />
         </StackPanel>
 
-        <Border Grid.Row="1"
-                Grid.Column="0"
-                Style="{StaticResource HeaderBorder}">
+        <StackPanel Grid.Row="1"
+                Grid.Column="0" >
             <Grid Background="Transparent">
                 <TextBlock Margin="20,0,0,0"
                            Style="{StaticResource Header}"
@@ -99,15 +98,14 @@
                     <Image Source="{StaticResource CrossImage}" Style="{StaticResource smallImageStyleKey}" />
                 </Button>
             </Grid>
-        </Border>
+        </StackPanel>
 
-        <Border Grid.Row="1"
-                Grid.Column="2"
-                Style="{StaticResource HeaderBorder}">
+        <StackPanel Grid.Row="1"
+                Grid.Column="2" >
             <TextBlock Margin="20,0,0,0"
                        Style="{StaticResource Header}"
                        Text="Status Effects" />
-        </Border>
+        </StackPanel>
         <DataGrid Name="FlagsGrid"
                   Grid.Row="2"
                   Grid.Column="0"

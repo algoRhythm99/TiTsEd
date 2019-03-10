@@ -143,19 +143,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <!-- StackPanel Orientation="Horizontal" Margin="5">
-            <TextBlock Text="TiTsEd" FontSize="48" Margin="0,-16,0,0" FontWeight="Thin" Foreground="White"/>
-
-            <TextBlock Text="0.9e" Margin="0,-4" VerticalAlignment="Top"/>
-        </StackPanel-->
-
-        <StackPanel Grid.Column="2" Orientation="Horizontal">
+        <WrapPanel Orientation="Horizontal" Background="Black">
             <ToggleButton x:Name="openButton"
                           Margin="0,1,0,0"
                           VerticalAlignment="Top"
@@ -199,6 +187,6 @@
                     Content="Update?"
                     Style="{StaticResource FlatButton}"
                     ToolTip="Check for updates to TiTsEd…" />
-        </StackPanel>
-    </Grid>
+        </WrapPanel>
+
 </UserControl>

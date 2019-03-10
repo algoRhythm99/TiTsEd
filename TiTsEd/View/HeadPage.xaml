@@ -15,27 +15,12 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <ScrollViewer>
-        <Grid Margin="0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <WrapPanel Margin="10">
 
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Head" Style="{StaticResource Header}"/>
-                </Border>
+                <TextBlock Text="Head" Style="{StaticResource Header}" />
+
                 <common:AutoGrid>
                     <Label                  Content="Hair Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.HairType}" ItemsSource="{Binding Data.Body.HairTypes}" />
@@ -73,9 +58,8 @@
             </StackPanel>
 
             <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical">
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Face" Style="{StaticResource Header}"/>
-                </Border>
+                <TextBlock Text="Face" Style="{StaticResource Header}" />
+
                 <common:AutoGrid>
                     <Label                  Content="Face Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.FaceType}" ItemsSource="{Binding Data.Body.FaceTypes}"/>
@@ -113,6 +97,6 @@
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.BeardStyle}" ItemsSource="{Binding Data.Body.BeardStyles}" />
                 </common:AutoGrid>
             </StackPanel>
-        </Grid>
+        </WrapPanel>
     </ScrollViewer>
 </UserControl>

@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:common="clr-namespace:TiTsEd.Common"
              xmlns:view="clr-namespace:TiTsEd.View"
-             mc:Ignorable="d" 
-             d:DesignWidth="1024" d:DesignHeight="600">
+             mc:Ignorable="d" >
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -15,38 +14,12 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <ScrollViewer>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <WrapPanel Margin="10" MaxWidth="1024">
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding HasData}"
-                        Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" >
-                <TextBlock FontSize="12" Text="Character" Width="Auto" Margin="0,0,8,0" IsEnabled="{Binding HasData}" />
-                <ComboBox FontSize="12" Margin="0,0,8,0" IsEnabled="{Binding HasData}"
-                          SelectedValue="{Binding Game.CharacterSelection}" ItemsSource="{Binding Game.CharacterOptions}" />
-                <Button Content="Copy to PC" IsEnabled="{Binding Game.IsNotPC}" Click="CopyToPC_Clicked" />
-            </StackPanel>
+            <StackPanel Orientation="Vertical">
 
-            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
-
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="General Information" Style="{StaticResource Header}"/>
-                </Border>
+                <TextBlock Text="General Information" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
                     <Label                  Content="Name" Width="Auto"/>
@@ -72,16 +45,14 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Vertical">
+            <StackPanel Orientation="Vertical">
 
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Advancement" Style="{StaticResource Header}"/>
-                </Border>
+                <TextBlock Text="Advancement" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
                     <Label                  Content="Class"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.CharacterClass}" ItemsSource="{Binding Data.General.ClassTypes}"/>
-                    
+
                     <Label                  Content="Level"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Level}" Lower="1" />
 
@@ -93,9 +64,8 @@
 
                 </common:AutoGrid>
 
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Miscellaneous" Style="{StaticResource Header}"/>
-                </Border>
+                <TextBlock Text="Miscellaneous" Style="{StaticResource Header}" />
+
                 <common:AutoGrid>
                     <Label                  Content="Personality" IsEnabled="{Binding Game.IsPC}" />
                     <common:MyNumericBox    Value="{Binding Game.Character.Personality}" Upper="100" Tip="{Binding Game.Character.PersonalityTip}" IsEnabled="{Binding Game.IsPC}" />
@@ -108,10 +78,9 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Vertical">
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Combat Stats" Style="{StaticResource Header}"/>
-                </Border>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Combat Stats" Style="{StaticResource Header}" />
+
                 <common:AutoGrid>
                     <Label                  Content="Shields"/>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Shields}" Upper="{Binding Game.Character.MaxShields}" />
@@ -135,9 +104,8 @@
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.TaintMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
 
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Core Stats" Style="{StaticResource Header}"/>
-                </Border>
+                <TextBlock Text="Core Stats" Style="{StaticResource Header}" />
+
                 <common:AutoGrid Columns="4">
 
                     <TextBlock Text="Physique" />
@@ -164,7 +132,7 @@
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Willpower}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.WillpowerMod}" ToolTip="Modifier" />
                     <TextBlock              Width="50"  Text="{Binding Game.Character.WillpowerPercent}" ToolTip="Percent" TextAlignment="Center" IsEnabled="False" />
-                    
+
                     <Label                  Content="Libido"/>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Libido}" Upper="{Binding Game.Character.MaxLibido}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.LibidoMod}" ToolTip="Modifier" />
@@ -174,10 +142,9 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Column="3" Grid.Row="5" Orientation="Vertical">
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Shape" Style="{StaticResource Header}"/>
-                </Border>
+            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical">
+                <TextBlock Text="Shape" Style="{StaticResource Header}" />
+
                 <common:AutoGrid>
                     <Label                  Content="Height"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Tallness}" Upper="192" Max="192" Unit="inches"/>
@@ -190,7 +157,7 @@
 
                     <Label                  Content="Feminity"/>
                     <common:MyNumericBox    Value="{Binding Game.Character.Feminity}" Upper="100" />
-                    
+
                     <Label                  Content="Skin Type"/>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}"/>
 
@@ -211,6 +178,6 @@
                     <ComboBox               Text="{Binding Game.Character.ScaleColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
                 </common:AutoGrid>
             </StackPanel>
-        </Grid>
+        </WrapPanel>
     </ScrollViewer>
 </UserControl>

@@ -68,6 +68,7 @@
     <Compile Include="Common\BoolEventArgs.cs" />
     <Compile Include="Common\NamedVector4Control.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\VersionInfo.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

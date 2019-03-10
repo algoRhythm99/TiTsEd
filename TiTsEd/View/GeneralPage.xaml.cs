@@ -22,10 +22,5 @@ namespace TiTsEd.View {
         public GeneralPage() {
             InitializeComponent();
         }
-
-        private void CopyToPC_Clicked(object sender, RoutedEventArgs e) {
-            VM.Instance.Game.copyCharacterToPC();
-            VM.Instance.Game.CharacterSelection = "PC";
-        }
     }
 }

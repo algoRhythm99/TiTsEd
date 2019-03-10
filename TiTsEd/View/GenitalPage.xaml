@@ -15,26 +15,12 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <ScrollViewer>
-        <Grid Margin="0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <WrapPanel Margin="10" MaxWidth="800">
 
             <StackPanel Grid.Column="1" Grid.Row="1">
 
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Male Organs" Style="{StaticResource Header}" />
-                </Border>
+                <TextBlock Text="Male Organs" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
 
@@ -84,6 +70,8 @@
                     <CheckBox IsChecked="{Binding Game.Character.CockVirgin}" />
 
                 </common:AutoGrid>
+            </StackPanel>
+            <StackPanel>
 
                 <common:ArrayEditor Header="Cocks" Items="{Binding Game.Character.Cocks}" Capacity="10" MinCapacity="0">
                     <common:ArrayEditor.ItemTemplate>
@@ -132,11 +120,9 @@
                 </common:ArrayEditor>
             </StackPanel>
 
-            <StackPanel Grid.Column="3" Grid.Row="1">
- 
-                <Border Style="{StaticResource HeaderBorder}">
-                    <TextBlock Text="Female Organs" Style="{StaticResource Header}" />
-                </Border>
+            <StackPanel>
+
+                <TextBlock Text="Female Organs" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
                     <Label                  Content="Girl Cum Type" />
@@ -153,6 +139,7 @@
                     <common:MyNumericBox    Width="155" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
+
                 <common:AutoGrid>
                     <Label                  Content="Vaginal Virgin" />
                     <CheckBox IsChecked="{Binding Game.Character.VaginalVirgin}" />
@@ -160,6 +147,8 @@
                     <Label                  Content="Clit Length" />
                     <common:MyNumericBox    Value="{Binding Game.Character.ClitLength}" Type="Double" Unit="inches" />
                 </common:AutoGrid>
+            </StackPanel>
+            <StackPanel>
                 <common:ArrayEditor Header="Vaginas" Items="{Binding Game.Character.Vaginas}" Capacity="3" MinCapacity="0">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>
@@ -214,6 +203,6 @@
                     </StackPanel>
                 </common:ArrayEditor>
             </StackPanel>
-        </Grid>
+        </WrapPanel>
     </ScrollViewer>
 </UserControl>
