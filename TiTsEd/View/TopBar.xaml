@@ -5,10 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              HorizontalAlignment="Stretch"
              VerticalAlignment="Top"
-             HorizontalContentAlignment="Stretch"
+             HorizontalContentAlignment="Right"
              VerticalContentAlignment="Top"
-             d:DesignHeight="200"
-             d:DesignWidth="1024"
              mc:Ignorable="d">
 
     <UserControl.Resources>

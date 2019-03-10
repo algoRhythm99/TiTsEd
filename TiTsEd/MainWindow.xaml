@@ -7,7 +7,7 @@
         Title="TiTsEd" 
         DataContext="{x:Static vm:VM.Instance}"
         Icon="TiTsEd.ico"
-        Width="1024" Height="700" MinWidth="1024" MinHeight="700">
+        Width="1024" Height="700" MinWidth="900" MinHeight="600">
     
     <Window.Resources>
         <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}">
@@ -78,7 +78,7 @@
             </TabItem>
         </TabControl>
 
-        <view:TopBar HorizontalAlignment="Stretch" Margin="0,7,5,0"/>
+        <view:TopBar HorizontalAlignment="Right" Margin="0,7,5,0"/>
 
         <TextBlock x:Name="versionLabel" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,43,18,0" Foreground="#A0A0A0" FontSize="12"/>
 

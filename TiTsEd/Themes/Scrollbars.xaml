@@ -81,7 +81,7 @@
     <Style x:Key="ScrollViewerWithLeftScrollBar" TargetType="ScrollViewer">
         <Setter Property="VerticalContentAlignment" Value="Top"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Background" Value="#00FFFFFF"/>
@@ -113,7 +113,7 @@
     <Style x:Key="{x:Type ScrollViewer}" TargetType="ScrollViewer">
         <Setter Property="VerticalContentAlignment" Value="Top"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -147,7 +147,7 @@
     <Style x:Key="TreeViewWithLeftScrollBar" TargetType="TreeView">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -161,7 +161,7 @@
     </Style>
 
     <Style x:Key="ListBoxWithLeftScrollBar" TargetType="ListBox">
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -175,7 +175,7 @@
     </Style>
 
     <Style x:Key="{x:Type ListBox}" TargetType="ListBox">
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
         <Setter Property="Template">
             <Setter.Value>
