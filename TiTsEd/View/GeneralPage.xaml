@@ -15,7 +15,10 @@
     </UserControl.Resources>
 
     <ScrollViewer HorizontalScrollBarVisibility="Disabled">
-        <WrapPanel Margin="10" MaxWidth="1024">
+        <WrapPanel Margin="10"
+                   MaxWidth="1024"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
 
             <StackPanel Orientation="Vertical">
 

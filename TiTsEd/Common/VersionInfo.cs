@@ -10,12 +10,12 @@ namespace TiTsEd.Common
 {
     class VersionInfo
     {
-        public static String Version {
-            get {
-                var versionText = "0.0.0";
+        public static String Version
+        {
+            get
+            {
                 var version = Assembly.GetExecutingAssembly().GetName().Version;
-                if (version.Build == 0) versionText = version.Major + "." + version.Minor;
-                else versionText = version.Major + "." + version.Minor + "." + version.Build;
+                var versionText = String.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
                 return versionText;
             }
         }
@@ -24,16 +24,16 @@ namespace TiTsEd.Common
         where T : Attribute
         {
             // Get attributes of this type.
-            object[] attributes =
-                assembly.GetCustomAttributes(typeof(T), true);
+            object[] attributes = assembly.GetCustomAttributes(typeof(T), true);
 
             // If we didn't get anything, return null.
-            if ((attributes == null) || (attributes.Length == 0))
+            if ((null == attributes) || (0 == attributes.Length))
+            {
                 return null;
-
+            }
             // Convert the first attribute value into
             // the desired type and return it.
-            return (T)attributes[0];
+            return (T) attributes[0];
         }
     }
 }

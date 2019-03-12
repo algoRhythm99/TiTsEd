@@ -16,7 +16,10 @@
     </UserControl.Resources>
 
     <ScrollViewer HorizontalScrollBarVisibility="Disabled">
-        <WrapPanel Margin="10">
+        <WrapPanel Margin="10"
+                   MaxWidth="1024"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
 
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
                 <TextBlock Text="Head" Style="{StaticResource Header}" />
