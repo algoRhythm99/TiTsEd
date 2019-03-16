@@ -6,7 +6,8 @@
              xmlns:common="clr-namespace:TiTsEd.Common"
              xmlns:view="clr-namespace:TiTsEd.View"
              mc:Ignorable="d" 
-             d:DesignWidth="1024" d:DesignHeight="600">
+             d:DesignWidth="1024"
+             d:DesignHeight="600">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -52,37 +53,6 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
-                <TextBlock Text="Butt" Style="{StaticResource Header}" />
-                <common:AutoGrid>
-
-                    <Label                  Content="Anal Virgin" />
-                    <CheckBox IsChecked="{Binding Game.Character.AnalVirgin}" />
-
-                    <Label                  Content="Anal Bonus Capacity" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.BonusCapacity}" />
-
-                    <Label                  Content="Anal Min Looseness" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.MinLooseness}" />
-
-                </common:AutoGrid>
-
-                <common:AutoGrid Columns="3">
-
-                    <Label                  Content="Anal Looseness" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.Looseness}" Min="{Binding Game.Character.Ass.MinLooseness}" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.LoosenessMod}" ToolTip="Modifier" />
-
-                    <Label                  Content="Anal Wetness" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.Wetness}" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.WetnessMod}" ToolTip="Modifier" />
-
-                </common:AutoGrid>
-
-                <Expander Margin="60,0,0,0" Header="Ass Flags">
-                    <view:FlagBox ItemsSource="{Binding Game.Character.Ass.AssFlags}" />
-                </Expander>
-            </StackPanel>
 
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Wings" Style="{StaticResource Header}" />
@@ -115,6 +85,39 @@
                     <view:FlagBox ItemsSource="{Binding Game.Character.LegFlags}" />
                 </Expander>
 
+            </StackPanel>
+
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Butt" Style="{StaticResource Header}" />
+                <common:AutoGrid>
+
+                    <Label                  Content="Anal Virgin" />
+                    <CheckBox IsChecked="{Binding Game.Character.AnalVirgin}" />
+
+                    <Label                  Content="Anal Bonus Capacity" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.BonusCapacity}" />
+
+                    <Label                  Content="Anal Min Looseness" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.MinLooseness}" />
+
+                </common:AutoGrid>
+
+                <common:AutoGrid Columns="3">
+
+                    <Label                  Content="Anal Looseness" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.Looseness}" Min="{Binding Game.Character.Ass.MinLooseness}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.LoosenessMod}" ToolTip="Modifier" />
+
+                    <Label                  Content="Anal Wetness" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.Wetness}" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.WetnessMod}" ToolTip="Modifier" />
+
+                </common:AutoGrid>
+
+                <Expander Margin="60,0,0,0" Header="Ass Flags">
+                    <view:FlagBox ItemsSource="{Binding Game.Character.Ass.AssFlags}" />
+                </Expander>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
