@@ -7,7 +7,7 @@
              xmlns:view="clr-namespace:TiTsEd.View"
              mc:Ignorable="d"
              d:DesignWidth="1024" d:DesignHeight="600">
-    
+
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -117,7 +117,7 @@
                                 <Border Background="Transparent" IsHitTestVisible="False">
                                     <TextBlock Text="{Binding Name}" Margin="4" FontSize="14" FontWeight="Bold"/>
                                 </Border>
-                                <ItemsPresenter x:Name="ItemsHost" Margin="0,0,0,20"/>
+                                <ItemsPresenter x:Name="ItemsHost" Margin="0,0,0,20" />
                             </StackPanel>
                         </ControlTemplate>
                     </Setter.Value>
@@ -125,7 +125,7 @@
                 <Setter Property="ItemsPanel">
                     <Setter.Value>
                         <ItemsPanelTemplate>
-                            <common:ItemPanel ColumnWidth="200"/>
+                            <common:ItemPanel ColumnWidth="150" />
                         </ItemsPanelTemplate>
                     </Setter.Value>
                 </Setter>
@@ -133,50 +133,47 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    
-    
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Border BorderThickness="0,0,1,0" BorderBrush="#E7E7E5" SnapsToDevicePixels="True"  Background="#F6F5F1">
-            <TreeView Grid.Column="0" x:Name="leftTree" ItemsSource="{Binding Game.Character.ItemContainers}" ItemContainerStyle="{StaticResource LeftGroupStyle}" BorderThickness="0" Margin="0,0,-1,0"
-                        SelectedItemChanged="leftTree_SelectedItemChanged" MinWidth="280" Style="{StaticResource TreeViewWithLeftScrollBar}"/>
-        </Border>
 
-        <Grid Grid.Column="1" x:Name="rightPanel" Visibility="Collapsed" Background="White">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <Border BorderThickness="0,0,1,0"
+            BorderBrush="#E7E7E5"
+            SnapsToDevicePixels="True">
+    <DockPanel>
 
-            <!-- TOP BAR -->
-            <Grid Margin="60,30,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <common:AutoGrid Grid.Column="0" HorizontalAlignment="Center">
-                    <Label              Content="Quantity" Width="Auto" Margin="-26,0,0,0"/>
+        <WrapPanel DockPanel.Dock="Left"
+                   Orientation="Vertical"
+                   Background="#F6F5F1">
+                <TreeView x:Name="leftTree"
+                          ItemsSource="{Binding Game.Character.ItemContainers}"
+                          ItemContainerStyle="{StaticResource LeftGroupStyle}"
+                          BorderThickness="0"
+                          SelectedItemChanged="leftTree_SelectedItemChanged"
+                          MinWidth="280"
+                          Style="{StaticResource TreeViewWithLeftScrollBar}" />
+        </WrapPanel>
+
+        <DockPanel x:Name="rightPanel"
+                   Visibility="Collapsed"
+                   Margin="30,30,0,30">
+
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                <common:AutoGrid HorizontalAlignment="Center">
+                    <Label              Content="Quantity" Width="Auto" />
                     <common:MyNumericBox    Value="{Binding Path=SelectedItem.Quantity, ElementName=leftTree}"
                                             Max="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}"
                                             Upper="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}" />
                 </common:AutoGrid>
+            </StackPanel>
 
-                <common:SearchBox Grid.Column="2" Text="{Binding Game.ItemSearchText}"/>
-            </Grid>
+            <TreeView ItemContainerStyle="{StaticResource RightGroupStyle}"
+                      Padding="0"
+                      BorderThickness="0"
+                      SelectedItemChanged="rightTree_SelectedItemChanged"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ItemsSource="{Binding Path=SelectedItem.AllGroups, ElementName=leftTree}" />
+        </DockPanel>
+    </DockPanel>
 
-            <TreeView Grid.Row="1" ItemContainerStyle="{StaticResource RightGroupStyle}" Margin="30,30,0,0"
-                      Padding="0" BorderThickness="0"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                      ScrollViewer.VerticalScrollBarVisibility="Visible" SelectedItemChanged="rightTree_SelectedItemChanged" 
-                      ItemsSource="{Binding Path=SelectedItem.AllGroups, ElementName=leftTree}"/>
-        </Grid>
-    </Grid>
+    </Border>
 
-    
-    
 </UserControl>

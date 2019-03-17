@@ -12,7 +12,7 @@ namespace TiTsEd.ViewModel {
         public PerkGroupVM(CharacterVM character, string name, PerkVM[] perks) {
             Character = character;
             Name = name;
-            Perks = new UpdatableCollection<PerkVM>(perks.Where(x => x.Match(Character.Game.PerkSearchText)));
+            Perks = new UpdatableCollection<PerkVM>(perks.Where(x => x.Match(Character.Game.SearchText)));
         }
 
         public new string Name {

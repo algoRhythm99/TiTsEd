@@ -2114,6 +2114,14 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public void UpdateKeyItemsVisibility()
+        {
+            foreach (var group in KeyItemGroups)
+            {
+                group.Update();
+            }
+        }
+
         public bool HasKeyItem(string keyItemName)
         {
             var keyItem = GetKeyItem(keyItemName);
@@ -2191,6 +2199,14 @@ namespace TiTsEd.ViewModel
                 {
                     PerkGroups.Add(groupVM);
                 }
+            }
+        }
+
+        public void UpdatePerksVisibility()
+        {
+            foreach (var group in PerkGroups)
+            {
+                group.Update();
             }
         }
 
@@ -2290,6 +2306,14 @@ namespace TiTsEd.ViewModel
                 {
                     StatusEffectGroups.Add(groupVM);
                 }
+            }
+        }
+
+        public void UpdateStatusEffectsVisibility()
+        {
+            foreach (var group in StatusEffectGroups)
+            {
+                group.Update();
             }
         }
 

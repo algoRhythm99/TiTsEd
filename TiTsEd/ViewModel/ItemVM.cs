@@ -292,7 +292,8 @@ namespace TiTsEd.ViewModel {
     /// <summary>
     /// This defines a set of items.
     /// </summary>
-    public sealed class ItemGroupVM {
+    public sealed class ItemGroupVM
+    {
         public const int MIN_ITEM_TEXT_SEARCH_LENGTH = 2; //should always be at least 1
         private string _Name;
         public ItemGroupVM(string name, ItemSlotVM slot) {
@@ -301,7 +302,7 @@ namespace TiTsEd.ViewModel {
             var items = new List<ItemVM>();
             var searchText = "";
             if (VM.Instance.Game != null) {
-                searchText = VM.Instance.Game.ItemSearchText;
+                searchText = VM.Instance.Game.SearchText;
             }
 
             //we made this easier now

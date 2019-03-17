@@ -12,7 +12,7 @@ namespace TiTsEd.ViewModel {
         public StatusGroupVM(CharacterVM character, string name, StatusEffectVM[] statusEffects) {
             Character = character;
             Name = name;
-            StatusEffects = new UpdatableCollection<StatusEffectVM>(statusEffects.Where(x => x.Match(Character.Game.RawDataSearchText)));
+            StatusEffects = new UpdatableCollection<StatusEffectVM>(statusEffects.Where(x => x.Match(Character.Game.SearchText)));
         }
 
         public new string Name {

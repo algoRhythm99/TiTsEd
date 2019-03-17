@@ -31,9 +31,7 @@ namespace TiTsEd.ViewModel {
             var flagsObject = FlagsObject;
             _flags = new GeneralObjectVM(flagsObject);
             if (null != previousVM) {
-                _perkSearchText = previousVM._perkSearchText;
-                _keyItemSearchText = previousVM._keyItemSearchText;
-                _rawDataSearchText = previousVM._rawDataSearchText;
+                _searchText = previousVM._searchText;
             }
 
             // Flags
@@ -50,7 +48,7 @@ namespace TiTsEd.ViewModel {
                     _allFlags[flagName] = new FlagVM(this, ref flagsObject, data);
                 }
             }
-            Flags = new UpdatableCollection<FlagVM>(_allFlags.Values.ToList().Where(x => x.Match(RawDataSearchText)));
+            Flags = new UpdatableCollection<FlagVM>(_allFlags.Values.ToList().Where(x => x.Match(SearchText)));
         }
 
         public static void ImportUnknownStorageClassEntries(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, IList<XmlStorageClass> targetXmlList = null, string nameProperty = "storageName", Func<AmfObject, string> descriptionGetter = null) {
@@ -351,53 +349,26 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        string _itemSearchText = "";
-        public string ItemSearchText {
-            get { return _itemSearchText; }
-            set {
-                if (_itemSearchText == value) {
+        string _searchText = "";
+        public string SearchText
+        {
+            get
+            {
+                return _searchText;
+            }
+            set
+            {
+                string search = _searchText ?? "";
+                if (search.Equals(value, StringComparison.InvariantCultureIgnoreCase))
+                {
                     return;
                 }
-                _itemSearchText = value;
+                _searchText = value;
                 //a less than optimal way of handling this
                 Character.UpdateItemList();
-            }
-        }
-
-        string _perkSearchText = "";
-        public string PerkSearchText {
-            get { return _perkSearchText; }
-            set {
-                if (_perkSearchText == value) {
-                    return;
-                }
-                _perkSearchText = value;
-                foreach (var group in Character.PerkGroups) group.Update();
-            }
-        }
-
-        string _keyItemSearchText = "";
-        public string KeyItemSearchText {
-            get { return _keyItemSearchText; }
-            set {
-                if (_keyItemSearchText == value) {
-                    return;
-                }
-                _keyItemSearchText = value;
-                foreach (var group in Character.KeyItemGroups) group.Update();
-            }
-        }
-
-        string _rawDataSearchText = "";
-        public string RawDataSearchText
-        {
-            get { return _rawDataSearchText; }
-            set {
-                if (_rawDataSearchText == value) {
-                    return;
-                }
-                _rawDataSearchText = value;
-                foreach (var group in Character.StatusEffectGroups) group.Update();
+                Character.UpdatePerksVisibility();
+                Character.UpdateKeyItemsVisibility();
+                Character.UpdateStatusEffectsVisibility();
                 Flags.Update();
             }
         }
@@ -436,9 +407,9 @@ namespace TiTsEd.ViewModel {
                         flag.Value = null;
                         FlagsObject[flagName] = null;
                         OnFlagChanged(flagName);
-                        var search = RawDataSearchText;
-                        RawDataSearchText = @"\u200B"; // setting to Unicode zero-width space
-                        RawDataSearchText = search;
+                        var search = SearchText;
+                        SearchText = @"\u200B"; // setting to Unicode zero-width space
+                        SearchText = search;
                     }
                 }
             }

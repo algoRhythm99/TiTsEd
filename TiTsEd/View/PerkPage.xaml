@@ -42,14 +42,8 @@
     </UserControl.Resources>
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <common:SearchBox Text="{Binding Game.PerkSearchText}" />
 
-        <TreeView Grid.Row="1"
-                  Margin="10,0,0,0"
+        <TreeView Margin="10,0,0,0"
                   HorizontalAlignment="Stretch"
                   BorderThickness="0"
                   Focusable="False"

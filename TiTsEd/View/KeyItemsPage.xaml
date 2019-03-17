@@ -40,18 +40,8 @@
     </UserControl.Resources>
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <common:SearchBox Text="{Binding Game.KeyItemSearchText}" />
-        </StackPanel>
 
-        <TreeView Grid.Row="1"
-                  Margin="10,0,0,0"
+        <TreeView  Margin="10,0,0,0"
                   HorizontalAlignment="Stretch"
                   BorderThickness="0"
                   Focusable="False"

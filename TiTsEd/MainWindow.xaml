@@ -81,6 +81,9 @@
                                           ItemsSource="{Binding Game.CharacterOptions}" />
                             <Button Content="Copy to PC" IsEnabled="{Binding Game.IsNotPC}"
                                     Click="CopyToPC_Clicked" />
+                            <StackPanel Margin="10,0">
+                                <common:SearchBox Text="{Binding Game.SearchText}" />
+                            </StackPanel>
                         </WrapPanel>
                         <Grid x:Name="ContentPanel"
                               Grid.Row="2"

@@ -31,7 +31,7 @@ namespace TiTsEd.Common
         double[] _heights;
         protected override Size MeasureOverride(Size availableSize)
         {
-            if (Columns == 0)
+            if (0 == Columns)
             {
                 _columnWidth = ColumnWidth;
                 _columns = (int)(availableSize.Width / ColumnWidth);
@@ -40,6 +40,10 @@ namespace TiTsEd.Common
             {
                 _columns = Columns;
                 _columnWidth = (int)(availableSize.Width / _columns);
+            }
+            if (0 == _columns)
+            {
+                _columns = 1;
             }
             _rows = (Children.Count + _columns - 1) / _columns;
 

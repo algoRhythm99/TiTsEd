@@ -55,7 +55,6 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70" />
             <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -66,13 +65,6 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0"
-                    Grid.ColumnSpan="3"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <common:SearchBox Text="{Binding Game.RawDataSearchText}" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1"
                 Grid.Column="0" >
             <Grid Background="Transparent">
                 <TextBlock Margin="20,0,0,0"
@@ -100,7 +92,7 @@
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Row="1"
+        <StackPanel Grid.Row="0"
                 Grid.Column="2" >
             <TextBlock Margin="20,0,0,0"
                        Style="{StaticResource Header}"

@@ -10,7 +10,7 @@ namespace TiTsEd.ViewModel {
         public KeyItemGroupVM(CharacterVM character, string name, KeyItemVM[] keyItems) {
             Character = character;
             Name = name;
-            KeyItems = new UpdatableCollection<KeyItemVM>(keyItems.Where(x => x.Match(Character.Game.KeyItemSearchText)));
+            KeyItems = new UpdatableCollection<KeyItemVM>(keyItems.Where(x => x.Match(Character.Game.SearchText)));
         }
 
         public new string Name {
