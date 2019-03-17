@@ -42,7 +42,13 @@
 
                     <Label                  Content="Ear Length" />
                     <common:MyNumericBox    Value="{Binding Game.Character.EarLength}" Type="Double" />
+                </common:AutoGrid>
 
+                <Expander Header="Ear Flags" Margin="60,0,0,0">
+                    <view:FlagBox ItemsSource="{Binding Game.Character.EarFlags}" />
+                </Expander>
+
+                <common:AutoGrid>
                     <Label                  Content="Antennae Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.AntennaeType}" ItemsSource="{Binding Data.Body.AntennaeTypes}" />
 

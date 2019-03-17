@@ -763,6 +763,12 @@
 			<EarType ID="82" Name="Frostwyrm" />
 			<EarType ID="88" Name="Saurmorian" />
 		</EarTypes>
+		<EarFlags>
+			<EarFlag ID="1"  Name="Long" />
+			<EarFlag ID="7"  Name="Tapered" />
+			<EarFlag ID="20" Name="Furred" />
+			<EarFlag ID="50" Name="Floppy" />
+		</EarFlags>
 		<EarLengthEnables>
 			<EarLengthEnable>Raskvel</EarLengthEnable>
 			<EarLengthEnable>Leithan</EarLengthEnable>

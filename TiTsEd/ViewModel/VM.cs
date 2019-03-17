@@ -194,6 +194,10 @@ namespace TiTsEd.ViewModel {
                 flagData = new Dictionary<AmfObject, List<FlagItem>>();
             }
             List<FlagItem> flags = null;
+            if (null == obj)
+            {
+                obj = new AmfObject(AmfTypes.Array);
+            }
             if (flagData.ContainsKey(obj)) {
                 flags = flagData[obj];
             } else {

@@ -949,6 +949,11 @@ namespace TiTsEd.ViewModel
             get { return getFlagList(GetObj("faceFlags"), XmlData.Current.Body.FaceFlags); }
         }
 
+        public List<FlagItem> EarFlags
+        {
+            get { return getFlagList(GetObj("earFlags"), XmlData.Current.Body.EarFlags); }
+        }
+
         public double EarLength
         {
             get { return GetDouble("earLength"); }
