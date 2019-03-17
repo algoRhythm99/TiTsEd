@@ -152,7 +152,7 @@
                           BorderThickness="0"
                           Checked="openButton_StateChanged"
                           Content="Open"
-                          FontSize="12"
+                          FontSize="14"
                           Unchecked="openButton_StateChanged">
                 <ToggleButton.ContextMenu>
                     <ContextMenu x:Name="openMenu"
@@ -170,7 +170,7 @@
                           BorderThickness="0"
                           Checked="saveButton_StateChanged"
                           Content="Save As"
-                          FontSize="12"
+                          FontSize="14"
                           IsEnabled="{Binding HasData}"
                           Unchecked="saveButton_StateChanged">
                 <ToggleButton.ContextMenu>
@@ -185,6 +185,7 @@
                     Margin="5,-1,0,0"
                     Click="checkForUpdates_Click"
                     Content="Update?"
+                    FontSize="14"
                     Style="{StaticResource FlatButton}"
                     ToolTip="Check for updates to TiTsEd…" />
         </WrapPanel>
