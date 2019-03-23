@@ -8,7 +8,7 @@
         DataContext="{x:Static vm:VM.Instance}"
         Icon="TiTsEd.ico"
         Width="1024" Height="700">
-    
+
     <Window.Resources>
         <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}">
             <Setter Property="Margin" Value="0"/>
@@ -67,23 +67,34 @@
                                       Panel.ZIndex="1" />
                         </WrapPanel>
 
-                        <WrapPanel x:Name="CharacterPanel"
-                                   Grid.Row="1"
+                        <WrapPanel Grid.Row="1"
                                    Margin="5"
                                    Background="White"
                                    Orientation="Horizontal"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    IsEnabled="{Binding HasData}">
-                            <Label Content="Character" Target="{Binding ElementName=CharacterSelection}" />
-                            <ComboBox x:Name="CharacterSelection"
-                                          SelectedValue="{Binding Game.CharacterSelection}"
-                                          ItemsSource="{Binding Game.CharacterOptions}" />
-                            <Button Content="Copy to PC" IsEnabled="{Binding Game.IsNotPC}"
-                                    Click="CopyToPC_Clicked" />
-                            <StackPanel Margin="10,0">
-                                <common:SearchBox Text="{Binding Game.SearchText}" />
-                            </StackPanel>
+                            <WrapPanel x:Name="CharacterPanel" Orientation="Horizontal">
+                                <Label Content="Character" Target="{Binding ElementName=CharacterSelection}" />
+                                <ComboBox x:Name="CharacterSelection"
+                                              SelectedValue="{Binding Game.CharacterSelection}"
+                                              ItemsSource="{Binding Game.CharacterOptions}" />
+                                <Button Margin="5,0" Content="Copy to PC" IsEnabled="{Binding Game.IsNotPC}"
+                                        Click="CopyToPC_Clicked" />
+                            </WrapPanel>
+                            <Grid x:Name="SearchPanel" Margin="10,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <common:SearchBox Grid.Column="0" x:Name="SearchBoxControl" SearchText="{Binding Path=Game.SearchText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Grid.Column="1" x:Name="ClearSearchButton" Click="ClearSearch_Click">
+                                    <Button.Style>
+                                        <Style BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="{x:Type Button}" />
+                                    </Button.Style>
+                                    <Image Source="{StaticResource CrossImage}" Style="{StaticResource smallImageStyleKey}" />
+                                </Button>
+                            </Grid>
                         </WrapPanel>
                         <Grid x:Name="ContentPanel"
                               Grid.Row="2"

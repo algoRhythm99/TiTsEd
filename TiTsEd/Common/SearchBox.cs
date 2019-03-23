@@ -8,33 +8,36 @@ using System.Windows.Controls;
 namespace TiTsEd.Common
 {
     [TemplatePart(Name = "prompt", Type = typeof(TextBlock))]
+    [TemplatePart(Name = "searchTextBox", Type = typeof(TextBox))]
     public sealed class SearchBox : Control
     {
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(SearchBox), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnTextChanged));
+        public static readonly DependencyProperty SearchTextProperty = DependencyProperty.Register("SearchText", typeof(string), typeof(SearchBox), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnSearchTextChanged));
 
         static SearchBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchBox), new FrameworkPropertyMetadata(typeof(SearchBox)));
         }
 
-        public string Text
+        public string SearchText
         {
-            get { return GetValue(TextProperty) as string; }
-            set { SetValue(TextProperty, value); }
+            get { return GetValue(SearchTextProperty) as string; }
+            set { SetValue(SearchTextProperty, value); }
         }
 
         TextBlock _prompt;
+        TextBox _searchBox;
         public override void OnApplyTemplate()
         {
             _prompt = GetTemplateChild("prompt") as TextBlock;
-            OnTextChanged(this, new DependencyPropertyChangedEventArgs());
+            _searchBox = GetTemplateChild("searchTextBox") as TextBox;
+            OnSearchTextChanged(this, new DependencyPropertyChangedEventArgs());
         }
 
-        static void OnTextChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        static void OnSearchTextChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
             var box = obj as SearchBox;
             if (box._prompt == null) return;
-            box._prompt.Visibility = (String.IsNullOrEmpty(box.Text) ? Visibility.Visible : Visibility.Collapsed);
+            box._prompt.Visibility = (String.IsNullOrEmpty(box.SearchText) ? Visibility.Visible : Visibility.Collapsed);
         }
 
     }

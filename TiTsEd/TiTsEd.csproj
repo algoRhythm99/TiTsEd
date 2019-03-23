@@ -76,6 +76,7 @@
     <Compile Include="Common\NaturalSortComparer.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\TreeNode.cs" />
+    <Compile Include="Common\UIHelpers.cs" />
     <Compile Include="Common\VersionInfo.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>

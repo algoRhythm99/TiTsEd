@@ -138,5 +138,18 @@ namespace TiTsEd
         {
             get { return valuesPopup; }
         }
+
+        public void ClearSearch_Click(object sender, RoutedEventArgs e)
+        {
+            //VM.Instance.Game.SearchText = @"\u200B";
+            //VM.Instance.Game.SearchText = String.Empty;
+
+            var searchBoxControl = UIHelpers.FindChild<SearchBox>(this, "SearchBoxControl");
+            if (null != searchBoxControl)
+            {
+                searchBoxControl.SearchText = String.Empty;
+            }
+
+        }
     }
 }
