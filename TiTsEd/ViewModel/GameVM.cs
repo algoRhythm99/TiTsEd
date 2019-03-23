@@ -356,6 +356,23 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+        public int OralTease
+        {
+            get
+            {
+                if (IsPC && _flags.HasValue("TIMES_ORAL_TEASED"))
+                {
+                    return _flags.GetInt("TIMES_ORAL_TEASED");
+                }
+                return 0;
+            }
+            set
+            {
+                _flags.SetValue("TIMES_ORAL_TEASED", value);
+                OnFlagChanged("TIMES_ORAL_TEASED");
+            }
+        }
+
         string _searchText = "";
         public string SearchText
         {

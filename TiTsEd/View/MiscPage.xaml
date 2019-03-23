@@ -56,6 +56,9 @@
 
                     <Label Content="Hips" />
                     <common:MyNumericBox Upper="100" Value="{Binding Game.HipsTease}" />
+
+                    <Label Content="Oral" />
+                    <common:MyNumericBox Upper="100" Value="{Binding Game.OralTease}" />
                 </common:AutoGrid>
             </StackPanel>
 
