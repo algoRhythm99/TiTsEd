@@ -88,7 +88,7 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <common:SearchBox Grid.Column="0" x:Name="SearchBoxControl" SearchText="{Binding Path=Game.SearchText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-                                <Button Grid.Column="1" x:Name="ClearSearchButton" Click="ClearSearch_Click">
+                                <Button Grid.Column="1" x:Name="ClearSearchButton" Click="ClearSearch_Click" ToolTip="Clear Search">
                                     <Button.Style>
                                         <Style BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="{x:Type Button}" />
                                     </Button.Style>
