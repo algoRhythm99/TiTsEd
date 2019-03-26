@@ -145,6 +145,12 @@
 			<SkinFlag ID="11" Name="Aphrodisiac" />
 			<SkinFlag ID="12" Name="Sticky" />
 			<SkinFlag ID="13" Name="Thick" />
+			<SkinFlag ID="19" Name="Amorphous" />
+			<SkinFlag ID="20" Name="Furred" />
+			<SkinFlag ID="21" Name="Scaled" />
+			<SkinFlag ID="34" Name="Chitinous" />
+			<SkinFlag ID="35" Name="Feathered" />
+			<SkinFlag ID="37" Name="Gooey" />
 			<SkinFlag ID="39" Name="Absorbent" />
 			<SkinFlag ID="46" Name="Freckled" />
 			<SkinFlag ID="48" Name="Partially Scaled" />
@@ -693,6 +699,7 @@
 			<EyeType ID="6"  Name="Bee" />
 			<EyeType ID="7"  Name="Arachnid" />
 			<EyeType ID="10" Name="Avian" />
+			<EyeType ID="12" Name="Lizan" />
 			<EyeType ID="13" Name="Naga" />
 			<EyeType ID="14" Name="Frog" />
 			<EyeType ID="15" Name="Demonic" />
@@ -748,12 +755,15 @@
 			<EarType ID="46" Name="Vanae" />
 			<EarType ID="49" Name="Leithan" />
 			<EarType ID="50" Name="Goat" />
+			<EarType ID="51" Name="Synthetic" />
 			<EarType ID="52" Name="Simii" />
 			<EarType ID="53" Name="Daynar" />
 			<EarType ID="57" Name="Ovir" />
 			<EarType ID="58" Name="Sylvan" />
+			<EarType ID="59" Name="Dark Sylvan" />
 			<EarType ID="65" Name="Gryvain" />
 			<EarType ID="66" Name="Korgonne" />
+			<EarType ID="71" Name="Worg" />
 			<EarType ID="72" Name="Swine" />
 			<EarType ID="73" Name="Quad Lapine" />
 			<EarType ID="75" Name="Lupine" />
@@ -876,6 +886,7 @@
 			<ArmType ID="8"  Name="Drider" />
 			<ArmType ID="9"  Name="Lapine" />
 			<ArmType ID="10" Name="Avian" />
+			<ArmType ID="12" Name="Lizan" />
 			<ArmType ID="14" Name="Frog" />
 			<ArmType ID="15" Name="Demonic" />
 			<ArmType ID="16" Name="Gooey" />
@@ -884,14 +895,18 @@
 			<ArmType ID="23" Name="Tentacle" />
 			<ArmType ID="24" Name="Kui-tan" />
 			<ArmType ID="26" Name="Mouse" />
+			<ArmType ID="28" Name="Dove" />
 			<ArmType ID="40" Name="Panda" />
 			<ArmType ID="45" Name="Badger" />
+			<ArmType ID="46" Name="Vanae" />
 			<ArmType ID="49" Name="Leithan" />
+			<ArmType ID="51" Name="Synthetic" />
 			<ArmType ID="52" Name="Simii" />
 			<ArmType ID="53" Name="Daynar" />
 			<ArmType ID="55" Name="Nyrea" />
 			<ArmType ID="57" Name="Ovir" />
 			<ArmType ID="60" Name="Myr" />
+			<ArmType ID="65" Name="Gryvain" />
 			<ArmType ID="66" Name="Korgonne" />
 			<ArmType ID="69" Name="Bothrioc" />
 			<ArmType ID="67" Name="Flower" />
@@ -903,6 +918,8 @@
 		</ArmTypes>
 		<!-- ================================================================ -->
 		<ArmFlags>
+			<ArmFlag ID="1"  Name="Long" />
+			<ArmFlag ID="3"  Name="Lubricated" />
 			<ArmFlag ID="4"  Name="Fluffy" />
 			<ArmFlag ID="6"  Name="Smooth" />
 			<ArmFlag ID="12" Name="Sticky" />
@@ -910,6 +927,7 @@
 			<ArmFlag ID="19" Name="Amorphous" />
 			<ArmFlag ID="20" Name="Furred" />
 			<ArmFlag ID="21" Name="Scaled" />
+			<ArmFlag ID="22" Name="Hooves" />
 			<ArmFlag ID="23" Name="Paws" />
 			<ArmFlag ID="34" Name="Chitinous" />
 			<ArmFlag ID="35" Name="Feathered" />
@@ -942,17 +960,23 @@
 			<LegType ID="23" Name="Tentacle" />
 			<LegType ID="24" Name="Kui-tan" />
 			<LegType ID="26" Name="Mouse" />
+			<LegType ID="28" Name="Dove" />
 			<LegType ID="32" Name="MLP" />
 			<LegType ID="35" Name="Succubus" />
 			<LegType ID="40" Name="Panda" />
 			<LegType ID="42" Name="Raskvel" />
 			<LegType ID="45" Name="Badger" />
+			<LegType ID="46" Name="Vanae" />
+			<LegType ID="49" Name="Leithan" />
 			<LegType ID="50" Name="Goat" />
+			<LegType ID="51" Name="Synthetic" />
 			<LegType ID="52" Name="Simii" />
 			<LegType ID="53" Name="Daynar" />
 			<LegType ID="55" Name="Nyrea" />
+			<LegType ID="56" Name="Inhuman" />
 			<LegType ID="57" Name="Ovir" />
 			<LegType ID="60" Name="Myr" />
+			<LegType ID="64" Name="Hradian" />
 			<LegType ID="65" Name="Gryvain" />
 			<LegType ID="66" Name="Korgonne" />
 			<LegType ID="69" Name="Bothrioc" />
@@ -967,7 +991,9 @@
 		</LegTypes>
 		<!-- ================================================================ -->
 		<LegFlags>
+			<LegFlag ID="1"  Name="Long" />
 			<LegFlag ID="2"  Name="Prehensile" />
+			<LegFlag ID="3"  Name="Lubricated" />
 			<LegFlag ID="4"  Name="Fluffy" />
 			<LegFlag ID="6"  Name="Smooth" />
 			<LegFlag ID="12" Name="Sticky" />
@@ -1040,6 +1066,7 @@
 			<TailType ID="43" Name="Sydian" />
 			<TailType ID="45" Name="Badger" />
 			<TailType ID="46" Name="Vanae" />
+			<TailType ID="49" Name="Leithan" />
 			<TailType ID="51" Name="Synthetic" />
 			<TailType ID="52" Name="Simii" />
 			<TailType ID="53" Name="Daynar" />
@@ -1061,27 +1088,37 @@
 		<TailFlags>
 			<TailFlag ID="1"  Name="Long" />
 			<TailFlag ID="2"  Name="Prehensile" />
+			<TailFlag ID="3"  Name="Lubricated" />
 			<TailFlag ID="4"  Name="Fluffy" />
+			<TailFlag ID="5"  Name="Squishy" />
 			<TailFlag ID="6"  Name="Smooth" />
 			<TailFlag ID="7"  Name="Tapered" />
 			<TailFlag ID="8"  Name="Flared" />
 			<TailFlag ID="9"  Name="Knotted" />
+			<TailFlag ID="10" Name="Blunt" />
+			<TailFlag ID="11" Name="Aphrodisiac" />
 			<TailFlag ID="12" Name="Sticky" />
 			<TailFlag ID="13" Name="Thick" />
+			<TailFlag ID="18" Name="Tendril" />
 			<TailFlag ID="20" Name="Furred" />
 			<TailFlag ID="21" Name="Scaled" />
 			<TailFlag ID="25" Name="Ovipositor" />
 			<TailFlag ID="26" Name="Sheathed" />
 			<TailFlag ID="27" Name="Tailcock" />
+			<TailFlag ID="28" Name="Stinger Base" />
 			<TailFlag ID="29" Name="Stinger Tip" />
 			<TailFlag ID="30" Name="Nubby" />
 			<TailFlag ID="33" Name="Ribbed" />
 			<TailFlag ID="34" Name="Chitinous" />
 			<TailFlag ID="35" Name="Feathered" />
+			<TailFlag ID="36" Name="Double Headed" />
 			<TailFlag ID="37" Name="Gooey" />
 			<TailFlag ID="42" Name="Tailcunt" />
 			<TailFlag ID="44" Name="Corkscrewed" />
+			<TailFlag ID="46" Name="Freckled" />
+			<TailFlag ID="48" Name="Partially Scaled" />
 			<TailFlag ID="49" Name="Short" />
+			<TailFlag ID="50" Name="Floppy" />
 		</TailFlags>
 		<!-- ================================================================ -->
 		<TailGenitalTypes>
@@ -1166,10 +1203,12 @@
 			<CockType ID="4"  Name="Feline" />
 			<CockType ID="5"  Name="Vulpine" />
 			<CockType ID="6"  Name="Bee" />
+			<CockType ID="9"  Name="Lapine" />
 			<CockType ID="10" Name="Avian" />
 			<CockType ID="11" Name="Draconic" />
 			<CockType ID="13" Name="Naga" />
 			<CockType ID="15" Name="Demonic" />
+			<CockType ID="16" Name="Gooey" />
 			<CockType ID="17" Name="Kangaroo" />
 			<CockType ID="18" Name="Gabilani" />
 			<CockType ID="19" Name="Shark" />
@@ -1193,6 +1232,7 @@
 			<CockType ID="64" Name="Hradian" />
 			<CockType ID="65" Name="Gryvain" />
 			<CockType ID="69" Name="Bothrioc" />
+			<CockType ID="70" Name="Milodan" />
 			<CockType ID="72" Name="Swine" />
 			<CockType ID="78" Name="Rahn" />
 			<CockType ID="79" Name="Thraggen" />
@@ -1239,6 +1279,7 @@
 			<VaginaType ID="18" Name="Gabilani" />
 			<VaginaType ID="19" Name="Shark" />
 			<VaginaType ID="20" Name="Suula" />
+			<VaginaType ID="21" Name="Deer" />
 			<VaginaType ID="24" Name="Kui-tan" />
 			<VaginaType ID="44" Name="Lapinara" />
 			<VaginaType ID="46" Name="Vanae" />
@@ -1268,6 +1309,7 @@
 			<VaginaFlag ID="44" Name="Corkscrewed" />
 			<VaginaFlag ID="45" Name="Tongued" />
 			<VaginaFlag ID="47" Name="Plugged" />
+			<VaginaFlag ID="51" Name="Hyper Pumped" />
 		</VaginaFlags>
 		<!-- ================================================================ -->
 		<AssFlags>
@@ -1278,6 +1320,7 @@
 			<AssFlag ID="40" Name="Slightly Pumped" />
 			<AssFlag ID="41" Name="Fully Pumped" />
 			<AssFlag ID="47" Name="Plugged" />
+			<AssFlag ID="51" Name="Hyper Pumped" />
 		</AssFlags>
 		<!-- ================================================================ -->
 		<PregnancyTypes>
@@ -4988,6 +5031,7 @@
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Exhibitionist Blurb Cooldown" IsHidden="true" />
+			<StatusEffect Name="GastiUnlockTimer" IsHidden="true" />
 			<StatusEffect Name="Hair Regoo" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Jesse Bar Cooldown" IsHidden="true" MinutesLeft="1440" />
 			<StatusEffect Name="JuroXLyrallaCooldown" IsHidden="true" />
@@ -5048,6 +5092,7 @@
 			<StatusEffect Name="Horn Bumps" IsHidden="true" />
 			<StatusEffect Name="Horn Style" Label1="Style" Label2="Material" IsHidden="true" Comment="Description/Tooltip is color" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
+			<StatusEffect Name="Rubber Wrapped" IsHidden="true" />
 			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
 			<StatusEffect Name="Special Scrotum" Comment="Special scrotum description flag, see Value1" Label1="20 == FLAG_FURRED&#xD;&#xA;21 == FLAG_SCALED&#xD;&#xA;34 == FLAG_CHITINOUS&#xD;&#xA;35 == FLAG_FEATHERED&#xD;&#xA;37 == FLAG_GOOEY" Value1="20" IsHidden="true" />
 			<StatusEffect Name="Uniball" IsHidden="true" />
@@ -5126,6 +5171,7 @@
 			<StatusEffect Name="STELLA_PREGNANT" IsHidden="true" />
 			<StatusEffect Name="STELLA_SEX_FATIGUE" IsHidden="true" />
 			<StatusEffect Name="StellaSickOfTalk" IsHidden="true" />
+			<StatusEffect Name="Seduction Declined" IsHidden="true" />
 			<StatusEffect Name="SURFPASS" IsHidden="true" />
 			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Sweaty" Description="You are covered with sweat from a workout, reducing your potential sexiness to many foes. Some, however, may like it." IconName="Icon_Smelly" IconShade="0" />
