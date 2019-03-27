@@ -489,6 +489,11 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public int MaxLevel
+        {
+            get { return 10; }
+        }
+
         public int CharacterClass
         {
             get { return GetInt("characterClass"); }
@@ -528,18 +533,38 @@ namespace TiTsEd.ViewModel
 
         public int MaxXP
         {
-            get { return Level * Level * Level * Level * 100; }
+            get
+            {
+                int level = Level;
+                double xpMax = level * level * level * level * 100;
+                if (level >= 5)
+                {
+                    xpMax *= 1.5;
+                }
+                if (level >= 8)
+                {
+                    xpMax *= 1.5;
+                }
+                return (int)xpMax;
+            }
         }
 
         public String MaxXPLabel
         {
             get
             {
-                if (MaxXP > 1000)
+                int maxXP = MaxXP;
+                if (maxXP > 1000000)
                 {
-                    return MaxXP / 100 + "k";
+                    double val = (maxXP / 1000000);
+                    return val + "m";
                 }
-                return "" + MaxXP;
+                else if (maxXP > 1000)
+                {
+                    double val = (maxXP / 100);
+                    return val + "k";
+                }
+                return "" + maxXP;
             }
         }
 

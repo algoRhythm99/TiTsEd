@@ -9,7 +9,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Themes/PageInclude.xaml"/>
+                <ResourceDictionary Source="../Themes/PageInclude.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -25,26 +25,26 @@
                 <TextBlock Text="General Information" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
-                    <Label                  Content="Name" Width="Auto"/>
+                    <Label                  Content="Name" Width="Auto" />
                     <TextBox                Text="{Binding Game.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding Game.Character.CharacterName}" />
 
                     <Label                  Content="E-Mail" Width="Auto" IsEnabled="{Binding Game.EmailEnabled}" />
                     <TextBox                Text="{Binding Game.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Game.EmailEnabled}"  />
 
                     <Label                  Content="Notes" Width="Auto" IsEnabled="{Binding Game.IsPC}" />
-                    <TextBox                Text="{Binding Game.Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Game.IsPC}"/>
+                    <TextBox                Text="{Binding Game.Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Game.IsPC}" />
 
-                    <Label                  Content="Credits"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Credits}" Upper="900000" UpperLabel="900k"/>
+                    <Label                  Content="Credits" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Credits}" Upper="900000" UpperLabel="900k" />
 
-                    <Label                  Content="Days"/>
-                    <common:MyNumericBox    Value="{Binding Game.Days}" Unit="days"/>
+                    <Label                  Content="Days" />
+                    <common:MyNumericBox    Value="{Binding Game.Days}" Unit="days" />
 
-                    <Label                  Content="Hours"/>
-                    <common:MyNumericBox    Value="{Binding Game.Hours}" Upper="23" Max="23" Unit="hours"/>
+                    <Label                  Content="Hours" />
+                    <common:MyNumericBox    Value="{Binding Game.Hours}" Upper="23" Max="23" Unit="hours" />
 
-                    <Label                  Content="Minutes"/>
-                    <common:MyNumericBox    Value="{Binding Game.Minutes}" Upper="59" Max="59" Unit="minutes"/>
+                    <Label                  Content="Minutes" />
+                    <common:MyNumericBox    Value="{Binding Game.Minutes}" Upper="59" Max="59" Unit="minutes" />
                 </common:AutoGrid>
             </StackPanel>
 
@@ -53,13 +53,13 @@
                 <TextBlock Text="Advancement" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
-                    <Label                  Content="Class"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.CharacterClass}" ItemsSource="{Binding Data.General.ClassTypes}"/>
+                    <Label                  Content="Class" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.CharacterClass}" ItemsSource="{Binding Data.General.ClassTypes}" />
 
-                    <Label                  Content="Level"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Level}" Lower="1" />
+                    <Label                  Content="Level" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Level}" Lower="1" Upper="{Binding Game.Character.MaxLevel}" />
 
-                    <Label                  Content="XP"/>
+                    <Label                  Content="XP" />
                     <common:MyNumericBox    Value="{Binding Game.Character.XP}" Upper="{Binding Game.Character.MaxXP}" UpperLabel="{Binding Game.Character.MaxXPLabel}" />
 
                     <Label                  Content="Stat Points" IsEnabled="{Binding Game.IsPC}" />
@@ -85,24 +85,24 @@
                 <TextBlock Text="Combat Stats" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
-                    <Label                  Content="Shields"/>
+                    <Label                  Content="Shields" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Shields}" Upper="{Binding Game.Character.MaxShields}" />
                 </common:AutoGrid>
                 <common:AutoGrid Columns="3">
 
-                    <Label                  Content="HP"/>
+                    <Label                  Content="HP" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HP}" Upper="{Binding Game.Character.MaxHP}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.HPMod}" ToolTip="Modifier" />
 
-                    <Label                  Content="Lust"/>
+                    <Label                  Content="Lust" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Lust}" Upper="{Binding Game.Character.MaxLust}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.LustMod}" ToolTip="Modifier" />
 
-                    <Label                  Content="Energy"/>
+                    <Label                  Content="Energy" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Energy}" Upper="{Binding Game.Character.MaxEnergy}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.EnergyMod}" ToolTip="Modifier" />
 
-                    <Label                  Content="Taint"/>
+                    <Label                  Content="Taint" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Taint}" Upper="100" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.TaintMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
@@ -116,27 +116,27 @@
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.PhysiqueMod}" ToolTip="Modifier" />
                     <TextBlock              Width="50"  Text="{Binding Game.Character.PhysiquePercent}" ToolTip="Percent" TextAlignment="Center" IsEnabled="False" />
 
-                    <Label                  Content="Reflexes"/>
+                    <Label                  Content="Reflexes" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Reflexes}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.ReflexesMod}" ToolTip="Modifier" />
                     <TextBlock              Width="50"  Text="{Binding Game.Character.ReflexesPercent}" ToolTip="Percent" TextAlignment="Center" IsEnabled="False" />
 
-                    <Label                  Content="Aim"/>
+                    <Label                  Content="Aim" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Aim}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.AimMod}" ToolTip="Modifier" />
                     <TextBlock              Width="50"  Text="{Binding Game.Character.AimPercent}" ToolTip="Percent" TextAlignment="Center" IsEnabled="False" />
 
-                    <Label                  Content="Intelligence"/>
+                    <Label                  Content="Intelligence" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Intelligence}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.IntelligenceMod}" ToolTip="Modifier" />
                     <TextBlock              Width="50"  Text="{Binding Game.Character.IntelligencePercent}" ToolTip="Percent" TextAlignment="Center" IsEnabled="False" />
 
-                    <Label                  Content="Willpower"/>
+                    <Label                  Content="Willpower" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Willpower}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.WillpowerMod}" ToolTip="Modifier" />
                     <TextBlock              Width="50"  Text="{Binding Game.Character.WillpowerPercent}" ToolTip="Percent" TextAlignment="Center" IsEnabled="False" />
 
-                    <Label                  Content="Libido"/>
+                    <Label                  Content="Libido" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Libido}" Upper="{Binding Game.Character.MaxLibido}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.LibidoMod}" ToolTip="Modifier" />
                     <TextBlock Width="50" />
@@ -149,23 +149,23 @@
                 <TextBlock Text="Shape" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
-                    <Label                  Content="Height"/>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Tallness}" Upper="192" Max="192" Unit="inches"/>
+                    <Label                  Content="Height" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Tallness}" Upper="192" Max="192" Unit="inches" />
 
-                    <Label                  Content="Thickness"/>
+                    <Label                  Content="Thickness" />
                     <common:MyNumericBox    Value="{Binding Game.Character.Thickness}" Upper="100" Max="100" />
 
-                    <Label                  Content="Tone"/>
+                    <Label                  Content="Tone" />
                     <common:MyNumericBox    Value="{Binding Game.Character.Tone}" Upper="100" Max="100" />
 
-                    <Label                  Content="Feminity"/>
+                    <Label                  Content="Feminity" />
                     <common:MyNumericBox    Value="{Binding Game.Character.Feminity}" Upper="100" />
 
-                    <Label                  Content="Skin Type"/>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}"/>
+                    <Label                  Content="Skin Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.SkinType}" ItemsSource="{Binding Data.Body.SkinTypes}" />
 
-                    <Label                  Content="Skin Tone"/>
-                    <ComboBox               Text="{Binding Game.Character.SkinTone}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+                    <Label                  Content="Skin Tone" />
+                    <ComboBox               Text="{Binding Game.Character.SkinTone}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" />
 
                     <Label                  Content="Skin Accent" ToolTip="Used for: Vanae Markings and Shark Markings color" />
                     <ComboBox               Text="{Binding Game.Character.SkinAccent}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" ToolTip="Used for: Vanae Markings color" />
@@ -174,11 +174,11 @@
                     <view:FlagBox ItemsSource="{Binding Game.Character.SkinFlags}" />
                 </Expander>
                 <common:AutoGrid>
-                    <Label                  Content="Fur Color"/>
-                    <ComboBox               Text="{Binding Game.Character.FurColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}"/>
+                    <Label                  Content="Fur Color" />
+                    <ComboBox               Text="{Binding Game.Character.FurColor}" ItemsSource="{Binding Data.Body.HairColors}" Style="{StaticResource EditableTextBox}" />
 
-                    <Label                  Content="Scale Color"/>
-                    <ComboBox               Text="{Binding Game.Character.ScaleColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}"/>
+                    <Label                  Content="Scale Color" />
+                    <ComboBox               Text="{Binding Game.Character.ScaleColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" />
                 </common:AutoGrid>
             </StackPanel>
         </WrapPanel>
