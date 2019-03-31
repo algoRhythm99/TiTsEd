@@ -11,25 +11,34 @@
 
     <Window.Resources>
         <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}">
-            <Setter Property="Margin" Value="0"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="BorderThickness" Value="3,3,3,0" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabItem}">
-                        <Border x:Name="root" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="#303030" SnapsToDevicePixels="True" Margin="{TemplateBinding Padding}">
-                            <TextBlock x:Name="text" Text="{TemplateBinding Header}" Foreground="#E0E0E0" FontSize="12" HorizontalAlignment="Center" Margin="20,8,20,12"/>
+                        <Border x:Name="root"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="#303030"
+                                SnapsToDevicePixels="True"
+                                Margin="{TemplateBinding Padding}">
+                            <TextBlock x:Name="text" Text="{TemplateBinding Header}"
+                                       Foreground="#E0E0E0"
+                                       FontSize="12"
+                                       HorizontalAlignment="Center"
+                                       Margin="20,8,20,12"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="text" Property="Foreground" Value="White"/>
+                                <Setter TargetName="text" Property="Foreground" Value="White" />
                             </Trigger>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="text" Property="Foreground" Value="#DA3100"/>
-                                <Setter TargetName="root" Property="Background" Value="White"/>
+                                <Setter TargetName="text" Property="Foreground" Value="#DA3100" />
+                                <Setter TargetName="root" Property="Background" Value="White" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="text" Property="Foreground" Value="#00FFFFFF"/>
+                                <Setter TargetName="text" Property="Foreground" Value="#00FFFFFF" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -38,7 +47,8 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
+    <Grid ClipToBounds="true"
+          SnapsToDevicePixels="true">
 
         <TabControl>
 
@@ -49,32 +59,36 @@
                           KeyboardNavigation.TabNavigation="Local">
 
                         <Grid.RowDefinitions>
-                            <RowDefinition x:Name="ControlRow" Height="Auto" />
-                            <RowDefinition x:Name="CharacterRow" Height="Auto" />
-                            <RowDefinition x:Name="ContentRow" Height="*" />
+                            <RowDefinition x:Name="ControlRow"      Height="Auto" />
+                            <RowDefinition x:Name="CharacterRow"    Height="Auto" />
+                            <RowDefinition x:Name="ContentRow"      Height="*" />
                         </Grid.RowDefinitions>
 
+                        <Grid Grid.Row="0" Background="Black">
                         <WrapPanel Name="ControlPanel"
-                                   Grid.Row="0"
                                    Orientation="Horizontal"
-                                   Background="Black">
-                            <view:TopBar x:Name="MenuPanel" />
+                                   HorizontalAlignment="Right">
 
                             <TabPanel x:Name="HeaderPanel"
+                                      Background="Black"
                                       IsEnabled="{Binding HasData}"
                                       IsItemsHost="true"
                                       KeyboardNavigation.TabIndex="1"
                                       Panel.ZIndex="1" />
-                        </WrapPanel>
 
-                        <WrapPanel Grid.Row="1"
-                                   Margin="5"
-                                   Background="White"
+                            <view:TopBar x:Name="MenuPanel"
+                                         HorizontalAlignment="Right" />
+
+                        </WrapPanel>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                        <WrapPanel Margin="5"
                                    Orientation="Horizontal"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    IsEnabled="{Binding HasData}">
-                            <WrapPanel x:Name="CharacterPanel" Orientation="Horizontal">
+                            <WrapPanel x:Name="CharacterPanel"
+                                       Orientation="Horizontal">
                                 <Label Content="Character" Target="{Binding ElementName=CharacterSelection}" />
                                 <ComboBox x:Name="CharacterSelection"
                                               SelectedValue="{Binding Game.CharacterSelection}"
@@ -87,7 +101,9 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <common:SearchBox Grid.Column="0" x:Name="SearchBoxControl" SearchText="{Binding Path=Game.SearchText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                                <common:SearchBox Grid.Column="0"
+                                                  x:Name="SearchBoxControl"
+                                                  SearchText="{Binding Path=Game.SearchText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                                 <Button Grid.Column="1" x:Name="ClearSearchButton" Click="ClearSearch_Click" ToolTip="Clear Search">
                                     <Button.Style>
                                         <Style BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="{x:Type Button}" />
@@ -95,9 +111,11 @@
                                     <Image Source="{StaticResource CrossImage}" Style="{StaticResource smallImageStyleKey}" />
                                 </Button>
                             </Grid>
-                        </WrapPanel>
+                            </WrapPanel>
+                        </Grid>
                         <Grid x:Name="ContentPanel"
                               Grid.Row="2"
+                              Background="White"
                               KeyboardNavigation.DirectionalNavigation="Contained"
                               KeyboardNavigation.TabIndex="2"
                               KeyboardNavigation.TabNavigation="Local">
@@ -110,33 +128,33 @@
             </TabControl.Template>
 
             <TabItem Header="General">
-                <view:GeneralPage Background="White"/>
+                <view:GeneralPage />
             </TabItem>
             <TabItem Header="Head">
-                <view:HeadPage Background="White"/>
+                <view:HeadPage />
             </TabItem>
             <TabItem Header="Body">
-                <view:BodyPage Background="White"/>
+                <view:BodyPage />
             </TabItem>
             <TabItem Header="Genitals">
-                <view:GenitalPage Background="White"/>
+                <view:GenitalPage />
             </TabItem>
             <TabItem Header="Items" IsEnabled="{Binding Game.IsPC}">
-                <view:ItemsPage Background="White"/>
+                <view:ItemsPage />
             </TabItem>
             <TabItem Header="Key Items" IsEnabled="{Binding Game.IsPC}">
-                <view:KeyItemsPage Background="White"/>
+                <view:KeyItemsPage />
             </TabItem>
             <TabItem Header="Perks" IsEnabled="{Binding Game.IsPC}">
-                <view:PerkPage Background="White"/>
+                <view:PerkPage />
             </TabItem>
             <TabItem Header="Misc" IsEnabled="{Binding Game.IsPC}">
-                <view:MiscPage Background="White"/>
+                <view:MiscPage />
             </TabItem>
             <TabItem Header="Flags" IsEnabled="{Binding Game.IsPC}">
                 <view:RawPage />
             </TabItem>
-            <TabItem Header="Raw Save">
+            <TabItem Header="Raw">
                 <view:RawStateViewPage />
             </TabItem>
         </TabControl>

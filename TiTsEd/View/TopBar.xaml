@@ -143,7 +143,9 @@
         </Style>
     </UserControl.Resources>
 
-        <WrapPanel Orientation="Horizontal" Background="Black">
+        <WrapPanel Orientation="Horizontal"
+                   HorizontalAlignment="Stretch"
+                   Background="Black">
             <ToggleButton x:Name="openButton"
                           Margin="0,1,0,0"
                           VerticalAlignment="Top"
