@@ -21,7 +21,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center">
 
-            <StackPanel Grid.Column="1" Grid.Row="1">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
 
                 <TextBlock Text="Male Organs" Style="{StaticResource Header}" />
 
@@ -74,9 +74,13 @@
 
                 </common:AutoGrid>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Style="{StaticResource ContentStackPanel}">
 
-                <common:ArrayEditor Header="Cocks" Items="{Binding Game.Character.Cocks}" Capacity="10" MinCapacity="0">
+                <common:ArrayEditor
+                    Header="Cocks"
+                    Items="{Binding Game.Character.Cocks}"
+                    Capacity="5"
+                    MinCapacity="0">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Description}" />
@@ -123,7 +127,7 @@
                 </common:ArrayEditor>
             </StackPanel>
 
-            <StackPanel>
+            <StackPanel Style="{StaticResource ContentStackPanel}">
 
                 <TextBlock Text="Female Organs" Style="{StaticResource Header}" />
 
@@ -151,8 +155,12 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.ClitLength}" Type="Double" Unit="inches" />
                 </common:AutoGrid>
             </StackPanel>
-            <StackPanel>
-                <common:ArrayEditor Header="Vaginas" Items="{Binding Game.Character.Vaginas}" Capacity="3" MinCapacity="0">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
+                <common:ArrayEditor
+                    Header="Vaginas"
+                    Items="{Binding Game.Character.Vaginas}"
+                    Capacity="3"
+                    MinCapacity="0">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Description}" />

@@ -16,11 +16,10 @@
 
     <ScrollViewer HorizontalScrollBarVisibility="Disabled">
         <WrapPanel Margin="10"
-                   MaxWidth="1024"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center">
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
 
                 <TextBlock Text="General Information" Style="{StaticResource Header}" />
 
@@ -48,7 +47,7 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
 
                 <TextBlock Text="Advancement" Style="{StaticResource Header}" />
 
@@ -81,7 +80,7 @@
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="Combat Stats" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
@@ -111,7 +110,7 @@
 
                 <common:AutoGrid Columns="4">
 
-                    <TextBlock Text="Physique" />
+                    <Label                  Content="Physique" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Physique}" Upper="{Binding Game.Character.MaxCoreStat}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.PhysiqueMod}" ToolTip="Modifier" />
                     <TextBlock              Width="50"  Text="{Binding Game.Character.PhysiquePercent}" ToolTip="Percent" TextAlignment="Center" IsEnabled="False" />
@@ -145,7 +144,7 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="Shape" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>

@@ -23,7 +23,7 @@
           VerticalAlignment="Stretch"
           Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -31,8 +31,8 @@
               Grid.Row="0"
               Margin="20,0,0,0">
             <StackPanel Orientation="Horizontal">
-            <Label Content="Current Version" Target="{Binding ElementName=versionLabel}" />
-            <TextBlock Name="versionLabel" VerticalAlignment="Center" />
+                <Label Content="Current Version" Target="{Binding ElementName=versionLabel}" />
+                <TextBlock Name="versionLabel" VerticalAlignment="Center" />
             </StackPanel>
         </Grid>
         <Grid x:Name="checkingGrid"

@@ -11,24 +11,24 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Themes/PageInclude.xaml"/>
+                <ResourceDictionary Source="../Themes/PageInclude.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="LeftSlotStyle" TargetType="{x:Type TreeViewItem}">
-                <Setter Property="IsExpanded" Value="False"/>
+                <Setter Property="IsExpanded" Value="False" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TreeViewItem}">
                             <Grid>
-                                <Border x:Name="mouseOverBorder" Background="#FBFBFB" Opacity="0" Margin="0,-2"/>
-                                <Border x:Name="selectionBorder" Background="#FFFFFF" Opacity="0" Margin="0,-4" BorderThickness="0,1" BorderBrush="#E7E7E5"/>
+                                <Border x:Name="mouseOverBorder" Background="#FBFBFB" Opacity="0" Margin="0,-2" />
+                                <Border x:Name="selectionBorder" Background="#FFFFFF" Opacity="0" Margin="0,-4" BorderThickness="0,1" BorderBrush="#E7E7E5" />
                                 <Grid Margin="30,6,5,6">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock x:Name="text" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" FontStretch="Expanded" Foreground="#606060" SnapsToDevicePixels="True"/>
-                                    <TextBlock x:Name="qty" Grid.Column="1" Text="{Binding QuantityDescription}" Margin="8,0,0,0" Foreground="#606060" SnapsToDevicePixels="True"/>
+                                    <TextBlock x:Name="text" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" FontStretch="Expanded" Foreground="#606060" SnapsToDevicePixels="True" />
+                                    <TextBlock x:Name="qty" Grid.Column="1" Text="{Binding QuantityDescription}" Margin="8,0,0,0" Foreground="#606060" SnapsToDevicePixels="True" />
                                 </Grid>
                             </Grid>
                             <ControlTemplate.Triggers>
@@ -38,7 +38,7 @@
                                     <Setter TargetName="qty" Property="Foreground" Value="#404040" />
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="True">
-                                    <Setter Property="Panel.ZIndex" Value="1"/>
+                                    <Setter Property="Panel.ZIndex" Value="1" />
                                     <Setter TargetName="selectionBorder" Property="Opacity" Value="1" />
 
                                     <Setter TargetName="text" Property="Foreground" Value="#DA3810" />
@@ -59,18 +59,18 @@
             </Style>
 
             <Style x:Key="LeftGroupStyle" TargetType="{x:Type TreeViewItem}">
-                <Setter Property="IsExpanded" Value="True"/>
-                <Setter Property="ItemsSource" Value="{Binding Slots}"/>
-                <Setter Property="ItemContainerStyle" Value="{StaticResource LeftSlotStyle}"/>
-                <Setter Property="Focusable" Value="False"/>
+                <Setter Property="IsExpanded" Value="True" />
+                <Setter Property="ItemsSource" Value="{Binding Slots}" />
+                <Setter Property="ItemContainerStyle" Value="{StaticResource LeftSlotStyle}" />
+                <Setter Property="Focusable" Value="False" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TreeViewItem}">
                             <StackPanel Orientation="Vertical" Margin="0,20,0,0">
                                 <Border Background="Transparent" IsHitTestVisible="False">
-                                    <TextBlock Text="{Binding Name}" Margin="20,4,4,4" FontSize="14" FontWeight="Bold" Foreground="#404040" SnapsToDevicePixels="True"/>
+                                    <TextBlock Text="{Binding Name}" Margin="20,4,4,4" FontSize="14" FontWeight="Bold" Foreground="#404040" SnapsToDevicePixels="True" />
                                 </Border>
-                                <ItemsPresenter x:Name="ItemsHost" Margin="0,0,0,0"/>
+                                <ItemsPresenter x:Name="ItemsHost" Margin="0,0,0,0" />
                             </StackPanel>
                         </ControlTemplate>
                     </Setter.Value>
@@ -78,26 +78,26 @@
             </Style>
 
             <Style x:Key="RightItemStyle" TargetType="{x:Type TreeViewItem}">
-                <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
-                <Setter Property="IsExpanded" Value="False"/>
+                <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+                <Setter Property="IsExpanded" Value="False" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TreeViewItem}">
                             <Grid x:Name="root">
-                                <Border x:Name="mouseOverBorder" Background="#20000000" Opacity="0"/>
-                                <Border x:Name="selectionBorder" Background="#DA3100" Opacity="0"/>
-                                <TextBlock x:Name="text" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" Margin="4" SnapsToDevicePixels="True" ToolTip="{Binding ToolTip}"/>
+                                <Border x:Name="mouseOverBorder" Background="#20000000" Opacity="0" />
+                                <Border x:Name="selectionBorder" Background="#DA3100" Opacity="0" />
+                                <TextBlock x:Name="text" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" Margin="4" SnapsToDevicePixels="True" ToolTip="{Binding ToolTip}" />
                             </Grid>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="mouseOverBorder" Property="Opacity" Value="1"/>
+                                    <Setter TargetName="mouseOverBorder" Property="Opacity" Value="1" />
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="True">
-                                    <Setter TargetName="selectionBorder" Property="Opacity" Value="1"/>
-                                    <Setter TargetName="text" Property="Foreground" Value="White"/>
+                                    <Setter TargetName="selectionBorder" Property="Opacity" Value="1" />
+                                    <Setter TargetName="text" Property="Foreground" Value="White" />
                                 </Trigger>
                                 <Trigger Property="IsEnabled" Value="False">
-                                    <Setter TargetName="text" Property="Foreground" Value="Gray"/>
+                                    <Setter TargetName="text" Property="Foreground" Value="Gray" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -106,16 +106,16 @@
             </Style>
 
             <Style x:Key="RightGroupStyle" TargetType="{x:Type TreeViewItem}">
-                <Setter Property="IsExpanded" Value="True"/>
-                <Setter Property="ItemsSource" Value="{Binding Items}"/>
-                <Setter Property="ItemContainerStyle" Value="{StaticResource RightItemStyle}"/>
-                <Setter Property="Focusable" Value="False"/>
+                <Setter Property="IsExpanded" Value="True" />
+                <Setter Property="ItemsSource" Value="{Binding Items}" />
+                <Setter Property="ItemContainerStyle" Value="{StaticResource RightItemStyle}" />
+                <Setter Property="Focusable" Value="False" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TreeViewItem}">
                             <StackPanel Orientation="Vertical">
                                 <Border Background="Transparent" IsHitTestVisible="False">
-                                    <TextBlock Text="{Binding Name}" Margin="4" FontSize="14" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Name}" Margin="4" FontSize="14" FontWeight="Bold" />
                                 </Border>
                                 <ItemsPresenter x:Name="ItemsHost" Margin="0,0,0,20" />
                             </StackPanel>
@@ -138,9 +138,9 @@
     <Border BorderThickness="0,0,1,0"
             BorderBrush="#E7E7E5"
             SnapsToDevicePixels="True">
-    <DockPanel>
+        <DockPanel>
 
-        <WrapPanel DockPanel.Dock="Left"
+            <WrapPanel DockPanel.Dock="Left"
                    Orientation="Vertical"
                    Background="#F6F5F1">
                 <TreeView x:Name="leftTree"
@@ -150,29 +150,31 @@
                           SelectedItemChanged="leftTree_SelectedItemChanged"
                           MinWidth="280"
                           Style="{StaticResource TreeViewWithLeftScrollBar}" />
-        </WrapPanel>
+            </WrapPanel>
 
-        <DockPanel x:Name="rightPanel"
-                   Visibility="Collapsed"
-                   Margin="30,30,0,30">
+            <DockPanel
+                x:Name="rightPanel"
+                Visibility="Collapsed"
+                Margin="30,30,0,30">
 
-            <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
-                <common:AutoGrid HorizontalAlignment="Center">
-                    <Label              Content="Quantity" Width="Auto" />
-                    <common:MyNumericBox    Value="{Binding Path=SelectedItem.Quantity, ElementName=leftTree}"
+                <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                    <common:AutoGrid HorizontalAlignment="Center">
+                        <Label              Content="Quantity" Width="Auto" />
+                        <common:MyNumericBox    Value="{Binding Path=SelectedItem.Quantity, ElementName=leftTree}"
                                             Max="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}"
                                             Upper="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}" />
-                </common:AutoGrid>
-            </StackPanel>
+                    </common:AutoGrid>
+                </StackPanel>
 
-            <TreeView ItemContainerStyle="{StaticResource RightGroupStyle}"
-                      Padding="0"
-                      BorderThickness="0"
-                      SelectedItemChanged="rightTree_SelectedItemChanged"
-                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                      ItemsSource="{Binding Path=SelectedItem.AllGroups, ElementName=leftTree}" />
+                <TreeView
+                    ItemContainerStyle="{StaticResource RightGroupStyle}"
+                    Padding="0"
+                    BorderThickness="0"
+                    SelectedItemChanged="rightTree_SelectedItemChanged"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    ItemsSource="{Binding Path=SelectedItem.AllGroups, ElementName=leftTree}" />
+            </DockPanel>
         </DockPanel>
-    </DockPanel>
 
     </Border>
 

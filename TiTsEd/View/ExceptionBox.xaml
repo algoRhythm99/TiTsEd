@@ -6,89 +6,89 @@
     <Window.Resources>
         <ResourceDictionary>
             <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}">
-                <Setter Property="Margin" Value="8,0,0,0"/>
-                <Setter Property="Height" Value="24"/>
-                <Setter Property="Width" Value="80"/>
+                <Setter Property="Margin" Value="8,0,0,0" />
+                <Setter Property="Height" Value="24" />
+                <Setter Property="Width" Value="80" />
             </Style>
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <Grid HorizontalAlignment="Stretch" Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
+
         <Grid Margin="20,10,10,10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Image x:Name="image" Width="32" Height="32" VerticalAlignment="Top"/>
-            <TextBlock x:Name="text" FontSize="14" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Column="1" Margin="10,0,0,0"/>
+            <Image x:Name="image" Width="32" Height="32" VerticalAlignment="Top" />
+            <TextBlock x:Name="text" FontSize="14" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Column="1" Margin="10,0,0,0" />
         </Grid>
 
         <Grid x:Name="reportingGrid" Margin="20,20,10,10" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto" MaxHeight="200"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" MaxHeight="200" />
             </Grid.RowDefinitions>
-            <TextBlock Text="Reporting the error" FontWeight="Bold"/>
+            <TextBlock Text="Reporting the error" FontWeight="Bold" />
             <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,5,0,0" Grid.Row="1">
                 Please report this error by copying it and either posting a message in
                 <Hyperlink NavigateUri="http://fenoxo.com/forum/index.php?/topic/57-TiTsEd-a-save-editor/" RequestNavigate="requestNavigate">TiTsEd's forum thread</Hyperlink>,
                 at fenoxo.com, or opening a ticket in
                 <Hyperlink NavigateUri="https://github.com/tmedwards/TiTsEd/issues" RequestNavigate="requestNavigate">TiTsEd's issue tracker</Hyperlink>.
                 (Error also saved to the TiTsEd.log file.)
-                <LineBreak/><LineBreak/>
+                <LineBreak /><LineBreak />
                 Providing the save file which caused the error could also be helpful.
-                <LineBreak/><LineBreak/>
+                <LineBreak /><LineBreak />
                 Please <TextBlock FontStyle="Italic">do not</TextBlock> sumbit reports to CoC's issue tracker, as the projects are separate.
             </TextBlock>
         </Grid>
 
         <Grid x:Name="folderGrid" Margin="20,20,10,10" Grid.Row="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto" MaxHeight="200"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" MaxHeight="200" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Path" FontWeight="Bold"/>
-            <TextBlock x:Name="folderText" VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,5,0,0" Grid.Row="1"/>
+            <TextBlock Text="Path" FontWeight="Bold" />
+            <TextBlock x:Name="folderText" VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,5,0,0" Grid.Row="1" />
             <Button Click="openFolder_Click" VerticalAlignment="Top" Margin="10,0,0,0"  Grid.Row="1" Grid.Column="1">Open</Button>
         </Grid>
 
         <Grid x:Name="exceptionGrid" Margin="20,20,10,10" Grid.Row="3">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Error message" FontWeight="Bold"/>
+            <TextBlock Text="Error message" FontWeight="Bold" />
             <ScrollViewer Margin="0,5,0,0" Grid.Row="1" >
-                <TextBlock x:Name="exceptionText" VerticalAlignment="Top" TextWrapping="Wrap"/>
+                <TextBlock x:Name="exceptionText" VerticalAlignment="Top" TextWrapping="Wrap" />
             </ScrollViewer>
             <Button Click="copyException_Click" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Row="1" Grid.Column="1">Copy</Button>
         </Grid>
 
         <Grid Background="#F0F0F0" Margin="0,10,0,0" Grid.Row="4">
             <TextBlock x:Name="linkBar" VerticalAlignment="Center" Margin="20,0,10,0">
-                <TextBlock Text="Links:" FontWeight="Bold"/>
+                <TextBlock Text="Links:" FontWeight="Bold" />
                 <Hyperlink NavigateUri="http://fenoxo.com/forum/index.php?/topic/57-TiTsEd-a-save-editor/" RequestNavigate="requestNavigate">TiTsEd's forum thread</Hyperlink>
                 &amp;
                 <Hyperlink NavigateUri="https://github.com/tmedwards/TiTsEd/issues" RequestNavigate="requestNavigate">TiTsEd's issue tracker</Hyperlink>
             </TextBlock>
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" x:Name="buttonStack"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" x:Name="buttonStack" />
         </Grid>
     </Grid>
 </Window>

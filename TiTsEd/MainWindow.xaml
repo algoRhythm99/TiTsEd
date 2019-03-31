@@ -7,6 +7,7 @@
         Title="TiTsEd" 
         DataContext="{x:Static vm:VM.Instance}"
         Icon="TiTsEd.ico"
+        MinWidth="400"
         Width="1024" Height="700">
 
     <Window.Resources>
@@ -27,7 +28,7 @@
                                        Foreground="#E0E0E0"
                                        FontSize="12"
                                        HorizontalAlignment="Center"
-                                       Margin="20,8,20,12"/>
+                                       Margin="20,8,20,12" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -65,21 +66,30 @@
                         </Grid.RowDefinitions>
 
                         <Grid Grid.Row="0" Background="Black">
-                        <WrapPanel Name="ControlPanel"
-                                   Orientation="Horizontal"
-                                   HorizontalAlignment="Right">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                        Width="*"
+                                        MinWidth="100" />
+                                    <ColumnDefinition
+                                        MinWidth="100"
+                                        Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
-                            <TabPanel x:Name="HeaderPanel"
-                                      Background="Black"
-                                      IsEnabled="{Binding HasData}"
-                                      IsItemsHost="true"
-                                      KeyboardNavigation.TabIndex="1"
-                                      Panel.ZIndex="1" />
+                                    <TabPanel
+                                        Grid.Column="0"
+                                        x:Name="HeaderPanel"
+                                        Background="Black"
+                                        HorizontalAlignment="Center"
+                                        IsEnabled="{Binding HasData}"
+                                        IsItemsHost="true"
+                                        KeyboardNavigation.TabIndex="1" />
 
-                            <view:TopBar x:Name="MenuPanel"
-                                         HorizontalAlignment="Right" />
-
-                        </WrapPanel>
+                                <view:TopBar Grid.Column="1"
+                                             x:Name="MenuPanel"
+                                             VerticalAlignment="Center"
+                                             HorizontalAlignment="Right" />
+                            </Grid>
                         </Grid>
                         <Grid Grid.Row="1">
                         <WrapPanel Margin="5"
@@ -159,6 +169,6 @@
             </TabItem>
         </TabControl>
 
-        <common:NamedVector4Popup x:Name="valuesPopup"/>
+        <common:NamedVector4Popup x:Name="valuesPopup" />
     </Grid>
 </Window>

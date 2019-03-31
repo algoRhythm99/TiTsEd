@@ -143,10 +143,10 @@
         </Style>
     </UserControl.Resources>
 
-        <WrapPanel Orientation="Horizontal"
+    <WrapPanel Orientation="Horizontal"
                    HorizontalAlignment="Stretch"
                    Background="Black">
-            <ToggleButton x:Name="openButton"
+        <ToggleButton x:Name="openButton"
                           Margin="0,1,0,0"
                           VerticalAlignment="Top"
                           HorizontalContentAlignment="Left"
@@ -154,17 +154,17 @@
                           BorderThickness="0"
                           Checked="openButton_StateChanged"
                           Content="Open"
-                          FontSize="14"
+                          FontSize="16"
                           Unchecked="openButton_StateChanged">
-                <ToggleButton.ContextMenu>
-                    <ContextMenu x:Name="openMenu"
+            <ToggleButton.ContextMenu>
+                <ContextMenu x:Name="openMenu"
                                  MinWidth="150"
                                  Closed="openMenu_Closed"
                                  Placement="Bottom" />
-                </ToggleButton.ContextMenu>
-            </ToggleButton>
+            </ToggleButton.ContextMenu>
+        </ToggleButton>
 
-            <ToggleButton x:Name="saveButton"
+        <ToggleButton x:Name="saveButton"
                           Margin="5,1,0,0"
                           VerticalAlignment="Top"
                           HorizontalContentAlignment="Left"
@@ -172,24 +172,24 @@
                           BorderThickness="0"
                           Checked="saveButton_StateChanged"
                           Content="Save As"
-                          FontSize="14"
+                          FontSize="16"
                           IsEnabled="{Binding HasData}"
                           Unchecked="saveButton_StateChanged">
-                <ToggleButton.ContextMenu>
-                    <ContextMenu x:Name="saveMenu"
+            <ToggleButton.ContextMenu>
+                <ContextMenu x:Name="saveMenu"
                                  MinWidth="150"
                                  Closed="saveMenu_Closed"
                                  Placement="Bottom" />
-                </ToggleButton.ContextMenu>
-            </ToggleButton>
+            </ToggleButton.ContextMenu>
+        </ToggleButton>
 
-            <Button x:Name="updateButton"
+        <Button x:Name="updateButton"
                     Margin="5,-1,0,0"
                     Click="checkForUpdates_Click"
                     Content="Update?"
-                    FontSize="14"
+                    FontSize="16"
                     Style="{StaticResource FlatButton}"
                     ToolTip="Check for updates to TiTsEd…" />
-        </WrapPanel>
+    </WrapPanel>
 
 </UserControl>

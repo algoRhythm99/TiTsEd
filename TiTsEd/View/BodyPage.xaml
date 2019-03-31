@@ -22,7 +22,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center">
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="General" Style="{StaticResource Header}" />
                 <common:AutoGrid>
                     <Label                  Content="Has Gills" />
@@ -54,7 +54,7 @@
             </StackPanel>
 
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="Wings" Style="{StaticResource Header}" />
                 <common:AutoGrid>
                     <Label                  Content="Wing Type" />
@@ -88,17 +88,23 @@
             </StackPanel>
 
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="Butt" Style="{StaticResource Header}" />
                 <common:AutoGrid>
 
-                    <Label                  Content="Anal Virgin" />
+                    <Label>
+                        <TextBlock Text="Anal Virgin" />
+                    </Label>
                     <CheckBox IsChecked="{Binding Game.Character.AnalVirgin}" />
 
-                    <Label                  Content="Anal Bonus Capacity" />
+                    <Label>
+                        <TextBlock Text="Anal Bonus Capacity" />
+                    </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.Ass.BonusCapacity}" />
 
-                    <Label                  Content="Anal Min Looseness" />
+                    <Label>
+                        <TextBlock Text="Anal Min Looseness" />
+                    </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.Ass.MinLooseness}" />
 
                 </common:AutoGrid>
@@ -120,7 +126,7 @@
                 </Expander>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="Tail" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
@@ -136,13 +142,19 @@
                     <Label                  Content="Tail Recharge" />
                     <common:MyNumericBox    Value="{Binding Game.Character.TailRecharge}" />
 
-                    <Label                  Content="Tail Genital Type" />
+                    <Label>
+                        <TextBlock Text="Tail Genital Type" />
+                    </Label>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenital}" ItemsSource="{Binding Data.Body.TailGenitalTypes}" />
 
-                    <Label                  Content="Tail Genital Race" />
+                    <Label>
+                        <TextBlock Text="Tail Genital Race" />
+                    </Label>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.TailGenitalRace}" ItemsSource="{Binding Data.Body.TailGenitalRaceTypes}" />
 
-                    <Label                  Content="Tail Genital Color" />
+                    <Label>
+                        <TextBlock Text="Tail Genital Color" />
+                    </Label>
                     <ComboBox               Text="{Binding Game.Character.TailGenitalColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" />
                 </common:AutoGrid>
                 <Expander Header="Tail Flags" Margin="60,0,0,0" >
@@ -150,55 +162,71 @@
                 </Expander>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="Lactation" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
 
-                    <Label                  Content="Milk Type" HorizontalAlignment="Right" Width="Auto" />
+                    <Label                  Content="Milk Type" />
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.MilkType}" ItemsSource="{Binding Data.Body.MilkTypes}" />
 
-                    <Label                  Content="Milk Fullness" HorizontalAlignment="Right" Width="Auto" />
+                    <Label                  Content="Milk Fullness" />
                     <common:MyNumericBox    Value="{Binding Game.Character.MilkFullness}" Type="Double" />
 
-                    <Label                  Content="Milk Rate" HorizontalAlignment="Right" Width="Auto" />
+                    <Label                  Content="Milk Rate" />
                     <common:MyNumericBox    Value="{Binding Game.Character.MilkRate}" />
 
-                    <Label                  Content="Milk Multiplier" HorizontalAlignment="Right" Width="Auto" />
+                    <Label>
+                        <TextBlock Text="Milk Multiplier" />
+                    </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.MilkMultiplier}" />
 
-                    <Label                  Content="Milk Storage Multiplier" HorizontalAlignment="Right" Width="Auto" />
+                    <Label>
+                        <TextBlock Text="Milk Storage Multiplier" />
+                    </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.MilkStorageMultiplier}" />
 
                 </common:AutoGrid>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="Chest" Style="{StaticResource Header}" />
 
                 <common:AutoGrid>
-                    <Label                  Content="Nipple Color" HorizontalAlignment="Right" Width="Auto" />
-                    <ComboBox               Text="{Binding Game.Character.NippleColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" />
+                    <Label>
+                        <TextBlock  Text="Nipple Color" />
+                    </Label>
+                    <ComboBox   Text="{Binding Game.Character.NippleColor}" ItemsSource="{Binding Data.Body.SkinTones}" Style="{StaticResource EditableTextBox}" />
 
-                    <Label                  Content="Nipples Per Breast" HorizontalAlignment="Right" Width="Auto" />
+                    <Label>
+                        <TextBlock Text="Nipples Per Breast" />
+                    </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.NipplesPerBreast}" />
 
-                    <Label                  Content="Nipple Length Ratio" HorizontalAlignment="Right" Width="Auto" />
+                    <Label>
+                        <TextBlock  Text="Nipple Length Ratio" />
+                    </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.NippleLengthRatio}" Type="Double" />
 
-                    <Label                  Content="Nipple Width Ratio" HorizontalAlignment="Right" Width="Auto" />
+                    <Label>
+                        <TextBlock  Text="Nipple Width Ratio" />
+                    </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.NippleWidthRatio}" Type="Double" />
 
-                    <Label                  Content="Dick Nipple Type" HorizontalAlignment="Right" Width="Auto" />
+                    <Label>
+                        <TextBlock  Text="Dick Nipple Type" />
+                    </Label>
                     <common:MyComboBox      SelectedValue="{Binding Game.Character.DickNippleType}" ItemsSource="{Binding Data.Body.DickNippleTypes}" />
 
-                    <Label                  Content="Dick Nipple Multiplier" HorizontalAlignment="Right" Width="Auto" />
+                    <Label>
+                        <TextBlock  Text="Dick Nipple Multiplier" />
+                    </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.DickNippleMultiplier}" />
                 </common:AutoGrid>
 
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Style="{StaticResource ContentStackPanel}">
                 <common:ArrayEditor Header="Breasts" Items="{Binding Game.Character.Breasts}" Capacity="5" MinCapacity="1">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>

@@ -50,9 +50,9 @@
                     <TreeViewItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <TextBox    x:Name="Name"   Text="{Binding Path=Name}"  IsReadOnly="True"   Style="{StaticResource TreeNodeNameStyle}" />
-<!--
+                            <!--
                             <TextBlock Text=": " />
--->
+                            -->
                             <TextBox    x:Name="Value"  Text="{Binding Path=Value}" IsReadOnly="True"   Style="{StaticResource TreeNodeValueStyle}" />
                         </StackPanel>
                     </TreeViewItem.Header>

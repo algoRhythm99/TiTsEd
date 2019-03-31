@@ -5,52 +5,82 @@
     </Style>
 
     <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}">
-        <Setter Property="Width" Value="110"/>
-        <Setter Property="Padding" Value="0,4,0,4"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Right"/>
-        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        <Setter Property="Width" Value="110" />
+        <Setter Property="Padding" Value="5,4,0,4" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Style.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style>
+        </Style.Resources>
     </Style>
 
     <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
-        <Setter Property="Width" Value="110"/>
-        <Setter Property="Padding" Value="0,4,0,4"/>
-        <Setter Property="TextAlignment" Value="Right"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="110" />
+        <Setter Property="Padding" Value="0,4,0,4" />
+        <Setter Property="TextAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled}" Value="False">
-                <Setter Property="Foreground" Value="#C0C0C0"/>
+                <Setter Property="Foreground" Value="#C0C0C0" />
             </DataTrigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="Header" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="TextDecorations" Value="Underline" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled}" Value="False">
-                <Setter Property="Foreground" Value="#808080"/>
+                <Setter Property="Foreground" Value="#808080" />
             </DataTrigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="HeaderBorder" TargetType="{x:Type Border}">
-        <Setter Property="Margin" Value="0,0,0,4"/>
-        <Setter Property="BorderBrush" Value="#808080"/>
-        <Setter Property="BorderThickness" Value="0,0,0,1"/>
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Margin" Value="0,0,0,4" />
+        <Setter Property="BorderBrush" Value="#808080" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Width" Value="Auto" />
     </Style>
 
     <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}">
-        <Setter Property="Margin" Value="8,3,0,3"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="8,3,0,3" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="RightToLeft" TargetType="CheckBox">
+        <Setter Property="Margin" Value="5,3,0,3" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Style.Resources>
+            <Style TargetType="Path">
+                <Setter Property="FlowDirection" Value="LeftToRight" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FlowDirection" Value="LeftToRight" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Margin" Value="8,3,0,3" />
+        <Setter Property="Width" Value="150" />
     </Style>
     
-    <Style TargetType="{x:Type ComboBox}">
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="8,3,0,3"/>
-        <Setter Property="Width" Value="150"/>
+    <Style x:Key="ContentStackPanel" TargetType="{x:Type StackPanel}">
+        <Setter Property="Width" Value="400" />
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="Margin" Value="5" />
     </Style>
 
     <Style TargetType="{x:Type TextBox}">
@@ -64,12 +94,12 @@
     </Style>
 
     <Style x:Key="EditableTextBox" TargetType="{x:Type ComboBox}">
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="IsTextSearchCaseSensitive" Value="False"/>
-        <Setter Property="IsTextSearchEnabled" Value="True"/>
-        <Setter Property="IsEditable" Value="True"/>
-        <Setter Property="Margin" Value="8,3,0,3"/>
-        <Setter Property="Width" Value="150"/>
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="IsTextSearchCaseSensitive" Value="False" />
+        <Setter Property="IsTextSearchEnabled" Value="True" />
+        <Setter Property="IsEditable" Value="True" />
+        <Setter Property="Margin" Value="8,3,0,3" />
+        <Setter Property="Width" Value="150" />
     </Style>
 
     
