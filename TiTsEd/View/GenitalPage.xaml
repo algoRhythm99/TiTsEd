@@ -74,6 +74,38 @@
 
                 </common:AutoGrid>
             </StackPanel>
+
+
+            <StackPanel Style="{StaticResource ContentStackPanel}">
+
+                <TextBlock Text="Female Organs" Style="{StaticResource Header}" />
+
+                <common:AutoGrid>
+                    <Label                  Content="Girl Cum Type" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}" />
+                </common:AutoGrid>
+
+                <common:AutoGrid Columns="3">
+
+                    <Label                  Content="Girl Cum Multiplier" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.GirlCumMultiplier}" Type="Double" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.GirlCumMultiplierMod}" ToolTip="Modifier" />
+
+                    <Label                  Content="Fertility" />
+                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
+                </common:AutoGrid>
+
+                <common:AutoGrid>
+                    <Label                  Content="Vaginal Virgin" />
+                    <CheckBox IsChecked="{Binding Game.Character.VaginalVirgin}" />
+
+                    <Label                  Content="Clit Length" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.ClitLength}" Type="Double" Unit="inches" />
+                </common:AutoGrid>
+            </StackPanel>
+
+
             <StackPanel Style="{StaticResource ContentStackPanel}">
 
                 <common:ArrayEditor
@@ -127,34 +159,7 @@
                 </common:ArrayEditor>
             </StackPanel>
 
-            <StackPanel Style="{StaticResource ContentStackPanel}">
 
-                <TextBlock Text="Female Organs" Style="{StaticResource Header}" />
-
-                <common:AutoGrid>
-                    <Label                  Content="Girl Cum Type" />
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.GirlCumType}" ItemsSource="{Binding Data.Body.GirlCumTypes}" />
-                </common:AutoGrid>
-
-                <common:AutoGrid Columns="3">
-
-                    <Label                  Content="Girl Cum Multiplier" />
-                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.GirlCumMultiplier}" Type="Double" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.GirlCumMultiplierMod}" ToolTip="Modifier" />
-
-                    <Label                  Content="Fertility" />
-                    <common:MyNumericBox    Width="155" Value="{Binding Game.Character.Fertility}" Type="Double" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.FertilityMod}" ToolTip="Modifier" />
-                </common:AutoGrid>
-
-                <common:AutoGrid>
-                    <Label                  Content="Vaginal Virgin" />
-                    <CheckBox IsChecked="{Binding Game.Character.VaginalVirgin}" />
-
-                    <Label                  Content="Clit Length" />
-                    <common:MyNumericBox    Value="{Binding Game.Character.ClitLength}" Type="Double" Unit="inches" />
-                </common:AutoGrid>
-            </StackPanel>
             <StackPanel Style="{StaticResource ContentStackPanel}">
                 <common:ArrayEditor
                     Header="Vaginas"
