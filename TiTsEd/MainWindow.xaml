@@ -22,6 +22,7 @@
                         <Border x:Name="root"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="#303030"
+                                Background="Transparent"
                                 SnapsToDevicePixels="True"
                                 Margin="{TemplateBinding Padding}">
                             <TextBlock x:Name="text" Text="{TemplateBinding Header}"
