@@ -27,15 +27,21 @@
                 <TextBlock Style="{StaticResource Header}" Text="History" />
 
                 <common:AutoGrid>
-                    <Label Content="Upbringing" />
+                    <Label>
+                        <TextBlock Text="Upbringing" />
+                    </Label>
                     <common:MyComboBox ItemsSource="{Binding Data.General.Upbringings}"
                                        SelectedValue="{Binding Game.PCUpbringing}" />
 
-                    <Label Content="Affinity" />
+                    <Label>
+                        <TextBlock Text="Affinity" />
+                    </Label>
                     <ComboBox ItemsSource="{Binding Data.General.Affinities}"
                               SelectedValue="{Binding Game.Character.Affinity}" />
 
-                    <Label Content="Original Race" />
+                    <Label>
+                        <TextBlock Text="Original Race" />
+                    </Label>
                     <ComboBox ItemsSource="{Binding Data.General.OriginalRaces}"
                               SelectedValue="{Binding Game.Character.OriginalRace}" />
                 </common:AutoGrid>
@@ -45,19 +51,29 @@
                 <TextBlock Style="{StaticResource Header}" Text="Tease Stats" />
 
                 <common:AutoGrid>
-                    <Label Content="Ass" />
+                    <Label>
+                        <TextBlock Text="Ass" />
+                    </Label>
                     <common:MyNumericBox Upper="100" Value="{Binding Game.AssTease}" />
 
-                    <Label Content="Chest" />
+                    <Label>
+                        <TextBlock Text="Chest" />
+                    </Label>
                     <common:MyNumericBox Upper="100" Value="{Binding Game.ChestTease}" />
 
-                    <Label Content="Crotch" />
+                    <Label>
+                        <TextBlock Text="Crotch" />
+                    </Label>
                     <common:MyNumericBox Upper="100" Value="{Binding Game.CrotchTease}" />
 
-                    <Label Content="Hips" />
+                    <Label>
+                        <TextBlock Text="Hips" />
+                    </Label>
                     <common:MyNumericBox Upper="100" Value="{Binding Game.HipsTease}" />
 
-                    <Label Content="Oral" />
+                    <Label>
+                        <TextBlock Text="Oral" />
+                    </Label>
                     <common:MyNumericBox Upper="100" Value="{Binding Game.OralTease}" />
                 </common:AutoGrid>
             </StackPanel>
@@ -115,20 +131,30 @@
                     </common:ArrayEditor.ItemTemplate>
                     <StackPanel>
                         <common:AutoGrid>
-                            <Label                  Content="Pregnancy Type" />
+                            <Label>
+                                <TextBlock Text="Pregnancy Type" />
+                            </Label>
                             <ComboBox               SelectedValue="{Binding PregnancyType}"
                                                     ItemsSource="{Binding PregnancyTypes}" />
 
-                            <Label                  Content="Pregnancy Quantity" />
+                            <Label>
+                                <TextBlock Text="Pregnancy Quantity" />
+                            </Label>
                             <common:MyNumericBox    Value="{Binding PregnancyQuantity}" Type="UInt" />
 
-                            <Label                  Content="Pregnancy Incubation Time" />
+                            <Label>
+                                <TextBlock Text="Pregnancy Incubation Time" />
+                            </Label>
                             <common:MyNumericBox    Value="{Binding PregnancyIncubation}" Type="UInt" />
 
-                            <Label                  Content="Pregnancy Incubation Time Multiplier" />
+                            <Label>
+                                <TextBlock Text="Pregnancy Incubation Time Multiplier" />
+                            </Label>
                             <common:MyNumericBox    Value="{Binding PregnancyIncubationMulti}" Type="Double" />
 
-                            <Label                  Content="Pregnancy Belly Rating Contribution" />
+                            <Label>
+                                <TextBlock Text="Pregnancy Belly Rating Contribution" />
+                            </Label>
                             <common:MyNumericBox    Value="{Binding PregnancyBellyRatingContribution}" Type="Double" />
 
                         </common:AutoGrid>

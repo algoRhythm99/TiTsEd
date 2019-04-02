@@ -1,34 +1,42 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TiTsEd"
+                    xmlns:common="clr-namespace:TiTsEd.Common">
+
     <Style TargetType="{x:Type Window}">
         <Setter Property="Icon" Value="../TiTsEd.ico" />
     </Style>
 
-    <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}">
-        <Setter Property="Width" Value="110" />
-        <Setter Property="Padding" Value="5,4,0,4" />
+    <Style x:Key="LabelText" TargetType="FrameworkElement">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="MinHeight" Value="22" />
+        <Setter Property="Height" Value="Auto" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FlowDirection" Value="LeftToRight" />
+    </Style>
+
+    <Style x:Key="LeftAlignedContent" TargetType="ContentControl" BasedOn="{StaticResource LabelText}">
         <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="WrappedText" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+    </Style>
+
+    <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}" BasedOn="{StaticResource LeftAlignedContent}">
         <Style.Resources>
-            <Style TargetType="TextBlock">
-                <Setter Property="TextWrapping" Value="WrapWithOverflow" />
-                <Setter Property="HorizontalAlignment" Value="Left" />
-            </Style>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource WrappedText}" />
         </Style.Resources>
     </Style>
 
-    <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
-        <Setter Property="Width" Value="110" />
-        <Setter Property="Padding" Value="0,4,0,4" />
-        <Setter Property="TextAlignment" Value="Right" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+    <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource LabelText}">
         <Style.Triggers>
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled}" Value="False">
                 <Setter Property="Foreground" Value="#C0C0C0" />
             </DataTrigger>
         </Style.Triggers>
+        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
     </Style>
 
     <Style x:Key="Header" TargetType="{x:Type TextBlock}">
@@ -56,7 +64,6 @@
     </Style>
 
     <Style x:Key="RightToLeft" TargetType="CheckBox">
-        <Setter Property="Margin" Value="5,3,0,3" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="FlowDirection" Value="RightToLeft" />
@@ -64,17 +71,19 @@
             <Style TargetType="Path">
                 <Setter Property="FlowDirection" Value="LeftToRight" />
             </Style>
-            <Style TargetType="TextBlock">
-                <Setter Property="FlowDirection" Value="LeftToRight" />
-                <Setter Property="HorizontalAlignment" Value="Left" />
+            <Style TargetType="TextBlock" BasedOn="{StaticResource WrappedText}">
+                <Setter Property="Margin" Value="0,0,5,0" />
             </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource LeftAlignedContent}" />
         </Style.Resources>
     </Style>
 
-    <Style TargetType="{x:Type ComboBox}">
-        <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="Margin" Value="8,3,0,3" />
+    <Style x:Key="EditBox" TargetType="{x:Type FrameworkElement}" BasedOn="{StaticResource LabelText}">
         <Setter Property="Width" Value="150" />
+        <Setter Property="Height" Value="22" />
+    </Style>
+
+    <Style x:Key="ReadOnlyCombo" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource EditBox}">
     </Style>
     
     <Style x:Key="ContentStackPanel" TargetType="{x:Type StackPanel}">
@@ -83,26 +92,15 @@
         <Setter Property="Margin" Value="20" />
     </Style>
 
-    <Style TargetType="{x:Type TextBox}">
-        <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource EditBox}">
         <Setter Property="BorderBrush" Value="{StaticResource NumericBorderBrush}" />
-        <Setter Property="Margin" Value="8,4,8,4" />
-        <Setter Property="Width" Value="150" />
-        <Setter Property="Height" Value="22" />
-        <Setter Property="Padding" Value="3,0" />
     </Style>
 
-    <Style x:Key="EditableTextBox" TargetType="{x:Type ComboBox}">
-        <Setter Property="HorizontalAlignment" Value="Left" />
+    <Style x:Key="EditableTextBox" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource ReadOnlyCombo}">
         <Setter Property="IsTextSearchCaseSensitive" Value="False" />
         <Setter Property="IsTextSearchEnabled" Value="True" />
         <Setter Property="IsEditable" Value="True" />
-        <Setter Property="Margin" Value="8,3,0,3" />
-        <Setter Property="Width" Value="150" />
     </Style>
-
-    
 
 
 </ResourceDictionary>

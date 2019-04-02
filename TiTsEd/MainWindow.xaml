@@ -100,8 +100,10 @@
                                    IsEnabled="{Binding HasData}">
                             <WrapPanel x:Name="CharacterPanel"
                                        Orientation="Horizontal">
-                                <Label Content="Character" Target="{Binding ElementName=CharacterSelection}" />
-                                <ComboBox x:Name="CharacterSelection"
+                                    <Label Target="{Binding ElementName=CharacterSelection}">
+                                        <TextBlock Text="Character" />
+                                    </Label>
+                                    <ComboBox x:Name="CharacterSelection"
                                               SelectedValue="{Binding Game.CharacterSelection}"
                                               ItemsSource="{Binding Game.CharacterOptions}" />
                                 <Button Margin="5,0" Content="Copy to PC" IsEnabled="{Binding Game.IsNotPC}"

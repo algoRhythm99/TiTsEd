@@ -3,11 +3,9 @@
                     xmlns:local="clr-namespace:TiTsEd"
                     xmlns:common="clr-namespace:TiTsEd.Common">
 
-    <BitmapImage x:Key="CrossImage" UriSource="../Assets/cross.png" />
-    <Style x:Key="smallImageStyleKey" TargetType="Image">
-        <Setter Property="Width" Value="16" />
-        <Setter Property="Height" Value="16" />
-    </Style>
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/Assets.xaml" />
+    </ResourceDictionary.MergedDictionaries>
 
     <SolidColorBrush x:Key="NumericBorderBrush" Color="#808080" />
     <SolidColorBrush x:Key="NumericDisabledBackground" Color="#FFFFFF" />
@@ -73,7 +71,6 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Margin" Value="8,3" />
         <Setter Property="Width" Value="250" />
         <Setter Property="Template">
             <Setter.Value>
@@ -177,7 +174,7 @@
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="MinWidth" Value="350" />
-        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="Margin" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type common:ArrayEditor}">
@@ -220,14 +217,15 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="{x:Type common:MyComboBox}">
+    <Style x:Key="{x:Type common:MyComboBox}" TargetType="{x:Type common:MyComboBox}">
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Margin" Value="8,3,0,3" />
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Height" Value="22" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type common:MyComboBox}">
-                    <ComboBox x:Name="combo" DisplayMemberPath="Name" SelectedValuePath="ID" Width="150" Margin="0"
+                    <ComboBox x:Name="combo" DisplayMemberPath="Name" SelectedValuePath="ID" Width="150" Height="22" Margin="0"
                               ItemContainerStyle="{StaticResource MyComboBoxItem}"
                               SelectedValue="{Binding Path=SelectedValue, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
                 </ControlTemplate>
@@ -308,17 +306,13 @@
         </Setter>
     </Style>
 
-
-
-    <BitmapImage x:Key="SearchIcon" UriSource="pack://application:,,,/assets/search.png" DecodePixelWidth="15" DecodePixelHeight="15" />
-
     <Style x:Key="NamedVector4Button" TargetType="{x:Type ToggleButton}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border x:Name="root" Background="#00FFFFFF" BorderBrush="#00FFFFFF" BorderThickness="1" SnapsToDevicePixels="True">
                         <StackPanel Orientation="Horizontal" Margin="4,4">
-                            <Image x:Name="icon" Source="{StaticResource SearchIcon}" Width="15" Height="15" SnapsToDevicePixels="True" />
+                            <Image x:Name="icon" Source="{StaticResource SearchIcon}" Style="{StaticResource smallImageStyleKey}" />
                             <Path x:Name="arrow" Fill="Black" Data="M 0 0 L 5 5 L 10 0 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0,0,0" SnapsToDevicePixels="True" />
                         </StackPanel>
                     </Border>

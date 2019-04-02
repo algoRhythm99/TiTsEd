@@ -157,14 +157,16 @@
                 Visibility="Collapsed"
                 Margin="30,30,0,30">
 
-                <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
-                    <common:AutoGrid HorizontalAlignment="Center">
-                        <Label              Content="Quantity" Width="Auto" />
-                        <common:MyNumericBox    Value="{Binding Path=SelectedItem.Quantity, ElementName=leftTree}"
-                                            Max="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}"
-                                            Upper="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}" />
-                    </common:AutoGrid>
-                </StackPanel>
+                <WrapPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center">
+                    <Label Width="Auto" Target="{Binding ElementName=QuantityBox}">
+                        <TextBlock Width="Auto" Text="Quantity" HorizontalAlignment="Right" />
+                    </Label>
+                    <common:MyNumericBox
+                        x:Name="QuantityBox"
+                        Value="{Binding Path=SelectedItem.Quantity, ElementName=leftTree}"
+                        Max="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}"
+                        Upper="{Binding Path=SelectedItem.MaxQuantity, ElementName=leftTree}" />
+                </WrapPanel>
 
                 <TreeView
                     ItemContainerStyle="{StaticResource RightGroupStyle}"
