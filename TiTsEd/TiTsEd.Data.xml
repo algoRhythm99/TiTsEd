@@ -1216,6 +1216,7 @@
 			<CockType ID="22" Name="Anemone" />
 			<CockType ID="23" Name="Tentacle" />
 			<CockType ID="24" Name="Kui-tan" />
+			<CockType ID="29" Name="Floppy Dog" />
 			<CockType ID="34" Name="Venus Pitcher" />
 			<CockType ID="42" Name="Raskvel" />
 			<CockType ID="43" Name="Sydian" />
@@ -1228,6 +1229,7 @@
 			<CockType ID="55" Name="Nyrea" />
 			<CockType ID="56" Name="Inhuman" />
 			<CockType ID="57" Name="Ovir" />
+			<CockType ID="60" Name="Myr" />
 			<CockType ID="61" Name="Saurian" />
 			<CockType ID="64" Name="Hradian" />
 			<CockType ID="65" Name="Gryvain" />
@@ -1325,6 +1327,7 @@
 		<!-- ================================================================ -->
 		<PregnancyTypes>
 			<PregnancyType>(None)</PregnancyType>
+			<PregnancyType>BoredJumperPregnancy</PregnancyType>
 			<PregnancyType>BothriocPregnancy</PregnancyType>
 			<PregnancyType>ButtBugPregnancy</PregnancyType>
 			<PregnancyType>ButtBugPregnancy0</PregnancyType>
@@ -1339,6 +1342,8 @@
 			<PregnancyType>KorgonnePregnancy</PregnancyType>
 			<PregnancyType>LahPregnancy</PregnancyType>
 			<PregnancyType>LapinaraPregnancy</PregnancyType>
+			<PregnancyType>LaquinePregnancy</PregnancyType>
+			<PregnancyType>LDCShockHopperPregnancy</PregnancyType>
 			<PregnancyType>MilodanPregnancy</PregnancyType>
 			<PregnancyType>NyreaEggPregnancy</PregnancyType>
 			<PregnancyType>OvalastingEggPregnancy</PregnancyType>
@@ -1448,6 +1453,7 @@
 			</Item>
 			<Item Stack="1" Name="SG.Leash" ID="classes.Items.Accessories::ShoulderGrunchLeash" />
 			<Item Stack="1" Name="Siegwulfe" ID="classes.Items.Accessories::SiegwulfeItem" />
+			<Item Stack="1" Name="BraveSig" ID="classes.Items.Accessories::SignetOfBravery" LongName="signet of bravery" />
 			<Item Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolf" />
 			<Item Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolfDamaged" />
 			<Item Stack="1" Name="TamWolf2.0" ID="classes.Items.Accessories::TamWolfII" />
@@ -1932,6 +1938,7 @@
 		</ItemGroup>
 		<ItemGroup Name="Stories">
 			<Item Stack="1"     Name="Story:B.One"      ID="classes.Items.Stories::BecomingOneOfTheGirls"    LongName="code for “Becoming One...”" />
+			<Item Stack="1"     Name="Story:B.S"        ID="classes.Items.Stories::BreedingSylvie"    LongName="code for “Breeding Sylvie”" />
 			<Item Stack="1"     Name="Story:BXBI1"      ID="classes.Items.Stories::BXBIOne"         LongName="code for “BXBI Chapter 1”" />
 			<Item Stack="1"     Name="Story:BXBI2"      ID="classes.Items.Stories::BXBITwo"         LongName="code for “BXBI Chapter 2”" />
 			<Item Stack="1"     Name="Story:Captr"      ID="classes.Items.Stories::CapturedByTheDemons"    LongName="code for “Captured...”" />
@@ -2325,6 +2332,7 @@
 			<KeyItem Name="Locked Metal Chest" Label1="Actual Price" Value1="2000" />
 			<KeyItem Name="Pirate Datapad" />
 			<KeyItem Name="Platinum 190" />
+			<KeyItem Name="Puss Pass" />
 			<KeyItem Name="Republic Dildo" />
 			<KeyItem Name="Signed Steph Irson Photo" Description="A signed photograph of Steph Irson... given to you by Steph Irson." />
 			<KeyItem Name="Some Sort of Shining Spaceship Part" Label1="Actual Price" Value1="2000" />
@@ -2811,6 +2819,7 @@
 		<Flag Name="BEEN_TO_COLENSOS" />
 		<Flag Name="BEEN_TO_MYRELLION_BAR" />
 		<Flag Name="BELLE_TAURRACED" />
+		<Flag Name="BERWYN_DREAMED" />
 		<Flag Name="BESS_ACCESSORY_SETS" />
 		<Flag Name="BESS_AFFECTION" />
 		<Flag Name="BESS_BOOBCHANGED" />
@@ -2909,6 +2918,83 @@
 		<Flag Name="BF_STORAGE" />
 		<Flag Name="BIMBOIFIED" />
 		<Flag Name="BIOMED_GANGBANGED" />
+		<Flag Name="BJUMPER_BABY_GENDERS" />
+		<Flag Name="BJUMPER_BIRTH_SCENE" />
+		<Flag Name="BJUMPER_BIRTH_SCENE_BOYS" />
+		<Flag Name="BJUMPER_BIRTH_SCENE_FURCOLOR1" />
+		<Flag Name="BJUMPER_BIRTH_SCENE_FURCOLOR2" />
+		<Flag Name="BJUMPER_BIRTH_SCENE_GIRLS" />
+		<Flag Name="BJUMPER_BIRTH_SCENE_HAIRCOLOR1" />
+		<Flag Name="BJUMPER_BIRTH_SCENE_HAIRCOLOR2" />
+		<Flag Name="BJUMPER_BIRTH_SCENE_HERMS" />
+		<Flag Name="BJUMPER_CAN_LEAVE" />
+		<Flag Name="BJUMPER_CAT_PC_PREG_ASSIST" />
+		<Flag Name="BJUMPER_CAT_PC_PREG_ENC_JUMPER" />
+		<Flag Name="BJUMPER_CAT_PC_PREG_NEW" />
+		<Flag Name="BJUMPER_CAT_PREG_ENC_JUMPER" />
+		<Flag Name="BJUMPER_CAT_PREG_GOWITH" />
+		<Flag Name="BJUMPER_CAT_PREG_NAME" />
+		<Flag Name="BJUMPER_CAT_PREG_NEW" />
+		<Flag Name="BJUMPER_CAT_TOTAL_KIDS" />
+		<Flag Name="BJUMPER_DODGE_DECK" />
+		<Flag Name="BJUMPER_DOG_PC_PREG_ASSIST" />
+		<Flag Name="BJUMPER_DOG_PC_PREG_ENC_JUMPER" />
+		<Flag Name="BJUMPER_DOG_PC_PREG_NEW" />
+		<Flag Name="BJUMPER_DOG_PREG_ENC_JUMPER" />
+		<Flag Name="BJUMPER_DOG_PREG_GOWITH" />
+		<Flag Name="BJUMPER_DOG_PREG_NAME" />
+		<Flag Name="BJUMPER_DOG_PREG_NEW" />
+		<Flag Name="BJUMPER_DOG_TOTAL_KIDS" />
+		<Flag Name="BJUMPER_HEAT_SEX" />
+		<Flag Name="BJUMPER_HORSE_PC_PREG_ASSIST" />
+		<Flag Name="BJUMPER_HORSE_PC_PREG_ENC_JUMPER" />
+		<Flag Name="BJUMPER_HORSE_PC_PREG_NEW" />
+		<Flag Name="BJUMPER_HORSE_PREG_ENC_JUMPER" />
+		<Flag Name="BJUMPER_HORSE_PREG_GOWITH" />
+		<Flag Name="BJUMPER_HORSE_PREG_NAME" />
+		<Flag Name="BJUMPER_HORSE_PREG_NEW" />
+		<Flag Name="BJUMPER_HORSE_TOTAL_KIDS" />
+		<Flag Name="BJUMPER_MISSED_BIRTH" />
+		<Flag Name="BJUMPER_MISSED_BIRTH_CNT_CAT" />
+		<Flag Name="BJUMPER_MISSED_BIRTH_CNT_DOG" />
+		<Flag Name="BJUMPER_MISSED_BIRTH_CNT_HORSE" />
+		<Flag Name="BJUMPER_MISSED_BIRTH_CNT_TERRAN" />
+		<Flag Name="BJUMPER_NUM_BABIES" />
+		<Flag Name="BJUMPER_PC_BIRTH_SCENE_BOYS" />
+		<Flag Name="BJUMPER_PC_BIRTH_SCENE_FURCOLOR1" />
+		<Flag Name="BJUMPER_PC_BIRTH_SCENE_FURCOLOR2" />
+		<Flag Name="BJUMPER_PC_BIRTH_SCENE_GIRLS" />
+		<Flag Name="BJUMPER_PC_BIRTH_SCENE_HAIRCOLOR1" />
+		<Flag Name="BJUMPER_PC_BIRTH_SCENE_HAIRCOLOR2" />
+		<Flag Name="BJUMPER_PC_BIRTH_SCENE_HERMS" />
+		<Flag Name="BJUMPER_PC_PREG_ENC_COOLDOWN" />
+		<Flag Name="BJUMPER_PC_PREG_TYPE" />
+		<Flag Name="BJUMPER_PC_PREG_TYPE1" />
+		<Flag Name="BJUMPER_PC_PREG_TYPE2" />
+		<Flag Name="BJUMPER_PREGHAND_MULTIBIRTH" />
+		<Flag Name="BJUMPER_PREG_ENC_COOLDOWN" />
+		<Flag Name="BJUMPER_PREG_SCENE_TYPE" />
+		<Flag Name="BJUMPER_PREG_TIMER" />
+		<Flag Name="BJUMPER_PREG_TYPE" />
+		<Flag Name="BJUMPER_REST_MENU" />
+		<Flag Name="BJUMPER_SEND_PIC" />
+		<Flag Name="BJUMPER_SEND_PICKTYPE" />
+		<Flag Name="BJUMPER_SEND_TIMER" />
+		<Flag Name="BJUMPER_SEND_TYPE" />
+		<Flag Name="BJUMPER_SEX_MENU" />
+		<Flag Name="BJUMPER_TAUR_LOSS_SEX" />
+		<Flag Name="BJUMPER_TERRAN_PC_PREG_ASSIST" />
+		<Flag Name="BJUMPER_TERRAN_PC_PREG_ENC_JUMPER" />
+		<Flag Name="BJUMPER_TERRAN_PC_PREG_NEW" />
+		<Flag Name="BJUMPER_TERRAN_PREG_ENC_JUMPER" />
+		<Flag Name="BJUMPER_TERRAN_PREG_GOWITH" />
+		<Flag Name="BJUMPER_TERRAN_PREG_NAME" />
+		<Flag Name="BJUMPER_TERRAN_PREG_NEW" />
+		<Flag Name="BJUMPER_TERRAN_TOTAL_KIDS" />
+		<Flag Name="BJUMPER_TRIED_TO_LEAVE" />
+		<Flag Name="BLACKJACK_BET" />
+		<Flag Name="BLACKJACK_DEALER" />
+		<Flag Name="BLACKJACK_DEALER_SHOWN" />
 		<Flag Name="BLACKJACK_LOSE" />
 		<Flag Name="BLACKJACK_STANDING" />
 		<Flag Name="BLACKJACK_WIN" />
@@ -3068,6 +3154,8 @@
 		<Flag Name="CHAURMINE_RELATIONSHIP" />
 		<Flag Name="CHAURMINE_WINS" />
 		<Flag Name="CHECKED_GEAR_AT_OGGY" />
+		<Flag Name="CHERRY_HERSELF_TALKED" />
+		<Flag Name="CHERRY_TALKED" />
 		<Flag Name="CHIEF_NEYKKAR_WITH_PC" />
 		<Flag Name="CHRISSY_ANAL" />
 		<Flag Name="CHRISSY_GETFKD" />
@@ -3137,6 +3225,10 @@
 		<Flag Name="DALLY_TIPS" />
 		<Flag Name="DANCE_SKILL_EDOTTO" />
 		<Flag Name="DANCE_SKILL_SUNWALKER" />
+		<Flag Name="DANE_BUTTFUCKED_U" />
+		<Flag Name="DANE_NO_SEX" />
+		<Flag Name="DANE_PUNCHED" />
+		<Flag Name="DANE_SEXED" />
 		<Flag Name="DAYS_SINCE_FED_CUNT_TAIL" />
 		<Flag Name="DECK13_AIRLOCK_ENTERED" />
 		<Flag Name="DECK13_ARMORY_ENTERED" />
@@ -3162,6 +3254,8 @@
 		<Flag Name="DEL_HORSE_OFFERED" />
 		<Flag Name="DEL_MOVE_TIMER" />
 		<Flag Name="DEL_TAIL_TRAINED" />
+		<Flag Name="DEMTAUR_FUKKED" />
+		<Flag Name="DEMTAUR_TAURED" />
 		<Flag Name="DICKFUCKED_CAPN_KHORGAN" />
 		<Flag Name="DIDNT_ENGAGE_RIVAL_ON_MHENGA" />
 		<Flag Name="DIDNT_WATCH_EMBRY_TF" />
@@ -3741,6 +3835,13 @@
 		<Flag Name="HAD_PENNY_GOAL_CHAT" />
 		<Flag Name="HAD_STRAWBERRY" />
 		<Flag Name="HAD_YOKTO" />
+		<Flag Name="HALEY_ANAL_VIRGINITY_TAKEN" />
+		<Flag Name="HALEY_BETS" />
+		<Flag Name="HALEY_BETS_WON" />
+		<Flag Name="HALEY_BETS_WON_BLOW" />
+		<Flag Name="HALEY_BETS_WON_FUCK" />
+		<Flag Name="HALEY_BETS_WON_RIDE" />
+		<Flag Name="HALEY_WEAKSPOT_KNOWN" />
 		<Flag Name="HALLOWEEN_NUNFUCK_REJECTIONS" />
 		<Flag Name="HALLOWEEN_REJECTED_1" />
 		<Flag Name="HANA_TALKED_EYEPATCH" />
@@ -3913,9 +4014,11 @@
 		<Flag Name="KELLY_ATTRACTION" Description="0-100, Kelly's affection for you" />
 		<Flag Name="KELLY_BLOWJOBS_GIVEN" Description="Number of times you've given Kelly a blowjob" />
 		<Flag Name="KELLY_CONFESSED" Description="1 == Kelly has confessed her affection" />
+		<Flag Name="KELLY_DOUBLEHYPERBJ" />
 		<Flag Name="KELLY_ENCOUNTERED_AT_THE_BAR" Description="1 == You've met Kelly at the bar" />
 		<Flag Name="KELLY_HAD_A_MEAL_SHARED" Description="Number of times you've shared a meal with Kelly" />
 		<Flag Name="KELLY_HAD_SPECIAL_TAUR_DP" Description="1 == Kelly has DP'd your Taur-body" />
+		<Flag Name="KELLY_HYPERBJ" />
 		<Flag Name="KELLY_HYPERPLAY_COUNT" Description="Number of times you and Kelly have played with your hyper-sized genitals" />
 		<Flag Name="KELLY_MET" Description="1 == You've met Kelly" />
 		<Flag Name="KELLY_SEXED" Description="Number of times you've had sexy times with Kelly" />
@@ -4118,6 +4221,10 @@
 		<Flag Name="LAQUINE_GENT_BONED" />
 		<Flag Name="LAQUINE_LASS_BUNSCORED" />
 		<Flag Name="LAQUINE_LASS_TRYSTS" />
+		<Flag Name="LAQUINE_PREGHAND_HEAT_SEX" />
+		<Flag Name="LAQUINE_PREGHAND_MULTIBIRTH" />
+		<Flag Name="LAQUINE_PREGHAND_MUSKY" />
+		<Flag Name="LAQUINE_PREGHAND_TAUR_SEX" />
 		<Flag Name="LASHED_IMMUNITY" />
 		<Flag Name="LASH_BOMB" />
 		<Flag Name="LAST_ANT_ORGY" />
@@ -4127,6 +4234,14 @@
 		<Flag Name="LAST_ZIL_CAPTURED_FOR_HASWELL_SEX" />
 		<Flag Name="LATEST_LETS_FAP" />
 		<Flag Name="LDC_FUCKED" />
+		<Flag Name="LDC_SHOCKHOPPER_CUMIN" />
+		<Flag Name="LDC_SHOCKHOPPER_MIXED" />
+		<Flag Name="LDC_SHOCKHOPPER_MULTIBIRTH" />
+		<Flag Name="LDC_SHOCKHOPPER_PREGBY" />
+		<Flag Name="LDC_SH_PC_BIRTH_SCENE_BOYS" />
+		<Flag Name="LDC_SH_PC_BIRTH_SCENE_GIRLS" />
+		<Flag Name="LDC_SH_PC_BIRTH_SCENE_HERMS" />
+		<Flag Name="LDC_TOTAL_KIDS" />
 		<Flag Name="LEARNED_IAYAS_FATE" />
 		<Flag Name="LEITHAN_STOCKED" />
 		<Flag Name="LERRIS_BOVINIUMED" />
@@ -4183,6 +4298,29 @@
 		<Flag Name="LOST_TO_MYR_DESERTS" />
 		<Flag Name="LOST_TO_SHADE_WITH_KARA" />
 		<Flag Name="LUCAS_MINDWASH" />
+		<Flag Name="LUCA_ADDICTION" />
+		<Flag Name="LUCA_ADDICTION_ACCEPTABLE" />
+		<Flag Name="LUCA_CUMDUMP" />
+		<Flag Name="LUCA_DENIED" />
+		<Flag Name="LUCA_FUCKTOYD" />
+		<Flag Name="LUCA_GENTLE" />
+		<Flag Name="LUCA_JUST_TALKED" />
+		<Flag Name="LUCA_LAST_VISITED" />
+		<Flag Name="LUCA_LIGHTS" />
+		<Flag Name="LUCA_MUSIC" />
+		<Flag Name="LUCA_ORAL_XP" />
+		<Flag Name="LUCA_PC_GENDER_PREF" />
+		<Flag Name="LUCA_PC_HOLE_PREF" />
+		<Flag Name="LUCA_PC_ROLE_PREF" />
+		<Flag Name="LUCA_PUBLIC_ORAL" />
+		<Flag Name="LUCA_SAFEWORD" />
+		<Flag Name="LUCA_SAFEWORDED_CUMDUMP" />
+		<Flag Name="LUCA_SAFEWORDED_DENIAL" />
+		<Flag Name="LUCA_SAFEWORDED_FUCKTOY" />
+		<Flag Name="LUCA_SEXED" />
+		<Flag Name="LUCA_SUBMISSION" />
+		<Flag Name="LUCA_SUBMISSION_ACCEPTABLE" />
+		<Flag Name="LUCA_SWITCHED" />
 		<Flag Name="LUNDS_HOUSE" />
 		<Flag Name="LUND_ADVANCED_SUBMISSION" />
 		<Flag Name="LUND_ANUSOFT" />
@@ -4286,6 +4424,7 @@
 		<Flag Name="MET_CGOO_SHOPKEEP" Description="1 == You've met the crystal goo shopkeeper" />
 		<Flag Name="MET_CHARLES" />
 		<Flag Name="MET_CHAURMINE" />
+		<Flag Name="MET_CHERRY" />
 		<Flag Name="MET_CHRYSALIS_DRONE" />
 		<Flag Name="MET_COCKVINE_SEEDLING" Description="Number of times you've encountered cockvine seedling" />
 		<Flag Name="MET_CUNT_SNAKE" Description="Number of times you've encountered a cunt snake" />
@@ -4397,6 +4536,7 @@
 		<Flag Name="MET_RIYA" />
 		<Flag Name="MET_RIYA_IN_NURSERY" />
 		<Flag Name="MET_RIYA_ON_CANADA" />
+		<Flag Name="MET_ROO" />
 		<Flag Name="MET_ROZ" />
 		<Flag Name="MET_SAEC" />
 		<Flag Name="MET_SAENDRA" Description="1 == You've met Saendra" />
@@ -4426,6 +4566,7 @@
 		<Flag Name="MET_SYLVIE" />
 		<Flag Name="MET_SYRI" Description="1 == You've met Syri" />
 		<Flag Name="MET_TAIVRA" Description="1 == You've met Taivra" />
+		<Flag Name="MET_TAOTH" />
 		<Flag Name="MET_TERENSHA" Description="1 == You've met Terensha" />
 		<Flag Name="MET_TIVF" />
 		<Flag Name="MET_TLAKO" Description="1 == You've met Tlako" />
@@ -4757,6 +4898,7 @@
 		<Flag Name="PLANET_3_UNLOCKED" />
 		<Flag Name="PLANTATION_LAH_TALK" />
 		<Flag Name="PLANTATION_QUEST" />
+		<Flag Name="PLANTATION_WORKERS_TALK" />
 		<Flag Name="PLAT190 USED AS NYREA BRIBE" />
 		<Flag Name="PLATINUM_TAKEN" />
 		<Flag Name="PLAYER_MIMBRANE_SPIT_ENABLED" />
@@ -5084,6 +5226,24 @@
 		<Flag Name="ROOM_65_VENUS_PITCHER_ASLEEP" />
 		<Flag Name="ROOM_80_PITCHER_MET" />
 		<Flag Name="ROOM_80_VENUS_PITCHER_ASLEEP" />
+		<Flag Name="ROO_BJS" />
+		<Flag Name="ROO_CREDITS_DAILY" />
+		<Flag Name="ROO_CREDIT_OVERALL" />
+		<Flag Name="ROO_CUNNILINGED" />
+		<Flag Name="ROO_FETISH_TALK" />
+		<Flag Name="ROO_GAMED_TODAY" />
+		<Flag Name="ROO_GASMED" />
+		<Flag Name="ROO_HIGHEST_STRIP_LEVEL" />
+		<Flag Name="ROO_MILKED" />
+		<Flag Name="ROO_NOVA_TALK" />
+		<Flag Name="ROO_ON_CD" />
+		<Flag Name="ROO_SELFTALKED" />
+		<Flag Name="ROO_SELFTALKED_TOTAL" />
+		<Flag Name="ROO_SEXED" />
+		<Flag Name="ROO_STRIP_LEVEL" />
+		<Flag Name="ROO_TABLEFUCKED" />
+		<Flag Name="ROO_TALK_CD" />
+		<Flag Name="ROO_TEMP_CUM_STORAGE" />
 		<Flag Name="ROZ_ARMOR_STOLEN" />
 		<Flag Name="ROZ_CORED_4_GUD" />
 		<Flag Name="ROZ_GOOFUKKED_WNO_DIK" />
@@ -5164,8 +5324,11 @@
 		<Flag Name="SEIFYN_NYREA_TALK" />
 		<Flag Name="SEIFYN_TAIVRA_TALK" />
 		<Flag Name="SELLERA_DENIED" />
+		<Flag Name="SELLERA_GANGBANGED" />
 		<Flag Name="SELLERA_OCCUPATION" />
 		<Flag Name="SELLERA_REBELS" />
+		<Flag Name="SELLERA_SERVICED" />
+		<Flag Name="SELLERA_SEXED" />
 		<Flag Name="SELLESY_HL" />
 		<Flag Name="SEMITH_APARTMENT_ENTERED" />
 		<Flag Name="SEMITH_DAY_LAST_SMOKED" />
@@ -5208,6 +5371,9 @@
 		<Flag Name="SERA_MADE_LOVE" />
 		<Flag Name="SERA_MEET_BREED" />
 		<Flag Name="SERA_MERCHANT" />
+		<Flag Name="SERA_MILKINGS" />
+		<Flag Name="SERA_MILKINGS_OVERFLOW" />
+		<Flag Name="SERA_MILK_RESERVE_DAYS" />
 		<Flag Name="SERA_NAMED_KID" />
 		<Flag Name="SERA_NO_SEX" Description="-1 == Sex/Talk disabled until biggest cock &lt; 12 inces&#xD;&#xA;1 == Sera is refusing to have sex with you" />
 		<Flag Name="SERA_NO_SLEEP" />
@@ -5249,6 +5415,7 @@
 		<Flag Name="SERA_TALKS_PRESENT" Description="1 == Sera has talked about her shop" />
 		<Flag Name="SERA_TIMES_BRED" />
 		<Flag Name="SERA_TIT_FUCK_LUCKY_DIP" Description="Number of times Sera has Titfucked or offered an item" />
+		<Flag Name="SERA_TONGUE_FUCKED" />
 		<Flag Name="SERA_TRIPLE_X_RATED" Description="-1 == Your dick has grown larger than 12 inches after shrinking it&#xD;&#xA;0 == Sera has ordered you to shrink your dick&#xD;&#xA;2 == You have lost your dick&#xD;&#xA;3 == You do not have a 12&gt;= inch penis&#xD;&#xA;4 == You have proven your submission to Sera" />
 		<Flag Name="SERA_UNLOCK_CLIPPEX" Description="1 == Sera will offer to sell Clippex" />
 		<Flag Name="SERA_UNLOCK_LUCIFIER" Description="1 == Sera will offer to sell Lucifier" />
@@ -5389,6 +5556,7 @@
 		<Flag Name="SHIZZY_TRAP_ENCOUNTERED" />
 		<Flag Name="SHIZZY_WINSTON_CRASH" />
 		<Flag Name="SHIZZY_YAMMI_AT_TRAP" />
+		<Flag Name="SHOCKHOPPER_TOTAL_KIDS" />
 		<Flag Name="SHOCK_HOPPER_DEFEATED" />
 		<Flag Name="SHOCK_HOPPER_FUCKED" />
 		<Flag Name="SHOWERED_OUT_PLUG" />
@@ -5517,6 +5685,7 @@
 		<Flag Name="SYRI_CREWMEMBER" />
 		<Flag Name="SYRI_FANTASY_TALKED" />
 		<Flag Name="SYRI_GIFT_PANTY" />
+		<Flag Name="SYRI_MILOFUCK" />
 		<Flag Name="SYRI_PETPLAY_LOST" />
 		<Flag Name="SYRI_PETPLAY_WINS" />
 		<Flag Name="SYRI_SEEN_PCS_SHIP_CABIN" Description="1 == Syri has seen the PC's ship cabin" />
@@ -5633,6 +5802,7 @@
 		<Flag Name="TEXAS_GRAVCUFFS_COWORGY" />
 		<Flag Name="TEYAAL_DEFEATED" />
 		<Flag Name="THARE_MANOR_ENTERED" />
+		<Flag Name="THICK_GAB_USED" />
 		<Flag Name="THOLLUM_PASS_REQUESTED" />
 		<Flag Name="THOLLUM_TOURED" />
 		<Flag Name="THROBB_QUANTITY_STORAGE_CHEAT" />
@@ -5690,6 +5860,7 @@
 		<Flag Name="TOOK_DELILAHS_BUTTGINITY" />
 		<Flag Name="TOOK_FEDORA" />
 		<Flag Name="TOOK_PRINCESS_BUTTGINITY" />
+		<Flag Name="TREASURE_NOVAD" />
 		<Flag Name="TREATED_BY_VI" />
 		<Flag Name="TREATMENT_HAX" Description="0 = Cow-Girl&#xD;&#xA;1 = Bull&#xD;&#xA;2 = Cum-Cow&#xD;&#xA;3 = Faux-Cow&#xD;&#xA;4 = Amazon&#xD;&#xA;5 = Double Stud&#xD;&#xA;6 = Undersized" />
 		<Flag Name="TRIED_KALLY_DOOR" Description="1 == You've tried opening Kally's door" />
@@ -5868,6 +6039,8 @@
 		<Flag Name="VI_PUSSY_TAKEN" />
 		<Flag Name="VI_SEXED" />
 		<Flag Name="VI_TITFUCKED" />
+		<Flag Name="VR_AMAZONIA" />
+		<Flag Name="VR_PIRATEQUEEN" />
 		<Flag Name="VR_SIMMED" />
 		<Flag Name="WALT_HIMSELF" />
 		<Flag Name="WALT_LICK_EXHIBITIONISM" />
@@ -5882,6 +6055,7 @@
 		<Flag Name="WARGII_MILO_SOLUTION" />
 		<Flag Name="WARGII_NENNE_SAVED" />
 		<Flag Name="WARGII_NENNE_TUUVA_REWARD" />
+		<Flag Name="WARGII_NORAN_REWARD" />
 		<Flag Name="WARGII_PROGRESS" />
 		<Flag Name="WARGII_SETUP" />
 		<Flag Name="WARGII_TUUVA_SAVED" />
