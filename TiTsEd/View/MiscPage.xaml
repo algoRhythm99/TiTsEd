@@ -43,7 +43,8 @@
                         <TextBlock Text="Original Race" />
                     </Label>
                     <ComboBox ItemsSource="{Binding Data.General.OriginalRaces}"
-                              SelectedValue="{Binding Game.Character.OriginalRace}" />
+                              Text="{Binding Game.Character.OriginalRace}"
+                              Style="{StaticResource EditableTextBox}" />
                 </common:AutoGrid>
             </StackPanel>
 
