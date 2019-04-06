@@ -20,7 +20,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Left" />
     </Style>
 
-    <Style x:Key="WrappedText" TargetType="TextBlock">
+    <Style x:Key="WrappedText" TargetType="TextBlock" BasedOn="{StaticResource LabelText}">
         <Setter Property="TextWrapping" Value="WrapWithOverflow" />
     </Style>
 
@@ -30,13 +30,12 @@
         </Style.Resources>
     </Style>
 
-    <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource LabelText}">
+    <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource WrappedText}">
         <Style.Triggers>
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled}" Value="False">
                 <Setter Property="Foreground" Value="#C0C0C0" />
             </DataTrigger>
         </Style.Triggers>
-        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
     </Style>
 
     <Style x:Key="Header" TargetType="{x:Type TextBlock}">
@@ -67,12 +66,13 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="Margin" Value="5,3,0,3" />
         <Style.Resources>
             <Style TargetType="Path">
                 <Setter Property="FlowDirection" Value="LeftToRight" />
             </Style>
             <Style TargetType="TextBlock" BasedOn="{StaticResource WrappedText}">
-                <Setter Property="Margin" Value="0,0,5,0" />
+                <Setter Property="Margin" Value="-10,0,0,0" />
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource LeftAlignedContent}" />
         </Style.Resources>
