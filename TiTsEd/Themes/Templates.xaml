@@ -5,6 +5,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Themes/Assets.xaml" />
+        <ResourceDictionary Source="../Themes/Styles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <SolidColorBrush x:Key="NumericBorderBrush" Color="#808080" />
@@ -69,7 +70,7 @@
 
     <Style TargetType="{x:Type common:MyNumericBox}">
         <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Width" Value="250" />
         <Setter Property="Template">
@@ -379,46 +380,84 @@
         </Setter>
     </Style>
 
+
     <Style x:Key="{x:Type common:NamedVector4Popup}" TargetType="{x:Type common:NamedVector4Popup}">
+        <Style.Resources>
+            <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource WrappedText}">
+                <Setter Property="Foreground" Value="#606060" />
+            </Style>
+            <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}" BasedOn="{StaticResource LeftAlignedContent}">
+                <Setter Property="Margin" Value="0,2,0,2" />
+                <Style.Resources>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource WrappedText}" />
+                </Style.Resources>
+            </Style>
+            <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource RightToLeft}">
+            </Style>
+            <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource EditBox}">
+                <Setter Property="BorderBrush" Value="{StaticResource NumericBorderBrush}" />
+            </Style>
+        </Style.Resources>
         <Setter Property="DataContext" Value="{x:Null}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type common:NamedVector4Popup}">
                     <Popup x:Name="popup" Placement="Bottom" StaysOpen="False">
                         <Border Background="White" BorderBrush="Black" BorderThickness="1">
-                            <common:AutoGrid Margin="20">
-                                <TextBlock Text="Name" Foreground="#606060" VerticalAlignment="Center" />
-                                <TextBox Text="{Binding Name}" Margin="6,2,0,2" IsReadOnly="True" MinWidth="150" MaxWidth="250" TextWrapping="WrapWithOverflow" />
+                            <StackPanel Style="{StaticResource ContentStackPanel}" Width="300">
 
-                                <TextBlock Text="Description" Foreground="#606060" VerticalAlignment="Center" />
-                                <TextBox Text="{Binding Description}" Margin="6,2,0,2" MaxWidth="250" TextWrapping="WrapWithOverflow" />
+                                <TextBox Text="{Binding Name}" IsReadOnly="True" TextWrapping="WrapWithOverflow" Width="280" Height="Auto" />
 
-                                <TextBlock Text="{Binding Label1}" Foreground="#606060" VerticalAlignment="Center" />
-                                <common:MyNumericBox Value="{Binding Value1}" Type="{Binding Type1}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70" />
+                                <TextBox Text="{Binding Description}" TextWrapping="WrapWithOverflow" Width="280" Height="Auto" Margin="0,2,0,2" />
+                                
+                                <common:AutoGrid>
 
-                                <TextBlock Text="{Binding Label2}" Foreground="#606060" VerticalAlignment="Center" />
-                                <common:MyNumericBox Value="{Binding Value2}" Type="{Binding Type2}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70" />
+                                    <Label>
+                                        <TextBlock Text="{Binding Label1}" />
+                                    </Label>
+                                    <common:MyNumericBox Value="{Binding Value1}" Type="{Binding Type1}" Min="{x:Null}" Lower="{x:Null}" />
 
-                                <TextBlock Text="{Binding Label3}" Foreground="#606060" VerticalAlignment="Center" />
-                                <common:MyNumericBox Value="{Binding Value3}" Type="{Binding Type3}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70" />
+                                    <Label>
+                                        <TextBlock Text="{Binding Label2}" />
+                                    </Label>
+                                    <common:MyNumericBox Value="{Binding Value2}" Type="{Binding Type2}" Min="{x:Null}" Lower="{x:Null}" />
 
-                                <TextBlock Text="{Binding Label4}" Foreground="#606060" VerticalAlignment="Center" />
-                                <common:MyNumericBox Value="{Binding Value4}" Type="{Binding Type4}" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70" />
+                                    <Label>
+                                        <TextBlock Text="{Binding Label3}" />
+                                    </Label>
+                                    <common:MyNumericBox Value="{Binding Value3}" Type="{Binding Type3}" Min="{x:Null}" Lower="{x:Null}" />
 
-                                <TextBlock Text="Minutes Left" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding MinutesLeftVisibility}" />
-                                <common:MyNumericBox Value="{Binding MinutesLeft}" Type="Int" Min="{x:Null}" Lower="{x:Null}" Margin="6,2,0,2" Width="70" Visibility="{Binding MinutesLeftVisibility}" />
+                                    <Label>
+                                        <TextBlock Text="{Binding Label4}" />
+                                    </Label>
+                                    <common:MyNumericBox Value="{Binding Value4}" Type="{Binding Type4}" Min="{x:Null}" Lower="{x:Null}" />
 
-                                <TextBlock Text="Hidden" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding IsHiddenVisibility}" />
-                                <CheckBox IsChecked="{Binding IsHidden}" Margin="6,2,0,2" Visibility="{Binding IsHiddenVisibility}" />
+                                    <Label>
+                                        <TextBlock Text="Minutes Left" Visibility="{Binding MinutesLeftVisibility}" />
+                                    </Label>
+                                    <common:MyNumericBox Value="{Binding MinutesLeft}" Type="Int" Min="{x:Null}" Lower="{x:Null}" Visibility="{Binding MinutesLeftVisibility}" />
 
-                                <TextBlock Text="Combat Only" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding IsCombatOnlyVisibility}" />
-                                <CheckBox IsChecked="{Binding IsCombatOnly}" Margin="6,2,0,2" Visibility="{Binding IsCombatOnlyVisibility}" />
+                                    <Label>
+                                        <TextBlock Text="Icon Name" Visibility="{Binding IconNameVisibility}" />
+                                    </Label>
+                                    <TextBox Text="{Binding IconName}" Visibility="{Binding IconNameVisibility}" />
 
-                                <TextBlock Text="Icon Name" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding IconNameVisibility}" />
-                                <TextBox Text="{Binding IconName}" Margin="6,2,0,2" Visibility="{Binding IconNameVisibility}" />
-                                <TextBlock Text="Icon Shade" Foreground="#606060" VerticalAlignment="Center" Visibility="{Binding IconShadeVisibility}" />
-                                <common:MyNumericBox Value="{Binding IconShade}" Type="Int" Min="0" Margin="6,2,0,2" Width="70" Visibility="{Binding IconShadeVisibility}" />
-                            </common:AutoGrid>
+                                    <Label>
+                                        <TextBlock Text="Icon Shade" Visibility="{Binding IconShadeVisibility}" />
+                                    </Label>
+                                    <common:MyNumericBox Value="{Binding IconShade}" Type="Int" Min="{x:Null}" Lower="{x:Null}" Visibility="{Binding IconShadeVisibility}" />
+
+                               </common:AutoGrid>
+
+                               <CheckBox IsChecked="{Binding IsHidden}" Visibility="{Binding IsHiddenVisibility}">
+                                   <TextBlock Text="Hidden" />
+                               </CheckBox>
+
+                                <CheckBox IsChecked="{Binding IsCombatOnly}" Visibility="{Binding IsCombatOnlyVisibility}">
+                                    <TextBlock Text="Combat Only" />
+                                </CheckBox>
+
+                            </StackPanel>
                         </Border>
                     </Popup>
                 </ControlTemplate>
@@ -429,16 +468,17 @@
 
 
     <Style x:Key="{x:Type common:SearchBox}" TargetType="{x:Type common:SearchBox}">
-        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Width" Value="250" />
+        <Setter Property="MaxWidth" Value="300" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type common:SearchBox}">
                     <Grid HorizontalAlignment="Stretch">
                         <TextBlock x:Name="prompt" Text="Search&#x2026;" Foreground="#A0A0A0" Margin="10,0" Padding="0" Width="Auto" HorizontalAlignment="Left" TextAlignment="Left" VerticalAlignment="Center" />
-                        <TextBox x:Name="searchTextBox" Height="28" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="6,0" Text="{Binding Path=SearchText, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" />
+                        <TextBox x:Name="searchTextBox" Height="28" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="6,0" Text="{Binding Path=SearchText, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" Width="200" />
                         <Image Source="{StaticResource SearchIcon}" Style="{StaticResource smallImageStyleKey}" HorizontalAlignment="Right" />
                     </Grid>
                 </ControlTemplate>

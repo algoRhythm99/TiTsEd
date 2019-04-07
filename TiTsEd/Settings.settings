@@ -6,7 +6,7 @@
       <Value Profile="(Default)">Normal</Value>
     </Setting>
     <Setting Name="Size" Type="System.Windows.Size" Scope="User">
-      <Value Profile="(Default)">0,0</Value>
+      <Value Profile="(Default)">1024,768</Value>
     </Setting>
     <Setting Name="Location" Type="System.Windows.Point" Scope="User">
       <Value Profile="(Default)">0,0</Value>

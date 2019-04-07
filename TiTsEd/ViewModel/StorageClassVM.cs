@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Media;
 
 using System.Windows;
 using TiTsEd.Common;
@@ -132,6 +133,19 @@ namespace TiTsEd.ViewModel {
 
         public virtual Visibility IconShadeVisibility {
             get { return Visibility.Collapsed; }
+        }
+
+        public string IconShadeColorString
+        {
+            get {
+                //return String.Format("#{0}", IconShade.ToString("X6") );
+                return "#00FF00";
+            }
+        }
+
+        public Color IconShadeColor
+        {
+            get { return (Color)ColorConverter.ConvertFromString(IconShadeColorString); }
         }
 
         public bool IsHidden {

@@ -11,42 +11,50 @@
         Width="1024" Height="700">
 
     <Window.Resources>
-        <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}">
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="Background" Value="Black" />
-            <Setter Property="BorderThickness" Value="3,3,3,0" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TabItem}">
-                        <Border x:Name="root"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                BorderBrush="#303030"
-                                Background="Transparent"
-                                SnapsToDevicePixels="True"
-                                Margin="{TemplateBinding Padding}">
-                            <TextBlock x:Name="text" Text="{TemplateBinding Header}"
-                                       Foreground="#E0E0E0"
-                                       FontSize="12"
-                                       HorizontalAlignment="Center"
-                                       Margin="20,8,20,12" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="text" Property="Foreground" Value="White" />
-                            </Trigger>
-                            <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="text" Property="Foreground" Value="#DA3100" />
-                                <Setter TargetName="root" Property="Background" Value="White" />
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="text" Property="Foreground" Value="#00FFFFFF" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Assets.xaml" />
+                <ResourceDictionary Source="Themes/PageInclude.xaml" />
+                <ResourceDictionary Source="Themes/Scrollbars.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Background" Value="Black" />
+                <Setter Property="BorderThickness" Value="3,3,3,0" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabItem}">
+                            <Border x:Name="root"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="#303030"
+                                    Background="Transparent"
+                                    SnapsToDevicePixels="True"
+                                    Margin="{TemplateBinding Padding}">
+                                <TextBlock x:Name="text" Text="{TemplateBinding Header}"
+                                           Foreground="#E0E0E0"
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           Margin="20,8,20,12" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="text" Property="Foreground" Value="White" />
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="text" Property="Foreground" Value="#DA3100" />
+                                    <Setter TargetName="root" Property="Background" Value="White" />
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="text" Property="Foreground" Value="#00FFFFFF" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
     </Window.Resources>
 
     <Grid ClipToBounds="true"
@@ -100,15 +108,18 @@
                                    IsEnabled="{Binding HasData}">
                             <WrapPanel x:Name="CharacterPanel"
                                        Orientation="Horizontal">
-                                    <Label Target="{Binding ElementName=CharacterSelection}">
-                                        <TextBlock Text="Character" />
+                                    <Label Target="{Binding ElementName=CharacterSelection}" Width="Auto">
+                                        <TextBlock Text="Character" Width="Auto" />
                                     </Label>
                                     <ComboBox x:Name="CharacterSelection"
+                                              Style="{StaticResource ReadOnlyCombo}"
                                               SelectedValue="{Binding Game.CharacterSelection}"
                                               ItemsSource="{Binding Game.CharacterOptions}" />
-                                <Button Margin="5,0" Content="Copy to PC" IsEnabled="{Binding Game.IsNotPC}"
-                                        Click="CopyToPC_Clicked" />
-                            </WrapPanel>
+                                    <Button Margin="5,0" IsEnabled="{Binding Game.IsNotPC}"
+                                        Click="CopyToPC_Clicked">
+                                        <TextBlock Padding="5,0,5,0" Text="Copy to PC" />
+                                    </Button>
+                                </WrapPanel>
                             <Grid x:Name="SearchPanel" Margin="10,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
@@ -152,19 +163,19 @@
             <TabItem Header="Genitals">
                 <view:GenitalPage />
             </TabItem>
-            <TabItem Header="Items" IsEnabled="{Binding Game.IsPC}">
+            <TabItem Header="Items">
                 <view:ItemsPage />
             </TabItem>
-            <TabItem Header="Key Items" IsEnabled="{Binding Game.IsPC}">
+            <TabItem Header="Key Items">
                 <view:KeyItemsPage />
             </TabItem>
-            <TabItem Header="Perks" IsEnabled="{Binding Game.IsPC}">
+            <TabItem Header="Perks">
                 <view:PerkPage />
             </TabItem>
-            <TabItem Header="Misc" IsEnabled="{Binding Game.IsPC}">
+            <TabItem Header="Misc">
                 <view:MiscPage />
             </TabItem>
-            <TabItem Header="Flags" IsEnabled="{Binding Game.IsPC}">
+            <TabItem Header="Flags">
                 <view:RawPage />
             </TabItem>
             <TabItem Header="Raw">
