@@ -6325,6 +6325,9 @@
 						v2 - horn size result&#xD;&#xA;
 						v3 - max cock size&#xD;&#xA;
 						v4 - futacock size (if any)" IsHidden="true" />
+			<StatusEffect Name="Treatment Elasticity Report Needed" IsHidden="true" />
+			<StatusEffect Name="Treatment Exhibitionism Gain 4 DickGirls" IsHidden="true" />
+			<StatusEffect Name="Treatment Height Boosted" IsHidden="true" />
 			<StatusEffect Name="Twink-ease Doses" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Mimbranes">
@@ -6354,32 +6357,45 @@
 			<StatusEffect Name="HL Thong" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Eggs and Pregnancy">
+			<StatusEffect Name="Bored Jumper Pregnancy Ends 0" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Bored Jumper Pregnancy Ends 1" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Bored Jumper Pregnancy Ends 2" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Bothrioc Eggs" Description="You have been impregnated by a bothrioc. A warm, dense glow suffuses you that is not at all unpleasant..." IconName="Charmed" />
 			<StatusEffect Name="Bulky Belly" Description="The size of your belly weighs you down, dropping your reflexes and evasion chances by 70%." IconName="Icon_Belly_Pregnant" />
+			<StatusEffect Name="Butt Bug Egg Cycle" IsHidden="true" />
+			<StatusEffect Name="Butt Bug Pregnancy Cooldown" IsHidden="true" />
 			<StatusEffect Name="Egg Addled 1" Description="Your lust increases slightly faster over time as a result of the shifting egg inside you." IconName="Icon_DrugPill" />
 			<StatusEffect Name="Egg Addled 2" Description="Your lust will increase over time to the maximum - leading to instant combat loss, should you blunder into a fight while distracted by your egg." IconName="Icon_DrugPill" />
 			<StatusEffect Name="Egg Addled 3" Description="The endless stimulation of your internal faux egg is driving you mad with lust. Even the simple act of walking has become hellishly distracting." IconName="Icon_DrugPill" />
 			<StatusEffect Name="Eggy Belly" Description="You've got a nice belly full of eggs to enjoy, courtesy of the bright pink Egg Trainer back on your ship." IconName="Icon_DrugPill" />
-			<StatusEffect Name="Fisi Breeding Cooldown" IsHidden="true" MinutesLeft="720" />
-			<StatusEffect Name="Frostwyrm Pregnancy Ends" Label1="Preg Slot" Label2="Babies" Value="1" IsHidden="true" />
+			<StatusEffect Name="Frostwyrm Pregnancy Ends" Label1="Womb" Label2="Babies" IsHidden="true" />
 			<StatusEffect Name="Give Sera Priapin" IsHidden="true" />
 			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
 			<StatusEffect Name="Lah Pregnancy Reflex Mod" Value1="5" IsHidden="true" />
-			<StatusEffect Name="Lah Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" IsHidden="true" />
+			<StatusEffect Name="Lah Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Laquine Pregnancy Ends 0" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Laquine Pregnancy Ends 1" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Laquine Pregnancy Ends 2" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="LDC ShockHopper Pregnancy Ends 0" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="LDC ShockHopper Pregnancy Ends 1" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="LDC ShockHopper Pregnancy Ends 2" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Milodan Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" Label4="1 == Permanent, ignores racial score" Value4="1" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs Messages Available" IsHidden="true" />
 			<StatusEffect Name="Ovilium Effect" IsHidden="true" />
 			<StatusEffect Name="Pregnancy Pending" Description="Your pregnancy is ready to deliver! Head to the nursery as soon as you can!" IconName="Icon_Belly_Pregnant" />
+			<StatusEffect Name="Psychic Tentacles Birth To Nursery" IsHidden="true" />
 			<StatusEffect Name="Quaelle Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy End" IsHidden="true" />
 			<StatusEffect Name="Queen Pregnancy State" IsHidden="true" />
 			<StatusEffect Name="Quinn Post-Pregnancy" IsHidden="true" />
+			<StatusEffect Name="Raskvel Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Riya Spawn Reflex Mod" Value1="5" IsHidden="true" />
 			<StatusEffect Name="Riya Spawn Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Royal Eggs Messages Available" IsHidden="true" />
 			<StatusEffect Name="Sera Spawn Reflex Mod" Value1="5" IsHidden="true" />
 			<StatusEffect Name="Sera Spawn Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="Shekka Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Siegwulfe Eggnancy Ends" IsHidden="true" />
             <StatusEffect Name="Siegwulfe Eggnancy Stage" Label1="stage" IsHidden="true" />
 			<StatusEffect Name="Sydian Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
@@ -6407,8 +6423,8 @@
 			<StatusEffect Name="Pussy Drenched" Value1="1" IconName="Icon_Water_Drop" IconShade="12030916" />
 			<StatusEffect Name="Riya Breed No Sex" IsHidden="true" />
 			<StatusEffect Name="SlyverenFacefuckForce" IsHidden="true" />
+			<StatusEffect Name="Sore Tubes" Description="Orgasms damage you!" IconName="Icon_Water_Drop" IconShade="16711680" />
 			<StatusEffect Name="Vaginally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Vagina" />
-			<StatusEffect Name="Wulfe Lust Cooldown" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Combat">
 			<StatusEffect Name="Blind Immune" IsHidden="true" />
@@ -6418,53 +6434,88 @@
 			<StatusEffect Name="Unarmored" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Cooldowns">
-			<StatusEffect Name="Anno x Kaede Bar" IsHidden="true" />
+			<StatusEffect Name="AlexandraCD" IsHidden="true" />
 			<StatusEffect Name="Anno Bar Busy" IsHidden="true" MinutesLeft="135" />
+			<StatusEffect Name="Anno X Gianna Cooldown" IsHidden="true" />
+			<StatusEffect Name="Anno x Kaede Bar" IsHidden="true" />
 			<StatusEffect Name="Anno-Erra Cooldown" MinutesLeft="4320" IsHidden="true" />
+			<StatusEffect Name="Arbetz Busy Cooldown" IsHidden="true" />
+			<StatusEffect Name="Arbetz Busy Hour" IsHidden="true" />
+			<StatusEffect Name="Armor Restore CD" IsHidden="true" />
 			<StatusEffect Name="Azra CD" IsHidden="true" />
+			<StatusEffect Name="Azra Plant CD" IsHidden="true" />
 			<StatusEffect Name="Azra Sex CD" IsHidden="true" />
 			<StatusEffect Name="Betsy and Victoria CD" IsHidden="true" />
+			<StatusEffect Name="BioMed Gangbang Cooldown" IsHidden="true" />
+			<StatusEffect Name="Butt Bug Message Cooldown" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
+			<StatusEffect Name="Cum High Cooldown" IsHidden="true" />
 			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Exhibitionist Blurb Cooldown" IsHidden="true" />
+			<StatusEffect Name="Fisi Breeding Cooldown" IsHidden="true" MinutesLeft="720" />
+			<StatusEffect Name="GWEN_XMAS_CD" IsHidden="true" />
 			<StatusEffect Name="GastiUnlockTimer" IsHidden="true" />
+			<StatusEffect Name="HP Boost CD" IsHidden="true" />
+			<StatusEffect Name="HS CD" IsHidden="true" />
 			<StatusEffect Name="Hair Regoo" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Jesse Bar Cooldown" IsHidden="true" MinutesLeft="1440" />
 			<StatusEffect Name="JuroXLyrallaCooldown" IsHidden="true" />
+			<StatusEffect Name="Kaede Canada Cooldown" IsHidden="true" />
 			<StatusEffect Name="Kally Cummed Out" IsHidden="true" />
+			<StatusEffect Name="Kase-Anno Voyeur Cooldown" IsHidden="true" />
 			<StatusEffect Name="Kimber Bating" IsHidden="true" />
-			<StatusEffect Name="Lieve Disabled" MinutesLeft="180" IsHidden="true" />
-			<StatusEffect Name="LimberTime" IsHidden="true" />
 			<StatusEffect Name="LUND_DICKED_CD" IsHidden="true" />
+			<StatusEffect Name="Lieve Disabled" MinutesLeft="180" IsHidden="true" />
+			<StatusEffect Name="Lift Voyeur CD" IsHidden="true" />
+			<StatusEffect Name="LimberTime" IsHidden="true" />
+			<StatusEffect Name="Luca Switch Cooldown" IsHidden="true" />
 			<StatusEffect Name="MAJA_FUCK_RECOVERY" IsHidden="true" />
 			<StatusEffect Name="Maus CD" IsHidden="true" />
+			<StatusEffect Name="Motherhusk CD" IsHidden="true" />
 			<StatusEffect Name="MufflingsCD" IsHidden="true" />
+			<StatusEffect Name="NT_TAILCOCK_MILK_CD" IsHidden="true" />
+			<StatusEffect Name="Nade Cooldown" IsHidden="true" />
 			<StatusEffect Name="PAIGE_COMA_CD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_COMA_EMAIL_CD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_KIRO_CHILDHOOD_CD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_KIRO_GOSSIP_CD" IsHidden="true" />
 			<StatusEffect Name="PAIGE_KIRO_PIRACY_CD" IsHidden="true" />
+			<StatusEffect Name="PAIGE_SPAR" IsHidden="true" />
+			<StatusEffect Name="PANTYBREAK_CD" IsHidden="true" />
+			<StatusEffect Name="PENNY_PANTY_CD" IsHidden="true" />
+			<StatusEffect Name="Prai Cooldown" IsHidden="true" />
+			<StatusEffect Name="Quinn Talk Cooldown" IsHidden="true" />
 			<StatusEffect Name="RIYA_CANADIA_CD" IsHidden="true" />
 			<StatusEffect Name="Riya Treat CD" IsHidden="true" MinutesLeft="10080" />
+			<StatusEffect Name="SHEKKA_CHEATING_ON_YOU_CD" IsHidden="true" />
+			<StatusEffect Name="SHEKKA_GYM_CD" IsHidden="true" />
+			<StatusEffect Name="SYLVIE WORKING" IsHidden="true" />
 			<StatusEffect Name="Sera No Sex Cooldown" IsHidden="true" MinutesLeft="120" />
 			<StatusEffect Name="Sera Tease Cooldown" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Sera's TailCock Cooldown" IsHidden="true" MinutesLeft="720" />
-			<StatusEffect Name="SHEKKA_CHEATING_ON_YOU_CD" IsHidden="true" />
 			<StatusEffect Name="Shekka_Cure_CD" IsHidden="true" />
-			<StatusEffect Name="SHEKKA_GYM_CD" IsHidden="true" />
+			<StatusEffect Name="Shekka_Follower_Email_CD" IsHidden="true" />
 			<StatusEffect Name="Shekka_Pay_CD" IsHidden="true" />
 			<StatusEffect Name="Shelly Assist Cooldown" IsHidden="true" />
 			<StatusEffect Name="Shelly Leave Egg CD" MinutesLeft="8640" IsHidden="true" />
 			<StatusEffect Name="Sleep Fapnea Dream" IsHidden="true" />
-			<StatusEffect Name="SYLVIE WORKING" IsHidden="true" />
+			<StatusEffect Name="Slutshroom CD" IsHidden="true" />
+			<StatusEffect Name="Spunkshroom CD" IsHidden="true" />
+			<StatusEffect Name="Sydian Queen Cooldown" IsHidden="true" />
 			<StatusEffect Name="Taint_CD" MinutesLeft="4320" IsHidden="true" />
+			<StatusEffect Name="Taivra Bed Event Cooldown" IsHidden="true" />
 			<StatusEffect Name="Tapped Kally" IsHidden="true" IconName="Icon_Wine" MinutesLeft="1000" />
 			<StatusEffect Name="The Lusty Ausar Maid" IsHidden="true" MinutesLeft="1440" />
 			<StatusEffect Name="Tickled Pink" IsHidden="true" />
+			<StatusEffect Name="Trip CD" IsHidden="true" />
 			<StatusEffect Name="Tuuva Affection Cooldown" IsHidden="true" />
 			<StatusEffect Name="Tuuva Pooped" IsHidden="true" />
 			<StatusEffect Name="Ula Kiddo Pets Cooldown" IsHidden="true" />
+			<StatusEffect Name="Uveto Blizzard Cooldown" IsHidden="true" />
+			<StatusEffect Name="Varmint Unleashed Cooldown" IsHidden="true" />
+			<StatusEffect Name="Walt Cooldown" IsHidden="true" />
 			<StatusEffect Name="Won Haley's Credits" MinutesLeft="43200" IsHidden="true" />
+			<StatusEffect Name="Wulfe Lust Cooldown" IsHidden="true" />
 			<StatusEffect Name="Yoma Cooldown" IsHidden="true" MinutesLeft="1440" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Endowments">
@@ -6496,10 +6547,17 @@
 			<StatusEffect Name="Wing Style" Label1="Shape" IsHidden="true" Comment="Description/Tooltip is color" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Events">
+			<StatusEffect Name="BlackDragDisable" IsHidden="true" />
 			<StatusEffect Name="Dark Chrysalis Closed" IsHidden="true" />
+			<StatusEffect Name="Denied By Luca" IsHidden="true" />
 			<StatusEffect Name="DisabledRoz" IsHidden="true" />
-			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
+			<StatusEffect Name="FoxyDisable" IsHidden="true" />
 			<StatusEffect Name="IQBGoneTimer" IsHidden="true" />
+			<StatusEffect Name="RaskvelDisable" IsHidden="true" />
+			<StatusEffect Name="Roo_Turned_Down" IsHidden="true" />
+			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
+			<StatusEffect Name="TaurDisable" IsHidden="true" />
+			<StatusEffect Name="ThiccGobDisable" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
 			<StatusEffect Name="Afraid of Ula Pussy" IsHidden="true" />
@@ -6533,12 +6591,15 @@
 			<StatusEffect Name="Lightning Moves" Description="Your recent fencing lessons give you an edge during fights." IconName="OffenseUp" MinutesLeft="4320" />
 			<StatusEffect Name="LimberTime" IsHidden="true" />
 			<StatusEffect Name="LucasMindwash" IsHidden="true" />
+			<StatusEffect Name="Luca Addiction Prevention" IsHidden="true" />
 			<StatusEffect Name="Milk Paused" IsHidden="true" />
 			<StatusEffect Name="Mitzi Dressed" IsHidden="true" />
 			<StatusEffect Name="Mitzi_Gushed_Out" IsHidden="true" />
 			<StatusEffect Name="Mitzi_Gush_Thankyou" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
-			<StatusEffect Name="Nym-Foe Injections" Label1="Hips" Label2="Ass" Label3="Breasts" Label4="Lips" IsHidden="true" />
+			<StatusEffect Name="NT Build Bottle Plant Repeat" IsHidden="true" />
+			<StatusEffect Name="NT Male Milker Disabled" IsHidden="true" />
+			<StatusEffect Name="Nym-Foe Injections" Label1="Hips" Label2="Ass" Label3="Breasts" Label4="Lips" IsHidden="true" Comment="Bio-Silicone Levels" />
 			<StatusEffect Name="Orange Myr Sighting Delay" IsHidden="true" MinutesLeft="20160" />
 			<StatusEffect Name="PAIGE_KIRO_COCKPATH" IsHidden="true" />
 			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!&#xA;Minimum lust increased by 20." IconName="LustUp" IconShade="0" />
@@ -6551,6 +6612,7 @@
 			<StatusEffect Name="RefractBoost" IsHidden="true" />
 			<StatusEffect Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IconName="DefenseDown" IconShade="0" />
 			<StatusEffect Name="SeenMitzi" IsHidden="true" />
+			<StatusEffect Name="Sera Credit Debt" IsHidden="true" />
 			<StatusEffect Name="Sera Debt Repaid" IsHidden="true" />
 			<StatusEffect Name="Sera Morning Sickness" IsHidden="true" MinutesLeft="120" />
 			<StatusEffect Name="Seranigans" IsHidden="true" />
