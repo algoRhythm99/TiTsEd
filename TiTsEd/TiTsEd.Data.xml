@@ -1416,6 +1416,7 @@
 	<Items>
 		<ItemGroup Name="Accessory">
 			<Item Stack="1" Name="ACE Cannon" ID="classes.Items.Accessories::ACECannon" />
+			<Item Stack="1" Name="A. Coat" ID="classes.Items.Accessories::AdventurersCoat" />
 			<Item Stack="1" Name="AimEyepiece" ID="classes.Items.Accessories::AimEyepiece" />
 			<Item Stack="1" Name="AimEyeII"     ID="classes.Items.Accessories::AimEyepieceMkII" />
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
@@ -1491,6 +1492,7 @@
 			<Item Stack="1" Name="NurseO." ID="classes.Items.Apparel::NurseOutfit" />
 			<Item Stack="1" Name="O.Swimsuit" ID="classes.Items.Apparel::OnePieceSwimsuit" />
 			<Item Stack="1" Name="PeasantDress" ID="classes.Items.Apparel::PeasantDress" />
+			<Item Stack="1" Name="R. Rags" ID="classes.Items.Apparel::RogueRags" />
 			<Item Stack="1" Name="S.Boy O." ID="classes.Items.Apparel::SchoolboyOutfit" />
 			<Item Stack="1" Name="S.Girl C." ID="classes.Items.Apparel::SchoolgirlCostume" />
 			<Item Stack="1" Name="S.Girl O." ID="classes.Items.Apparel::SchoolgirlOutfit" />
@@ -1532,6 +1534,9 @@
 			<Item Stack="1" Name="T.Armor" ID="classes.Items.Apparel::TrashArmor" />
 			<Item Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" Comment="Debug Item" Tooltip="Debug Item" />
 			<Item Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" LongName="TS-T armor plating mark II" Comment="Debug Item" Tooltip="Debug Item" />
+			<Item Stack="1" Name="A. ST. Suit"    ID="classes.Items.Armor::ArmorSteeleSuit">
+				<ItemField Name="shields" Type="int" Value="20" />
+			</Item>
 			<Item Stack="1" Name="AZA Suit" ID="classes.Items.Armor::ArmstrongSuitBlue">
 				<ItemField Name="shields" Type="int" Value="4" />
 			</Item>
@@ -1615,6 +1620,7 @@
 			<Item Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra2" />
 			<Item Stack="1" Name="Girly Bra" ID="classes.Items.Apparel::GirlyBra" />
 			<Item Stack="1" Name="HL Bra" ID="classes.Items.Apparel::HardlightAGBra" />
+			<Item Stack="1" Name="HL Top" ID="classes.Items.Apparel::HardlightAGShirt" />
 			<Item Stack="1" Name="Harness" ID="classes.Items.Apparel::Harness" />
 			<Item Stack="1" Name="HoneyBra" ID="classes.Items.Apparel::HoneypotBra" />
 			<Item Stack="1" Name="I.Ushirt" ID="classes.Items.Apparel::InsulatingUndershirt" />
@@ -1632,6 +1638,8 @@
 			<Item Stack="1" Name="Sk.Bra" ID="classes.Items.Apparel::SkullPatternBra" />
 			<Item Stack="1" Name="Featherbra" ID="classes.Items.Apparel::SlepraDownBra" />
 			<Item Stack="1" Name="Sports Bra" ID="classes.Items.Apparel::SportsBra" />
+			<Item Stack="1" Name="S. Shirt" ID="classes.Items.Apparel::Swimshirt" />
+			<Item Stack="1" Name="S. Tank" ID="classes.Items.Apparel::Swimtank" />
 			<Item Stack="1" Name="W.BkniTop"    ID="classes.Items.Apparel::StrappyWhiteBikiniTop" />
 			<Item Stack="1" Name="Underbust Corset" ID="classes.Items.Apparel::UnderbustCorset" />
 			<Item Stack="1" Name="Undershirt" ID="classes.Items.Apparel::Undershirt" />
@@ -1700,6 +1708,8 @@
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3850" />
 			</Item>
+			<Item Stack="1" Name="S. Briefs" ID="classes.Items.Apparel::SwimBriefs" />
+			<Item Stack="1" Name="Swimstrap" ID="classes.Items.Apparel::Swimstrap" />
 			<Item Stack="1" Name="W.BkniBtm" ID="classes.Items.Apparel::StrappyWhiteBikiniBottom" />
 			<Item Stack="1" Name="ThmUndies" ID="classes.Items.Apparel::ThermalUnderwear" />
 			<Item Stack="1" Name="TightShorts"  ID="classes.Items.Apparel::TightSwimShorts" />
@@ -1956,6 +1966,7 @@
 			<Item Stack="1" Name="H.Hole"   ID="classes.Items.Toys::HoverHole" />
 			<Item Stack="1" Name="M B.Hole" ID="classes.Items.Toys::MitziBionaHole" />
 			<Item Stack="1" Name="N.B.Hole" ID="classes.Items.Toys::NivasBionaHole" />
+			<Item Stack="1" Name="NymFoeDaki" ID="classes.Items.Toys::NymFoeDakimakura" />
 			<Item Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
 			<Item Stack="1" Name="SukMastr" ID="classes.Items.Toys::SukMastr" />
 		</ItemGroup>
@@ -2011,8 +2022,12 @@
 			<Item Stack="1" Name="T.Spear" ID="classes.Items.Melee::TaivrasSpear" />
 			<Item Stack="1" Name="T.Scalpel" ID="classes.Items.Melee::ThermalScalpel" />
 			<Item Stack="1" Name="tonfas"   ID="classes.Items.Melee::Tonfas" />
+			<Item Stack="1" Name="T. Brace"   ID="classes.Items.Melee::TrickBracer">
+				<ItemField Name="shields" Type="int" Value="20" />
+			</Item>
 			<Item Stack="1" Name="V.Blade" ID="classes.Items.Melee::VampBlade" />
 			<Item Stack="1" Name="Vanae Spear" ID="classes.Items.Melee::VanaeSpear" />
+			<Item Stack="1" Name="Vibrolass" ID="classes.Items.Melee::Vibrolass" />
 			<Item Stack="1" Name="Warhammer" ID="classes.Items.Melee::Warhammer" />
 			<Item Stack="1" Name="Whip" ID="classes.Items.Melee::Whip" />
 			<Item Stack="1" Name="WidowsKiss" ID="classes.Items.Melee::WidowsKiss" />
@@ -2103,6 +2118,7 @@
 			<Item Stack="1" Name="HvyPlasma"    ID="classes.Items.Guns::TeyaalsHeavyPlasmaCaster" />
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
 			<Item Stack="1" Name="Shotgn" ID="classes.Items.Guns::TrenchShotgun" />
+			<Item Stack="1" Name="T.B. Rifle"    ID="classes.Items.Guns::TriBeamRifle" />
 			<Item Stack="1" Name="Vanquish" ID="classes.Items.Guns::Vanquisher" />
 			<Item Stack="1" Name="V.Pistol" ID="classes.Items.Guns::VenomPistol">
 				<ItemField Name="fortification" Type="int" Value="-4" />
@@ -2169,6 +2185,9 @@
 			</Item>
 			<Item Stack="1" Name="S.Shield" ID="classes.Items.Protection::SalamanderShield">
 				<ItemField Name="shields"       Type="int" Value="70" />
+			</Item>
+			<Item Stack="1" Name="Scrp Shield" ID="classes.Items.Protection::ScrapShield">
+				<ItemField Name="shields"       Type="int" Value="50" />
 			</Item>
 		</ItemGroup>
 		<ItemGroup Name="Other">
@@ -2330,6 +2349,7 @@
 			<KeyItem Name="Kressia Pass" />
 			<KeyItem Name="Lasso" />
 			<KeyItem Name="Locked Metal Chest" Label1="Actual Price" Value1="2000" />
+			<KeyItem Name="Picture of Roxy and Newborns" />
 			<KeyItem Name="Pirate Datapad" />
 			<KeyItem Name="Platinum 190" />
 			<KeyItem Name="Puss Pass" />
@@ -2662,6 +2682,7 @@
 		<Flag Name="ALISS_FIXED_HL_COUNT" />
 		<Flag Name="AMAZONA_DRINKS" />
 		<Flag Name="AMBER_BRUSHED" />
+		<Flag Name="AMBER_CELISE_THREESOMES" />
 		<Flag Name="AMBER_CREWMEMBER" />
 		<Flag Name="AMBER_CREWMEMBER_INITIALSCENE" />
 		<Flag Name="AMBER_CREW_SEX" />
@@ -2677,6 +2698,7 @@
 		<Flag Name="AMBER_SHIPSEX_TALK" />
 		<Flag Name="AMBER_TALK_STAGE" />
 		<Flag Name="AMBER_VISIT_HOLD" />
+		<Flag Name="AM_CEL_SKIP" />
 		<Flag Name="ANALED_YAMMI" />
 		<Flag Name="ANARRIE_AMBUSH" />
 		<Flag Name="ANNOS_SHOP_CLOSED" Description="1 == Anno's shop is currently closed" />
@@ -2997,6 +3019,7 @@
 		<Flag Name="BLACKJACK_DEALER_SHOWN" />
 		<Flag Name="BLACKJACK_LOSE" />
 		<Flag Name="BLACKJACK_STANDING" />
+		<Flag Name="BLACKJACK_TIE" />
 		<Flag Name="BLACKJACK_WIN" />
 		<Flag Name="BONED_GOLD_DESERT" />
 		<Flag Name="BONED_RED_DESERT" />
@@ -3226,9 +3249,14 @@
 		<Flag Name="DANCE_SKILL_EDOTTO" />
 		<Flag Name="DANCE_SKILL_SUNWALKER" />
 		<Flag Name="DANE_BUTTFUCKED_U" />
+		<Flag Name="DANE_HAREM_TALKED" />
+		<Flag Name="DANE_JOBS_TALK" />
 		<Flag Name="DANE_NO_SEX" />
 		<Flag Name="DANE_PUNCHED" />
 		<Flag Name="DANE_SEXED" />
+		<Flag Name="DANE_START_TALKED" />
+		<Flag Name="DANE_TAILCUNTED" />
+		<Flag Name="DANE_VAGFUCKS" />
 		<Flag Name="DAYS_SINCE_FED_CUNT_TAIL" />
 		<Flag Name="DECK13_AIRLOCK_ENTERED" />
 		<Flag Name="DECK13_ARMORY_ENTERED" />
@@ -3579,6 +3607,16 @@
 		<Flag Name="FERUZE_SEXED" />
 		<Flag Name="FERUZE_ZHENG_OUTCOME" />
 		<Flag Name="FIELDS_STEP" />
+		<Flag Name="FIREPUP_DENIED" />
+		<Flag Name="FIREPUP_ENCOUNTERS" />
+		<Flag Name="FIREPUP_PUNISHED" />
+		<Flag Name="FIREPUP_RIMMED" />
+		<Flag Name="FIREPUP_SEXED" />
+		<Flag Name="FIREPUP_SEXED_ANAL" />
+		<Flag Name="FIREPUP_SEXED_LAST" />
+		<Flag Name="FIREPUP_SEXED_ROUGH" />
+		<Flag Name="FIREPUP_TOLD_HOUND" />
+		<Flag Name="FIREPUP_VICTORIES" />
 		<Flag Name="FIRST_CAPTURED_ZIL_REPORTED_ON" />
 		<Flag Name="FIRST_GAST_CC" />
 		<Flag Name="FISI_AT_RES_DECK" />
@@ -3806,6 +3844,7 @@
 		<Flag Name="GOLD_DILDOED" />
 		<Flag Name="GOLD_MYR_DESERTER_BEATEN" />
 		<Flag Name="GOOARMOR_SLEEVE_FUCK" />
+		<Flag Name="GOO_ARMOR_AUTOCLEAN" />
 		<Flag Name="GOO_ARMOR_AWAY" />
 		<Flag Name="GOO_ARMOR_CRYSTAL_UPGRADE" />
 		<Flag Name="GOO_ARMOR_CUSTOMIZE" />
@@ -4341,6 +4380,7 @@
 		<Flag Name="LUND_PB_DISABLED" />
 		<Flag Name="LUND_PIERCED" />
 		<Flag Name="LUND_RIDE_HIMMED" />
+		<Flag Name="LURELINGS_FOUGHT" />
 		<Flag Name="LYRALLA_AND_JURO_RELATIONSHIP_HINTED_AT" />
 		<Flag Name="LYRALLA_DISCUSSED_HER_QUEEN" />
 		<Flag Name="LYRALLA_JOB_TALK" />
@@ -4370,6 +4410,8 @@
 		<Flag Name="MANOR_ADMINROOM_ENTERED" />
 		<Flag Name="MANOR_WARROOM_ENTERED" />
 		<Flag Name="MARIK_FLIRTED" Description="1 == Flirted with Marik" />
+		<Flag Name="MARIONS_FUCKED" />
+		<Flag Name="MARION_SETUP" />
 		<Flag Name="MAUS_LOCALE" />
 		<Flag Name="MAUS_MECHANIC_DISABLED" />
 		<Flag Name="MAUS_THINKS_PIRATE" />
@@ -4503,6 +4545,7 @@
 		<Flag Name="MET_LUCA" />
 		<Flag Name="MET_LUMI" />
 		<Flag Name="MET_LUND" />
+		<Flag Name="MET_LURELING" />
 		<Flag Name="MET_LYRALLA" Description="1 == You've met Lyralla" />
 		<Flag Name="MET_MABBS" />
 		<Flag Name="MET_MAJA" />
@@ -4762,6 +4805,7 @@
 		<Flag Name="NYM-FOE" />
 		<Flag Name="NYM-FOE_ACTIVATED" />
 		<Flag Name="NYM-FOE_CHIP_RETURN" />
+		<Flag Name="NYM-FOE_DAKIMAKURA_TAKE" />
 		<Flag Name="NYM-FOE_DISABLED" />
 		<Flag Name="NYM-FOE_DISASSEMBLED" />
 		<Flag Name="NYM-FOE_FIXED" />
@@ -4849,6 +4893,7 @@
 		<Flag Name="PENNY_OTHER_CREW_TALKED" />
 		<Flag Name="PENNY_SLEPT_WITH" />
 		<Flag Name="PENNY_SQUIRT_TALK" />
+		<Flag Name="PENNY_SYRIVAG_WATCHED" />
 		<Flag Name="PENNY_THROBB_PURCHASE_UNLOCKED" />
 		<Flag Name="PENNY_THROBB_USES" />
 		<Flag Name="PENNY_TIMES_ANAL_SEXED" />
@@ -4921,6 +4966,7 @@
 		<Flag Name="PQ_CLIFF_FOOTED" />
 		<Flag Name="PQ_DIPLO_FAILS" />
 		<Flag Name="PQ_DIPLO_SUCCESS" />
+		<Flag Name="PQ_FLAHNE_TALKED" />
 		<Flag Name="PQ_FOUGHT_TRIBE" />
 		<Flag Name="PQ_LET_QUINN_GO" />
 		<Flag Name="PQ_NALEENED" />
@@ -5232,6 +5278,7 @@
 		<Flag Name="ROO_CUNNILINGED" />
 		<Flag Name="ROO_FETISH_TALK" />
 		<Flag Name="ROO_GAMED_TODAY" />
+		<Flag Name="ROO_GAMES_PLAYED" />
 		<Flag Name="ROO_GASMED" />
 		<Flag Name="ROO_HIGHEST_STRIP_LEVEL" />
 		<Flag Name="ROO_MILKED" />
@@ -5244,6 +5291,69 @@
 		<Flag Name="ROO_TABLEFUCKED" />
 		<Flag Name="ROO_TALK_CD" />
 		<Flag Name="ROO_TEMP_CUM_STORAGE" />
+		<Flag Name="ROXY_BABY_GENDERS" />
+		<Flag Name="ROXY_BIRTH_SCENE" />
+		<Flag Name="ROXY_BIRTH_SCENE_BOYS" />
+		<Flag Name="ROXY_BIRTH_SCENE_EYECOLOR1" />
+		<Flag Name="ROXY_BIRTH_SCENE_EYECOLOR2" />
+		<Flag Name="ROXY_BIRTH_SCENE_FURCOLOR1" />
+		<Flag Name="ROXY_BIRTH_SCENE_FURCOLOR2" />
+		<Flag Name="ROXY_BIRTH_SCENE_GIRLS" />
+		<Flag Name="ROXY_BIRTH_SCENE_HAIRCOLOR1" />
+		<Flag Name="ROXY_BIRTH_SCENE_HAIRCOLOR2" />
+		<Flag Name="ROXY_BIRTH_SCENE_HERMS" />
+		<Flag Name="ROXY_BJ" />
+		<Flag Name="ROXY_BREED" />
+		<Flag Name="ROXY_COWGIRL_FIRST" />
+		<Flag Name="ROXY_COWGIRL_HOLD" />
+		<Flag Name="ROXY_CUDDLES" />
+		<Flag Name="ROXY_CUDDLES_REFUSE" />
+		<Flag Name="ROXY_CUDDLES_TIMER" />
+		<Flag Name="ROXY_DOGGY_ANAL" />
+		<Flag Name="ROXY_DOGGY_DP" />
+		<Flag Name="ROXY_DOGGY_LAST" />
+		<Flag Name="ROXY_DOGGY_VAG" />
+		<Flag Name="ROXY_FIRST_KIDS_DAY" />
+		<Flag Name="ROXY_FIRST_KIDS_TIMER" />
+		<Flag Name="ROXY_HEAT_SEX" />
+		<Flag Name="ROXY_IDEA" />
+		<Flag Name="ROXY_IDEA_REFUSE" />
+		<Flag Name="ROXY_JILLING_TIMER" />
+		<Flag Name="ROXY_KID_FL_SIZE" />
+		<Flag Name="ROXY_KID_NAME" />
+		<Flag Name="ROXY_KID_SEX" />
+		<Flag Name="ROXY_MET" />
+		<Flag Name="ROXY_MISSED_BIRTH" />
+		<Flag Name="ROXY_MISSIONARY" />
+		<Flag Name="ROXY_MOVE_EMAIL" />
+		<Flag Name="ROXY_NUM_BABIES" />
+		<Flag Name="ROXY_PREG_EMAIL" />
+		<Flag Name="ROXY_PREG_INTRO" />
+		<Flag Name="ROXY_PREG_TIMER" />
+		<Flag Name="ROXY_RE_CHILDREN" />
+		<Flag Name="ROXY_RE_COMMON" />
+		<Flag Name="ROXY_RE_DONE" />
+		<Flag Name="ROXY_RE_FOYER" />
+		<Flag Name="ROXY_RE_VISIT" />
+		<Flag Name="ROXY_RUT_INTRO" />
+		<Flag Name="ROXY_RUT_REJECT" />
+		<Flag Name="ROXY_RVS_COWGIRL" />
+		<Flag Name="ROXY_SEX" />
+		<Flag Name="ROXY_SPOON" />
+		<Flag Name="ROXY_STERILEX" />
+		<Flag Name="ROXY_STERILEX_OVERRIDE" />
+		<Flag Name="ROXY_TALK_CHILDREN" />
+		<Flag Name="ROXY_TALK_FETISH" />
+		<Flag Name="ROXY_TALK_HERSELF" />
+		<Flag Name="ROXY_TALK_PLANS" />
+		<Flag Name="ROXY_TALK_PREG" />
+		<Flag Name="ROXY_TALK_SEX" />
+		<Flag Name="ROXY_TALK_SEX_NODICK" />
+		<Flag Name="ROXY_TALK_STADIUM" />
+		<Flag Name="ROXY_TONE" />
+		<Flag Name="ROXY_TOTAL_KIDS" />
+		<Flag Name="ROXY_TOTAL_LITTERS" />
+		<Flag Name="ROXY_VENOMDICK" />
 		<Flag Name="ROZ_ARMOR_STOLEN" />
 		<Flag Name="ROZ_CORED_4_GUD" />
 		<Flag Name="ROZ_GOOFUKKED_WNO_DIK" />
@@ -5587,6 +5697,8 @@
 		<Flag Name="SLYVEREN_THROBB_FUCKED" />
 		<Flag Name="SLYVEREN_WIN_FACEFUKT" />
 		<Flag Name="SNAKEBYTE_LOOTED" />
+		<Flag Name="SNEK_MAUS_PAIRINGS" />
+		<Flag Name="SNEK_MAUS_TIMESTAMP" />
 		<Flag Name="SOLD_BESS" />
 		<Flag Name="SPACE_BEAR" />
 		<Flag Name="SPAM_MSG_COV8" />
@@ -5682,9 +5794,11 @@
 		<Flag Name="SYRI_BETTING_STORAGE" Description="Stores credit bet or 9001 if ass betting" />
 		<Flag Name="SYRI_BIONAHOLE_USES" />
 		<Flag Name="SYRI_BUTT_GAPE_ALERT" />
+		<Flag Name="SYRI_CAUGHT_PENNYBATING" />
 		<Flag Name="SYRI_CREWMEMBER" />
 		<Flag Name="SYRI_FANTASY_TALKED" />
 		<Flag Name="SYRI_GIFT_PANTY" />
+		<Flag Name="SYRI_HOLE_VID_TIMER" />
 		<Flag Name="SYRI_MILOFUCK" />
 		<Flag Name="SYRI_PETPLAY_LOST" />
 		<Flag Name="SYRI_PETPLAY_WINS" />
@@ -5799,6 +5913,14 @@
 		<Flag Name="TESSA_SHOWER_BREAST" />
 		<Flag Name="TESSA_SPECIES" />
 		<Flag Name="TESSA_TRUST" />
+		<Flag Name="TESSA_WED_APPAREL" />
+		<Flag Name="TESSA_WED_BAPPROVAL" />
+		<Flag Name="TESSA_WED_GAPPROVAL" />
+		<Flag Name="TESSA_WED_INSIGHT" />
+		<Flag Name="TESSA_WED_SIDE" />
+		<Flag Name="TESSA_WED_TAPPROVAL" />
+		<Flag Name="TESSA_WED_TESSBOOZE" />
+		<Flag Name="TESSA_WED_YOURBOOZE" />
 		<Flag Name="TEXAS_GRAVCUFFS_COWORGY" />
 		<Flag Name="TEYAAL_DEFEATED" />
 		<Flag Name="THARE_MANOR_ENTERED" />
@@ -6556,6 +6678,7 @@
 			<StatusEffect Name="RaskvelDisable" IsHidden="true" />
 			<StatusEffect Name="Roo_Turned_Down" IsHidden="true" />
 			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
+			<StatusEffect Name="Syri Pennybating" IsHidden="true" />
 			<StatusEffect Name="TaurDisable" IsHidden="true" />
 			<StatusEffect Name="ThiccGobDisable" IsHidden="true" />
 		</StatusEffectGroup>
@@ -6610,6 +6733,7 @@
 			<StatusEffect Name="Roehm Slimed" Description="Direct physical contact with a roehm in heat results in stickiness, and smelling rather like an orgy in a vat of molasses." Value1="10" Value2="-5" Value3="15" IconName="Icon_Splatter" IconShade="12030916" MinutesLeft="720" />
 			<StatusEffect Name="Ramis Sated" IsHidden="true" />
 			<StatusEffect Name="RefractBoost" IsHidden="true" />
+			<StatusEffect Name="Roxy Style Collar Mark" IconName="Icon_Crying" IconShade="16711680" />
 			<StatusEffect Name="Rusted Emitters" Description="Your shield emitters have been damaged by sydian secretions, reducing your shield maximum by 25%. You'll need to find someone in Novahome to repair them to get back to full strength." IconName="DefenseDown" IconShade="0" />
 			<StatusEffect Name="SeenMitzi" IsHidden="true" />
 			<StatusEffect Name="Sera Credit Debt" IsHidden="true" />
