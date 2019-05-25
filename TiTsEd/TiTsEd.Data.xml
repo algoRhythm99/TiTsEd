@@ -1878,7 +1878,7 @@
 			<Item Stack="10" Name="LipTease" ID="classes.Items.Transformatives::LipTease" />
 			<Item Stack="10" Name="Lucifier" ID="classes.Items.Transformatives::Lucifier" />
 			<Item Stack="10" Name="Lupinol" ID="classes.Items.Transformatives::Lupinol" />
-			<Item Stack="10" Name="ManDown" ID="classes.Items.Miscellaneous::ManDown" />
+			<Item Stack="10" Name="TwinkEase" ID="classes.Items.Transformatives::ManDown" LongName="pack of ‘Twink-ease’" EditorName="TwinkEase" />
 			<Item Stack="10" Name="ManUp"   ID="classes.Items.Transformatives::ManUp" />
 			<Item Stack="10" Name="MinoCharge" ID="classes.Items.Transformatives::MinoCharge" />
 			<Item Stack="9"  Name="Mthrhusk"   ID="classes.Items.Transformatives::Motherhusk" />
