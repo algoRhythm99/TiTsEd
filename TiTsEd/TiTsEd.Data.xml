@@ -2519,6 +2519,7 @@
 			<Perk Name="Akane's Painslut" Description="Your body is attuned to Akane’s methods of pleasurable pain. You have a chance to gain bonus Defense every time you take HP damage which increases with lower health... but you’ll also take additional lust damage. With higher lust, you gain bonus defence!" />
 			<Perk Name="Barcoded" Description="A sleek black barcode is printed on your ass, left there by Dr. Belle for purely scientific purposes." />
 			<Perk Name="Broodmother" Description="Increases the maximum gestation quantity of pregnancies, where possible." Value1="0.5" Value2="2" />
+			<Perk Name="Butt Bug Symbiosis" />
 			<Perk Name="Buttslut" Description="Ensures your ass always remains bubbly and that fluids shot inside will heal your injuries." />
 			<Perk Name="Calm Aim" Description="You’re a pretty good shot when things aren’t too hectic, so you gain +1 accuracy when above 50% health." Value1="1" Value2="50" />
 <!--
@@ -2527,12 +2528,14 @@
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Face Fucker" Description="Increases minimum lust and cum output, thanks to that strange VR adventure..." Value1="5" />
 			<Perk Name="Implant-tastic" Description="Your body will convert most of the mass in your breasts, butt cheeks, hips and lips into silicone." />
+			<Perk Name="Innocent Allure" />
 			<Perk Name="Limber" Description="Grants an addition 20% chance to escape from grapples!" />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
 			<Perk Name="Peace of Mind" Description="You radiate an aura of Zen-like calm. You can offer enemies the chance to peacefully surrender. The lower their level, the better the chance will be. In turn, however, enemies that peacefully demand you submit to them may be very difficult to resist.... Additionally boosts minimum lust to 20." />
 			<Perk Name="Primorditatts" Description="You’re covered in intricate tattoos that sometimes give you strange dreams." />
 			<Perk Name="Rage Aim" Description="You get so mad when you’re losing, you gain +1 accuracy when you’re below 50% health" Value1="1" Value2="50" />
+			<Perk Name="Rahn Super Incubator" />
 			<Perk Name="Slut Stamp" Description="A tattoo permanently emblazoned above your ass makes you horny faster while wearing anything clothing your lower body." Value1="10" Value2="10" Value3="10" />
 		</PerkGroup>
 		<PerkGroup Name="Treatment">
@@ -2601,8 +2604,10 @@
 			<Perk Name="Wooly" Description="Your body naturally grows a thick layer of wool." />
 		</PerkGroup>
 		<PerkGroup Name="General">
+			<Perk Name="Appearance Enabled" Comment="Only useful on NPCs." />
 			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
 			<Perk Name="Corrupted" Description="Increases your maximum libido but prevents the loss of taint." />
+			<Perk Name="Custom Appearance" Comment="Only useful on NPCs." />
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="Cum Quantity" Value1="500000" />
 			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
 			<Perk Name="Fixed MilkQ" Comment="Ensures you always lactate exactly {Value1} mLs. See Value1" Label1="Lactation Quantity" Value1="500000" />
@@ -2817,6 +2822,7 @@
 		<Flag Name="BADGER_QUEST_TIMER" />
 		<Flag Name="BADGER_SILICONE_GO_CRAZY" />
 		<Flag Name="BADGER_SILICONE_TANK_FILL_BAG" />
+		<Flag Name="BADGER_SILICONE_TANK_INSTALLED" />
 		<Flag Name="BADGER_SILICONE_TANK_USES" />
 		<Flag Name="BAR_NPC" />
 		<Flag Name="BAR_NPC_TIMER" />
@@ -2938,6 +2944,19 @@
 		<Flag Name="BETRAYED_KARA" />
 		<Flag Name="BET_AGAINST_SYRI" Description="1 == if PC has ever engaged in a bet with Syri" />
 		<Flag Name="BF_STORAGE" />
+		<Flag Name="BIGTIDDYGOTHGF_ASSFUCKED" />
+		<Flag Name="BIGTIDDYGOTHGF_CUNTFUCKED" />
+		<Flag Name="BIGTIDDYGOTHGF_FIRSTVISIT" />
+		<Flag Name="BIGTIDDYGOTHGF_FLIRT" />
+		<Flag Name="BIGTIDDYGOTHGF_LOCKOUT" />
+		<Flag Name="BIGTIDDYGOTHGF_NAKED" />
+		<Flag Name="BIGTIDDYGOTHGF_NECKHER" />
+		<Flag Name="BIGTIDDYGOTHGF_NECKLACE" />
+		<Flag Name="BIGTIDDYGOTHGF_ORIGINS" />
+		<Flag Name="BIGTIDDYGOTHGF_REDSTONE" />
+		<Flag Name="BIGTIDDYGOTHGF_SEX" />
+		<Flag Name="BIGTIDDYGOTHGF_TATEXPLAIN" />
+		<Flag Name="BIGTIDDYGOTHGF_USEDHER" />
 		<Flag Name="BIMBOIFIED" />
 		<Flag Name="BIOMED_GANGBANGED" />
 		<Flag Name="BJUMPER_BABY_GENDERS" />
@@ -3070,6 +3089,42 @@
 		<Flag Name="BREEDING_SOLSTICED" Description="1 == you have been solstice bred by milodans" />
 		<Flag Name="BREEDWELL_DONATION_LOCKED" />
 		<Flag Name="BREEDWELL_DONATION_USED" />
+		<Flag Name="BREEDWELL_PREM_BACKPAY" />
+		<Flag Name="BREEDWELL_PREM_BADEND_COWMAZON" />
+		<Flag Name="BREEDWELL_PREM_BADEND_LAVLEV" />
+		<Flag Name="BREEDWELL_PREM_BC_MHENGA_FLAHNE" />
+		<Flag Name="BREEDWELL_PREM_BC_MHENGA_FUURAHN" />
+		<Flag Name="BREEDWELL_PREM_BC_MYRELLION" />
+		<Flag Name="BREEDWELL_PREM_BC_TARKUS_MERCS" />
+		<Flag Name="BREEDWELL_PREM_BC_TARKUS_STACEY" />
+		<Flag Name="BREEDWELL_PREM_BC_TAVROS_AUSAR" />
+		<Flag Name="BREEDWELL_PREM_BC_TAVROS_COUPLE" />
+		<Flag Name="BREEDWELL_PREM_BC_TAVROS_LAVLEV" />
+		<Flag Name="BREEDWELL_PREM_BC_UVETO" />
+		<Flag Name="BREEDWELL_PREM_BC_ZHENGSHI" />
+		<Flag Name="BREEDWELL_PREM_CNT" />
+		<Flag Name="BREEDWELL_PREM_CON_BAN" />
+		<Flag Name="BREEDWELL_PREM_DAY" />
+		<Flag Name="BREEDWELL_PREM_DONT" />
+		<Flag Name="BREEDWELL_PREM_EGG_CAP_BONUS" />
+		<Flag Name="BREEDWELL_PREM_KEEP_KID" />
+		<Flag Name="BREEDWELL_PREM_KID_CNT" />
+		<Flag Name="BREEDWELL_PREM_KID_CNT_CON" />
+		<Flag Name="BREEDWELL_PREM_KID_CNT_TTL" />
+		<Flag Name="BREEDWELL_PREM_MISS_QUOTA" />
+		<Flag Name="BREEDWELL_PREM_PAYPERIOD" />
+		<Flag Name="BREEDWELL_PREM_POD_BAN" />
+		<Flag Name="BREEDWELL_PREM_PUNK_CNT" />
+		<Flag Name="BREEDWELL_PREM_PUNQ_CNT" />
+		<Flag Name="BREEDWELL_PREM_PUN_GUESTS" />
+		<Flag Name="BREEDWELL_PREM_PUN_STAFF" />
+		<Flag Name="BREEDWELL_PREM_PUN_VISITORS" />
+		<Flag Name="BREEDWELL_PREM_PUN_WARN" />
+		<Flag Name="BREEDWELL_PREM_QUOTA" />
+		<Flag Name="BREEDWELL_PREM_SEX_CNT" />
+		<Flag Name="BREEDWELL_PREM_SEX_CNT_CON" />
+		<Flag Name="BREEDWELL_PREM_SEX_CNT_TTL" />
+		<Flag Name="BREEDWELL_PREM_TTL_PAY" />
 		<Flag Name="BREEDWELL_RAHN_BIRTHS" />
 		<Flag Name="BREEDWELL_STATUS_BREEDER" />
 		<Flag Name="BREEDWELL_STATUS_DONATOR" />
@@ -3154,8 +3209,10 @@
 		<Flag Name="CELISE_ONBOARD" />
 		<Flag Name="CELISE_ROOMBA_GOO" />
 		<Flag Name="CERIA_BOUGHT" />
+		<Flag Name="CERIA_DOGGY" />
 		<Flag Name="CERIA_EARFUCKS" />
 		<Flag Name="CERIA_EAR_TOUCH_UNLOCKED" />
+		<Flag Name="CERIA_HYPERCUM_TIMER" />
 		<Flag Name="CERIA_MOUTH_FLOOD" />
 		<Flag Name="CFS_HANGOUT_EVENT_PENDING" />
 		<Flag Name="CFS_HOLIDAY_SHOPPING" Description="1 == you have gone shopping with Gwen" />
@@ -3177,8 +3234,20 @@
 		<Flag Name="CHAURMINE_RELATIONSHIP" />
 		<Flag Name="CHAURMINE_WINS" />
 		<Flag Name="CHECKED_GEAR_AT_OGGY" />
+		<Flag Name="CHERRYS_ROOM_SEEN" />
+		<Flag Name="CHERRY_BUBBLE_TALK" />
 		<Flag Name="CHERRY_HERSELF_TALKED" />
+		<Flag Name="CHERRY_HER_PLACE_INVITED_NORMAL" />
+		<Flag Name="CHERRY_HUGE_BUBS" />
+		<Flag Name="CHERRY_HUGE_BUBS_FED" />
+		<Flag Name="CHERRY_LARGE_BUBS" />
+		<Flag Name="CHERRY_LAST_BUBBLE_GIFT" />
+		<Flag Name="CHERRY_MEDIUM_BUBS" />
+		<Flag Name="CHERRY_SEX_INTRO" />
+		<Flag Name="CHERRY_SMALL_BUBS" />
 		<Flag Name="CHERRY_TALKED" />
+		<Flag Name="CHERRY_TOTAL_BUBBLE_GIFTS" />
+		<Flag Name="CHERRY_VENOM_TANKED" />
 		<Flag Name="CHIEF_NEYKKAR_WITH_PC" />
 		<Flag Name="CHRISSY_ANAL" />
 		<Flag Name="CHRISSY_GETFKD" />
@@ -3256,6 +3325,7 @@
 		<Flag Name="DANE_SEXED" />
 		<Flag Name="DANE_START_TALKED" />
 		<Flag Name="DANE_TAILCUNTED" />
+		<Flag Name="DANE_TAURFUKKS" />
 		<Flag Name="DANE_VAGFUCKS" />
 		<Flag Name="DAYS_SINCE_FED_CUNT_TAIL" />
 		<Flag Name="DECK13_AIRLOCK_ENTERED" />
@@ -3448,6 +3518,7 @@
 		<Flag Name="EXTRAMEET_BIGDAWG" />
 		<Flag Name="EXTRAMEET_BIGDICKRICK" />
 		<Flag Name="EXTRAMEET_BIGGYZ" />
+		<Flag Name="EXTRAMEET_BIGTIDDYGOTHGF" />
 		<Flag Name="EXTRAMEET_BIRDY" />
 		<Flag Name="EXTRAMEET_BOOBS_GIVE" />
 		<Flag Name="EXTRAMEET_BOOBS_RCVD" />
@@ -3845,6 +3916,7 @@
 		<Flag Name="GOLD_MYR_DESERTER_BEATEN" />
 		<Flag Name="GOOARMOR_SLEEVE_FUCK" />
 		<Flag Name="GOO_ARMOR_AUTOCLEAN" />
+		<Flag Name="GOO_ARMOR_AUTOSUCK" />
 		<Flag Name="GOO_ARMOR_AWAY" />
 		<Flag Name="GOO_ARMOR_CRYSTAL_UPGRADE" />
 		<Flag Name="GOO_ARMOR_CUSTOMIZE" />
@@ -4331,6 +4403,16 @@
 		<Flag Name="LOOTED_COCKBOX" />
 		<Flag Name="LOOTED_MYR_RIFLE" />
 		<Flag Name="LOOTED_TAIVRAS_BEDROOM" />
+		<Flag Name="LORELEI_BEATEN" />
+		<Flag Name="LORELEI_FOUGHT" />
+		<Flag Name="LORELEI_KNOTS" />
+		<Flag Name="LORELEI_LUST_LOSSES" />
+		<Flag Name="LORELEI_SEXED" />
+		<Flag Name="LORELEI_SEX_COUNTER" />
+		<Flag Name="LORELEI_STALKING" />
+		<Flag Name="LORELEI_TALKED_FUTA" />
+		<Flag Name="LORELEI_TALKED_JOB" />
+		<Flag Name="LORELEI_TALKED_UGC" />
 		<Flag Name="LOST_TO_ALPHA" />
 		<Flag Name="LOST_TO_DANE_ON_MHENGA" />
 		<Flag Name="LOST_TO_KANE" />
@@ -4542,6 +4624,7 @@
 		<Flag Name="MET_LIEVE" Description="1 == You've met Lieve" />
 		<Flag Name="MET_LILIANA" Description="1 == You've met Liliana" />
 		<Flag Name="MET_LOLA" Description="1 == You've met Lola" />
+		<Flag Name="MET_LORELEI" />
 		<Flag Name="MET_LUCA" />
 		<Flag Name="MET_LUMI" />
 		<Flag Name="MET_LUND" />
@@ -5733,6 +5816,7 @@
 		<Flag Name="STRANGE_EGG_SOLD" />
 		<Flag Name="STRAPONED_LIAMME" />
 		<Flag Name="STUD_MILKED" />
+		<Flag Name="SUBMITTED_TO_LORELEI" />
 		<Flag Name="SUBTUNER_COUSINCESTED" />
 		<Flag Name="SUBTUNER_EXHIBITIONISM" />
 		<Flag Name="SUBTUNER_HYPNOED" />
@@ -6135,6 +6219,13 @@
 		<Flag Name="VAVA_GROOM_SPECIAL_PET" />
 		<Flag Name="VAVA_GROOM_TALK" />
 		<Flag Name="VAVA_GROOM_VISIT" />
+		<Flag Name="VELTA_ANAL_TIMER" />
+		<Flag Name="VELTA_FUCK_ANAL" />
+		<Flag Name="VELTA_FUCK_VAG" />
+		<Flag Name="VELTA_MET" />
+		<Flag Name="VELTA_TALK_COLLEGE" />
+		<Flag Name="VELTA_TALK_FAMILY" />
+		<Flag Name="VELTA_TALK_HOBBIES" />
 		<Flag Name="VENOM_ADDICTION" />
 		<Flag Name="VENOM_PROGRESS" />
 		<Flag Name="VERUSHA_APPEAR_DISABLE_TILL" />
@@ -6431,6 +6522,7 @@
 					v3 hour counter&#xD;&#xA;
 					Special variants - girls with bigger horns (size 5)!" IconName="Icon_Cow" MinutesLeft="10080" IconShade="0" />
 			<StatusEffect Name="Treated Amazon" IsHidden="true" />
+			<StatusEffect Name="Treated Faux Cow" IsHidden="true" />
 			<StatusEffect Name="Treated" Comment="VARIABLE DEPENDING ON GENDER&#xD;&#xA;
 					0 - Girl Mode:&#xD;&#xA;
 						v1 - boob size result&#xD;&#xA;
@@ -6670,11 +6762,17 @@
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Events">
 			<StatusEffect Name="BlackDragDisable" IsHidden="true" />
+			<StatusEffect Name="Boob Silicone Please" IsHidden="true" />
+			<StatusEffect Name="Cherry_In_Room" IsHidden="true" />
+			<StatusEffect Name="Cherry_Internal_Cum" IsHidden="true" />
 			<StatusEffect Name="Dark Chrysalis Closed" IsHidden="true" />
 			<StatusEffect Name="Denied By Luca" IsHidden="true" />
 			<StatusEffect Name="DisabledRoz" IsHidden="true" />
 			<StatusEffect Name="FoxyDisable" IsHidden="true" />
 			<StatusEffect Name="IQBGoneTimer" IsHidden="true" />
+			<StatusEffect Name="Kiro Panties Event Queue" IsHidden="true" />
+			<StatusEffect Name="Premium Breeder Cheek Tattoo" IconName="Icon_Sperm_Hearts" MinutesLeft="16724911" />
+			<StatusEffect Name="Premium Breeder Crotch Tattoo" IconName="Icon_Sperm_Hearts" MinutesLeft="16724911" />
 			<StatusEffect Name="RaskvelDisable" IsHidden="true" />
 			<StatusEffect Name="Roo_Turned_Down" IsHidden="true" />
 			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
