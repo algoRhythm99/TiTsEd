@@ -64,5 +64,10 @@ namespace TiTsEd.Common
 
             return foundChild;
         }
+
+        public static double NormalizeLength(double len)
+        {
+            return Math.Max(len, 0);
+        }
     }
 }

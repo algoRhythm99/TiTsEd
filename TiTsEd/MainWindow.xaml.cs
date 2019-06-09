@@ -95,8 +95,8 @@ namespace TiTsEd
         {
             Top = Settings.Default.Location.Y;
             Left = Settings.Default.Location.X;
-            Width = Settings.Default.Size.Width;
-            Height = Settings.Default.Size.Height;
+            Width = UIHelpers.NormalizeLength(Settings.Default.Size.Width);
+            Height = UIHelpers.NormalizeLength(Settings.Default.Size.Height);
 
             if (Settings.Default.State == WindowState.Minimized) WindowState = WindowState.Normal;
             else WindowState = Settings.Default.State;
@@ -114,8 +114,8 @@ namespace TiTsEd
 
             Top = Math.Min(Top, screenBottom);
             Left = Math.Min(Left, screenRight);
-            Width = Math.Max(Left + Width, screenLeft) - Left;
-            Height = Math.Max(Top + Height, screenTop) - Top;
+            Width = UIHelpers.NormalizeLength(Math.Max(Left + Width, screenLeft) - Left);
+            Height = UIHelpers.NormalizeLength(Math.Max(Top + Height, screenTop) - Top);
         }
 
         void SaveSizeAndState()
@@ -123,7 +123,12 @@ namespace TiTsEd
             if (!_canSerializeSizeAndState) return;
 
             Settings.Default.Location = RestoreBounds.Location;
-            Settings.Default.Size = RestoreBounds.Size;
+            Size size = new Size()
+            {
+              Width = UIHelpers.NormalizeLength(RestoreBounds.Size.Width)
+            , Height = UIHelpers.NormalizeLength(RestoreBounds.Size.Height)
+            };
+            Settings.Default.Size = size;
             Settings.Default.State = WindowState;
             Settings.Default.Save();
         }
