@@ -5,7 +5,6 @@
 *.orig
 *.bak
 
-updateLists.sh
 DataLists/
 
 # Created by https://www.gitignore.io/api/visualstudio
