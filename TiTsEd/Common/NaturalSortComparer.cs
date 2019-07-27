@@ -9,6 +9,7 @@ namespace TiTsEd.Common
     public class NaturalSortComparer<T> : IComparer<string>, IDisposable
     {
         private bool isAscending;
+        private Regex _Regex = new Regex(@"(\d+)|(\D+)");
 
         public NaturalSortComparer(bool inAscendingOrder = true)
         {
@@ -19,7 +20,8 @@ namespace TiTsEd.Common
 
         public int Compare(string x, string y)
         {
-            throw new NotImplementedException();
+            var xb = x ?? "";
+            return xb.CompareTo(y);
         }
 
         #endregion
@@ -28,49 +30,32 @@ namespace TiTsEd.Common
 
         int IComparer<string>.Compare(string x, string y)
         {
-            if (x == y)
-            {
-                return 0;
-            }
-            string[] x1, y1;
+            var list1 = _Regex.Matches(x).Cast<Match>().Select(m => m.Value.Trim()).ToList();
 
-            if (!table.TryGetValue(x, out x1))
-            {
-                x1 = Regex.Split(x.Replace(" ", ""), "([0-9]+)");
-                table.Add(x, x1);
-            }
+            var list2 = _Regex.Matches(y).Cast<Match>().Select(m => m.Value.Trim()).ToList();
 
-            if (!table.TryGetValue(y, out y1))
-            {
-                y1 = Regex.Split(y.Replace(" ", ""), "([0-9]+)");
-                table.Add(y, y1);
-            }
+            var min = Math.Min(list1.Count, list2.Count);
+            int comp = 0;
 
-            int returnVal;
-
-            for (int i = 0; i < x1.Length && i < y1.Length; i++)
+            for (int i = 0; i < min; i++)
             {
-                if (x1[i] != y1[i])
+                int intx, inty;
+
+                if (int.TryParse(list1[i], out intx) && int.TryParse(list2[i], out inty))
                 {
-                    returnVal = PartCompare(x1[i], y1[i]);
-                    return isAscending ? returnVal : -returnVal;
+                    comp = intx - inty;
+                }
+                else
+                {
+                    comp = String.Compare(list1[i], list2[i]);
+                }
+                if (comp != 0)
+                {
+                    return comp;
                 }
             }
 
-            if (y1.Length > x1.Length)
-            {
-                returnVal = 1;
-            }
-            else if (x1.Length > y1.Length)
-            {
-                returnVal = -1;
-            }
-            else
-            {
-                returnVal = 0;
-            }
-
-            return isAscending ? returnVal : -returnVal;
+            return list1.Count - list2.Count;
         }
 
         private static int PartCompare(string left, string right)

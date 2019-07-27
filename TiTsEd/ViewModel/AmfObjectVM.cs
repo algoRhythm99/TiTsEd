@@ -28,7 +28,7 @@ namespace TiTsEd.ViewModel
                     foreach (AmfPair pair in o.Enumerate())
                     {
                         var val = pair.Value;
-                        var kv = pair.Key.ToString().Trim();
+                        var kv = pair.Key.ToString();
                         var valO = pair.ValueAsObject;
                         if (null != valO)
                         {
@@ -36,12 +36,12 @@ namespace TiTsEd.ViewModel
                             var key = String.Format("{0} [{1}]", kv, vt);
                             var d = new SortedDictionary<string, object>(NSComparer);
                             BuildTree(d, valO);
-                            dic.Add(key, d);
+                            dic[key] = d;
                         }
                         else
                         {
                             var key = kv;
-                            dic.Add(key, val);
+                            dic[key] = val;
                         }
                     }
                 }
