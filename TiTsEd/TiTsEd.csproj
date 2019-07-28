@@ -97,6 +97,7 @@
     <Compile Include="ViewModel\FlagVM.cs" />
     <Compile Include="ViewModel\ItemVM.cs" />
     <Compile Include="ViewModel\KeyItemVM.cs" />
+    <Compile Include="ViewModel\ShipVM.cs" />
     <Compile Include="ViewModel\StorageClassVM.cs" />
     <Compile Include="ViewModel\PerkVM.cs" />
     <Compile Include="ViewModel\StatusEffectVM.cs" />
@@ -125,6 +126,9 @@
     </Compile>
     <Compile Include="View\BodyPage.xaml.cs">
       <DependentUpon>BodyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShipsPage.xaml.cs">
+      <DependentUpon>ShipsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GenitalPage.xaml.cs">
       <DependentUpon>GenitalPage.xaml</DependentUpon>
@@ -206,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\BodyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ShipsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

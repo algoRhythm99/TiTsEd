@@ -175,6 +175,9 @@
             <TabItem Header="Misc">
                 <view:MiscPage />
             </TabItem>
+            <TabItem Header="Ships">
+                <view:ShipsPage />
+            </TabItem>
             <TabItem Header="Flags">
                 <view:RawPage />
             </TabItem>

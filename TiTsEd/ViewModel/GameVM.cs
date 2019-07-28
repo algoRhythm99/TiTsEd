@@ -29,6 +29,8 @@ namespace TiTsEd.ViewModel {
             setCharacter("PC");
             SaveFile = new AmfObjectVM(file);
 
+            Ships = new ShipArrayVM(this, GetObj("shittyShips") ?? ShipArrayVM.CreateNewShipObject());
+
             var flagsObject = FlagsObject;
             _flags = new GeneralObjectVM(flagsObject);
             if (null != previousVM) {
@@ -51,6 +53,8 @@ namespace TiTsEd.ViewModel {
             }
             Flags = new UpdatableCollection<FlagVM>(_allFlags.Values.ToList().Where(x => x.Match(SearchText)));
         }
+
+        public ShipArrayVM Ships { get; private set; }
 
         public static void ImportUnknownStorageClassEntries(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, IList<XmlStorageClass> targetXmlList = null, string nameProperty = "storageName", Func<AmfObject, string> descriptionGetter = null) {
             if (targetXmlList == null) targetXmlList = (IList<XmlStorageClass>)xmlItems;

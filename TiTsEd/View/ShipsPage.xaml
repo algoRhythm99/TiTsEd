@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="TiTsEd.View.ShipsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:common="clr-namespace:TiTsEd.Common"
+             xmlns:view="clr-namespace:TiTsEd.View"
+             mc:Ignorable="d"
+             d:DesignWidth="1024" d:DesignHeight="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/PageInclude.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Style="{StaticResource ContentStackPanel}">
+            <common:ArrayEditor
+                    Header="Ships"
+                    Items="{Binding Game.Ships}"
+                    AllowReorder="False"
+                    
+                >
+                <common:ArrayEditor.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Description}" />
+                    </DataTemplate>
+                </common:ArrayEditor.ItemTemplate>
+                <StackPanel>
+
+                    <TextBlock Text="General" Style="{StaticResource Header}" />
+                    <common:AutoGrid>
+
+                        <Label>
+                            <TextBlock Text="Name" />
+                        </Label>
+                        <TextBox Text="{Binding Name}" />
+
+                        <!--
+                        <Label>
+                            <TextBlock Text="Captain" />
+                        </Label>
+                        <TextBox Text="{Binding CaptainDisplay}" />
+                        -->
+
+                        <Label>
+                            <TextBlock Text="Model" />
+                        </Label>
+                        <TextBox Text="{Binding ModelDisplay}" />
+
+                        <!--
+                        <Label>
+                            <TextBlock Text="Faction" />
+                        </Label>
+                        <TextBox Text="{Binding FactionDisplay}" />
+                        -->
+
+                    </common:AutoGrid>
+
+                    <TextBlock Text="Stats" Style="{StaticResource Header}" />
+                    <common:AutoGrid>
+                        <Label>
+                            <TextBlock Text="HP" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding HPMod}" Type="UInt" Max="{Binding HPMax}" />
+
+                        <Label>
+                            <TextBlock Text="Agility" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ShipAgility}" Tip="{Binding EffectiveAgility}" />
+
+                        <Label>
+                            <TextBlock Text="Speed" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ShipSpeed}" Tip="{Binding EffectiveSpeed}" />
+
+                        <Label>
+                            <TextBlock Text="Power Generation" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ShipPowerGeneration}" Tip="{Binding EffectivePowerGeneration}" />
+
+                        <Label>
+                            <TextBlock Text="Sensors" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ShipSensors}" Tip="{Binding EffectiveSensors}" />
+
+                        <Label>
+                            <TextBlock Text="Systems" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ShipSystems}" Tip="{Binding EffectiveSystems}" />
+                    </common:AutoGrid>
+
+                    <TextBlock Text="Capacities" Style="{StaticResource Header}" />
+                    <common:AutoGrid>
+                        <Label>
+                            <TextBlock Text="Crew Capacity" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ShipCrewCapacity}" Tip="{Binding EffectiveCrewCapacity}" />
+
+                        <Label>
+                            <TextBlock Text="Gun Capacity" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ShipGunCapacity}" Tip="{Binding EffectiveGunCapacity}" />
+
+                        <Label>
+                            <TextBlock Text="Wardrobe Size" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding WardrobeSize}" />
+
+                        <Label>
+                            <TextBlock Text="Equipment Size" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding EquipmentSize}" />
+
+                        <Label>
+                            <TextBlock Text="Consumable Size" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ConsumableSize}" />
+
+                        <Label>
+                            <TextBlock Text="Valuables Size" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ValuablesSize}" />
+
+                        <Label>
+                            <TextBlock Text="Toys Size" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ToysSize}" />
+
+                    </common:AutoGrid>
+                </StackPanel>
+            </common:ArrayEditor>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
