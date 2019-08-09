@@ -193,7 +193,7 @@ if [ 1 == 1 ]; then
     rawFile="$newFolder/${propName}s.raw.txt"
     newFile="$newFolder/${propName}s.txt"
     sortedFile="$newFolder/${propName}s.sorted.csv"
-    regex='.*[.](create|has)'${propName}'\((["[:alnum:] ,_-]+)\).*'
+    regex='.*\.(create|has)KeyItem\((["[:alnum:] ,_-]+)\).*'
     echo regex="$regex"
     find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
     cat $rawFile | sort -u >$newFile
@@ -236,7 +236,7 @@ if [ 1 == 1 ]; then
     rawFile="$newFolder/${propName}s.raw.txt"
     newFile="$newFolder/${propName}s.txt"
     sortedFile="$newFolder/${propName}s.sorted.csv"
-    regex='.*[.](create|has)'${propName}'\((["[:alnum:] ,_-]+)\).*'
+    regex='.*\.(create|has)Perk\((["[:alnum:] ,_-]+)\).*'
     echo regex="$regex"
     find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
     cat $rawFile | sort -u >$newFile
@@ -276,7 +276,7 @@ if [ 1 == 1 ]; then
     rawFile="$newFolder/${propName}s.raw.txt"
     newFile="$newFolder/${propName}s.txt"
     sortedFile="$newFolder/${propName}s.sorted.csv"
-    regex='.*[.](create|has)'${propName}'\((["[:alnum:] ,_-]+)\).*'
+    regex='.*\.(create|has)StatusEffect\((["[:alnum:] ,_-]+)\).*'
     echo regex="$regex"
     find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
     cat $rawFile | sort -u >$newFile
@@ -398,5 +398,5 @@ fi
 if [ 0 == 1 ]; then
     echo "Checking for CodexEntries"
     newXmlFile="$newFolder/CodexEntries.xml"
-    perl -n -e'/[^\/]CodexManager[.]addCodexEntry.+CodexManager[.]CODEX_TYPE_(.+)[,].*["](.+)["][,].*["](.+)["].*[;]/ && { $type="$1"; $group="$2"; $entry="$3"; print "<CodexEntry Type=\"$type\" Group=\"$group\"><![CDATA[$entry]]></CodexEntry>\r\n"; }' "$SourceFolder/includes/CodexEntries.as" >$newXmlFile
+    perl -n -e'/[^\/]CodexManager\.addCodexEntry.+CodexManager\.CODEX_TYPE_(.+)[,].*["](.+)["][,].*["](.+)["].*[;]/ && { $type="$1"; $group="$2"; $entry="$3"; print "<CodexEntry Type=\"$type\" Group=\"$group\"><![CDATA[$entry]]></CodexEntry>\r\n"; }' "$SourceFolder/includes/CodexEntries.as" >$newXmlFile
 fi
