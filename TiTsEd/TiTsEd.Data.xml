@@ -1356,7 +1356,6 @@
 			<PregnancyType>PsychicTentacles</PregnancyType>
 			<PregnancyType>QuaellePregnancy</PregnancyType>
 			<PregnancyType>RahnPregnancyBreedwell</PregnancyType>
-			<PregnancyType>RahnPregnancyBreedwell</PregnancyType>
 			<PregnancyType>RaskvelPregnancy</PregnancyType>
 			<PregnancyType>RenvraEggPregnancy</PregnancyType>
 			<PregnancyType>RenvraFullPregnancy</PregnancyType>
@@ -2331,6 +2330,7 @@
 			<KeyItem Name="Panties - Ramis's - Black, tight-fit, frictionless undies." />
 			<KeyItem Name="Panties - Saendra's - Ultra-tight and bright pink." />
 			<KeyItem Name="Panties - Syri's - Sky blue, silky, and extra crotch room." />
+			<KeyItem Name="Panties - Tessa's - A sleek black thong, with a delicious aroma." />
 			<KeyItem Name="Panties - Xanthe's - Lacy, black siel-silk panties." />
 		</KeyItemGroup>
 		<KeyItemGroup Name="Collars">
@@ -2544,6 +2544,7 @@
 			<Perk Name="Rage Aim" Description="You get so mad when you’re losing, you gain +1 accuracy when you’re below 50% health" Value1="1" Value2="50" />
 			<Perk Name="Rahn Super Incubator" />
 			<Perk Name="Slut Stamp" Description="A tattoo permanently emblazoned above your ass makes you horny faster while wearing anything clothing your lower body." Value1="10" Value2="10" Value3="10" />
+			<Perk Name="True Doll" Description="Your body is composed of silicone, rubber and plastic, boosting your sexiness and upgrading your elasticity." Label1="Max Elasticity Limit" Value1="5" Label2="Sexinus Bonus" Value2="5" Label3="Penetration Marker" Label4="Elasticity auto-leveling check toggle. 0 for disabled, 1 for enabled" Value4="1" />
 		</PerkGroup>
 		<PerkGroup Name="Treatment">
 			<Perk Name="Amazonian Needs" Description="Increases minimum lust by 20." Label1="Minimum Lust Mod" Value1="20" Comment="The Value1 doesn't actually get used" />
@@ -2600,7 +2601,7 @@
 			<Perk Name="Nyrea Eggs" Description="Your body naturally produces nyrea eggs." />
 			<Perk Name="Omega Fever" Description="Your body will cycle through the stages of heat whenever your ass is not incubating." />
 			<Perk Name="Oviposition" Description="Causes you to regularly lay eggs when not otherwise pregnant." Label4="Timestamp" />
-			<Perk Name="Perma-cute" Description="Your masculinity is permanently fixed to retain a cute, boyish appearance." />
+			<Perk Name="Perma-cute" Description="Your masculinity is permanently fixed to retain a cute, boyish appearance." Value1="40" Value2="40" />
 			<Perk Name="Pheromone Sweat" Description="Slightly boosts tease attack and arousal while sweating" />
 			<Perk Name="Regal Mane" Description="You have an impressive mane bordering your neck." Label1="0 = No Collar&#xD;&#xA;20 = Fur Collar" Value1="20" />
 			<Perk Name="Resin" Description="Your heavy bark skin slows you all the way down, but provides plenty of protection. It also produces resin. Some flighty, energetic, needy species might find it difficult to resist wanting to plaster themselves all over you..." Label1="Max Reflexes multiplier" Value1="0.40" Type1="Double" />
@@ -2611,10 +2612,7 @@
 			<Perk Name="Wooly" Description="Your body naturally grows a thick layer of wool." />
 		</PerkGroup>
 		<PerkGroup Name="General">
-			<Perk Name="Appearance Enabled" Comment="Only useful on NPCs." />
-			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
 			<Perk Name="Corrupted" Description="Increases your maximum libido but prevents the loss of taint." />
-			<Perk Name="Custom Appearance" Comment="Only useful on NPCs." />
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="Cum Quantity" Value1="500000" />
 			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
 			<Perk Name="Fixed MilkQ" Comment="Ensures you always lactate exactly {Value1} mLs. See Value1" Label1="Lactation Quantity" Value1="500000" />
@@ -2625,6 +2623,18 @@
 			<Perk Name="STD Immune" Description="You are immune to sexually transmitted diseases." />
 			<Perk Name="Ultra-Exhibitionist" Description="The pleasures of exhibitionism have been seared into your body, locking your exhibitionism at max value. Also boosts minimum lust and lust gain when in civilization." Value1="1" />
 		</PerkGroup>
+		<PerkGroup Name="NPC">
+			<Perk Name="Appearance Enabled" Comment="Only useful on NPCs." />
+			<Perk Name="Can Crit" Comment="Allows critical attacks. Only useful on NPCs." />
+			<Perk Name="Custom Appearance" Comment="Only useful on NPCs." />
+			<Perk Name="DEFENSIVE_AI" />
+			<Perk Name="PCs" Comment="Indicates ship ownership by player" />
+			<Perk Name="PIRATE" />
+			<Perk Name="PIRATE_GUN" />
+			<Perk Name="RANDOM_AI" />
+			<Perk Name="SHIP_VENDOR" />
+			<Perk Name="TACTICAL_AI" />
+        </PerkGroup>
 	</Perks>
 	<!-- ================================================================ -->
 	<Flags>
@@ -2690,6 +2700,11 @@
 		<Flag Name="ALEXANDRA_DISABLED" />
 		<Flag Name="ALEXANDRA_DREAM_LEVEL" />
 		<Flag Name="ALEXANDRA_RESISTS" />
+		<Flag Name="ALEX_CONFESSED" />
+		<Flag Name="ALEX_DRUNK_DATED" />
+		<Flag Name="ALEX_DRUNK_SEX" />
+		<Flag Name="ALEX_TALKED_ABOUT_AEGIS" />
+		<Flag Name="ALEX_TALKED_ABOUT_HIMSELF" />
 		<Flag Name="ALISS_FIXED_HL" />
 		<Flag Name="ALISS_FIXED_HL_COUNT" />
 		<Flag Name="AMAZONA_DRINKS" />
@@ -2699,6 +2714,7 @@
 		<Flag Name="AMBER_CREWMEMBER_INITIALSCENE" />
 		<Flag Name="AMBER_CREW_SEX" />
 		<Flag Name="AMBER_CURED" />
+		<Flag Name="AMBER_DRAINEDINPUSSY" />
 		<Flag Name="AMBER_DUMBFUCK" />
 		<Flag Name="AMBER_DUMBFUCK_LASTGIVEN" />
 		<Flag Name="AMBER_EQUILICUM" />
@@ -3416,7 +3432,9 @@
 		<Flag Name="DONG_DESIGNER_MALFUNCTIONED" />
 		<Flag Name="DOUBLE_GOO_SLUT_MET_GOO_ARMOR" />
 		<Flag Name="DOUBLE_GOO_SLUT_RESULT" />
+		<Flag Name="DRANK_FROM_SELLESY" />
 		<Flag Name="DRANK_MYR_VENOM" />
+		<Flag Name="DRANK_WITH_ALEX" />
 		<Flag Name="DREAM_CD" />
 		<Flag Name="DRLESSAU_SEXED" />
 		<Flag Name="DRONED_UVIP F20" />
@@ -3662,6 +3680,7 @@
 		<Flag Name="EXTRAMEET_WANTSUMJUNK" />
 		<Flag Name="EXTRAMEET_XXTHRASHERCATXX" />
 		<Flag Name="EXTRAMEET_YOURMOMMY" />
+		<Flag Name="FADIL_DONATION_DAY" />
 		<Flag Name="FADIL_HEATPPROACHED" />
 		<Flag Name="FADIL_MONEY_GIVEN" />
 		<Flag Name="FADIL_SEXED" />
@@ -3723,6 +3742,8 @@
 		<Flag Name="FEIAN_AT_LOCATION" />
 		<Flag Name="FEIAN_LOCATION" />
 		<Flag Name="FEIAN_SEX" />
+		<Flag Name="FEM_RASKVEL_GOPRESS" />
+		<Flag Name="FEM_RASKVEL_MATING_PRESS" />
 		<Flag Name="FERTILITY_PRIESTESSES_FOUGHT" />
 		<Flag Name="FERTILITY_PRIESTESSES_FUCKED" />
 		<Flag Name="FERUZE_BIG_DICK_TITFUCKED" />
@@ -3818,6 +3839,7 @@
 		<Flag Name="FOUGHT_FEMZIL_LAST_TIME" />
 		<Flag Name="FOUGHT_PRAETORIANS" />
 		<Flag Name="FOUGHT_TAM" />
+		<Flag Name="FOUND_LUCINITE" />
 		<Flag Name="FOUND_MANGO" />
 		<Flag Name="FOXFIRE_MAX_TAILS" />
 		<Flag Name="FREED_DANE_FROM_TAIVRA" />
@@ -3830,6 +3852,7 @@
 		<Flag Name="FROSTWYRM_BELLY_RUB" />
 		<Flag Name="FROSTWYRM_DICKED_YOU" />
 		<Flag Name="FROSTWYRM_DISABLED" />
+		<Flag Name="FROSTWYRM_EATEN_OUT" />
 		<Flag Name="FROSTWYRM_EGGS" />
 		<Flag Name="FROSTWYRM_GAVE_BATH" />
 		<Flag Name="FROSTWYRM_GOT_BLOWN" />
@@ -3851,6 +3874,7 @@
 		<Flag Name="FUCKED SERA" />
 		<Flag Name="FUCKED_ADULT_COCKVINE" />
 		<Flag Name="FUCKED_ALEX" />
+		<Flag Name="FUCKED_ALEX_VAGINALLY" />
 		<Flag Name="FUCKED_ANARRIE" />
 		<Flag Name="FUCKED_BY_BIGT" />
 		<Flag Name="FUCKED_BY_HALEY" />
@@ -3880,6 +3904,7 @@
 		<Flag Name="FUCKED_TAIVRA" />
 		<Flag Name="FUCKED_TAIVRAS_BETA" />
 		<Flag Name="FUCKED_TEXAN_CUSTOMS" />
+		<Flag Name="FUCKED_TEYAALS_DAUGHTER" />
 		<Flag Name="FUCKED_TRENCHWIVES" />
 		<Flag Name="FUCKED_VAHNS_ASS" />
 		<Flag Name="FUCK_LILLIES_USED" />
@@ -4233,6 +4258,26 @@
 		<Flag Name="KIMBER_UTHRA_GIVEN" />
 		<Flag Name="KIMBER_WORM_BEING_FOUGHT" />
 		<Flag Name="KING_NYREA" />
+		<Flag Name="KIONA_ACCEPT_CREDITS" />
+		<Flag Name="KIONA_APPEARANCE" />
+		<Flag Name="KIONA_CLOSED_DAY" />
+		<Flag Name="KIONA_CREDIT_AMOUNT" />
+		<Flag Name="KIONA_CREDIT_ONHAND" />
+		<Flag Name="KIONA_JEWELED_OUTFIT" />
+		<Flag Name="KIONA_KIRKITE" />
+		<Flag Name="KIONA_LUCINITE" />
+		<Flag Name="KIONA_LUCINITE_QUEST" />
+		<Flag Name="KIONA_MET" />
+		<Flag Name="KIONA_MET_WARGII" />
+		<Flag Name="KIONA_PICARDINE" />
+		<Flag Name="KIONA_SATYRITE" />
+		<Flag Name="KIONA_SAVICITE" />
+		<Flag Name="KIONA_SEX" />
+		<Flag Name="KIONA_TALK" />
+		<Flag Name="KIONA_TALK_HUNTING" />
+		<Flag Name="KIONA_TALK_KIONA" />
+		<Flag Name="KIONA_TALK_SHOP" />
+		<Flag Name="KIONA_TALK_YOU" />
 		<Flag Name="KIRILA_RUSH_STORY" />
 		<Flag Name="KIRO_3SOME_REACTION" Description="-1 == You don't want a threesome with Kally&#xD;&#xA;0 == You gave a neutral response to Kiro's threesome question&#xD;&#xA;1 == You want a threesome with Kiro and Kally" />
 		<Flag Name="KIRO_BALLJOBBED_YOU" Description="1 == Kiro has used her balls on your cocks" />
@@ -4385,6 +4430,7 @@
 		<Flag Name="LANE_SHOWN_SERVICES" />
 		<Flag Name="LANE_TIMES_HYPNOTISED" />
 		<Flag Name="LAPITRAIN" />
+		<Flag Name="LAPLOVE" />
 		<Flag Name="LAQUINE_EAR_USES" />
 		<Flag Name="LAQUINE_GENT_BONED" />
 		<Flag Name="LAQUINE_LASS_BUNSCORED" />
@@ -4411,6 +4457,7 @@
 		<Flag Name="LDC_SH_PC_BIRTH_SCENE_HERMS" />
 		<Flag Name="LDC_TOTAL_KIDS" />
 		<Flag Name="LEARNED_IAYAS_FATE" />
+		<Flag Name="LEFT_ALEX_REASON" />
 		<Flag Name="LEITHAN_STOCKED" />
 		<Flag Name="LERRIS_BOVINIUMED" />
 		<Flag Name="LERRIS_ITEMS_GIVEN" />
@@ -4978,10 +5025,17 @@
 		<Flag Name="NURSERY_ZIL_CALLGIRL_EVENT_DAY" />
 		<Flag Name="NYKKE_BORN" />
 		<Flag Name="NYKKE_FUCK_HER_ASS" />
+		<Flag Name="NYKKE_FUCK_HER_ASS2" />
 		<Flag Name="NYKKE_FUCK_HER_CUNT" />
+		<Flag Name="NYKKE_FUCK_HER_CUNT2" />
 		<Flag Name="NYKKE_FUCK_YOUR_ASS" />
+		<Flag Name="NYKKE_FUCK_YOUR_ASS2" />
 		<Flag Name="NYKKE_FUCK_YOUR_CUNT" />
+		<Flag Name="NYKKE_FUCK_YOUR_CUNT2" />
 		<Flag Name="NYKKE_MET" />
+		<Flag Name="NYKKE_MET2" />
+		<Flag Name="NYKKE_SEX2" />
+		<Flag Name="NYKKE_VERSION" />
 		<Flag Name="NYM-FOE" />
 		<Flag Name="NYM-FOE_ACTIVATED" />
 		<Flag Name="NYM-FOE_CHIP_RETURN" />
@@ -4999,9 +5053,14 @@
 		<Flag Name="NYREAN_SPOILS" />
 		<Flag Name="OFFERED_TAIVRA_AN_ALLIANCE" />
 		<Flag Name="OGRIM_UNLOCKED_FROM_AMMA_TALK_MENU" />
+		<Flag Name="OLYMPIA_HISTORY" />
+		<Flag Name="OLYMPIA_KILLED" />
+		<Flag Name="OLYMPIA_ONBOARD" />
+		<Flag Name="OLYMPIA_RECRUITED" />
 		<Flag Name="OLYMPIA_SEXBOT_TALK" />
 		<Flag Name="OLYMPIA_SEXED" />
 		<Flag Name="OLYMPIA_SODOMIZED_TEYAAL" />
+		<Flag Name="OLYMPIA_UNIFORMED" />
 		<Flag Name="OMEGA_FEVERED" />
 		<Flag Name="OMEGA_OILED" />
 		<Flag Name="OMEGE_FLUSHED" />
@@ -5400,6 +5459,7 @@
 		<Flag Name="REAHA_TALK_TREATMENT_CHOICE" />
 		<Flag Name="REAHA_WHORING_UNLOCKED" />
 		<Flag Name="RECRUITED_CELISE" />
+		<Flag Name="RECRUITED_OLYMPIA" />
 		<Flag Name="REDUCTPRO_USED_ON_ASSHOLE" />
 		<Flag Name="REDUCTPRO_USED_ON_HORNS" />
 		<Flag Name="REDUCTPRO_USED_ON_VAGINA" />
@@ -5871,6 +5931,7 @@
 		<Flag Name="SHUKUCHI_UVETO7_ENCOUNTER" />
 		<Flag Name="SHUTTER_STATUS" />
 		<Flag Name="SIDEWINDER_CARGOHOLD" />
+		<Flag Name="SIDEWINDER_TAKEN" />
 		<Flag Name="SIERVA_LATEGOODBYE_RESPONSE" />
 		<Flag Name="SIERVA_TALK" />
 		<Flag Name="SILENCE_RESCUED_CONNIE" />
@@ -5878,6 +5939,7 @@
 		<Flag Name="SIMONE_TEASED" />
 		<Flag Name="SISTER_MILK_ACT" Description="Milk multiplier" />
 		<Flag Name="SIXTYNINED_GIANNA" />
+		<Flag Name="SJW" />
 		<Flag Name="SLEEP_FAPNEA_ACTIVE" />
 		<Flag Name="SLEEP_FAPNEA_DREAMCATCHER" />
 		<Flag Name="SLEEP_FAPNEA_INSTALLED" />
@@ -5966,10 +6028,15 @@
 		<Flag Name="SYLVIE_TAURMOUNT" />
 		<Flag Name="SYLVIE_THROBB_GIFT" />
 		<Flag Name="SYNPHA_LASTVENOM" />
+		<Flag Name="SYNPHIA_BALLAUGS" />
+		<Flag Name="SYNPHIA_BALLSUCKS" />
 		<Flag Name="SYNPHIA_BEASTSEEN" />
 		<Flag Name="SYNPHIA_DICKGASMS" />
 		<Flag Name="SYNPHIA_DICKMEMORY" />
 		<Flag Name="SYNPHIA_HEADPOLISHES" />
+		<Flag Name="SYNPHIA_JOBTALK" />
+		<Flag Name="SYNPHIA_MODSTALK" />
+		<Flag Name="SYNPHIA_STEELETECHTALK" />
 		<Flag Name="SYNPHIA_SUCKS" />
 		<Flag Name="SYNPHIA_VENOMS" />
 		<Flag Name="SYNTHSAP_UNLOCKED" Description="1 == Allows to buy SynthSap from Kelly" />
@@ -6130,6 +6197,8 @@
 		<Flag Name="TESSA_WED_YOURBOOZE" />
 		<Flag Name="TEXAS_GRAVCUFFS_COWORGY" />
 		<Flag Name="TEYAAL_DEFEATED" />
+		<Flag Name="TEYAAL_DRIFTED" />
+		<Flag Name="TEYAAL_SHIPFITES" />
 		<Flag Name="THARE_MANOR_ENTERED" />
 		<Flag Name="THICK_GAB_USED" />
 		<Flag Name="THOLLUM_PASS_REQUESTED" />
@@ -6387,6 +6456,7 @@
 		<Flag Name="WARGII_FIGHTS_RAN" />
 		<Flag Name="WARGII_FIGHTS_WON" />
 		<Flag Name="WARGII_HEIDRUN_SAVED" />
+		<Flag Name="WARGII_KIONA_SAVED" />
 		<Flag Name="WARGII_LUND_SAVED" />
 		<Flag Name="WARGII_MAJA_SAVED" />
 		<Flag Name="WARGII_MILO_SOLUTION" />
@@ -6484,16 +6554,24 @@
 		<Flag Name="YARASTA_THOLLUM_TALKED" />
 		<Flag Name="YOGA_HARD" />
 		<Flag Name="YOGA_MEDIUM" />
+		<Flag Name="YOMA_AT_BAR" />
 		<Flag Name="YOMA_AVAIBLE_ENEMIES" />
+		<Flag Name="YOMA_BAR_DATE" />
+		<Flag Name="YOMA_DATE_ELEVATOR_SEX" />
+		<Flag Name="YOMA_DATE_PROGRESS" />
 		<Flag Name="YOMA_GAMES_PLAYED" />
 		<Flag Name="YOMA_MET" />
+		<Flag Name="YOMA_RELATIONSHIP" />
 		<Flag Name="YOMA_SEEN_NAKED" />
 		<Flag Name="YOMA_TALKED_ABOUT_HIMSELF" />
 		<Flag Name="YOMA_TALKED_ABOUT_MASTER" />
+		<Flag Name="YOMA_TIMES_ANALED" />
 		<Flag Name="YOMA_TIMES_EATEN_OUT" />
+		<Flag Name="YOMA_TIMES_FINGERED" />
 		<Flag Name="YOMA_TIMES_HUGGED" />
 		<Flag Name="YOMA_TIMES_ORALED" />
 		<Flag Name="YOMA_TIMES_TAILFUCKED" />
+		<Flag Name="YOMA_TIMES_TRIBBED" />
 		<Flag Name="YOMA_TIMES_VAGINAL" />
 		<Flag Name="ZAALT DISARMED" />
 		<Flag Name="ZAALT FLIRTED" />
@@ -6586,9 +6664,11 @@
 			<StatusEffect Name="Lane's Hypnosis - Willpower" Description="Lane's hypnosis session has improved your willpower!" Value1="5" IconName="Icon_DrugPill" MinutesLeft="1440" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="SSTDs">
+			<StatusEffect Name="Cooties" Description="You’ve been infected with Cooties! If left untreated, it is likely to cause the growth of a vagina or the expansion of vaginal lips... and an uptick in libido." Value4="2" IconName="Icon_Poison" IconShade="16738740" MinutesLeft="1430" />
 			<StatusEffect Name="Furpies Simplex C" Description="You’ve been infected with Furpies Simplex C! If left untreated, it will slowly transform you into a furry cat-person (probably). Consult your Codex for more information." Value4="3" IconName="Icon_Dog_Paw" IconShade="16738740" MinutesLeft="17280" />
 			<StatusEffect Name="Furpies Simplex D" Description="You’ve been infected with Furpies Simplex D! If left untreated, it will slowly transform you into a furry dog-person (probably). Consult your Codex for more information." Value4="3" IconName="Icon_Dog_Paw" IconShade="16738740" MinutesLeft="17280" />
 			<StatusEffect Name="Furpies Simplex H" Description="You’ve been infected with Furpies Simplex H! If left untreated, it will slowly transform you into a furry horse-person (probably). Consult your Codex for more information." Value4="3" IconName="Icon_Horse" IconShade="16738740" MinutesLeft="17280" />
+			<StatusEffect Name="Undetected Cooties" IsHidden="true" />
 			<StatusEffect Name="Undetected Furpies" IsHidden="true" />
 			<StatusEffect Name="Undetected Locofever" IsHidden="true" />
 			<StatusEffect Name="Locofever" Description="You’ve come down with a case of locofever, setting your mating instincts into overdrive. Your immune boosters should keep you from spreading it around any further.&#xD;&#xA;&#xD;&#xA;+{Value1} Libido" Label1="Libido modifier" Comment="See Value1" IconShade="16738740" MinutesLeft="17280" />
@@ -6723,6 +6803,7 @@
 			<StatusEffect Name="LDC ShockHopper Pregnancy Ends 1" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="LDC ShockHopper Pregnancy Ends 2" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Milodan Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
+			<StatusEffect Name="MirrinPregStage" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs" Comment="Needs the following to work:&#xD;&#xA;Cum Type is Nyrea Cum&#xD;&#xA;Atleast one cock has Ovipositor flag&#xD;&#xA;Fertility &gt; 0" Label1="For amount of eggs?&#xD;&#xA;Recharge over time?" Label2="Multiplier?" Label4="1 == Permanent, ignores racial score" Value4="1" IsHidden="true" />
 			<StatusEffect Name="Nyrea Eggs Messages Available" IsHidden="true" />
 			<StatusEffect Name="Ovilium Effect" IsHidden="true" />
@@ -6774,6 +6855,7 @@
 			<StatusEffect Name="Blind Immune" IsHidden="true" />
 			<StatusEffect Name="Disarm Immune" IsHidden="true" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
+			<StatusEffect Name="Stagger Immune" IsHidden="true" />
 			<StatusEffect Name="Stun Immune" IsHidden="true" />
 			<StatusEffect Name="Unarmored" IsHidden="true" />
 		</StatusEffectGroup>
@@ -6789,11 +6871,13 @@
 			<StatusEffect Name="Azra CD" IsHidden="true" />
 			<StatusEffect Name="Azra Plant CD" IsHidden="true" />
 			<StatusEffect Name="Azra Sex CD" IsHidden="true" />
+			<StatusEffect Name="Badger Silicone Carry Timer" IsHidden="true" />
 			<StatusEffect Name="Betsy and Victoria CD" IsHidden="true" />
 			<StatusEffect Name="BioMed Gangbang Cooldown" IsHidden="true" />
 			<StatusEffect Name="Butt Bug Message Cooldown" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Cum High Cooldown" IsHidden="true" />
+			<StatusEffect Name="Doll Maker Repair Timer" IsHidden="true" Minutes="1440" />
 			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Exhibitionist Blurb Cooldown" IsHidden="true" />
 			<StatusEffect Name="Fisi Breeding Cooldown" IsHidden="true" MinutesLeft="720" />
@@ -6884,9 +6968,12 @@
 			<StatusEffect Name="Hair Flower" Label1="Num Flowers" Value="1" IsHidden="true" Comment="Description = flower color" />
 			<StatusEffect Name="Horn Bumps" IsHidden="true" />
 			<StatusEffect Name="Horn Style" Label1="Style" Label2="Material" IsHidden="true" Comment="Description/Tooltip is color" />
+			<StatusEffect Name="Hyena Fur" IsHidden="true" />
+			<StatusEffect Name="Icy Veins" IsHidden="true" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
 			<StatusEffect Name="Rubber Wrapped" IsHidden="true" />
 			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
+			<StatusEffect Name="Silicone Preference" IsHidden="true" />
 			<StatusEffect Name="Special Scrotum" Comment="Special scrotum description flag, see Value1" Label1="20 == FLAG_FURRED&#xD;&#xA;21 == FLAG_SCALED&#xD;&#xA;34 == FLAG_CHITINOUS&#xD;&#xA;35 == FLAG_FEATHERED&#xD;&#xA;37 == FLAG_GOOEY" Value1="20" IsHidden="true" />
 			<StatusEffect Name="Uniball" IsHidden="true" />
 			<StatusEffect Name="Vanae Markings" Comment="Vanae skin markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;Value4 = on balls too" Value4="1" Label4="1 = Ball Markings" IsHidden="true" />
@@ -6900,6 +6987,7 @@
 			<StatusEffect Name="Dark Chrysalis Closed" IsHidden="true" />
 			<StatusEffect Name="Denied By Luca" IsHidden="true" />
 			<StatusEffect Name="DisabledRoz" IsHidden="true" />
+			<StatusEffect Name="Extorted" IsHidden="true" />
 			<StatusEffect Name="FoxyDisable" IsHidden="true" />
 			<StatusEffect Name="IQBGoneTimer" IsHidden="true" />
 			<StatusEffect Name="Kiro Panties Event Queue" IsHidden="true" />
@@ -6908,6 +6996,8 @@
 			<StatusEffect Name="RaskvelDisable" IsHidden="true" />
 			<StatusEffect Name="Roo_Turned_Down" IsHidden="true" />
 			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
+			<StatusEffect Name="Ship Repair Paused" IsHidden="true" />
+			<StatusEffect Name="Synphia_Tired" IsHidden="true" />
 			<StatusEffect Name="Syri Pennybating" IsHidden="true" />
 			<StatusEffect Name="TaurDisable" IsHidden="true" />
 			<StatusEffect Name="ThiccGobDisable" IsHidden="true" />
@@ -6978,6 +7068,7 @@
 			<StatusEffect Name="Shrike!" Description="Fazian's Shrike performance has inspired you!&#xA;Experience gains increased by 20%." IconName="Icon_Haste" IconShade="0" />
 			<StatusEffect Name="Siegwulfe's Leash" IsHidden="true" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
+			<StatusEffect Name="SLYVEREN_HAZ_UR_LOOT" IsHidden="true" />
 			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
 			<StatusEffect Name="Sore Counter" IsHidden="true" />
 			<StatusEffect Name="STELLA_PREGNANT" IsHidden="true" />
