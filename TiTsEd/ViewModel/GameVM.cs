@@ -29,7 +29,8 @@ namespace TiTsEd.ViewModel {
             setCharacter("PC");
             SaveFile = new AmfObjectVM(file);
 
-            Ships = new ShipArrayVM(this, GetObj("shittyShips") ?? ShipArrayVM.CreateNewShipObject());
+            var shittyShips = GetObj("shittyShips") ?? new AmfObject(AmfTypes.Array);
+            Ships = new ShipArrayVM(this, shittyShips);
 
             var flagsObject = FlagsObject;
             _flags = new GeneralObjectVM(flagsObject);
