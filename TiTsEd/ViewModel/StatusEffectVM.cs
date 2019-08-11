@@ -7,12 +7,12 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class StatusGroupVM : BindableBase {
-        private readonly CharacterVM Character;
+        private readonly CreatureVM Creature;
 
-        public StatusGroupVM(CharacterVM character, string name, StatusEffectVM[] statusEffects) {
-            Character = character;
+        public StatusGroupVM(CreatureVM creature, string name, StatusEffectVM[] statusEffects) {
+            Creature = creature;
             Name = name;
-            StatusEffects = new UpdatableCollection<StatusEffectVM>(statusEffects.Where(x => x.Match(Character.Game.SearchText)));
+            StatusEffects = new UpdatableCollection<StatusEffectVM>(statusEffects.Where(x => x.Match(Creature.Game.SearchText)));
         }
 
         public new string Name {
@@ -36,8 +36,9 @@ namespace TiTsEd.ViewModel {
     }
 
     public sealed class StatusEffectVM : StorageClassVM {
-        public StatusEffectVM(CharacterVM character, AmfObject statuses, XmlStorageClass xml)
-            : base(character, statuses, xml) {
+        public StatusEffectVM(CreatureVM creature, AmfObject statuses, XmlStorageClass xml)
+            : base(creature, statuses, xml)
+        {
         }
 
         public override Visibility MinutesLeftVisibility {
@@ -61,7 +62,7 @@ namespace TiTsEd.ViewModel {
         }
 
         public override AmfObject GetItems() {
-            return Character.StatusEffectsArray;
+            return Creature.StatusEffectsArray;
         }
 
         public override AmfObject GetObject() {
@@ -74,11 +75,11 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            Character.OnStatusChanged(Name);
+            Creature.OnStatusChanged(Name);
         }
 
         protected override void OnIsOwnedChanged() {
-            Character.OnStatusAddedOrRemoved(Name, IsOwned);
+            Creature.OnStatusAddedOrRemoved(Name, IsOwned);
         }
     }
 }

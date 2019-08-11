@@ -7,12 +7,12 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class PerkGroupVM : BindableBase {
-        private readonly CharacterVM Character;
+        private readonly CreatureVM Creature;
 
-        public PerkGroupVM(CharacterVM character, string name, PerkVM[] perks) {
-            Character = character;
+        public PerkGroupVM(CreatureVM creature, string name, PerkVM[] perks) {
+            Creature = creature;
             Name = name;
-            Perks = new UpdatableCollection<PerkVM>(perks.Where(x => x.Match(Character.Game.SearchText)));
+            Perks = new UpdatableCollection<PerkVM>(perks.Where(x => x.Match(Creature.Game.SearchText)));
         }
 
         public new string Name {
@@ -36,12 +36,13 @@ namespace TiTsEd.ViewModel {
     }
 
     public sealed class PerkVM : StorageClassVM {
-        public PerkVM(CharacterVM character, AmfObject perksArray, XmlStorageClass xml)
-            : base(character, perksArray, xml) {
+        public PerkVM(CreatureVM creature, AmfObject perksArray, XmlStorageClass xml)
+            : base(creature, perksArray, xml)
+        {
         }
 
         public override AmfObject GetItems() {
-            return Character.PerksArray;
+            return Creature.PerksArray;
         }
 
         public override AmfObject GetObject() {
@@ -49,11 +50,11 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void NotifyGameVM() {
-            Character.OnPerkChanged(Name);
+            Creature.OnPerkChanged(Name);
         }
 
         protected override void OnIsOwnedChanged() {
-            Character.OnPerkAddedOrRemoved(Name, IsOwned);
+            Creature.OnPerkAddedOrRemoved(Name, IsOwned);
         }
     }
 }

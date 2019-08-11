@@ -5,12 +5,13 @@ using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel {
     public sealed class KeyItemGroupVM : BindableBase {
-        private readonly CharacterVM Character;
+        private readonly CreatureVM Creature;
 
-        public KeyItemGroupVM(CharacterVM character, string name, KeyItemVM[] keyItems) {
-            Character = character;
+        public KeyItemGroupVM(CreatureVM creature, string name, KeyItemVM[] keyItems)
+        {
+            Creature = creature;
             Name = name;
-            KeyItems = new UpdatableCollection<KeyItemVM>(keyItems.Where(x => x.Match(Character.Game.SearchText)));
+            KeyItems = new UpdatableCollection<KeyItemVM>(keyItems.Where(x => x.Match(Creature.Game.SearchText)));
         }
 
         public new string Name {
@@ -34,16 +35,18 @@ namespace TiTsEd.ViewModel {
     }
 
     public sealed class KeyItemVM : StorageClassVM {
-        public KeyItemVM(CharacterVM character, AmfObject keyItems, XmlStorageClass xml)
-            : base(character, keyItems, xml) {
+
+        public KeyItemVM(CreatureVM creature, AmfObject keyItems, XmlStorageClass xml)
+            : base(creature, keyItems, xml)
+        {
         }
 
         protected override void NotifyGameVM() {
-            Character.OnKeyItemChanged(Name);
+            Creature.OnKeyItemChanged(Name);
         }
 
         public override AmfObject GetItems() {
-            return Character.KeyItemsArray;
+            return Creature.KeyItemsArray;
         }
 
         public override AmfObject GetObject() {
@@ -89,7 +92,7 @@ namespace TiTsEd.ViewModel {
         }
 
         protected override void OnIsOwnedChanged() {
-            Character.OnKeyItemAddedOrRemoved(Name, IsOwned);
+            Creature.OnKeyItemAddedOrRemoved(Name, IsOwned);
         }
 
     }

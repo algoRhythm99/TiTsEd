@@ -40,16 +40,18 @@ namespace TiTsEd.ViewModel
         }
     }
 
-    public class ShipVM : CharacterVM
+    public class ShipVM : CreatureVM
     {
 
         public ShipVM(GameVM game, AmfObject obj)
             : base(game, obj)
         {
-            Game = game;
+            // Perks
+            var xmlPerks = XmlData.Current.PerkGroups.SelectMany(x => x.Perks).ToArray();
+            var unknownPerkGroup = XmlData.Current.PerkGroups.Last();
+            GameVM.ImportUnknownStorageClassEntries(PerksArray, xmlPerks, unknownPerkGroup.Perks);
+            UpdatePerks();
         }
-
-        //public new GameVM Game { get; set; }
 
         public new string Name
         {
@@ -58,15 +60,6 @@ namespace TiTsEd.ViewModel
             {
                 SetValue("short", value);
                 OnPropertyChanged("Description");
-            }
-        }
-
-        public new int HPMod
-        {
-            get { return GetInt("HPMod"); }
-            set {
-                SetValue("HPMod", value);
-                OnPropertyChanged("HPMax");
             }
         }
 
