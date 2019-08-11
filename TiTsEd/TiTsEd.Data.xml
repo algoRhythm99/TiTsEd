@@ -1576,6 +1576,7 @@
 			<Item Stack="1" Name="Gem Links" ID="classes.Items.Armor::GemstoneLinks" />
 			<Item Stack="1" Name="Goo Armor" ID="classes.Items.Armor::GooArmor" />
 			<Item Stack="1" Name="Hide V&amp;B" ID="classes.Items.Armor::HideVestAndBreeches" />
+			<Item Stack="1" Name="Jwl.Outfit"      ID="classes.Items.Armor::JeweledOutfit" />
 			<Item Stack="1" Name="JJ-Suit"      ID="classes.Items.Armor::JumperJumpsuit" />
 			<Item Stack="1" Name="SJJ-Suit"     ID="classes.Items.Armor::JumperJumpsuitSlutty" />
 			<Item Stack="1" Name="JJ-SSuit" ID="classes.Items.Armor::JumperSpacesuit" />
@@ -2218,6 +2219,10 @@
 			<Item Stack="1"  Name="V.Bloom"     ID="classes.Items.Miscellaneous::VenusBloom" />
 			<Item Stack="10" Name="VenusPod"    ID="classes.Items.Miscellaneous::VenusPod" />
 			<Item Stack="5"  Name="W.Drone"     ID="classes.Items.Miscellaneous::WeatherDrone" />
+			<Item Stack="5"  Name="C.S.Band"     ID="classes.Items.Treasures::CrudeSaviciteBand" />
+			<Item Stack="5"  Name="C.S.Bracelet"     ID="classes.Items.Treasures::CrudeSaviciteBracelet" />
+			<Item Stack="5"  Name="C.S.Necklace"     ID="classes.Items.Treasures::CrudeSaviciteNecklace" />
+			<Item Stack="10" Name="Lucinite"     ID="classes.Items.Treasures::Lucinite" />
 			<Item Stack="1"  Name="(15s)Pack"   ID="classes.Items.Upgrades::ExpandedBackpackI"      LongName="large backpack" />
 			<Item Stack="1"  Name="(18s)Pack"   ID="classes.Items.Upgrades::ExpandedBackpackIPtV"   LongName="nyrean pack" />
 			<Item Stack="1"  Name="(20s)Pack"   ID="classes.Items.Upgrades::ExpandedBackpackII"     LongName="deluxe backpack" />
@@ -2235,13 +2240,38 @@
 			<Item Stack="10" Name="SleepFap." ID="classes.Items.Miscellaneous::SleepFapnea" />
 		</ItemGroup>
 		<ItemGroup Name="Piercings">
+			<Item Stack="1"     Name="CruSavBar"    ID="classes.Items.Piercings::CrudeSaviciteBarPiercing" LongName="Crude Savicite Bar" />
+			<Item Stack="1"     Name="CruSavBars"    ID="classes.Items.Piercings::CrudeSaviciteBarPiercings" LongName="Crude Savicite Bar Set" />
+			<Item Stack="1"     Name="CruSavHoop"    ID="classes.Items.Piercings::CrudeSaviciteHoopPiercing" LongName="Crude Savicite Hoop" />
+			<Item Stack="1"     Name="CruSavHoops"    ID="classes.Items.Piercings::CrudeSaviciteHoopPiercings" LongName="Crude Savicite Hoop Set" />
+			<Item Stack="1"     Name="CruSavRing"    ID="classes.Items.Piercings::CrudeSaviciteRingPiercing" LongName="Crude Savicite Ring" />
+			<Item Stack="1"     Name="CruSavRings"    ID="classes.Items.Piercings::CrudeSaviciteRingPiercings" LongName="Crude Savicite Ring Set" />
+			<Item Stack="1"     Name="CruSavStud"    ID="classes.Items.Piercings::CrudeSaviciteStudPiercing" LongName="Crude Savicite Stud" />
+			<Item Stack="1"     Name="CruSavStuds"    ID="classes.Items.Piercings::CrudeSaviciteStudPiercings" LongName="Crude Savicite Stud Set" />
 			<Item Stack="1"     Name="Ged. Ring"    ID="classes.Items.Piercings::GeddaniumRingPiercing" />
 			<Item Stack="1"     Name="G.Ring"       ID="classes.Items.Piercings::GoldRingPiercing" />
 			<Item Stack="1"     Name="G.Rings"      ID="classes.Items.Piercings::GoldRingPiercings" />
 			<Item Stack="1"     Name="G.Stud"       ID="classes.Items.Piercings::GoldStudPiercing" />
 			<Item Stack="1"     Name="G.Studs"      ID="classes.Items.Piercings::GoldStudPiercings" />
+			<Item Stack="1"     Name="LucBar"     ID="classes.Items.Piercings::LuciniteBarPiercing" LongName="Lucinite Bar" />
+			<Item Stack="1"     Name="LucBars"     ID="classes.Items.Piercings::LuciniteBarPiercings" LongName="Lucinite Bar Set" />
+			<Item Stack="1"     Name="LucHoop"     ID="classes.Items.Piercings::LuciniteHoopPiercing" LongName="Lucinite Hoop" />
+			<Item Stack="1"     Name="LucHoops"     ID="classes.Items.Piercings::LuciniteHoopPiercings" LongName="Lucinite Hoop Set" />
+			<Item Stack="1"     Name="LucRing"     ID="classes.Items.Piercings::LuciniteRingPiercing" LongName="Lucinite Ring" />
+			<Item Stack="1"     Name="LucRings"     ID="classes.Items.Piercings::LuciniteRingPiercings" LongName="Lucinite Ring Set" />
+			<Item Stack="1"     Name="LucStud"     ID="classes.Items.Piercings::LuciniteStudPiercing" LongName="Lucinite Stud" />
+			<Item Stack="1"     Name="LucStuds"     ID="classes.Items.Piercings::LuciniteStudPiercings" LongName="Lucinite Stud Set" />
 			<Item Stack="1"     Name="L.Rings"      ID="classes.Items.Piercings::LundsRings" />
 			<Item Stack="1"     Name="Opal Ring"    ID="classes.Items.Piercings::OpalRingPiercing" />
+			<Item Stack="1"     Name="SavBar"    ID="classes.Items.Piercings::SaviciteBarPiercing" LongName="Savicite Bar" />
+			<Item Stack="1"     Name="SavBars"    ID="classes.Items.Piercings::SaviciteBarPiercings" LongName="Savicite Bar Set" />
+			<Item Stack="1"     Name="S.C.Ring"    ID="classes.Items.Piercings::SaviciteCockring" LongName="Savicite Cockring" />
+			<Item Stack="1"     Name="SavHoop"    ID="classes.Items.Piercings::SaviciteHoopPiercing" LongName="Savicite Hoop" />
+			<Item Stack="1"     Name="SavHoops"    ID="classes.Items.Piercings::SaviciteHoopPiercings" LongName="Savicite Hoop Set" />
+			<Item Stack="1"     Name="SavRing"    ID="classes.Items.Piercings::SaviciteRingPiercing" LongName="Savicite Ring" />
+			<Item Stack="1"     Name="SavRings"    ID="classes.Items.Piercings::SaviciteRingPiercings" LongName="Savicite Ring Set" />
+			<Item Stack="1"     Name="SavStud"    ID="classes.Items.Piercings::SaviciteStudPiercing" LongName="Savicite Stud" />
+			<Item Stack="1"     Name="SavStuds"    ID="classes.Items.Piercings::SaviciteStudPiercings" LongName="Savicite Stud Set" />
 			<Item Stack="1"     Name="S.CockBell"   ID="classes.Items.Piercings::SilkyCockBell" />
 			<Item Stack="1"     Name="S.Ring"       ID="classes.Items.Piercings::SilverRingPiercing" />
 			<Item Stack="1"     Name="S.Rings"      ID="classes.Items.Piercings::SilverRingPiercings" />
@@ -2482,7 +2512,7 @@
 		</PerkGroup>
 		<PerkGroup Name="Level 3 Tech Specialist">
 			<Perk Name="Enhanced Dampeners" Description="Grants a 50% vulnerability reduction to damage absorbed by your shield generator." />
-			<Perk Name="Overcharge" Description="Grants the ability to perform a single ranged attack for 150% normal damage. If the target's shields have been depleted, the shot may stun the target. Requires an energy weapon." />
+			<Perk Name="Overcharge" Description="Grants the ability to perform a single ranged attack for 200% normal damage. Higher intelligence will increase the chances to stun the target with the shot. Requires an energy weapon." />
 			<Perk Name="Charge Weapon" Description="Grants the ability to charge your melee weapon with electricity for even deadlier strikes!" />
 			<Perk Name="Volley" Description="Grants the ability to perform an extra ranged attack with reduced accuracy, but a chance of causing blindness regardless. Requires an energy weapon." Comment="**Deprecated**" />
 		</PerkGroup>
@@ -2535,7 +2565,6 @@
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
 			<Perk Name="Face Fucker" Description="Increases minimum lust and cum output, thanks to that strange VR adventure..." Value1="5" />
 			<Perk Name="Implant-tastic" Description="Your body will convert most of the mass in your breasts, butt cheeks, hips and lips into silicone." />
-			<Perk Name="Innocent Allure" />
 			<Perk Name="Limber" Description="Grants an addition 20% chance to escape from grapples!" />
 			<Perk Name="Mimbrane Symbiosis" Description="Attached Mimbranes will no longer drain your willpower when feeding." />
 			<Perk Name="Nyrean Royal" Description="Reduces hostile nyrea attacks and deal increased tease damage to them!" />
@@ -2558,6 +2587,8 @@
 			<Perk Name="Dumb4Cum" Description="Grants extra intelligence after acquiring cum, but reduces it otherwise." />
 			<Perk Name="Fuck Sense" Description="Allows your sense ability to base success off your libido instead of intelligence." Value1="15" />
 			<Perk Name="Inhuman Desire" Description="Increases maximum lust by {Value1}." Label1="Maximum Lust Mod" Value1="20" Comment="You can set the perk Value1 to set your max lust" />
+			<Perk Name="Innocent Allure" Description="Boosts your sexiness. After a successful tease, enemies may become slightly distracted and staggered for a few rounds." Value1="5" Value2="10" />
+			<Perk Name="Lusty Afterglow" Description="Every time fluids are shot inside of you, you recover some energy, and you gain lust over time twice as fast while cumfilled." />
 			<Perk Name="Milk Fountain" Description="Allows you to squirt milk with the greatest of ease." />
 			<Perk Name="Panic Ejaculation" Description="Allows you to squirt out a little cum while grappled, easing your escape!" />
 			<Perk Name="Pheromone Cloud" Description="Boosts tease attack and arousal." />
@@ -6719,6 +6750,12 @@
 			<StatusEffect Name="Taken Estrobloom" IsHidden="true" />
 			<StatusEffect Name="T.Pack" Description="You are protected from Uveto's harsh cold... for now!" IconName="Icon_Smelly" MinutesLeft="1440" />
 			<StatusEffect Name="The Mango" Description="You are irresistible!" IconName="Charmed" MinutesLeft="1440" IconShade="12030916" />
+			<StatusEffect Name="Twink-ease Doses" IsHidden="true" />
+		</StatusEffectGroup>
+		<StatusEffectGroup Name="Treatment">
+			<StatusEffect Name="Cum-Cow" IsHidden="true" />
+			<StatusEffect Name="Horn Bumps" IsHidden="true" />
+			<StatusEffect Name="Milkazon" IconName="Icon_Cow" IconShade="12030916" MinutesLeft="10080" />
 			<StatusEffect Name="The Treatment" Description="You are currently under the effects of the Treatment. Who knows what havoc it will wreak upon your system." Comment="v1 - Gender settings.&#xD;&#xA;
 					0 - girl mode&#xD;&#xA;
 					1 - dude mode&#xD;&#xA;
@@ -6751,7 +6788,6 @@
 			<StatusEffect Name="Treatment Elasticity Report Needed" IsHidden="true" />
 			<StatusEffect Name="Treatment Exhibitionism Gain 4 DickGirls" IsHidden="true" />
 			<StatusEffect Name="Treatment Height Boosted" IsHidden="true" />
-			<StatusEffect Name="Twink-ease Doses" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Mimbranes">
 			<StatusEffect Name="Mimbrane Ass"           IsHidden="true" Label1="Trust"  Label2="Last Fed"   Label3="Feed Level" Label4="Reproductive Cycle Counter" Value1="2" />
