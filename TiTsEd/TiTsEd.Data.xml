@@ -1369,6 +1369,7 @@
 			<PregnancyType>VenusPitcherSeedCarrier</PregnancyType>
 			<PregnancyType>ZaaltPregnancy</PregnancyType>
 			<PregnancyType>ZephyrPregnancy</PregnancyType>
+			<PregnancyType>ZilBullPregnancy</PregnancyType>
 			<PregnancyType>ZilPregnancy</PregnancyType>
 		</PregnancyTypes>
 		<!-- ================================================================ -->
@@ -1730,6 +1731,7 @@
 		<ItemGroup Name="Combat">
 			<Item Stack="2"  Name="AphroD."  ID="classes.Items.Combat::AphroDaisy" />
 			<Item Stack="5"  Name="Crystal S."  ID="classes.Items.Combat::CrystalShard" />
+			<Item Stack="3"  Name="FldSrgKit"   ID="classes.Items.Recovery::FSrgKit" LongName="Field Surgeon's Kit" />
 			<Item Stack="2"  Name='"Rutting"'   ID="classes.Items.Combat::RuttingPerfume" />
 			<Item Stack="10" Name="EMP Gren."   ID="classes.Items.Miscellaneous::EMPGrenade" />
 			<Item Stack="10" Name="Flashbang"   ID="classes.Items.Miscellaneous::FlashGrenade" />
@@ -1772,6 +1774,7 @@
 			<Item Stack="10" Name="Roast Z.B" ID="classes.Items.Miscellaneous::RoastedZhorBeast" />
 			<Item Stack="12" Name="SmallEgg" ID="classes.Items.Miscellaneous::SmallEgg" />
 			<Item Stack="10" Name="ZilHoney" ID="classes.Items.Miscellaneous::ZilHoney" />
+			<Item Stack="2"  Name="DctrBag" ID="classes.Items.Recovery::DoctorsBag" LongName="Doctor's Bag" />
 			<Item Stack="10" Name="P.Saliva" ID="classes.Items.Recovery::PexigaSaliva" />
 			<Item Stack="1"  Name="H.Wine" ID="classes.Items.Drinks::HoneyWine" />
 			<Item Stack="10" Name="R.Venom" ID="classes.Items.Drinks::RedMyrVenom" />
@@ -1920,6 +1923,7 @@
 			<Item Stack="10" Name="S.Clear" ID="classes.Items.Transformatives::SkinClear" />
 			<Item Stack="10" Name="Slutshroom" ID="classes.Items.Transformatives::SlutShroom" />
 			<Item Stack="10" Name="SnakeByte"   ID="classes.Items.Transformatives::SnakeByte" />
+			<Item Stack="25" Name="Soak"        ID="classes.Items.Transformatives::Soak" />
 			<Item Stack="9"  Name="Spunkshrm"  ID="classes.Items.Transformatives::SpunkShroom" />
 			<Item Stack="10" Name="Shortcake" ID="classes.Items.Transformatives::StrawberryShortcake" />
 			<Item Stack="12" Name="Suma" ID="classes.Items.Transformatives::SumaCream" />
@@ -1962,10 +1966,19 @@
 			<Item Stack="1"     Name="Story: Cow S."    ID="classes.Items.Stories::CowStuff"        LongName="code for “Cow Stuff”" />
 			<Item Stack="1"     Name="Story:||||||||"   ID="classes.Items.Stories::EightClicks"     LongName="code for “||||||||”" />
 			<Item Stack="1"     Name="Story:F.Sys"      ID="classes.Items.Stories::FuckTheSystem"   LongName="code for “Fuck The System”" />
+			<Item Stack="1"     Name="Story:Jackals"    ID="classes.Items.Stories::GoJackals"   LongName="code for “Go Jackals!”" />
+			<Item Stack="1"     Name="Story: HHGB"      ID="classes.Items.Stories::HellhoundGangbang"   LongName="code for “Hellhound Gangbang”" />
+			<Item Stack="1"     Name="Story:L.Club"     ID="classes.Items.Stories::LeatherClub"   LongName="code for “Leather Club”" />
+			<Item Stack="1"     Name="Story: M3Some"    ID="classes.Items.Stories::MonsterThreesome"   LongName="code for “Monster Threesome!”" />
+			<Item Stack="1"     Name="Story: MFS"       ID="classes.Items.Stories::MyFirstStory"   LongName="code for “My First Story”" />
+			<Item Stack="1"     Name="Story: MRE"       ID="classes.Items.Stories::MyRomanticEncounter"   LongName="code for “My Romantic Encounter”" />
 			<Item Stack="1"     Name="Story:Satyr"      ID="classes.Items.Stories::SatyrSlave"      LongName="code for “Satyr Slave”" />
 			<Item Stack="1"     Name="Story:Goods"      ID="classes.Items.Stories::StolenGoods"     LongName="code for “Stolen Goods”" />
-			<Item Stack="1"     Name="Story:Ts&amp;Ts"      ID="classes.Items.Stories::TentaclesAndTanukis"     LongName="code for “Tentacles &amp; Tanukis”" />
+			<Item Stack="1"     Name="Story: SiL"       ID="classes.Items.Stories::SuccubusInLove"     LongName="code for “Succubus in Love”" />
+			<Item Stack="1"     Name="Story:Ts&amp;Ts"  ID="classes.Items.Stories::TentaclesAndTanukis"     LongName="code for “Tentacles &amp; Tanukis”" />
 			<Item Stack="1"     Name="Story: ToT"       ID="classes.Items.Stories::TowerOfTrials"   LongName="code for “Tower of Trials”" />
+			<Item Stack="1"     Name="Story:WBreed"     ID="classes.Items.Stories::WolfBreeding"     LongName="code for “Wolf Breeding”" />
+			<Item Stack="1"     Name="Story: WtAQ"      ID="classes.Items.Stories::WorshippingTheAnubisQueen"     LongName="code for “Worshipping The Anubis Queen”" />
 		</ItemGroup>
 		<ItemGroup Name="Toys">
 			<Item Stack="1" Name="B.Buddy"  ID="classes.Items.Toys::BubbleBuddy" />
@@ -2647,6 +2660,7 @@
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="Cum Quantity" Value1="500000" />
 			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
 			<Perk Name="Fixed MilkQ" Comment="Ensures you always lactate exactly {Value1} mLs. See Value1" Label1="Lactation Quantity" Value1="500000" />
+			<Perk Name="Low Blow" />
 			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn. See Value1" Label1="Attacks per turn" Value1="5" />
 			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn. See Value1" Label1="Shots per turn" Value1="5" />
 			<Perk Name="No Cum Leakage" />
@@ -2669,6 +2683,7 @@
 	</Perks>
 	<!-- ================================================================ -->
 	<Flags>
+		<Flag Name="9999tailfukk" />
 		<Flag Name="ABANDONED_CHAURMINE" />
 		<Flag Name="ABLE_BATHS" />
 		<Flag Name="ABLE_BOTHWAYS" />
@@ -2767,6 +2782,7 @@
 		<Flag Name="ANNO_CREWMEMBER" Description="0/Undefined == Not Recruited&#xD;&#xA;1 == Is Crewmember&#xD;&#xA;2 == Recruited but kicked off the ship" />
 		<Flag Name="ANNO_CREWMEMBER_INITIALSCENE" Description="1 == You've seen Anno's recruitment scene" />
 		<Flag Name="ANNO_EVER_STRAPONED" Description="1 == Anno has used a strapon on the PC" />
+		<Flag Name="ANNO_FACESIT" />
 		<Flag Name="ANNO_FUCKNSUCK" />
 		<Flag Name="ANNO_GIFT_WRAPPED" />
 		<Flag Name="ANNO_HUSKARRED" />
@@ -2840,6 +2856,7 @@
 		<Flag Name="ARBETZ_SEX_TWO_BOYS" />
 		<Flag Name="ARBETZ_SEX_UNLOCKED" />
 		<Flag Name="ARDIA_BUTTLOVED" />
+		<Flag Name="ARDIA_CUMSHOTS_SWALLOWED" />
 		<Flag Name="ARDIA_GOT_INFODUMP" />
 		<Flag Name="ARDIA_WHACKED_OFF_AGROSH" />
 		<Flag Name="ASENNIA_COCK_OFFERED" />
@@ -2998,6 +3015,53 @@
 		<Flag Name="BETRAYED_KARA" />
 		<Flag Name="BET_AGAINST_SYRI" Description="1 == if PC has ever engaged in a bet with Syri" />
 		<Flag Name="BF_STORAGE" />
+		<Flag Name="BIANCA_ANNOYED" />
+		<Flag Name="BIANCA_APHROLICKSIAC" />
+		<Flag Name="BIANCA_BAR_APPROACH" />
+		<Flag Name="BIANCA_CONFRONTED" />
+		<Flag Name="BIANCA_EXPLAINED_AKANA" />
+		<Flag Name="BIANCA_FAMILIARITY" />
+		<Flag Name="BIANCA_FLUFFY_TAIL" />
+		<Flag Name="BIANCA_HERSELF_1OFF_FAMILY_MENTION" />
+		<Flag Name="BIANCA_IDLE_VISITS" />
+		<Flag Name="BIANCA_KNOWS_BIMBOISM" />
+		<Flag Name="BIANCA_KNOWS_PC_DICK" />
+		<Flag Name="BIANCA_LAST_DAY_MOVED" />
+		<Flag Name="BIANCA_LICKSQUIRTED" />
+		<Flag Name="BIANCA_LOCATION" />
+		<Flag Name="BIANCA_MET_ANNO" />
+		<Flag Name="BIANCA_PC_KIDS_ANSWER" />
+		<Flag Name="BIANCA_PLANET" />
+		<Flag Name="BIANCA_PUSSY_PLAYED" />
+		<Flag Name="BIANCA_REASON_REJECTED" />
+		<Flag Name="BIANCA_SEEN_PUSSY" />
+		<Flag Name="BIANCA_SEEN_TITS" />
+		<Flag Name="BIANCA_SEXED" />
+		<Flag Name="BIANCA_SEXED_BLOW" />
+		<Flag Name="BIANCA_SEXED_BLUE" />
+		<Flag Name="BIANCA_SEXED_FACE" />
+		<Flag Name="BIANCA_SEXED_FRIG" />
+		<Flag Name="BIANCA_SEXED_HAND" />
+		<Flag Name="BIANCA_SEXED_LEGS" />
+		<Flag Name="BIANCA_SEXED_LICK" />
+		<Flag Name="BIANCA_SEXED_LICK_HER" />
+		<Flag Name="BIANCA_SEXED_LICK_SIT" />
+		<Flag Name="BIANCA_SEXED_MILK" />
+		<Flag Name="BIANCA_SEXED_TITS" />
+		<Flag Name="BIANCA_STEALTH_SEX" />
+		<Flag Name="BIANCA_STORIES_HEARD" />
+		<Flag Name="BIANCA_STORIES_TOLD" />
+		<Flag Name="BIANCA_TALKED" />
+		<Flag Name="BIANCA_TALKED_KASE" />
+		<Flag Name="BIANCA_TALKED_TARKUS" />
+		<Flag Name="BIANCA_TALKED_TOPICS" />
+		<Flag Name="BIANCA_TALKED_ZS" />
+		<Flag Name="BIANCA_TASTED_STINGER" />
+		<Flag Name="BIANCA_THIRD_STORY_THROWAWAY_SEEN_IT_BITCH" />
+		<Flag Name="BIANCA_TIME_SPENT" />
+		<Flag Name="BIANCA_TREATMENT" />
+		<Flag Name="BIANCA_WILDERNESS_CHAT" />
+		<Flag Name="BIANCA_WILDERNESS_INTROS" />
 		<Flag Name="BIGTIDDYGOTHGF_ASSFUCKED" />
 		<Flag Name="BIGTIDDYGOTHGF_CUNTFUCKED" />
 		<Flag Name="BIGTIDDYGOTHGF_FIRSTVISIT" />
@@ -3217,6 +3281,9 @@
 		<Flag Name="BRYNN_MET_TODAY" />
 		<Flag Name="BUBBLED_CELISE" />
 		<Flag Name="BUBBLE_BUDDIED" />
+		<Flag Name="BULLZIL_BUTTFUCKED" />
+		<Flag Name="BULLZIL_ENCOUNTERS" />
+		<Flag Name="BULLZIL_EZFIT" />
 		<Flag Name="BURT_COLLECTABLE_SHOP" />
 		<Flag Name="BURT_DRINKS_BOUGHT" />
 		<Flag Name="BURT_MEAD_HALL_DISCUSSIONS" />
@@ -3589,6 +3656,7 @@
 		<Flag Name="ERRA_RELATIONSHIP_TALK" />
 		<Flag Name="ERRA_SEXED"     Description="times sexed. Undefined if unsexed" />
 		<Flag Name="ERRA_WALKIES"   Description="Times Erra has been Walked" />
+		<Flag Name="EVENT_BUFFER_OVERRIDE" />
 		<Flag Name="EVENT_WHORIZON_BONDAGE_PALACE" />
 		<Flag Name="EVENT_WHORIZON_DEMONSYRI_LOOKAROUND" />
 		<Flag Name="EVENT_WHORIZON_DEMONSYRI_TALK" />
@@ -3676,6 +3744,7 @@
 		<Flag Name="EXTRAMEET_ORAL_RCVD" />
 		<Flag Name="EXTRAMEET_PONYLUVER" />
 		<Flag Name="EXTRAMEET_POWERLOVERS2" />
+		<Flag Name="EXTRAMEET_PROSNUGGLER23" />
 		<Flag Name="EXTRAMEET_PURPLEBOWTIE" />
 		<Flag Name="EXTRAMEET_R4X0121" />
 		<Flag Name="EXTRAMEET_RDY4PLY" />
@@ -4213,6 +4282,7 @@
 		<Flag Name="KARA_PAID_YOU" />
 		<Flag Name="KASE_3SUM_ANNO" Description="number of times done the Anno 3some" />
 		<Flag Name="KASE_CREW" Description="1 if Kase is a new crew member&#xD;&#xA;2 if crew member&#xD;&#xA;0 if evicted" />
+		<Flag Name="KASE_FUCKED_PCVAG" />
 		<Flag Name="KASE_HEALED" Description="1 if his arm is healed" />
 		<Flag Name="KASE_INTRO" Description="1 if player has met Kase at the bar and knows his name" />
 		<Flag Name="KASE_JOB" Description="1 if talked to Kase about jobs" />
@@ -4665,6 +4735,7 @@
 		<Flag Name="MET_BELLE" />
 		<Flag Name="MET_BESS" />
 		<Flag Name="MET_BETH_CARVER" />
+		<Flag Name="MET_BIANCA" />
 		<Flag Name="MET_BIG_T" Description="1 == You've met Big T" />
 		<Flag Name="MET_BRANDT" />
 		<Flag Name="MET_BRANDY" />
@@ -4781,6 +4852,7 @@
 		<Flag Name="MET_MCALLISTER" Description="1 == You've met Doctor McAllister" />
 		<Flag Name="MET_MEON" />
 		<Flag Name="MET_MERCHANT_QUEEN" Description="1 == You've met the Gold Myr merchant queen" />
+		<Flag Name="MET_MIKHAIL" />
 		<Flag Name="MET_MILLIE" Description="1 == You've met Millie" />
 		<Flag Name="MET_MILODAN_MALE" />
 		<Flag Name="MET_MILO_INFILTRATOR" />
@@ -4799,6 +4871,7 @@
 		<Flag Name="MET_ORRYX" Description="1 == You've met Orryx" />
 		<Flag Name="MET_PAIGE" />
 		<Flag Name="MET_PENNY" Description="1 == You've met Penny" />
+		<Flag Name="MET_PERDITA" />
 		<Flag Name="MET_QUENTON" Description="1 == You've met Quenton" />
 		<Flag Name="MET_QUINN" />
 		<Flag Name="MET_RED_DESERTER" Description="1 == You've met the Red Myr deserter Briha" />
@@ -4874,6 +4947,7 @@
 		<Flag Name="MET_ZIL_PREGGOMONES" />
 		<Flag Name="MET_ZIL_SIRE" />
 		<Flag Name="MET_ZODEE" Description="1 == You've met Zo'dee" />
+		<Flag Name="MHENGA_MYR_EMBASSY_SEEN" />
 		<Flag Name="MHENGA_PROBE_CASH_GOT" />
 		<Flag Name="MILKED_SHIARE" />
 		<Flag Name="MILK_BARN_COCKMILKER_BROKEN" />
@@ -4970,6 +5044,7 @@
 		<Flag Name="MITZI_RESCUED" />
 		<Flag Name="MITZI_SERA_TENTASOME" />
 		<Flag Name="MITZI_SMALL_CUM_PRESENT" />
+		<Flag Name="MITZI_SOAKED" />
 		<Flag Name="MITZI_TITFUCKED" />
 		<Flag Name="MITZI_VDAY_LAST_YEAR_ENCOUNTERED" />
 		<Flag Name="MUFFSTICK_COLORED" />
@@ -5168,6 +5243,10 @@
 		<Flag Name="PENNY_THROBB_USES" />
 		<Flag Name="PENNY_TIMES_ANAL_SEXED" />
 		<Flag Name="PENNY_TIMES_OVER_DESK_FUCKED" />
+		<Flag Name="PERDITA_ABOUT" />
+		<Flag Name="PERDITA_CHAMPEON" />
+		<Flag Name="PERDITA_PAYOUTS" />
+		<Flag Name="PERDITA_SEEN_NAKED" />
 		<Flag Name="PERKS_DESC_OFF" />
 		<Flag Name="PETR_UNLOCKED" />
 		<Flag Name="PEX&amp;YAM_MEETING" />
@@ -5679,6 +5758,12 @@
 		<Flag Name="SATELLITE_QUEST" />
 		<Flag Name="SCRAPYARD_SEEN" />
 		<Flag Name="SECOND_CAPTURED_ZIL_REPORTED_ON" />
+		<Flag Name="SECOP_FEMALE_SUBMISSION" />
+		<Flag Name="SECOP_FEMALE_TITTYSMOTHER" />
+		<Flag Name="SECOP_MALE_SUBMISSION" />
+		<Flag Name="SECOP_SLIT_SLUTTINGS" />
+		<Flag Name="SECOP_TAURSLUTTINGS" />
+		<Flag Name="SECOP_WALLSLUTTINGS" />
 		<Flag Name="SEEN_ANNO_BUY_MENU" Description="1 == You've seen Anno's shopping catalog" />
 		<Flag Name="SEEN_BEACHNSURF" />
 		<Flag Name="SEEN_BIMBO_PENNY" />
@@ -5853,6 +5938,7 @@
 		<Flag Name="SEXED_SG_MALE" />
 		<Flag Name="SEXED_SHADE" />
 		<Flag Name="SEXED_SIMONE" />
+		<Flag Name="SEXED_SLYVEREN_PIRATE" />
 		<Flag Name="SEXED_SYLVIE" />
 		<Flag Name="SEXED_TUUVA" />
 		<Flag Name="SEXED_URBOLG" />
@@ -5976,6 +6062,7 @@
 		<Flag Name="SLEEP_FAPNEA_INSTALLED" />
 		<Flag Name="SLEEP_FAPNEA_REPEAT" />
 		<Flag Name="SLUTSHROOMS_EATEN" />
+		<Flag Name="SLYVEREN_PIRATE_GROWTHS" />
 		<Flag Name="SLYVEREN_SUBMISSION" />
 		<Flag Name="SLYVEREN_SUCKLESUBMITTED" />
 		<Flag Name="SLYVEREN_THROBB_FUCKED" />
@@ -5983,12 +6070,19 @@
 		<Flag Name="SNAKEBYTE_LOOTED" />
 		<Flag Name="SNEK_MAUS_PAIRINGS" />
 		<Flag Name="SNEK_MAUS_TIMESTAMP" />
+		<Flag Name="SOAK_OVERDOSE" />
+		<Flag Name="SOAK_TIMES_USED" />
+		<Flag Name="SOAK_USE_METHOD" />
 		<Flag Name="SOLD_BESS" />
 		<Flag Name="SPACE_BEAR" />
 		<Flag Name="SPAM_MSG_COV8" />
 		<Flag Name="SPANKED_SG_COUNT" />
 		<Flag Name="SQ_ACTIVE_8888" />
 		<Flag Name="STARTED_KHORGAN_FIGHT" />
+		<Flag Name="STAR_VIPER_DICKSEXED" />
+		<Flag Name="STAR_VIPER_HYPERSEXED" />
+		<Flag Name="STAR_VIPER_SAVED" />
+		<Flag Name="STAR_VIPER_SHIPLOSS" />
 		<Flag Name="STELLAR_TETHER_CLOSED" />
 		<Flag Name="STELLA_ABORTED" />
 		<Flag Name="STELLA_BALLWORSHIPPED" />
@@ -6112,6 +6206,7 @@
 		<Flag Name="TAIVRA_DEAL_ATTEMPTS" />
 		<Flag Name="TAIVRA_DEAL_UNLOCKED" />
 		<Flag Name="TAIVRA_FERTILE" />
+		<Flag Name="TAIVRA_FERTILE_EGGS" />
 		<Flag Name="TAIVRA_FOOTJOBBED" />
 		<Flag Name="TAIVRA_HAIRPULLED" />
 		<Flag Name="TAIVRA_NEW_THRONE" />
@@ -6635,6 +6730,7 @@
 		<Flag Name="ZHENG_SHI_LATEX_THONGD" />
 		<Flag Name="ZHENG_SHI_PASSWORDED" />
 		<Flag Name="ZHENG_SHI_PROBED" />
+		<Flag Name="ZHENG_SHI_PROBE_RECLAIMED" />
 		<Flag Name="ZHENG_SHI_SLAVE_SNUCK" />
 		<Flag Name="ZHENG_SLAVE_SNEAK_DISABLED" />
 		<Flag Name="ZHENG_SPACESUIT_TAKEN" />
@@ -6725,6 +6821,7 @@
 			<StatusEffect Name="Gabilani Prophylactic" Description="The spray currently effecting you will reduce encounters with gabilani." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Goblinola Bar" Description="Your stomach is a little unsettled by the health bar you ate..." Value1="60" Value2="1" IconName="Icon_Poison" MinutesLeft="60" />
 			<StatusEffect Name="Foxfire" Label1="1 == Frostfire variant" Label2="0 == On Head&#xD;&#xA;1 == On Tail" MinutesLeft="119" IsHidden="true" />
+			<StatusEffect Name="Healing Spray" IsHidden="true" />
 			<StatusEffect Name="Heart Tea" Description="Aina's special blend, brewed with care, makes you feel healthier than ever!" IconName="Icon_DrugPill" MinutesLeft="1440" />
 			<StatusEffect Name="Heat" Description="Your body is begging for impregnation, increasing your libido and fertility but also your ability to tease.&#xD;&#xA;&#xD;&#xA;+500% Fertility&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+10 Libido&#xD;&#xA;+3 Tease Damage" Value1="5" Value2="25" Value3="10" Value4="3" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
 			<StatusEffect Name="Home Cooking" Description="While you are well fed, you recover more while resting." Value1="50" IconName="Icon_Cooking" IconShade="500" />
@@ -6747,6 +6844,8 @@
 			<StatusEffect Name="Stretchy Sexiness" IsHidden="true" Value1="3" Label1="Bonus" />
 			<StatusEffect Name="Sweet Tooth" Description="Sucking seductively on a lollipop." IconName="Icon_Lollipop" MinutesLeft="720" />
 			<StatusEffect Name="Sydian Prophylactic" Description="The spray currently effecting you will reduce encounters with sydians." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
+			<StatusEffect Name="Soak" Description="You are currently high on Soak, leaving you a horny, sopping-wet mess with a serious drooling problem." IconName="Icon_Vagina_2" IconShade="12030916" />
+			<StatusEffect Name="Soak Overdose" Description="Your risky behavior has left you a sodden mess of slickened holes and pure libido." IconName="Icon_Vagina_2" IconShade="12030916" />
 			<StatusEffect Name="Taken Estrobloom" IsHidden="true" />
 			<StatusEffect Name="T.Pack" Description="You are protected from Uveto's harsh cold... for now!" IconName="Icon_Smelly" MinutesLeft="1440" />
 			<StatusEffect Name="The Mango" Description="You are irresistible!" IconName="Charmed" MinutesLeft="1440" IconShade="12030916" />
@@ -6864,10 +6963,12 @@
 			<StatusEffect Name="Zaalt Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Zephyr Preg Alert" IconName="Icon_Belly_Pregnant" IsHidden="true" />
 			<StatusEffect Name="Zil Pheromones" Description="Your body is emitting a fertile zil’s scent." IconName="Icon_Smelly" IconShade="12030916" />
+			<StatusEffect Name="Zheniya Birth Recover" IsHidden="true" />
 			<StatusEffect Name="Zil Pregnancy Reflex Mod" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Sex">
 			<StatusEffect Name="Anally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Donut" IconShade="12030916" />
+			<StatusEffect Name="Bee Musk" Description="It's hard not to fantasize after getting a whiff of that musk!" Value1="1" IconName="Icon_Charmed" IconShade="14506366" />
 			<StatusEffect Name="Blue Balls" Description="Take 25% more lust damage in combat!" IconName="Icon_Sperm_Hearts" IconShade="0" />
 			<StatusEffect Name="Cum Cascade" Description="Side effect of ‘Nuki Nuts.." IconName="Icon_Sperm_Hearts" IconShade="12030916" IsHidden="true" />
 			<StatusEffect Name="Cum Cascade Suppressant" IsHidden="true" />
@@ -6892,6 +6993,7 @@
 			<StatusEffect Name="Disarm Immune" IsHidden="true" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
 			<StatusEffect Name="Stagger Immune" IsHidden="true" />
+			<StatusEffect Name="Stealth Field" IsHidden="true" />
 			<StatusEffect Name="Stun Immune" IsHidden="true" />
 			<StatusEffect Name="Unarmored" IsHidden="true" />
 		</StatusEffectGroup>
@@ -6935,6 +7037,7 @@
 			<StatusEffect Name="Luca Switch Cooldown" IsHidden="true" />
 			<StatusEffect Name="MAJA_FUCK_RECOVERY" IsHidden="true" />
 			<StatusEffect Name="Maus CD" IsHidden="true" />
+			<StatusEffect Name="MausbullyCD" IsHidden="true" />
 			<StatusEffect Name="MirrinSexCooldown" IsHidden="true" />
 			<StatusEffect Name="MirrinTiddysuckCooldown" IsHidden="true" />
 			<StatusEffect Name="Motherhusk CD" IsHidden="true" />
@@ -6949,6 +7052,7 @@
 			<StatusEffect Name="PAIGE_SPAR" IsHidden="true" />
 			<StatusEffect Name="PANTYBREAK_CD" IsHidden="true" />
 			<StatusEffect Name="PENNY_PANTY_CD" IsHidden="true" />
+			<StatusEffect Name="PERDITA_MEETING_CD" IsHidden="true" />
 			<StatusEffect Name="Prai Cooldown" IsHidden="true" />
 			<StatusEffect Name="Quinn Talk Cooldown" IsHidden="true" />
 			<StatusEffect Name="RIYA_CANADIA_CD" IsHidden="true" />
@@ -7016,8 +7120,10 @@
 			<StatusEffect Name="Wing Style" Label1="Shape" IsHidden="true" Comment="Description/Tooltip is color" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Events">
+			<StatusEffect Name="Bianca Gone" IsHidden="true" />
 			<StatusEffect Name="BlackDragDisable" IsHidden="true" />
 			<StatusEffect Name="Boob Silicone Please" IsHidden="true" />
+			<StatusEffect Name="Bought From Bianca" IsHidden="true" />
 			<StatusEffect Name="Cherry_In_Room" IsHidden="true" />
 			<StatusEffect Name="Cherry_Internal_Cum" IsHidden="true" />
 			<StatusEffect Name="Dark Chrysalis Closed" IsHidden="true" />
@@ -7025,6 +7131,7 @@
 			<StatusEffect Name="DisabledRoz" IsHidden="true" />
 			<StatusEffect Name="Extorted" IsHidden="true" />
 			<StatusEffect Name="FoxyDisable" IsHidden="true" />
+			<StatusEffect Name="Got Bianca Checkup" IsHidden="true" />
 			<StatusEffect Name="IQBGoneTimer" IsHidden="true" />
 			<StatusEffect Name="Kiro Panties Event Queue" IsHidden="true" />
 			<StatusEffect Name="Premium Breeder Cheek Tattoo" IconName="Icon_Sperm_Hearts" MinutesLeft="16724911" />
@@ -7033,6 +7140,7 @@
 			<StatusEffect Name="Roo_Turned_Down" IsHidden="true" />
 			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
 			<StatusEffect Name="Ship Repair Paused" IsHidden="true" />
+			<StatusEffect Name="SnekOnboard" IsHidden="true" />
 			<StatusEffect Name="Synphia_Tired" IsHidden="true" />
 			<StatusEffect Name="Syri Pennybating" IsHidden="true" />
 			<StatusEffect Name="TaurDisable" IsHidden="true" />
@@ -7075,6 +7183,7 @@
 			<StatusEffect Name="Mitzi Dressed" IsHidden="true" />
 			<StatusEffect Name="Mitzi_Gushed_Out" IsHidden="true" />
 			<StatusEffect Name="Mitzi_Gush_Thankyou" IsHidden="true" />
+			<StatusEffect Name="MITZI_SOAK_SCHLICKING" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
 			<StatusEffect Name="NT Build Bottle Plant Repeat" IsHidden="true" />
 			<StatusEffect Name="NT Male Milker Disabled" IsHidden="true" />
