@@ -301,7 +301,7 @@ namespace TiTsEd.ViewModel {
 
         protected ArrayVM(AmfObject obj, IEnumerable<AmfObject> values, Func<AmfObject, TResult> selector)
             : base(values, selector) {
-            _object = obj;
+            _object = obj ?? new AmfObject(AmfTypes.Array);
         }
 
         public void Create() {
