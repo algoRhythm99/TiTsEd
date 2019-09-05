@@ -259,6 +259,9 @@ namespace TiTsEd.Model {
         [XmlArray, XmlArrayItem("CockFlag")]
         public XmlEnum[] CockFlags { get; set; }
 
+        [XmlArray, XmlArrayItem("AreolaFlag")]
+        public XmlEnum[] AreolaFlags { get; set; }
+
     }
 
     public sealed class XmlPerkGroup {
@@ -309,6 +312,20 @@ namespace TiTsEd.Model {
 
         public override string ToString() {
             return ID + " - " + Name;
+        }
+
+        public static string EnumIDToName(int typeID, XmlEnum[] typeList)
+        {
+            string type = "unknown";
+            foreach (var vtype in typeList)
+            {
+                if (vtype.ID == typeID)
+                {
+                    type = vtype.Name;
+                }
+            }
+            //String.Format("[ID#: {0}] <unknown>", typeID);
+            return type;
         }
     }
 

@@ -1390,6 +1390,13 @@
 			<DickNippleType ID="4" Name="Feline" />
 		</DickNippleTypes>
 		<!-- ================================================================ -->
+		<AreolaFlags>
+			<AreolaFlag ID="40" Name="Slightly Pumped" />
+			<AreolaFlag ID="52" Name="Heart-Shaped" />
+			<AreolaFlag ID="53" Name="Star-Shaped" />
+			<AreolaFlag ID="54" Name="Flower-Shaped" />
+		</AreolaFlags>
+		<!-- ================================================================ -->
 		<GenitalSpotTypes>
 			<GenitalSpotType ID="0" Name="Waist" />
 			<GenitalSpotType ID="1" Name="Mid-tail" />

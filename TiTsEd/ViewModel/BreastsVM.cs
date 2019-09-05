@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System.Text;
 using TiTsEd.Model;
+using TiTsEd.Common;
 
 namespace TiTsEd.ViewModel {
     public sealed class BreastArrayVM : ArrayVM<BreastsVM> {
@@ -20,6 +21,7 @@ namespace TiTsEd.ViewModel {
             obj["breasts"] = 2;
             obj["fullness"] = 0;
             obj["nippleType"] = 0;
+            obj["areolaFlags"] = new AmfObject(AmfTypes.Array);
             obj["classInstance"] = "classes::BreastRowClass";
             return obj;
         }
@@ -96,6 +98,11 @@ namespace TiTsEd.ViewModel {
             get {
                 return XmlData.Current.Body.NippleTypes;
             }
+        }
+
+        public List<FlagItem> AreolaFlags
+        {
+            get { return getFlagList(GetObj("areolaFlags"), XmlData.Current.Body.AreolaFlags); }
         }
 
         public double Fullness {

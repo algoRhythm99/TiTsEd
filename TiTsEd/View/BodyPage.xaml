@@ -311,6 +311,9 @@
                             </Label>
                             <common:MyNumericBox    Value="{Binding Fullness}" />
                         </common:AutoGrid>
+                        <Expander Header="Areola Flags">
+                            <view:FlagBox ItemsSource="{Binding AreolaFlags}" />
+                        </Expander>
                     </StackPanel>
                 </common:ArrayEditor>
 

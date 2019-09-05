@@ -303,15 +303,8 @@ namespace TiTsEd.ViewModel
 
                 output += EffectiveLength + "\" ";
 
-                string type = "unknown";
-                foreach (var vtype in CockTypes)
-                {
-                    if (vtype.ID == CockType)
-                    {
-                        type = vtype.Name.ToLower();
-                    }
-                }
-
+                string type = XmlEnum.EnumIDToName(CockType, CockTypes).ToLower();
+                //String.Format("a {} {} \" {} cock.", CockColor.ToString(), EffectiveLength.ToString(), type)
                 return output + type + " cock.";
             }
         }
