@@ -297,15 +297,10 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                string output = "a ";
-
-                output += CockColor + " ";
-
-                output += EffectiveLength + "\" ";
-
-                string type = XmlData.EnumIDToName(CockType, CockTypes).ToLower();
-                //String.Format("a {} {} \" {} cock.", CockColor.ToString(), EffectiveLength.ToString(), type)
-                return output + type + " cock.";
+                return String.Format( "a {0} {1}\" {2} cock."
+                                    , CockColor
+                                    , EffectiveLength.ToString()
+                                    , XmlData.EnumIDToName(CockType, CockTypes).ToLower() );
             }
         }
     }

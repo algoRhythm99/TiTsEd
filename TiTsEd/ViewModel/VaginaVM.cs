@@ -214,17 +214,10 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                string output = "a ";
-                if (Hymen)
-                {
-                    output += "virgin ";
-                }
-
-                output += VaginaColor + " ";
-
-                string type = XmlData.EnumIDToName(VaginaType, VaginaTypes).ToLower();
-
-                return output + type + " vagina.";
+                return String.Format( "a {0}{1} {2} vagina."
+                                    , ( Hymen ) ? "virgin " : ""
+                                    , VaginaColor
+                                    , XmlData.EnumIDToName(VaginaType, VaginaTypes).ToLower() );
             }
         }
     }
