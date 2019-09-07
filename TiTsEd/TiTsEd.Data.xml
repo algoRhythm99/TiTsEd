@@ -6997,11 +6997,14 @@
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Combat">
 			<StatusEffect Name="Blind Immune" IsHidden="true" />
+			<StatusEffect Name="Charged Weapon" Description="Weapon is electrified and will deal bonus damage based upon current intellectual capacity." />
 			<StatusEffect Name="Disarm Immune" IsHidden="true" />
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
+			<StatusEffect Name="Shields Damaged" />
 			<StatusEffect Name="Stagger Immune" IsHidden="true" />
 			<StatusEffect Name="Stealth Field" IsHidden="true" />
 			<StatusEffect Name="Stun Immune" IsHidden="true" />
+			<StatusEffect Name="Sundered" Description="Defense is reduced by 50%!" />
 			<StatusEffect Name="Unarmored" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Cooldowns">
