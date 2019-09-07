@@ -303,7 +303,7 @@ namespace TiTsEd.ViewModel
 
                 output += EffectiveLength + "\" ";
 
-                string type = XmlEnum.EnumIDToName(CockType, CockTypes).ToLower();
+                string type = XmlData.EnumIDToName(CockType, CockTypes).ToLower();
                 //String.Format("a {} {} \" {} cock.", CockColor.ToString(), EffectiveLength.ToString(), type)
                 return output + type + " cock.";
             }

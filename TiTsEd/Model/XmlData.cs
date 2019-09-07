@@ -95,6 +95,20 @@ namespace TiTsEd.Model {
             }
             return null;
         }
+
+        public static string EnumIDToName(int typeID, XmlEnum[] data)
+        {
+            string type = "unknown";
+            foreach (var vtype in data)
+            {
+                if (vtype.ID == typeID)
+                {
+                    type = vtype.Name;
+                }
+            }
+            //String.Format("[ID#: {0}] <unknown>", typeID);
+            return type;
+        }
     }
 
     [XmlRoot("TiTsEd")]
@@ -312,20 +326,6 @@ namespace TiTsEd.Model {
 
         public override string ToString() {
             return ID + " - " + Name;
-        }
-
-        public static string EnumIDToName(int typeID, XmlEnum[] typeList)
-        {
-            string type = "unknown";
-            foreach (var vtype in typeList)
-            {
-                if (vtype.ID == typeID)
-                {
-                    type = vtype.Name;
-                }
-            }
-            //String.Format("[ID#: {0}] <unknown>", typeID);
-            return type;
         }
     }
 

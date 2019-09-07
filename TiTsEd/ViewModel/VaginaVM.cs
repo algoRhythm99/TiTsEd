@@ -222,7 +222,7 @@ namespace TiTsEd.ViewModel
 
                 output += VaginaColor + " ";
 
-                string type = XmlEnum.EnumIDToName(VaginaType, VaginaTypes).ToLower();
+                string type = XmlData.EnumIDToName(VaginaType, VaginaTypes).ToLower();
 
                 return output + type + " vagina.";
             }
