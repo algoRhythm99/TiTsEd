@@ -53,7 +53,7 @@ namespace TiTsEd
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             base.OnClosing(e);
-            if (!VM.Instance.SaveRequired) return;
+            if ((null != VM.Instance) && (!VM.Instance.SaveRequired)) return;
 
             var result = ConfirmationBox.Show();
             switch (result)

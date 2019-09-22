@@ -33,8 +33,8 @@ namespace TiTsEd.Common
                     dataVersion,
                     msg);
 
-                if (File.Exists("TiTsEd.log")) File.Delete("TiTsEd.log");
                 File.WriteAllText("TiTsEd.log", msg);
+                //Console.WriteLine(msg);
             }
             catch(IOException)
             {

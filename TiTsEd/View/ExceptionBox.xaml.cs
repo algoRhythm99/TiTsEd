@@ -209,5 +209,15 @@ namespace TiTsEd.View
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
         }
+
+        private void openLogfile_Click(object sender, RoutedEventArgs e)
+        {
+            var appPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            var logFile = System.IO.Path.Combine(appPath, "TiTsEd.log");
+            if (File.Exists(logFile))
+            {
+                System.Diagnostics.Process.Start(logFile);
+            }
+        }
     }
 }

@@ -36,7 +36,10 @@ namespace TiTsEd.View
         public static new ConfirmationResult Show()
         {
             var box = new ConfirmationBox();
-            box.Owner = App.Current.MainWindow;
+            if ((null != App.Current.MainWindow) && (App.Current.MainWindow.IsActive))
+            {
+                box.Owner = App.Current.MainWindow;
+            }
             box.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             box.ShowDialog();
             return box._result;

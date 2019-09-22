@@ -26,14 +26,54 @@ namespace TiTsEd
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            if (!Directory.Exists(FileManager.BackupPath)) Directory.CreateDirectory(FileManager.BackupPath);
-            Settings.Default.Upgrade();
             base.OnStartup(e);
+            //ConsoleManager.Show();
+            //ConsoleManager.Hide();
 
 #if !DEBUG
             DispatcherUnhandledException += OnDispatcherUnhandledException;
 #endif
+
+            try
+            {
+                if (!Directory.Exists(FileManager.BackupPath))
+                {
+                    Directory.CreateDirectory(FileManager.BackupPath);
+                }
+                if (Directory.Exists(FileManager.AppDataPath))
+                {
+                    var appDataDir = new DirectoryInfo(FileManager.AppDataPath);
+                    var existingFiles = appDataDir.GetFiles("*.bak");
+                    // try to move existing backups to new backup folder
+                    if ((null != existingFiles) && (existingFiles.Length > 0))
+                    {
+                        foreach (var bakFile in existingFiles)
+                        {
+                            File.Move(bakFile.FullName, Path.Combine(FileManager.BackupPath, bakFile.Name));
+                        }
+                    }
+                }
+            }
+            catch (SecurityException se)
+            {
+                Logger.Error(se);
+            }
+            catch (UnauthorizedAccessException uae)
+            {
+                Logger.Error(uae);
+            }
+            catch (IOException ioe)
+            {
+                Logger.Error(ioe);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
+
             Initialize();
+
+            Settings.Default.Upgrade();
         }
 
         void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
@@ -47,8 +87,9 @@ namespace TiTsEd
                 SetError(box, e.Exception);
                 box.ShowDialog(ExceptionBoxButtons.Quit);
             }
-            catch(Exception e2)
+            catch (Exception e2)
             {
+                Logger.Error(e2);
                 MessageBox.Show(e2.ToString(), "Error in error box ?!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
@@ -82,40 +123,38 @@ namespace TiTsEd
             foreach (string xmlFile in XmlData.Files.All)
             {
                 var xmlResult = XmlData.LoadXml(xmlFile);
+                //xmlResult = XmlLoadingResult.MissingFile;
+                string message = "";
                 switch (xmlResult)
                 {
-                    case XmlLoadingResult.Success:
+                    case XmlLoadingResult.InvalidFile:
+                        message = String.Format("The {0} file is out of date. Did you replace the bundled XML?", xmlFile);
                         break;
 
-                    case XmlLoadingResult.InvalidFile:
-                        box = new ExceptionBox();
-                        box.Title = "Fatal error";
-                        box.Message = "The " + xmlFile + " file is out of date. Did you replace the bundled XML?";
-                        box.Path = Environment.CurrentDirectory;
-                        box.ShowDialog(ExceptionBoxButtons.Quit);
-                        Shutdown();
-                        return;
-
                     case XmlLoadingResult.MissingFile:
-                        box = new ExceptionBox();
-                        box.Title = "Fatal error";
-                        box.Message = "The " + xmlFile + " file could not be found. Did you try to run the program from the archive without extracting all the files first?";
-                        box.Path = Environment.CurrentDirectory;
-                        box.ShowDialog(ExceptionBoxButtons.Quit);
-                        Shutdown();
-                        return;
+                        message = String.Format("The {0} file could not be found. Did you try to run the program from the archive without extracting all the files first?", xmlFile);
+                        break;
 
                     case XmlLoadingResult.NoPermission:
-                        box = new ExceptionBox();
-                        box.Title = "Fatal error";
-                        box.Message = "The " + xmlFile + " file was already in use or this application does not have permission to read from the folder where it is located.";
-                        box.Path = Environment.CurrentDirectory;
-                        box.ShowDialog(ExceptionBoxButtons.Quit);
-                        Shutdown();
-                        return;
+                        message = String.Format("The {0} file was already in use or this application does not have permission to read from the folder where it is located.", xmlFile);
+                        break;
 
+                    case XmlLoadingResult.Success:
+                        break;
                     default:
                         throw new NotImplementedException();
+                }
+                if (!String.IsNullOrEmpty(message))
+                {
+                    Logger.Error(message);
+                    box = new ExceptionBox();
+                    box.Title = "Fatal error";
+                    box.Message = message;
+                    box.Path = Environment.CurrentDirectory;
+                    //box.ShowReportInstructions = true;
+                    box.ShowDialog(ExceptionBoxButtons.Quit);
+                    Shutdown();
+                    return;
                 }
             }
 
@@ -126,21 +165,19 @@ namespace TiTsEd
             switch (FileManager.Result)
             {
                 case FileEnumerationResult.NoPermission:
+                case FileEnumerationResult.Unreadable:
+                case FileEnumerationResult.Unknown:
+                    string path = FileManager.ResultPath ?? "ResultPath: null";
+                    string message = String.Format("TiTsEd did not get permission to read a folder or file.\nSome files will not be displayed in the Open/Save menus.\nResult: {0} with path {1}", FileManager.Result.ToString(), path);
+                    Logger.Error(message);
                     box = new ExceptionBox();
-                    box.Title = "Could not scan some folders.";
-                    box.Message = "TiTsEd did not get permission to read a folder or file.\nSome files will not be displayed in the Open/Save menus.";
-                    box.Path = FileManager.ResultPath;
+                    box.Title = "Could not read some folders.";
+                    box.Message = message;
+                    box.Path = path;
                     box.IsWarning = true;
                     result = box.ShowDialog(ExceptionBoxButtons.Quit, ExceptionBoxButtons.Continue);
                     break;
-
-                case FileEnumerationResult.Unreadable:
-                    box = new ExceptionBox();
-                    box.Title = "Could not read some folders.";
-                    box.Message = "TiTsEd could not read a folder or file.\nSome files will not be displayed in the Open/Save menus.";
-                    box.Path = FileManager.ResultPath;
-                    box.IsWarning = true;
-                    result = box.ShowDialog(ExceptionBoxButtons.Quit, ExceptionBoxButtons.Continue);
+                default:
                     break;
             }
             if (result == ExceptionBoxResult.Quit)
@@ -190,7 +227,7 @@ namespace TiTsEd
             Stopwatch s = new Stopwatch();
             s.Start();
             foreach (var first in directories[0].Files) {
-                var outPath = "e:\\" + Path.GetFileName(first.FilePath);
+                var outPath = "c:\\" + Path.GetFileName(first.FilePath);
                 first.TestSerialization();
                 first.Save(outPath, first.Format);
 

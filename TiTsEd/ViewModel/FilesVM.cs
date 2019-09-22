@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using TiTsEd.Model;
 using Microsoft.Win32;
+using TiTsEd.Common;
 
 namespace TiTsEd.ViewModel {
     public static class FileManagerVM {
@@ -199,7 +200,7 @@ namespace TiTsEd.ViewModel {
 
         public void OnClick() {
             var dlg = new OpenFileDialog();
-            dlg.Filter = "\"Slot\" format|*.sol|\"Save to File\" format|*";
+            dlg.Filter = "\"Slot\" format|*.sol|\"Save to File\" format|*.tits|Any file|*";
             dlg.DefaultExt = ".sol";
             dlg.CheckFileExists = true;
             dlg.Multiselect = false;
@@ -218,7 +219,10 @@ namespace TiTsEd.ViewModel {
                     VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported, createBackup: true);
                 }
             } catch (System.UnauthorizedAccessException ex) {
+                Logger.Error(ex);
                 MessageBox.Show(ex.Message);
+            } catch (System.Exception ex2) {
+                Logger.Error(ex2);
             }
         }
     }
@@ -257,7 +261,7 @@ namespace TiTsEd.ViewModel {
 
         public void OnClick() {
             var dlg = new SaveFileDialog();
-            dlg.Filter = "\"Slot\" format (.sol)|*.sol|\"Save to File\" format|*";
+            dlg.Filter = "\"Slot\" format (.sol)|*.sol|\"Save to File\" format|*.tits|Any file|*";
             dlg.AddExtension = true;
             dlg.OverwritePrompt = true;
             dlg.RestoreDirectory = true;
