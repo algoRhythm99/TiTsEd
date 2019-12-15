@@ -256,7 +256,7 @@
                     <Label>
                         <TextBlock  Text="Dick Nipple Type" />
                     </Label>
-                    <common:MyComboBox      SelectedValue="{Binding Game.Character.DickNippleType}" ItemsSource="{Binding Data.Body.DickNippleTypes}" />
+                    <common:MyComboBox      SelectedValue="{Binding Game.Character.DickNippleType}" ItemsSource="{Binding Data.Body.CockTypes}" />
 
                     <Label>
                         <TextBlock  Text="Dick Nipple Multiplier" />

@@ -1395,12 +1395,30 @@
 			<NippleType ID="6" Name="Tentacled" />
 		</NippleTypes>
 		<!-- ================================================================ -->
+<!--
 		<DickNippleTypes>
-			<DickNippleType ID="0" Name="Human" />
-			<DickNippleType ID="1" Name="Equine" />
-			<DickNippleType ID="3" Name="Canine" />
-			<DickNippleType ID="4" Name="Feline" />
+			<DickNippleType ID="0"  Name="Human" />
+			<DickNippleType ID="1"  Name="Equine" />
+			<DickNippleType ID="3"  Name="Canine" />
+			<DickNippleType ID="4"  Name="Feline" />
+			<DickNippleType ID="5"  Name="Vulpine" />
+			<DickNippleType ID="9"  Name="Lapine" />
+			<DickNippleType ID="11" Name="Draconic" />
+			<DickNippleType ID="15" Name="Demonic" />
+			<DickNippleType ID="16" Name="Gooey" />
+			<DickNippleType ID="18" Name="Gabilani" />
+			<DickNippleType ID="20" Name="Suula" />
+			<DickNippleType ID="22" Name="Anemone" />
+			<DickNippleType ID="23" Name="Tentacle" />
+			<DickNippleType ID="46" Name="Vanae" />
+			<DickNippleType ID="51" Name="Synthetic" />
+			<DickNippleType ID="54" Name="Cockvine" />
+			<DickNippleType ID="56" Name="Inhuman" />
+			<DickNippleType ID="64" Name="Hradian" />
+			<DickNippleType ID="65" Name="Gryvain" />
+			<DickNippleType ID="78" Name="Rahn" />
 		</DickNippleTypes>
+-->
 		<!-- ================================================================ -->
 		<AreolaFlags>
 			<AreolaFlag ID="40" Name="Slightly Pumped" />
@@ -1879,9 +1897,7 @@
 			<Item Stack="1"  Name="Foxfire" ID="classes.Items.Transformatives::Foxfire" />
 			<Item Stack="10" Name="FrontRack" ID="classes.Items.Transformatives::FrontRackCream" />
 			<Item Stack="1"  Name="Frostfire" ID="classes.Items.Transformatives::Frostfire" />
-<!-- cannot be obtained currently, errors if you try to add to inventory
 			<Item Stack="10" Name="Frst. Ichor" ID="classes.Items.Transformatives::FrostwyrmIchor" LongName="Frostwyrm Ichor" />
--->
 			<Item Stack="10" Name="Furball" ID="classes.Items.Transformatives::Furball" />
 			<Item Stack="12" Name="Futazona"    ID="classes.Items.Transformatives::Futazona" />
 			<Item Stack="10" Name="GaloMax" ID="classes.Items.Transformatives::GaloMax" />
