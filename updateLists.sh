@@ -381,6 +381,7 @@ hasItem() {
   #echo "$regex"
   grepOutput=$(grep -F "$itemClass" "$TiTsEdData">/dev/nul 2>/dev/null)
   grepExit=$?
+  #grepOutput=$(grep -oP 'this[.]stackSize\s*=\s*([\d]+);.*this[.]shortName\s*=\s*["]([\w\s.]+)["];.*this[.]longName\s*=\s*["]([\w\s.]+)["];')
   #echo grepOutput=$grepOutput
   #echo grepExit=$grepExit
   if [ $grepExit -eq 0 ]; then
@@ -393,6 +394,7 @@ if [ 1 == 1 ]; then
     export -f hasItem
     echo "Checking for missing items"
     find $SourceFolder/classes/items -name "*.as" -exec bash -c "hasItem \"$TiTsEdData\" \"$0\" \"$SourceFolder\"" {} \; >$newFile
+    #find $SourceFolder/classes/items -name '*.as' -exec grep -oP 'this[.]stackSize\s*=\s*([\d]+);.*this[.]shortName\s*=\s*["]([\w\s.]+)["];.*this[.]longName\s*=\s*["]([\w\s.]+)["];' {} \;
 fi
 
 if [ 0 == 1 ]; then

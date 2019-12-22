@@ -1971,6 +1971,7 @@
 			<Item Stack="10" Name="Swineapple" ID="classes.Items.Transformatives::Swineapple" />
 			<Item Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
 			<Item Stack="10" Name="Deerium" ID="classes.Items.Transformatives::TauricoVenidae" />
+			<Item Stack="10" Name="DeerLite" ID="classes.Items.Transformatives::TauricoVenidaeLight" />
 			<Item Stack="10" Name="Tentacool" ID="classes.Items.Transformatives::Tentacool" />
 			<Item Stack="10" Name="ThicShake" ID="classes.Items.Transformatives::ThiccNShake" />
 			<Item Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
@@ -2020,6 +2021,10 @@
 		<ItemGroup Name="Videos">
 			<Item Stack="1"     Name="Vid: ZNtSB"      ID="classes.Items.Stories::ZilNighTheScienceBi"     LongName="code for “Zil Nigh the Science Bi”" />
 		</ItemGroup>
+		<ItemGroup Name="Decorations">
+			<Item Stack="1" Name="Poster:MF"  ID="classes.Items.Decorations::MindfuckPoster" LongName="mindfuck poster" />
+			<Item Stack="1" Name="Poster:Ob"  ID="classes.Items.Decorations::ObediencePoster" LongName="obedience poster" />
+		</ItemGroup>
 		<ItemGroup Name="Toys">
 			<Item Stack="1" Name="B.Buddy"  ID="classes.Items.Toys::BubbleBuddy" />
 			<Item Stack="1" Name="G.Cuffs"  ID="classes.Items.Toys::GravCuffs" />
@@ -2028,6 +2033,7 @@
 			<Item Stack="1" Name="N.B.Hole" ID="classes.Items.Toys::NivasBionaHole" />
 			<Item Stack="1" Name="NymFoeDaki" ID="classes.Items.Toys::NymFoeDakimakura" />
 			<Item Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
+			<Item Stack="1" Name="SDoll VR" ID="classes.Items.Toys::SexdollVRProgram" />
 			<Item Stack="1" Name="SukMastr" ID="classes.Items.Toys::SukMastr" />
 		</ItemGroup>
 		<ItemGroup Name="Dildos">
@@ -2036,6 +2042,7 @@
 			<Item Stack="1" Name="CatDildo"     ID="classes.Items.Toys::DildoFeline" />
 			<Item Stack="1" Name="K.TerranD."   ID="classes.Items.Toys::DildoKnottyTerran" />
 			<Item Stack="1" Name="KingMino"     ID="classes.Items.Toys::DildoMinotaurKing" />
+			<Item Stack="1" Name="SavDildo"     ID="classes.Items.Toys::DildoSavicite" />
 			<Item Stack="1" Name="KT Dildo"     ID="classes.Items.Toys::DildoTaintedKuiTanTool" />
 			<Item Stack="1" Name="TerranDil"    ID="classes.Items.Toys::DildoTerran" />
 			<Item Stack="1" Name="TD Dildo"     ID="classes.Items.Toys::DildoTerranCumlux" />
@@ -2388,6 +2395,7 @@
 			<KeyItem Name="RK Lah - Captured" />
 			<KeyItem Name="Satellite Hard Drive" />
 			<KeyItem Name="Sexbot GPS Triangulator" />
+			<KeyItem Name="Sexdoll Virtual Reality Program" />
 			<KeyItem Name="Siegwulfe Datacore" Description="A fist-sized data storage containing the personality of your former Siegwulfe [wulfe.name]." />
 			<KeyItem Name="Silver Key" />
 			<KeyItem Name="Teyaal’s Key Card" />
@@ -2629,6 +2637,7 @@
 			<Perk Name="Chupacabro Slayer" Description="You defeated the legendary Chupacabro, and now do +10% damage against treated individuals." Value1="1" Value2="50" />
 -->
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
+			<Perk Name="Evermilk" Value1="5000" />
 			<Perk Name="Face Fucker" Description="Increases minimum lust and cum output, thanks to that strange VR adventure..." Value1="5" />
 			<Perk Name="Implant-tastic" Description="Your body will convert most of the mass in your breasts, butt cheeks, hips and lips into silicone." />
 			<Perk Name="Limber" Description="Grants an addition 20% chance to escape from grapples!" />
@@ -2715,6 +2724,7 @@
 			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
 			<Perk Name="Fixed MilkQ" Comment="Ensures you always lactate exactly {Value1} mLs. See Value1" Label1="Lactation Quantity" Value1="500000" />
 			<Perk Name="Low Blow" />
+			<Perk Name="MinCumQ" Label1="Cum Quantity" Value1="2000" />
 			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn. See Value1" Label1="Attacks per turn" Value1="5" />
 			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn. See Value1" Label1="Shots per turn" Value1="5" />
 			<Perk Name="No Cum Leakage" />
@@ -2839,6 +2849,7 @@
 		<Flag Name="ANNO_FACESIT" />
 		<Flag Name="ANNO_FUCKNSUCK" />
 		<Flag Name="ANNO_GIFT_WRAPPED" />
+		<Flag Name="ANNO_HOLDOUT_PISTOL_UNLOCKED" />
 		<Flag Name="ANNO_HUSKARRED" />
 		<Flag Name="ANNO_HUSKAR_COMPLETE" />
 		<Flag Name="ANNO_MAID_OUTFIT" />
@@ -3346,6 +3357,7 @@
 		<Flag Name="BUBBLED_CELISE" />
 		<Flag Name="BUBBLE_BUDDIED" />
 		<Flag Name="BULLZIL_BUTTFUCKED" />
+		<Flag Name="BULLZIL_BUTTGINITY_TAKEN" />
 		<Flag Name="BULLZIL_ENCOUNTERS" />
 		<Flag Name="BULLZIL_EZFIT" />
 		<Flag Name="BURT_COLLECTABLE_SHOP" />
@@ -3380,6 +3392,7 @@
 		<Flag Name="BUSKY_TALKED_ABOUT_TREATMENT" />
 		<Flag Name="BUTTBUG_SEX_OFFERBUTT" />
 		<Flag Name="BUTTSLUTINATOR" />
+		<Flag Name="BUTTSLUTINATOR_INSTALLED" />
 		<Flag Name="BrynnsStall" />
 		<Flag Name="CAMERON_MILKED" />
 		<Flag Name="CAME_INSIDE_SHELLY" />
@@ -3641,6 +3654,7 @@
 		<Flag Name="EGG_TRAINER_INSTALLED" />
 		<Flag Name="EGG_TRAINING" />
 		<Flag Name="EGG_TRAINING_OVALASTING" />
+		<Flag Name="EGG_TRAINING_OVALASTING_LEVEL" />
 		<Flag Name="EGG_TRAINING_TIMES" />
 		<Flag Name="EITAN_CREW" />
 		<Flag Name="EITAN_PRISONER_NEGOTIATIONS" />
@@ -4400,6 +4414,7 @@
 		<Flag Name="KELLY_SEXED" Description="Number of times you've had sexy times with Kelly" />
 		<Flag Name="KELLY_SKYSAP_COLLECT" Description="Undefined == quest not started&#xD;&#xA; 5 &lt;= Unlock SynthSap Research" />
 		<Flag Name="KELLY_TIMES_DOUBLESTUFFED_THE_PC" Description="Number of times Kelly has DP'd you" />
+		<Flag Name="KEROKORAS_HYPER" />
 		<Flag Name="KEROKORAS_PREG" />
 		<Flag Name="KEY_ITEM_DESC_OFF" />
 		<Flag Name="KHORGAN_BABY_GENDERS" />
@@ -4484,12 +4499,15 @@
 		<Flag Name="KIRO_KALLY_PICARDINE_QUEST" Description="-2 == Kally knows the truth but is keeping it a secret&#xD;&#xA;-1 == You decided not to discuss it&#xD;&#xA;undefined/0 == Not started&#xD;&#xA;1 == You told Kiro to tell the truth&#xD;&#xA;2 == You told Kiro Kally would feel loved&#xD;&#xA;3 == You told Kally and she kissed Kiro" />
 		<Flag Name="KIRO_KALLY_TEAM_MILKED" />
 		<Flag Name="KIRO_KALLY_THREESOMES" Description="Number of times you've had a threesome with Kiro and Kally" />
+		<Flag Name="KIRO_LOVED" />
 		<Flag Name="KIRO_MET_KALLY" Description="0 == Kiro hasn't met Kally yet&#xD;&#xA;1 == Airlock discussion&#xD;&#xA;2 = Hallway discussion&#xD;&#xA;3 == Outside the bar&#xD;&#xA;4 == Introductions complete" />
 		<Flag Name="KIRO_NUN_NUMBER" />
+		<Flag Name="KIRO_ONBOARD" />
 		<Flag Name="KIRO_ORGIED" Description="Number of times you've gone to the orgy with Kiro" />
 		<Flag Name="KIRO_ORGY_DATE" Description="Last day number that you went to the orgy with Kiro" />
 		<Flag Name="KIRO_OTHER_SIBLINGS" />
 		<Flag Name="KIRO_PHONE_EVENT" Description="1 = WINGMANNED AND SENT TO RECIPIENT.&#xD;&#xA;2 = SENT TO KALLY!&#xD;&#xA;-1 = FUCKED THIS SHIT, YOU'RE OUT."/>
+		<Flag Name="KIRO_RECRUITED" />
 		<Flag Name="KIRO_ROUGH_BUTTFUCK" Description="Number of times Kiro has owned your ass" />
 		<Flag Name="KIRO_TRUST" Description="How much Kiro trusts you" />
 		<Flag Name="KIRO_VAG_FUCKED" />
@@ -4580,20 +4598,32 @@
 		<Flag Name="KQ2_TALKED_TO_WATSON" />
 		<Flag Name="KQ2_WATSON_MET" />
 		<Flag Name="KQ_BLACK_UNLOCKED" />
+		<Flag Name="KQ_BUY_OFFER" />
 		<Flag Name="KQ_DOORLAST_RESULTS" />
 		<Flag Name="KQ_GOBLIN_DED" />
 		<Flag Name="KQ_KNOTTY_TERRAN_TAKEN" />
+		<Flag Name="KQ_LAST_HOUR_TF" />
 		<Flag Name="KQ_MET_SEXDOLL_DEM" />
 		<Flag Name="KQ_MET_SEXDOLL_HUM" />
 		<Flag Name="KQ_MET_SEXDOLL_LAQ" />
 		<Flag Name="KQ_MET_SEXDOLL_VUL" />
 		<Flag Name="KQ_MINIBOSS_DOWNED" />
 		<Flag Name="KQ_MINO_KING_TAKEN" />
+		<Flag Name="KQ_OFFER_FAIL" />
 		<Flag Name="KQ_PANEL" />
 		<Flag Name="KQ_PINK_UNLOCKED" />
 		<Flag Name="KQ_PINK_ZAP" />
+		<Flag Name="KQ_PLAT_OFFERED" />
+		<Flag Name="KQ_POSTER_2_HUNG" />
+		<Flag Name="KQ_POSTER_HUNG" />
+		<Flag Name="KQ_POSTER_LOOT" />
+		<Flag Name="KQ_POSTER_LOOT_2" />
+		<Flag Name="KQ_PO_DEAD" />
 		<Flag Name="KQ_RED_UNLOCKED" />
+		<Flag Name="KQ_RESCUED" />
+		<Flag Name="KQ_REWARDED" />
 		<Flag Name="KQ_SEXDOLLS_DEFEATED" />
+		<Flag Name="KQ_START" />
 		<Flag Name="KQ_STEP" />
 		<Flag Name="KQ_TAINTED_KUITAN_TAKEN" />
 		<Flag Name="KQ_VR_CHEST" />
@@ -5292,6 +5322,7 @@
 		<Flag Name="OMNISUITED" />
 		<Flag Name="ONZIA_GOT_PQUEST_LOOT" />
 		<Flag Name="ORGASMENDER" />
+		<Flag Name="ORGASMENDER_INSTALLED" />
 		<Flag Name="ORRYX_REP" />
 		<Flag Name="ORRYX_SHIPPED_HONEY" />
 		<Flag Name="ORRYX_SHIPPED_TODAY" />
@@ -5876,6 +5907,7 @@
 		<Flag Name="SAM_TOTAL_KIDS" />
 		<Flag Name="SATELLITE_GRYVAIN_DEFEAT" />
 		<Flag Name="SATELLITE_QUEST" />
+		<Flag Name="SAVICITE_DILDO_USES" />
 		<Flag Name="SCRAPYARD_SEEN" />
 		<Flag Name="SECOND_CAPTURED_ZIL_REPORTED_ON" />
 		<Flag Name="SECOP_FEMALE_SUBMISSION" />
@@ -6107,6 +6139,7 @@
 		<Flag Name="SHEKKA_BUTTFUCKED_U" />
 		<Flag Name="SHEKKA_CURE_TIMER" />
 		<Flag Name="SHEKKA_GYMMED" />
+		<Flag Name="SHEKKA_HALLOWEEN_LATENESS" />
 		<Flag Name="SHEKKA_ISSUES" />
 		<Flag Name="SHEKKA_MINDWASHED" />
 		<Flag Name="SHEKKA_ONAHOLED" />
@@ -7320,6 +7353,7 @@
 			<StatusEffect Name="Beta's Satisfaction" Description="You've recently sated your desire for your alpha's cum, and can think only of her. You take less damage from lust-damaging attacks." IconName="Icon_Charmed" Value1="2" IconShade="16738740" />
 			<StatusEffect Name="Buttfucking Paige" IsHidden="true" />
 			<StatusEffect Name="DILDO" IsHidden="true" />
+			<StatusEffect Name="Ditzy Strobed" IsHidden="true" />
 			<StatusEffect Name="Dzaan Addicted" IsHidden="true" />
 			<StatusEffect Name="Ellie's Milk" Description="Ellie's milk is keeping your body more aroused than normal. You'll have to wait for it to wear off before your body goes back to normal." IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Exhibitionism Reserve" Description="Tracker for bonus exhibitionism gains." IconName="LustUp" IsHidden="true" />
@@ -7353,10 +7387,12 @@
 			<StatusEffect Name="Mitzi_Gush_Thankyou" IsHidden="true" />
 			<StatusEffect Name="MITZI_SOAK_SCHLICKING" IsHidden="true" />
 			<StatusEffect Name="Myr Venom Withdrawal" Description="You're so used to being under the effects of red myr venom that you're incapable of getting yourself off alone. You'll need to find a lover (preferably a red myr) if you want to feel anything at all!" IconName="Icon_LustDown" IconShade="0" />
+			<StatusEffect Name="no drone" IsHidden="true" />
 			<StatusEffect Name="NT Build Bottle Plant Repeat" IsHidden="true" />
 			<StatusEffect Name="NT Male Milker Disabled" IsHidden="true" />
 			<StatusEffect Name="Nym-Foe Injections" Label1="Hips" Label2="Ass" Label3="Breasts" Label4="Lips" IsHidden="true" Comment="Bio-Silicone Levels" />
 			<StatusEffect Name="Orange Myr Sighting Delay" IsHidden="true" MinutesLeft="20160" />
+			<StatusEffect Name="Ovalasting" IsHidden="true" />
 			<StatusEffect Name="PAIGE_KIRO_COCKPATH" IsHidden="true" />
 			<StatusEffect Name="Paradise!" Description="Fazian's Paradise performance has left a fire in your loins!&#xA;Minimum lust increased by 20." IconName="LustUp" IconShade="0" />
 			<StatusEffect Name="Perfect Simulant" Description="You were created by the scientists at Steele Tech to be the perfect heir, and as such, your maximum capabilities exceed even those of the luckiest terrans. You walk, talk, breathe, and eat, just like any living creature, even simulating DNA to allow you to emulate the effects of transformative items on true organics." IconName="Icon_Gears_Three" />
@@ -7387,6 +7423,7 @@
 			<StatusEffect Name="STELLA_PREGNANT" IsHidden="true" />
 			<StatusEffect Name="STELLA_SEX_FATIGUE" IsHidden="true" />
 			<StatusEffect Name="StellaSickOfTalk" IsHidden="true" />
+			<StatusEffect Name="Stumble Strobed" IsHidden="true" />
 			<StatusEffect Name="Seduction Declined" IsHidden="true" />
 			<StatusEffect Name="SURFPASS" IsHidden="true" />
 			<StatusEffect Name="SynthSap Research" IsHidden="true" MinutesLeft="2880" />
