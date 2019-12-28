@@ -374,13 +374,8 @@ namespace TiTsEd.ViewModel
             get { return Level * 5; }
         }
 
-        public int Shields
-        {
-            get { return GetInt("shieldsRaw"); }
-            set { SetValue("shieldsRaw", value); }
-        }
 
-        public int MaxShields
+        public new int MaxShields
         {
             get
             {
@@ -420,13 +415,7 @@ namespace TiTsEd.ViewModel
             }
         }
 
-        public int HP
-        {
-            get { return GetInt("HPRaw"); }
-            set { SetValue("HPRaw", value); }
-        }
-
-        public int MaxHP
+        public new int MaxHP
         {
             get
             {

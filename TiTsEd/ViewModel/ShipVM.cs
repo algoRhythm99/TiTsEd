@@ -63,21 +63,16 @@ namespace TiTsEd.ViewModel
             }
         }
 
-        public int HPMax
+        public new int MaxShields
         {
             get
             {
-                int bonus = 0;
-                int hpMax = 15 + HPMod + bonus;
-                if (HasPerk("PCs"))
+                int maxShields = 0;
+                if (null != ShieldObj)
                 {
-                    var pc = (null != Game) ? Game.GetCharacter("PC") : null;
-                    if (null != pc)
-                    {
-                        hpMax = (int)Math.Ceiling(hpMax + (hpMax * (pc.Physique / (pc.Level * 50))));
-                    }
+                    maxShields += ShieldObj.GetInt("shields",0);
                 }
-                return hpMax;
+                return maxShields;
             }
         }
 
@@ -182,7 +177,7 @@ namespace TiTsEd.ViewModel
             set
             {
                 SetValue("shipCapacityRaw", value);
-                OnPropertyChanged("EffectiveCapacity");
+                OnPropertyChanged("EffectiveCrewCapacity");
             }
         }
 
@@ -191,7 +186,7 @@ namespace TiTsEd.ViewModel
             get
             {
                 double bonus = EquippedItemCountByClass(0) * 2;
-                return ShipCrewCapacity + bonus;
+                return (ShipCrewCapacity + bonus) - EquippedModulesCount;
             }
         }
 
@@ -280,6 +275,36 @@ namespace TiTsEd.ViewModel
         public int EquippedItemCountByClass(int iClass)
         {
             return 0;
+        }
+
+        public int EquippedModulesCount
+        {
+            get
+            {
+                return InventoryObj.Count();
+            }
+        }
+
+        public AmfObject InventoryObj
+        {
+            get
+            {
+                return GetObj("inventory");
+            }
+            set
+            {
+                SetValue("inventory", value);
+                OnPropertyChanged("EquippedModulesCount");
+                OnPropertyChanged("EffectiveCrewCapacity");
+            }
+        }
+
+        public AmfObject ShieldObj
+        {
+            get
+            {
+                return GetObj("shield");
+            }
         }
 
         public String Description

@@ -42,11 +42,34 @@ namespace TiTsEd.ViewModel
             get { return GetString("short"); }
             set { SetValue("short", value); }
         }
-        
+
+
+        public int HP
+        {
+            get { return GetInt("HPRaw"); }
+            set { SetValue("HPRaw", value); }
+        }
+
+        public int MaxHP
+        {
+            get { return 0; }
+        }
+
         public int HPMod
         {
             get { return GetInt("HPMod"); }
             set { SetValue("HPMod", value); }
+        }
+
+        public int Shields
+        {
+            get { return GetInt("shieldsRaw"); }
+            set { SetValue("shieldsRaw", value); }
+        }
+
+        public int MaxShields
+        {
+            get { return 0; }
         }
 
         public AmfObject PerksArray

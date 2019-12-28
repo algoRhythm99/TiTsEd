@@ -17,6 +17,7 @@
 
     <ScrollViewer HorizontalScrollBarVisibility="Disabled">
         <StackPanel Style="{StaticResource ContentStackPanel}">
+            <TextBlock Text="*** Experimental ***" Foreground="Red" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Width="Auto" />
             <common:ArrayEditor
                     Header="Ships"
                     Items="{Binding Game.Ships}"
@@ -62,9 +63,17 @@
                     <TextBlock Text="Stats" Style="{StaticResource Header}" />
                     <common:AutoGrid>
                         <Label>
-                            <TextBlock Text="HP" />
+                            <TextBlock Text="Armor" />
                         </Label>
-                        <common:MyNumericBox    Value="{Binding HPMod}" Type="UInt" Max="{Binding HPMax}" />
+                        <common:MyNumericBox    Value="{Binding HP}" Type="UInt" />
+                        <Label>
+                            <TextBlock Text="Max Armor" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding HPMod}" Type="UInt" />
+                        <Label>
+                            <TextBlock Text="Shields" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding Shields}" Type="UInt" Tip="{Binding MaxShields}" />
 
                         <Label>
                             <TextBlock Text="Agility" />
