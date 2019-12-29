@@ -76,6 +76,10 @@
     <Compile Include="Common\UIHelpers.cs" />
     <Compile Include="Common\UriConverter.cs" />
     <Compile Include="Common\VersionInfo.cs" />
+    <Compile Include="Model\Creature.cs" />
+    <Compile Include="Model\StorageClass.cs" />
+    <Compile Include="Model\ItemSlotClass.cs" />
+    <Compile Include="Model\TiTSSaveable.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
