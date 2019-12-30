@@ -7003,7 +7003,9 @@
 			<StatusEffect Name="Crystal Coated" Description="Defense is raised by 4 points thanks to a coating of rock-hard crystals!" Value1="2" IconName="Icon_DefUp" MinutesLeft="1200" />
 			<StatusEffect Name="Curdsonwhey" Description="You are currently under the effects of the Curdsonwhey lozenge." IconName="Pill" MinutesLeft="240" />
 			<StatusEffect Name="Dumbfuck" Description="You are currently under the effects of &quot;dumbfuck,&quot; an illegal drug known for making its users more and more sex-crazed with every orgasm over a 24 hour period. Intelligence loss is also common." IconName="Icon_DrugPill" MinutesLeft="1440" IconShade="0" />
+			<StatusEffect Name="Flushed" Description="You are significantly more passively lusty than before.\n\n(+25 minimum lust)\n(Vulnerable to phallus-bearing foes.)" IconName="Icon_LustUp" IconShade="12030916" MinutesLeft="4320" />
 			<StatusEffect Name="Focus Pill" Description="You feel sharper, more able to focus and process your senses." IconName="Icon_DrugPill" IconShade="0" />
+			<StatusEffect Name="Fuck Fever" Description="You are significantly more passively lusty than before.\n\n(+33 minimum lust)\n(Extremely vulnerable to phallus-bearing foes.)" IconName="Icon_LustUp" IconShade="12030916" MinutesLeft="5760" />
 			<StatusEffect Name="Gabilani Prophylactic" Description="The spray currently effecting you will reduce encounters with gabilani." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
 			<StatusEffect Name="Goblinola Bar" Description="Your stomach is a little unsettled by the health bar you ate..." Value1="60" Value2="1" IconName="Icon_Poison" MinutesLeft="60" />
 			<StatusEffect Name="Foxfire" Label1="1 == Frostfire variant" Label2="0 == On Head&#xD;&#xA;1 == On Tail" MinutesLeft="119" IsHidden="true" />
@@ -7027,6 +7029,7 @@
 			<StatusEffect Name="Royal Nectar" Description="That honey wine packs a punch! You're feeling a lot peppier now." Value1="30" IconName="Icon_Wine" MinutesLeft="2880" IconShade="300" />
 			<StatusEffect Name="Rut" Description="Your body is driven for aggressive breeding, increasing your libido and virility, as well as boosting your minimum cum output.&#xD;&#xA;&#xD;&#xA;+5 Libido&#xD;&#xA;+25 Minimum Lust&#xD;&#xA;+1000mLs Minimum Cum&#xD;&#xA;+400% Virility" Value1="5" Value2="25" Value3="1000" Value4="4" IconName="LustUp" MinutesLeft="28800" IconShade="12030916" />
 			<StatusEffect Name="Semen's Candy" Description="The Semen’s Friend candy is still in your system." Value1="1440" Value2="1" IconName="Icon_DrugPill" MinutesLeft="1440" />
+			<StatusEffect Name="Strangely Warm" Description="You are more passively lusty than before.\n\n(+15 minimum lust)" IconName="Icon_LustUp" IconShade="12030916" MinutesLeft="4320" />
 			<StatusEffect Name="Stretchy Sexiness" IsHidden="true" Value1="3" Label1="Bonus" />
 			<StatusEffect Name="Sweet Tooth" Description="Sucking seductively on a lollipop." IconName="Icon_Lollipop" MinutesLeft="720" />
 			<StatusEffect Name="Sydian Prophylactic" Description="The spray currently effecting you will reduce encounters with sydians." IconName="Icon_Perfume" MinutesLeft="1200" IconShade="0" />
@@ -7206,6 +7209,7 @@
 			<StatusEffect Name="Butt Bug Message Cooldown" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
 			<StatusEffect Name="Cum High Cooldown" IsHidden="true" />
+			<StatusEffect Name="Cynthia Away" IsHidden="true" />
 			<StatusEffect Name="Doll Maker Repair Timer" IsHidden="true" Minutes="1440" />
 			<StatusEffect Name="Dryad Encounters" IsHidden="true" Value1="1" MinutesLeft="600" />
 			<StatusEffect Name="Exhibitionist Blurb Cooldown" IsHidden="true" />
@@ -7320,12 +7324,14 @@
 			<StatusEffect Name="Cherry_In_Room" IsHidden="true" />
 			<StatusEffect Name="Cherry_Internal_Cum" IsHidden="true" />
 			<StatusEffect Name="Clitgrow Done Notice" IsHidden="true" />
+			<StatusEffect Name="Cora Showered" IsHidden="true" />
 			<StatusEffect Name="Dark Chrysalis Closed" IsHidden="true" />
 			<StatusEffect Name="Denied By Luca" IsHidden="true" />
 			<StatusEffect Name="DisabledRoz" IsHidden="true" />
 			<StatusEffect Name="Extorted" IsHidden="true" />
 			<StatusEffect Name="FoxyDisable" IsHidden="true" />
 			<StatusEffect Name="Got Bianca Checkup" IsHidden="true" />
+			<StatusEffect Name="Haley Satisfied" IsHidden="true" />
 			<StatusEffect Name="IQBGoneTimer" IsHidden="true" />
 			<StatusEffect Name="Kiro Panties Event Queue" IsHidden="true" />
 			<StatusEffect Name="KQ BJ Offer" IsHidden="true" />
@@ -7345,12 +7351,15 @@
 			<StatusEffect Name="Syri Pennybating" IsHidden="true" />
 			<StatusEffect Name="TaurDisable" IsHidden="true" />
 			<StatusEffect Name="ThiccGobDisable" IsHidden="true" />
+			<StatusEffect Name="Uveto Blizzard" IsHidden="true" />
+			<StatusEffect Name="Uveto Clear" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Miscellaneous">
 			<StatusEffect Name="Afraid of Ula Pussy" IsHidden="true" />
 			<StatusEffect Name="BadgerMindwash" IsHidden="true" />
 			<StatusEffect Name="Bait Beta Nyrea" IsHidden="true" />
 			<StatusEffect Name="Beta's Satisfaction" Description="You've recently sated your desire for your alpha's cum, and can think only of her. You take less damage from lust-damaging attacks." IconName="Icon_Charmed" Value1="2" IconShade="16738740" />
+			<StatusEffect Name="Bitterly Cold" Description="The bitter, piercing cold of Uveto’s icy tundra threatens to chill you to the bone. Better wrap up nice and tight, maybe even find something to heat you up to better stave off the freezing winds." IconName="Icon_Snowflake" IconShade="6149605" />
 			<StatusEffect Name="Buttfucking Paige" IsHidden="true" />
 			<StatusEffect Name="DILDO" IsHidden="true" />
 			<StatusEffect Name="Ditzy Strobed" IsHidden="true" />
