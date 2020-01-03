@@ -18,6 +18,7 @@ namespace TiTsEd.ViewModel
         private ItemContainerVM _armorContainer;
         private ItemContainerVM _upperUndergarmentContainer;
         private ItemContainerVM _lowerUndergarmentContainer;
+        private ItemContainerVM _tentContainer;
         private string _characterName;
 
         public enum CharacterClasses
@@ -67,6 +68,7 @@ namespace TiTsEd.ViewModel
             List<String> accessoryTypes = new List<String>();
             List<String> upperGarmentTypes = new List<String>();
             List<String> lowerGarmentTypes = new List<String>();
+            List<String> tentTypes = new List<String>();
             foreach (XmlItemGroup type in XmlData.Current.ItemGroups)
             {
                 types.Add(type.Name);
@@ -94,38 +96,45 @@ namespace TiTsEd.ViewModel
                     case "Undergarment (Lower)":
                         lowerGarmentTypes.Add(type.Name);
                         break;
+                    case "Tents":
+                        tentTypes.Add(type.Name);
+                        break;
                 }
             }
 
             var containers = new List<ItemContainerVM>();
             // shield, weapons, accessory, armors
-            var shieldObj = GetObj("shield");
+            var shieldObj = GetObj("shield") ?? NewEmptyItem();
             _shieldContainer = new ItemContainerVM(this, "Shield", shieldTypes);
             _shieldContainer.Add(shieldObj);
 
-            var meleeWeaponObj = GetObj("meleeWeapon");
+            var meleeWeaponObj = GetObj("meleeWeapon") ?? NewEmptyItem();
             _meleeWeaponContainer = new ItemContainerVM(this, "Weapon (Melee)", meleeTypes);
             _meleeWeaponContainer.Add(shieldObj);
 
-            var rangedWeaponObj = GetObj("rangedWeapon");
+            var rangedWeaponObj = GetObj("rangedWeapon") ?? NewEmptyItem();
             _rangedWeaponContainer = new ItemContainerVM(this, "Weapon (Ranged)", rangedTypes);
             _rangedWeaponContainer.Add(shieldObj);
 
-            var armorObj = GetObj("armor");
+            var armorObj = GetObj("armor") ?? NewEmptyItem();
             _armorContainer = new ItemContainerVM(this, "Armor", armorTypes);
             _armorContainer.Add(armorObj);
 
-            var _accessoryObj = GetObj("accessory");
+            var _accessoryObj = GetObj("accessory") ?? NewEmptyItem();
             _accessoryContainer = new ItemContainerVM(this, "Accessory", accessoryTypes);
             _accessoryContainer.Add(_accessoryObj);
 
-            var _upperUndergarmentObj = GetObj("upperUndergarment");
+            var _upperUndergarmentObj = GetObj("upperUndergarment") ?? NewEmptyItem();
             _upperUndergarmentContainer = new ItemContainerVM(this, "Undergarment (Upper)", upperGarmentTypes);
             _upperUndergarmentContainer.Add(_upperUndergarmentObj);
 
-            var _lowerUndergarmentObj = GetObj("lowerUndergarment");
+            var _lowerUndergarmentObj = GetObj("lowerUndergarment") ?? NewEmptyItem();
             _lowerUndergarmentContainer = new ItemContainerVM(this, "Undergarment (Lower)", lowerGarmentTypes);
             _lowerUndergarmentContainer.Add(_lowerUndergarmentObj);
+
+            var _tentObj = GetObj("tent") ?? NewEmptyItem();
+            _tentContainer = new ItemContainerVM(this, "Tent", tentTypes);
+            _tentContainer.Add(_tentObj);
 
             _inventory = new ItemContainerVM(this, "Inventory", types);
             AmfObject inv = GetObj("inventory") ?? new AmfObject(AmfTypes.Array);
@@ -146,6 +155,7 @@ namespace TiTsEd.ViewModel
             containers.Add(_accessoryContainer);
             containers.Add(_upperUndergarmentContainer);
             containers.Add(_lowerUndergarmentContainer);
+            containers.Add(_tentContainer);
 
             GameVM.ImportUnknownItems(containers, types);
 
@@ -457,26 +467,35 @@ namespace TiTsEd.ViewModel
                     maxShields += (RangedWeapon != null) ? RangedWeapon.Xml.GetFieldValueAsInt("shields") : 0;
 
                     maxShields += (Armor != null) ? Armor.Xml.GetFieldValueAsInt("shields") : 0;
+                    maxShields += (Accessory != null) ? Accessory.Xml.GetFieldValueAsInt("shields") : 0;
                     maxShields += (UpperUndergarment != null) ? UpperUndergarment.Xml.GetFieldValueAsInt("shields") : 0;
                     maxShields += (LowerUndergarment != null) ? LowerUndergarment.Xml.GetFieldValueAsInt("shields") : 0;
 
                     if (HasPerk("Shield Tweaks"))
                     {
-                        maxShields += Level * 2;
+                        maxShields += (Level * 2);
                     }
                     if (HasPerk("Shield Booster"))
                     {
-                        maxShields += Level * 8;
+                        maxShields += (Level * 8);
                     }
                     if (HasPerk("Attack Drone"))
                     {
                         maxShields += (Level * 3);
                     }
+                    if (HasStatusEffect("Valden-Possessed"))
+                    {
+                        maxShields = (int) Math.Round(maxShields * 1.4);
+                    }
 
                     //Debuffs!
                     if (HasStatusEffect("Rusted Emitters"))
                     {
-                        maxShields = (int)Math.Round(maxShields * 0.75);
+                        maxShields = (int) Math.Round(maxShields * 0.75);
+                    }
+                    if (0 > maxShields)
+                    {
+                        maxShields = 0;
                     }
                 }
                 return maxShields;
@@ -2069,6 +2088,16 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public static AmfObject NewEmptyItem()
+        {
+            var item = new AmfObject(AmfTypes.Object);
+            item["classInstance"] = XmlItem.Empty.ID;
+            item["shortName"] = XmlItem.Empty.Name;
+            item["quantity"] = 0;
+            item["version"] = 1;
+            return item;
+        }
+
         protected void UpdateContainer(ItemContainerVM container, AmfObject slotObject, int maxSlots = 1) {
             container.Clear();
             for (int i = 0; i < maxSlots; ++i)
@@ -2082,11 +2111,7 @@ namespace TiTsEd.ViewModel
                 if (null == item)
                 {
                     //just add an empty item, we'll fix it later maybe
-                    item = new AmfObject(AmfTypes.Object);
-                    item["classInstance"] = XmlItem.Empty.ID;
-                    item["shortName"] = XmlItem.Empty.Name;
-                    item["quantity"] = 0;
-                    item["version"] = 1;
+                    item = NewEmptyItem();
                     if (maxSlots > 1) {
                         slotObject.Push(item);
                     } else {
@@ -2155,6 +2180,11 @@ namespace TiTsEd.ViewModel
         public ItemSlotVM LowerUndergarment
         {
             get { return _lowerUndergarmentContainer.Slots[0]; }
+        }
+
+        public ItemSlotVM Tent
+        {
+            get { return _tentContainer.Slots[0]; }
         }
 
         #endregion

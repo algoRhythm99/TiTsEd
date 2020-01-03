@@ -323,12 +323,12 @@ namespace TiTsEd.ViewModel
 
         public bool HasValue(object key)
         {
-            return _obj.Contains(key);
+            return (null != _obj) ? _obj.Contains(key) : false;
         }
 
         public object GetValue(object key)
         {
-            return _obj[key];
+            return (null != _obj) ? _obj[key] : null;
         }
 
         public double GetDouble(object key, double? defaultValue = 0)
@@ -338,22 +338,22 @@ namespace TiTsEd.ViewModel
 
         public int GetInt(object key, int? defaultValue = 0)
         {
-            return _obj.GetInt(key, defaultValue);
+            return (null != _obj) ? _obj.GetInt(key, defaultValue) : 0;
         }
 
         public string GetString(object key)
         {
-            return _obj.GetString(key);
+            return (null != _obj) ? _obj.GetString(key) : null;
         }
 
         public bool GetBool(object key, bool? defaultValue = false)
         {
-            return _obj.GetBool(key, defaultValue);
+            return (null != _obj) ? _obj.GetBool(key, defaultValue) : false;
         }
 
         public AmfObject GetObj(object key)
         {
-            return _obj.GetObj(key);
+            return (null != _obj) ? _obj.GetObj(key) : null;
         }
 
         public virtual bool SetValue(object key, object value, string propertyName = null)
