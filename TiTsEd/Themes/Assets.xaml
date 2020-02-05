@@ -13,4 +13,6 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
     </Style>
 
+    <common:UriConverter x:Key="UriConverter" />
+
 </ResourceDictionary>

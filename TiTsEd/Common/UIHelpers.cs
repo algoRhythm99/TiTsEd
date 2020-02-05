@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Media;
 
 namespace TiTsEd.Common
 {
-    class UIHelpers
+    public class UIHelpers
     {
         /// <summary>
         /// Finds a Child of a given item in the visual tree. 
@@ -68,6 +65,12 @@ namespace TiTsEd.Common
         public static double NormalizeLength(double len)
         {
             return Math.Max(len, 0);
+        }
+
+
+        public static string GetStringResource(string name)
+        {
+            return Properties.Resources.ResourceManager.GetString(name);
         }
     }
 }

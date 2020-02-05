@@ -99,8 +99,6 @@ namespace TiTsEd.View
 
         public ExceptionBoxResult ShowDialog(params ExceptionBoxButtons[] buttons)
         {
-            // TiTsEd thread  : http://fenoxo.com/forum/index.php?/topic/57-TiTsEd-a-save-editor/  (old: http://forum.fenoxo.com/thread-6324.html)
-            // TiTsEd tracker : https://github.com/tmedwards/TiTsEd/issues
             if (App.Current.MainWindow != this)
             {
                 Owner = App.Current.MainWindow;
@@ -208,6 +206,7 @@ namespace TiTsEd.View
         void requestNavigate(object sender, RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
 
         private void openLogfile_Click(object sender, RoutedEventArgs e)

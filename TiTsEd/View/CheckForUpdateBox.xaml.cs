@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -81,7 +82,7 @@ namespace TiTsEd.View
             HttpWebResponse response = null;
 
             // Create the request
-            string fileUrl = @"https://raw.githubusercontent.com/Chase-san/TiTsEd/master/latest.txt";
+            string fileUrl = UIHelpers.GetStringResource("LatestFileUrl");
             try
             {
                 request = (HttpWebRequest) HttpWebRequest.Create(fileUrl);

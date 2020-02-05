@@ -1,6 +1,7 @@
 ﻿<Window x:Class="TiTsEd.View.ExceptionBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:props="clr-namespace:TiTsEd.Properties"
         Icon="../TiTsEd.ico"
         Title="ExceptionBox" Height="Auto" Width="600" SizeToContent="Height" MinWidth="600" MinHeight="300">
     <Window.Resources>
@@ -10,6 +11,9 @@
                 <Setter Property="Height" Value="24" />
                 <Setter Property="Width" Value="80" />
             </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Assets.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -39,9 +43,9 @@
             <TextBlock Text="Reporting the error" FontWeight="Bold" />
             <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,5,0,0" Grid.Row="1">
                 Please report this error by copying it and either posting a message in
-                <Hyperlink NavigateUri="http://fenoxo.com/forum/index.php?/topic/57-TiTsEd-a-save-editor/" RequestNavigate="requestNavigate">TiTsEd's forum thread</Hyperlink>,
+                <Hyperlink NavigateUri="{Binding Source={x:Static props:Resources.ForumThreadUrl}, Converter={StaticResource UriConverter}, Mode=OneWay}" RequestNavigate="requestNavigate">TiTsEd's forum thread</Hyperlink>,
                 at fenoxo.com, or opening a ticket in
-                <Hyperlink NavigateUri="https://github.com/Chase-san/TiTsEd/issues" RequestNavigate="requestNavigate">TiTsEd's issue tracker</Hyperlink>.
+                <Hyperlink NavigateUri="{Binding Source={x:Static props:Resources.IssuesUrl}, Converter={StaticResource UriConverter}, Mode=OneWay}" RequestNavigate="requestNavigate">TiTsEd's issue tracker</Hyperlink>.
                 (Error also saved to the <Hyperlink Click="openLogfile_Click">TiTsEd.log file</Hyperlink>.)
                 <LineBreak /><LineBreak />
                 Providing the save file which caused the error could also be helpful.
@@ -81,9 +85,9 @@
         <Grid Background="#F0F0F0" Margin="0,10,0,0" Grid.Row="4">
             <TextBlock x:Name="linkBar" VerticalAlignment="Center" Margin="20,0,10,0">
                 <TextBlock Text="Links:" FontWeight="Bold" />
-                <Hyperlink NavigateUri="http://fenoxo.com/forum/index.php?/topic/57-TiTsEd-a-save-editor/" RequestNavigate="requestNavigate">TiTsEd's forum thread</Hyperlink>
+                <Hyperlink NavigateUri="{Binding Source={x:Static props:Resources.ForumThreadUrl}, Converter={StaticResource UriConverter}, Mode=OneWay}" RequestNavigate="requestNavigate">TiTsEd's forum thread</Hyperlink>
                 &amp;
-                <Hyperlink NavigateUri="https://github.com/Chase-san/TiTsEd/issues" RequestNavigate="requestNavigate">TiTsEd's issue tracker</Hyperlink>
+                <Hyperlink NavigateUri="{Binding Source={x:Static props:Resources.IssuesUrl}, Converter={StaticResource UriConverter}, Mode=OneWay}" RequestNavigate="requestNavigate">TiTsEd's issue tracker</Hyperlink>
             </TextBlock>
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" x:Name="buttonStack" />
