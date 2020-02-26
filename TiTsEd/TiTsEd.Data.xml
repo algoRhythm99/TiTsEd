@@ -7324,6 +7324,7 @@
 			<StatusEffect Name="Sera No Sex Cooldown" IsHidden="true" MinutesLeft="120" />
 			<StatusEffect Name="Sera Tease Cooldown" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Sera's TailCock Cooldown" IsHidden="true" MinutesLeft="720" />
+			<StatusEffect Name="Sexed Rats Raiders" IsHidden="true" />
 			<StatusEffect Name="Shekka_Cure_CD" IsHidden="true" />
 			<StatusEffect Name="Shekka_Follower_Email_CD" IsHidden="true" />
 			<StatusEffect Name="Shekka_Pay_CD" IsHidden="true" />
@@ -7372,6 +7373,7 @@
 			<StatusEffect Name="Hyena Fur" IsHidden="true" />
 			<StatusEffect Name="Icy Veins" IsHidden="true" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
+			<StatusEffect Name="Opaque Skin" IsHidden="true" />
 			<StatusEffect Name="Rubber Wrapped" IsHidden="true" />
 			<StatusEffect Name="Shark Markings" Comment="Shark scale markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="3" Label1="1 = Stripes&#xD;&#xA;2 == Spots&#xD;&#xA;3 == Frontal Blotch" IsHidden="true" />
 			<StatusEffect Name="Silicone Preference" IsHidden="true" />
