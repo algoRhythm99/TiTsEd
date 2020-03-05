@@ -6,37 +6,40 @@ using System.Reflection;
 using System.Security;
 using System.Text;
 
+
 namespace TiTsEd.Common
 {
     public static class Logger
     {
-        public static void Error(Exception e)
-        {
-            Error(e.ToString());
-        }
-
-        public static void Error(string msg)
+        public static void Log(String logString, bool truncate=false)
         {
             try
             {
-                string dataVersion = TiTsEd.ViewModel.VM.Instance != null ? TiTsEd.ViewModel.VM.Instance.FileVersion : "";
-                if (!String.IsNullOrEmpty(dataVersion))
+                string dataVersion = "Unknown";
+                if ((null != TiTsEd.ViewModel.VM.Instance) && !String.IsNullOrEmpty(TiTsEd.ViewModel.VM.Instance.FileVersion))
                 {
-                    dataVersion = String.Format(", TiTs Data: {0}", dataVersion);
+                    dataVersion = TiTsEd.ViewModel.VM.Instance.FileVersion;
                 }
-
                 // if possible, make TiTsEd's and TiTs' versions an integral part of the exception message,
                 // so we don't have to rely on users' claims of being up to date anymore
-                msg = String.Format("[{0}: {1}{2}]\n{3}",
-                    Assembly.GetExecutingAssembly().GetName().Name,
+                var msg = String.Format("[{0}:{1}:{2}]: {3}",
+                    (truncate) ? System.Reflection.Assembly.GetEntryAssembly().Location : Assembly.GetExecutingAssembly().GetName().Name,
                     Assembly.GetExecutingAssembly().GetName().Version.ToString(),
                     dataVersion,
-                    msg);
-
-                File.WriteAllText("TiTsEd.log", msg);
-                //Console.WriteLine(msg);
+                    logString);
+                string[] messages = { msg };
+                var logFile = GetLogFilePath();
+                if (truncate)
+                {
+                    File.WriteAllLines(logFile, messages);
+                }
+                else
+                {
+                    File.AppendAllLines(logFile, messages);
+                }
+                Console.WriteLine(msg);
             }
-            catch(IOException)
+            catch (IOException)
             {
             }
             catch (SecurityException)
@@ -48,6 +51,43 @@ namespace TiTsEd.Common
             catch (NotSupportedException)
             {
             }
+        }
+
+        public static void Error(Exception e)
+        {
+            Error(e.ToString());
+        }
+
+        public static void Error(string msg)
+        {
+            Log(msg);    
+        }
+
+        public static string GetLogFilePath()
+        {
+            var appData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"TiTsEd");
+            try
+            {
+                if (!Directory.Exists(appData))
+                {
+                    Directory.CreateDirectory(appData);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            catch (SecurityException)
+            {
+            }
+            catch (UnauthorizedAccessException)
+            {
+            }
+            catch (NotSupportedException)
+            {
+            }
+
+            var logFile = System.IO.Path.Combine(appData, "TiTsEd.log");
+            return logFile;
         }
     }
 }

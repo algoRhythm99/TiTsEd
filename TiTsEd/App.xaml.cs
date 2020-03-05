@@ -118,6 +118,8 @@ namespace TiTsEd
 
         void Initialize()
         {
+            Logger.Log("Initialize", true);
+
             ExceptionBox box;
 
             foreach (string xmlFile in XmlData.Files.All)

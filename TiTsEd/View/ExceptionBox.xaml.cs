@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TiTsEd.Common;
 
 namespace TiTsEd.View
 {
@@ -211,8 +212,7 @@ namespace TiTsEd.View
 
         private void openLogfile_Click(object sender, RoutedEventArgs e)
         {
-            var appPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            var logFile = System.IO.Path.Combine(appPath, "TiTsEd.log");
+            var logFile = Logger.GetLogFilePath();
             if (File.Exists(logFile))
             {
                 System.Diagnostics.Process.Start(logFile);

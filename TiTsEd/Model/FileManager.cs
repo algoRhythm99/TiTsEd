@@ -129,6 +129,8 @@ namespace TiTsEd.Model
 
         static void BuildAIRPath(string nameFormat, ref bool separatorBefore)
         {
+            Logger.Log(String.Format("BuildAIRPath({0})", nameFormat));
+
             string path = "";
             try
             {
@@ -197,6 +199,8 @@ namespace TiTsEd.Model
 
         static void BuildNpapiPath(string nameFormat, string suffix, ref bool separatorBefore)
         {
+            Logger.Log(String.Format("BuildNpapiPath({0}, {1})", nameFormat, suffix));
+
             string path = "";
             try
             {
@@ -264,6 +268,8 @@ namespace TiTsEd.Model
 
         static void BuildPpapiPath(string nameFormat, Environment.SpecialFolder appDataPath, string appPath, string appProfilePattern, string suffix, ref bool separatorBefore)
         {
+            Logger.Log(String.Format("BuildPpapiPath({0}, {1}, {2}, {3}, {4})", nameFormat, appDataPath, appPath, appProfilePattern, suffix));
+
             // …\AppData\Local\Google\Chrome\User Data\{app_profile}\Pepper Data\Shockwave Flash\WritableRoot\#SharedObjects\{flash_profile}\{suffix}
             // …\AppData\Roaming\Opera Software\{app_profile}\Pepper Data\Shockwave Flash\WritableRoot\#SharedObjects\{flash_profile}\{suffix}
 

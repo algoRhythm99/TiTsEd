@@ -67,6 +67,8 @@ namespace TiTsEd.ViewModel
 
         public void Load(string path, SerializationFormat expectedFormat, bool createBackup)
         {
+            Logger.Log(String.Format("Load({0}, {1}, {2})", path, expectedFormat.ToString(), createBackup));
+
             FileManager.TryRegisterExternalFile(path);
             var file = new AmfFile(path);
             var dataVersion = file.GetString("version");

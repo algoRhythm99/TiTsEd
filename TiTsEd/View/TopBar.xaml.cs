@@ -97,6 +97,21 @@ namespace TiTsEd.View
 
         void SetItems(ItemsControl menu, IEnumerable<IMenuBaseVM> items, bool isRoot)
         {
+            /*
+            List<string> itemList = new List<string>();
+            if (null != items)
+            {
+                foreach (IMenuBaseVM m in items)
+                {
+                    foreach (IMenuItemVM mi in m.Children)
+                    {
+                        itemList.Add(mi.Label);
+                    }
+                }
+            }
+            Logger.Log(String.Format("SetItems([{0}], {1})", String.Join(",", itemList.ToArray()), isRoot));
+            */
+
             menu.Items.Clear();
             bool needSeparator = false;
             foreach (var item in items)
