@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using TiTsEd.Common;
 using TiTsEd.Model;
 
 
@@ -312,8 +313,8 @@ namespace TiTsEd.ViewModel {
                     foreach (XmlItem xml in type.Items) {
                         //skip items that do not match the search string
                         if (searchText.Length >= MIN_ITEM_TEXT_SEARCH_LENGTH
-                            && !xml.Name.ToLower().Contains(searchText)
-                            && !xml.ID.ToLower().Contains(searchText)) {
+                            && !xml.Name.ContainsInsensitive(searchText)
+                            && !xml.ID.ContainsInsensitive(searchText)) {
                             continue;
                         }
                         //add the item to the item group

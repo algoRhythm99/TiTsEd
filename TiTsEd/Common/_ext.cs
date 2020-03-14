@@ -46,6 +46,16 @@ namespace TiTsEd.Common
             if (inches >= 12) return String.Format("{1:0}\u2032 {2:0}\u2033 ; {0:0.0} cm", inches * inchesToCM, (int)(inches / 12), inches % 12);
             return String.Format("{0:0.0} inches ; {1:0.0} cm", inches, inches * inchesToCM);
         }
+
+        public static bool Contains(this string source, string toCheck, StringComparison comp)
+        {
+            return source?.IndexOf(toCheck, comp) >= 0;
+        }
+
+        public static bool ContainsInsensitive(this string source, string toCheck)
+        {
+            return source?.IndexOf(toCheck, StringComparison.OrdinalIgnoreCase) >= 0;
+        }
     }
 
 
