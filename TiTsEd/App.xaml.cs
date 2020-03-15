@@ -212,7 +212,7 @@ namespace TiTsEd
                 }
             }
 
-            VM.Instance.Load(file.FilePath, SerializationFormat.Slot, createBackup: true);
+            VM.Instance.Load(file.FilePath, SerializationFormat.Slot);
             return file;
         }
 

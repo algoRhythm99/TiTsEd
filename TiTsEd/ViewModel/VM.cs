@@ -65,9 +65,9 @@ namespace TiTsEd.ViewModel
             get { return (null != CurrentFile); }
         }
 
-        public void Load(string path, SerializationFormat expectedFormat, bool createBackup)
+        public void Load(string path, SerializationFormat expectedFormat)
         {
-            Logger.Log(String.Format("Load({0}, {1}, {2})", path, expectedFormat.ToString(), createBackup));
+            Logger.Log(String.Format("Load({0}, {1})", path, expectedFormat.ToString()));
 
             FileManager.TryRegisterExternalFile(path);
             var file = new AmfFile(path);
@@ -133,10 +133,6 @@ namespace TiTsEd.ViewModel
                 box.ShowDialog(ExceptionBoxButtons.OK);
             }
 
-            if (createBackup)
-            {
-                FileManager.CreateBackup(path);
-            }
             CurrentFile = file;
 
             XmlData.Select(XmlData.Files.TiTs);
@@ -179,20 +175,15 @@ namespace TiTsEd.ViewModel
             bool error = false;
             try
             {
+                FileManager.CreateBackup(path);
+
                 Game.BeforeSerialization();
                 CurrentFile.Save(path, format);
                 FileManager.TryRegisterExternalFile(path);
             }
-            catch (SecurityException)
+            catch (Exception ex)
             {
-                error = true;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                error = true;
-            }
-            catch (Exception)
-            {
+                Logger.Error(ex);
                 error = true;
             }
 

@@ -216,7 +216,7 @@ namespace TiTsEd.ViewModel {
                     byte[] buffer = new byte[4];
                     fs.Read(buffer, 0, buffer.Length);
 
-                    VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported, createBackup: true);
+                    VM.Instance.Load(path, dlg.FilterIndex == 1 ? SerializationFormat.Slot : SerializationFormat.Exported);
                 }
             } catch (System.UnauthorizedAccessException ex) {
                 Logger.Error(ex);
@@ -358,7 +358,7 @@ namespace TiTsEd.ViewModel {
 
         public void OnClick() {
             if (_openOnClick) {
-                VM.Instance.Load(Source.FilePath, SerializationFormat.Slot, createBackup: _directoryKind != DirectoryKind.Backup);
+                VM.Instance.Load(Source.FilePath, SerializationFormat.Slot);
             } else {
                 VM.Instance.Save(Source.FilePath, Source.Format);
             }
