@@ -70,7 +70,7 @@
         </DataTemplate>
 
         <Style x:Key="SubMenuStyle" TargetType="{x:Type MenuItem}">
-            <EventSetter Event="Click" Handler="subMenu_Click" />
+            <EventSetter Event="Click" Handler="SubMenu_Click" />
             <Setter Property="HeaderTemplate" Value="{StaticResource FileTemplate}" />
             <Setter Property="ToolTip" Value="{Binding Path}" />
             <Setter Property="Icon" Value="{Binding Icon}" />
@@ -78,7 +78,7 @@
         </Style>
 
         <Style x:Key="RootMenuStyle" TargetType="{x:Type MenuItem}">
-            <EventSetter Event="Click" Handler="menu_Click" />
+            <EventSetter Event="Click" Handler="Menu_Click" />
             <Setter Property="ItemContainerStyle" Value="{StaticResource SubMenuStyle}" />
             <Setter Property="HeaderTemplate" Value="{StaticResource FolderTemplate}" />
             <Setter Property="Foreground" Value="{Binding Foreground}" />
@@ -152,15 +152,13 @@
                           HorizontalContentAlignment="Left"
                           Background="Transparent"
                           BorderThickness="0"
-                          Checked="openButton_StateChanged"
                           Content="Open"
                           FontSize="16"
-                          Unchecked="openButton_StateChanged">
+                          Click="OpenButton_Click">
             <ToggleButton.ContextMenu>
                 <ContextMenu x:Name="openMenu"
-                                 MinWidth="150"
-                                 Closed="openMenu_Closed"
-                                 Placement="Bottom" />
+                             MinWidth="150" 
+                             Placement="Bottom" />
             </ToggleButton.ContextMenu>
         </ToggleButton>
 
@@ -170,22 +168,20 @@
                           HorizontalContentAlignment="Left"
                           Background="Transparent"
                           BorderThickness="0"
-                          Checked="saveButton_StateChanged"
                           Content="Save As"
                           FontSize="16"
                           IsEnabled="{Binding HasData}"
-                          Unchecked="saveButton_StateChanged">
+                          Click="SaveButton_Click">
             <ToggleButton.ContextMenu>
                 <ContextMenu x:Name="saveMenu"
-                                 MinWidth="150"
-                                 Closed="saveMenu_Closed"
-                                 Placement="Bottom" />
+                             MinWidth="150" 
+                             Placement="Bottom"  />
             </ToggleButton.ContextMenu>
         </ToggleButton>
 
         <Button x:Name="updateButton"
                     Margin="5,-1,0,0"
-                    Click="checkForUpdates_Click"
+                    Click="CheckForUpdates_Click"
                     Content="Update?"
                     FontSize="16"
                     Style="{StaticResource FlatButton}"

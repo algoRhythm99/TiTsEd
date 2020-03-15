@@ -39,6 +39,7 @@ namespace TiTsEd.View
 
             openMenu.PlacementTarget = openButton;
             saveMenu.PlacementTarget = saveButton;
+
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
                 VM.Instance.SaveRequiredChanged += OnSaveRequiredChanged;
@@ -46,7 +47,7 @@ namespace TiTsEd.View
             }
         }
 
-        private void checkForUpdates_Click(object sender, RoutedEventArgs e)
+        private void CheckForUpdates_Click(object sender, RoutedEventArgs e)
         {
             (new CheckForUpdateBox()).ShowDialog();
         }
@@ -62,33 +63,31 @@ namespace TiTsEd.View
             openButton.Style = _defaultSaveStyle;
         }
 
-        void openMenu_Closed(object sender, EventArgs e)
-        {
-            openButton.IsChecked = false;
-        }
 
-        void saveMenu_Closed(object sender, EventArgs e)
+        void OpenButton_Click(object sender, RoutedEventArgs e)
         {
-            saveButton.IsChecked = false;
-        }
+            openMenu.IsOpen = false;
 
-        void openButton_StateChanged(object sender, RoutedEventArgs e)
-        {
-            bool isChecked = (openButton.IsChecked == true);
-            openButton.IsHitTestVisible = !isChecked;
-            if (isChecked) {
+            if (openButton.IsChecked.Value == true)
+            {
                 SetItems(openMenu, FileManagerVM.GetOpenMenus());
+                openMenu.IsOpen = true;
             }
-            openMenu.IsOpen = isChecked;
+
         }
 
-        void saveButton_StateChanged(object sender, RoutedEventArgs e)
+
+        void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            bool isChecked = (saveButton.IsChecked == true);
-            saveButton.IsHitTestVisible = !isChecked;
-            if (isChecked) SetItems(saveMenu, FileManagerVM.GetSaveMenus());
-            saveMenu.IsOpen = isChecked;
+            saveMenu.IsOpen = false;
+
+            if (saveButton.IsChecked.Value == true)
+            {
+                SetItems(saveMenu, FileManagerVM.GetSaveMenus());
+                saveMenu.IsOpen = true;
+            }
         }
+
 
         void SetItems(ContextMenu menu, IEnumerable<IMenuVM> items)
         {
@@ -97,21 +96,6 @@ namespace TiTsEd.View
 
         void SetItems(ItemsControl menu, IEnumerable<IMenuBaseVM> items, bool isRoot)
         {
-            /*
-            List<string> itemList = new List<string>();
-            if (null != items)
-            {
-                foreach (IMenuBaseVM m in items)
-                {
-                    foreach (IMenuItemVM mi in m.Children)
-                    {
-                        itemList.Add(mi.Label);
-                    }
-                }
-            }
-            Logger.Log(String.Format("SetItems([{0}], {1})", String.Join(",", itemList.ToArray()), isRoot));
-            */
-
             menu.Items.Clear();
             bool needSeparator = false;
             foreach (var item in items)
@@ -134,14 +118,14 @@ namespace TiTsEd.View
             }
         }
 
-        void subMenu_Click(object sender, RoutedEventArgs e)
+        void SubMenu_Click(object sender, RoutedEventArgs e)
         {
             var menu = (MenuItem)sender;
             var item = (IMenuItemVM)menu.Header;
             item.OnClick();
         }
 
-        void menu_Click(object sender, RoutedEventArgs e)
+        void Menu_Click(object sender, RoutedEventArgs e)
         {
             var menu = (MenuItem)sender;
             var item = (IMenuVM)menu.Header;
