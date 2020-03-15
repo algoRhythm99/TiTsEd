@@ -60,7 +60,7 @@ namespace TiTsEd.Common
 
         public static void Error(string msg)
         {
-            Log(msg);    
+            Log(msg);
         }
 
         public static string GetLogFilePath()

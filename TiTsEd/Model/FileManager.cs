@@ -79,6 +79,8 @@ namespace TiTsEd.Model
 
         public static void BuildPaths()
         {
+            Logger.Log("BuildPaths: Begin");
+
             Result = FileEnumerationResult.Success;
 
             string chromeAppPath = @"Google\Chrome\User Data\";
@@ -125,6 +127,7 @@ namespace TiTsEd.Model
 
             BuildNpapiPath("Online (Edge/Metro{0})", @"#AppContainer\www.fenoxo.com", ref insertSeparatorBeforeInMenu);
 
+            Logger.Log("BuildPaths: End");
         }
 
         static void BuildAIRPath(string nameFormat, ref bool separatorBefore)
@@ -174,27 +177,26 @@ namespace TiTsEd.Model
                     _directories.Add(flash);
                 }
             }
-            catch (SecurityException)
+            catch (Exception ex)
             {
+                Logger.Error(ex);
                 ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (IOException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unreadable;
-            }
-            catch (Exception)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unknown;
-            }
 
+                if (ex is SecurityException
+                 || ex is UnauthorizedAccessException
+                 )
+                {
+                    Result = FileEnumerationResult.NoPermission;
+                }
+                else if (ex is IOException)
+                {
+                    Result = FileEnumerationResult.Unreadable;
+                }
+                else
+                {
+                    Result = FileEnumerationResult.Unknown;
+                }
+            }
         }
 
         static void BuildNpapiPath(string nameFormat, string suffix, ref bool separatorBefore)
@@ -244,25 +246,25 @@ namespace TiTsEd.Model
                     saveNum++;
                 }
             }
-            catch (SecurityException)
+            catch (Exception ex)
             {
+                Logger.Error(ex);
                 ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (IOException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unreadable;
-            }
-            catch (Exception)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unknown;
+
+                if (ex is SecurityException
+                 || ex is UnauthorizedAccessException
+                 )
+                {
+                    Result = FileEnumerationResult.NoPermission;
+                }
+                else if (ex is IOException)
+                {
+                    Result = FileEnumerationResult.Unreadable;
+                }
+                else
+                {
+                    Result = FileEnumerationResult.Unknown;
+                }
             }
         }
 
@@ -351,25 +353,25 @@ namespace TiTsEd.Model
                     saveNum++;
                 }
             }
-            catch (SecurityException)
+            catch (Exception ex)
             {
+                Logger.Error(ex);
                 ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.NoPermission;
-            }
-            catch (IOException)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unreadable;
-            }
-            catch (Exception)
-            {
-                ResultPath = path;
-                Result = FileEnumerationResult.Unknown;
+
+                if (ex is SecurityException
+                 || ex is UnauthorizedAccessException
+                 )
+                {
+                    Result = FileEnumerationResult.NoPermission;
+                }
+                else if (ex is IOException)
+                {
+                    Result = FileEnumerationResult.Unreadable;
+                }
+                else
+                {
+                    Result = FileEnumerationResult.Unknown;
+                }
             }
         }
 
@@ -528,34 +530,21 @@ namespace TiTsEd.Model
 
             try
             {
-                if (!Directory.Exists(BackupPath))
-                {
-                    Directory.CreateDirectory(BackupPath);
-                }
-                var existingFiles = backupDir.GetFiles("*.bak").OrderByDescending(x => x.LastWriteTimeUtc).ToArray();
                 CopyToBackupPath(sourcePath);
-
-                if (TryDeleteIdenticalFile(sourcePath, existingFiles))
-                {
-                    return;
-                }
+                var existingFiles = backupDir.GetFiles("*.bak").OrderByDescending(x => x.LastWriteTimeUtc).ToArray();
 
                 for (int i = MaxBackupFiles; i < existingFiles.Length; ++i)
                 {
-                    existingFiles[i].Delete();
+                    Logger.Log(String.Format("Deleting backup {0}", existingFiles[i]));
+                    try
+                    {
+                        existingFiles[i].Delete();
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error(e);
+                    }
                 }
-            }
-            catch (SecurityException se)
-            {
-                Logger.Error(se);
-            }
-            catch (UnauthorizedAccessException uae)
-            {
-                Logger.Error(uae);
-            }
-            catch (IOException ioe)
-            {
-                Logger.Error(ioe);
             }
             catch (Exception e)
             {
@@ -568,60 +557,21 @@ namespace TiTsEd.Model
         {
             var targetName = DateTime.UtcNow.Ticks + ".bak";
             var targetPath = Path.Combine(BackupPath, targetName);
-            File.Copy(sourcePath, targetPath, true);
+            Logger.Log(String.Format("CopyToBackupPath: {0} to {1}", sourcePath, targetPath));
+            try
+            {
+                if (!Directory.Exists(BackupPath))
+                {
+                    Logger.Log(String.Format("Creating Backup Directory {0}", BackupPath));
+                    Directory.CreateDirectory(BackupPath);
+                }
+                File.Copy(sourcePath, targetPath, true);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
         }
 
-        static bool TryDeleteIdenticalFile(string sourcePath, FileInfo[] existingFiles)
-        {
-            var sourceData = File.ReadAllBytes(sourcePath);
-
-            foreach (var file in existingFiles)
-            {
-                if (AreIdentical(file, sourceData))
-                {
-                    file.Delete();
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        static bool AreIdentical(FileInfo x, byte[] yData)
-        {
-            if (null == x)
-            {
-                if (null != yData)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            else
-            {
-                if ((0 == x.Length) && (null == yData))
-                {
-                    return true;
-                }
-
-                if (x.Length != yData.Length)
-                {
-                    return false;
-                }
-
-                var xData = File.ReadAllBytes(x.FullName);
-                for (int i = 0; i < xData.Length; ++i)
-                {
-                    if (xData[i] != yData[i])
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
     }
 }
