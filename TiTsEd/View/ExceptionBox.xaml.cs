@@ -74,17 +74,19 @@ namespace TiTsEd.View
             get { return _exceptionMsg; }
             set
             {
-                string dataVersion = TiTsEd.ViewModel.VM.Instance != null ? TiTsEd.ViewModel.VM.Instance.FileVersion : "";
-                if (!String.IsNullOrEmpty(dataVersion))
+                var os = Environment.OSVersion;
+                string dataVersion = TiTsEd.ViewModel.VM.Instance != null ? TiTsEd.ViewModel.VM.Instance.FileVersion : "Unknown";
+                if (String.IsNullOrWhiteSpace(dataVersion))
                 {
-                    dataVersion = String.Format(", TiTs Data: {0}", dataVersion);
+                    dataVersion = "Unknown";
                 }
 
                 // if possible, make TiTsEd's and TiTs's versions an integral part of the exception message,
                 // so we don't have to rely on users' claims of being up to date anymore
-                _exceptionMsg = String.Format("[{0}: {1}{2}]\n{3}",
-                    Assembly.GetExecutingAssembly().GetName().Name,
+                _exceptionMsg = String.Format("[{0}:{1}:{2}:{3}]\n{4}",
+                    System.Reflection.Assembly.GetEntryAssembly().Location,
                     Assembly.GetExecutingAssembly().GetName().Version.ToString(),
+                    os.VersionString,
                     dataVersion,
                     value);
             }
@@ -157,7 +159,9 @@ namespace TiTsEd.View
                         break;
 
                     default:
-                        throw new NotImplementedException();
+                        lastButton.Click += quit_Click;
+                        _result = ExceptionBoxResult.Quit;
+                        break;
                 }
                 buttonStack.Children.Add(lastButton);
             }

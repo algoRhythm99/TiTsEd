@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -24,16 +25,20 @@ namespace TiTsEd.View
 
         public CheckForUpdateBox()
         {
+            Logger.Trace("CheckForUpdateBox: Constructor");
             InitializeComponent();
             Owner = App.Current.MainWindow;
             WindowStartupLocation = WindowStartupLocation.CenterOwner;
             checkingGrid.Visibility = Visibility.Visible;
             statusGrid.Visibility = Visibility.Collapsed;
             versionLabel.Text = VersionInfo.Version;
+            Logger.Trace("CheckForUpdateBox: End");
         }
 
         void CheckForUpdateBox_Loaded(object sender, RoutedEventArgs e)
         {
+            Logger.Trace("CheckForUpdateBox_Loaded");
+
             Task.Factory.StartNew(new Action(() =>
             {
                 // check for an update
@@ -49,17 +54,21 @@ namespace TiTsEd.View
 
         void close_Click(object sender, RoutedEventArgs e)
         {
+            Logger.Trace("close_Click");
             Close();
         }
 
         void requestNavigate(object sender, RequestNavigateEventArgs e)
         {
+            Logger.Trace("requestNavigate");
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             Close();
         }
 
         void UpdateStatus(UpdateCheckResult status)
         {
+            Logger.Trace(String.Format("UpdateStatus: {0}", status));
+
             switch (status)
             {
                 // nothing to do for UpdateCheckResult.Yes, the correct hyperlinked text is in the XAML as the default
@@ -78,6 +87,8 @@ namespace TiTsEd.View
 
         UpdateCheckResult CheckForUpdate()
         {
+            Logger.Trace("CheckForUpdate: Begin");
+
             HttpWebRequest request = null;
             HttpWebResponse response = null;
 
@@ -165,24 +176,32 @@ namespace TiTsEd.View
                 }
             }
 
+            Logger.Trace(String.Format("CheckForUpdate: End: {0}", result));
             return result;
         }
 
         int[] ParseVersion(string verString)
         {
-            string[] parts = verString.TrimEnd('\r', '\n', ' ').Split('.');
-            int[] latestVersion = new int[3];
+            Logger.Trace(String.Format("ParseVersion: {0}", verString));
 
+            var sVar = String.IsNullOrWhiteSpace(verString) ? "0.0.0" : verString;
+            var parts = sVar.TrimEnd('\r', '\n', ' ').Split('.');
+            if ( parts.Length < 3 )
+            {
+                var parts2 = new string[3] { "0", "0", "0" };
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    parts2[i] = parts[i];
+                }
+                parts = parts2;
+            }
             try
             {
-                for (int i = 0; i < 3; i++)
-                {
-                    latestVersion[i] = int.Parse(parts[i]);
-                }
+                int value;
+                return Array.ConvertAll(parts, s => int.TryParse(s, out value) ? value : 0);
             }
-            catch { /* noop */ }
-
-            return latestVersion;
+            catch { }
+            return new int[3] { 0, 0, 0 };
         }
     }
 }

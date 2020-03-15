@@ -566,5 +566,6 @@ namespace TiTsEd.Model {
         InvalidFile,
         NoPermission,
         MissingFile,
+        Unknown,
     }
 }

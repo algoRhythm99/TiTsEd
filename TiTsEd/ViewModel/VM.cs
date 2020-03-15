@@ -67,7 +67,7 @@ namespace TiTsEd.ViewModel
 
         public void Load(string path, SerializationFormat expectedFormat)
         {
-            Logger.Log(String.Format("Load({0}, {1})", path, expectedFormat.ToString()));
+            Logger.Debug(String.Format("Load({0}, {1})", path, expectedFormat.ToString()));
 
             FileManager.TryRegisterExternalFile(path);
             var file = new AmfFile(path);

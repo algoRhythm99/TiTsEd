@@ -17,7 +17,9 @@ using TiTsEd.Common;
 
 namespace TiTsEd.ViewModel {
     public static class FileManagerVM {
-        public static IEnumerable<IMenuVM> GetOpenMenus() {
+        public static IEnumerable<IMenuVM> GetOpenMenus()
+        {
+            Logger.Trace("GetOpenMenus: Begin");
             foreach (var dir in FileManager.GetDirectories()) {
                 yield return new SourceDirectoryVM(dir);
             }
@@ -25,7 +27,9 @@ namespace TiTsEd.ViewModel {
             yield return new ImportRootVM();
         }
 
-        public static IEnumerable<IMenuVM> GetSaveMenus() {
+        public static IEnumerable<IMenuVM> GetSaveMenus()
+        {
+            Logger.Trace("GetSaveMenus: Begin");
             foreach (var dir in FileManager.GetDirectories()) {
                 yield return new TargetDirectoryVM(dir);
             }

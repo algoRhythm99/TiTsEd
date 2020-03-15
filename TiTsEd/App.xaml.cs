@@ -27,8 +27,7 @@ namespace TiTsEd
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            //ConsoleManager.Show();
-            //ConsoleManager.Hide();
+            System.Windows.Forms.Application.SetUnhandledExceptionMode(System.Windows.Forms.UnhandledExceptionMode.ThrowException);
 
 #if !DEBUG
             DispatcherUnhandledException += OnDispatcherUnhandledException;
@@ -36,6 +35,21 @@ namespace TiTsEd
 
             try
             {
+                Logger.Log("OnStartup", true);
+
+                foreach (string s in e.Args)
+                {
+                    switch (s)
+                    {
+                        case "-trace":
+                        case "-Trace":
+                            Logger.Level = Logger.LogLevel.Trace;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
                 if (!Directory.Exists(FileManager.BackupPath))
                 {
                     Directory.CreateDirectory(FileManager.BackupPath);
@@ -54,18 +68,6 @@ namespace TiTsEd
                     }
                 }
             }
-            catch (SecurityException se)
-            {
-                Logger.Error(se);
-            }
-            catch (UnauthorizedAccessException uae)
-            {
-                Logger.Error(uae);
-            }
-            catch (IOException ioe)
-            {
-                Logger.Error(ioe);
-            }
             catch (Exception ex)
             {
                 Logger.Error(ex);
@@ -76,25 +78,30 @@ namespace TiTsEd
             Settings.Default.Upgrade();
         }
 
-        void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
             e.Handled = true;
-            DispatcherUnhandledException -= OnDispatcherUnhandledException;
-
             try
             {
+                Logger.Error(e.Exception);
                 ExceptionBox box = new ExceptionBox();
                 SetError(box, e.Exception);
-                box.ShowDialog(ExceptionBoxButtons.Quit);
+                var result = box.ShowDialog(ExceptionBoxButtons.Quit, ExceptionBoxButtons.Continue);
+                switch (result)
+                {
+                    case ExceptionBoxResult.Continue:
+                        break;
+                    default:
+                        Shutdown();
+                        break;
+                }
             }
-            catch (Exception e2)
+            catch (Exception ex)
             {
-                Logger.Error(e2);
-                MessageBox.Show(e2.ToString(), "Error in error box ?!", MessageBoxButton.OK, MessageBoxImage.Error);
+                Logger.Error(ex);
+                MessageBox.Show(ex.ToString(), "Error in error box ?!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            Logger.Error(e.Exception);
-            Shutdown();
         }
 
         void SetError(ExceptionBox box, Exception exception)
@@ -118,14 +125,9 @@ namespace TiTsEd
 
         void Initialize()
         {
-            Logger.Log("Initialize", true);
-
-            ExceptionBox box;
-
             foreach (string xmlFile in XmlData.Files.All)
             {
                 var xmlResult = XmlData.LoadXml(xmlFile);
-                //xmlResult = XmlLoadingResult.MissingFile;
                 string message = "";
                 switch (xmlResult)
                 {
@@ -144,12 +146,13 @@ namespace TiTsEd
                     case XmlLoadingResult.Success:
                         break;
                     default:
-                        throw new NotImplementedException();
+                        message = String.Format("Unknown error!");
+                        break;
                 }
                 if (!String.IsNullOrEmpty(message))
                 {
                     Logger.Error(message);
-                    box = new ExceptionBox();
+                    ExceptionBox box = new ExceptionBox();
                     box.Title = "Fatal error";
                     box.Message = message;
                     box.Path = Environment.CurrentDirectory;
@@ -162,7 +165,9 @@ namespace TiTsEd
 
             VM.Create();
             FileManager.BuildPaths();
+            Logger.Trace("App.xaml.cs: Before FileManager.GetDirectories().ToArray()");
             var directories = FileManager.GetDirectories().ToArray(); // Load all on startup to check for errors
+            Logger.Trace("App.xaml.cs: After FileManager.GetDirectories().ToArray()");
             var result = ExceptionBoxResult.Continue;
             switch (FileManager.Result)
             {
@@ -172,7 +177,7 @@ namespace TiTsEd
                     string path = FileManager.ResultPath ?? "ResultPath: null";
                     string message = String.Format("TiTsEd did not get permission to read a folder or file.\nSome files will not be displayed in the Open/Save menus.\nResult: {0} with path {1}", FileManager.Result.ToString(), path);
                     Logger.Error(message);
-                    box = new ExceptionBox();
+                    ExceptionBox box = new ExceptionBox();
                     box.Title = "Could not read some folders.";
                     box.Message = message;
                     box.Path = path;
@@ -190,13 +195,6 @@ namespace TiTsEd
 
 #if DEBUG
             var file = AutoLoad(directories);
-            //new AmfFile("e:\\plainObject.sol").TestSerialization();
-            //new AmfFile("e:\\unicode.sol").TestSerialization();
-            //DebugStatuses(file);
-            //RunSerializationTest(set);
-            //ParsePerks();
-            //ImportStatuses();
-            //ImportFlags();
 #endif
         }
 
