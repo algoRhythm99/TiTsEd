@@ -1659,6 +1659,9 @@
 			<Item Stack="1" Name="F.Bra" ID="classes.Items.Apparel::FurryBra" />
 			<Item Stack="1" Name="Babydoll" ID="classes.Items.Apparel::Babydoll" />
 			<Item Stack="1" Name="Bounty Bra" ID="classes.Items.Apparel::BountyBra" />
+            <!-- placeholder
+			<Item Stack="1" Name="CrnyShirt" ID="classes.Items.Apparel::CornyTShirt" LongName="corny T-shirt" EditorName="Corny T-Shirt" />
+            -->
 			<Item Stack="1" Name="CrnyShirtV1" ID="classes.Items.Apparel::CornyTShirtV1" LongName="corny T-shirt" EditorName="Corny T-Shirt v1" />
 			<Item Stack="1" Name="CrnyShirtV2" ID="classes.Items.Apparel::CornyTShirtV2" LongName="corny T-shirt" EditorName="Corny T-Shirt v2" />
 			<Item Stack="1" Name="CrnyShirtV3" ID="classes.Items.Apparel::CornyTShirtV3" LongName="corny T-shirt" EditorName="Corny T-Shirt v3" />
@@ -1860,7 +1863,6 @@
 			<Item Stack="20" Name="Rainbotox" ID="classes.Items.Miscellaneous::Rainbotox" />
 			<Item Stack="10" Name="SkySap" ID="classes.Items.Miscellaneous::SkySap" />
 			<Item Stack="10" Name="Sterilex" ID="classes.Items.Miscellaneous::Sterilex" />
-			<Item Stack="10" Name="SynthSap" ID="classes.Items.Miscellaneous::SynthSap" />
 			<Item Stack="10" Name="Human T." ID="classes.Items.Miscellaneous::TerranTreats" />
 			<Item Stack="20" Name="Throbb" ID="classes.Items.Miscellaneous::Throbb" />
 			<Item Stack="10" Name="Tittyblossom" ID="classes.Items.Miscellaneous::Tittyblossom" />
@@ -1875,6 +1877,7 @@
 			<Item Stack="12" Name="AmzIT.Lite"  ID="classes.Items.Transformatives::AmazonaLite" LongName="Amazona Lite" />
 			<Item Stack="12" Name="AmzIT.Plus"  ID="classes.Items.Transformatives::AmazonaPlus" LongName="Amazona Plus" />
 			<Item Stack="10" Name="AmberSeed" ID="classes.Items.Transformatives::AmberSeed" />
+			<Item Stack="10" Name="Areolove" ID="classes.Items.Transformatives::Areolove" />
 			<Item Stack="5"  Name="BGreenPot" ID="classes.Items.Transformatives::BigGreenPotion" />
 			<Item Stack="10" Name="Bovinium" ID="classes.Items.Transformatives::Bovinium" />
 			<Item Stack="10" Name="B.Bliss" ID="classes.Items.Transformatives::BreedersBliss" />
@@ -1978,6 +1981,7 @@
 			<Item Stack="5"  Name="SwtTreat" ID="classes.Items.Transformatives::SweetTreat" />
 			<Item Stack="10" Name="Swineapple" ID="classes.Items.Transformatives::Swineapple" />
 			<Item Stack="10" Name="Sylvanol" ID="classes.Items.Transformatives::Sylvanol" />
+			<Item Stack="10" Name="SynthSap" ID="classes.Items.Transformatives::SynthSap" />
 			<Item Stack="10" Name="Deerium" ID="classes.Items.Transformatives::TauricoVenidae" />
 			<Item Stack="10" Name="DeerLite" ID="classes.Items.Transformatives::TauricoVenidaeLight" />
 			<Item Stack="10" Name="Tentacool" ID="classes.Items.Transformatives::Tentacool" />
@@ -2058,11 +2062,11 @@
 			<Item Stack="1" Name="TD Dildo"     ID="classes.Items.Toys::DildoTerranCumlux" />
 		</ItemGroup>
 		<ItemGroup Name="Weapons (Melee)">
-<!-- placeholders
-			<Item Stack="1" Name="fist" ID="classes.Items.Melee::Fists" />
-			<Item Stack="1" Name="psuedopod" ID="classes.Items.Melee::GooeyPsuedopod" />
-			<Item Stack="1" Name="mechafist" ID="classes.Items.Melee::MechaFist" />
--->
+
+			<Item Stack="1" Name="fist" ID="classes.Items.Melee::Fists" Comment="Don't try to use this" />
+			<Item Stack="1" Name="psuedopod" ID="classes.Items.Melee::GooeyPsuedopod" Comment="Don't try to use this"  />
+			<Item Stack="1" Name="mechafist" ID="classes.Items.Melee::MechaFist" Comment="Don't try to use this" />
+
 			<Item Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
 			<Item Stack="1" Name="B.Rapier" ID="classes.Items.Melee::BothriocRapier" />
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
@@ -2283,6 +2287,7 @@
 		</ItemGroup>
 		<ItemGroup Name="Other">
 <!-- placeholders
+			<Item Stack="1"  Name="" LongName="nothing"     ID="classes.Items::base" />
 			<Item Stack="1"  Name="" LongName="nothing"     ID="classes.Items.Miscellaneous::EmptySlot" />
 			<Item Stack="1"  Name="No Item" LongName="nothing"     ID="classes.Items.Miscellaneous::NoItem" />
 -->

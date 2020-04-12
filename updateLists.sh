@@ -359,42 +359,79 @@ fi
 
 
 hasItem() {
-  TiTsEdData="$1"
-  SourceFolder="$3"
-  fn="$0"
-  dir="$(dirname $fn)"
-  bn="$(basename $fn)"
-  fne="${bn%%.*}"
-  itemClass="$(echo $dir|sed -e "s#${SourceFolder}##")"
-  itemClass="${itemClass%/}"
-  itemClass="${itemClass#/}"
-  #echo $itemClass
-  itemClass="$(echo $itemClass|sed -e "s#/#.#g")"
-  #echo $itemClass
-  itemClass="${itemClass}::${fne}"
-  #echo $itemClass
-  #echo "TiTsEdData=$TiTsEdData"
-  #echo "fn=$fn"
-  #echo "bn=$bn"
-  #echo "fne=$fne"
-  #regex=".*Item.*ID.*\""${itemClass}"\".*"
-  #echo "$regex"
-  grepOutput=$(grep -F "$itemClass" "$TiTsEdData">/dev/nul 2>/dev/null)
-  grepExit=$?
-  #grepOutput=$(grep -oP 'this[.]stackSize\s*=\s*([\d]+);.*this[.]shortName\s*=\s*["]([\w\s.]+)["];.*this[.]longName\s*=\s*["]([\w\s.]+)["];')
-  #echo grepOutput=$grepOutput
-  #echo grepExit=$grepExit
-  if [ $grepExit -eq 0 ]; then
-      echo "$fn"
-  fi
+    TiTsEdData="$1"
+    SourceFolder="$3"
+    fn="$0"
+    dir="$(dirname $fn)"
+    bn="$(basename $fn)"
+    fne="${bn%%.*}"
+    classPackage="$(echo $dir|sed -e "s#${SourceFolder}##")"
+    classPackage="${classPackage%/}"
+    classPackage="${classPackage#/}"
+    classPackage="$(echo $classPackage|sed -e "s#/#.#g")"
+    classPackage="${classPackage/items/Items}"
+    itemClass="${classPackage}::${fne}"
+    regex='"'${itemClass}'"'
+    grepOutput=$(grep -F $regex "$TiTsEdData">/dev/nul 2>/dev/null)
+    grepExit=$?
+
+    if [ ! $grepExit -eq 0 ]; then
+
+        printf '%s\n' "$fn"
+
+        itemType=$(perl -ne '/(this[.])?type\s*=\s*(GLOBAL[.][\w]+)\s*;/ && print "$2\n";' "$fn")
+        printf 'itemType=%s\n' "$itemType"
+
+        shortName=$(perl -ne '/(this[.])?shortName\s*=\s*"([\w _.-]+)"\s*;/ && print "$2\n";' "$fn")
+        printf 'shortName=%s\n' "$shortName"
+
+        longName=$(perl -ne '/(this[.])?longName\s*=\s*"([\w _.-]+)"\s*;/ && print "$2\n";' "$fn")
+        printf 'longName=%s\n' "$longName"
+
+        stackSize=$(perl -ne '/(this[.])?stackSize\s*=\s*([\d]+)\s*;/ && print "$2\n";' "$fn")
+        printf 'stackSize=%s\n' "$stackSize"
+
+        fortification=$(perl -ne '/(this[.])?fortification\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
+        printf 'fortification=%s\n' "$fortification"
+
+        shieldDefense=$(perl -ne '/(this[.])?shieldDefense\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
+        printf 'shieldDefense=%s\n' "$shieldDefense"
+
+        shields=$(perl -ne '/(this[.])?shields\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
+        printf 'shields=%s\n' "$shields"
+
+        hasFields=0
+
+        printf '\t\t\t<Item Stack="%s" Name="%s" ID="%s" ' "$stackSize" "$shortName" "$itemClass"
+        if [ ! -z "${fortification+x}" ] && [ "$fortification" != "0" ]; then hasFortification=1; hasFields=1; fi
+        if [ ! -z "${shieldDefense+x}" ] && [ "$shieldDefense" != "0" ]; then hasShieldDefense=1; hasFields=1; fi
+        if [ ! -z "${shields+x}" ] && [ "$shields" != "0" ]; then hasShields=1; hasFields=1; fi
+
+        if [ $hasFields -eq 1 ]; then
+            printf '>\n'
+            if [ ! -z "${hasFortification+x}" ]; then
+                printf '\t\t\t\t<ItemField Name="fortification" Type="int" Value="%s" />\n' "$fortification"
+            fi
+            if [ ! -z "${hasShieldDefense+x}" ]; then
+                printf '\t\t\t\t<ItemField Name="shieldDefense" Type="int" Value="%s" />\n' "$shieldDefense"
+            fi
+            if [ ! -z "${hasShields+x}" ]; then
+                printf '\t\t\t\t<ItemField Name="shields" Type="int" Value="%s" />\n' "$shields"
+            fi
+            printf '\t\t\t</Item>\n'
+        else
+            printf '/>\n'
+        fi
+        printf '\n'
+    fi
 }
+export -f hasItem
+
 
 if [ 1 == 1 ]; then
     newFile="$newFolder/missingItems.txt"
-    export -f hasItem
     echo "Checking for missing items"
     find $SourceFolder/classes/items -name "*.as" -exec bash -c "hasItem \"$TiTsEdData\" \"$0\" \"$SourceFolder\"" {} \; >$newFile
-    #find $SourceFolder/classes/items -name '*.as' -exec grep -oP 'this[.]stackSize\s*=\s*([\d]+);.*this[.]shortName\s*=\s*["]([\w\s.]+)["];.*this[.]longName\s*=\s*["]([\w\s.]+)["];' {} \;
 fi
 
 if [ 0 == 1 ]; then
