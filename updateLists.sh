@@ -5,7 +5,7 @@ parent="$(dirname $(readlink -fm "${thisScript}"))"
 
 DocBase="$(dirname "${parent}")"
 OutputBase="${parent}/DataLists"
-SourceFolder="${DocBase}/Trials-in-Tainted-Space"
+SourceFolder="${DocBase}/TiTS-Public"
 TiTsEdData="${parent}/TiTsEd/TiTsEd.Data.xml"
 
 current_time=$(date "+%Y.%m.%d-%H.%M.%S")

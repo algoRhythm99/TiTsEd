@@ -1468,6 +1468,7 @@
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
 			<Item Stack="1" Name="Scarf" ID="classes.Items.Accessories::BeatricesScarf" />
 			<Item Stack="1" Name="B.D.S." ID="classes.Items.Accessories::BimboleumDefenseSystem" />
+			<Item Stack="1" Name="C.Coat"       ID="classes.Items.Accessories::ChemistsCoat" />
 			<Item Stack="1" Name="Exp. Cloak" ID="classes.Items.Accessories::ExplorersCloak" />
 			<Item Stack="1" Name="Fedora"       ID="classes.Items.Accessories::Fedora" />
 			<Item Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
@@ -1520,6 +1521,7 @@
 			<Item Stack="1" Name="C.Suit" ID="classes.Items.Apparel::ClassySuit" />
 			<Item Stack="1" Name="C.Clothes" ID="classes.Items.Apparel::ComfortableClothes" />
 			<Item Stack="1" Name="Cow Leotard" ID="classes.Items.Apparel::CowPrintLeotard" />
+			<Item Stack="1" Name="D.Nurse" ID="classes.Items.Apparel::DhaalNurseOutfit" LongName="Dhaalian nurse outfit" />
 			<Item Stack="1" Name="DressCloth" ID="classes.Items.Apparel::DressClothes" />
 			<Item Stack="1" Name="F. Doctor" ID="classes.Items.Apparel::FemaleDoctorOutfit" />
 			<Item Stack="1" Name="LabCoat" ID="classes.Items.Apparel::KhansLabCoat" />
@@ -1837,6 +1839,7 @@
 			<Item Stack="50" Name="Boobswell P." ID="classes.Items.Miscellaneous::BoobswellPads" />
 			<Item Stack="10" Name="Chocolac" ID="classes.Items.Miscellaneous::Chocolac" />
 			<Item Stack="10" Name="Condensol" ID="classes.Items.Miscellaneous::Condensol" />
+			<Item Stack="10" Name="Dicksprout" ID="classes.Items.Miscellaneous::Dicksprout" />
 			<Item Stack="10" Name="Dumbfuck" ID="classes.Items.Miscellaneous::Dumbfuck" />
 			<Item Stack="10" Name="EasyFit" ID="classes.Items.Miscellaneous::EasyFit" />
 			<Item Stack="10" Name="Estrobloom" ID="classes.Items.Miscellaneous::Estrobloom" />
@@ -1933,6 +1936,8 @@
 			<Item Stack="10" Name="K.Snax"    ID="classes.Items.Transformatives::KorgonneSnacks" />
 			<Item Stack="10" Name="L. Ears" ID="classes.Items.Transformatives::LaquineEars" />
 			<Item Stack="10" Name="Loftcake" ID="classes.Items.Transformatives::LemonLoftcake" />
+			<Item Stack="20" Name="Lion-Os"    ID="classes.Items.Transformatives::LionOs" />
+			<Item Stack="20" Name="Lion-Pros"  ID="classes.Items.Transformatives::LionPros" />
 			<Item Stack="10" Name="LipTease" ID="classes.Items.Transformatives::LipTease" />
 			<Item Stack="10" Name="Lucifier" ID="classes.Items.Transformatives::Lucifier" />
 			<Item Stack="10" Name="Lupinol" ID="classes.Items.Transformatives::Lupinol" />
@@ -1988,6 +1993,7 @@
 			<Item Stack="10" Name="ThicShake" ID="classes.Items.Transformatives::ThiccNShake" />
 			<Item Stack="10" Name="T.Neck" ID="classes.Items.Transformatives::Turtleneck" />
 			<Item Stack="10" Name="Uthra+" ID="classes.Items.Transformatives::UthraPlus" />
+			<Item Stack="10" Name="Vernacola" ID="classes.Items.Transformatives::Vernacola" />
 			<Item Stack="10" Name="Virection" ID="classes.Items.Transformatives::Virection" />
 			<Item Stack="10" Name="X.fog+"  ID="classes.Items.Transformatives::XhelarfogPlus" />
 		</ItemGroup>
@@ -2032,6 +2038,7 @@
 		</ItemGroup>
 		<ItemGroup Name="Videos">
 			<Item Stack="1"     Name="Vid: ZNtSB"      ID="classes.Items.Stories::ZilNighTheScienceBi"     LongName="code for “Zil Nigh the Science Bi”" />
+			<Item Stack="1"     Name="Vid: ZNtSB2"     ID="classes.Items.Stories::ZilNighTheScienceBiTwo"  LongName="code for “Zil Nigh the Science Bi 2: SHEnanigans”" />
 		</ItemGroup>
 		<ItemGroup Name="Decorations">
 			<Item Stack="1" Name="Postr:Kally"  ID="classes.Items.Decorations::KallyPoster" LongName="kally poster" />
@@ -2046,9 +2053,7 @@
 			<Item Stack="1" Name="N.B.Hole" ID="classes.Items.Toys::NivasBionaHole" />
 			<Item Stack="1" Name="NymFoeDaki" ID="classes.Items.Toys::NymFoeDakimakura" />
 			<Item Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
-			<Item Stack="1" Name="SDoll VR" ID="classes.Items.Toys::SexdollVRProgram" />
 			<Item Stack="1" Name="SukMastr" ID="classes.Items.Toys::SukMastr" />
-			<Item Stack="1" Name="Twins VR" ID="classes.Items.Toys::TwinsVRProgram" />
 		</ItemGroup>
 		<ItemGroup Name="Dildos">
 			<Item Stack="1" Name="DogDildo"     ID="classes.Items.Toys::DildoCanine" />
@@ -2208,7 +2213,9 @@
 			<Item Stack="1" Name="Strmbull" ID="classes.Items.Guns::Stormbull" />
 			<Item Stack="1" Name="St.Sweeper" ID="classes.Items.Guns::StreetSweeper" />
 			<Item Stack="1" Name="SunFire" ID="classes.Items.Guns::SunFire" />
+<!--
 			<Item Stack="1" Name="Tach. Beam" ID="classes.Items.Guns::TachyonBeamLaser" Comment="Debug Item" Tooltip="Debug Item" />
+-->
 			<Item Stack="1" Name="Tanis's Bow" ID="classes.Items.Guns::TanisBow" />
 			<Item Stack="1" Name="HvyPlasma"    ID="classes.Items.Guns::TeyaalsHeavyPlasmaCaster" />
 			<Item Stack="1" Name="TheShocker" ID="classes.Items.Guns::TheShocker" />
@@ -2382,6 +2389,27 @@
 			<Item Stack="1" Name="HL Tent II" ID="classes.Items.Tents::HLSteeleTechTent" />
 			<Item Stack="1" Name="HL Tent III" ID="classes.Items.Tents::HLKihaCorpTent" />
 			<Item Stack="1" Name="HL Tent IV" ID="classes.Items.Tents::HLReaperTent" />
+		</ItemGroup>
+		<ItemGroup Name="Cybernetics">
+			<Item Stack="1" Name="BBLs"        ID="classes.Items.Cybernetics::BallisticBreastLiners" />
+			<Item Stack="1" Name="BreedNBrute" ID="classes.Items.Cybernetics::BreedNBrute" />
+			<Item Stack="1" Name="CombatTail"  ID="classes.Items.Cybernetics::CombatTail" />
+			<Item Stack="1" Name="E.Enlarger"  ID="classes.Items.Cybernetics::EcstasyEnlargers" />
+			<Item Stack="1" Name="Lact.Induc." ID="classes.Items.Cybernetics::LactaidDispensers" LongName="Lactation Inducers" />
+			<Item Stack="1" Name="Stabl.Sys"   ID="classes.Items.Cybernetics::MuscularStabilizationSystem" LongName="muscular stabilization system" />
+			<Item Stack="1" Name="ProstituteP" ID="classes.Items.Cybernetics::ProstitutePro" />
+			<Item Stack="1" Name="Rfx.Tunr."   ID="classes.Items.Cybernetics::ReflexTuner" />
+			<Item Stack="1" Name="SensDamp"    ID="classes.Items.Cybernetics::SensoryDampener" />
+			<Item Stack="1" Name="RoidAug"     ID="classes.Items.Cybernetics::SteroidalMuscleAugment" />
+			<Item Stack="1" Name="SubCPU"      ID="classes.Items.Cybernetics::Subprocessor" LongName="cybernetic subprocessor" />
+			<Item Stack="1" Name="SynthWomb"   ID="classes.Items.Cybernetics::SynthWomb" />
+		</ItemGroup>
+		<ItemGroup Name="VR Programs">
+			<Item Stack="1" Name="Po VR"        ID="classes.Items.Toys::PoVRProgram" LongName="Doctor Po VR program" />
+			<Item Stack="1" Name="Adv SDoll VR" ID="classes.Items.Toys::SexdollMiniBossVRProgram" LongName="advanced sexdoll VR program" />
+			<Item Stack="1" Name="SDoll VR"     ID="classes.Items.Toys::SexdollVRProgram" />
+			<Item Stack="1" Name="TaurS VR"     ID="classes.Items.Toys::TaursuitVRProgram" />
+			<Item Stack="1" Name="Twins VR"     ID="classes.Items.Toys::TwinsVRProgram" />
 		</ItemGroup>
 	</Items>
 	<!-- ================================================================ -->
@@ -2666,7 +2694,7 @@
 			<Perk Name="Chupacabro Slayer" Description="You defeated the legendary Chupacabro, and now do +10% damage against treated individuals." Value1="1" Value2="50" />
 -->
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
-			<Perk Name="Ever-Milk" Value1="5000" />
+			<Perk Name="Ever-Milk" Label1="Fixed Milk Quantity" Value1="5000" Comment="Minimum Milk Quantity of {Value1}. See Value1" />
 			<Perk Name="Face Fucker" Description="Increases minimum lust and cum output, thanks to that strange VR adventure..." Value1="5" />
 			<Perk Name="Implant-tastic" Description="Your body will convert most of the mass in your breasts, butt cheeks, hips and lips into silicone." />
 			<Perk Name="Limber" Description="Grants an addition 20% chance to escape from grapples!" />
@@ -2748,6 +2776,7 @@
 			<Perk Name="Wooly" Description="Your body naturally grows a thick layer of wool." />
 		</PerkGroup>
 		<PerkGroup Name="General">
+			<Perk Name="Big Cock" Label1="Increase Multiplier" Value1="1" Comment="Cock size increase multiplier of {Value1}. See Value1" />
 			<Perk Name="Corrupted" Description="Increases your maximum libido but prevents the loss of taint." />
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="Cum Quantity" Value1="500000" />
 			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
@@ -2757,6 +2786,8 @@
 			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn. See Value1" Label1="Attacks per turn" Value1="5" />
 			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn. See Value1" Label1="Shots per turn" Value1="5" />
 			<Perk Name="No Cum Leakage" />
+			<Perk Name="Phallic Potential" Comment="Cock size increase mutliplier of 1.5" />
+			<Perk Name="Phallic Restraint" Comment="Cock size increase multiplier of 0.25" />
 			<Perk Name="Ranged Immune" Comment="Immune to ranged attacks" />
 			<Perk Name="STD Immune" Description="You are immune to sexually transmitted diseases." />
 			<Perk Name="Ultra-Exhibitionist" Description="The pleasures of exhibitionism have been seared into your body, locking your exhibitionism at max value. Also boosts minimum lust and lust gain when in civilization." Value1="1" />
