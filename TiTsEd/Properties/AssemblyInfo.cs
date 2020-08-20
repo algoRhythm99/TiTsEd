@@ -9,12 +9,12 @@ using System.Windows;
 // associated with an assembly.
 [assembly: AssemblyTitle("TiTsEd")]
 [assembly: AssemblyDescription("Save Editor for Trials in Tainted Space")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+//[assembly: AssemblyConfiguration("")]
+//[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TiTsEd")]
 [assembly: AssemblyCopyright("Copyright © 2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+//[assembly: AssemblyTrademark("")]
+//[assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

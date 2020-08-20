@@ -5,7 +5,7 @@ parent="$(dirname $(readlink -fm "${thisScript}"))"
 
 DocBase="$(dirname "${parent}")"
 OutputBase="${parent}/DataLists"
-SourceFolder="${DocBase}/TiTS-Public"
+SourceFolder="${DocBase}/TiTS/scripts"
 TiTsEdData="${parent}/TiTsEd/TiTsEd.Data.xml"
 
 current_time=$(date "+%Y.%m.%d-%H.%M.%S")
@@ -46,14 +46,6 @@ if [ 1 == 1 ]; then
         regex="^GLOBAL.FLAG_NAMES$"
         echo regex="$regex"
         sed -i -r -e "/$regex/d" $sortedFile
-        #$newFile="$newFolder/new${bFlag}Flags.xml"
-        #while read f; do
-        #    # echo Checking for flag "$f"
-        #    if ! grep -q "\"$f\"" $TiTsEdData; then
-        #        echo "Does not have ${bFlag}Flag $f"
-        #        echo "<"${bFlag}"Flag ID="" Name=""$f"" />" >>$newFile
-        #    fi
-        #done <$sortedFile
     done
 fi
 
@@ -73,7 +65,7 @@ declare -a parts=("antennae"
 if [ 1 == 1 ]; then
     for bType in "${parts[@]}"
     do
-        echo "Checking ${bType}"
+        echo "Checking ${bType} types"
         propName="${bType}Type"
         rawFile="${newFolder}/${propName}s.raw.txt"
         newFile="${newFolder}/${propName}s.txt"
@@ -92,14 +84,6 @@ if [ 1 == 1 ]; then
         regex="^GLOBAL.TYPE_NAMES$"
         echo regex="$regex"
         sed -i -r -e "/$regex/d" $sortedFile
-        #$newFile="$newFolder/new${bType}Types.xml"
-        #while read t; do
-        #    # echo Checking for ${bType} type "$t"
-        #    if ! grep -q "\"$t\"" $TiTsEdData; then
-        #        echo "Does not have ${bType}Type $t"
-        #        echo "<"${bType}"Type ID="" Name=""$t"" />" >>$newFile
-        #    fi
-        #done <$sortedFile
     done
 fi
 
@@ -111,7 +95,6 @@ declare -a colors=("fur"
                    "nipple"
                    "vagina"
                   )
-
 if [ 0 == 1 ]; then
     for bColor in "${colors[@]}"
     do
@@ -124,9 +107,6 @@ if [ 0 == 1 ]; then
         echo regex="$regex"
         find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
         cat $newFile | sort -u >$rawFile
-        #regex="/."${propName}"[[:space:]]*[=!]+.*/!d"
-        #echo regex="$regex"
-        #sed -i -r -e "$regex" $newFile
         regex="s/.*[=!][[:space:]]*(.*)[;]/\1/"
         echo regex="$regex"
         sed -i -r -e "$regex" $newFile
@@ -217,15 +197,6 @@ if [ 1 == 1 ]; then
     sed -i -r -e "/$regex/d" $newFile
     cat $newFile | sort -u >$sortedFile
     sed -r -e 's/["]([[:alnum:] _-]+)["].*/\1/;t;d' $sortedFile | sort -u >$newFile
-
-    #$newFile=$newFolder/newKeyItems.xml
-    #while read f; do
-    #    # echo Checking for Key Item "$f"
-    #    if ! grep -q "\"$f\"" $TiTsEdData; then
-    #        echo "Does not have Key Item $f"
-    #        echo "<KeyItem Name=""$f"" />" >>$newFile
-    #    fi
-    #done <$sortedFile
 fi
 
 
@@ -257,15 +228,6 @@ if [ 1 == 1 ]; then
     sed -i -r -e "/$regex/d" $newFile
     cat $newFile | sort -u >$sortedFile
     sed -r -e 's/["]([[:alnum:] _-]+)["].*/\1/;t;d' $sortedFile | sort -u >$newFile
-
-    #$newFile=$newFolder/newPerks.xml
-    #while read f; do
-    #    # echo Checking for Perk "$f"
-    #    if ! grep -q "\"$f\"" $TiTsEdData; then
-    #        echo "Does not have Key Item $f"
-    #        echo "<Perk Name=""$f"" />" >>$newFile
-    #    fi
-    #done <$sortedFile
 fi
 
 
@@ -297,15 +259,6 @@ if [ 1 == 1 ]; then
     sed -i -r -e "/$regex/d" $newFile
     cat $newFile | sort -u >$sortedFile
     sed -r -e 's/["]([[:alnum:] _-]+)["].*/\1/;t;d' $sortedFile | sort -u >$newFile
-
-    #$newFile=$newFolder/newStatusEffects.xml
-    #while read f; do
-    #    # echo Checking for Status Effect "$f"
-    #    if ! grep -q "\"$f\"" $TiTsEdData; then
-    #        echo "Does not have Status Effect $f"
-    #        echo "<StatusEffect Name=""$f"" />" >>$newFile
-    #    fi
-    #done <$sortedFile
 fi
 
 # flags
@@ -353,10 +306,6 @@ if [ 1 == 1 ]; then
 
 fi
 
-# filename=$(basename -- "$fullfile")
-# extension="${filename##*.}"
-# filename="${filename%%.*}"
-
 
 hasItem() {
     TiTsEdData="$1"
@@ -372,7 +321,7 @@ hasItem() {
     classPackage="${classPackage/items/Items}"
     itemClass="${classPackage}::${fne}"
     regex='"'${itemClass}'"'
-    grepOutput=$(grep -F $regex "$TiTsEdData">/dev/nul 2>/dev/null)
+    grepOutput=$(grep -F $regex "$TiTsEdData">/dev/null 2>/dev/null)
     grepExit=$?
 
     if [ ! $grepExit -eq 0 ]; then

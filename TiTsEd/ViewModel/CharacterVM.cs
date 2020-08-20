@@ -798,6 +798,8 @@ namespace TiTsEd.ViewModel
                 return GetDefaultLegFlags(type);
             else if (propertyName.Equals("TailFlags"))
                 return GetDefaultTailFlags(type);
+            else if (propertyName.Equals("EarFlags"))
+                return GetDefaultEarFlags(type);
             else
                 return null;
         }
@@ -1045,6 +1047,10 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Long");
                     defaultFlags.Add("Muzzled");
                     break;
+                case 93: // Lion
+                    defaultFlags.Add("Muzzled");
+                    defaultFlags.Add("Furred");
+                    break;
             }
             return defaultFlags;
         }
@@ -1093,8 +1099,25 @@ namespace TiTsEd.ViewModel
             {
                 SetValue("earType", value);
                 OnPropertyChanged("EarLengthEnabled");
+                UpdateFlags(value, this.EarFlags, "EarFlags");
             }
         }
+
+
+        private List<string> GetDefaultEarFlags(int fType)
+        {
+            List<string> defaultFlags = new List<string>();
+            switch (fType)
+            {
+                case 93: // Lion
+                    defaultFlags.Add("Furred");
+                    break;
+                default:
+                    break;
+            }
+            return defaultFlags;
+        }
+
 
         public int EyeType
         {
@@ -1442,6 +1465,7 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Scaled");
                     break;
                 case 66: //Korgonne
+                case 93: // Lion
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Paws");
                     break;
@@ -1555,6 +1579,7 @@ namespace TiTsEd.ViewModel
                     break;
                 case 40: //Panda
                 case 75: //Lupine
+                case 93: // Lion
                     defaultFlags.Add("Digitigrade");
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Paws");
@@ -1690,6 +1715,7 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Long");
                     break;
                 case 4:  //Feline
+                case 93: // Lion
                     defaultFlags.Add("Furred");
                     defaultFlags.Add("Long");
                     break;

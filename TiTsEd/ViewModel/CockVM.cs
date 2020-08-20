@@ -276,6 +276,10 @@ namespace TiTsEd.ViewModel
                     defaultFlags.Add("Scaled");
                     defaultFlags.Add("Ribbed");
                     break;
+                case 93:  // Lion
+                    defaultFlags.Add("Nubby");
+                    defaultFlags.Add("Sheathed");
+                    break;
             }
             return defaultFlags;
         }
