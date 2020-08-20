@@ -134,7 +134,7 @@
                 <common:ArrayEditor
                     Header="Cocks"
                     Items="{Binding Game.Character.Cocks}"
-                    Capacity="10"
+                    Capacity="{Binding Game.Character.MaxCocks}"
                     MinCapacity="0">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>

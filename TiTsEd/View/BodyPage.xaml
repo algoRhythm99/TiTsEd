@@ -267,7 +267,7 @@
             </StackPanel>
 
             <StackPanel Style="{StaticResource ContentStackPanel}">
-                <common:ArrayEditor Header="Breasts" Items="{Binding Game.Character.Breasts}" Capacity="5" MinCapacity="1">
+                <common:ArrayEditor Header="Breasts" Items="{Binding Game.Character.Breasts}" Capacity="{Binding Game.Character.MaxBreasts}" MinCapacity="1">
                     <common:ArrayEditor.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Description}" />

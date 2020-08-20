@@ -193,11 +193,25 @@ namespace TiTsEd.ViewModel
         }
 
         public BreastArrayVM Breasts { get; private set; }
+
+        public int MaxBreasts
+        {
+            get { return 10; }
+        }
+
         public VaginaArrayVM Vaginas { get; private set; }
+
         public CockArrayVM Cocks { get; private set; }
+
+        public int MaxCocks
+        {
+            get { return 10; }
+        }
+
         public VaginaVM Ass { get; private set; }
 
         public PregnancyDataArrayVM PregnancyData { get; private set; }
+
 
         public string GenderId
         {
