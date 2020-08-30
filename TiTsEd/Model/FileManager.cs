@@ -88,10 +88,13 @@ namespace TiTsEd.Model
 
             Result = FileEnumerationResult.Success;
 
+            string websiteDomain = @"www.fenoxo.com";
             string chromeAppPath = @"Google\Chrome\User Data\";
             string chromeProfilePattern = @"\\(?:Default|Profile \d+)$";
             string operaAppPath = @"Opera Software\";
             string operaProfilePattern = @"\\Opera(?: \w+)?$";
+            string edgeAppPath = @"Microsoft\Edge\User Data\";
+            string edgeProfilePattern = @"\\(?:Default|Profile \d+)$";
 
             bool insertSeparatorBeforeInMenu = false;
 
@@ -126,11 +129,13 @@ namespace TiTsEd.Model
 
             BuildNpapiPath("Online (Standard{0})", @"www.fenoxo.com", ref insertSeparatorBeforeInMenu);
 
-            BuildPpapiPath("Online (Chrome{0})", Environment.SpecialFolder.LocalApplicationData, chromeAppPath, chromeProfilePattern, @"www.fenoxo.com", ref insertSeparatorBeforeInMenu);
+            BuildPpapiPath("Online (Chrome{0})", Environment.SpecialFolder.LocalApplicationData, chromeAppPath, chromeProfilePattern, websiteDomain, ref insertSeparatorBeforeInMenu);
 
-            BuildPpapiPath("Online (Opera{0})", Environment.SpecialFolder.ApplicationData, operaAppPath, operaProfilePattern, @"www.fenoxo.com", ref insertSeparatorBeforeInMenu);
+            BuildPpapiPath("Online (Opera{0})", Environment.SpecialFolder.ApplicationData, operaAppPath, operaProfilePattern, websiteDomain, ref insertSeparatorBeforeInMenu);
 
-            BuildNpapiPath("Online (Edge/Metro{0})", @"#AppContainer\www.fenoxo.com", ref insertSeparatorBeforeInMenu);
+            BuildNpapiPath("Online (Edge/Metro OLD{0})", String.Format("#AppContainer\\{0}", websiteDomain), ref insertSeparatorBeforeInMenu);
+
+            BuildPpapiPath("Online (Edge{0})", Environment.SpecialFolder.LocalApplicationData, edgeAppPath, edgeProfilePattern, websiteDomain, ref insertSeparatorBeforeInMenu);
 
             Logger.Trace("BuildPaths: End");
         }
