@@ -95,5 +95,15 @@ namespace TiTsEd.Properties {
                 return ResourceManager.GetString("ReleasesUrl", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon TiTsEd {
+            get {
+                object obj = ResourceManager.GetObject("TiTsEd", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
