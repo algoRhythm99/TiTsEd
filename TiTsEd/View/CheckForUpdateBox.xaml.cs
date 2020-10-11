@@ -71,7 +71,7 @@ namespace TiTsEd.View
 
             switch (status)
             {
-                // nothing to do for UpdateCheckResult.Yes, the correct hyperlinked text is in the XAML as the default
+                // nothing to do for UpdateCheckResult. Yes, the correct hyperlinked text is in the XAML as the default
                 case UpdateCheckResult.No:
                     statusText.Text = "TiTsEd is up to date.";
                     break;

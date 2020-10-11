@@ -1258,6 +1258,7 @@
 			<CockType ID="61" Name="Saurian" />
 			<CockType ID="64" Name="Hradian" />
 			<CockType ID="65" Name="Gryvain" />
+			<CockType ID="66" Name="Korgonne" />
 			<CockType ID="69" Name="Bothrioc" />
 			<CockType ID="70" Name="Milodan" />
 			<CockType ID="72" Name="Swine" />
@@ -1523,6 +1524,7 @@
 			<Item Stack="1" Name="TamWolf" ID="classes.Items.Accessories::TamWolfDamaged" />
 			<Item Stack="1" Name="TamWolf2.0" ID="classes.Items.Accessories::TamWolfII" />
 			<Item Stack="1" Name="T.Cloak" ID="classes.Items.Accessories::TravelersCloak" />
+			<Item Stack="1" Name="D.Heavn" ID="classes.Items.Accessories::UtopianSkiesDanceHeaven" />
 			<Item Stack="1" Name="Pink Leash" ID="classes.Items.Accessories::VarmintLeash" />
 			<Item Stack="1" Name="Cargobot" ID="classes.Items.Miscellaneous::Cargobot" />
 			<Item Stack="1" Name="PH Access." ID="classes.Items.Miscellaneous::PHAccess" />
@@ -1580,6 +1582,9 @@
 			</Item>
 			<Item Stack="1" Name="ST. Catsuit" ID="classes.Items.Apparel::AnnosCatsuit" />
 			<Item Stack="1" Name="AtmaArmor" ID="classes.Items.Apparel::AtmaArmor" />
+			<Item Stack="1" Name="Chem.Armor" ID="classes.Items.Armor::BrightWaterChemasterArmor" >
+				<ItemField Name="shields" Type="int" Value="20" />
+			</Item>
 			<Item Stack="1" Name="E-robe" ID="classes.Items.Apparel::Ephemerobe" />
 			<Item Stack="1" Name="Catsuit" ID="classes.Items.Apparel::GenericCatsuit" />
 			<Item Stack="1" Name="gooverings" ID="classes.Items.Apparel::GooeyCoverings" />
@@ -2093,6 +2098,7 @@
 			<Item Stack="1" Name="NymFoeDaki" ID="classes.Items.Toys::NymFoeDakimakura" />
 			<Item Stack="1" Name="T.B.Hole" ID="classes.Items.Toys::TamaniBionaHole" />
 			<Item Stack="1" Name="SukMastr" ID="classes.Items.Toys::SukMastr" />
+			<Item Stack="1" Name="S.B.Hole" ID="classes.Items.Toys::SyriBionaHole" />
 		</ItemGroup>
 		<ItemGroup Name="Dildos">
 			<Item Stack="1" Name="DogDildo"     ID="classes.Items.Toys::DildoCanine" />
@@ -2236,6 +2242,7 @@
 			<Item Stack="1" Name="NaN D." ID="classes.Items.Guns::NANDeconstructor" LongName="NaN Deconstructor" />
 			<Item Stack="1" Name="Nova Pstl." ID="classes.Items.Guns::NovaPistol" />
 			<Item Stack="1" Name="Nova Rifle" ID="classes.Items.Guns::NovaRifle" />
+			<Item Stack="1" Name="XTR-8" ID="classes.Items.Guns::ParagonXTR8Peer" />
 			<Item Stack="1" Name="PlasmaBore" ID="classes.Items.Guns::PlasmaBore" />
 			<Item Stack="1" Name="Plasma P." ID="classes.Items.Guns::PlasmaPistol" />
 			<Item Stack="1" Name="P.Bow" ID="classes.Items.Guns::PrimitiveBow" />
@@ -2475,6 +2482,7 @@
 			<KeyItem Name="Brandy's Letter" Description="A red envelope containing a hand-written letter from Brandy." />
 			<KeyItem Name="Capture Harness" />
 			<KeyItem Name="Broken Psi Amp" Description="A broken Psionic Amplifier, removed from Captain Zaalt Kandar's skull. After it went &lt;i&gt;slightly&lt;/i&gt; batshit." />
+			<KeyItem Name="Dhaal Party Invitation" />
 			<KeyItem Name="Doctor Badger's Bimbo Raygun - Programmed for use on Penny." />
 			<KeyItem Name="Doctor Badger's Bimbo Raygun - Still programmed for use on Penny." />
 			<KeyItem Name="Doctor Badger's Reprogrammed Bimbo Raygun - For use on the Badger!" />
@@ -3066,6 +3074,7 @@
 		<Flag Name="AZRA_EXP_FAILED" />
 		<Flag Name="AZRA_KISSED" />
 		<Flag Name="AZRA_MHENGAED" />
+		<Flag Name="AZRA_MOMDOM" />
 		<Flag Name="AZRA_NALEEN_BLOWN" />
 		<Flag Name="AZRA_ONBOARD" />
 		<Flag Name="AZRA_RACE_TALK" />
@@ -3436,9 +3445,12 @@
 		<Flag Name="BRANDT_BUTTJS" />
 		<Flag Name="BRANDT_FLIRTED" />
 		<Flag Name="BRANDT_HATES_YOU" />
+		<Flag Name="BRANDYWEEN" />
 		<Flag Name="BRANDY_AFFECTION" />
 		<Flag Name="BRANDY_AFFECT_HUG" />
+		<Flag Name="BRANDY_DICKSPROUT_UNLOCKED" />
 		<Flag Name="BRANDY_FINGERING" />
+		<Flag Name="BRANDY_FUCKSYAWITHWANG" />
 		<Flag Name="BRANDY_MISCREANTED" />
 		<Flag Name="BRANDY_MISSIONARY" />
 		<Flag Name="BRANDY_MODS" />
@@ -3494,6 +3506,7 @@
 		<Flag Name="BREEDWELL_VISITED" />
 		<Flag Name="BRIGET_FUCKED" />
 		<Flag Name="BRIGET_MET" />
+		<Flag Name="BRIGHTWATER_PP" />
 		<Flag Name="BRIHA_HARDLIGHT_STUFFED" />
 		<Flag Name="BRIHA_INCUBATION_TIMER" />
 		<Flag Name="BRIHA_LATEST_SPAWN_AGE" />
@@ -3736,6 +3749,16 @@
 		<Flag Name="DHAAL_GYRE_STEP" />
 		<Flag Name="DHAAL_LANDINGS" />
 		<Flag Name="DHAAL_MILKCOW" />
+		<Flag Name="DHAAL_PARTY_ANNOD" />
+		<Flag Name="DHAAL_PARTY_CARVERMET" />
+		<Flag Name="DHAAL_PARTY_CEOGIFT" />
+		<Flag Name="DHAAL_PARTY_CEOMET" />
+		<Flag Name="DHAAL_PARTY_CUZ_REACTION" />
+		<Flag Name="DHAAL_PARTY_EVENTS" />
+		<Flag Name="DHAAL_PARTY_FINISH_TIME" />
+		<Flag Name="DHAAL_PARTY_GRYV_FLIRTED" />
+		<Flag Name="DHAAL_PARTY_GUNNED" />
+		<Flag Name="DHAAL_PARTY_TAXICORP" />
 		<Flag Name="DICKFUCKED_CAPN_KHORGAN" />
 		<Flag Name="DIDNT_ENGAGE_RIVAL_ON_MHENGA" />
 		<Flag Name="DIDNT_WATCH_EMBRY_TF" />
@@ -3790,6 +3813,17 @@
 		<Flag Name="DRANK_MYR_VENOM" />
 		<Flag Name="DRANK_WITH_ALEX" />
 		<Flag Name="DREAM_CD" />
+		<Flag Name="DREGHAN_ENCOUNTERED" />
+		<Flag Name="DREGHAN_SEEN_BEDROOM" />
+		<Flag Name="DREGHAN_SEX_CATCH" />
+		<Flag Name="DREGHAN_SEX_CUDDLES" />
+		<Flag Name="DREGHAN_SEX_DEEPTHROAT" />
+		<Flag Name="DREGHAN_TALK_BOW" />
+		<Flag Name="DREGHAN_TALK_FAMILY" />
+		<Flag Name="DREGHAN_TALK_JOB" />
+		<Flag Name="DREGHAN_TALK_SUGGESTED_SEX" />
+		<Flag Name="DREGHAN_TALK_UVETO" />
+		<Flag Name="DREGHAN_TALK_WARGII" />
 		<Flag Name="DRLESSAU_SEXED" />
 		<Flag Name="DRONED_UVIP F20" />
 		<Flag Name="DRONED_UVIP L28" />
@@ -3957,6 +3991,8 @@
 		<Flag Name="EXTRAMEET_BOUNTIFULBOTANY" />
 		<Flag Name="EXTRAMEET_BRATTYKITTEN" />
 		<Flag Name="EXTRAMEET_BRAZENBITCH" />
+		<Flag Name="EXTRAMEET_BUSTYBRAT" />
+		<Flag Name="EXTRAMEET_CARELESSWHISPER" />
 		<Flag Name="EXTRAMEET_CASUALD" />
 		<Flag Name="EXTRAMEET_CATBOOBS" />
 		<Flag Name="EXTRAMEET_CUMSNUGGLE" />
@@ -3966,6 +4002,7 @@
 		<Flag Name="EXTRAMEET_DARKANGEL01" />
 		<Flag Name="EXTRAMEET_DATE" />
 		<Flag Name="EXTRAMEET_DEVIANTSHEEPDOG" />
+		<Flag Name="EXTRAMEET_DHAAL" />
 		<Flag Name="EXTRAMEET_DIGBICK" />
 		<Flag Name="EXTRAMEET_DIRTYGUR114" />
 		<Flag Name="EXTRAMEET_DIRTYHABITZ" />
@@ -3977,12 +4014,17 @@
 		<Flag Name="EXTRAMEET_FAP_GIVE" />
 		<Flag Name="EXTRAMEET_FAP_RCVD" />
 		<Flag Name="EXTRAMEET_FRANKMOLLY" />
+		<Flag Name="EXTRAMEET_FUCKSLUT" />
 		<Flag Name="EXTRAMEET_FUKA" />
 		<Flag Name="EXTRAMEET_FUNNYBOI1" />
 		<Flag Name="EXTRAMEET_GADGETGIRL" />
 		<Flag Name="EXTRAMEET_GLITTERCUNT" />
 		<Flag Name="EXTRAMEET_GRANITE75" />
+		<Flag Name="EXTRAMEET_H8FUL" />
+		<Flag Name="EXTRAMEET_HAIMITEE" />
 		<Flag Name="EXTRAMEET_HALL9001" />
+		<Flag Name="EXTRAMEET_HANGEDMAN" />
+		<Flag Name="EXTRAMEET_HANKSMITH" />
 		<Flag Name="EXTRAMEET_HANSI" />
 		<Flag Name="EXTRAMEET_HAWTSHOT" />
 		<Flag Name="EXTRAMEET_HAWTSTUFF" />
@@ -3991,6 +4033,7 @@
 		<Flag Name="EXTRAMEET_HONEYPOTT" />
 		<Flag Name="EXTRAMEET_HUGGATREE" />
 		<Flag Name="EXTRAMEET_HUNTRESS" />
+		<Flag Name="EXTRAMEET_IDONTCARE" />
 		<Flag Name="EXTRAMEET_KAEDE" />
 		<Flag Name="EXTRAMEET_KINKDADDY" />
 		<Flag Name="EXTRAMEET_LADYGLAMOR" />
@@ -4003,6 +4046,7 @@
 		<Flag Name="EXTRAMEET_MHENGA" />
 		<Flag Name="EXTRAMEET_MIDNIGHTXROSE" />
 		<Flag Name="EXTRAMEET_MISSYMAY" />
+		<Flag Name="EXTRAMEET_MISTERE" />
 		<Flag Name="EXTRAMEET_MISTRESSVENOM" />
 		<Flag Name="EXTRAMEET_MOONLESSNIGHTS" />
 		<Flag Name="EXTRAMEET_MRFOX" />
@@ -4014,6 +4058,7 @@
 		<Flag Name="EXTRAMEET_NYMPHO69" />
 		<Flag Name="EXTRAMEET_ORAL_GIVE" />
 		<Flag Name="EXTRAMEET_ORAL_RCVD" />
+		<Flag Name="EXTRAMEET_OTHEPOSSUM" />
 		<Flag Name="EXTRAMEET_PONYLUVER" />
 		<Flag Name="EXTRAMEET_POWERLOVERS2" />
 		<Flag Name="EXTRAMEET_PROSNUGGLER23" />
@@ -4027,6 +4072,7 @@
 		<Flag Name="EXTRAMEET_SAVINGGRACE04" />
 		<Flag Name="EXTRAMEET_SCIENCERULEZ41" />
 		<Flag Name="EXTRAMEET_SEX" />
+		<Flag Name="EXTRAMEET_SEXIGURL149" />
 		<Flag Name="EXTRAMEET_SEXPLOSIVE" />
 		<Flag Name="EXTRAMEET_SEXYYDADDYY" />
 		<Flag Name="EXTRAMEET_SHOWYOURS2ME" />
@@ -4034,6 +4080,7 @@
 		<Flag Name="EXTRAMEET_SIRENSONG" />
 		<Flag Name="EXTRAMEET_SLAVEBOI" />
 		<Flag Name="EXTRAMEET_SNEAKYSNEK" />
+		<Flag Name="EXTRAMEET_STAMPY" />
 		<Flag Name="EXTRAMEET_STARCHILD" />
 		<Flag Name="EXTRAMEET_STORMDRAGON" />
 		<Flag Name="EXTRAMEET_STROKE4ME" />
@@ -4046,8 +4093,11 @@
 		<Flag Name="EXTRAMEET_THEPROFESSOR" />
 		<Flag Name="EXTRAMEET_THICKLOADZ" />
 		<Flag Name="EXTRAMEET_THROBBIN34" />
+		<Flag Name="EXTRAMEET_TOETALY" />
 		<Flag Name="EXTRAMEET_TRUEPOWER69" />
+		<Flag Name="EXTRAMEET_TWILIGHTQUEEN" />
 		<Flag Name="EXTRAMEET_TWISTED" />
+		<Flag Name="EXTRAMEET_UNITX50021" />
 		<Flag Name="EXTRAMEET_UVETO" />
 		<Flag Name="EXTRAMEET_VKO" />
 		<Flag Name="EXTRAMEET_WANTSUMJUNK" />
@@ -4314,11 +4364,17 @@
 		<Flag Name="FZIL_THIS_PREG_MET" />
 		<Flag Name="FZIL_TOTAL_KIDS" />
 		<Flag Name="GABCHEM_DETTED" />
+		<Flag Name="GABCHEM_PREG_TIMER" />
+		<Flag Name="GABICHEM_BABY_GENDERS" />
 		<Flag Name="GABICHEM_EXGARTI" />
 		<Flag Name="GABICHEM_FIGHT_RESULTS" />
 		<Flag Name="GABICHEM_LHDS" />
 		<Flag Name="GABICHEM_MET" />
 		<Flag Name="GABICHEM_NAMEDROPPED" />
+		<Flag Name="GABICHEM_NUM_BABIES" />
+		<Flag Name="GABICHEM_PREG_INTRO" />
+		<Flag Name="GABICHEM_PREG_TIMER" />
+		<Flag Name="GABICHEM_TOTAL_KIDS" />
 		<Flag Name="GABI_CHEM_MATEPRESS" />
 		<Flag Name="GAB_CYBORG_COUSIN_MAIL_TIMER" />
 		<Flag Name="GAB_CYBORG_RESULT" />
@@ -4857,6 +4913,7 @@
 		<Flag Name="KQ_BLACK_UNLOCKED" />
 		<Flag Name="KQ_BUY_OFFER" />
 		<Flag Name="KQ_DOORLAST_RESULTS" />
+		<Flag Name="KQ_FOUGHT_PO" />
 		<Flag Name="KQ_FUCKED_PO" />
 		<Flag Name="KQ_GOBLIN_DED" />
 		<Flag Name="KQ_KNOTTY_TERRAN_TAKEN" />
@@ -5200,6 +5257,7 @@
 		<Flag Name="MET_DEL" Description="1 == You've met Del" />
 		<Flag Name="MET_DEL_SHEMALE" Description="1 == You've met shemale Del" />
 		<Flag Name="MET_DOCKMISTRESS" />
+		<Flag Name="MET_DREGHAN" />
 		<Flag Name="MET_DR_BADGER" Description="1 == You've met Dr Badger" />
 		<Flag Name="MET_DR_HASWELL" Description="1 == You've met Dr Haswell" />
 		<Flag Name="MET_DR_LASH" Description="1 == You've met Dr Lash" />
@@ -5309,6 +5367,7 @@
 		<Flag Name="MET_OLYMPIA" />
 		<Flag Name="MET_ORRYX" Description="1 == You've met Orryx" />
 		<Flag Name="MET_PAIGE" />
+		<Flag Name="MET_PARAGON_HAREM" />
 		<Flag Name="MET_PENNY" Description="1 == You've met Penny" />
 		<Flag Name="MET_PERDITA" />
 		<Flag Name="MET_QUENTON" Description="1 == You've met Quenton" />
@@ -5388,6 +5447,7 @@
 		<Flag Name="MET_YANCY" Description="1 == You've met Yancy" />
 		<Flag Name="MET_YARASTA" Description="1 == You've met Yarasta" />
 		<Flag Name="MET_ZAIKA_HYDRA" />
+		<Flag Name="MET_ZAIKA_TWINS" />
 		<Flag Name="MET_ZEA" />
 		<Flag Name="MET_ZEPHYR" Description="1 == You've met Zephyr" />
 		<Flag Name="MET_ZIL_PREGGOMONES" />
@@ -5693,6 +5753,14 @@
 		<Flag Name="PAIGE_WAKEY_FLAGS" />
 		<Flag Name="PAIGE_YOGA" />
 		<Flag Name="PAIGE_YOGA_DAY" />
+		<Flag Name="PARAGON_BROTHEL_WANDER" />
+		<Flag Name="PARAGON_PLAYGROUND_DRANKS" />
+		<Flag Name="PARAGON_PP" />
+		<Flag Name="PARAGRON_PLAYGROUND_BARED" />
+		<Flag Name="PARAGRON_PLAYGROUND_CATALOGUE" />
+		<Flag Name="PARAGRON_PLAYGROUND_ENTERED" />
+		<Flag Name="PARA_HAREM_DRAIN" />
+		<Flag Name="PARA_HAREM_LEAD" />
 		<Flag Name="PC_EMAIL_ADDRESS" />
 		<Flag Name="PC_PAYS_LANE_ERRY_DAY" />
 		<Flag Name="PC_SELF_SUCKED_STANDARD" />
@@ -7048,6 +7116,7 @@
 		<Flag Name="USHA_STATE"     Description="1 == LoverChief&#xD;&#xA;2 == ChiefWantsItBad" />
 		<Flag Name="USHA_VAG"       Description="0-INFINITY&#xD;&#xA;undefined if never been in her pussy" />
 		<Flag Name="UTHRA HARVEST DAY" />
+		<Flag Name="UTOPIAN_PP" />
 		<Flag Name="UVETOCOAST_STEP" />
 		<Flag Name="UVETO_DEEPSEALAB_BACONTIMER" />
 		<Flag Name="UVETO_DEEPSEALAB_DEPTHSUIT" />
@@ -7160,6 +7229,7 @@
 		<Flag Name="WALT_SEXED" />
 		<Flag Name="WARGII_BADEND_FUCKED" />
 		<Flag Name="WARGII_DOOM_TIMER" />
+		<Flag Name="WARGII_DREGHAN_SAVED" />
 		<Flag Name="WARGII_FIGHTS_RAN" />
 		<Flag Name="WARGII_FIGHTS_WON" />
 		<Flag Name="WARGII_HEIDRUN_SAVED" />
