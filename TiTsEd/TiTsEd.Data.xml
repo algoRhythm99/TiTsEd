@@ -582,6 +582,7 @@
 			<FaceType ID="42" Name="Raskvel" />
 			<FaceType ID="45" Name="Badger" />
 			<FaceType ID="50" Name="Goat" />
+			<FaceType ID="52" Name="Simii" />
 			<FaceType ID="57" Name="Ovir" />
 			<FaceType ID="66" Name="Korgonne" />
 			<FaceType ID="69" Name="Bothrioc" />
