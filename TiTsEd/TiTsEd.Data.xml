@@ -7,7 +7,9 @@
 			<Upbringing ID="2" Name="Bookworm" />
 			<Upbringing ID="3" Name="Austere" />
 			<Upbringing ID="4" Name="Balanced" />
+<!--
 			<Upbringing ID="5" Name="Slutty" />
+-->
 		</Upbringings>
 		<OriginalRaces>
 			<OriginalRace>half-ausar</OriginalRace>
@@ -1416,31 +1418,6 @@
 			<NippleType ID="6" Name="Tentacled" />
 		</NippleTypes>
 		<!-- ================================================================ -->
-<!--
-		<DickNippleTypes>
-			<DickNippleType ID="0"  Name="Human" />
-			<DickNippleType ID="1"  Name="Equine" />
-			<DickNippleType ID="3"  Name="Canine" />
-			<DickNippleType ID="4"  Name="Feline" />
-			<DickNippleType ID="5"  Name="Vulpine" />
-			<DickNippleType ID="9"  Name="Lapine" />
-			<DickNippleType ID="11" Name="Draconic" />
-			<DickNippleType ID="15" Name="Demonic" />
-			<DickNippleType ID="16" Name="Gooey" />
-			<DickNippleType ID="18" Name="Gabilani" />
-			<DickNippleType ID="20" Name="Suula" />
-			<DickNippleType ID="22" Name="Anemone" />
-			<DickNippleType ID="23" Name="Tentacle" />
-			<DickNippleType ID="46" Name="Vanae" />
-			<DickNippleType ID="51" Name="Synthetic" />
-			<DickNippleType ID="54" Name="Cockvine" />
-			<DickNippleType ID="56" Name="Inhuman" />
-			<DickNippleType ID="64" Name="Hradian" />
-			<DickNippleType ID="65" Name="Gryvain" />
-			<DickNippleType ID="78" Name="Rahn" />
-		</DickNippleTypes>
--->
-		<!-- ================================================================ -->
 		<AreolaFlags>
 			<AreolaFlag ID="40" Name="Slightly Pumped" />
 			<AreolaFlag ID="52" Name="Heart-Shaped" />
@@ -1485,6 +1462,7 @@
 			<Item Stack="1" Name="AimEyeII"     ID="classes.Items.Accessories::AimEyepieceMkII" />
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
 			<Item Stack="1" Name="Scarf" ID="classes.Items.Accessories::BeatricesScarf" />
+			<Item Stack="1" Name="BimboHat" ID="classes.Items.Accessories::BimboHat" />
 			<Item Stack="1" Name="B.D.S." ID="classes.Items.Accessories::BimboleumDefenseSystem" />
 			<Item Stack="1" Name="C.Coat"       ID="classes.Items.Accessories::ChemistsCoat" />
 			<Item Stack="1" Name="Cyb. ExoS." ID="classes.Items.Accessories::CyberneticExoskeleton" >
@@ -2068,6 +2046,7 @@
 			<Item Stack="1"     Name="Story:BXBI2"      ID="classes.Items.Stories::BXBITwo"         LongName="code for “BXBI Chapter 2”" />
 			<Item Stack="1"     Name="Story:Captr"      ID="classes.Items.Stories::CapturedByTheDemons"    LongName="code for “Captured...”" />
 			<Item Stack="1"     Name="Story: Cow S."    ID="classes.Items.Stories::CowStuff"        LongName="code for “Cow Stuff”" />
+			<Item Stack="1"     Name="VR:D.Doll"        ID="classes.Items.Stories::DhaalCyberdollEnding" LongName="code for “Dhaal Cyberdoll End”" />
 			<Item Stack="1"     Name="Story:||||||||"   ID="classes.Items.Stories::EightClicks"     LongName="code for “||||||||”" />
 			<Item Stack="1"     Name="Story:F.Sys"      ID="classes.Items.Stories::FuckTheSystem"   LongName="code for “Fuck The System”" />
 			<Item Stack="1"     Name="Story:Jackals"    ID="classes.Items.Stories::GoJackals"   LongName="code for “Go Jackals!”" />
@@ -2590,6 +2569,7 @@
 			<KeyItem Name="Ten Ton Gym Membership" />
 			<KeyItem Name="Vi's Vagina" />
 			<KeyItem Name="Water Princess Note" Description="This receipt by a child-recovery drone was doodled all over by the tiny water princesses you gave birth to. They've scrawled several affectionate drawings all over it, and written thank-yous for taking care of them. Looking at it gives you a warm, fuzzy feeling..." />
+			<KeyItem Name="VR Program: Dhaal Cyberdoll End" />
 		</KeyItemGroup>
 	</KeyItems>
 	<!-- ================================================================ -->
@@ -2973,6 +2953,7 @@
 		<Flag Name="ANNO_AWAY" />
 		<Flag Name="ANNO_CREWMEMBER" Description="0/Undefined == Not Recruited&#xD;&#xA;1 == Is Crewmember&#xD;&#xA;2 == Recruited but kicked off the ship" />
 		<Flag Name="ANNO_CREWMEMBER_INITIALSCENE" Description="1 == You've seen Anno's recruitment scene" />
+		<Flag Name="ANNO_DESTROYED" />
 		<Flag Name="ANNO_EVER_STRAPONED" Description="1 == Anno has used a strapon on the PC" />
 		<Flag Name="ANNO_FACESIT" />
 		<Flag Name="ANNO_FUCKNSUCK" />
@@ -2989,6 +2970,7 @@
 		<Flag Name="ANNO_OWNS_LIGHT_STRAPON" Description="1 == Anno owns a hardlight strapon" />
 		<Flag Name="ANNO_PETPLAYED" Description="Number of times you've petplayed with Anno" />
 		<Flag Name="ANNO_REN_TUTOR" Description="1 == Anno tutors Terensha" />
+		<Flag Name="ANNO_SAMUS_DREAM" />
 		<Flag Name="ANNO_SCRAP_DISABLED" Description="1 == Anno won't offer to buy junk" />
 		<Flag Name="ANNO_SCRITCHES_HAPPENED" Description="1 == You've rubbed Anno's ears" />
 		<Flag Name="ANNO_SEXED" Description="Number of times you've had sex with Anno" />
@@ -3404,6 +3386,21 @@
 		<Flag Name="BLACKJACK_STANDING" />
 		<Flag Name="BLACKJACK_TIE" />
 		<Flag Name="BLACKJACK_WIN" />
+		<Flag Name="BLUE_FAIL_FLIRT" />
+		<Flag Name="BLUE_GREEN_3SUMMED" />
+		<Flag Name="BLUE_MET" />
+		<Flag Name="BLUE_SEXED" />
+		<Flag Name="BLUE_TALKED_BATHROOM" />
+		<Flag Name="BLUE_TALKED_FAMILY" />
+		<Flag Name="BLUE_TALKED_GREEN" />
+		<Flag Name="BLUE_TALKED_GREEN_ADDICTION" />
+		<Flag Name="BLUE_TALKED_GREEN_RACE" />
+		<Flag Name="BLUE_TALKED_PINK" />
+		<Flag Name="BLUE_TALKED_PINK_AGE" />
+		<Flag Name="BLUE_TALKED_PINK_HISTORY" />
+		<Flag Name="BLUE_TALKED_ROLE" />
+		<Flag Name="BLUE_TALKED_SELF" />
+		<Flag Name="BLUE_TALKED_SEX" />
 		<Flag Name="BLUE_VIPER_HYPER" />
 		<Flag Name="BLUE_VIPER_LINGUS" />
 		<Flag Name="BLUE_VIPER_MET" />
@@ -3418,6 +3415,7 @@
 		<Flag Name="BORED_JUMPED_SEXED" />
 		<Flag Name="BORED_JUMPER_CONSECUTIVE_LOSSES" />
 		<Flag Name="BORED_JUMPER_JUMPED" />
+		<Flag Name="BORED_JUMPER_RODE_YOU" />
 		<Flag Name="BORED_JUMPER_SEXED" />
 		<Flag Name="BOTHRIOC_ADDICTION" />
 		<Flag Name="BOTHRIOC_EMBASSY_ENTERED" />
@@ -3674,6 +3672,7 @@
 		<Flag Name="CODEX_SPAM_BLOCKER" />
 		<Flag Name="CODEX_UVETO_TRACKER" />
 		<Flag Name="COLENSO_SCRAP_DISABLED" />
+		<Flag Name="COLM_MET" />
 		<Flag Name="COMBAT MENU SEEN" />
 		<Flag Name="CONSUMED_UTHRA_SAP" />
 		<Flag Name="COOL_WITH_SPANNER" />
@@ -3858,6 +3857,7 @@
 		<Flag Name="EASTER_ZAIKA_MET" />
 		<Flag Name="EASTER_ZAIKA_SEXED" />
 		<Flag Name="EATEN_CERIA_OUT" />
+		<Flag Name="EATEN_OUT_GREEN" />
 		<Flag Name="EDAN_FUCKED" />
 		<Flag Name="EDAN_MET" />
 		<Flag Name="EDAN_NODICKS" />
@@ -3945,6 +3945,10 @@
 		<Flag Name="ENTERED_BRYNNS_STALL" />
 		<Flag Name="ENTERED_KORGI_HOLD" />
 		<Flag Name="ENTERED_NOMANSLAND" />
+		<Flag Name="EREBUS_CANDY_POINTS" />
+		<Flag Name="EREBUS_GOODEND_YEARDONE" />
+		<Flag Name="EREBUS_SECRET_ENDYEAR" />
+		<Flag Name="EREBUS_YEARDONE" />
 		<Flag Name="ERIKA_DEGRADED_HER" />
 		<Flag Name="ERIKA_GIVEN_ANUSOFT" />
 		<Flag Name="ERIKA_MET" />
@@ -4180,6 +4184,8 @@
 		<Flag Name="FERTILITY_PRIESTESSES_PREG" />
 		<Flag Name="FERUZE_BIG_DICK_TITFUCKED" />
 		<Flag Name="FERUZE_CAME_INSIDE" />
+		<Flag Name="FERUZE_DHAAL_FIGHT_OUTCOME" />
+		<Flag Name="FERUZE_DHAAL_LEFT_HER_PINING" />
 		<Flag Name="FERUZE_SEXED" />
 		<Flag Name="FERUZE_ZHENG_OUTCOME" />
 		<Flag Name="FIELDS_STEP" />
@@ -4311,6 +4317,7 @@
 		<Flag Name="FUCKED_ALEX" />
 		<Flag Name="FUCKED_ALEX_VAGINALLY" />
 		<Flag Name="FUCKED_ANARRIE" />
+		<Flag Name="FUCKED_BLUES_ASS" />
 		<Flag Name="FUCKED_BY_BIGT" />
 		<Flag Name="FUCKED_BY_HALEY" />
 		<Flag Name="FUCKED_BY_TAIVRA" />
@@ -4477,6 +4484,20 @@
 		<Flag Name="GRAVCUFFS_USES" />
 		<Flag Name="GRAYGOO_SPESS_SKYPE" />
 		<Flag Name="GRAY_PRIME_DEFEATED_VIA_HP" />
+		<Flag Name="GREEN_IS_SOFT" />
+		<Flag Name="GREEN_MET" />
+		<Flag Name="GREEN_NAME" />
+		<Flag Name="GREEN_SEXED" />
+		<Flag Name="GREEN_TALKED_ADDICTION" />
+		<Flag Name="GREEN_TALKED_BLUE" />
+		<Flag Name="GREEN_TALKED_BLUE_FAMILY" />
+		<Flag Name="GREEN_TALKED_BLUE_SEX" />
+		<Flag Name="GREEN_TALKED_PINK" />
+		<Flag Name="GREEN_TALKED_PINK_AGE" />
+		<Flag Name="GREEN_TALKED_PINK_HISTORY" />
+		<Flag Name="GREEN_TALKED_RACE" />
+		<Flag Name="GREEN_TALKED_ROLE" />
+		<Flag Name="GREEN_TALKED_SELF" />
 		<Flag Name="GUARD_BRIBE" />
 		<Flag Name="GWEIMEER_XMAS_2018" />
 		<Flag Name="GYRES_END_TAXI" />
@@ -4785,6 +4806,7 @@
 		<Flag Name="KIONA_TALK_SHOP" />
 		<Flag Name="KIONA_TALK_YOU" />
 		<Flag Name="KIRILA_RUSH_STORY" />
+		<Flag Name="KIROWEEN" />
 		<Flag Name="KIRO_3SOME_REACTION" Description="-1 == You don't want a threesome with Kally&#xD;&#xA;0 == You gave a neutral response to Kiro's threesome question&#xD;&#xA;1 == You want a threesome with Kiro and Kally" />
 		<Flag Name="KIRO_BALLJOBBED_YOU" Description="1 == Kiro has used her balls on your cocks" />
 		<Flag Name="KIRO_BALLS" />
@@ -5089,6 +5111,8 @@
 		<Flag Name="LORELEI_FOUGHT" />
 		<Flag Name="LORELEI_KNOTS" />
 		<Flag Name="LORELEI_LUST_LOSSES" />
+		<Flag Name="LORELEI_NUN_FUCK" />
+		<Flag Name="LORELEI_NUN_TITLE" />
 		<Flag Name="LORELEI_SEEN_YOU_NUDE" />
 		<Flag Name="LORELEI_SEXED" />
 		<Flag Name="LORELEI_SEX_COUNTER" />
@@ -5101,6 +5125,15 @@
 		<Flag Name="LOST_TO_KANE" />
 		<Flag Name="LOST_TO_MYR_DESERTS" />
 		<Flag Name="LOST_TO_SHADE_WITH_KARA" />
+		<Flag Name="LOVE_STARZ_4SUMMED" />
+		<Flag Name="LOVE_STARZ_BAD_GIRL" />
+		<Flag Name="LOVE_STARZ_DANCE_PRACTICE" />
+		<Flag Name="LOVE_STARZ_GROUP_MEETING" />
+		<Flag Name="LOVE_STARZ_IN_THE_ACT" />
+		<Flag Name="LOVE_STARZ_LAPDANCE_REWARD" />
+		<Flag Name="LOVE_STARZ_SNOGGING" />
+		<Flag Name="LOVE_STARZ_TRUTH_DARE" />
+		<Flag Name="LOVE_STARZ_YOGA" />
 		<Flag Name="LUCAS_MINDWASH" />
 		<Flag Name="LUCA_ADDICTION" />
 		<Flag Name="LUCA_ADDICTION_ACCEPTABLE" />
@@ -5336,6 +5369,7 @@
 		<Flag Name="MET_LILIANA" Description="1 == You've met Liliana" />
 		<Flag Name="MET_LOLA" Description="1 == You've met Lola" />
 		<Flag Name="MET_LORELEI" />
+		<Flag Name="MET_LOVE_STARZ" />
 		<Flag Name="MET_LUCA" />
 		<Flag Name="MET_LUMI" />
 		<Flag Name="MET_LUND" />
@@ -5355,6 +5389,7 @@
 		<Flag Name="MET_MILODAN_FUTAZON" />
 		<Flag Name="MET_MILODAN_MALE" />
 		<Flag Name="MET_MILO_INFILTRATOR" />
+		<Flag Name="MET_MILO_TEMPTRESS" />
 		<Flag Name="MET_MIRRIN" />
 		<Flag Name="MET_MITZI" />
 		<Flag Name="MET_MYRNA" />
@@ -5814,6 +5849,20 @@
 		<Flag Name="PEX_MILKED" />
 		<Flag Name="PEX_SOLOMILK" />
 		<Flag Name="PHOENIX RECROOM" />
+		<Flag Name="PINK_BLUE_3SUMMED" />
+		<Flag Name="PINK_GREEN_3SUMMED" />
+		<Flag Name="PINK_MET" />
+		<Flag Name="PINK_SEXED" />
+		<Flag Name="PINK_TALKED_AGE" />
+		<Flag Name="PINK_TALKED_BLUE" />
+		<Flag Name="PINK_TALKED_BLUE_FAMILY" />
+		<Flag Name="PINK_TALKED_BLUE_SEX" />
+		<Flag Name="PINK_TALKED_GREEN" />
+		<Flag Name="PINK_TALKED_GREEN_ADDICTION" />
+		<Flag Name="PINK_TALKED_GREEN_RACE" />
+		<Flag Name="PINK_TALKED_OLD_GROUPS_FULL" />
+		<Flag Name="PINK_TALKED_ROLE" />
+		<Flag Name="PINK_TALKED_SELF" />
 		<Flag Name="PIPPA_ABUSIVE_SAT_ON" />
 		<Flag Name="PIPPA_AFFECTION" />
 		<Flag Name="PIPPA_ASS_FUCKED" />
@@ -6947,7 +6996,9 @@
 		<Flag Name="THYVARA_SEEN_FINS" />
 		<Flag Name="THYVARA_SEX" />
 		<Flag Name="THYVARA_SEX_69" />
+		<Flag Name="THYVARA_SEX_DP" />
 		<Flag Name="THYVARA_SEX_FUCK" />
+		<Flag Name="THYVARA_SEX_ROUGH" />
 		<Flag Name="THYVARA_STORY" />
 		<Flag Name="THYVARA_WEAPONS_TALK" />
 		<Flag Name="TIMES_ATE_DELILAH_OUT" Description="Number of times you've sat on Delilah's face" />
@@ -7100,6 +7151,7 @@
 		<Flag Name="URBOLG_LUSTED" />
 		<Flag Name="URBOLG_PBED" />
 		<Flag Name="URBOLG_RIDES" />
+		<Flag Name="URBOLG_SPANKED" />
 		<Flag Name="URBOLG_TOY_MILKING" />
 		<Flag Name="URBY_COLLAR_FUN" />
 		<Flag Name="URBY_TAUR_FUX" />
@@ -7251,6 +7303,7 @@
 		<Flag Name="WARGII_ULA_PROMISED" />
 		<Flag Name="WAR_ALPHA_DEFEAT_METHOD" />
 		<Flag Name="WATCHED_LEE" />
+		<Flag Name="WATCHED_LOVE_STARZ" />
 		<Flag Name="WATCHED_NICO" />
 		<Flag Name="WATERFALL_TAXI_RELAY" />
 		<Flag Name="WETRAXXEL_ENCOUNTER_WEIGHT" />
