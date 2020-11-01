@@ -49,38 +49,7 @@
             </StackPanel>
 
             <StackPanel Style="{StaticResource ContentStackPanel}">
-                <TextBlock Style="{StaticResource Header}" Text="Tease Stats" />
-
-                <common:AutoGrid>
-                    <Label>
-                        <TextBlock Text="Ass" />
-                    </Label>
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.AssTease}" />
-
-                    <Label>
-                        <TextBlock Text="Chest" />
-                    </Label>
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.ChestTease}" />
-
-                    <Label>
-                        <TextBlock Text="Crotch" />
-                    </Label>
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.CrotchTease}" />
-
-                    <Label>
-                        <TextBlock Text="Hips" />
-                    </Label>
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.HipsTease}" />
-
-                    <Label>
-                        <TextBlock Text="Oral" />
-                    </Label>
-                    <common:MyNumericBox Upper="100" Value="{Binding Game.OralTease}" />
-                </common:AutoGrid>
-            </StackPanel>
-
-            <StackPanel Style="{StaticResource ContentStackPanel}">
-                <TextBlock Style="{StaticResource Header}" Text="Misc Stats" />
+                <TextBlock Style="{StaticResource Header}" Text="Pregnancy-related Stats" />
 
                 <common:AutoGrid Columns="3">
 

@@ -133,8 +133,16 @@ namespace TiTsEd.ViewModel {
                 if (null != xmlItem.LongName && xmlItem.LongName.Length > 0) {
                     LongName = xmlItem.LongName;
                 }
+                else
+                {
+                    LongName = null;
+                }
                 if (null != xmlItem.Tooltip && xmlItem.Tooltip.Length > 0) {
                     Tooltip = xmlItem.Tooltip;
+                }
+                else
+                {
+                    Tooltip = null;
                 }
                 /* Update all extra fields with fields from the xml. */
                 if (xmlItem.GetFieldValueAsBool("hasRandomProperties")) {

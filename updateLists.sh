@@ -299,7 +299,7 @@ if [ 1 == 1 ]; then
             # echo Checking for flag "$f"
             if ! grep -q "\"$f\"" "$TiTsEdData"; then
                 echo "Does not have flag $f"
-                echo '<Flag Name="'$f'" />' >>$newXmlFile
+                echo '		<Flag Name="'$f'" />' >>$newXmlFile
             fi
         done <$sortedFile
     fi
@@ -324,54 +324,72 @@ hasItem() {
     grepOutput=$(grep -F $regex "$TiTsEdData">/dev/null 2>/dev/null)
     grepExit=$?
 
-    if [ ! $grepExit -eq 0 ]; then
+    missingItemsFile="$4"
+    itemsXMLFile="$5"
 
-        printf '%s\n' "$fn"
+    hasShieldDefense=0
+    hasFortification=0
+    hasShields=0
+    hasFields=0
 
-        itemType=$(perl -ne '/(this[.])?type\s*=\s*(GLOBAL[.][\w]+)\s*;/ && print "$2\n";' "$fn")
-        printf 'itemType=%s\n' "$itemType"
+    missingText="$(printf '%s\n' "$fn")"
 
-        shortName=$(perl -ne '/(this[.])?shortName\s*=\s*"([\w _.-]+)"\s*;/ && print "$2\n";' "$fn")
-        printf 'shortName=%s\n' "$shortName"
+    itemType=$(perl -ne '/(this[.])?type\s*=\s*(GLOBAL[.][\w]+)\s*;/ && print "$2\n";' "$fn")
+    missingText="${missingText}$(printf 'itemType=%s\n' "$itemType")"
 
-        longName=$(perl -ne '/(this[.])?longName\s*=\s*"([\w _.-]+)"\s*;/ && print "$2\n";' "$fn")
-        printf 'longName=%s\n' "$longName"
+    shortName=$(perl -ne '/(this[.])?shortName\s*=\s*"([\w'"\\\'"'“”’‘, &+|:!_.\\(\\)\"-]+)"\s*;/ && print "$2\n";' "$fn")
+    missingText="${missingText}$(printf 'shortName=%s\n' "$shortName")"
 
-        stackSize=$(perl -ne '/(this[.])?stackSize\s*=\s*([\d]+)\s*;/ && print "$2\n";' "$fn")
-        printf 'stackSize=%s\n' "$stackSize"
+    longName=$(perl -ne '/(this[.])?longName\s*=\s*"([\w'"\\\'"'“”’‘, &+|:!_.\\(\\)\"-]+)"\s*;/ && print "$2\n";' "$fn")
+    missingText="${missingText}$(printf 'longName=%s\n' "$longName")"
 
-        fortification=$(perl -ne '/(this[.])?fortification\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
-        printf 'fortification=%s\n' "$fortification"
+    stackSize=$(perl -ne '/(this[.])?stackSize\s*=\s*([\d]+)\s*;/ && print "$2\n";' "$fn")
+    missingText="${missingText}$(printf 'stackSize=%s\n' "$stackSize")"
 
-        shieldDefense=$(perl -ne '/(this[.])?shieldDefense\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
-        printf 'shieldDefense=%s\n' "$shieldDefense"
+    fortification=$(perl -ne '/(this[.])?fortification\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
+    missingText="${missingText}$(printf 'fortification=%s\n' "$fortification")"
 
-        shields=$(perl -ne '/(this[.])?shields\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
-        printf 'shields=%s\n' "$shields"
+    shieldDefense=$(perl -ne '/(this[.])?shieldDefense\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
+    missingText="${missingText}$(printf 'shieldDefense=%s\n' "$shieldDefense")"
 
-        hasFields=0
+    shields=$(perl -ne '/(this[.])?shields\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
+    missingText="${missingText}$(printf 'shields=%s\n' "$shields")"
 
-        printf '\t\t\t<Item Stack="%s" Name="%s" ID="%s" ' "$stackSize" "$shortName" "$itemClass"
-        if [ ! -z "${fortification+x}" ] && [ "$fortification" != "0" ]; then hasFortification=1; hasFields=1; fi
-        if [ ! -z "${shieldDefense+x}" ] && [ "$shieldDefense" != "0" ]; then hasShieldDefense=1; hasFields=1; fi
-        if [ ! -z "${shields+x}" ] && [ "$shields" != "0" ]; then hasShields=1; hasFields=1; fi
+    itemXML="$(printf '\n\t\t\t<Item Name="%s" ID="%s"' "$shortName" "$itemClass" )"
+    if [ ! -z "${LongName}" ]; then
+        itemXML="${itemXML}$(printf ' LongName="%s"' "$longName")"
+    fi
+    if [ ! -z "${stackSize}" ] && [ "$stackSize" != "1" ]; then
+        itemXML="${itemXML}$(printf ' Stack="%s"' "$stackSize")"
+    fi
+    if [ ! -z "${fortification}" ] && [ "$fortification" != "0" ]; then hasFortification=1; hasFields=1; fi
+    if [ ! -z "${shieldDefense}" ] && [ "$shieldDefense" != "0" ]; then hasShieldDefense=1; hasFields=1; fi
+    if [ ! -z "${shields}" ] && [ "$shields" != "0" ]; then hasShields=1; hasFields=1; fi
 
-        if [ $hasFields -eq 1 ]; then
-            printf '>\n'
-            if [ ! -z "${hasFortification+x}" ]; then
-                printf '\t\t\t\t<ItemField Name="fortification" Type="int" Value="%s" />\n' "$fortification"
-            fi
-            if [ ! -z "${hasShieldDefense+x}" ]; then
-                printf '\t\t\t\t<ItemField Name="shieldDefense" Type="int" Value="%s" />\n' "$shieldDefense"
-            fi
-            if [ ! -z "${hasShields+x}" ]; then
-                printf '\t\t\t\t<ItemField Name="shields" Type="int" Value="%s" />\n' "$shields"
-            fi
-            printf '\t\t\t</Item>\n'
-        else
-            printf '/>\n'
+    if [ $hasFields -eq 1 ]; then
+        itemXML="${itemXML}$(printf '>\n')"
+        if [ $hasFortification -eq 1 ]; then
+            itemXML="${itemXML}$(printf '\n\t\t\t\t<ItemField Name="fortification" Type="int" Value="%s" />\n' "$fortification")"
         fi
-        printf '\n'
+        if [ $hasShieldDefense -eq 1 ]; then
+            itemXML="${itemXML}$(printf '\n\t\t\t\t<ItemField Name="shieldDefense" Type="int" Value="%s" />\n' "$shieldDefense")"
+        fi
+        if [ $hasShields -eq 1 ]; then
+            itemXML="${itemXML}$(printf '\n\t\t\t\t<ItemField Name="shields" Type="int" Value="%s" />\n' "$shields")"
+        fi
+        itemXML="${itemXML}$(printf '\n\t\t\t</Item>\n')"
+    else
+        itemXML="${itemXML}$(printf ' />\n')"
+    fi
+    itemXML="${itemXML}$(printf '\n')"
+
+    echo "$itemXML" >>$itemsXMLFile
+
+    if [ ! $grepExit -eq 0 ]; then
+        echo "$missingText" >>$missingItemsFile
+        echo "$itemXML" >>$missingItemsFile
+        echo "" >>$missingItemsFile
+        echo "" >>$missingItemsFile
     fi
 }
 export -f hasItem
@@ -379,8 +397,9 @@ export -f hasItem
 
 if [ 1 == 1 ]; then
     newFile="$newFolder/missingItems.txt"
+    itemsFile="$newFolder/items.xml"
     echo "Checking for missing items"
-    find $SourceFolder/classes/items -name "*.as" -exec bash -c "hasItem \"$TiTsEdData\" \"$0\" \"$SourceFolder\"" {} \; >$newFile
+    find $SourceFolder/classes/items -name "*.as" -exec bash -c "hasItem \"$TiTsEdData\" \"$0\" \"$SourceFolder\" \"$newFile\" \"$itemsFile\"" {} \;
 fi
 
 if [ 0 == 1 ]; then

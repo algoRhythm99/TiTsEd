@@ -828,6 +828,7 @@
 			<TongueType ID="45" Name="Badger" />
 			<TongueType ID="49" Name="Leithan" />
 			<TongueType ID="57" Name="Ovir" />
+			<TongueType ID="65" Name="Gryvain" />
 			<TongueType ID="66" Name="Korgonne" />
 			<TongueType ID="69" Name="Bothrioc" />
 			<TongueType ID="81" Name="Mothrine" />
@@ -1170,6 +1171,7 @@
 			<TailGenitalRaceType ID="54" Name="Cockvine" />
 			<TailGenitalRaceType ID="65" Name="Gryvain" />
 			<TailGenitalRaceType ID="67" Name="Flower" />
+			<TailGenitalRaceType ID="91" Name="Zaika" />
 		</TailGenitalRaceTypes>
 		<!-- ================================================================ -->
 		<CumTypes>
@@ -1324,6 +1326,7 @@
 			<VaginaType ID="49" Name="Leithan" />
 			<VaginaType ID="51" Name="Synthetic" />
 			<VaginaType ID="55" Name="Nyrea" />
+			<VaginaType ID="56" Name="Inhuman" />
 			<VaginaType ID="65" Name="Gryvain" />
 			<VaginaType ID="66" Name="Korgonne" />
 			<VaginaType ID="67" Name="Flower" />
@@ -2086,6 +2089,7 @@
 		<ItemGroup Name="Dildos">
 			<Item Stack="1" Name="DogDildo"     ID="classes.Items.Toys::DildoCanine" />
 			<Item Stack="1" Name="HorseDil"     ID="classes.Items.Toys::DildoEquine" />
+			<Item Stack="1" Name="Exgartuan"    ID="classes.Items.Toys::DildoExgartuan" />
 			<Item Stack="1" Name="CatDildo"     ID="classes.Items.Toys::DildoFeline" />
 			<Item Stack="1" Name="K.TerranD."   ID="classes.Items.Toys::DildoKnottyTerran" />
 			<Item Stack="1" Name="KingMino"     ID="classes.Items.Toys::DildoMinotaurKing" />
@@ -2093,6 +2097,7 @@
 			<Item Stack="1" Name="KT Dildo"     ID="classes.Items.Toys::DildoTaintedKuiTanTool" />
 			<Item Stack="1" Name="TerranDil"    ID="classes.Items.Toys::DildoTerran" />
 			<Item Stack="1" Name="TD Dildo"     ID="classes.Items.Toys::DildoTerranCumlux" />
+			<Item Stack="1" Name="The Urta"     ID="classes.Items.Toys::DildoUrta" />
 		</ItemGroup>
 		<ItemGroup Name="Weapons (Melee)">
 
@@ -2519,9 +2524,10 @@
 			<KeyItem Name="Panties - Claes's - Silky white panties with green ribbon ties." />
 			<KeyItem Name="Panties - Embry's - Plain, girly pink panties with little hearts." />
 			<KeyItem Name="Panties - Emmy's - Silky, purple, and cum-stained." />
-			<KeyItem Name="Panties - Erra's - Purple with a black paw-print on the crotch." />
+			<KeyItem Name="Panties - Erra’s - Purple with a black paw-print on the crotch." />
 			<KeyItem Name="Panties - Fisianna's - Lacy, white panties with a cute cat pattern." />
 			<KeyItem Name="Panties - Kiro's - Lacy, black, and crotchless." />
+			<KeyItem Name="Panties - Liliana's - White, standard-issue, and soft." />
 			<KeyItem Name="Panties - Lys's - Sheer black panties." />
 			<KeyItem Name="Panties - Myrna's - Green with fur lining and a pepperminty scent." />
 			<KeyItem Name="Panties - Penny's - Plain, blue, and crotchless." />
@@ -2529,6 +2535,7 @@
 			<KeyItem Name="Panties - Saendra's - Ultra-tight and bright pink." />
 			<KeyItem Name="Panties - Syri's - Sky blue, silky, and extra crotch room." />
 			<KeyItem Name="Panties - Tessa's - A sleek black thong, with a delicious aroma." />
+			<KeyItem Name="Panties - The Dockmaster's - Black-buttoned thong." Description="This surprisingly modest thong is built to be buttoned on, because there’s no way it’s slipping past the original owner’s gigantic ass otherwise." />
 			<KeyItem Name="Panties - Xanthe's - Lacy, black siel-silk panties." />
 		</KeyItemGroup>
 		<KeyItemGroup Name="Collars">
@@ -2558,6 +2565,7 @@
 			<KeyItem Name="Kressia Pass" />
 			<KeyItem Name="Lasso" />
 			<KeyItem Name="Locked Metal Chest" Label1="Actual Price" Value1="2000" />
+			<KeyItem Name="Personalised Dice Set" Description="A gift from Yoma - they’re metal, with dark yellow numbers." />
 			<KeyItem Name="Picture of Roxy and Newborns" />
 			<KeyItem Name="Pirate Datapad" />
 			<KeyItem Name="Platinum 190" />
@@ -2824,7 +2832,7 @@
 			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
 			<Perk Name="Fixed MilkQ" Comment="Ensures you always lactate exactly {Value1} mLs. See Value1" Label1="Lactation Quantity" Value1="500000" />
 			<Perk Name="Low Blow" />
-			<Perk Name="MinCumQ" Label1="Cum Quantity" Value1="2000" />
+			<Perk Name="MinCumQ" Label1="Cum Quantity" Value1="2000" Comment="Always cum at least {Value1} MLs. See Value1" />
 			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn. See Value1" Label1="Attacks per turn" Value1="5" />
 			<Perk Name="Multiple Shots" Comment="{Value1} ranged attacks per turn. See Value1" Label1="Shots per turn" Value1="5" />
 			<Perk Name="No Cum Leakage" />
@@ -2961,6 +2969,7 @@
 		<Flag Name="ANNO_HOLDOUT_PISTOL_UNLOCKED" />
 		<Flag Name="ANNO_HUSKARRED" />
 		<Flag Name="ANNO_HUSKAR_COMPLETE" />
+		<Flag Name="ANNO_KASE_THREESOME" />
 		<Flag Name="ANNO_MAID_OUTFIT" />
 		<Flag Name="ANNO_MAID_SEX" />
 		<Flag Name="ANNO_MISSION_OFFER" Description="Undefined == Not started&#xD;&#xA;1 == Offered&#xD;&#xA;2 == In progress (Actually on Deck13)&#xD;&#xA;3 == Gray Prime resolved" />
@@ -3203,6 +3212,23 @@
 		<Flag Name="BETRAYED_KARA" />
 		<Flag Name="BET_AGAINST_SYRI" Description="1 == if PC has ever engaged in a bet with Syri" />
 		<Flag Name="BF_STORAGE" />
+		<Flag Name="BHAKAR_FUCKED_ASS" />
+		<Flag Name="BHAKAR_FUCKED_HIM" />
+		<Flag Name="BHAKAR_FUCKED_VAG" />
+		<Flag Name="BHAKAR_MET" />
+		<Flag Name="BHAKAR_RECIPES_CAKE" />
+		<Flag Name="BHAKAR_RECIPES_CHOW" />
+		<Flag Name="BHAKAR_RECIPES_CROUTE" />
+		<Flag Name="BHAKAR_RECIPES_HAM" />
+		<Flag Name="BHAKAR_RECIPES_JHUNKA" />
+		<Flag Name="BHAKAR_RECIPES_ORIAB" />
+		<Flag Name="BHAKAR_RECIPES_POUTINE" />
+		<Flag Name="BHAKAR_RECIPES_TAM" />
+		<Flag Name="BHAKAR_SERVICED" />
+		<Flag Name="BHAKAR_SNOOZED" />
+		<Flag Name="BHAKAR_SPANKED" />
+		<Flag Name="BHAKAR_TALKED_SELF" />
+		<Flag Name="BHAKAR_TALKED_SPECIES" />
 		<Flag Name="BIANCA_ANNOYED" />
 		<Flag Name="BIANCA_APHROLICKSIAC" />
 		<Flag Name="BIANCA_BAR_APPROACH" />
@@ -3685,6 +3711,9 @@
 		<Flag Name="CRASH_LANDING_RULES" />
 		<Flag Name="CRAZY_CARL_DAD_TALK_UNLOCKED" />
 		<Flag Name="CREAMCOW_VIP_MAX_SUCKS" />
+		<Flag Name="CREAM_COW_BLEW" />
+		<Flag Name="CREAM_COW_BUTTFUCK" />
+		<Flag Name="CREAM_COW_IYLA_BLEW" />
 		<Flag Name="CREWMEMBER_SLEEP_WITH" />
 		<Flag Name="CRUSHED_EMBRYS_HEART" />
 		<Flag Name="CRYSTALGOO_T1_ENCOUNTERS" />
@@ -4218,7 +4247,7 @@
 		<Flag Name="FISI_PREGNANCY" />
 		<Flag Name="FISI_PRURIENCE" />
 		<Flag Name="FISI_REJECTED" />
-		<Flag Name="FISI_REL_TYPE" />
+		<Flag Name="FISI_REL_TYPE" Description="Relationship type, 1 = Monogamous, 2 = Open Relationship, 3 = Polyamorous, undefined if haven't been on 6th date" />
 		<Flag Name="FISI_SEX_NUMBER" />
 		<Flag Name="FISI_SLEPT_WITH" />
 		<Flag Name="FISI_TALK_BG" />
@@ -4356,6 +4385,8 @@
 		<Flag Name="FUCKED_VAHNS_ASS" />
 		<Flag Name="FUCK_LILLIES_USED" />
 		<Flag Name="FUNGUS_QUEEN_SAVED" />
+		<Flag Name="FUTA_PAIGE" />
+		<Flag Name="FUTA_PAIGE_TIME" />
 		<Flag Name="FYN_APARTMENT_ENTERED" />
 		<Flag Name="FYN_NOTICE_1_READ" />
 		<Flag Name="FYN_RELATIONSHIP_STATUS" />
@@ -4456,6 +4487,9 @@
 		<Flag Name="GOBBLES_EVENT_DATE" />
 		<Flag Name="GOBBLES_SEXYTIMES_STARTED" />
 		<Flag Name="GOBBLES_SILLY_DAYCOUNT" />
+		<Flag Name="GOD_OF_GIFTS_DREAM" />
+		<Flag Name="GOD_OF_GIFTS_MAIL" />
+		<Flag Name="GOD_OF_GIFTS_YEAR" />
 		<Flag Name="GOLD_AMBUSH_COVER" />
 		<Flag Name="GOLD_DILDOED" />
 		<Flag Name="GOLD_MYR_DESERTER_BEATEN" />
@@ -4595,11 +4629,14 @@
 		<Flag Name="IRELLIA_SEX_COOLDOWN" />
 		<Flag Name="IRELLIA_SEX_LEVEL" />
 		<Flag Name="IRELLIA_TITTYSNACK_OFFER" />
+		<Flag Name="IYLA_3SUM" />
+		<Flag Name="IYLA_69" />
 		<Flag Name="IYLA_COWGALED" />
 		<Flag Name="IYLA_DRINKS" />
 		<Flag Name="IYLA_OIL_MASSED" />
 		<Flag Name="IYLA_PEER_TALK_UNLOCK" />
 		<Flag Name="IYLA_SHOWER_SHOWN" />
+		<Flag Name="IYLA_TITFUCK" />
 		<Flag Name="IYLA_VIP_TALKS" />
 		<Flag Name="JADE_MUFFLINGS" />
 		<Flag Name="JADE_NIPPLE_TF_QUEUED" />
@@ -4634,6 +4671,7 @@
 		<Flag Name="JOIN_FEIAN_HAREM" />
 		<Flag Name="JOSIE_MET" />
 		<Flag Name="JOSIE_SEXED" />
+		<Flag Name="JOSIE_TAPPED" />
 		<Flag Name="JULIANS_QUEST_DISABLED" />
 		<Flag Name="JUMPER_DOCKED" />
 		<Flag Name="JUMPER_GANGBANGS" />
@@ -4812,9 +4850,17 @@
 		<Flag Name="KIRO_BALLS" />
 		<Flag Name="KIRO_BAR_MET" Description="1 == You've met Kiro in a bar" />
 		<Flag Name="KIRO_BF_TALK" Description="1 == You've discussed your relationship situation with Kiro" />
+		<Flag Name="KIRO_BIMBO_ANNO_MAKEUP_WALKIES" />
+		<Flag Name="KIRO_BIMBO_ANNO_TRIANGLE_THREESOME" />
+		<Flag Name="KIRO_BIMBO_BUBBLES_STOCKED" />
+		<Flag Name="KIRO_BIMBO_BUBBLE_BUDDY" />
 		<Flag Name="KIRO_BIMBO_CHOKED" />
 		<Flag Name="KIRO_BIMBO_COCKPIT" />
+		<Flag Name="KIRO_BIMBO_DILDOUSES" />
+		<Flag Name="KIRO_BIMBO_DILDO_GIFTED" />
+		<Flag Name="KIRO_BIMBO_HAPPY_TALK" />
 		<Flag Name="KIRO_BIMBO_MET" />
+		<Flag Name="KIRO_BIMBO_SNAKE_SMUT" />
 		<Flag Name="KIRO_BIMB_ALLCREW_FORCE" />
 		<Flag Name="KIRO_CELISE_3SOME" Description="Number of times you've had a threesome with Kiro and Celise" />
 		<Flag Name="KIRO_CELISE_3SOME_REJECT" />
@@ -5616,6 +5662,8 @@
 		<Flag Name="MYRNA_MYRNA_TALK" />
 		<Flag Name="MYRNA_YEAR" />
 		<Flag Name="MYR_ON_MHENGA" />
+		<Flag Name="MYSSAH_TAILFUCK" />
+		<Flag Name="MYSSAH_TAILMILK" />
 		<Flag Name="NALEEN_HERM_FIGHT_OUTCUM" />
 		<Flag Name="NALEEN_HERM_MET" />
 		<Flag Name="NALEEN_MALE_DISABLE" />
@@ -5630,8 +5678,27 @@
 		<Flag Name="NALEEN_SNUGGLED" />
 		<Flag Name="NARC_BJ_INFLATION" />
 		<Flag Name="NARC_EYE_FIXED" />
+		<Flag Name="NARC_LICKED" />
 		<Flag Name="NARC_OUTFIT_PROG" />
 		<Flag Name="NARC_SEX_APPROACHED" />
+		<Flag Name="NARC_SUCKED" />
+		<Flag Name="NARC_TITFUCKED" />
+		<Flag Name="NASTIZIA_COUNTER" />
+		<Flag Name="NASTIZIA_DOM_SUB" />
+		<Flag Name="NASTIZIA_DRESS" />
+		<Flag Name="NASTIZIA_DRESS_TIMER" />
+		<Flag Name="NASTIZIA_LAST_DUEL" />
+		<Flag Name="NASTIZIA_LAST_EVENT" />
+		<Flag Name="NASTIZIA_MET" />
+		<Flag Name="NASTIZIA_PC_WINS" />
+		<Flag Name="NASTIZIA_PREG_CUMQ" />
+		<Flag Name="NASTIZIA_PREG_JOINED" />
+		<Flag Name="NASTIZIA_PREG_TIME" />
+		<Flag Name="NASTIZIA_PREG_VIRILITY" />
+		<Flag Name="NASTIZIA_QUEST" />
+		<Flag Name="NASTIZIA_QUEST_TIMER" />
+		<Flag Name="NASTIZIA_RIYA_WINS" />
+		<Flag Name="NASTIZIA_SPITROAST" />
 		<Flag Name="NATALIE_MET" />
 		<Flag Name="NATALIE_NEED_SILICONE" />
 		<Flag Name="NATALIE_TALK_MONSTERS" />
@@ -5770,7 +5837,10 @@
 		<Flag Name="PAIGES_WINES" />
 		<Flag Name="PAIGE_ANAL" />
 		<Flag Name="PAIGE_CREW" />
+		<Flag Name="PAIGE_DOCKED" />
 		<Flag Name="PAIGE_FTFHB1" />
+		<Flag Name="PAIGE_FUTA" />
+		<Flag Name="PAIGE_FUTATHON" />
 		<Flag Name="PAIGE_GHOSTED" />
 		<Flag Name="PAIGE_GOO_WARNING" />
 		<Flag Name="PAIGE_HELPED_ZHENG" />
@@ -5800,6 +5870,8 @@
 		<Flag Name="PARAGRON_PLAYGROUND_ENTERED" />
 		<Flag Name="PARA_HAREM_DRAIN" />
 		<Flag Name="PARA_HAREM_LEAD" />
+		<Flag Name="PARA_TWINS_LET_LEAD" />
+		<Flag Name="PARA_TWINS_TAKE_LEAD" />
 		<Flag Name="PC_EMAIL_ADDRESS" />
 		<Flag Name="PC_PAYS_LANE_ERRY_DAY" />
 		<Flag Name="PC_SELF_SUCKED_STANDARD" />
@@ -6801,6 +6873,7 @@
 		<Flag Name="SYLVIE_DONG_TALK" />
 		<Flag Name="SYLVIE_HIPBUSTERED" />
 		<Flag Name="SYLVIE_MABBSED" />
+		<Flag Name="SYLVIE_ORAL_WORSHIP" />
 		<Flag Name="SYLVIE_PROSTATE_MILKED" />
 		<Flag Name="SYLVIE_SYNTHSHEATHED" />
 		<Flag Name="SYLVIE_TAURMOUNT" />
@@ -7565,6 +7638,7 @@
 			<StatusEffect Name="Taken Estrobloom" IsHidden="true" />
 			<StatusEffect Name="T.Pack" Description="You are protected from Uveto's harsh cold... for now!" IconName="Icon_Smelly" MinutesLeft="1440" />
 			<StatusEffect Name="The Mango" Description="You are irresistible!" IconName="Charmed" MinutesLeft="1440" IconShade="12030916" />
+			<StatusEffect Name="Thicc&amp;Shake" Description="Your hips and butt are covered in and under the effects of the Thicc&amp;Shake batter." IconName="Icon_DrugPill" MinutesLeft="1440" IconShade="12030916" Value1="1" />
 			<StatusEffect Name="Twink-ease Doses" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Treatment">
@@ -7688,7 +7762,7 @@
 		<StatusEffectGroup Name="Sex">
 			<StatusEffect Name="Anally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Donut" IconShade="12030916" />
 			<StatusEffect Name="Bee Musk" Description="It's hard not to fantasize after getting a whiff of that musk!" Value1="1" IconName="Icon_Charmed" IconShade="14506366" />
-			<StatusEffect Name="Blue Balls" Description="Take 25% more lust damage in combat!" IconName="Icon_Sperm_Hearts" IconShade="0" />
+			<StatusEffect Name="Blue Balls" Description="Take 25% more lust damage in combat!" IconName="Icon_Sperm_Hearts" IconShade="12030916" />
 			<StatusEffect Name="Bunny Cummy Next" IsHidden="true" />
 			<StatusEffect Name="Cum Cascade" Description="Side effect of ‘Nuki Nuts.." IconName="Icon_Sperm_Hearts" IconShade="12030916" IsHidden="true" />
 			<StatusEffect Name="Cum Cascade Suppressant" IsHidden="true" />
@@ -7697,6 +7771,7 @@
 			<StatusEffect Name="Cumflation Immune" IsHidden="true" />
 			<StatusEffect Name="Cupid’s Kiss" Description="You’re feeling more affectionate that you otherwise would, no doubt the result of Mitzi’s drug.\n\nTake +30% more tease damage.\n+200% XP\n+300% rare drop chance." Value1="1" IconName="Icon_DrugVial" IconShade="12030916" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
+			<StatusEffect Name="Milk Bathed" Description="You’re drenched in breastmilk! Anyone can tell at a glance what sort of activities you’ve been engaging in!" IconName="Icon_Rain_Drops" IconShade="16777215" Value1="1" />
 			<StatusEffect Name="MILO CUM" Value1="10" IsHidden="true" />
 			<StatusEffect Name="Omit Cumflation Messages" Description="Cumflation messages are currently disabled." IsHidden="true" />
 			<StatusEffect Name="Orally-Filled" Description="You've got some fluids inside you, leftovers from a recent lover." IconName="Icon_Lips_Glossed" />
@@ -7704,6 +7779,9 @@
 			<StatusEffect Name="Priapism" Description="You are unnaturally hard and erect regardless of your arousal level. The added discomfort prevents you from covering up!" IconName="OffenseUp" IconShade="12030916" />
 			<StatusEffect Name="Painted Tits" />
 			<StatusEffect Name="Pussy Drenched" Value1="1" IconName="Icon_Water_Drop" IconShade="12030916" />
+			<StatusEffect Name="Pussy Plugged" Description="A plug is currently obstructing your pussy, the constant pressure on your tender areas constantly arousing your libido.
+
+&lt;b&gt;+100% Libido.&lt;/b&gt;" Value1="2" IconName="Icon_Blocked" IconShade="12030916" />
 			<StatusEffect Name="Riya Breed No Sex" IsHidden="true" />
 			<StatusEffect Name="SlyverenFacefuckForce" IsHidden="true" />
 			<StatusEffect Name="Sore Tubes" Description="Orgasms damage you!" IconName="Icon_Water_Drop" IconShade="16711680" />
@@ -7740,9 +7818,10 @@
 			<StatusEffect Name="Azra Plant CD" IsHidden="true" />
 			<StatusEffect Name="Azra Sex CD" IsHidden="true" />
 			<StatusEffect Name="Badger Silicone Carry Timer" IsHidden="true" />
-			<StatusEffect Name="Betsy and Victoria CD" IsHidden="true" />
+			<StatusEffect Name="Betsy and Victoria CD" IsHidden="true" MinutesLeft="180" />
+			<StatusEffect Name="BhakarRecipeCooldown" IsHidden="true" />
 			<StatusEffect Name="BiancaVDRejectCD" IsHidden="true" />
-			<StatusEffect Name="BioMed Gangbang Cooldown" IsHidden="true" />
+			<StatusEffect Name="BioMed Gangbang Cooldown" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="bot18Lightning Stun Cooldown" IsHidden="true" />
 			<StatusEffect Name="Butt Bug Message Cooldown" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
@@ -7777,6 +7856,7 @@
 			<StatusEffect Name="MirrinTiddysuckCooldown" IsHidden="true" />
 			<StatusEffect Name="Motherhusk CD" IsHidden="true" />
 			<StatusEffect Name="MufflingsCD" IsHidden="true" />
+			<StatusEffect Name="Naleen_Herm_Disabled" IsHidden="true" MinutesLeft="180" />
 			<StatusEffect Name="NT_TAILCOCK_MILK_CD" IsHidden="true" />
 			<StatusEffect Name="Nade Cooldown" IsHidden="true" />
 			<StatusEffect Name="PAIGE_COMA_CD" IsHidden="true" />
@@ -7788,6 +7868,7 @@
 			<StatusEffect Name="PANTYBREAK_CD" IsHidden="true" />
 			<StatusEffect Name="PENNY_PANTY_CD" IsHidden="true" />
 			<StatusEffect Name="PERDITA_MEETING_CD" IsHidden="true" />
+			<StatusEffect Name="Paige Showering" IsHidden="true" MinutesLeft="128" />
 			<StatusEffect Name="Prai Cooldown" IsHidden="true" />
 			<StatusEffect Name="Quinn Talk Cooldown" IsHidden="true" />
 			<StatusEffect Name="RivetBuyEffectsCooldown" IsHidden="true" />
@@ -7799,6 +7880,7 @@
 			<StatusEffect Name="SHEKKA_GYM_CD" IsHidden="true" />
 			<StatusEffect Name="SYLVIE WORKING" IsHidden="true" />
 			<StatusEffect Name="Sera No Sex Cooldown" IsHidden="true" MinutesLeft="120" />
+			<StatusEffect Name="Sera Talk Breed" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Sera Tease Cooldown" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Sera's TailCock Cooldown" IsHidden="true" MinutesLeft="720" />
 			<StatusEffect Name="Sexed Rats Raiders" IsHidden="true" />
@@ -7899,9 +7981,14 @@
 			<StatusEffect Name="KQDollStunText" IsHidden="true" />
 			<StatusEffect Name="LipGrown" IsHidden="true" />
 			<StatusEffect Name="lustgasdisable" IsHidden="true" />
+			<StatusEffect Name="Mhen'ga Xenogen Protestors" IsHidden="true" />
+			<StatusEffect Name="MIRRIN_DISABLED" IsHidden="true" />
 			<StatusEffect Name="No AI" IsHidden="true" />
 			<StatusEffect Name="NO AI" IsHidden="true" />
 			<StatusEffect Name="NoisyRodentsDisable" IsHidden="true" />
+			<StatusEffect Name="Perfume" Description="The faint smell of perfume lingers from a recent encounter.
+
+(+1 Sexiness)" IconName="Icon_Perfume" MinutesLeft="1440" />
 			<StatusEffect Name="Premium Breeder Cheek Tattoo" IconName="Icon_Sperm_Hearts" MinutesLeft="16724911" />
 			<StatusEffect Name="Premium Breeder Crotch Tattoo" IconName="Icon_Sperm_Hearts" MinutesLeft="16724911" />
 			<StatusEffect Name="RaskvelDisable" IsHidden="true" />
@@ -7944,6 +8031,7 @@
 			<StatusEffect Name="Force Male Gender" Comment="Forces masculine descriptions" IsHidden="true" />
 			<StatusEffect Name="Forced Gender" IsHidden="true" />
 			<StatusEffect Name="Goo Armor Design" Description="none" IsHidden="true" />
+			<StatusEffect Name="Goo Armor Auto-Clean Message" IsHidden="true" />
 			<StatusEffect Name="Gym Pass" Description="You have a temporary gym pass to the Ten Ton Gym on New Texas." IconName="Icon_Haste" MinutesLeft="1440" />
 			<StatusEffect Name="Jaded" Description="You feel worn out and a bit sore from whoring." Value1="-10" Value2="-10" Value3="20" IconName="Blocked" MinutesLeft="240" />
 			<StatusEffect Name="Jock Sexiness" IsHidden="true" />
@@ -8003,7 +8091,7 @@ Freezing Resistance: +14%" IconName="Icon_Water_Drop" IconShade="16743001" Minut
 			<StatusEffect Name="Siegwulfe's Leash" IsHidden="true" />
 			<StatusEffect Name="Slow Fucking" IconName="PlaceholderIcon" MinutesLeft="90" />
 			<StatusEffect Name="SLYVEREN_HAZ_UR_LOOT" IsHidden="true" />
-			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+			<StatusEffect Name="Sore" Description="You are sore and will regain energy slower. Sleep to recover." IconName="Icon_Crying" IconShade="16777215" />
 			<StatusEffect Name="Sore Counter" IsHidden="true" />
 			<StatusEffect Name="STELLA_PREGNANT" IsHidden="true" />
 			<StatusEffect Name="STELLA_SEX_FATIGUE" IsHidden="true" />
@@ -8021,12 +8109,12 @@ Freezing Resistance: +14%" IconName="Icon_Water_Drop" IconShade="16743001" Minut
 			<StatusEffect Name="Uveto Cloudy" IsHidden="true" />
 			<StatusEffect Name="Valden-Possessed" IsHidden="true" />
 			<StatusEffect Name="Varmint Buddy" Description="The pink wireless leash you hold will ensure that your varmint companion stays close by, joining alongside you in battle if necessary." IconName="Radio" IconShade="0" />
-			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+			<StatusEffect Name="Very Sore" Description="You are very sore and will regain energy much slower. Sleep to recover." IconName="Icon_Crying" IconShade="16744576" />
 			<StatusEffect Name="Wait For Kally Break" IsHidden="true" />
 			<StatusEffect Name="Well-Groomed" Description="Your body feels extraordinarily rested and refreshed.&#xD;&#xA;&#xD;&#xA;+20% Max HP&#xD;&#xA;+20% Tease Damage" Value1="1.2" Type1="Double" Value2="1.2" Type2="Double" IconName="LustUp" MinutesLeft="1440" />
 			<StatusEffect Name="Wing Position" IsHidden="true" />
 			<StatusEffect Name="Wool Removal" IsHidden="true" />
-			<StatusEffect Name="Worn Out" Description="You are worn out and and unable to regain energy. Working out is also impossible in this state. Sleep to recover." IconName="Icon_Crying" IconShade="0" />
+			<StatusEffect Name="Worn Out" Description="You are worn out and and unable to regain energy. Working out is also impossible in this state. Sleep to recover." IconName="Icon_Crying" IconShade="16711680" />
 			<StatusEffect Name="Yoma Sex Disabled" IsHidden="true" />
 			<StatusEffect Name="Zil Sting" Description="Reduces speed and increases libido." Value1="4" IconName="Poison" MinutesLeft="65" IconShade="40" />
 		</StatusEffectGroup>

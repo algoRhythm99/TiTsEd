@@ -157,6 +157,19 @@ namespace TiTsEd.ViewModel
             List<string> defaultFlags = new List<string>();
             switch (vType)
             {
+                case 74: //Mouthgina
+                    defaultFlags.Add("Tongued");
+                    break;
+                case 18: //Gabilani
+                case 55: //Nyrea
+                    defaultFlags.Add("Lubricated");
+                    break;
+                case 65: //Gryvain
+                    defaultFlags.Add("Nubby");
+                    break;
+                case 67: //Flower
+                    defaultFlags.Add("Aphrodisiac");
+                    break;
                 case 0:  //Human
                 case 1:  //Equine
                 case 3:  //Canine
@@ -173,19 +186,8 @@ namespace TiTsEd.ViewModel
                 case 49: //Leithan
                 case 51: //Synthetic
                 case 72: //Swine
-                case 74: //Mouthgina
                 default:
                     //All of the above have no default flags, so do nothing
-                    break;
-                case 18: //Gabilani
-                case 55: //Nyrea
-                    defaultFlags.Add("Lubricated");
-                    break;
-                case 65: //Gryvain
-                    defaultFlags.Add("Nubby");
-                    break;
-                case 67: //Flower
-                    defaultFlags.Add("Aphrodisiac");
                     break;
             }
             return defaultFlags;
