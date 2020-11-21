@@ -164,14 +164,17 @@
     <Compile Include="View\PerkPage.xaml.cs">
       <DependentUpon>PerkPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RawPage.xaml.cs">
-      <DependentUpon>RawPage.xaml</DependentUpon>
+    <Compile Include="View\FlagsPage.xaml.cs">
+      <DependentUpon>FlagsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ObjectInTreeView.xaml.cs">
       <DependentUpon>ObjectInTreeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RawStateViewPage.xaml.cs">
       <DependentUpon>RawStateViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StatusEffectsPage.xaml.cs">
+      <DependentUpon>StatusEffectsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TopBar.xaml.cs">
       <DependentUpon>TopBar.xaml</DependentUpon>
@@ -260,7 +263,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\RawPage.xaml">
+    <Page Include="View\FlagsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -269,6 +272,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\RawStateViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StatusEffectsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

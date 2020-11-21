@@ -179,7 +179,10 @@
                 <view:ShipsPage />
             </TabItem>
             <TabItem Header="Flags">
-                <view:RawPage />
+                <view:FlagsPage />
+            </TabItem>
+            <TabItem Header="Status">
+                <view:StatusEffectsPage />
             </TabItem>
             <TabItem Header="Raw">
                 <view:RawStateViewPage />
