@@ -342,5 +342,12 @@ namespace TiTsEd.ViewModel
                 OnPropertyChanged(prop);
             }
         }
+
+        public int ItemStatsBonusByField(string statName)
+        {
+            int bonus = 0;
+
+            return bonus;
+        }
     }
 }

@@ -125,6 +125,11 @@ namespace TiTsEd.Model {
         [XmlArray("Items"), XmlArrayItem("ItemGroup")]
         public List<XmlItemGroup> ItemGroups { get; set; }
 
+        /*
+        [XmlArray("ShipGear"), XmlArrayItem("GearGroup")]
+        public List<XmlItemGroup> ShipGearGroups { get; set; }
+        */
+
         [XmlArray("Perks"), XmlArrayItem("PerkGroup")]
         public List<XmlPerkGroup> PerkGroups { get; set; }
 

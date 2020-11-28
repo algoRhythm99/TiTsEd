@@ -63,16 +63,28 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public new int Shields
+        {
+            get
+            {
+                int shields = 0;
+                if (null != ShieldObj)
+                {
+                    shields += ShieldObj.GetInt("shields", 0);
+                }
+                return shields;
+            }
+            set
+            {
+                ShieldObj["shields"] = value;
+            }
+        }
+
         public new int MaxShields
         {
             get
             {
-                int maxShields = 0;
-                if (null != ShieldObj)
-                {
-                    maxShields += ShieldObj.GetInt("shields",0);
-                }
-                return maxShields;
+                return Shields;
             }
         }
 
@@ -303,9 +315,70 @@ namespace TiTsEd.ViewModel
         {
             get
             {
+                if (null == GetObj("shield"))
+                {
+                    SetValue("shield", NewShipShieldGenerator());
+                }
                 return GetObj("shield");
             }
         }
+
+        public int ShieldDefense
+        {
+            get
+            {
+                return ShieldObj.GetInt("shieldDefense", 0);
+            }
+            set
+            {
+                ShieldObj["shieldDefense"] = value;
+            }
+        }
+
+        public int EffectiveShieldDefense
+        {
+            get
+            {
+                int bonus = 0;
+                return ShieldDefense + bonus;
+            }
+        }
+
+
+        public AmfObject ArmorObj
+        {
+            get
+            {
+                if (null == GetObj("armor"))
+                {
+                    SetValue("armor", NewShipArmor());
+                }
+                return GetObj("armor");
+            }
+        }
+
+
+        public int ArmorDefense
+        {
+            get
+            {
+                return ArmorObj.GetInt("defense", 25);
+            }
+            set
+            {
+                ArmorObj["defense"] = value;
+            }
+        }
+
+        public int EffectiveArmorDefense
+        {
+            get
+            {
+                int bonus = 0;
+                return ArmorDefense + bonus;
+            }
+        }
+
 
         public String Description
         {
@@ -313,6 +386,36 @@ namespace TiTsEd.ViewModel
             {
                 return Name;
             }
+        }
+
+
+        public static AmfObject NewShipShieldGenerator()
+        {
+            var item = new AmfObject(AmfTypes.Object);
+            item["classInstance"] = "classes.ShittyShips.ShittyShipGear.Misc::ShipShield";
+            item["shortName"] = "ShieldGen";
+            item["longName"] = "shield generator";
+            item["description"] = "a shield generator";
+            item["quantity"] = 1;
+            item["version"] = 1;
+            item["shields"] = 1000;
+            item["hasRandomProperties"] = true;
+            return item;
+        }
+
+
+        public static AmfObject NewShipArmor()
+        {
+            var item = new AmfObject(AmfTypes.Object);
+            item["classInstance"] = "classes.ShittyShips.ShittyShipGear.Misc::ShipArmor";
+            item["shortName"] = "Armor";
+            item["longName"] = "armor plating";
+            item["description"] = "an armor plate";
+            item["quantity"] = 1;
+            item["version"] = 1;
+            item["defense"] = 25;
+            item["hasRandomProperties"] = true;
+            return item;
         }
     }
 }

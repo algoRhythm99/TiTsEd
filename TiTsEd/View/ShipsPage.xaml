@@ -99,6 +99,16 @@
                             <TextBlock Text="Systems" />
                         </Label>
                         <common:MyNumericBox    Value="{Binding ShipSystems}" Tip="{Binding EffectiveSystems}" />
+
+                        <Label>
+                            <TextBlock Text="Armor Defense" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ArmorDefense}" Type="UInt" Tip="{Binding EffectiveArmorDefense}" />
+
+                        <Label>
+                            <TextBlock Text="Shield Defense" />
+                        </Label>
+                        <common:MyNumericBox    Value="{Binding ShieldDefense}" Type="UInt" Tip="{Binding EffectiveShieldDefense}" />
                     </common:AutoGrid>
 
                     <TextBlock Text="Capacities" Style="{StaticResource Header}" />

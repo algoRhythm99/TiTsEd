@@ -2457,6 +2457,23 @@
 		</ItemGroup>
 	</Items>
 	<!-- ================================================================ -->
+    <!--
+	<ShipGear>
+		<GearGroup Name="Armor">
+			<Item Stack="1" Name="Armor" ID="classes.ShittyShips.ShittyShipGear.Misc::ShipArmor" LongName="armor plating">
+				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
+				<ItemField Name="defense" Type="int" Value="25" />
+            </Item>
+		</GearGroup>
+		<GearGroup Name="Shields">
+			<Item Stack="1" Name="ShieldGen" ID="classes.ShittyShips.ShittyShipGear.Misc::ShipShield" LongName="shield generator">
+				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
+				<ItemField Name="shields" Type="int" Value="1000" />
+            </Item>
+		</GearGroup>
+	</ShipGear>
+    -->
+	<!-- ================================================================ -->
 	<KeyItems>
 		<KeyItemGroup Name="Quest Items">
 <!--
