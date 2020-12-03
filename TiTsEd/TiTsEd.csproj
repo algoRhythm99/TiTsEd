@@ -69,9 +69,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\ActionScriptHelpers.cs" />
     <Compile Include="Common\ArrayEditor.cs" />
     <Compile Include="Common\AutoGrid.cs" />
     <Compile Include="Common\BoolEventArgs.cs" />
+    <Compile Include="Common\Globals.cs" />
     <Compile Include="Common\NamedVector4Control.cs" />
     <Compile Include="Common\NaturalSortComparer.cs" />
     <Compile Include="Common\RelayCommand.cs" />

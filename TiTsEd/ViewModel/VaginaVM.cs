@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System.Text;
 using TiTsEd.Model;
+using TiTsEd.Common;
 
 namespace TiTsEd.ViewModel
 {
@@ -77,13 +78,40 @@ namespace TiTsEd.ViewModel
         public double Looseness
         {
             get { return GetDouble("loosenessRaw"); }
-            set { SetValue("loosenessRaw", value); }
+            set
+            {
+                SetValue("loosenessRaw", value);
+                OnPropertyChanged("EffectiveLooseness");
+                OnPropertyChanged("VaginaCapacity");
+            }
         }
 
         public double LoosenessMod
         {
             get { return GetDouble("loosenessMod"); }
-            set { SetValue("loosenessMod", value); }
+            set
+            {
+                SetValue("loosenessMod", value);
+                OnPropertyChanged("EffectiveLooseness");
+                OnPropertyChanged("VaginaCapacity");
+            }
+        }
+
+        public double EffectiveLooseness
+        {
+            get
+            {
+                var val = Looseness + LoosenessMod;
+                if (val < 0.5)
+                {
+                    return 0.5;
+                }
+                if (val > 5)
+                {
+                    return 5;
+                }
+                return val;
+            }
         }
 
         public double MinLooseness
@@ -93,25 +121,83 @@ namespace TiTsEd.ViewModel
             {
                 SetValue("minLooseness", value);
                 OnPropertyChanged("Looseness");
+                OnPropertyChanged("EffectiveLooseness");
+                OnPropertyChanged("VaginaCapacity");
             }
         }
 
         public double Wetness
         {
             get { return GetDouble("wetnessRaw"); }
-            set { SetValue("wetnessRaw", value); }
+            set
+            {
+                SetValue("wetnessRaw", value);
+                OnPropertyChanged("EffectiveWetness");
+                OnPropertyChanged("VaginaCapacity");
+            }
         }
 
         public double WetnessMod
         {
             get { return GetDouble("wetnessMod"); }
-            set { SetValue("wetnessMod", value); }
+            set
+            {
+                SetValue("wetnessMod", value);
+                OnPropertyChanged("EffectiveWetness");
+                OnPropertyChanged("VaginaCapacity");
+            }
+        }
+
+        public double EffectiveWetness
+        {
+            get
+            {
+                var val = Wetness + WetnessMod;
+                if (HasFlag(GLOBAL.FLAGS.FLAG_LUBRICATED))
+                {
+                    val = val + 2;
+                }
+                if (val < 0)
+                {
+                    return 0;
+                }
+                return val;
+            }
         }
 
         public double BonusCapacity
         {
             get { return GetDouble("bonusCapacity"); }
-            set { SetValue("bonusCapacity", value); }
+            set { SetValue("bonusCapacity", value); OnPropertyChanged("VaginaCapacity"); }
+        }
+
+        public double VaginaCapacity
+        {
+            get
+            {
+                double capacity = 20;
+                capacity = capacity * (((EffectiveLooseness * 5) + 1) / 3);
+                capacity = capacity + BonusCapacity;
+                if (_character.HasStatusEffect("Soak"))
+                {
+                    capacity = capacity + 150;
+                }
+                capacity = capacity * ((EffectiveWetness + 4) / 5);
+                capacity = capacity * _character.Elasticity;
+                if (_character.IsTaur)
+                {
+                    capacity = capacity + 400;
+                }
+                return capacity;
+            }
+        }
+
+        public string VaginaCapacityTip
+        {
+            get
+            {
+                return Extensions.GetCubicInchesOrCentimetersDescription(VaginaCapacity);
+            }
         }
 
         public int ShrinkCounter
@@ -202,15 +288,29 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public AmfObject FlagsObj
+        {
+            get
+            {
+                return GetObj("vagooFlags");
+            }
+        }
+
         public List<FlagItem> VaginaFlags
         {
-            get { return getFlagList(GetObj("vagooFlags"), XmlData.Current.Body.VaginaFlags); }
+            get { return getFlagList(FlagsObj, XmlData.Current.Body.VaginaFlags); }
         }
 
         public List<FlagItem> AssFlags
         {
-            get { return getFlagList(GetObj("vagooFlags"), XmlData.Current.Body.AssFlags); }
+            get { return getFlagList(FlagsObj, XmlData.Current.Body.AssFlags); }
         }
+
+        public bool HasFlag(GLOBAL.FLAGS flag)
+        {
+            return AmfHelpers.FlagsHasFlag(FlagsObj, flag);
+        }
+
 
         public String Description
         {

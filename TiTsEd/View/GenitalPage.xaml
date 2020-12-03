@@ -172,6 +172,21 @@
 
                         <common:AutoGrid>
                             <Label>
+                                <TextBlock Text="Volume, Physical" />
+                            </Label>
+                            <TextBlock Text="{Binding VolumeTip}" />
+                            <Label>
+                                <TextBlock Text="Volume, Effective" />
+                            </Label>
+                            <TextBlock Text="{Binding EffectiveVolumeTip}" />
+                            <Label>
+                                <TextBlock Text="Capacity" />
+                            </Label>
+                            <TextBlock Text="{Binding CockCapacityTip}" />
+                        </common:AutoGrid>
+
+                        <common:AutoGrid>
+                            <Label>
                                 <TextBlock Text="Knot Multiplier" />
                             </Label>
                             <common:MyNumericBox    Value="{Binding KnotMultiplier}" Type="Double" />
@@ -244,13 +259,13 @@
                                 <TextBlock Text="Looseness" />
                             </Label>
                             <common:MyNumericBox    Width="155" Value="{Binding Looseness}" Min="{Binding MinLooseness}" ToolTip="Base" />
-                            <common:MyNumericBox    Width="100" Value="{Binding LoosenessMod}" ToolTip="Modifier" />
+                            <common:MyNumericBox    Width="100" Value="{Binding LoosenessMod}" ToolTip="Modifier" Tip="{Binding EffectiveLooseness}" />
 
                             <Label>
                                 <TextBlock Text="Wetness" />
                             </Label>
                             <common:MyNumericBox    Width="155" Value="{Binding Wetness}" ToolTip="Base" />
-                            <common:MyNumericBox    Width="100" Value="{Binding WetnessMod}" ToolTip="Modifier" />
+                            <common:MyNumericBox    Width="100" Value="{Binding WetnessMod}" ToolTip="Modifier" Tip="{Binding EffectiveWetness}"  />
 
                         </common:AutoGrid>
 
@@ -259,6 +274,11 @@
                                 <TextBlock Text="Bonus Capacity" />
                             </Label>
                             <common:MyNumericBox    Value="{Binding BonusCapacity}" />
+
+                            <Label>
+                                <TextBlock Text="Capacity" />
+                            </Label>
+                            <TextBlock Text="{Binding VaginaCapacityTip}" />
 
                             <Label>
                                 <TextBlock Text="Shrink Counter" />

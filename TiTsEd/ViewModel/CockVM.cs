@@ -77,7 +77,15 @@ namespace TiTsEd.ViewModel
 
         public double EffectiveLength
         {
-            get { return Length + LengthMod; }
+            get
+            {
+                double val = Length + LengthMod;
+                if (val < 0)
+                {
+                    return 0;
+                }
+                return val;
+            }
         }
 
         public string LengthTip
@@ -107,17 +115,113 @@ namespace TiTsEd.ViewModel
 
         public double EffectiveThicknessRatio
         {
-            get { return ThicknessRatio + ThicknessRatioMod; }
+            get
+            {
+                double val = ThicknessRatio + ThicknessRatioMod;
+                if (val < 0)
+                {
+                    return 0;
+                }
+                return val;
+            }
+        }
+
+        public double Thickness
+        {
+            get
+            {
+                return (EffectiveLength / 6) * EffectiveThicknessRatio;
+            }
         }
 
         public string ThicknessTip
         {
             get
             {
-                var thicknessValue = Math.Round((EffectiveLength / 6) * EffectiveThicknessRatio, 2);
-                return Extensions.GetFeetAndCentimetersDescription(thicknessValue);
+                return Extensions.GetFeetAndCentimetersDescription(Thickness);
             }
         }
+
+        public double Volume
+        {
+            get
+            {
+                double radius = Thickness / 2;
+                double cylinder = AS3_Math.PI * Math.Pow(radius, 2) * (EffectiveLength - radius);
+                double tip = ((4/3) * AS3_Math.PI * Math.Pow(radius, 3)) / 2;
+                if (HasFlag(GLOBAL.FLAGS.FLAG_BLUNT))
+                {
+                    tip = AS3_Math.PI * Math.Pow(radius, 3);
+                }
+                if (HasFlag(GLOBAL.FLAGS.FLAG_FLARED))
+                {
+                    tip = tip * 1.3;
+                }
+                if (HasFlag(GLOBAL.FLAGS.FLAG_TAPERED))
+                {
+                    tip = tip * 0.75;
+                    cylinder = cylinder * 0.75;
+                }
+                if (HasFlag(GLOBAL.FLAGS.FLAG_DOUBLE_HEADED))
+                {
+                    tip = 2 * ((2/3) * AS3_Math.PI * Math.Pow(AS3_Math.SQRT2 * radius / 2, 3)) + (0.512 * AS3_Math.PI * Math.Pow(radius, 3));
+                }
+                double vol = Math.Ceiling((tip + cylinder) * 100) / 100;
+                return vol;
+            }
+        }
+
+        public double EffectiveVolume
+        {
+            get
+            {
+                double vol = Volume;
+                if (HasFlag(GLOBAL.FLAGS.FLAG_LUBRICATED) || HasFlag(GLOBAL.FLAGS.FLAG_GOOEY))
+                {
+                    vol = vol * 0.75;
+                }
+                if (HasFlag(GLOBAL.FLAGS.FLAG_STICKY))
+                {
+                    vol = vol * 1.25;
+                }
+                return Math.Ceiling(vol*100)/100;
+            }
+        }
+
+        public string VolumeTip
+        {
+            get
+            {
+                return Extensions.GetCubicInchesOrCentimetersDescription(Volume);
+            }
+        }
+
+
+        public string EffectiveVolumeTip
+        {
+            get
+            {
+                return Extensions.GetCubicInchesOrCentimetersDescription(EffectiveVolume);
+            }
+        }
+
+
+        public double CockCapacity
+        {
+            get
+            {
+                return (Volume / 6) * _character.Elasticity;
+            }
+        }
+
+        public string CockCapacityTip
+        {
+            get
+            {
+                return Extensions.GetCubicInchesOrCentimetersDescription(CockCapacity);
+            }
+        }
+
 
         public int Pierced
         {
@@ -292,10 +396,24 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public AmfObject FlagsObj
+        {
+            get
+            {
+                return GetObj("cockFlags");
+            }
+        }
+
         public List<FlagItem> CockFlags
         {
-            get { return getFlagList(GetObj("cockFlags"), XmlData.Current.Body.CockFlags); }
+            get { return getFlagList(FlagsObj, XmlData.Current.Body.CockFlags); }
         }
+
+        public bool HasFlag(GLOBAL.FLAGS flag)
+        {
+            return AmfHelpers.FlagsHasFlag(FlagsObj, flag);
+        }
+
 
         public String Description
         {

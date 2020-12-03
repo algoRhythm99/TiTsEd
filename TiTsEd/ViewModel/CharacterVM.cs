@@ -266,6 +266,65 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public bool IsGoo
+        {
+            get
+            {
+                if (LegType == (int) GLOBAL.TYPES.TYPE_GOOEY)
+                {
+                    if (HasLegFlag(GLOBAL.FLAGS.FLAG_PREHENSILE))
+                    {
+                        return false;
+                    }
+                    if ((LegCount == 1) || HasLegFlag(GLOBAL.FLAGS.FLAG_AMORPHOUS))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        public bool IsNaga
+        {
+            get
+            {
+                if (LegCount == 1)
+                {
+                    switch (LegType)
+                    {
+                        default:
+                            break;
+                        case (int) GLOBAL.TYPES.TYPE_NAGA:
+                        case (int) GLOBAL.TYPES.TYPE_SHARK:
+                            return true;
+                    }
+                }
+                if ( (LegType == (int) GLOBAL.TYPES.TYPE_GOOEY) && (HasLegFlag(GLOBAL.FLAGS.FLAG_PREHENSILE) || HasLegFlag(GLOBAL.FLAGS.FLAG_TENDRIL)) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public bool IsTaur
+        {
+            get
+            {
+                if (IsGoo || IsNaga)
+                {
+                    return false;
+                }
+                if ( (LegCount == 4) || (LegCount == 6) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+
         #region GeneralPage
 
         public new string Name
@@ -1625,10 +1684,24 @@ namespace TiTsEd.ViewModel
             return defaultFlags;
         }
 
+        public AmfObject LegFlagsObj
+        {
+            get
+            {
+                return GetObj("legFlags");
+            }
+        }
+
         public List<FlagItem> LegFlags
         {
-            get { return getFlagList(GetObj("legFlags"), XmlData.Current.Body.LegFlags); }
+            get { return getFlagList(LegFlagsObj, XmlData.Current.Body.LegFlags); }
         }
+
+        public bool HasLegFlag(GLOBAL.FLAGS flag)
+        {
+            return AmfHelpers.FlagsHasFlag(LegFlagsObj, flag);
+        }
+
 
         public int WingCount
         {
@@ -1884,6 +1957,35 @@ namespace TiTsEd.ViewModel
         {
             get { return GetInt("milkStorageMultiplier"); }
             set { SetValue("milkStorageMultiplier", value); }
+        }
+
+
+        public double AnalCapacity
+        {
+            get
+            {
+                double capacity = 20;
+                if (null != Ass)
+                {
+                    capacity = capacity * (((Ass.EffectiveLooseness * 5) + 1) / 3);
+                    capacity = capacity + Ass.BonusCapacity;
+                    capacity = capacity * ((Ass.EffectiveWetness + 4) / 5);
+                }
+                capacity = capacity * Elasticity;
+                if (IsTaur)
+                {
+                    capacity = capacity + 100;
+                }
+                return capacity;
+            }
+        }
+
+        public string AnalCapacityTip
+        {
+            get
+            {
+                return Extensions.GetCubicInchesOrCentimetersDescription(AnalCapacity);
+            }
         }
 
         #endregion
@@ -2315,6 +2417,9 @@ namespace TiTsEd.ViewModel
                     break;
                 case "Rusted Emitters":
                     OnPropertyChanged("MaxShields");
+                    break;
+                case "Soak":
+                    OnPropertyChanged("VaginaCapacity");
                     break;
                 default:
                     break;

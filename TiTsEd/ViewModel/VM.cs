@@ -433,17 +433,7 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                //check all indexes of _object for this value if so return true
-                int i = 0;
-                int id = 0;
-                while ((id = _object.GetInt(i++, -1234)) != -1234)
-                {
-                    if (id == _value.ID)
-                    {
-                        return true;
-                    }
-                }
-                return false;
+                return AmfHelpers.FlagsHasFlag(_object, _value.ID);
             }
             set
             {

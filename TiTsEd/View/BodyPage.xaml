@@ -120,11 +120,6 @@
                 <common:AutoGrid>
 
                     <Label>
-                        <TextBlock Text="Anal Bonus Capacity" />
-                    </Label>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.BonusCapacity}" />
-
-                    <Label>
                         <TextBlock Text="Anal Min Looseness" />
                     </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.Ass.MinLooseness}" />
@@ -137,13 +132,27 @@
                         <TextBlock Text="Anal Looseness" />
                     </Label>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.Looseness}" Min="{Binding Game.Character.Ass.MinLooseness}" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.LoosenessMod}" ToolTip="Modifier" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.LoosenessMod}" ToolTip="Modifier" Tip="{Binding Game.Character.Ass.EffectiveLooseness}" />
 
                     <Label>
                         <TextBlock Text="Anal Wetness" />
                     </Label>
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.Wetness}" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.WetnessMod}" ToolTip="Modifier" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Ass.WetnessMod}" ToolTip="Modifier" Tip="{Binding Game.Character.Ass.EffectiveWetness}" />
+
+                </common:AutoGrid>
+
+                <common:AutoGrid>
+
+                    <Label>
+                        <TextBlock Text="Anal Bonus Capacity" />
+                    </Label>
+                    <common:MyNumericBox    Value="{Binding Game.Character.Ass.BonusCapacity}" />
+
+                    <Label>
+                        <TextBlock Text="Anal Capacity" />
+                    </Label>
+                    <TextBlock Text="{Binding Game.Character.AnalCapacityTip}" />
 
                 </common:AutoGrid>
 

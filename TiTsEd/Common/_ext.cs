@@ -47,6 +47,13 @@ namespace TiTsEd.Common
             return String.Format("{0:0.0} inches ; {1:0.0} cm", inches, inches * inchesToCM);
         }
 
+
+        public static string GetCubicInchesOrCentimetersDescription(double volume)
+        {
+            const double inchesToCM = 16.3871;
+            return String.Format("{0:0.0} cubic inches ; {1:0.0} cubic cm", volume, volume * inchesToCM);
+        }
+
         public static bool Contains(this string source, string toCheck, StringComparison comp)
         {
             return source?.IndexOf(toCheck, comp) >= 0;

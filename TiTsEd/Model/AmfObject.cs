@@ -508,4 +508,29 @@ namespace TiTsEd.Model
         public bool IsDocument { get; set; }
         public string Content { get; set; }
     }
+
+    public static class AmfHelpers
+    {
+        public static bool FlagsHasFlag(AmfObject flagObj, GLOBAL.FLAGS flag)
+        {
+            return FlagsHasFlag(flagObj, (int)flag);
+        }
+
+        public static bool FlagsHasFlag(AmfObject flagObj, int flag)
+        {
+            if (null != flagObj)
+            {
+                int i = 0;
+                int id = 0;
+                while ((id = flagObj.GetInt(i++, -1234)) != -1234)
+                {
+                    if (id == flag)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+    }
 }
