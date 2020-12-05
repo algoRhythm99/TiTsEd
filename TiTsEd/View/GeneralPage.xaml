@@ -106,6 +106,13 @@
                     </Label>
                     <common:MyNumericBox    Value="{Binding Game.Character.AlcoholTolerance}" Lower="0" Upper="100" IsEnabled="{Binding Game.IsPC}" />
                 </common:AutoGrid>
+                <common:AutoGrid Columns="3">
+                    <Label>
+                        <TextBlock Text="Taint" />
+                    </Label>
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Taint}" Upper="100" ToolTip="Base" />
+                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.TaintMod}" ToolTip="Modifier" />
+                </common:AutoGrid>
             </StackPanel>
 
             <StackPanel Style="{StaticResource ContentStackPanel}">
@@ -137,11 +144,6 @@
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Energy}" Upper="{Binding Game.Character.MaxEnergy}" ToolTip="Base" />
                     <common:MyNumericBox    Width="100" Value="{Binding Game.Character.EnergyMod}" ToolTip="Modifier" />
 
-                    <Label>
-                        <TextBlock Text="Taint" />
-                    </Label>
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.Taint}" Upper="100" ToolTip="Base" />
-                    <common:MyNumericBox    Width="100" Value="{Binding Game.Character.TaintMod}" ToolTip="Modifier" />
                 </common:AutoGrid>
 
                 <TextBlock Text="Core Stats" Style="{StaticResource Header}" />
