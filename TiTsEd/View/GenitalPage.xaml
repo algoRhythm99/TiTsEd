@@ -170,22 +170,22 @@
                             <TextBlock              Width="155"  Text="{Binding ThicknessTip}" IsEnabled="False" />
                         </common:AutoGrid>
 
-                        <common:AutoGrid>
+                        <common:AutoGrid Columns="2">
                             <Label>
                                 <TextBlock Text="Volume, Physical" />
                             </Label>
-                            <TextBlock Text="{Binding VolumeTip}" />
+                            <TextBlock Text="{Binding VolumeTip}" Width="310" />
                             <Label>
                                 <TextBlock Text="Volume, Effective" />
                             </Label>
-                            <TextBlock Text="{Binding EffectiveVolumeTip}" />
+                            <TextBlock Text="{Binding EffectiveVolumeTip}" Width="310" />
                             <Label>
                                 <TextBlock Text="Capacity" />
                             </Label>
-                            <TextBlock Text="{Binding CockCapacityTip}" />
+                            <TextBlock Text="{Binding CockCapacityTip}" Width="310" />
                         </common:AutoGrid>
 
-                        <common:AutoGrid>
+                        <common:AutoGrid Columns="2">
                             <Label>
                                 <TextBlock Text="Knot Multiplier" />
                             </Label>
@@ -226,7 +226,7 @@
                         </DataTemplate>
                     </common:ArrayEditor.ItemTemplate>
                     <StackPanel>
-                        <common:AutoGrid>
+                        <common:AutoGrid Columns="2">
                             <Label>
                                 <TextBlock Text="Type" />
                             </Label>
@@ -244,7 +244,7 @@
 
                         </common:AutoGrid>
 
-                        <common:AutoGrid>
+                        <common:AutoGrid Columns="2">
 
                             <Label>
                                 <TextBlock Text="Min Looseness" />
@@ -278,7 +278,7 @@
                             <Label>
                                 <TextBlock Text="Capacity" />
                             </Label>
-                            <TextBlock Text="{Binding VaginaCapacityTip}" />
+                            <TextBlock Text="{Binding VaginaCapacityTip}" Width="310" />
 
                             <Label>
                                 <TextBlock Text="Shrink Counter" />
