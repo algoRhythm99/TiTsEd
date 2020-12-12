@@ -131,7 +131,7 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                return (EffectiveLength / 6) * EffectiveThicknessRatio;
+                return (EffectiveLength / 6.0) * EffectiveThicknessRatio;
             }
         }
 
@@ -147,9 +147,9 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                double radius = Thickness / 2;
+                double radius = Thickness / 2.0;
                 double cylinder = AS3_Math.PI * Math.Pow(radius, 2) * (EffectiveLength - radius);
-                double tip = ((4/3) * AS3_Math.PI * Math.Pow(radius, 3)) / 2;
+                double tip = (4.0 / 3.0) * AS3_Math.PI * Math.Pow(radius, 3) / 2.0;
                 if (HasFlag(GLOBAL.FLAGS.FLAG_BLUNT))
                 {
                     tip = AS3_Math.PI * Math.Pow(radius, 3);
@@ -165,9 +165,9 @@ namespace TiTsEd.ViewModel
                 }
                 if (HasFlag(GLOBAL.FLAGS.FLAG_DOUBLE_HEADED))
                 {
-                    tip = 2 * ((2/3) * AS3_Math.PI * Math.Pow(AS3_Math.SQRT2 * radius / 2, 3)) + (0.512 * AS3_Math.PI * Math.Pow(radius, 3));
+                    tip = 2 * ((2.0/3.0) * AS3_Math.PI * Math.Pow(AS3_Math.SQRT2 * radius / 2, 3)) + (0.512 * AS3_Math.PI * Math.Pow(radius, 3));
                 }
-                double vol = Math.Ceiling((tip + cylinder) * 100) / 100;
+                double vol = Math.Round((tip + cylinder) * 100.0) / 100.0;
                 return vol;
             }
         }
@@ -185,7 +185,7 @@ namespace TiTsEd.ViewModel
                 {
                     vol = vol * 1.25;
                 }
-                return Math.Ceiling(vol*100)/100;
+                return Math.Round(vol*100.0)/100.0;
             }
         }
 
@@ -211,7 +211,7 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                return (Volume / 6) * _character.Elasticity;
+                return (Volume / 6.0) * _character.Elasticity;
             }
         }
 

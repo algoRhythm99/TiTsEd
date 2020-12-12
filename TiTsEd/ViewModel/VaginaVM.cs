@@ -171,13 +171,13 @@ namespace TiTsEd.ViewModel
             get
             {
                 double capacity = 20;
-                capacity = capacity * (((EffectiveLooseness * 5) + 1) / 3);
+                capacity = capacity * (((EffectiveLooseness * 5.0) + 1) / 3.0);
                 capacity = capacity + BonusCapacity;
                 if (_character.HasStatusEffect("Soak"))
                 {
                     capacity = capacity + 150;
                 }
-                capacity = capacity * ((EffectiveWetness + 4) / 5);
+                capacity = capacity * ((EffectiveWetness + 4) / 5.0);
                 capacity = capacity * _character.Elasticity;
                 if (_character.IsTaur)
                 {
