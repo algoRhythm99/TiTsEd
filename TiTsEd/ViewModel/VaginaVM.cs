@@ -81,8 +81,7 @@ namespace TiTsEd.ViewModel
             set
             {
                 SetValue("loosenessRaw", value);
-                OnPropertyChanged("EffectiveLooseness");
-                OnPropertyChanged("VaginaCapacity");
+                UpdateCalculatedValues();
             }
         }
 
@@ -92,8 +91,7 @@ namespace TiTsEd.ViewModel
             set
             {
                 SetValue("loosenessMod", value);
-                OnPropertyChanged("EffectiveLooseness");
-                OnPropertyChanged("VaginaCapacity");
+                UpdateCalculatedValues();
             }
         }
 
@@ -121,8 +119,7 @@ namespace TiTsEd.ViewModel
             {
                 SetValue("minLooseness", value);
                 OnPropertyChanged("Looseness");
-                OnPropertyChanged("EffectiveLooseness");
-                OnPropertyChanged("VaginaCapacity");
+                UpdateCalculatedValues();
             }
         }
 
@@ -132,8 +129,7 @@ namespace TiTsEd.ViewModel
             set
             {
                 SetValue("wetnessRaw", value);
-                OnPropertyChanged("EffectiveWetness");
-                OnPropertyChanged("VaginaCapacity");
+                UpdateCalculatedValues();
             }
         }
 
@@ -143,8 +139,7 @@ namespace TiTsEd.ViewModel
             set
             {
                 SetValue("wetnessMod", value);
-                OnPropertyChanged("EffectiveWetness");
-                OnPropertyChanged("VaginaCapacity");
+                UpdateCalculatedValues();
             }
         }
 
@@ -168,7 +163,7 @@ namespace TiTsEd.ViewModel
         public double BonusCapacity
         {
             get { return GetDouble("bonusCapacity"); }
-            set { SetValue("bonusCapacity", value); OnPropertyChanged("VaginaCapacity"); }
+            set { SetValue("bonusCapacity", value); UpdateCalculatedValues(); }
         }
 
         public double VaginaCapacity
@@ -311,16 +306,22 @@ namespace TiTsEd.ViewModel
             return AmfHelpers.FlagsHasFlag(FlagsObj, flag);
         }
 
-
         public String Description
         {
             get
             {
-                return String.Format( "a {0}{1} {2} vagina."
+                return String.Format( "a {0}{1} {2} vagina"
                                     , ( Hymen ) ? "virgin " : ""
                                     , VaginaColor
                                     , XmlData.EnumIDToName(VaginaType, VaginaTypes).ToLower() );
             }
+        }
+
+        private void UpdateCalculatedValues()
+        {
+            OnPropertyChanged("EffectiveWetness");
+            OnPropertyChanged("VaginaCapacity");
+            OnPropertyChanged("VaginaCapacityTip");
         }
     }
 }

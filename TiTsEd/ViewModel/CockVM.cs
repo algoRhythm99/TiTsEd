@@ -62,6 +62,7 @@ namespace TiTsEd.ViewModel
             {
                 SetValue("cLengthRaw", value);
                 OnPropertyChanged("Description");
+                UpdateCalculatedValues();
             }
         }
 
@@ -71,7 +72,7 @@ namespace TiTsEd.ViewModel
             set
             {
                 SetValue("cLengthMod", value);
-                OnPropertyChanged("Description");
+                UpdateCalculatedValues();
             }
         }
 
@@ -99,7 +100,7 @@ namespace TiTsEd.ViewModel
             set
             {
                 SetValue("cThicknessRatioRaw", value);
-                OnPropertyChanged("ThicknessTip");
+                UpdateCalculatedValues();
             }
         }
 
@@ -109,7 +110,7 @@ namespace TiTsEd.ViewModel
             set
             {
                 SetValue("cThicknessRatioMod", value);
-                OnPropertyChanged("ThicknessTip");
+                UpdateCalculatedValues();
             }
         }
 
@@ -414,16 +415,26 @@ namespace TiTsEd.ViewModel
             return AmfHelpers.FlagsHasFlag(FlagsObj, flag);
         }
 
-
         public String Description
         {
             get
             {
-                return String.Format( "a {0} {1}\" {2} cock."
+                return String.Format( "a {0} {1}\" {2} cock"
                                     , CockColor
                                     , EffectiveLength.ToString()
                                     , XmlData.EnumIDToName(CockType, CockTypes).ToLower() );
             }
+        }
+
+        private void UpdateCalculatedValues()
+        {
+
+            OnPropertyChanged("CockCapacity");
+            OnPropertyChanged("CockCapacityTip");
+            OnPropertyChanged("Thickness");
+            OnPropertyChanged("ThicknessTip");
+            OnPropertyChanged("Volume");
+            OnPropertyChanged("VolumeTip");
         }
     }
 }
