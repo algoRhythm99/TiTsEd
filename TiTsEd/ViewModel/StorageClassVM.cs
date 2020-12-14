@@ -118,6 +118,20 @@ namespace TiTsEd.ViewModel {
             set { SetValue("tooltip", value); }
         }
 
+        public string DescriptionLabel
+        {
+            get
+            {
+                return _xml.DescriptionLabel;
+            }
+        }
+
+        public Visibility DescriptionLabelVisibility
+        {
+            get { return String.IsNullOrEmpty(DescriptionLabel) ? Visibility.Collapsed : Visibility.Visible; }
+        }
+
+
         public string IconName {
             get { return GetString("iconName"); }
             set { SetValue("iconName", value); }

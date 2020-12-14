@@ -487,6 +487,8 @@ namespace TiTsEd.Model {
         public string Name { get; set; }
         [XmlAttribute]
         public string Description { get; set; }
+        [XmlAttribute]
+        public string DescriptionLabel { get; set; }
 
         [XmlAttribute]
         public double Value1 { get; set; }

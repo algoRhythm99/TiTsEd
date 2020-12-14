@@ -7937,7 +7937,7 @@
 			<StatusEffect Name="Overwhelmingly Endowed" Description="The shifting masses of your over-sized endowments cause you to gain twice as much lust over time." IconName="Icon_Poison" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Body Effects">
-			<StatusEffect Name="Arm Flower" IsHidden="true" Comment="Description = flower color" />
+			<StatusEffect Name="Arm Flower" IsHidden="true" DescriptionLabel="Flower Color" />
 			<StatusEffect Name="Body Markings" Comment="Body markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;See Value1 for options" Value1="0" Label1="0 == Vanae&#xD;&#xA;1 == Stripes&#xD;&#xA;3 == Blotch" IsHidden="true" />
 			<StatusEffect Name="Ceria Dye Wings" IsHidden="true" />
 			<StatusEffect Name="Ceria Dye Balls" IsHidden="true" />
@@ -7947,9 +7947,9 @@
 			<StatusEffect Name="Genital Slit Reveal" IsHidden="true" />
 			<StatusEffect Name="Goo Crotch" IsHidden="true" />
 			<StatusEffect Name="Goo Vent" IsHidden="true" />
-			<StatusEffect Name="Hair Flower" Label1="Num Flowers" Value="1" IsHidden="true" Comment="Description = flower color" />
+			<StatusEffect Name="Hair Flower" Label1="Num Flowers" Value="1" IsHidden="true" DescriptionLabel="Flower Color" />
 			<StatusEffect Name="Horn Bumps" IsHidden="true" />
-			<StatusEffect Name="Horn Style" Label1="Style" Label2="Material" IsHidden="true" Comment="Description/Tooltip is color" />
+			<StatusEffect Name="Horn Style" DescriptionLabel="Horn Color" Label1="Style:&#xD;&#xA;1 = Curled&#xD;&#xA;2 = Bow-curved&#xD;&#xA;3 = Ibex&#xD;&#xA;4 = Oryx&#xD;&#xA;5 = Markhor" Label2="Material:&#xD;&#xA;0 = default&#xD;&#xA;1 = Regular&#xD;&#xA;2 = Metal&#xD;&#xA;3 = Gem" IsHidden="true" />
 			<StatusEffect Name="Hyena Fur" IsHidden="true" />
 			<StatusEffect Name="Icy Veins" IsHidden="true" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
@@ -7960,7 +7960,7 @@
 			<StatusEffect Name="Special Scrotum" Comment="Special scrotum description flag, see Value1" Label1="20 == FLAG_FURRED&#xD;&#xA;21 == FLAG_SCALED&#xD;&#xA;34 == FLAG_CHITINOUS&#xD;&#xA;35 == FLAG_FEATHERED&#xD;&#xA;37 == FLAG_GOOEY" Value1="20" IsHidden="true" />
 			<StatusEffect Name="Uniball" IsHidden="true" />
 			<StatusEffect Name="Vanae Markings" Comment="Vanae skin markings&#xD;&#xA;Uses Skin Accent color&#xD;&#xA;Value4 = on balls too" Value4="1" Label4="1 = Ball Markings" IsHidden="true" />
-			<StatusEffect Name="Wing Style" Label1="Shape" IsHidden="true" Comment="Description/Tooltip is color" />
+			<StatusEffect Name="Wing Style" Label1="Shape" IsHidden="true" DescriptionLabel="Wing Color" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Events">
 			<StatusEffect Name="Anal Addiction" IsHidden="true" />

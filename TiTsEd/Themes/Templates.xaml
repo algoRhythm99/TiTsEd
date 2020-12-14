@@ -406,10 +406,13 @@
                         <Border Background="White" BorderBrush="Black" BorderThickness="1">
                             <StackPanel Style="{StaticResource ContentStackPanel}" Width="300">
 
-                                <TextBox Text="{Binding Name}" IsReadOnly="True" TextWrapping="WrapWithOverflow" Width="280" Height="Auto" />
+                                <TextBox Text="{Binding Name, Mode=OneWay}" IsReadOnly="True" TextWrapping="WrapWithOverflow" Width="280" Height="Auto" BorderThickness="0" FontWeight="SemiBold" />
 
-                                <TextBox Text="{Binding Description}" TextWrapping="WrapWithOverflow" Width="280" Height="Auto" Margin="0,2,0,2" />
-                                
+                                <Label Visibility="{Binding DescriptionLabelVisibility}">
+                                    <TextBlock Text="{Binding DescriptionLabel}" />
+                                </Label>
+                                <TextBox Text="{Binding Description}" TextWrapping="WrapWithOverflow" Height="Auto" Width="280" />
+
                                 <common:AutoGrid>
 
                                     <Label>
