@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TiTsEd.Common;
 
@@ -79,11 +80,13 @@ namespace TiTsEd.Model
         }
     }
 
-    public class AmfObject : IEnumerable<AmfPair>
+    public class AmfObject : IEnumerable<AmfPair>, IDictionary, IList
     {
-        readonly Dictionary<Object, Object> _associativePart = new Dictionary<Object, Object>();
-        readonly Dictionary<Int32, Object> _sparsePart = new Dictionary<Int32, Object>();
-        readonly List<Object> _densePart = new List<Object>();
+        public static NaturalSortComparer<AmfObject> NSComparer = new NaturalSortComparer<AmfObject>();
+
+        readonly protected Dictionary<Object, Object> _associativePart = new Dictionary<Object, Object>();
+        readonly protected Dictionary<Int32, Object> _sparsePart = new Dictionary<Int32, Object>();
+        readonly protected List<Object> _densePart = new List<Object>();
 
         public AmfObject(AmfTypes type)
         {
@@ -119,6 +122,28 @@ namespace TiTsEd.Model
         public bool IsEnum
         {
             get { return Trait != null && Trait.IsEnum; }
+        }
+
+        public bool IsArray
+        {
+            get { return (AmfType == AmfTypes.Array); }
+        }
+
+        public bool HasChildren
+        {
+            get
+            {
+                switch (AmfType)
+                {
+                    case AmfTypes.Array:
+                    case AmfTypes.ByteArray:
+                    case AmfTypes.Dictionary:
+                    case AmfTypes.Object:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
         }
 
         public int EnumValue
@@ -166,7 +191,7 @@ namespace TiTsEd.Model
             }
         }
 
-        bool RemoveKey(object key)
+        public bool RemoveKey(object key)
         {
             int index;
             if (IsIndex(key, out index))
@@ -188,7 +213,7 @@ namespace TiTsEd.Model
             }
         }
 
-        void RemoveDenseIndex(int index)
+        protected void RemoveDenseIndex(int index)
         {
             // We're going to remove 4, so we need to add 5 and higher to the associative part
             for (int i = index + 1; i < _densePart.Count; ++i)
@@ -287,7 +312,7 @@ namespace TiTsEd.Model
             return true;
         }
 
-        void DecrementSparseIndicesGreaterThan(int index)
+        protected void DecrementSparseIndicesGreaterThan(int index)
         {
             if (_sparsePart.Count == 0) return;
 
@@ -305,7 +330,7 @@ namespace TiTsEd.Model
             MergeSparsePartIntoDensePart();
         }
 
-        void MergeSparsePartIntoDensePart()
+        protected void MergeSparsePartIntoDensePart()
         {
             // Before we had 0-4 and 6, we added 5, so we merge 6 and higher into the dense part
             object nextDenseValue;
@@ -370,12 +395,12 @@ namespace TiTsEd.Model
             return Enumerate().GetEnumerator();
         }
 
-        bool IsDenseIndex(int index)
+        protected bool IsDenseIndex(int index)
         {
             return index >= 0 && index < _densePart.Count;
         }
 
-        bool IsIndex(object key, out int index)
+        protected bool IsIndex(object key, out int index)
         {
             if (key == null)
             {
@@ -415,7 +440,7 @@ namespace TiTsEd.Model
             return false;
         }
 
-        static bool TryConvertForEqualityComparison(ref object x, TypeCode type)
+        protected static bool TryConvertForEqualityComparison(ref object x, TypeCode type)
         {
             switch(type)
             {
@@ -446,13 +471,14 @@ namespace TiTsEd.Model
             }
         }
 
-        object NormalizeAssociativeKey(Object key)
+        protected object NormalizeAssociativeKey(Object key)
         {
             if (AmfType == AmfTypes.Dictionary) return key;
             return key.ToString();
         }
 
-        public AmfObject clone() {
+        public AmfObject clone()
+        {
             AmfObject obj = new AmfObject(this.AmfType);
             foreach(var v in _associativePart) {
                 if(v.Value != null) {
@@ -501,6 +527,263 @@ namespace TiTsEd.Model
             
             return obj;
         }
+
+        public bool ContainsByValue(object value)
+        {
+            if (null == value) return false;
+
+            var enumerator = GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                if (enumerator.Current.Value.ToString().Equals(value.ToString()))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public object GetKeyForValue(object value)
+        {
+            if (null == value) return null;
+
+            var enumerator = GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                if (enumerator.Current.Value.ToString().Equals(value.ToString()))
+                {
+                    return enumerator.Current.Key;
+                }
+            }
+            return null;
+        }
+
+        public int GetIndexOf(object value)
+        {
+            if (null == value) return -1;
+
+            for (int i = 0; i < Count; i++)
+            {
+                if (this[i].ToString().Equals(value.ToString()))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveByValue(object value)
+        {
+            object key = GetKeyForValue(value);
+            if (null != key)
+            {
+                RemoveKey(key);
+            }
+        }
+
+        public void DoClear()
+        {
+            /*
+            var enumerator = GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                RemoveKey(enumerator.Current.Key);
+            }
+            */
+            _associativePart.Clear();
+            _sparsePart.Clear();
+            _densePart.Clear();
+        }
+
+        #region ICollection
+
+        private object _syncRoot;
+        object ICollection.SyncRoot
+        {
+            get
+            {
+                if (null == this._syncRoot)
+                {
+                    Interlocked.CompareExchange(ref this._syncRoot, new object(), null);
+                }
+                return this._syncRoot;
+            }
+        }
+
+
+        bool ICollection.IsSynchronized
+        {
+            get { return false; }
+        }
+
+        void ICollection.CopyTo(Array array, int index)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region IDictionary
+
+
+        ICollection IDictionary.Keys
+        {
+            get
+            {
+                var enumerator = GetEnumerator();
+                var keys = new ArrayList();
+                while (enumerator.MoveNext())
+                {
+                    keys.Add(enumerator.Current.Key);
+                }
+                return keys.ToArray();
+            }
+        }
+
+        ICollection IDictionary.Values
+        {
+            get
+            {
+                var enumerator = GetEnumerator();
+                var values = new ArrayList();
+                while (enumerator.MoveNext())
+                {
+                    values.Add(enumerator.Current.Value);
+                }
+                return values.ToArray();
+            }
+        }
+
+        bool IDictionary.IsReadOnly
+        {
+            get { return false; }
+        }
+
+        bool IDictionary.IsFixedSize
+        {
+            get { return false; }
+        }
+
+        void IDictionary.Add(object key, object value)
+        {
+            this[key] = value;
+        }
+
+        void IDictionary.Clear()
+        {
+            DoClear();
+        }
+
+        IDictionaryEnumerator IDictionary.GetEnumerator()
+        {
+            return new AmfObjectDictionaryEnumerator(GetEnumerator());
+        }
+
+        void IDictionary.Remove(object key)
+        {
+            RemoveKey(key);
+        }
+
+        #endregion
+
+        #region IList
+
+        object IList.this[int index]
+        {
+            get { return 0; }
+            set { }
+        }
+
+        bool IList.IsReadOnly
+        {
+            get { return false; }
+        }
+
+        bool IList.IsFixedSize
+        {
+            get { return false; }
+        }
+
+        int IList.Add(object value)
+        {
+            Push(value);
+            return Count;
+        }
+
+        void IList.Clear()
+        {
+            DoClear();
+        }
+
+        int IList.IndexOf(object value)
+        {
+            return GetIndexOf(value);
+        }
+
+        void IList.Insert(int index, object value)
+        {
+            Push(value);
+            int idx = GetIndexOf(value);
+            Move(idx, index);
+        }
+
+        void IList.Remove(object value)
+        {
+            RemoveByValue(value);
+        }
+
+        void IList.RemoveAt(int index)
+        {
+            Pop(index);
+        }
+
+        bool IList.Contains(object value)
+        {
+            return ContainsByValue(value);
+        }
+
+        #endregion
+    }
+
+    public class AmfObjectDictionaryEnumerator : IDictionaryEnumerator
+    {
+
+        public AmfObjectDictionaryEnumerator(IEnumerator<AmfPair> enumerator)
+        {
+            Enumerator = enumerator;
+        }
+
+        public IEnumerator<AmfPair> Enumerator;
+
+        public DictionaryEntry Entry
+        {
+            get { return new DictionaryEntry(Enumerator.Current.Key, Enumerator.Current.Value); }
+        }
+
+        public object Key
+        {
+            get { return Enumerator.Current.Key; }
+        }
+
+        public object Value
+        {
+            get { return Enumerator.Current.Value; }
+        }
+
+        public object Current
+        {
+            get { return Entry; }
+        }
+
+        public bool MoveNext()
+        {
+            return Enumerator.MoveNext();
+        }
+
+        public void Reset()
+        {
+            Enumerator.Reset();
+        }
     }
 
     public class AmfXmlType
@@ -532,5 +815,36 @@ namespace TiTsEd.Model
             }
             return false;
         }
+
+        public static void BuildTree(SortedDictionary<string, object> dic, AmfObject o)
+        {
+            if (null != o)
+            {
+                var ot = o.AmfType;
+                if (AmfTypes.Null != ot)
+                {
+                    foreach (AmfPair pair in o.Enumerate())
+                    {
+                        var val = pair.Value;
+                        var kv = pair.Key.ToString();
+                        var valO = pair.ValueAsObject;
+                        if (null != valO)
+                        {
+                            var vt = valO.AmfType.ToString();
+                            var key = String.Format("{0} [{1}]", kv, vt);
+                            var d = new SortedDictionary<string, object>(AmfObject.NSComparer);
+                            BuildTree(d, valO);
+                            dic[key] = d;
+                        }
+                        else
+                        {
+                            var key = kv;
+                            dic[key] = val;
+                        }
+                    }
+                }
+            }
+        }
     }
+
 }

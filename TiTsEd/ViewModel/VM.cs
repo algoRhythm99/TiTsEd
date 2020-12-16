@@ -231,6 +231,11 @@ namespace TiTsEd.ViewModel
         }
     }
 
+    public interface ISimpleArrayVM : IUpdatableList
+    {
+        void Delete(int index);
+        void MoveItemToIndex(int sourceIndex, int destIndex);
+    }
 
     public interface IArrayVM : IUpdatableList
     {
@@ -358,6 +363,52 @@ namespace TiTsEd.ViewModel
         {
             return SetValue(key, value, propertyName);
         }
+    }
+
+    public abstract class SimpleArrayVM<TResult> : UpdatableCollection<AmfObject, TResult>, ISimpleArrayVM
+    {
+        readonly AmfObject _object;
+
+        protected SimpleArrayVM(AmfObject obj, Func<AmfObject, TResult> selector)
+            : base(obj.Select(x => x.Value as AmfObject), selector)
+        {
+            _object = obj;
+        }
+
+        protected SimpleArrayVM(AmfObject obj, IEnumerable<AmfObject> values, Func<AmfObject, TResult> selector)
+            : base(values, selector)
+        {
+            _object = obj ?? new AmfObject(AmfTypes.Array);
+        }
+
+        public new virtual TResult Add(object value)
+        {
+            _object.Push(value);
+            Update();
+            VM.Instance.NotifySaveRequiredChanged(true);
+            return this[_object.DenseCount - 1];
+        }
+
+        public virtual void Delete(int index)
+        {
+            _object.Pop(index);
+            Update();
+            VM.Instance.NotifySaveRequiredChanged(true);
+        }
+
+        public virtual void MoveItemToIndex(int sourceIndex, int destIndex)
+        {
+            if (sourceIndex == destIndex) return;
+            _object.Move(sourceIndex, destIndex);
+            Update();
+            VM.Instance.NotifySaveRequiredChanged(true);
+        }
+
+        void ISimpleArrayVM.MoveItemToIndex(int sourceIndex, int destIndex)
+        {
+            MoveItemToIndex(sourceIndex, destIndex);
+        }
+
     }
 
     public abstract class ArrayVM<TResult> : UpdatableCollection<AmfObject, TResult>, IArrayVM

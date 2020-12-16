@@ -15,37 +15,7 @@ namespace TiTsEd.ViewModel
         public AmfObjectVM(AmfObject file)
             : base(NSComparer)
         {
-            BuildTree(this, file);
-        }
-
-        public void BuildTree(SortedDictionary<string, object> dic, AmfObject o)
-        {
-            if (null != o)
-            {
-                var ot = o.AmfType;
-                if (AmfTypes.Null != ot)
-                {
-                    foreach (AmfPair pair in o.Enumerate())
-                    {
-                        var val = pair.Value;
-                        var kv = pair.Key.ToString();
-                        var valO = pair.ValueAsObject;
-                        if (null != valO)
-                        {
-                            var vt = valO.AmfType.ToString();
-                            var key = String.Format("{0} [{1}]", kv, vt);
-                            var d = new SortedDictionary<string, object>(NSComparer);
-                            BuildTree(d, valO);
-                            dic[key] = d;
-                        }
-                        else
-                        {
-                            var key = kv;
-                            dic[key] = val;
-                        }
-                    }
-                }
-            }
+            AmfHelpers.BuildTree(this, file);
         }
 
     }
