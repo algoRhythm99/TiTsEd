@@ -12,7 +12,8 @@ using System.Windows.Input;
 using TiTsEd.Common;
 using TiTsEd.Model;
 
-namespace TiTsEd.ViewModel {
+namespace TiTsEd.ViewModel
+{
     public sealed partial class GameVM : ObjectVM
     {
         private GeneralObjectVM _flags;
@@ -30,14 +31,14 @@ namespace TiTsEd.ViewModel {
         {
             SetCharacterOptions();
             setCharacter("PC");
-            SaveFile = new AmfObjectVM(file);
 
             var shittyShips = GetObj("shittyShips") ?? new AmfObject(AmfTypes.Array);
             Ships = new ShipArrayVM(this, shittyShips);
 
             var flagsObject = FlagsObject;
             _flags = new GeneralObjectVM(flagsObject);
-            if (null != previousVM) {
+            if (null != previousVM)
+            {
                 _searchText = previousVM._searchText;
                 AllCodexEntries = previousVM.AllCodexEntries;
                 AllStatusEffects = previousVM.AllStatusEffects;
@@ -47,15 +48,19 @@ namespace TiTsEd.ViewModel {
             }
 
             // Flags
-            foreach (var xmlFlag in XmlData.Current.Flags) {
-                if (!AllFlags.ContainsKey(xmlFlag.Name)) {
+            foreach (var xmlFlag in XmlData.Current.Flags)
+            {
+                if (!AllFlags.ContainsKey(xmlFlag.Name))
+                {
                     AllFlags[xmlFlag.Name] = new FlagVM(this, ref flagsObject, xmlFlag);
                 }
             }
 
-            foreach (var flag in flagsObject) {
+            foreach (var flag in flagsObject)
+            {
                 string flagName = flag.ToString();
-                if (!AllFlags.ContainsKey(flagName)) {
+                if (!AllFlags.ContainsKey(flagName))
+                {
                     XmlEnum data = new XmlEnum();
                     data.Name = flagName;
                     AllFlags[flagName] = new FlagVM(this, ref flagsObject, data);
@@ -98,30 +103,37 @@ namespace TiTsEd.ViewModel {
 
         public ShipArrayVM Ships { get; private set; }
 
-        public static void ImportUnknownStorageClassEntries(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, IList<XmlStorageClass> targetXmlList = null, string nameProperty = "storageName", Func<AmfObject, string> descriptionGetter = null) {
+        public static void ImportUnknownStorageClassEntries(AmfObject items, IEnumerable<XmlStorageClass> xmlItems, IList<XmlStorageClass> targetXmlList = null, string nameProperty = "storageName", Func<AmfObject, string> descriptionGetter = null)
+        {
             if (targetXmlList == null) targetXmlList = (IList<XmlStorageClass>)xmlItems;
             var xmlNames = new HashSet<String>(xmlItems.Select(x => x.Name));
 
-            foreach (var pair in items) {
+            foreach (var pair in items)
+            {
                 var itemObject = pair.ValueAsObject;
                 var name = itemObject.GetString(nameProperty);
                 if (xmlNames.Contains(name)) continue;
                 xmlNames.Add(name);
 
                 var xml = new XmlStorageClass { Name = name };
-                if (descriptionGetter != null) {
+                if (descriptionGetter != null)
+                {
                     xml.Description = descriptionGetter(itemObject);
-                } else {
+                }
+                else
+                {
                     xml.Description = itemObject.GetString("tooltip");
                 }
                 targetXmlList.Add(xml);
             }
         }
 
-        public static void ImportUnknownItems(List<ItemContainerVM> containers, List<String> types) {
+        public static void ImportUnknownItems(List<ItemContainerVM> containers, List<String> types)
+        {
             var unknownItemGroup = XmlData.Current.ItemGroups.Last();
 
-            foreach (var slot in containers.SelectMany(x => x.Slots)) {
+            foreach (var slot in containers.SelectMany(x => x.Slots))
+            {
                 // Add this item to the DB if it does not exist
                 var type = slot.TypeID;
                 if (String.IsNullOrEmpty(type)) continue;
@@ -135,13 +147,16 @@ namespace TiTsEd.ViewModel {
                 var version = slot.GetInt("version", 1);
 
                 var fields = new List<XmlObjectField>();
-                if (slot.HasRandomProperties) {
+                if (slot.HasRandomProperties)
+                {
                     var obj = slot.GetAmfObject();
-                    foreach (var prop in obj) {
+                    foreach (var prop in obj)
+                    {
                         string key = prop.Key.ToString();
                         string val = prop.Value.ToString();
                         string propType = "string";
-                        switch (key) {
+                        switch (key)
+                        {
                             case "shortName":
                             case "version":
                             case "classInstance":
@@ -166,35 +181,46 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public void copyCharacterToPC() {
-            copyCharacter(_characterName, "PC");
+        public void CopyCharacterToPC()
+        {
+            CopyCharacter(_characterName, "PC");
         }
 
         //for later
-        private void copyCharacter(string src, string dst) {
+        private void CopyCharacter(string src, string dst)
+        {
             var chars = GetObj("characters");
             var srcChar = chars.GetObj(src);
             var dstChar = chars.GetObj(dst);
 
-            foreach (var tag in XmlData.Current.General.CopyTags) {
-                if (!srcChar.Contains(tag) || !dstChar.Contains(tag)) {
+            foreach (var tag in XmlData.Current.General.CopyTags)
+            {
+                if (!srcChar.Contains(tag) || !dstChar.Contains(tag))
+                {
                     continue;
                 }
                 var value = srcChar[tag];
-                if (value != null && value.GetType() == typeof(AmfObject)) {
+                if (value != null && value.GetType() == typeof(AmfObject))
+                {
                     dstChar[tag] = (srcChar[tag] as AmfObject).clone();
-                } else {
+                }
+                else
+                {
                     dstChar[tag] = value;
                 }
             }
         }
 
-        private void setCharacter(string name) {
+        private void setCharacter(string name)
+        {
             Character = GetCharacter(name);
             _characterName = name;
-            if (name == "PC") {
+            if (name == "PC")
+            {
                 IsPC = true;
-            } else {
+            }
+            else
+            {
                 IsPC = false;
             }
 
@@ -211,35 +237,45 @@ namespace TiTsEd.ViewModel {
 
         public CharacterVM Character { get; private set; }
 
-        public string[] CharacterOptions {
-            get {
+        public string[] CharacterOptions
+        {
+            get
+            {
                 SetCharacterOptions();
                 return _characters;
             }
-            private set {
+            private set
+            {
                 _characters = value;
             }
         }
 
-        private void SetCharacterOptions() {
-            if (null == _characters) {
+        private void SetCharacterOptions()
+        {
+            if (null == _characters)
+            {
                 var tmpChar = GetObj("characters");
                 List<String> characters = new List<string>();
-                foreach (AmfPair pair in tmpChar) {
+                foreach (AmfPair pair in tmpChar)
+                {
                     characters.Add(pair.Key.ToString());
                 }
-                if (characters.Count > 1) {
+                if (characters.Count > 1)
+                {
                     characters.Sort();
                 }
                 CharacterOptions = characters.ToArray();
             }
         }
 
-        public string CharacterSelection {
-            get {
+        public string CharacterSelection
+        {
+            get
+            {
                 return _characterName;
             }
-            set {
+            set
+            {
                 setCharacter(value);
                 //update everything!
                 OnPropertyChanged(null);
@@ -247,7 +283,8 @@ namespace TiTsEd.ViewModel {
         }
 
 
-        public string Email {
+        public string Email
+        {
             get
             {
                 if (EmailEnabled)
@@ -323,43 +360,53 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public string Notes {
+        public string Notes
+        {
             get { return GetString("saveNotes"); }
             set { SetValue("saveNotes", String.IsNullOrWhiteSpace(value) ? "No notes available." : value); }
         }
 
-        public int Days {
+        public int Days
+        {
             get { return GetInt("daysPassed"); }
             set { SetValue("daysPassed", value); }
         }
 
-        public int Hours {
+        public int Hours
+        {
             get { return GetInt("currentHours"); }
             set { SetValue("currentHours", value); }
         }
 
-        public int Minutes {
+        public int Minutes
+        {
             get { return GetInt("currentMinutes"); }
             set { SetValue("currentMinutes", value); }
         }
 
-        public bool IsPC {
+        public bool IsPC
+        {
             get { return _IsPC; }
             private set { _IsPC = value; }
         }
 
-        public bool IsNotPC {
+        public bool IsNotPC
+        {
             get { return !IsPC; }
         }
 
-        public int PCUpbringing {
-            get {
-                if (IsPC && _flags.HasValue("PC_UPBRINGING") ) {
+        public int PCUpbringing
+        {
+            get
+            {
+                if (IsPC && _flags.HasValue("PC_UPBRINGING") )
+                {
                     return _flags.GetInt("PC_UPBRINGING");
                 }
                 return 0;
             }
-            set {
+            set
+            {
                 _flags.SetValue("PC_UPBRINGING", value);
                 OnFlagChanged("PC_UPBRINGING");
             }
@@ -390,7 +437,8 @@ namespace TiTsEd.ViewModel {
             }
         }
 
-        public AmfObject FlagsObject {
+        public AmfObject FlagsObject
+        {
             get { return GetObj("flags"); }
         }
 
@@ -400,17 +448,21 @@ namespace TiTsEd.ViewModel {
         /// Returns the flag with the specified name (even if not set in the save) AND registers a dependency between the caller property and this flag.
         /// That way, anytime the flag value is changed, OnPropertyChanged will be raised for the caller property.
         /// </summary>
-        public FlagVM GetFlag(string name, string propertyName = null) {
+        public FlagVM GetFlag(string name, string propertyName = null)
+        {
             FlagVM flag = null;
-            if (AllFlags.ContainsKey(name)) {
+            if (AllFlags.ContainsKey(name))
+            {
                 flag = AllFlags[name];
                 flag.GameVMProperties.Add(propertyName);
             }
             return flag;
         }
 
-        public void OnFlagChanged(string name) {
-            if (AllFlags.ContainsKey(name)) {
+        public void OnFlagChanged(string name)
+        {
+            if (AllFlags.ContainsKey(name))
+            {
                 foreach (var prop in AllFlags[name].GameVMProperties)
                 {
                     OnPropertyChanged(prop);
@@ -420,12 +472,16 @@ namespace TiTsEd.ViewModel {
             OnSavePropertyChanged("SaveFile");
         }
 
-        public void RemoveFlag(FlagVM flag) {
-            if (null != flag) {
+        public void RemoveFlag(FlagVM flag)
+        {
+            if (null != flag)
+            {
                 var flagName = flag.Name;
                 // remove flag
-                if (null != FlagsObject && !String.IsNullOrEmpty(flagName)) {
-                    if (null != FlagsObject[flagName]) {
+                if (null != FlagsObject && !String.IsNullOrEmpty(flagName))
+                {
+                    if (null != FlagsObject[flagName])
+                    {
                         flag.Value = null;
                         FlagsObject[flagName] = null;
                         OnFlagChanged(flagName);
@@ -474,15 +530,20 @@ namespace TiTsEd.ViewModel {
             OnSavePropertyChanged("SaveFile");
         }
 
-        public AmfObjectVM SaveFile
+        public AmfFile SaveFile
         {
-            get;
-            set;
+            get
+            {
+                return (AmfFile) GetAmfObject();
+            }
         }
 
-        private RelayCommand<FlagVM> _deleteFlagCommand;
-        public RelayCommand<FlagVM> DeleteFlagCommand {
-            get { return _deleteFlagCommand ?? (_deleteFlagCommand = new RelayCommand<FlagVM>(d => RemoveFlag(d))); }
+        public string SaveFileName
+        {
+            get
+            {
+                return SaveFile.Name;
+            }
         }
 
 
@@ -513,5 +574,14 @@ namespace TiTsEd.ViewModel {
             }
         }
 
+
+#region CommandHandlers
+
+        private RelayCommand<FlagVM> _deleteFlagCommand;
+        public RelayCommand<FlagVM> DeleteFlagCommand
+        {
+            get { return _deleteFlagCommand ?? (_deleteFlagCommand = new RelayCommand<FlagVM>(d => RemoveFlag(d))); }
+        }
     }
+#endregion
 }

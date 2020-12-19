@@ -45,7 +45,7 @@ namespace TiTsEd
 
         private void CopyToPC_Clicked(object sender, RoutedEventArgs e)
         {
-            VM.Instance.Game.copyCharacterToPC();
+            VM.Instance.Game.CopyCharacterToPC();
             VM.Instance.Game.CharacterSelection = "PC";
         }
 

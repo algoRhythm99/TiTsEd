@@ -13,19 +13,22 @@ namespace TiTsEd.Common
     {
         public string Name { get; set; }
         public string Value { get; set; }
-        private List<TreeNode> _children;
+
         public List<TreeNode> Children
         {
-            set {
-                this._children = value;
-            }
+            set;
+            get;
+        }
+
+        public string ChildrenCountDisplay
+        {
             get
             {
-                if (null == this._children)
+                if (null != Children)
                 {
-                    this._children = new List<TreeNode>();
+                    return String.Format("[{0}]", Children.Count.ToString() );
                 }
-                return this._children;
+                return "";
             }
         }
  
@@ -52,18 +55,20 @@ namespace TiTsEd.Common
                 TreeNode keyValueNode = new TreeNode();
                 keyValueNode.Name = kv.Key;
                 keyValueNode.Value = GetValueAsString(kv.Value);
+                if (null == node.Children) node.Children = new List<TreeNode>();
                 node.Children.Add(keyValueNode);
                 BuildTree(kv.Value, keyValueNode);
             }
             else if (item is ArrayList)
             {
-                ArrayList list = (ArrayList)item;
+                ArrayList list = (ArrayList) item;
                 int index = 0;
                 foreach (object value in list)
                 {
                     TreeNode arrayItem = new TreeNode();
                     arrayItem.Name = String.Format("[{0}]", index);
                     arrayItem.Value = "";
+                    if (null == node.Children) node.Children = new List<TreeNode>();
                     node.Children.Add(arrayItem);
                     BuildTree(value, arrayItem);
                     index++;
@@ -79,28 +84,20 @@ namespace TiTsEd.Common
             }
         }
  
-        private static string GetValueAsString(object value)
+        public static string GetValueAsString(object value)
         {
             if (null == value)
             {
                 return "null";
             }
-            var type = value.GetType();
 
-            string ts = "";
-            string vs = "";
-            var ao = value as AmfObject;
-            var aot = AmfTypes.String;
-            if (null != ao)
-            {
-                aot = ao.AmfType;
-                ts = String.Format(" [{0}] : ", aot.ToString());
-            }
+            var type = value.GetType();
 
             var ic = value as ICollection<object>;
             var arr = value as ArrayList;
             var ie = value as IEnumerable;
             var count = -1;
+
             if (null != ic)
             {
                 count = ic.Count;
@@ -125,6 +122,17 @@ namespace TiTsEd.Common
             {
                 count = -1;
             }
+
+            string ts = "";
+            string vs;
+            var ao = value as AmfObject;
+            var aot = AmfTypes.String;
+            if (null != ao)
+            {
+                aot = ao.AmfType;
+                ts = String.Format(" [{0}] : ", aot.ToString());
+            }
+
             if (count >= 0)
             {
                 vs = String.Format("[{0}]", count);

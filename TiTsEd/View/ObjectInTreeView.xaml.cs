@@ -40,7 +40,7 @@ namespace TiTsEd.View
         {
             get
             {
-                return (string)GetValue(RootNodeProperty);
+                return (string) GetValue(RootNodeProperty);
             }
             set
             {
@@ -50,14 +50,14 @@ namespace TiTsEd.View
 
         private static void OnRootNodeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var vm = (ObjectInTreeView)d;
-            vm.RootNode = (string)e.NewValue;
+            var vm = (ObjectInTreeView) d;
+            vm.RootNode = (string) e.NewValue;
         }
 
 
         private static void OnObjectChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var vm = (ObjectInTreeView)d;
+            var vm = (ObjectInTreeView) d;
             TreeNode tree = TreeNode.CreateTree(e.NewValue, vm.RootNode);
             vm.TreeNodes = new List<TreeNode>() { tree };
         }
