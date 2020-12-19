@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:view="clr-namespace:TiTsEd.View"
+             xmlns:vm="clr-namespace:TiTsEd.ViewModel"
              d:DesignHeight="600"
              d:DesignWidth="1024"
              mc:Ignorable="d">
@@ -13,9 +14,45 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Themes/PageInclude.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem">
+            </Style>
+            <Style x:Key="RootTreeViewItemStyle" TargetType="TreeViewItem" BasedOn="{StaticResource TreeViewItemStyle}">
+                <Setter Property="IsExpanded" Value="True"/>
+            </Style>
+            <Style x:Key="TreeNodeNameStyle" TargetType="TextBox">
+                <Setter Property="Width"            Value="300" />
+                <Setter Property="TextWrapping"     Value="WrapWithOverflow" />
+                <Setter Property="BorderThickness"  Value="0,0,1,1" />
+                <Setter Property="FontSize"         Value="14" />
+                <Setter Property="Padding"          Value="0,10,0,5" />
+            </Style>
+            <Style x:Key="TreeNodeValueStyle" TargetType="TextBox">
+                <Setter Property="MinWidth"         Value="200" />
+                <Setter Property="MaxWidth"         Value="400" />
+                <Setter Property="TextWrapping"     Value="WrapWithOverflow" />
+                <Setter Property="BorderThickness"  Value="0,0,0,1" />
+                <Setter Property="FontFamily"       Value="Consolas" />
+                <Setter Property="Padding"          Value="5,10,0,5" />
+            </Style>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Margin="30">
-        <view:ObjectInTreeView ObjectToVisualize="{Binding Game.SaveFile}" RootNode="{Binding Game.SaveFileName}" />
-    </Grid>
+    <TreeView
+        ItemsSource="{Binding Path=Game.RawStateVM, Mode=OneWay}"
+        ItemContainerStyle="{StaticResource RootTreeViewItemStyle}">
+        <TreeView.Resources>
+            <HierarchicalDataTemplate
+                DataType="{x:Type vm:AmfObjectVM}"
+                ItemsSource="{Binding Path=Children, Mode=OneWay}"
+                ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox    x:Name="Key"    Text="{Binding Path=Key, Mode=OneWay}"   IsReadOnly="True"   Style="{StaticResource TreeNodeNameStyle}" />
+                            <TextBox    x:Name="Value"  Text="{Binding Path=Value, Mode=OneWay}" IsReadOnly="True"   Style="{StaticResource TreeNodeValueStyle}" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </HierarchicalDataTemplate>
+        </TreeView.Resources>
+    </TreeView>
 </UserControl>

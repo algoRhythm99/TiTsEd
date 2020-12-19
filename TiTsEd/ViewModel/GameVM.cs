@@ -25,6 +25,7 @@ namespace TiTsEd.ViewModel
         public readonly List<StatusEffectVM> AllStatusEffects = new List<StatusEffectVM>();
         public readonly SortedDictionary<string,FlagVM> AllFlags = new SortedDictionary<string,FlagVM>();
         public readonly SortedDictionary<string, CodexEntryVM> AllCodexEntries = new SortedDictionary<string, CodexEntryVM>();
+        public readonly BindingList<AmfObjectVM> _RawStateVM = new BindingList<AmfObjectVM>();
 
         public GameVM(AmfFile file, GameVM previousVM)
             : base(file)
@@ -469,7 +470,7 @@ namespace TiTsEd.ViewModel
                 }
             }
             OnPropertyChanged("Flags");
-            OnSavePropertyChanged("SaveFile");
+            OnSavePropertyChanged("RawStateVM");
         }
 
         public void RemoveFlag(FlagVM flag)
@@ -527,22 +528,24 @@ namespace TiTsEd.ViewModel
             OnPropertyChanged("CodexEntries");
             OnPropertyChanged("CodexViewedEntriesObj");
             OnPropertyChanged("CodexUnlockedEntriesObj");
-            OnSavePropertyChanged("SaveFile");
+            OnSavePropertyChanged("RawStateVM");
         }
 
         public AmfFile SaveFile
         {
             get
             {
-                return (AmfFile) GetAmfObject();
+                return (AmfFile)GetAmfObject();
             }
         }
 
-        public string SaveFileName
+        public BindingList<AmfObjectVM> RawStateVM
         {
             get
             {
-                return SaveFile.Name;
+                _RawStateVM.Clear();
+                _RawStateVM.Add(new AmfObjectVM(GetAmfObject(), SaveFile.Name, SaveFile.FilePath));
+                return _RawStateVM;
             }
         }
 

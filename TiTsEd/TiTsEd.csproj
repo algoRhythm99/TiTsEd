@@ -46,10 +46,6 @@
     <ApplicationIcon>TiTsEd.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Extensions" />
@@ -77,7 +73,6 @@
     <Compile Include="Common\NamedVector4Control.cs" />
     <Compile Include="Common\NaturalSortComparer.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Common\TreeNode.cs" />
     <Compile Include="Common\UIHelpers.cs" />
     <Compile Include="Common\UriConverter.cs" />
     <Compile Include="Common\VersionInfo.cs" />
@@ -172,9 +167,6 @@
     </Compile>
     <Compile Include="View\FlagsPage.xaml.cs">
       <DependentUpon>FlagsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ObjectInTreeView.xaml.cs">
-      <DependentUpon>ObjectInTreeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RawStateViewPage.xaml.cs">
       <DependentUpon>RawStateViewPage.xaml</DependentUpon>
@@ -274,10 +266,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\FlagsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ObjectInTreeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
