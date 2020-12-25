@@ -359,7 +359,7 @@ hasItem() {
     if [ ! -z "${LongName}" ]; then
         itemXML="${itemXML}$(printf ' LongName="%s"' "$longName")"
     fi
-    if [ ! -z "${stackSize}" ] && [ "$stackSize" != "1" ]; then
+    if [ ! -z "${stackSize}" ]; then
         itemXML="${itemXML}$(printf ' Stack="%s"' "$stackSize")"
     fi
     if [ ! -z "${fortification}" ] && [ "$fortification" != "0" ]; then hasFortification=1; hasFields=1; fi

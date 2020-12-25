@@ -1802,6 +1802,9 @@
 			<Item Stack="1" Name="Spacesuit(I)" ID="classes.Items.Armor::SpacesuitIncomplete">
 				<ItemField Name="fortification" Type="int" Value="10" />
 			</Item>
+			<Item Stack="1" Name="ST. Suit" ID="classes.Items.Armor::SteeleTechHazardSuit">
+				<ItemField Name="shields" Type="int" Value="9" />
+			</Item>
 			<Item Stack="1" Name="S.Threads"    ID="classes.Items.Armor::StrixThreads" />
 			<Item Stack="1" Name="SVS-Wear"     ID="classes.Items.Armor::StarViperSlutwear" />
 			<Item Stack="1" Name="WM Coat" ID="classes.Items.Armor::WeavemailCoat" />
@@ -2244,6 +2247,7 @@
 			<Item Stack="1" Name="psuedopod" ID="classes.Items.Melee::GooeyPsuedopod" Comment="Don't try to use this"  />
 			<Item Stack="1" Name="mechafist" ID="classes.Items.Melee::MechaFist" Comment="Don't try to use this" />
 
+			<Item Stack="1" Name="ArcSledge" ID="classes.Items.Melee::ArcSledgehammer" />
 			<Item Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
 			<Item Stack="1" Name="B.Rapier" ID="classes.Items.Melee::BothriocRapier" />
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
@@ -2367,6 +2371,7 @@
 			<Item Stack="1" Name="M.Rifle" ID="classes.Items.Guns::MyrRifle" />
 			<Item Stack="1" Name="VnmThrwr" ID="classes.Items.Guns::MyrVenomThrower" />
 			<Item Stack="1" Name="NaN D." ID="classes.Items.Guns::NANDeconstructor" LongName="NaN Deconstructor" />
+			<Item Stack="1" Name="9L Pistol" ID="classes.Items.Guns::NineLPistol" />
 			<Item Stack="1" Name="Nova Pstl." ID="classes.Items.Guns::NovaPistol" />
 			<Item Stack="1" Name="Nova Rifle" ID="classes.Items.Guns::NovaRifle" />
 			<Item Stack="1" Name="XTR-8" ID="classes.Items.Guns::ParagonXTR8Peer" />
@@ -3754,6 +3759,9 @@
 		<Flag Name="CAPTURED_A_FEMALE_ZIL_FOR_DR_HASWELL" />
 		<Flag Name="CAPTURED_A_MALE_ZIL_FOR_DR_HASWELL" />
 		<Flag Name="CARRIE_BLOWJOBBED" />
+		<Flag Name="CARRIE_LAST_PEGGED" />
+		<Flag Name="CARRIE_MILKED" />
+		<Flag Name="CARRIE_PEGGED" />
 		<Flag Name="CARRIE_SHOWER_FIVESOME" />
 		<Flag Name="CARRIE_SHOWER_THREESOME" />
 		<Flag Name="CARRIE_SMALLCOCK_SUX" />
@@ -4914,6 +4922,7 @@
 		<Flag Name="KELLY_HAD_A_MEAL_SHARED" Description="Number of times you've shared a meal with Kelly" />
 		<Flag Name="KELLY_HAD_SPECIAL_TAUR_DP" Description="1 == Kelly has DP'd your Taur-body" />
 		<Flag Name="KELLY_HYPERBJ" />
+		<Flag Name="KELLY_HYPERCATCH" />
 		<Flag Name="KELLY_HYPERPLAY_COUNT" Description="Number of times you and Kelly have played with your hyper-sized genitals" />
 		<Flag Name="KELLY_MET" Description="1 == You've met Kelly" />
 		<Flag Name="KELLY_SEXED" Description="Number of times you've had sexy times with Kelly" />
@@ -5625,6 +5634,7 @@
 		<Flag Name="MET_SAEC" />
 		<Flag Name="MET_SAENDRA" Description="1 == You've met Saendra" />
 		<Flag Name="MET_SALLY" />
+		<Flag Name="MET_SALVAGE_BRO" />
 		<Flag Name="MET_SAM" />
 		<Flag Name="MET_SCHORA" Description="1 = saw her in the shower but didnt approach&#xD;&#xA;2 = watched her and left&#xD;&#xA;3 = talked to her but she left because of the alert&#xD;&#xA;4 = treated her right&#xD;&#xA;5 = treated her rough" />
 		<Flag Name="MET_SECOP_FEMALE" />
@@ -6595,6 +6605,10 @@
 		<Flag Name="SAENDRA_XPACK1_TIMER" />
 		<Flag Name="SAEN_X_SERA_THREESOME" />
 		<Flag Name="SALVAGED VANAE CAMP" />
+		<Flag Name="SALVAGE_BROS_HP_TUT" />
+		<Flag Name="SALVAGE_BROS_LOST_TO" />
+		<Flag Name="SALVAGE_BROS_TEASE_TUT" />
+		<Flag Name="SALVAGE_BROS_TEASE_TUT_2" />
 		<Flag Name="SAM_BABY_GENDERS" />
 		<Flag Name="SAM_BABY_GENES" />
 		<Flag Name="SAM_GAST_PREG_TIMER" />
@@ -8107,6 +8121,8 @@
 			<StatusEffect Name="BlueViperDisable" IsHidden="true" />
 			<StatusEffect Name="Boob Silicone Please" IsHidden="true" />
 			<StatusEffect Name="Bought From Bianca" IsHidden="true" />
+			<StatusEffect Name="Carrie Milkies Denied" IsHidden="true" />
+			<StatusEffect Name="Carrie Milkies Over" IsHidden="true" />
 			<StatusEffect Name="Cheerleader" IsHidden="true" />
 			<StatusEffect Name="Cherry_In_Room" IsHidden="true" />
 			<StatusEffect Name="Cherry_Internal_Cum" IsHidden="true" />
@@ -8152,6 +8168,8 @@
 			<StatusEffect Name="RealityCummiesNotice" IsHidden="true" />
 			<StatusEffect Name="RoleplayingWithKiro" IsHidden="true" />
 			<StatusEffect Name="Roo_Turned_Down" IsHidden="true" />
+			<StatusEffect Name="Sekrit_Cum_Soaked" IsHidden="true" />
+			<StatusEffect Name="Sekrit_Cum_Soaked_2" IsHidden="true" />
 			<StatusEffect Name="Sentient Acquisitions Closed" IsHidden="true" />
 			<StatusEffect Name="Shekka Just Grew HC" IsHidden="true" />
 			<StatusEffect Name="Ship Repair Paused" IsHidden="true" />
