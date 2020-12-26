@@ -210,7 +210,10 @@ namespace TiTsEd
                 }
             }
 
-            VM.Instance.Load(file.FilePath, SerializationFormat.Slot);
+            if (null != file)
+            {
+                VM.Instance.Load(file.FilePath, SerializationFormat.Slot);
+            }
             return file;
         }
 

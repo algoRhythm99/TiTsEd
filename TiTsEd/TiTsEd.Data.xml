@@ -1526,6 +1526,7 @@
 			<PregnancyType>MilodanPregnancy</PregnancyType>
 			<PregnancyType>MirrinPregnancy</PregnancyType>
 			<PregnancyType>NaleenPregnancy</PregnancyType>
+			<PregnancyType>NykkePregnancy</PregnancyType>
 			<PregnancyType>NyreaEggPregnancy</PregnancyType>
 			<PregnancyType>OvalastingEggPregnancy</PregnancyType>
 			<PregnancyType>OviliumEggPregnancy</PregnancyType>
@@ -1787,7 +1788,9 @@
 			<Item Stack="1" Name="KH.Armor" ID="classes.Items.Armor::KordiiakHideArmor">
 				<ItemField Name="fortification" Type="int" Value="40" />
 			</Item>
+<!-- Removed?
 			<Item Stack="1" Name="M.Suit" ID="classes.Items.Armor::MirroredJumpsuit" />
+-->
 			<Item Stack="1" Name="N.Threads"    ID="classes.Items.Armor::NemeanThreads" />
 			<Item Stack="1" Name="N.Chain" ID="classes.Items.Armor::NyreanChain" />
 			<Item Stack="1" Name="P.Plate" ID="classes.Items.Armor::PolishedPlate" />
@@ -5023,6 +5026,7 @@
 		<Flag Name="KIRO_BIMBO_COCKPIT" />
 		<Flag Name="KIRO_BIMBO_DILDOUSES" />
 		<Flag Name="KIRO_BIMBO_DILDO_GIFTED" />
+		<Flag Name="KIRO_BIMBO_EDGE_TIME" />
 		<Flag Name="KIRO_BIMBO_HAPPY_TALK" />
 		<Flag Name="KIRO_BIMBO_MET" />
 		<Flag Name="KIRO_BIMBO_SNAKE_SMUT" />
@@ -7450,14 +7454,23 @@
 		<Flag Name="VANAE_MILKBATH_TIMES" />
 		<Flag Name="VANEA_HUNTRESS_PREG" />
 		<Flag Name="VANEA_MAIDEN_PREG" />
+		<Flag Name="VARK_BREED" />
+		<Flag Name="VARK_BUTTFUCK" />
 		<Flag Name="VARK_CAN_ASK_PAST" />
 		<Flag Name="VARK_COLLAR_IN_A_ROW" />
 		<Flag Name="VARK_EX_NAME" />
 		<Flag Name="VARK_EX_SON" />
+		<Flag Name="VARK_GROOM" />
+		<Flag Name="VARK_IS_PET" />
+		<Flag Name="VARK_LICK_ASS" />
+		<Flag Name="VARK_LICK_VAG" />
 		<Flag Name="VARK_OFFERED_STAY" />
 		<Flag Name="VARK_PUNISHED" />
+		<Flag Name="VARK_RESISTED" />
 		<Flag Name="VARK_SEXED" />
 		<Flag Name="VARK_SPANKED" />
+		<Flag Name="VARK_SUBMISSION" />
+		<Flag Name="VARK_SUCK" />
 		<Flag Name="VARK_TEASE_COUNTER" />
 		<Flag Name="VARMINTS_CAUGHT" />
 		<Flag Name="VARMINT_IS_CREW" />
