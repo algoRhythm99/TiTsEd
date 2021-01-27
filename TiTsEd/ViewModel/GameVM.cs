@@ -49,6 +49,14 @@ namespace TiTsEd.ViewModel
             }
 
             // Flags
+            var flagNames = AllFlags.Keys.ToList();
+            foreach (var flagName in flagNames)
+            {
+                XmlEnum data = new XmlEnum();
+                data.Name = flagName;
+                AllFlags[flagName] = new FlagVM(this, ref flagsObject, data);
+            }
+
             foreach (var xmlFlag in XmlData.Current.Flags)
             {
                 if (!AllFlags.ContainsKey(xmlFlag.Name))
@@ -69,8 +77,17 @@ namespace TiTsEd.ViewModel
             }
 
             Flags = new UpdatableCollection<FlagVM>(AllFlags.Values.ToList().Where(x => x.Match(SearchText)));
+            OnPropertyChanged("Flags");
 
             // Codex
+            var codexEntries = AllCodexEntries.Keys.ToList();
+            foreach (var codexName in codexEntries)
+            {
+                XmlCodexEntry data = new XmlCodexEntry();
+                data.Name = codexName;
+                AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+            }
+
             foreach (var xmlCodex in XmlData.Current.CodexEntries)
             {
                 if (!AllCodexEntries.ContainsKey(xmlCodex.Name))
@@ -100,6 +117,7 @@ namespace TiTsEd.ViewModel
             }
 
             CodexEntries = new UpdatableCollection<CodexEntryVM>(AllCodexEntries.Values.ToList().Where(x => x.Match(SearchText)));
+            OnPropertyChanged("CodexEntries");
         }
 
         public ShipArrayVM Ships { get; private set; }
@@ -434,7 +452,9 @@ namespace TiTsEd.ViewModel
                 Character.UpdateKeyItemsVisibility();
                 Character.UpdateStatusEffectsVisibility();
                 Flags.Update();
+                OnPropertyChanged("Flags");
                 CodexEntries.Update();
+                OnPropertyChanged("CodexEntries");
             }
         }
 

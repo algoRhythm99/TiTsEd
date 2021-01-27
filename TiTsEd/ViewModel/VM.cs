@@ -204,7 +204,7 @@ namespace TiTsEd.ViewModel
 
         public void UpdateAppTitle()
         {
-            string title = HasData ? Game.Name : "<unknown>";
+            string title = (HasData && (null != Game)) ? Game.Name : "<unknown>";
             if (SaveRequired) title += "\u202F*";
             title += "  |  " + AppTitle;
 
