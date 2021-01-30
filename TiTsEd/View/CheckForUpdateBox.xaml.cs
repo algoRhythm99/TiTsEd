@@ -163,8 +163,9 @@ namespace TiTsEd.View
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Logger.Debug(ex.Message);
                 return UpdateCheckResult.Unknown;
             }
             finally
