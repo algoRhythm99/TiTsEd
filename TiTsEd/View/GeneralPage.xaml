@@ -82,9 +82,9 @@
                     <common:MyNumericBox    Value="{Binding Game.Character.XP}" Upper="{Binding Game.Character.MaxXP}" UpperLabel="{Binding Game.Character.MaxXPLabel}" />
 
                     <Label>
-                        <TextBlock Text="Stat Points" IsEnabled="{Binding Game.IsPC}" />
+                        <TextBlock Text="Stat Points" />
                     </Label>
-                    <common:MyNumericBox    Value="{Binding Game.Character.StatPoints}" IsEnabled="{Binding Game.IsPC}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.StatPoints}" />
 
                 </common:AutoGrid>
 
@@ -92,19 +92,19 @@
 
                 <common:AutoGrid>
                     <Label>
-                        <TextBlock Text="Personality" IsEnabled="{Binding Game.IsPC}" />
+                        <TextBlock Text="Personality" />
                     </Label>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Personality}" Upper="100" Tip="{Binding Game.Character.PersonalityTip}" IsEnabled="{Binding Game.IsPC}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Personality}" Upper="100" Tip="{Binding Game.Character.PersonalityTip}" />
 
                     <Label>
-                        <TextBlock Text="Exhibitionism" IsEnabled="{Binding Game.IsPC}" />
+                        <TextBlock Text="Exhibitionism" />
                     </Label>
-                    <common:MyNumericBox    Value="{Binding Game.Character.Exhibitionism}" Upper="100" IsEnabled="{Binding Game.IsPC}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.Exhibitionism}" Upper="100" />
 
                     <Label>
-                        <TextBlock Text="Alcohol Tolerance" IsEnabled="{Binding Game.IsPC}" />
+                        <TextBlock Text="Alcohol Tolerance" />
                     </Label>
-                    <common:MyNumericBox    Value="{Binding Game.Character.AlcoholTolerance}" Lower="0" Upper="100" IsEnabled="{Binding Game.IsPC}" />
+                    <common:MyNumericBox    Value="{Binding Game.Character.AlcoholTolerance}" Lower="0" Upper="100" />
                 </common:AutoGrid>
                 <common:AutoGrid Columns="3">
                     <Label>
