@@ -19,6 +19,8 @@ namespace TiTsEd.ViewModel
         private ItemContainerVM _upperUndergarmentContainer;
         private ItemContainerVM _lowerUndergarmentContainer;
         private ItemContainerVM _tentContainer;
+        private ItemContainerVM _combatImplantContainer;
+        private ItemContainerVM _utilityImplantContainer;
         private string _characterName;
 
         public enum CharacterClasses
@@ -28,9 +30,10 @@ namespace TiTsEd.ViewModel
           , Engineer    = 2
         }
 
-        public CharacterVM(GameVM game, AmfObject obj)
+        public CharacterVM(GameVM game, AmfObject obj, string characterName)
             : base(game, obj)
         {
+            CharacterName = characterName;
 
             // body parts
             Breasts = new BreastArrayVM(this, GetObj("breastRows"));
@@ -69,6 +72,8 @@ namespace TiTsEd.ViewModel
             List<String> upperGarmentTypes = new List<String>();
             List<String> lowerGarmentTypes = new List<String>();
             List<String> tentTypes = new List<String>();
+            List<String> cyberneticsTypes = new List<String>();
+
             foreach (XmlItemGroup type in XmlData.Current.ItemGroups)
             {
                 types.Add(type.Name);
@@ -98,6 +103,9 @@ namespace TiTsEd.ViewModel
                         break;
                     case "Tents":
                         tentTypes.Add(type.Name);
+                        break;
+                    case "Cybernetics":
+                        cyberneticsTypes.Add(type.Name);
                         break;
                 }
             }
@@ -132,9 +140,23 @@ namespace TiTsEd.ViewModel
             _lowerUndergarmentContainer = new ItemContainerVM(this, "Undergarment (Lower)", lowerGarmentTypes);
             _lowerUndergarmentContainer.Add(_lowerUndergarmentObj);
 
-            var _tentObj = GetObj("tent") ?? NewEmptyItem();
-            _tentContainer = new ItemContainerVM(this, "Tent", tentTypes);
-            _tentContainer.Add(_tentObj);
+            AmfObject _tentObj = null;
+            AmfObject _combatImplantObj = null;
+            AmfObject _utilityImplantObj = null;
+            if (IsPC)
+            {
+                _tentObj = GetObj("tent") ?? NewEmptyItem();
+                _tentContainer = new ItemContainerVM(this, "Tent", tentTypes);
+                _tentContainer.Add(_tentObj);
+
+                _combatImplantObj = GetObj("combatImplant") ?? NewEmptyItem();
+                _combatImplantContainer = new ItemContainerVM(this, "Combat Implant", cyberneticsTypes);
+                _combatImplantContainer.Add(_combatImplantObj);
+
+                _utilityImplantObj = GetObj("utilityImplant") ?? NewEmptyItem();
+                _utilityImplantContainer = new ItemContainerVM(this, "Utility Implant", cyberneticsTypes);
+                _utilityImplantContainer.Add(_utilityImplantObj);
+            }
 
             _inventory = new ItemContainerVM(this, "Inventory", types);
             AmfObject inv = GetObj("inventory") ?? new AmfObject(AmfTypes.Array);
@@ -155,7 +177,13 @@ namespace TiTsEd.ViewModel
             containers.Add(_accessoryContainer);
             containers.Add(_upperUndergarmentContainer);
             containers.Add(_lowerUndergarmentContainer);
-            containers.Add(_tentContainer);
+
+            if (IsPC)
+            {
+                containers.Add(_tentContainer);
+                containers.Add(_combatImplantContainer);
+                containers.Add(_utilityImplantContainer);
+            }
 
             GameVM.ImportUnknownItems(containers, types);
 
@@ -166,6 +194,14 @@ namespace TiTsEd.ViewModel
             UpdateContainer(_accessoryContainer, _accessoryObj);
             UpdateContainer(_upperUndergarmentContainer, _upperUndergarmentObj);
             UpdateContainer(_lowerUndergarmentContainer, _lowerUndergarmentObj);
+
+            if (IsPC)
+            {
+                UpdateContainer(_tentContainer, _tentObj);
+                UpdateContainer(_combatImplantContainer, _combatImplantObj);
+                UpdateContainer(_utilityImplantContainer, _utilityImplantObj);
+            }
+
             UpdateInventory();
 
             // Complete slots creation
@@ -324,6 +360,14 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public bool IsPC
+        {
+            get
+            {
+                return (CharacterName == "PC");
+            }
+        }
+
 
         #region GeneralPage
 
@@ -334,7 +378,7 @@ namespace TiTsEd.ViewModel
             {
                 SetValue("short", value);
                 //SetValue("uniqueName", value);
-                if (Game.IsPC)
+                if (IsPC)
                 {
                     Game.SetValue("saveName", value);
                 }
@@ -649,7 +693,7 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                if (Game.IsPC)
+                if (IsPC)
                 {
                     return GetInt("unspentStatPoints");
                 }
@@ -657,7 +701,7 @@ namespace TiTsEd.ViewModel
             }
             set
             {
-                if (Game.IsPC)
+                if (IsPC)
                 {
                     SetValue("unspentStatPoints", value);
                 }
@@ -2184,6 +2228,12 @@ namespace TiTsEd.ViewModel
             }
         }
 
+        public int SynthWombSetting
+        {
+            get { return GetInt("synthWombSetting"); }
+            set { SetValue("synthWombSetting", value); }
+        }
+
         #endregion
 
         #region ItemPage
@@ -2264,7 +2314,8 @@ namespace TiTsEd.ViewModel
             }
         }
 
-        public void UpdateInventory() {
+        public void UpdateInventory()
+        {
             UpdateContainer(_inventory, GetObj("inventory"), MaxInventoryItems);
         }
 

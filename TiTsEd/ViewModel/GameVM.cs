@@ -17,8 +17,7 @@ namespace TiTsEd.ViewModel
     public sealed partial class GameVM : ObjectVM
     {
         private GeneralObjectVM _flags;
-        private string _characterName;
-        private bool _IsPC = true;
+        private string _characterName = "PC";
         private string[] _characters;
         public readonly List<PerkVM> AllPerks = new List<PerkVM>();
         public readonly List<KeyItemVM> AllKeyItems = new List<KeyItemVM>();
@@ -31,7 +30,7 @@ namespace TiTsEd.ViewModel
             : base(file)
         {
             SetCharacterOptions();
-            setCharacter("PC");
+            CharacterSelection = "PC";
 
             var shittyShips = GetObj("shittyShips") ?? new AmfObject(AmfTypes.Array);
             Ships = new ShipArrayVM(this, shittyShips);
@@ -202,7 +201,7 @@ namespace TiTsEd.ViewModel
 
         public void CopyCharacterToPC()
         {
-            CopyCharacter(_characterName, "PC");
+            CopyCharacter(CharacterSelection, "PC");
         }
 
         //for later
@@ -234,23 +233,17 @@ namespace TiTsEd.ViewModel
         {
             Character = GetCharacter(name);
             _characterName = name;
-            if (name == "PC")
-            {
-                IsPC = true;
-            }
-            else
-            {
-                IsPC = false;
-            }
-
+            OnPropertyChanged("CharacterSelection");
             Character.UpdateAll( _characterName );
+            OnPropertyChanged("IsPC");
+            OnPropertyChanged("Character");
         }
 
         public CharacterVM GetCharacter(string name)
         {
             var tmpChar = GetObj("characters");
             tmpChar = tmpChar.GetObj(name);
-            var tcChar = new CharacterVM(this, tmpChar);
+            var tcChar = new CharacterVM(this, tmpChar, name);
             return tcChar;
         }
 
@@ -351,7 +344,7 @@ namespace TiTsEd.ViewModel
 
         public new string Name
         {
-            get { return Character.Name; }
+            get { return ( null != Character ) ? Character.Name : null; }
             set
             {
                 var oldName = Name + " Steele";
@@ -405,14 +398,12 @@ namespace TiTsEd.ViewModel
 
         public bool IsPC
         {
-            get { return _IsPC; }
-            private set { _IsPC = value; }
+            get
+            {
+                return (Name == "PC");
+            }
         }
 
-        public bool IsNotPC
-        {
-            get { return !IsPC; }
-        }
 
         public int PCUpbringing
         {

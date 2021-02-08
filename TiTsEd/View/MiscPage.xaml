@@ -88,6 +88,10 @@
 
             <StackPanel Style="{StaticResource ContentStackPanel}">
                 <TextBlock Text="*** Experimental ***" Foreground="Red" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Width="Auto" />
+                <common:AutoGrid>
+                    <TextBlock Text="Synth Womb" IsEnabled="{Binding Game.Character.IsPC}" />
+                    <common:MyNumericBox Value="{Binding Game.Character.SynthWombSetting}" IsEnabled="{Binding Game.Character.IsPC}" />
+                </common:AutoGrid>
                 <common:ArrayEditor x:Name="WombsArray"
                                     Header="Wombs"
                                     Items="{Binding Game.Character.PregnancyData}"
