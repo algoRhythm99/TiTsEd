@@ -400,7 +400,15 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                return (Name == "PC");
+                return "PC".Equals(CharacterSelection);
+            }
+        }
+
+        public bool IsNotPC
+        {
+            get
+            {
+                return !"PC".Equals(CharacterSelection);
             }
         }
 
