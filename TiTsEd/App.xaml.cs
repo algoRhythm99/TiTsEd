@@ -37,6 +37,9 @@ namespace TiTsEd
             {
                 Logger.Log("OnStartup", true);
 
+                // raw.githubusercontent.com requires tls 1.2 or better
+                System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
                 foreach (string s in e.Args)
                 {
                     switch (s)

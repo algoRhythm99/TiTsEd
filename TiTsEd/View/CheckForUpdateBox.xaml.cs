@@ -165,7 +165,7 @@ namespace TiTsEd.View
             }
             catch (Exception ex)
             {
-                Logger.Debug(ex.Message);
+                Logger.Debug(String.Format("CheckForUpdate: Failed: {0}", ex.Message));
                 return UpdateCheckResult.Unknown;
             }
             finally
