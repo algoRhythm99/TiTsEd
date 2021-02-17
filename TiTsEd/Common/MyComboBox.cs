@@ -77,17 +77,17 @@ namespace TiTsEd.Common
 
             if (SelectedValue is string)
             {
-                var value = (string)SelectedValue;
+                var value = (string) SelectedValue;
                 if (InternalItems.Cast<XmlItem>().Any(x => x.ID == value)) return;
 
                 InternalItems.Add(new XmlItem { ID = value, Name = value });
             }
             else
             {
-                var value = (int)SelectedValue;
+                var value = (int) SelectedValue;
                 if (InternalItems.Cast<XmlEnum>().Any(x => x.ID == value)) return;
 
-                InternalItems.Add(new XmlEnum { ID = value, Name = "[ID#: " + value + "] <unknown>" });
+                InternalItems.Add(new XmlEnum { ID = value, Name = String.Format("[ID#: {0}] <unknown>", value ) });
             }
         }
     }

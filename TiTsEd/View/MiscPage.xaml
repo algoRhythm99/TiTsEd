@@ -28,10 +28,11 @@
 
                 <common:AutoGrid>
                     <Label>
-                        <TextBlock Text="Upbringing" />
+                        <TextBlock Text="PC Upbringing" />
                     </Label>
                     <common:MyComboBox ItemsSource="{Binding Data.General.Upbringings}"
-                                       SelectedValue="{Binding Game.PCUpbringing}" />
+                                       SelectedValue="{Binding Game.PCUpbringing}"
+                                       IsEnabled="{Binding Game.IsPC}" />
 
                     <Label>
                         <TextBlock Text="Affinity" />

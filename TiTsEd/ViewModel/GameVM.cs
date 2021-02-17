@@ -417,11 +417,7 @@ namespace TiTsEd.ViewModel
         {
             get
             {
-                if (IsPC && _flags.HasValue("PC_UPBRINGING") )
-                {
-                    return _flags.GetInt("PC_UPBRINGING");
-                }
-                return 0;
+                return _flags.GetInt("PC_UPBRINGING");
             }
             set
             {

@@ -7,9 +7,7 @@
 			<Upbringing ID="2" Name="Bookworm" />
 			<Upbringing ID="3" Name="Austere" />
 			<Upbringing ID="4" Name="Balanced" />
-<!--
-			<Upbringing ID="5" Name="Slutty" />
--->
+			<Upbringing ID="5" Name="Slutty (Removed)" />
 		</Upbringings>
 		<OriginalRaces>
 			<OriginalRace>half-ausar</OriginalRace>
