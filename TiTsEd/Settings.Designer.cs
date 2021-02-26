@@ -37,18 +37,6 @@ namespace TiTsEd {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1024,768")]
-        public global::System.Windows.Size Size {
-            get {
-                return ((global::System.Windows.Size)(this["Size"]));
-            }
-            set {
-                this["Size"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0,0")]
         public global::System.Windows.Point Location {
             get {
@@ -56,6 +44,18 @@ namespace TiTsEd {
             }
             set {
                 this["Location"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1024,768")]
+        public global::System.Windows.Size Size {
+            get {
+                return ((global::System.Windows.Size)(this["Size"]));
+            }
+            set {
+                this["Size"] = value;
             }
         }
     }

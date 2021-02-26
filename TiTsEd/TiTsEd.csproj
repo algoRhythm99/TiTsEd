@@ -1,290 +1,50 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83EF4E21-C7BB-4ED4-91BB-100DED08F950}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TiTsEd</RootNamespace>
-    <AssemblyName>TiTsEd</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>net45</TargetFramework>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AssemblyTitle>TiTsEd</AssemblyTitle>
+    <Product>TiTsEd</Product>
+    <Description>Save Editor for Trials in Tainted Space</Description>
+    <Copyright>Copyright © 2017</Copyright>
+    <AssemblyVersion>0.34.1.0</AssemblyVersion>
+    <FileVersion>0.34.1.0</FileVersion>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>TiTsEd.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>TiTsEd.ico</ApplicationIcon>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-  <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="Common\ActionScriptHelpers.cs" />
-    <Compile Include="Common\ArrayEditor.cs" />
-    <Compile Include="Common\AutoGrid.cs" />
-    <Compile Include="Common\BoolEventArgs.cs" />
-    <Compile Include="Common\Globals.cs" />
-    <Compile Include="Common\NamedVector4Control.cs" />
-    <Compile Include="Common\NaturalSortComparer.cs" />
-    <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Common\UIHelpers.cs" />
-    <Compile Include="Common\UriConverter.cs" />
-    <Compile Include="Common\VersionInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Update="Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AmfObjectVM.cs" />
-    <Compile Include="ViewModel\BindableBase.cs" />
-    <Compile Include="Common\ItemPanel.cs" />
-    <Compile Include="Common\Logger.cs" />
-    <Compile Include="Common\MyComboBox.cs" />
-    <Compile Include="Common\MyPiercingBox.cs" />
-    <Compile Include="Common\SearchBox.cs" />
-    <Compile Include="ViewModel\BreastsVM.cs" />
-    <Compile Include="ViewModel\CharacterVM.cs" />
-    <Compile Include="ViewModel\CockVM.cs" />
-    <Compile Include="ViewModel\CodexManagerVM.cs" />
-    <Compile Include="ViewModel\CreatureVM.cs" />
-    <Compile Include="ViewModel\PregnancyVM.cs" />
-    <Compile Include="ViewModel\FlagVM.cs" />
-    <Compile Include="ViewModel\ItemVM.cs" />
-    <Compile Include="ViewModel\KeyItemVM.cs" />
-    <Compile Include="ViewModel\ShipVM.cs" />
-    <Compile Include="ViewModel\StorageClassVM.cs" />
-    <Compile Include="ViewModel\PerkVM.cs" />
-    <Compile Include="ViewModel\StatusEffectVM.cs" />
-    <Compile Include="ViewModel\VaginaVM.cs" />
-    <Compile Include="ViewModel\FilesVM.cs" />
-    <Compile Include="Common\UpdatableCollection.cs" />
-    <Compile Include="Common\UpdatableCollectionHelper.cs" />
-    <Compile Include="Common\MyNumericBox.cs" />
-    <Compile Include="Common\_ext.cs" />
-    <Compile Include="Model\AmfFile.cs" />
-    <Compile Include="Model\AmfObject.cs" />
-    <Compile Include="Model\AmfReader.cs" />
-    <Compile Include="Model\AmfWriter.cs" />
-    <Compile Include="Model\ComparisonStream.cs" />
-    <Compile Include="Model\FileManager.cs" />
-    <Compile Include="Model\XmlData.cs" />
-    <Compile Include="ViewModel\GameVM.Core.cs" />
-    <Compile Include="ViewModel\GameVM.cs" />
-    <Compile Include="ViewModel\VM.cs" />
-    <Compile Include="View\CheckForUpdateBox.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>CheckForUpdateBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\CodexPage.xaml.cs">
-      <DependentUpon>CodexPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ConfirmationBox.xaml.cs">
-      <DependentUpon>ConfirmationBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\BodyPage.xaml.cs">
-      <DependentUpon>BodyPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ShipsPage.xaml.cs">
-      <DependentUpon>ShipsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\GenitalPage.xaml.cs">
-      <DependentUpon>GenitalPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\HeadPage.xaml.cs">
-      <DependentUpon>HeadPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ExceptionBox.xaml.cs">
-      <DependentUpon>ExceptionBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FlagBox.xaml.cs">
-      <DependentUpon>FlagBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\GeneralPage.xaml.cs">
-      <DependentUpon>GeneralPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ItemsPage.xaml.cs">
-      <DependentUpon>ItemsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\KeyItemsPage.xaml.cs">
-      <DependentUpon>KeyItemsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MiscPage.xaml.cs">
-      <DependentUpon>MiscPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PerkPage.xaml.cs">
-      <DependentUpon>PerkPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FlagsPage.xaml.cs">
-      <DependentUpon>FlagsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RawStateViewPage.xaml.cs">
-      <DependentUpon>RawStateViewPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\StatusEffectsPage.xaml.cs">
-      <DependentUpon>StatusEffectsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TopBar.xaml.cs">
-      <DependentUpon>TopBar.xaml</DependentUpon>
-    </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Themes\PageInclude.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Scrollbars.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Assets.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Templates.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\CheckForUpdateBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\CodexPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ConfirmationBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\BodyPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ShipsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\GenitalPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\HeadPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ExceptionBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FlagBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\GeneralPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ItemsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\KeyItemsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MiscPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PerkPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\FlagsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RawStateViewPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\StatusEffectsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\TopBar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <AppDesigner Include="Properties\" />
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\cross.png" />
@@ -299,27 +59,11 @@
     <None Include="TiTsEd.Data.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="app.config" />
-    <None Include="Settings.settings">
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>-->
-  <Target Name="AfterBuild" DependsOnTargets="AssignTargetPaths;Compile;ResolveKeySource" Inputs="$(MSBuildAllProjects);@(IntermediateAssembly)" Outputs="$(OutputPath)$(_SGenDllName)">
-    <Delete Files="$(TargetDir)$(TargetName).XmlSerializers.dll" ContinueOnError="true" />
-    <SGen Types="TiTsEd.Model.XmlData" BuildAssemblyName="$(TargetFileName)" BuildAssemblyPath="$(OutputPath)" References="@(ReferencePath)" ShouldGenerateSerializer="true" UseProxyTypes="false" KeyContainer="$(KeyContainerName)" KeyFile="$(KeyOriginatorFile)" DelaySign="$(DelaySign)" ToolPath="$(TargetFrameworkSDKToolsDirectory)" Platform="$(Platform)">
-      <Output TaskParameter="SerializationAssembly" ItemName="SerializationAssembly" />
-    </SGen>
-  </Target>
 </Project>
