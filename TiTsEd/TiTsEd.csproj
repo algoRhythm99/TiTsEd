@@ -289,17 +289,16 @@
   <ItemGroup>
     <Resource Include="Assets\cross.png" />
     <Resource Include="Assets\search.png" />
-    <Resource Include="TiTsEd.ico" />
     <Resource Include="Assets\plus.png" />
-    <Content Include="TiTsEd.license.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TiTsEd.Data.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
+    <Resource Include="TiTsEd.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\LICENSE" Link="LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TiTsEd.Data.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="app.config" />
     <None Include="Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -313,7 +312,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>-->
