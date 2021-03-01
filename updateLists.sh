@@ -34,7 +34,8 @@ if [ 1 == 1 ]; then
         sortedFile="${newFolder}/${propName}s.sorted.txt"
         regex='('${propName}'.*GLOBAL.FLAG.*)'
         echo regex="$regex"
-        find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
+        echo >$rawFile
+        find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
         cat $rawFile | sort -u >$newFile
         regex="s/.*\((GLOBAL.FLAG[[:alnum:]_]+)\).*/\1/"
         echo regex="$regex"
@@ -72,7 +73,8 @@ if [ 1 == 1 ]; then
         sortedFile="${newFolder}/${propName}s.sorted.txt"
         regex='('${propName}'.*GLOBAL.TYPE.*)'
         echo regex="$regex"
-        find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
+        echo >$rawFile
+        find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
         cat $rawFile | sort -u >$newFile
         regex="s/.*(GLOBAL.TYPE[[:alnum:]_]+).*/\1/"
         echo regex="$regex"
@@ -105,8 +107,9 @@ if [ 1 == 1 ]; then
         sortedFile="${newFolder}/${propName}s.sorted.txt"
         regex=${propName}".*"
         echo regex="$regex"
-        find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
-        cat $newFile | sort -u >$rawFile
+        echo >$rawFile
+        find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
+        cat $rawFile | sort -u >$newFile
         regex="s/.*[=!][[:space:]]*(.*)[;]/\1/"
         echo regex="$regex"
         sed -i -r -e "$regex" $newFile
@@ -127,7 +130,8 @@ if [ 0 == 1 ]; then
     sortedFile="${newFolder}/${propName}s.sorted.txt"
     regex='\.'${propName}'.*'
     echo regex="$regex"
-    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
+    echo >$rawFile
+    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
     cat $rawFile | sort -u >$newFile
     regex="/.*"${propName}"[[:space:]]*[=!]+.*/!d"
     echo regex="$regex"
@@ -151,7 +155,8 @@ if [ 1 == 1 ]; then
     sortedFile="${newFolder}/${propName}s.sorted.txt"
     regex='\.'${propName}'.*'
     echo regex="$regex"
-    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
+    echo >$rawFile
+    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
     cat $rawFile | sort -u >$newFile
     regex="/.*"${propName}"[[:space:]]*[=!]+.*/!d"
     echo regex="$regex"
@@ -175,7 +180,8 @@ if [ 1 == 1 ]; then
     sortedFile="$newFolder/${propName}s.sorted.csv"
     regex='.*\.(create|has)KeyItem\((["[:alnum:] ,_-]+)\).*'
     echo regex="$regex"
-    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
+    echo >$rawFile
+    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
     cat $rawFile | sort -u >$newFile
     sed -i -r -e "s/$regex/\2/" $newFile
     regex='[,][[:space:]]*["]["]$'
@@ -209,7 +215,8 @@ if [ 1 == 1 ]; then
     sortedFile="$newFolder/${propName}s.sorted.csv"
     regex='.*\.(create|has)Perk\((["[:alnum:] ,_-]+)\).*'
     echo regex="$regex"
-    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
+    echo >$rawFile
+    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
     cat $rawFile | sort -u >$newFile
     sed -i -r -e "s/$regex/\2/" $newFile
     regex='[,][[:space:]]*["]["]$'
@@ -240,7 +247,8 @@ if [ 1 == 1 ]; then
     sortedFile="$newFolder/${propName}s.sorted.csv"
     regex='.*\.(create|has)StatusEffect\((["[:alnum:] ,_-]+)\).*'
     echo regex="$regex"
-    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
+    echo >$rawFile
+    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
     cat $rawFile | sort -u >$newFile
     sed -i -r -e "s/$regex/\2/" $newFile
     regex='[,][[:space:]]*["]["]$'
@@ -270,7 +278,8 @@ if [ 1 == 1 ]; then
     sortedFile="${newFolder}/${propName}s.sorted.txt"
     regex='.*flags\[(["][[:alnum:] ,_-]+["])\].*'
     echo regex="$regex"
-    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >$rawFile
+    echo >$rawFile
+    find $SourceFolder -name "*.as" -exec grep -Poe "$regex" {} \; >>$rawFile
     cat $rawFile | sort -u >$newFile
     sed -i -r -e "s/$regex/\1/" $newFile
     regex='["]'

@@ -1515,12 +1515,14 @@
 			<PregnancyType>EggTrainerCarryTraining</PregnancyType>
 			<PregnancyType>EggTrainerFauxPreg</PregnancyType>
 			<PregnancyType>FrostwyrmPregnancy</PregnancyType>
+			<PregnancyType>GryvainPregnancy</PregnancyType>
 			<PregnancyType>IlariaPregnancy</PregnancyType>
+			<PregnancyType>KaithritPregnancy</PregnancyType>
 			<PregnancyType>KorgonnePregnancy</PregnancyType>
-			<PregnancyType>LDCShockHopperPregnancy</PregnancyType>
 			<PregnancyType>LahPregnancy</PregnancyType>
 			<PregnancyType>LapinaraPregnancy</PregnancyType>
 			<PregnancyType>LaquinePregnancy</PregnancyType>
+			<PregnancyType>LDCShockHopperPregnancy</PregnancyType>
 			<PregnancyType>MilodanPregnancy</PregnancyType>
 			<PregnancyType>MirrinPregnancy</PregnancyType>
 			<PregnancyType>NaleenPregnancy</PregnancyType>
@@ -1741,6 +1743,9 @@
 			<Item Stack="1" Name="T.Armor" ID="classes.Items.Apparel::TrashArmor" />
 			<Item Stack="1" Name="TST Armor" ID="classes.Items.Apparel::TSTArmor" Comment="Debug Item" Tooltip="Debug Item" />
 			<Item Stack="1" Name="TST Armor II" ID="classes.Items.Apparel::TSTArmorMkII" LongName="TS-T armor plating mark II" Comment="Debug Item" Tooltip="Debug Item" />
+			<Item Stack="1" Name="VS Sweatr" ID="classes.Items.Apparel::VirginSlayerSweater">
+				<ItemField Name="fortification" Type="int" Value="-1" />
+			</Item>
 			<Item Stack="1" Name="ZS Gown" ID="classes.Items.Apparel::ZaikaStyleGown" />
 			<Item Stack="1" Name="A. ST. Suit"    ID="classes.Items.Armor::ArmorSteeleSuit">
 				<ItemField Name="shields" Type="int" Value="20" />
@@ -1903,6 +1908,7 @@
 			<Item Stack="1" Name="ZP Thong" ID="classes.Items.Apparel::GlossyZebraPrintThong" />
 			<Item Stack="1" Name="HL Jock" ID="classes.Items.Apparel::HardlightAGJock" />
 			<Item Stack="1" Name="HL Thong" ID="classes.Items.Apparel::HardlightAGThong" />
+			<Item Stack="1" Name="HL Thong" ID="classes.Items.Apparel::HLThong" />
 			<Item Stack="1" Name="HorseBxs" ID="classes.Items.Apparel::HorseshoeBoxers" />
 			<Item Stack="1" Name="I.Briefs" ID="classes.Items.Apparel::InsulatingBriefs" />
 			<Item Stack="1" Name="L.E.Panties" ID="classes.Items.Apparel::LatexEggPanties" />
@@ -2217,6 +2223,8 @@
 			<Item Stack="1" Name="Postr:Kally"  ID="classes.Items.Decorations::KallyPoster" LongName="kally poster" />
 			<Item Stack="1" Name="Poster:MF"  ID="classes.Items.Decorations::MindfuckPoster" LongName="mindfuck poster" />
 			<Item Stack="1" Name="Poster:Ob"  ID="classes.Items.Decorations::ObediencePoster" LongName="obedience poster" />
+			<Item Stack="1" Name="Postr:Sqrrl"  ID="classes.Items.Decorations::SquirrelGirlPoster" />
+			<Item Stack="1" Name="Postr:StTech" ID="classes.Items.Decorations::SteeleTechPoster" />
 		</ItemGroup>
 		<ItemGroup Name="Toys">
 			<Item Stack="1" Name="B.Buddy"  ID="classes.Items.Toys::BubbleBuddy" />
@@ -2236,6 +2244,7 @@
 			<Item Stack="1" Name="CatDildo"     ID="classes.Items.Toys::DildoFeline" />
 			<Item Stack="1" Name="K.TerranD."   ID="classes.Items.Toys::DildoKnottyTerran" />
 			<Item Stack="1" Name="KingMino"     ID="classes.Items.Toys::DildoMinotaurKing" />
+			<Item Stack="1" Name="PupKit"       ID="classes.Items.Toys::DildoPuppyKitten" />
 			<Item Stack="1" Name="SavDildo"     ID="classes.Items.Toys::DildoSavicite" />
 			<Item Stack="1" Name="KT Dildo"     ID="classes.Items.Toys::DildoTaintedKuiTanTool" />
 			<Item Stack="1" Name="TerranDil"    ID="classes.Items.Toys::DildoTerran" />
@@ -2652,6 +2661,7 @@
 			<KeyItem Name="Parasite Cure" Description="A vial containing a potential cure for the parasite afflicting the crew of the Kashima." />
 			<KeyItem Name="Parasite Sample" Description="A small security hardcase containing a medical sample." />
 			<KeyItem Name="Pirate Datapad" />
+			<KeyItem Name="Plasma Conduit" />
 			<KeyItem Name="Red Myr Blood" Description="A vial of blood sampled from a red myr." />
 			<KeyItem Name="RK Lah - Captured" />
 			<KeyItem Name="Satellite Hard Drive" />
@@ -2713,6 +2723,7 @@
 			<KeyItem Name="Video - Zil Nigh the Science Bi 2" />
 		</KeyItemGroup>
 		<KeyItemGroup Name="Miscellaneous">
+			<KeyItem Name="a coil housing" />
 			<KeyItem Name="Arbetz Travel Agency Membership" />
 			<KeyItem Name="Beach ‘n Surf Lifetime Pass" />
 			<KeyItem Name="Bulky Data-Core" Label1="Actual Price" Value1="2000" />
@@ -2739,6 +2750,7 @@
 			<KeyItem Name="Ten Ton Gym Membership" />
 			<KeyItem Name="Vi's Vagina" />
 			<KeyItem Name="Water Princess Note" Description="This receipt by a child-recovery drone was doodled all over by the tiny water princesses you gave birth to. They've scrawled several affectionate drawings all over it, and written thank-yous for taking care of them. Looking at it gives you a warm, fuzzy feeling..." />
+			<KeyItem Name="Williams-Miles condensate" />
 			<KeyItem Name="VR Program: Dhaal Cyberdoll End" />
 		</KeyItemGroup>
 	</KeyItems>
@@ -3715,6 +3727,7 @@
 		<Flag Name="BULLZIL_BUTTGINITY_TAKEN" />
 		<Flag Name="BULLZIL_ENCOUNTERS" />
 		<Flag Name="BULLZIL_EZFIT" />
+		<Flag Name="BUNI_POSTER_HUNG" />
 		<Flag Name="BURT_COLLECTABLE_SHOP" />
 		<Flag Name="BURT_DRINKS_BOUGHT" />
 		<Flag Name="BURT_MEAD_HALL_DISCUSSIONS" />
@@ -4393,6 +4406,17 @@
 		<Flag Name="FIREPUP_SEXED_ROUGH" />
 		<Flag Name="FIREPUP_TOLD_HOUND" />
 		<Flag Name="FIREPUP_VICTORIES" />
+		<Flag Name="FIRST14_AIRLOCK_BYPASS" />
+		<Flag Name="FIRST14_COMM_REPAIR" />
+		<Flag Name="FIRST14_DILDO" />
+		<Flag Name="FIRST14_GRAVITY" />
+		<Flag Name="FIRST14_GRAVPUZZ_FAILED_COMM_DISABLED" />
+		<Flag Name="FIRST14_HANGAR_SEARCH_ENABLED" />
+		<Flag Name="FIRST14_HLTENT_TUT" />
+		<Flag Name="FIRST14_POSTER_TAKEN" />
+		<Flag Name="FIRST14_SQUIRREL_POSTER_TAKEN" />
+		<Flag Name="FIRST14_STEELETECH_CALLED" />
+		<Flag Name="FIRST14_WIND_OUCH" />
 		<Flag Name="FIRST_CAPTURED_ZIL_REPORTED_ON" />
 		<Flag Name="FIRST_GAST_CC" />
 		<Flag Name="FISI_AT_RES_DECK" />
@@ -4697,6 +4721,7 @@
 		<Flag Name="GREEN_TALKED_RACE" />
 		<Flag Name="GREEN_TALKED_ROLE" />
 		<Flag Name="GREEN_TALKED_SELF" />
+		<Flag Name="GRYVAIN_TECHBABES_MET" />
 		<Flag Name="GUARD_BRIBE" />
 		<Flag Name="GWEIMEER_XMAS_2018" />
 		<Flag Name="GYRES_END_TAXI" />
@@ -5669,6 +5694,7 @@
 		<Flag Name="MET_TAIVRA" Description="1 == You've met Taivra" />
 		<Flag Name="MET_TAOTH" />
 		<Flag Name="MET_TERENSHA" Description="1 == You've met Terensha" />
+		<Flag Name="MET_TIKA" />
 		<Flag Name="MET_TIVF" />
 		<Flag Name="MET_TLAKO" Description="1 == You've met Tlako" />
 		<Flag Name="MET_TORRA" Description="meet Torra (and fucked her)" />
@@ -5699,6 +5725,7 @@
 		<Flag Name="MET_YAMMI" Description="1 == You've met Yammi" />
 		<Flag Name="MET_YANCY" Description="1 == You've met Yancy" />
 		<Flag Name="MET_YARASTA" Description="1 == You've met Yarasta" />
+		<Flag Name="MET_YSOLTE" />
 		<Flag Name="MET_ZAIKA_HYDRA" />
 		<Flag Name="MET_ZAIKA_TWINS" />
 		<Flag Name="MET_ZEA" />
@@ -6139,6 +6166,7 @@
 		<Flag Name="PLANTATION_LAH_TALK" />
 		<Flag Name="PLANTATION_QUEST" />
 		<Flag Name="PLANTATION_WORKERS_TALK" />
+		<Flag Name="PLASMA_CONDUIT" />
 		<Flag Name="PLAT190 USED AS NYREA BRIBE" />
 		<Flag Name="PLATINUM_TAKEN" />
 		<Flag Name="PLAYER_MIMBRANE_SPIT_ENABLED" />
@@ -6977,6 +7005,7 @@
 		<Flag Name="STAR_VIPER_HYPERSEXED" />
 		<Flag Name="STAR_VIPER_SAVED" />
 		<Flag Name="STAR_VIPER_SHIPLOSS" />
+		<Flag Name="STEELETECH_POSTER_HUNG" />
 		<Flag Name="STELLAR_TETHER_CLOSED" />
 		<Flag Name="STELLA_ABORTED" />
 		<Flag Name="STELLA_BALLWORSHIPPED" />
@@ -7080,6 +7109,7 @@
 		<Flag Name="SYRIQUEST_SIEGWULFE_NAME" Description="name of the Siegwulfe you gave to Valden" />
 		<Flag Name="SYRIQUEST_STATE" Description="-1 = never accepted the quest&#xD;&#xA;1 = run into Syri at the station&#xD;&#xA;2 = Syri told PC her plan&#xD;&#xA;3 = PC accepted plan&#xD;&#xA;4 = PC entered the base&#xD;&#xA;5 = unlocked elevator lab access&#xD;&#xA;8 = unlocked Warp Lab (either went there with Calnor or invited by Valden)&#xD;&#xA;9 = opened Warp Lab door&#xD;&#xA;10 = Valden has a body&#xD;&#xA;21 = killed Valden (didnt tell Syri)&#xD;&#xA;22 = killed Valden and told Syri&#xD;&#xA;23 = helped Valden (see SYRIQUEST_VALDEN_BODY_CHOICE for more info)" />
 		<Flag Name="SYRIQUEST_SYRI_ONAHOLE" Description="undefined = never found it&#xD;&#xA;1 = found it&#xD;&#xA;2 = gave it to Syri" />
+		<Flag Name="SYRIQUEST_TIMESTAMP" />
 		<Flag Name="SYRIQUEST_VALDEN_BODY_CHOICE" Description="1 = Calnor&#xD;&#xA;2 = Bimbo Wolfe&#xD;&#xA;3 = normal Wolfe" />
 		<Flag Name="SYRI_BETTING_STORAGE" Description="Stores credit bet or 9001 if ass betting" />
 		<Flag Name="SYRI_BIONAHOLE_USES" />
@@ -7246,6 +7276,9 @@
 		<Flag Name="THYVARA_SEX_ROUGH" />
 		<Flag Name="THYVARA_STORY" />
 		<Flag Name="THYVARA_WEAPONS_TALK" />
+		<Flag Name="TIKA_MENTION_DISEASE" />
+		<Flag Name="TIKA_ORAL_WASH" />
+		<Flag Name="TIKA_SUPPOSITORIES" />
 		<Flag Name="TIMES_ATE_DELILAH_OUT" Description="Number of times you've sat on Delilah's face" />
 		<Flag Name="TIMES_BET_YOURSELF_AGAINST_SYRI" Description="Number of times you've put your ass on the line" />
 		<Flag Name="TIMES_BUTTFUCKED_BY_SYRI" Description="Number of times lost AND been buttfucked" />
@@ -7663,6 +7696,10 @@
 		<Flag Name="YOMA_TIMES_TAILFUCKED" />
 		<Flag Name="YOMA_TIMES_TRIBBED" />
 		<Flag Name="YOMA_TIMES_VAGINAL" />
+		<Flag Name="YSOLTE_DEFEATED_TIME" />
+		<Flag Name="YSOLTE_GOT_SHOCKED" />
+		<Flag Name="YSOLTE_SAVED" />
+		<Flag Name="YSOLTE_SEXED" />
 		<Flag Name="ZAALT DISARMED" />
 		<Flag Name="ZAALT FLIRTED" />
 		<Flag Name="ZAALT_DISABLED" />
@@ -7901,8 +7938,10 @@
 			<StatusEffect Name="Eggy Belly" Description="You've got a nice belly full of eggs to enjoy, courtesy of the bright pink Egg Trainer back on your ship." IconName="Icon_DrugPill" />
 			<StatusEffect Name="Frostwyrm Pregnancy Ends" Label1="Womb" Label2="Babies" IsHidden="true" />
 			<StatusEffect Name="Give Sera Priapin" IsHidden="true" />
+			<StatusEffect Name="Gryvain Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Ilaria Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Infertile" Description="You are unable to make any pregnancies happen." IsHidden="true" />
+			<StatusEffect Name="Kaithrit Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Lah Pregnancy Reflex Mod" Value1="5" IsHidden="true" />
 			<StatusEffect Name="Lah Pregnancy Ends" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
 			<StatusEffect Name="Laquine Pregnancy Ends 0" Label1="Babies" Label2="Belly" Label3="Womb" Label4="Gender" IsHidden="true" />
@@ -7951,6 +7990,7 @@
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Cumflation Immune" IsHidden="true" />
 			<StatusEffect Name="Cupid’s Kiss" Description="You’re feeling more affectionate that you otherwise would, no doubt the result of Mitzi’s drug.\n\nTake +30% more tease damage.\n+200% XP\n+300% rare drop chance." Value1="1" IconName="Icon_DrugVial" IconShade="12030916" />
+			<StatusEffect Name="Groped" IsHidden="true" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
 			<StatusEffect Name="Milk Bathed" Description="You’re drenched in breastmilk! Anyone can tell at a glance what sort of activities you’ve been engaging in!" IconName="Icon_Rain_Drops" IconShade="16777215" Value1="1" />
 			<StatusEffect Name="MILO CUM" Value1="10" IsHidden="true" />
@@ -7977,6 +8017,7 @@
 			<StatusEffect Name="Disarmed" Description="You've checked all forms of weaponry at New Texas' customs." Value1="4" IconName="Blocked" IconShade="40" />
 			<StatusEffect Name="EMP Immune" IsHidden="true" />
 			<StatusEffect Name="EMPed" IsHidden="true" />
+			<StatusEffect Name="Envenomed" IsHidden="true" />
 			<StatusEffect Name="Lust Staggered" />
 			<StatusEffect Name="Shields Damaged" />
 			<StatusEffect Name="Stagger Immune" IsHidden="true" />
