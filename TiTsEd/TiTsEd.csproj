@@ -7,8 +7,8 @@
     <Product>TiTsEd</Product>
     <Description>Save Editor for Trials in Tainted Space</Description>
     <Copyright>Copyright © 2017</Copyright>
-    <AssemblyVersion>0.34.2.0</AssemblyVersion>
-    <FileVersion>0.34.2.0</FileVersion>
+    <AssemblyVersion>0.34.3.0</AssemblyVersion>
+    <FileVersion>0.34.3.0</FileVersion>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -19,7 +19,7 @@
     <ApplicationIcon>TiTsEd.ico</ApplicationIcon>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <RepositoryUrl>https://github.com/algoRhythm99/TiTsEd</RepositoryUrl>
-    <Version>0.34.2</Version>
+    <Version>0.34.3</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
