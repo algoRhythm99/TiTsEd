@@ -26,7 +26,7 @@ To edit the program itself, you need a copy of [Visual Studio 2019 or later](htt
 
 ## CoCEd Contributors ##
 
-This save editor is based mostly off from [CoCEd](https://github.com/tmedwards/CoCEd "https://github.com/tmedwards/CoCEd") and uses much it's code.
+This save editor is based mostly on [CoCEd](https://github.com/tmedwards/CoCEd "https://github.com/tmedwards/CoCEd") and uses much of its code.
 
 * Perdev2 (original creator)
 * TheMadExile/tmedwards (current maintainer)
