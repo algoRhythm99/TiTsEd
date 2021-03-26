@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Security;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace TiTsEd.Model {
+namespace TiTsEd.Model
+{
     public sealed class XmlData {
         // Kind of hacky I suppose, but for something this simple it beats creating a discriminated union
         // or juggling a filename list/enum pair

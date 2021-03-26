@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace TiTsEd.Common
+﻿namespace TiTsEd.Common
 {
     public struct AS3_Math
     {

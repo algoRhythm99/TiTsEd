@@ -7,8 +7,10 @@ using System.Windows;
 using TiTsEd.Common;
 using TiTsEd.Model;
 
-namespace TiTsEd.ViewModel {
-    public abstract class StorageClassVM : BindableBase {
+namespace TiTsEd.ViewModel
+{
+    public abstract class StorageClassVM : BindableBase
+    {
         protected readonly CreatureVM Creature;
         protected readonly AmfObject _items;
         protected readonly XmlStorageClass _xml;
@@ -21,30 +23,38 @@ namespace TiTsEd.ViewModel {
             _items = items;
         }
 
-        public HashSet<string> GameVMProperties {
+        public HashSet<string> GameVMProperties
+        {
             get { return _gameProperties; }
         }
 
-        public virtual AmfObject GetItems() {
+        public virtual AmfObject GetItems()
+        {
             return _items;
         }
 
-        public virtual AmfObject GetObject() {
+        public virtual AmfObject GetObject()
+        {
             return GetItems().Select(x => x.ValueAsObject).FirstOrDefault(x => IsObject(x));
         }
 
-        public virtual bool IsOwned {
+        public virtual bool IsOwned
+        {
             get { return GetObject() != null; }
-            set {
+            set
+            {
                 var items = GetItems();
                 var pair = items.FirstOrDefault(x => IsObject(x.ValueAsObject));
                 if ((pair != null) == value) return;
 
-                if (value) {
+                if (value)
+                {
                     var obj = new AmfObject(AmfTypes.Object);
                     InitializeObject(obj);
                     items.Push(obj);
-                } else {
+                }
+                else
+                {
                     items.Pop((int)pair.Key);
                 }
 
@@ -78,39 +88,47 @@ namespace TiTsEd.ViewModel {
         protected virtual void OnIsOwnedChanged() {
         }
 
-        public string Tooltip {
-            get {
+        public string Tooltip
+        {
+            get
+            {
                 return expandVars(_xml.Tooltip);
             }
         }
 
-        public string Comment {
-            get {
+        public string Comment
+        {
+            get
+            {
                 return expandVars(_xml.Comment);
             }
         }
 
-        public Visibility CommentVisibility {
+        public Visibility CommentVisibility
+        {
             get { return String.IsNullOrEmpty(Comment) ? Visibility.Collapsed : (Subtitle != Comment) ? Visibility.Visible : Visibility.Collapsed; }
         }
 
-        public string Subtitle {
-            get {
-                return !String.IsNullOrEmpty(Description) ? Description : Comment;
-            }
+        public string Subtitle
+        {
+            get {  return !String.IsNullOrEmpty(Description) ? Description : Comment; }
         }
 
-        public Visibility SubtitleVisibility {
+        public Visibility SubtitleVisibility
+        {
             get { return String.IsNullOrEmpty(Subtitle) ? Visibility.Collapsed : Visibility.Visible; }
         }
 
-        public new string Name {
+        public new string Name
+        {
             get { return _xml.Name; }
             set { SetValue("storageName", value); }
         }
 
-        public string Description {
-            get {
+        public string Description
+        {
+            get
+            {
                 var tooltip = String.IsNullOrEmpty(GetString("tooltip")) ? null : GetString("tooltip");
                 var source = tooltip ?? _xml.Description;
                 return expandVars(source);
@@ -120,10 +138,7 @@ namespace TiTsEd.ViewModel {
 
         public string DescriptionLabel
         {
-            get
-            {
-                return _xml.DescriptionLabel;
-            }
+            get { return _xml.DescriptionLabel; }
         }
 
         public Visibility DescriptionLabelVisibility
@@ -132,27 +147,32 @@ namespace TiTsEd.ViewModel {
         }
 
 
-        public string IconName {
+        public string IconName
+        {
             get { return GetString("iconName"); }
             set { SetValue("iconName", value); }
         }
 
-        public virtual Visibility IconNameVisibility {
+        public virtual Visibility IconNameVisibility
+        {
             get { return Visibility.Collapsed; }
         }
 
-        public int IconShade {
+        public int IconShade
+        {
             get { return GetInt("iconShade"); }
             set { SetDoubleOrIntValue("iconShade", value); }
         }
 
-        public virtual Visibility IconShadeVisibility {
+        public virtual Visibility IconShadeVisibility
+        {
             get { return Visibility.Collapsed; }
         }
 
         public string IconShadeColorString
         {
-            get {
+            get
+            {
                 //return String.Format("#{0}", IconShade.ToString("X6") );
                 return "#00FF00";
             }
@@ -163,37 +183,44 @@ namespace TiTsEd.ViewModel {
             get { return (Color)ColorConverter.ConvertFromString(IconShadeColorString); }
         }
 
-        public bool IsHidden {
+        public bool IsHidden
+        {
             get { return GetBool("hidden"); }
             set { SetValue("hidden", value); }
         }
 
-        public virtual Visibility IsHiddenVisibility {
+        public virtual Visibility IsHiddenVisibility
+        {
             get { return Visibility.Collapsed; }
         }
 
-        public bool IsCombatOnly {
+        public bool IsCombatOnly
+        {
             get { return GetBool("combatOnly"); }
             set { SetValue("combatOnly", value); }
         }
 
-        public virtual Visibility IsCombatOnlyVisibility {
+        public virtual Visibility IsCombatOnlyVisibility
+        {
             get { return Visibility.Collapsed; }
         }
 
-        public int MinutesLeft {
+        public int MinutesLeft
+        {
             get { return GetInt("minutesLeft"); }
             set { SetDoubleOrIntValue("minutesLeft", value); }
         }
 
-        public virtual Visibility MinutesLeftVisibility {
+        public virtual Visibility MinutesLeftVisibility
+        {
             get { return Visibility.Collapsed; }
         }
 
         /// <summary>
         /// Gets the first value, or 0 if the thing is not owned.
         /// </summary>
-        public double Value1 {
+        public double Value1
+        {
             get { return GetDouble("value1"); }
             set { SetDoubleOrIntValue("value1", value); }
         }
@@ -201,7 +228,8 @@ namespace TiTsEd.ViewModel {
         /// <summary>
         /// Gets the second value, or 0 if the thing is not owned.
         /// </summary>
-        public double Value2 {
+        public double Value2
+        {
             get { return GetDouble("value2"); }
             set { SetDoubleOrIntValue("value2", value); }
         }
@@ -209,7 +237,8 @@ namespace TiTsEd.ViewModel {
         /// <summary>
         /// Gets the third value, or 0 if the thing is not owned.
         /// </summary>
-        public double Value3 {
+        public double Value3
+        {
             get { return GetDouble("value3"); }
             set { SetDoubleOrIntValue("value3", value); }
         }
@@ -217,86 +246,107 @@ namespace TiTsEd.ViewModel {
         /// <summary>
         /// Gets the fourth value, or 0 if the thing is not owned.
         /// </summary>
-        public double Value4 {
+        public double Value4
+        {
             get { return GetDouble("value4"); }
             set { SetDoubleOrIntValue("value4", value); }
         }
 
-        public string Type1 {
-            get {
+        public string Type1
+        {
+            get
+            {
                 if (String.IsNullOrEmpty(_xml.Type1)) return "Int";
                 return _xml.Type1;
             }
         }
 
-        public string Type2 {
-            get {
+        public string Type2
+        {
+            get
+            {
                 if (String.IsNullOrEmpty(_xml.Type2)) return "Int";
                 return _xml.Type2;
             }
         }
 
-        public string Type3 {
-            get {
+        public string Type3
+        {
+            get
+            {
                 if (String.IsNullOrEmpty(_xml.Type3)) return "Int";
                 return _xml.Type3;
             }
         }
 
-        public string Type4 {
-            get {
+        public string Type4
+        {
+            get
+            {
                 if (String.IsNullOrEmpty(_xml.Type4)) return "Int";
                 return _xml.Type4;
             }
         }
 
-        public string Label1 {
-            get {
+        public string Label1
+        {
+            get
+            {
                 if (String.IsNullOrEmpty(_xml.Label1)) return "Value 1";
                 return _xml.Label1;
             }
         }
 
-        public string Label2 {
-            get {
+        public string Label2
+        {
+            get
+            {
                 if (String.IsNullOrEmpty(_xml.Label2)) return "Value 2";
                 return _xml.Label2;
             }
         }
 
-        public string Label3 {
-            get {
+        public string Label3
+        {
+            get
+            {
                 if (String.IsNullOrEmpty(_xml.Label3)) return "Value 3";
                 return _xml.Label3;
             }
         }
 
-        public string Label4 {
-            get {
+        public string Label4
+        {
+            get
+            {
                 if (String.IsNullOrEmpty(_xml.Label4)) return "Value 4";
                 return _xml.Label4;
             }
         }
 
-        public string GetString(string name) {
+        public string GetString(string name)
+        {
             var obj = GetObject();
             if (obj == null) return null;
             return obj.GetString(name);
         }
 
-        public bool GetBool(string name) {
+        public bool GetBool(string name)
+        {
             var obj = GetObject();
             if (obj == null) return false;
             return obj.GetBool(name);
         }
 
-        public int GetInt(string name) {
+        public int GetInt(string name)
+        {
             var obj = GetObject();
             if (obj == null) return 0;
             return obj.GetInt(name);
         }
 
-        public double GetDouble(string name) {
+        public double GetDouble(string name)
+        {
             var obj = GetObject();
             if (obj == null) return 0;
             var value = obj.GetDouble(name);
@@ -304,19 +354,24 @@ namespace TiTsEd.ViewModel {
             return value;
         }
 
-        void SetDoubleOrIntValue(string key, double value, string propertyName = null) {
+        void SetDoubleOrIntValue(string key, double value, string propertyName = null)
+        {
             if (value == (int)value) SetValue(key, (int)value, propertyName);
             else SetValue(key, (double)value, propertyName);
         }
 
-        public bool SetValue(object key, object value, string propertyName = null) {
+        public bool SetValue(object key, object value, string propertyName = null)
+        {
             var obj = GetObject();
             if (obj == null) return false;
             bool success = SetValue(obj, key, value, propertyName);
-            if (success) {
-                if ("tooltip" != Convert.ToString(key)) {
+            if (success)
+            {
+                if ("tooltip" != Convert.ToString(key))
+                {
                     var source = _xml.Description;
-                    if (null != source) {
+                    if (null != source)
+                    {
                         Description = expandVars(source);
                     }
                 }
@@ -327,7 +382,8 @@ namespace TiTsEd.ViewModel {
             return success;
         }
 
-        virtual public bool Match(string str) {
+        virtual public bool Match(string str)
+        {
             if (str == null) return true;
 
             int index = (Name ?? "").IndexOf(str, StringComparison.InvariantCultureIgnoreCase);
@@ -342,13 +398,16 @@ namespace TiTsEd.ViewModel {
             return false;
         }
 
-        protected override void OnSavePropertyChanged(string propertyName = null) {
+        protected override void OnSavePropertyChanged(string propertyName = null)
+        {
             base.OnSavePropertyChanged(propertyName);
             NotifyGameVM();
         }
 
-        protected virtual void InitializeObject(AmfObject obj) {
-            if (null == obj) {
+        protected virtual void InitializeObject(AmfObject obj)
+        {
+            if (null == obj)
+            {
                 obj = new AmfObject(AmfTypes.Object);
             }
             obj["storageName"] = Name;
@@ -365,25 +424,29 @@ namespace TiTsEd.ViewModel {
             obj["classInstance"] = "classes::StorageClass";
         }
 
-        protected virtual bool IsObject(AmfObject obj) {
+        protected virtual bool IsObject(AmfObject obj)
+        {
             var storageName = (null != obj) ? obj.GetString("storageName") : "";
             return storageName == Name;
         }
 
         protected abstract void NotifyGameVM();
 
-        public override string ToString() {
+        public override string ToString()
+        {
             return Name;
         }
 
-        public string expandVars(string source) {
+        public string expandVars(string source)
+        {
             if (null == source) return "";
             var value1 = _xml.Value1;
             var value2 = _xml.Value2;
             var value3 = _xml.Value3;
             var value4 = _xml.Value4;
             var obj = GetObject();
-            if (null != obj) {
+            if (null != obj)
+            {
                 value1 = Value1;
                 value2 = Value2;
                 value3 = Value3;

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-
-using System.Text;
-using TiTsEd.Model;
-
-namespace TiTsEd.ViewModel
+﻿namespace TiTsEd.ViewModel
 {
     public sealed partial class GameVM : ObjectVM
     {

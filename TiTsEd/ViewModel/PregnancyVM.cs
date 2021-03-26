@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
-using TiTsEd.Common;
 using TiTsEd.Model;
 
-namespace TiTsEd.ViewModel {
+namespace TiTsEd.ViewModel
+{
     public sealed class PregnancyDataArrayVM : ArrayVM<PregnancyDataVM>
     {
         CharacterVM _character;

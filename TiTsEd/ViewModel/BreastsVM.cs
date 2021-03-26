@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
 using TiTsEd.Model;
-using TiTsEd.Common;
 
-namespace TiTsEd.ViewModel {
+namespace TiTsEd.ViewModel
+{
     public sealed class BreastArrayVM : ArrayVM<BreastsVM> {
         public BreastArrayVM(CharacterVM character, AmfObject obj)
             : base(obj, x => new BreastsVM(character, x)) {

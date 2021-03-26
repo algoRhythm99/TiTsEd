@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using TiTsEd.Common;
 using TiTsEd.Model;
 
 namespace TiTsEd.ViewModel

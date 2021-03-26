@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Security;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using System.Xml.Serialization;
 using TiTsEd.Common;
 using TiTsEd.Model;
 using TiTsEd.View;

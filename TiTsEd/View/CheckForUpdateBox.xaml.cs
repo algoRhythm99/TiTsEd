@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
-using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;

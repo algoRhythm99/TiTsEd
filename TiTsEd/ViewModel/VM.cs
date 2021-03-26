@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-
-using System.Security;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using TiTsEd.Common;
 using TiTsEd.Model;
@@ -144,6 +137,7 @@ namespace TiTsEd.ViewModel
             OnPropertyChanged("HasData");
             OnPropertyChanged("CurrentFile");
             OnPropertyChanged("FileVersion");
+            OnPropertyChanged();
             UpdateAppTitle();
             VM.Instance.NotifySaveRequiredChanged(false);
             if (null != FileOpened)

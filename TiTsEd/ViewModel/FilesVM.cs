@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -15,7 +11,8 @@ using TiTsEd.Model;
 using Microsoft.Win32;
 using TiTsEd.Common;
 
-namespace TiTsEd.ViewModel {
+namespace TiTsEd.ViewModel
+{
     public static class FileManagerVM {
         public static IEnumerable<IMenuVM> GetOpenMenus()
         {

@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
-using TiTsEd.ViewModel;
 
-namespace TiTsEd.View {
+namespace TiTsEd.View
+{
     /// <summary>
     /// Interaction logic for FlagsPage.xaml
     /// </summary>

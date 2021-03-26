@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 
 using TiTsEd.Model;
 
-namespace TiTsEd.ViewModel {
+namespace TiTsEd.ViewModel
+{
     public sealed class FlagVM : BindableBase {
         readonly string _name;
         readonly string _description;

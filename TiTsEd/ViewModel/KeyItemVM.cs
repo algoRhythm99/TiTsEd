@@ -3,8 +3,10 @@ using System.Linq;
 using System.Windows;
 using TiTsEd.Model;
 
-namespace TiTsEd.ViewModel {
-    public sealed class KeyItemGroupVM : BindableBase {
+namespace TiTsEd.ViewModel
+{
+    public sealed class KeyItemGroupVM : BindableBase
+    {
         private readonly CreatureVM Creature;
 
         public KeyItemGroupVM(CreatureVM creature, string name, KeyItemVM[] keyItems)
@@ -14,53 +16,65 @@ namespace TiTsEd.ViewModel {
             KeyItems = new UpdatableCollection<KeyItemVM>(keyItems.Where(x => x.Match(Creature.Game.SearchText)));
         }
 
-        public new string Name {
+        public new string Name
+        {
             get;
             private set;
         }
 
-        public UpdatableCollection<KeyItemVM> KeyItems {
+        public UpdatableCollection<KeyItemVM> KeyItems
+        {
             get;
             private set;
         }
 
-        public Visibility Visibility {
+        public Visibility Visibility
+        {
             get { return KeyItems.Count != 0 ? Visibility.Visible : Visibility.Collapsed; }
         }
 
-        public void Update() {
+        public void Update()
+        {
             KeyItems.Update();
             OnPropertyChanged("Visibility");
         }
     }
 
-    public sealed class KeyItemVM : StorageClassVM {
+    public sealed class KeyItemVM : StorageClassVM
+    {
 
         public KeyItemVM(CreatureVM creature, AmfObject keyItems, XmlStorageClass xml)
             : base(creature, keyItems, xml)
         {
         }
 
-        protected override void NotifyGameVM() {
+        protected override void NotifyGameVM()
+        {
             Creature.OnKeyItemChanged(Name);
         }
 
-        public override AmfObject GetItems() {
+        public override AmfObject GetItems()
+        {
             return Creature.KeyItemsArray;
         }
 
-        public override AmfObject GetObject() {
+        public override AmfObject GetObject()
+        {
             return GetItems().Select(x => x.ValueAsObject).FirstOrDefault(x => IsObject(x));
         }
 
-        public override bool IsOwned {
+        public override bool IsOwned
+        {
             get { return GetObject() != null; }
-            set {
+            set
+            {
                 var items = GetItems();
                 var pair = items.FirstOrDefault(x => IsObject(x.ValueAsObject));
                 if ((pair != null) == value) return;
 
-                if (value) {
+
+                if (value)
+                {
                     var obj = new AmfObject(AmfTypes.Object);
                     InitializeObject(obj);
                     obj["value1"] = _xml.Value1;
@@ -69,7 +83,9 @@ namespace TiTsEd.ViewModel {
                     obj["value4"] = _xml.Value4;
                     obj["tooltip"] = expandVars(_xml.Tooltip ?? _xml.Description);
                     items.Push(obj);
-                } else {
+                }
+                else
+                {
                     items.Pop((int)pair.Key);
                 }
 
