@@ -973,7 +973,7 @@ namespace TiTsEd.ViewModel
             get
             {
                 var toleranceStat = GetStatus("Tolerance", "AlcoholTolerance");
-                return (int)toleranceStat.Value1;
+                return (int) Math.Max(toleranceStat.Value1, 0);
             }
             set
             {
@@ -982,7 +982,16 @@ namespace TiTsEd.ViewModel
                 {
                     toleranceStat.IsOwned = true;
                 }
-                toleranceStat.Value1 = value;
+                var val = value;
+                if (value < 0)
+                {
+                    val = 0;
+                }
+                else if (value > 100)
+                {
+                    val = 100;
+                }
+                toleranceStat.Value1 = val;
             }
         }
 

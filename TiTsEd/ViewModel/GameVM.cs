@@ -30,15 +30,6 @@ namespace TiTsEd.ViewModel
 
             var flagsObject = FlagsObject;
             _flags = new GeneralObjectVM(flagsObject);
-            if (null != previousVM)
-            {
-                _searchText = previousVM._searchText;
-                AllCodexEntries = previousVM.AllCodexEntries;
-                AllStatusEffects = previousVM.AllStatusEffects;
-                AllKeyItems = previousVM.AllKeyItems;
-                AllPerks = previousVM.AllPerks;
-                AllFlags = previousVM.AllFlags;
-            }
 
             // Flags
             var flagNames = AllFlags.Keys.ToList();
@@ -65,6 +56,20 @@ namespace TiTsEd.ViewModel
                     XmlEnum data = new XmlEnum();
                     data.Name = flagName;
                     AllFlags[flagName] = new FlagVM(this, ref flagsObject, data);
+                }
+            }
+
+            if (null != previousVM)
+            {
+                foreach (var flag in previousVM.AllFlags)
+                {
+                    string flagName = flag.Key.ToString();
+                    if (!AllFlags.ContainsKey(flagName))
+                    {
+                        XmlEnum data = new XmlEnum();
+                        data.Name = flagName;
+                        AllFlags[flagName] = new FlagVM(this, ref flagsObject, data);
+                    }
                 }
             }
 
@@ -105,6 +110,19 @@ namespace TiTsEd.ViewModel
                 {
                     XmlCodexEntry data = new XmlCodexEntry(codexName);
                     AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                }
+            }
+
+            if (null != previousVM)
+            {
+                foreach (var codexEntry in previousVM.AllCodexEntries)
+                {
+                    string codexName = codexEntry.Value.ToString();
+                    if (!AllCodexEntries.ContainsKey(codexName))
+                    {
+                        XmlCodexEntry data = new XmlCodexEntry(codexName);
+                        AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                    }
                 }
             }
 

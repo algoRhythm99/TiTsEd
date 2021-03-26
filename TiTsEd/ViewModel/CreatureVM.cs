@@ -126,6 +126,7 @@ namespace TiTsEd.ViewModel
                 default:
                     break;
             }
+            OnSavePropertyChanged("PerkGroups");
         }
 
         /// <summary>
@@ -154,6 +155,7 @@ namespace TiTsEd.ViewModel
             {
                 OnPropertyChanged(prop);
             }
+            OnSavePropertyChanged("PerkGroups");
         }
 
 
@@ -234,6 +236,7 @@ namespace TiTsEd.ViewModel
                     status.IsOwned = false;
                 }
             }
+            OnSavePropertyChanged("StatusEffectGroups");
         }
 
         public void OnStatusAddedOrRemoved(string name, bool isOwned)
@@ -245,6 +248,7 @@ namespace TiTsEd.ViewModel
                 default:
                     break;
             }
+            OnSavePropertyChanged("StatusEffectGroups");
         }
 
         public void OnStatusChanged(string name)
@@ -253,6 +257,7 @@ namespace TiTsEd.ViewModel
             {
                 OnPropertyChanged(prop);
             }
+            OnSavePropertyChanged("StatusEffectGroups");
         }
 
         public AmfObject KeyItemsArray
@@ -311,6 +316,7 @@ namespace TiTsEd.ViewModel
                 default:
                     break;
             }
+            OnSavePropertyChanged("KeyItemGroups");
         }
 
         /// <summary>
@@ -337,6 +343,7 @@ namespace TiTsEd.ViewModel
             {
                 OnPropertyChanged(prop);
             }
+            OnSavePropertyChanged("KeyItemGroups");
         }
 
         public int ItemStatsBonusByField(string statName)
