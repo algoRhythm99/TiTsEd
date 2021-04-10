@@ -1605,6 +1605,9 @@
 			<Item Stack="1" Name="AimEyepiece" ID="classes.Items.Accessories::AimEyepiece" />
 			<Item Stack="1" Name="AimEyeII"     ID="classes.Items.Accessories::AimEyepieceMkII" />
 			<Item Stack="1" Name="Allure" ID="classes.Items.Accessories::Allure" />
+			<Item Stack="1" Name="B.U." ID="classes.Items.Accessories::BallisticUnderlayer">
+				<ItemField Name="fortification" Type="int" Value="5" />
+			</Item>
 			<Item Stack="1" Name="Scarf" ID="classes.Items.Accessories::BeatricesScarf" />
 			<Item Stack="1" Name="BimboHat" ID="classes.Items.Accessories::BimboHat" />
 			<Item Stack="1" Name="B.D.S." ID="classes.Items.Accessories::BimboleumDefenseSystem" />
@@ -2259,6 +2262,7 @@
 			<Item Stack="1" Name="mechafist" ID="classes.Items.Melee::MechaFist" Comment="Don't try to use this" />
 
 			<Item Stack="1" Name="ArcSledge" ID="classes.Items.Melee::ArcSledgehammer" />
+			<Item Stack="1" Name="B.Stick" ID="classes.Items.Melee::BeatStick" />
 			<Item Stack="1" Name="BioWhip" ID="classes.Items.Melee::BioWhip" />
 			<Item Stack="1" Name="B.Rapier" ID="classes.Items.Melee::BothriocRapier" />
 			<Item Stack="1" Name="C.Saber" ID="classes.Items.Melee::CavalrySaber" />
@@ -2377,6 +2381,7 @@
 			<Item Stack="1" Name="Laser C." ID="classes.Items.Guns::LaserCarbine" />
 			<Item Stack="1" Name="LaserPistol" ID="classes.Items.Guns::LaserPistol" />
 			<Item Stack="1" Name="L.Cann" ID="classes.Items.Guns::LashCannon" />
+			<Item Stack="1" Name="LLRifle" ID="classes.Items.Guns::MaxLazRifle" />
 			<Item Stack="1" Name="Mag.Pistol" ID="classes.Items.Guns::MagnumPistol" />
 			<Item Stack="1" Name="Myr Bow" ID="classes.Items.Guns::MyrBow" />
 			<Item Stack="1" Name="M.Rifle" ID="classes.Items.Guns::MyrRifle" />
@@ -3179,6 +3184,12 @@
 		<Flag Name="ANT_ORGY_COUNT" />
 		<Flag Name="ANT_ORGY_TIME" />
 		<Flag Name="ANT_PANTIES_SHARED" />
+		<Flag Name="ANYXINE_BONUS_BREED" />
+		<Flag Name="ANYXINE_KAEDE_3SUMS" />
+		<Flag Name="ANYXINE_LAST_BANG_TIME" />
+		<Flag Name="ANYXINE_LEWD_TOGGLE" />
+		<Flag Name="ANYXINE_OFFICE_LEFT" />
+		<Flag Name="ANYXINE_RHENWORLD_TALKS" />
 		<Flag Name="ANZHELA_ANALED" />
 		<Flag Name="ANZHELA_HERPAST_TALK" />
 		<Flag Name="ANZHELA_SCARMED_TALK" />
@@ -3236,6 +3247,7 @@
 		<Flag Name="ASSISTED_SHELLY_WITH_LAYING" />
 		<Flag Name="AURORA_SEEN_AFTER_SPLOSION" />
 		<Flag Name="AVOID_9TAIL" />
+		<Flag Name="AZARIAH_UNLOCKED" />
 		<Flag Name="AZRA_BOYFRIEND" />
 		<Flag Name="AZRA_CHOSE_PROFESSIONAL" />
 		<Flag Name="AZRA_DAUGHTER_TALK" />
@@ -3470,6 +3482,7 @@
 		<Flag Name="BIGTIDDYGOTHGF_SEX" />
 		<Flag Name="BIGTIDDYGOTHGF_TATEXPLAIN" />
 		<Flag Name="BIGTIDDYGOTHGF_USEDHER" />
+		<Flag Name="BIG_T_DINNER_BLOWIE" />
 		<Flag Name="BIMBOIFIED" />
 		<Flag Name="BIOMED_GANGBANGED" />
 		<Flag Name="BIZZY_ATE_HER_PUSSY" />
@@ -3866,6 +3879,7 @@
 		<Flag Name="CLEARED_YU" />
 		<Flag Name="CL_BAR_ROOM_ENTERED" />
 		<Flag Name="CL_DANCE_ROOM_ENTERED" />
+		<Flag Name="CL_DARTS_PLAYED" />
 		<Flag Name="CL_ENTRY_ROOM_ENTERED" />
 		<Flag Name="CL_LAST_DAY" />
 		<Flag Name="CL_SCORE" />
@@ -4178,6 +4192,17 @@
 		<Flag Name="ERRA_RELATIONSHIP_TALK" />
 		<Flag Name="ERRA_SEXED"     Description="times sexed. Undefined if unsexed" />
 		<Flag Name="ERRA_WALKIES"   Description="Times Erra has been Walked" />
+		<Flag Name="EVENING_APPEARANCE_CHECK" />
+		<Flag Name="EVENING_CUFFS_AVAILABLE" />
+		<Flag Name="EVENING_LAST_MATCH" />
+		<Flag Name="EVENING_LAST_RACE" />
+		<Flag Name="EVENING_MET" />
+		<Flag Name="EVENING_MISSIONARY" />
+		<Flag Name="EVENING_OWES_BOOZE" />
+		<Flag Name="EVENING_PLAYED_DARTS" />
+		<Flag Name="EVENING_SEXED" />
+		<Flag Name="EVENING_TALKS" />
+		<Flag Name="EVENING_TRUST_COUNTER" />
 		<Flag Name="EVENT_BUFFER_OVERRIDE" />
 		<Flag Name="EVENT_WHORIZON_BONDAGE_PALACE" />
 		<Flag Name="EVENT_WHORIZON_DEMONSYRI_LOOKAROUND" />
@@ -4645,6 +4670,7 @@
 		<Flag Name="GIANNA_AI_TALK_RESULT" />
 		<Flag Name="GIANNA_AWAY_TIMER" />
 		<Flag Name="GIANNA_BODY_TALK_RESULT" />
+		<Flag Name="GIANNA_CREW_INTRO" />
 		<Flag Name="GIANNA_CUMFLATION_DISABLED" />
 		<Flag Name="GIANNA_FUCK_TIMER" />
 		<Flag Name="GIANNA_GIVEN_GIRLY_ORAL_YET" />
@@ -4654,10 +4680,15 @@
 		<Flag Name="GIANNA_INFLATED_ASS_PAST_NORMAL" />
 		<Flag Name="GIANNA_MAXBUTT_REACTION" />
 		<Flag Name="GIANNA_OWNER_TALK_RESULT" />
+		<Flag Name="GIANNA_RECRUITMENT" />
+		<Flag Name="GIANNA_RECRUITMENT_PICKUP" />
+		<Flag Name="GIANNA_SEX_COUNT" />
 		<Flag Name="GIANNA_SILICONE_STORAGE" />
 		<Flag Name="GIANNA_STALL_SEEN" />
 		<Flag Name="GIANNA_TEMP" />
 		<Flag Name="GIANNA_TITFUCKS" />
+		<Flag Name="GIANNA_T_DINNER_SCORE" />
+		<Flag Name="GIANNA_T_WAIT_TRACKER" />
 		<Flag Name="GIANNA_X_ANNO_3SUM" />
 		<Flag Name="GIGACELISE" />
 		<Flag Name="GIL_BONUS_TALK" />
@@ -4771,6 +4802,9 @@
 		<Flag Name="HOLIDAY_OWEEN_LEFT" />
 		<Flag Name="HOLIDAY_OWEEN_PURCHASE" />
 		<Flag Name="HOOD_ORNAMENTED" />
+		<Flag Name="HORSEBRO_NO_SHIPS" />
+		<Flag Name="HORSEBRO_PREMIUM" />
+		<Flag Name="HORSEBRO_REPAIRS" />
 		<Flag Name="HOVERHOLE_USES" />
 		<Flag Name="HOWS_BUSINESS_BITCH" />
 		<Flag Name="HUGGED_FLAHNE" />
@@ -5487,12 +5521,14 @@
 		<Flag Name="MET_ANARRIE" Description="1 == You've met Anarrie" />
 		<Flag Name="MET_ANNO" Description="1 == You've met Anno" />
 		<Flag Name="MET_ANNO_POST_SPLOSION" Description="1 == You've met with Anno after Tarkus explosion" />
+		<Flag Name="MET_ANYXINE" />
 		<Flag Name="MET_ANZHELA" Description="1 == You've met Anzhela" />
 		<Flag Name="MET_ARAKEI" Description="1 == You've met Arakei" />
 		<Flag Name="MET_ASENNIA" Description="1 == You've met Asennia" />
 		<Flag Name="MET_ASTRA" Description="1 == You've met Astra" />
 		<Flag Name="MET_AURIN" Description="1 == You've met Aurin, moderate Myr male" />
 		<Flag Name="MET_AURORA" Description="1 == You've met Aurora" />
+		<Flag Name="MET_AZARIAHS_HOOKER" />
 		<Flag Name="MET_AZRA" />
 		<Flag Name="MET_BEA_HUBBY" Description="1 == You've met Bea's husband" />
 		<Flag Name="MET_BELLE" />
@@ -5572,6 +5608,7 @@
 		<Flag Name="MET_HEIDRUN" />
 		<Flag Name="MET_HEPANE" Description="1 == You've met Hepane" />
 		<Flag Name="MET_HERMAN" Description="1 == You've met Herman the chef" />
+		<Flag Name="MET_HORSEBRO" />
 		<Flag Name="MET_HUNTERS_DREAM_SHOPKEEP" />
 		<Flag Name="MET_IDDI" />
 		<Flag Name="MET_ILARIA" Description="1 == You've met Ilaria" />
@@ -6635,6 +6672,9 @@
 		<Flag Name="SAENDRA_XPACK1_STATUS" />
 		<Flag Name="SAENDRA_XPACK1_TIMER" />
 		<Flag Name="SAEN_X_SERA_THREESOME" />
+		<Flag Name="SALLY_DESIREABILITY" />
+		<Flag Name="SALLY_KINDNESS" />
+		<Flag Name="SALLY_SUCKED_U" />
 		<Flag Name="SALVAGED VANAE CAMP" />
 		<Flag Name="SALVAGE_BROS_HP_TUT" />
 		<Flag Name="SALVAGE_BROS_LOST_TO" />
@@ -6820,6 +6860,7 @@
 		<Flag Name="SEXED_GEOFF_MASC" />
 		<Flag Name="SEXED_GIALA" />
 		<Flag Name="SEXED_HEIDRUN" />
+		<Flag Name="SEXED_HORSEBRO" />
 		<Flag Name="SEXED_KARA" />
 		<Flag Name="SEXED_LIAMME" />
 		<Flag Name="SEXED_LOLA" />
@@ -7453,6 +7494,7 @@
 		<Flag Name="UTHRA HARVEST DAY" />
 		<Flag Name="UTOPIAN_PP" />
 		<Flag Name="UVETOCOAST_STEP" />
+		<Flag Name="UVETO_CORES_TO_ZAALTCREW" />
 		<Flag Name="UVETO_DEEPSEALAB_BACONTIMER" />
 		<Flag Name="UVETO_DEEPSEALAB_DEPTHSUIT" />
 		<Flag Name="UVETO_DEEPSEALAB_JANERIACORE" />
@@ -7698,7 +7740,9 @@
 		<Flag Name="YOMA_TIMES_TRIBBED" />
 		<Flag Name="YOMA_TIMES_VAGINAL" />
 		<Flag Name="YSOLTE_DEFEATED_TIME" />
+		<Flag Name="YSOLTE_DEFEATED_YA" />
 		<Flag Name="YSOLTE_GOT_SHOCKED" />
+		<Flag Name="YSOLTE_INTERROGATED_YA" />
 		<Flag Name="YSOLTE_SAVED" />
 		<Flag Name="YSOLTE_SEXED" />
 		<Flag Name="ZAALT DISARMED" />
@@ -8034,6 +8078,9 @@
 			<StatusEffect Name="Anno X Gianna Cooldown" IsHidden="true" />
 			<StatusEffect Name="Anno x Kaede Bar" IsHidden="true" />
 			<StatusEffect Name="Anno-Erra Cooldown" MinutesLeft="4320" IsHidden="true" />
+			<StatusEffect Name="ANYXINE_KAEDE_3SUM_CD" IsHidden="true" />
+			<StatusEffect Name="ANYXINE_OUT" IsHidden="true" />
+			<StatusEffect Name="ANYXINE_SAUNA_CD" IsHidden="true" />
 			<StatusEffect Name="Arbetz Busy Cooldown" IsHidden="true" />
 			<StatusEffect Name="Arbetz Busy Hour" IsHidden="true" />
 			<StatusEffect Name="Armor Restore CD" IsHidden="true" />
@@ -8157,6 +8204,7 @@
 			<StatusEffect Name="Horn Style" DescriptionLabel="Horn Color" Label1="Style:&#xD;&#xA;1 = Curled&#xD;&#xA;2 = Bow-curved&#xD;&#xA;3 = Ibex&#xD;&#xA;4 = Oryx&#xD;&#xA;5 = Markhor" Label2="Material:&#xD;&#xA;0 = default&#xD;&#xA;1 = Regular&#xD;&#xA;2 = Metal&#xD;&#xA;3 = Gem" IsHidden="true" />
 			<StatusEffect Name="Hyena Fur" IsHidden="true" />
 			<StatusEffect Name="Icy Veins" IsHidden="true" />
+			<StatusEffect Name="Leithan Markings" IsHidden="true" />
 			<StatusEffect Name="Naoki Stripe" IsHidden="true" />
 			<StatusEffect Name="Opaque Skin" IsHidden="true" />
 			<StatusEffect Name="Rubber Wrapped" IsHidden="true" />
@@ -8195,6 +8243,8 @@
 			<StatusEffect Name="FoxyDisable" IsHidden="true" />
 			<StatusEffect Name="Frenzy" IsHidden="true" />
 			<StatusEffect Name="Generator Off" IsHidden="true" />
+			<StatusEffect Name="Gianna Peeved" IsHidden="true" Minutes="120" />
+			<StatusEffect Name="GiannaRecruitAWOL" IsHidden="true" />
 			<StatusEffect Name="Gonna Gangbang" IsHidden="true" />
 			<StatusEffect Name="Got Bianca Checkup" IsHidden="true" />
 			<StatusEffect Name="Haley Satisfied" IsHidden="true" />
@@ -8244,6 +8294,7 @@
 			<StatusEffect Name="BadgerMindwash" IsHidden="true" />
 			<StatusEffect Name="Bait Beta Nyrea" IsHidden="true" />
 			<StatusEffect Name="Beta's Satisfaction" Description="You've recently sated your desire for your alpha's cum, and can think only of her. You take less damage from lust-damaging attacks." IconName="Icon_Charmed" Value1="2" IconShade="16738740" />
+			<StatusEffect Name="BIMBOSBAD" IsHidden="true" />
 			<StatusEffect Name="Bitterly Cold" Description="The bitter, piercing cold of Uveto’s icy tundra threatens to chill you to the bone. Better wrap up nice and tight, maybe even find something to heat you up to better stave off the freezing winds." IconName="Icon_Snowflake" IconShade="6149605" />
 			<StatusEffect Name="Buttfucking Paige" IsHidden="true" />
 			<StatusEffect Name="DILDO" IsHidden="true" />
