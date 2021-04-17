@@ -152,7 +152,7 @@
                     <Label>
                         <TextBlock Text="Anal Capacity" />
                     </Label>
-                    <TextBlock Text="{Binding Game.Character.AnalCapacityTip}" Width="200" />
+                    <TextBlock Text="{Binding Game.Character.Ass.AnalCapacityTip}" Width="200" />
 
                 </common:AutoGrid>
 

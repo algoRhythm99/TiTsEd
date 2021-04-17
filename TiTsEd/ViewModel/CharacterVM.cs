@@ -2011,35 +2011,6 @@ namespace TiTsEd.ViewModel
             set { SetValue("milkStorageMultiplier", value); }
         }
 
-
-        public double AnalCapacity
-        {
-            get
-            {
-                double capacity = 20;
-                if (null != Ass)
-                {
-                    capacity = capacity * (((Ass.EffectiveLooseness * 5) + 1) / 3);
-                    capacity = capacity + Ass.BonusCapacity;
-                    capacity = capacity * ((Ass.EffectiveWetness + 4) / 5);
-                }
-                capacity = capacity * Elasticity;
-                if (IsTaur)
-                {
-                    capacity = capacity + 100;
-                }
-                return capacity;
-            }
-        }
-
-        public string AnalCapacityTip
-        {
-            get
-            {
-                return Extensions.GetCubicInchesOrCentimetersDescription(AnalCapacity);
-            }
-        }
-
         #endregion
 
         #region GenitalPage

@@ -126,7 +126,16 @@ namespace TiTsEd.ViewModel
             get { return GetDouble("wetnessRaw"); }
             set
             {
-                SetValue("wetnessRaw", value);
+                var val = value;
+                if (val > 5)
+                {
+                    val = 5;
+                }
+                if (val < 0)
+                {
+                    val = 0;
+                }
+                SetValue("wetnessRaw", val);
                 UpdateCalculatedValues();
             }
         }
@@ -148,7 +157,7 @@ namespace TiTsEd.ViewModel
                 var val = Wetness + WetnessMod;
                 if (HasFlag(GLOBAL.FLAGS.FLAG_LUBRICATED))
                 {
-                    val = val + 2;
+                    val += 2;
                 }
                 if (val < 0)
                 {
@@ -169,17 +178,17 @@ namespace TiTsEd.ViewModel
             get
             {
                 double capacity = 20;
-                capacity = capacity * (((EffectiveLooseness * 5.0) + 1) / 3.0);
-                capacity = capacity + BonusCapacity;
+                capacity *= (((EffectiveLooseness * 5.0) + 1) / 3.0);
+                capacity += BonusCapacity;
                 if (_character.HasStatusEffect("Soak"))
                 {
-                    capacity = capacity + 150;
+                    capacity += 150;
                 }
-                capacity = capacity * ((EffectiveWetness + 4) / 5.0);
-                capacity = capacity * _character.Elasticity;
+                capacity *= ((EffectiveWetness + 4) / 5.0);
+                capacity *= _character.Elasticity;
                 if (_character.IsTaur)
                 {
-                    capacity = capacity + 400;
+                    capacity += 400;
                 }
                 return capacity;
             }
@@ -190,6 +199,32 @@ namespace TiTsEd.ViewModel
             get
             {
                 return Extensions.GetCubicInchesOrCentimetersDescription(VaginaCapacity);
+            }
+        }
+
+
+        public double AnalCapacity
+        {
+            get
+            {
+                double capacity = 20;
+                capacity *= (((EffectiveLooseness * 5) + 1) / 3.0);
+                capacity += BonusCapacity;
+                capacity *= ((EffectiveWetness + 4) / 5.0);
+                capacity *= _character.Elasticity;
+                if (_character.IsTaur)
+                {
+                    capacity += 100;
+                }
+                return capacity;
+            }
+        }
+
+        public string AnalCapacityTip
+        {
+            get
+            {
+                return Extensions.GetCubicInchesOrCentimetersDescription(AnalCapacity);
             }
         }
 
@@ -315,11 +350,12 @@ namespace TiTsEd.ViewModel
             }
         }
 
-        private void UpdateCalculatedValues()
+        public void UpdateCalculatedValues()
         {
             OnPropertyChanged("EffectiveWetness");
             OnPropertyChanged("VaginaCapacity");
             OnPropertyChanged("VaginaCapacityTip");
+            OnPropertyChanged("AnalCapacityTip");
         }
     }
 }

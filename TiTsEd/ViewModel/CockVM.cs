@@ -154,19 +154,18 @@ namespace TiTsEd.ViewModel
                 }
                 if (HasFlag(GLOBAL.FLAGS.FLAG_FLARED))
                 {
-                    tip = tip * 1.3;
+                    tip *= 1.3;
                 }
                 if (HasFlag(GLOBAL.FLAGS.FLAG_TAPERED))
                 {
-                    tip = tip * 0.75;
+                    tip *= 0.75;
                     cylinder = cylinder * 0.75;
                 }
                 if (HasFlag(GLOBAL.FLAGS.FLAG_DOUBLE_HEADED))
                 {
-                    tip = 2 * ((2.0/3.0) * AS3_Math.PI * Math.Pow(AS3_Math.SQRT2 * radius / 2, 3)) + (0.512 * AS3_Math.PI * Math.Pow(radius, 3));
+                    tip = 2.0 * ((2.0/3.0) * AS3_Math.PI * Math.Pow(AS3_Math.SQRT2 * radius / 2.0, 3)) + (0.512 * AS3_Math.PI * Math.Pow(radius, 3));
                 }
-                double vol = Math.Round((tip + cylinder) * 100.0) / 100.0;
-                return vol;
+                return Math.Round((tip + cylinder) * 100.0) / 100.0;
             }
         }
 
@@ -177,11 +176,11 @@ namespace TiTsEd.ViewModel
                 double vol = Volume;
                 if (HasFlag(GLOBAL.FLAGS.FLAG_LUBRICATED) || HasFlag(GLOBAL.FLAGS.FLAG_GOOEY))
                 {
-                    vol = vol * 0.75;
+                    vol *= 0.75;
                 }
                 if (HasFlag(GLOBAL.FLAGS.FLAG_STICKY))
                 {
-                    vol = vol * 1.25;
+                    vol *= 1.25;
                 }
                 return Math.Round(vol*100.0)/100.0;
             }
