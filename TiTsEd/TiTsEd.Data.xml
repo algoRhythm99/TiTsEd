@@ -1545,6 +1545,7 @@
 			<PregnancyType>SiegwulfeEggnancy</PregnancyType>
 			<PregnancyType>StormguardPregnancy</PregnancyType>
 			<PregnancyType>SydianPregnancy</PregnancyType>
+			<PregnancyType>SylviePregnancyHandler</PregnancyType>
 			<PregnancyType>VenusPitcherFertilizedSeedCarrier</PregnancyType>
 			<PregnancyType>VenusPitcherSeedCarrier</PregnancyType>
 			<PregnancyType>ZaaltPregnancy</PregnancyType>
@@ -3248,6 +3249,9 @@
 		<Flag Name="ASSISTED_SHELLY_WITH_LAYING" />
 		<Flag Name="AURORA_SEEN_AFTER_SPLOSION" />
 		<Flag Name="AVOID_9TAIL" />
+		<Flag Name="AZARIAHS_ATTITUDE" />
+		<Flag Name="AZARIAH_ADMITS_LIKE" />
+		<Flag Name="AZARIAH_MATINGBALLS" />
 		<Flag Name="AZARIAH_UNLOCKED" />
 		<Flag Name="AZRA_BOYFRIEND" />
 		<Flag Name="AZRA_CHOSE_PROFESSIONAL" />
@@ -4674,6 +4678,7 @@
 		<Flag Name="GIANNA_CREW_INTRO" />
 		<Flag Name="GIANNA_CUMFLATION_DISABLED" />
 		<Flag Name="GIANNA_FUCK_TIMER" />
+		<Flag Name="GIANNA_FUTA_HARDFUCK" />
 		<Flag Name="GIANNA_GIVEN_GIRLY_ORAL_YET" />
 		<Flag Name="GIANNA_HAS_DRAGON_COCK" />
 		<Flag Name="GIANNA_HAS_HORSE_COCK" />
@@ -5529,6 +5534,7 @@
 		<Flag Name="MET_ASTRA" Description="1 == You've met Astra" />
 		<Flag Name="MET_AURIN" Description="1 == You've met Aurin, moderate Myr male" />
 		<Flag Name="MET_AURORA" Description="1 == You've met Aurora" />
+		<Flag Name="MET_AZARIAH" />
 		<Flag Name="MET_AZARIAHS_HOOKER" />
 		<Flag Name="MET_AZRA" />
 		<Flag Name="MET_BEA_HUBBY" Description="1 == You've met Bea's husband" />
@@ -6821,6 +6827,16 @@
 		<Flag Name="SERA_STERILEX_STATE" />
 		<Flag Name="SERA_STUCK_IT_ALL_IN_BUTT" Description="Number of times Sera has stuffed your ass with dicks" />
 		<Flag Name="SERA_TAILED" Description="Number of times Sera has used her tail on you" />
+		<Flag Name="SERA_TAINTED_LOVIN" />
+		<Flag Name="SERA_TAINTED_LOVIN_AS_PROFESSIONAL" />
+		<Flag Name="SERA_TAINTED_LOVIN_AS_SERA" />
+		<Flag Name="SERA_TAINTED_LOVIN_AS_SUBMISSIVE" />
+		<Flag Name="SERA_TAINTED_LOVIN_CUDDLE" />
+		<Flag Name="SERA_TAINTED_LOVIN_DATE" />
+		<Flag Name="SERA_TAINTED_LOVIN_JARDI" />
+		<Flag Name="SERA_TAINTED_LOVIN_LICK" />
+		<Flag Name="SERA_TAINTED_LOVIN_REWARDED" />
+		<Flag Name="SERA_TAINTED_LOVIN_SPOTS" />
 		<Flag Name="SERA_TALKED_ABOUT_BEING_PISSED_OFF" Description="1 == Sera has talked about why she is angry" />
 		<Flag Name="SERA_TALKS_AMBITION" Description="1 == Sera has talked about her ambitions" />
 		<Flag Name="SERA_TALKS_BREED" Description="1 == Sera has talked about breeding&#xD;&#xA;2 == Sera has mentioned your womb bulge&#xD;&#xA;3 == Sera admits your pregnancy" />
@@ -7110,18 +7126,41 @@
 		<Flag Name="SYDIAN_QUEEN_SEXCOUNT" />
 		<Flag Name="SYDIAN_QUEEN_STAGE" />
 		<Flag Name="SYD_CBOY_GREW_COCK" />
+		<Flag Name="SYLVIE_BABY_GENDERS" />
+		<Flag Name="SYLVIE_BIRTH_SCENE" />
+		<Flag Name="SYLVIE_BIRTH_SCENE_BOYS" />
+		<Flag Name="SYLVIE_BIRTH_SCENE_GIRLS" />
+		<Flag Name="SYLVIE_BIRTH_SCENE_HERMS" />
 		<Flag Name="SYLVIE_BOOZE_BOUGHT" />
 		<Flag Name="SYLVIE_BOOZE_TIME" />
 		<Flag Name="SYLVIE_CHILLED" />
 		<Flag Name="SYLVIE_CUFFNFUCK" />
 		<Flag Name="SYLVIE_DONG_TALK" />
+		<Flag Name="SYLVIE_FERTILE" />
 		<Flag Name="SYLVIE_HIPBUSTERED" />
 		<Flag Name="SYLVIE_MABBSED" />
+		<Flag Name="SYLVIE_NUM_BABIES" />
 		<Flag Name="SYLVIE_ORAL_WORSHIP" />
+		<Flag Name="SYLVIE_PREGTALK_HER" />
+		<Flag Name="SYLVIE_PREGTALK_HER_TIMER" />
+		<Flag Name="SYLVIE_PREGTALK_PC" />
+		<Flag Name="SYLVIE_PREG_BARREN" />
+		<Flag Name="SYLVIE_PREG_EMAIL1" />
+		<Flag Name="SYLVIE_PREG_EMAIL2" />
+		<Flag Name="SYLVIE_PREG_EMAIL_REPEAT" />
+		<Flag Name="SYLVIE_PREG_MILK" />
+		<Flag Name="SYLVIE_PREG_TALK1" />
+		<Flag Name="SYLVIE_PREG_TALK2" />
+		<Flag Name="SYLVIE_PREG_TALK3" />
+		<Flag Name="SYLVIE_PREG_TIMER" />
 		<Flag Name="SYLVIE_PROSTATE_MILKED" />
+		<Flag Name="SYLVIE_RUTSEX" />
 		<Flag Name="SYLVIE_SYNTHSHEATHED" />
 		<Flag Name="SYLVIE_TAURMOUNT" />
 		<Flag Name="SYLVIE_THROBB_GIFT" />
+		<Flag Name="SYLVIE_TOTAL_KIDS" />
+		<Flag Name="SYLVIE_UNPL_PREG_EMAIL1" />
+		<Flag Name="SYLVIE_UNPL_PREG_EMAIL2" />
 		<Flag Name="SYNPHA_LASTVENOM" />
 		<Flag Name="SYNPHIA_BALLAUGS" />
 		<Flag Name="SYNPHIA_BALLSUCKS" />
