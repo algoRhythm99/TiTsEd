@@ -3252,6 +3252,9 @@
 		<Flag Name="AZARIAHS_ATTITUDE" />
 		<Flag Name="AZARIAH_ADMITS_LIKE" />
 		<Flag Name="AZARIAH_MATINGBALLS" />
+		<Flag Name="AZARIAH_PAIGE_KIRO" />
+		<Flag Name="AZARIAH_PAIGE_KIRO_MB" />
+		<Flag Name="AZARIAH_PAIGE_KIRO_SUCC" />
 		<Flag Name="AZARIAH_UNLOCKED" />
 		<Flag Name="AZRA_BOYFRIEND" />
 		<Flag Name="AZRA_CHOSE_PROFESSIONAL" />
@@ -4691,6 +4694,8 @@
 		<Flag Name="GIANNA_SEX_COUNT" />
 		<Flag Name="GIANNA_SILICONE_STORAGE" />
 		<Flag Name="GIANNA_STALL_SEEN" />
+		<Flag Name="GIANNA_STEELETECH_ON" />
+		<Flag Name="GIANNA_TAUR_SERVICE_V" />
 		<Flag Name="GIANNA_TEMP" />
 		<Flag Name="GIANNA_TITFUCKS" />
 		<Flag Name="GIANNA_T_DINNER_SCORE" />
@@ -5095,6 +5100,7 @@
 		<Flag Name="KIRO_BIMBO_MET" />
 		<Flag Name="KIRO_BIMBO_SNAKE_SMUT" />
 		<Flag Name="KIRO_BIMB_ALLCREW_FORCE" />
+		<Flag Name="KIRO_BOUGHT" />
 		<Flag Name="KIRO_CELISE_3SOME" Description="Number of times you've had a threesome with Kiro and Celise" />
 		<Flag Name="KIRO_CELISE_3SOME_REJECT" />
 		<Flag Name="KIRO_DEEPTHROATED_YOU" Description="1 == Kiro has deepthroated you" />
@@ -5125,6 +5131,7 @@
 		<Flag Name="KIRO_PHONE_EVENT" Description="1 = WINGMANNED AND SENT TO RECIPIENT.&#xD;&#xA;2 = SENT TO KALLY!&#xD;&#xA;-1 = FUCKED THIS SHIT, YOU'RE OUT."/>
 		<Flag Name="KIRO_RECRUITED" />
 		<Flag Name="KIRO_ROUGH_BUTTFUCK" Description="Number of times Kiro has owned your ass" />
+		<Flag Name="KIRO_SHIP_LOOTED" />
 		<Flag Name="KIRO_TRUST" Description="How much Kiro trusts you" />
 		<Flag Name="KIRO_VAG_FUCKED" />
 		<Flag Name="KIRO_X_SAEN_HAPPENED" Description="1 == You've had a threesome with Kiro and Saendra" />
@@ -5888,6 +5895,17 @@
 		<Flag Name="MITZI_TITFUCKED" />
 		<Flag Name="MITZI_VDAY_LAST_YEAR_ENCOUNTERED" />
 		<Flag Name="MITZI_WITH_BIZZY" />
+		<Flag Name="MOLLI_APPROACHED" />
+		<Flag Name="MOLLI_CHERRYTALK" />
+		<Flag Name="MOLLI_CLEANING_LOCKED" />
+		<Flag Name="MOLLI_FUTA_SEX" />
+		<Flag Name="MOLLI_JOBTALK" />
+		<Flag Name="MOLLI_LASTPARTNER" />
+		<Flag Name="MOLLI_LEFT_TIME" />
+		<Flag Name="MOLLI_MOLLITALK" />
+		<Flag Name="MOLLI_OLDJOB" />
+		<Flag Name="MOLLI_PIRATETALK" />
+		<Flag Name="MOLLI_SEX_LOCKED" />
 		<Flag Name="MONIKA_MET" />
 		<Flag Name="MONIKA_SEXED" />
 		<Flag Name="MUFFSTICK_COLORED" />
@@ -6887,6 +6905,7 @@
 		<Flag Name="SEXED_MILODAN_MALE9999" />
 		<Flag Name="SEXED_MIRRIN" />
 		<Flag Name="SEXED_MIRRIN_LIVE" />
+		<Flag Name="SEXED_MOLLI" />
 		<Flag Name="SEXED_MYRNA" />
 		<Flag Name="SEXED_MYR_VENOM" />
 		<Flag Name="SEXED_NEHZARA" />
