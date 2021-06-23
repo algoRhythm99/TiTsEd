@@ -60,7 +60,7 @@ namespace TiTsEd.ViewModel
                     if (null == GetAmfObject())
                     {
                         //return String.Format("{0} [{1}]", _keyPair.Value.ToString(), typeString);
-                        return _keyPair.Value.ToString();
+                        return _keyPair.Value?.ToString() ?? "";
                     }
                     else
                     {

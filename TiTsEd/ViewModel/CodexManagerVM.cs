@@ -11,7 +11,6 @@ namespace TiTsEd.ViewModel
         public const string VIEWEDCODEXENTRIES = "viewedCodexEntries";
     }
 
-
     public class CodexEntryVM : BindableBase
     {
         readonly string _name;
@@ -146,6 +145,11 @@ namespace TiTsEd.ViewModel
                 if (IsViewed) return FontWeights.Bold;
                 return FontWeights.Normal;
             }
+        }
+
+        public static string CodexNameFromEntry(AmfPair entry, string codexSource="unknown")
+        {
+            return (null != entry.Value) ? entry.Value.ToString() : String.Format("broken {0}:[{1}]", codexSource, entry.Key.ToString());
         }
     }
 

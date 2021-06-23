@@ -533,7 +533,7 @@ namespace TiTsEd.Model
             var enumerator = GetEnumerator();
             while (enumerator.MoveNext())
             {
-                if (enumerator.Current.Value.ToString().Equals(value.ToString()))
+                if (value.ToString().Equals(enumerator.Current.Value?.ToString()))
                 {
                     return true;
                 }
@@ -548,7 +548,7 @@ namespace TiTsEd.Model
             var enumerator = GetEnumerator();
             while (enumerator.MoveNext())
             {
-                if (enumerator.Current.Value.ToString().Equals(value.ToString()))
+                if (value.ToString().Equals(enumerator.Current.Value?.ToString()))
                 {
                     return enumerator.Current.Key;
                 }
@@ -562,7 +562,7 @@ namespace TiTsEd.Model
 
             for (int i = 0; i < Count; i++)
             {
-                if (this[i].ToString().Equals(value.ToString()))
+                if (value.ToString().Equals(this[i]?.ToString()))
                 {
                     return i;
                 }

@@ -95,21 +95,35 @@ namespace TiTsEd.ViewModel
 
             foreach (var codexEntry in CodexUnlockedEntriesObj)
             {
-                string codexName = codexEntry.Value.ToString();
-                if (!AllCodexEntries.ContainsKey(codexName))
+                var codexName = codexEntry.Value?.ToString();
+                if (!String.IsNullOrEmpty(codexName))
                 {
-                    XmlCodexEntry data = new XmlCodexEntry(codexName);
-                    AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                    if (!AllCodexEntries.ContainsKey(codexName))
+                    {
+                        XmlCodexEntry data = new XmlCodexEntry(codexName);
+                        AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                    }
+                }
+                else
+                {
+                    Logger.Debug(CodexEntryVM.CodexNameFromEntry(codexEntry, "unlockedCodexEntries"));
                 }
             }
 
             foreach (var codexEntry in CodexViewedEntriesObj)
             {
-                string codexName = codexEntry.Value.ToString();
-                if (!AllCodexEntries.ContainsKey(codexName))
+                var codexName = codexEntry.Value?.ToString();
+                if (!String.IsNullOrEmpty(codexName))
                 {
-                    XmlCodexEntry data = new XmlCodexEntry(codexName);
-                    AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                    if (!AllCodexEntries.ContainsKey(codexName))
+                    {
+                        XmlCodexEntry data = new XmlCodexEntry(codexName);
+                        AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                    }
+                }
+                else
+                {
+                    Logger.Debug(CodexEntryVM.CodexNameFromEntry(codexEntry, "viewedCodexEntries"));
                 }
             }
 
@@ -117,11 +131,18 @@ namespace TiTsEd.ViewModel
             {
                 foreach (var codexEntry in previousVM.AllCodexEntries)
                 {
-                    string codexName = codexEntry.Value.ToString();
-                    if (!AllCodexEntries.ContainsKey(codexName))
+                    var codexName = codexEntry.Value?.ToString();
+                    if (!String.IsNullOrEmpty(codexName))
                     {
-                        XmlCodexEntry data = new XmlCodexEntry(codexName);
-                        AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                        if (!AllCodexEntries.ContainsKey(codexName))
+                        {
+                            XmlCodexEntry data = new XmlCodexEntry(codexName);
+                            AllCodexEntries[codexName] = new CodexEntryVM(this, data);
+                        }
+                    }
+                    else
+                    {
+                        Logger.Debug(String.Format("codexEntry[{0}].Value is null??", codexEntry.Key));
                     }
                 }
             }
