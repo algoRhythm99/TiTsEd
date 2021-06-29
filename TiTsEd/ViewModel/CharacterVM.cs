@@ -1817,7 +1817,6 @@ namespace TiTsEd.ViewModel
                 case 51: //Synthetic
                 case 52: //Simii
                 case 53: //Daynar
-                case 72: //Swine
                 case 76: //Sheep
                 case 77: //Lesser Panda
                 default:
@@ -1896,6 +1895,13 @@ namespace TiTsEd.ViewModel
                 case 20: //Suula
                     defaultFlags.Add("Long");
                     defaultFlags.Add("Scaled");
+                    break;
+                case 89: // hyena
+                    defaultFlags.Add("Furred");
+                    defaultFlags.Add("Short");
+                    break;
+                case 72: // Swine
+                    defaultFlags.Add("Corkscrewed");
                     break;
             }
             return defaultFlags;
