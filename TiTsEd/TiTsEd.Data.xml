@@ -2926,6 +2926,7 @@
 			<Perk Name="Chupacabro Slayer" Description="You defeated the legendary Chupacabro, and now do +10% damage against treated individuals." Value1="1" Value2="50" />
 -->
 			<Perk Name="Concussive Shot" Description="Grants the ability to fire explosive-tipped arrows when equipped with a bow in combat. The arrows have a chance to stun for 2 to 4 combat rounds." />
+			<Perk Name="Cum Thirsty" Description="Recover energy faster after swallowing sexual fluids but no energy while thirsty." Value1="24" />
 			<Perk Name="Ever-Milk" Label1="Fixed Milk Quantity" Value1="5000" Comment="Minimum Milk Quantity of {Value1}. See Value1" />
 			<Perk Name="Face Fucker" Description="Increases minimum lust and cum output, thanks to that strange VR adventure..." Value1="5" />
 			<Perk Name="Implant-tastic" Description="Your body will convert most of the mass in your breasts, butt cheeks, hips and lips into silicone." />
@@ -8094,6 +8095,7 @@
 			<StatusEffect Name="Cum Soaked" Value1="1" IconName="Icon_Splatter" IconShade="12030916" />
 			<StatusEffect Name="Cumflation Immune" IsHidden="true" />
 			<StatusEffect Name="Cupid’s Kiss" Description="You’re feeling more affectionate that you otherwise would, no doubt the result of Mitzi’s drug.\n\nTake +30% more tease damage.\n+200% XP\n+300% rare drop chance." Value1="1" IconName="Icon_DrugVial" IconShade="12030916" />
+			<StatusEffect Name="Dzaan Withdrawal" IsHidden="true" />
 			<StatusEffect Name="Groped" IsHidden="true" />
 			<StatusEffect Name="Mare Musk" Description="You smell like a horny mare! The potent female scent is sure to drive others wild - though it gets you a little worked up as well." IconName="Icon_Smelly" />
 			<StatusEffect Name="Milk Bathed" Description="You’re drenched in breastmilk! Anyone can tell at a glance what sort of activities you’ve been engaging in!" IconName="Icon_Rain_Drops" IconShade="16777215" Value1="1" />
@@ -8129,6 +8131,7 @@
 			<StatusEffect Name="Stealth Field" IsHidden="true" />
 			<StatusEffect Name="Stun Immune" IsHidden="true" />
 			<StatusEffect Name="Sundered" Description="Defense is reduced by 50%!" />
+			<StatusEffect Name="Thirsty" IsHidden="true" />
 			<StatusEffect Name="Unarmored" IsHidden="true" />
 		</StatusEffectGroup>
 		<StatusEffectGroup Name="Cooldowns">
@@ -8154,7 +8157,7 @@
 			<StatusEffect Name="bot18Lightning Stun Cooldown" IsHidden="true" />
 			<StatusEffect Name="Butt Bug Message Cooldown" IsHidden="true" />
 			<StatusEffect Name="CreamedOnGobbleFace" IsHidden="true" />
-			<StatusEffect Name="Cum High Cooldown" IsHidden="true" />
+			<StatusEffect Name="Cum High Cooldown" IsHidden="true" MinutesLeft="2880" />
 			<StatusEffect Name="Cynthia Away" IsHidden="true" />
 			<StatusEffect Name="Doll Maker Repair Timer" IsHidden="true" Minutes="1440" />
 			<StatusEffect Name="Drain Cooldown" IsHidden="true" />
@@ -8229,6 +8232,7 @@
 			<StatusEffect Name="Taivra Bed Event Cooldown" IsHidden="true" />
 			<StatusEffect Name="Tapped Kally" IsHidden="true" IconName="Icon_Wine" MinutesLeft="1000" />
 			<StatusEffect Name="The Lusty Ausar Maid" IsHidden="true" MinutesLeft="1440" />
+			<StatusEffect Name="ThirstingCD" IsHidden="true" />
 			<StatusEffect Name="Tickled Pink" IsHidden="true" />
 			<StatusEffect Name="Trip CD" IsHidden="true" />
 			<StatusEffect Name="Tuuva Affection Cooldown" IsHidden="true" />
