@@ -343,34 +343,37 @@ hasItem() {
 
     missingText="$(printf '%s\n' "$fn")"
 
-    itemType=$(perl -ne '/(this[.])?type\s*=\s*(GLOBAL[.][\w]+)\s*;/ && print "$2\n";' "$fn")
-    missingText="${missingText}$(printf 'itemType=%s\n' "$itemType")"
+    itemType=$(perl -ne '/(this[.])?type\s*=\s*(GLOBAL[.][\w]+)\s*;/ && print "\n$2";' "$fn")
+    missingText="${missingText}$(printf 'itemType=\n%s' "$itemType")"
 
-    shortName=$(perl -ne '/(this[.])?shortName\s*=\s*"([\w'"\\\'"'“”’‘, &+|:!_.\\(\\)\"-]+)"\s*;/ && print "$2\n";' "$fn")
-    missingText="${missingText}$(printf 'shortName=%s\n' "$shortName")"
+    shortName=$(perl -ne '/(this[.])?shortName\s*=\s*"([\w'"\\\'"'“”’‘, &+|:!_.\\(\\)\"-]+)"\s*;/ && print "\n$2";' "$fn")
+    missingText="${missingText}$(printf 'shortName=\n%s' "$shortName")"
 
-    longName=$(perl -ne '/(this[.])?longName\s*=\s*"([\w'"\\\'"'“”’‘, &+|:!_.\\(\\)\"-]+)"\s*;/ && print "$2\n";' "$fn")
-    missingText="${missingText}$(printf 'longName=%s\n' "$longName")"
+    longName=$(perl -ne '/(this[.])?longName\s*=\s*"([\w'"\\\'"'“”’‘, &+|:!_.\\(\\)\"-]+)"\s*;/ && print "\n$2";' "$fn")
+    missingText="${missingText}$(printf 'longName=\n%s' "$longName")"
 
-    stackSize=$(perl -ne '/(this[.])?stackSize\s*=\s*([\d]+)\s*;/ && print "$2\n";' "$fn")
-    missingText="${missingText}$(printf 'stackSize=%s\n' "$stackSize")"
+    stackSize=$(perl -ne '/(this[.])?stackSize\s*=\s*([\d]+)\s*;/ && print "\n$2";' "$fn")
+    if [ -z "${stackSize}" ]; then
+        stackSize=1
+    fi
+    missingText="${missingText}$(printf 'stackSize=\n%s' "$stackSize")"
 
-    fortification=$(perl -ne '/(this[.])?fortification\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
-    missingText="${missingText}$(printf 'fortification=%s\n' "$fortification")"
+    fortification=$(perl -ne '/(this[.])?fortification\s*=\s*([-]?[\d]+)\s*;/ && print "\n$2";' "$fn")
+    missingText="${missingText}$(printf 'fortification=\n%s' "$fortification")"
 
-    shieldDefense=$(perl -ne '/(this[.])?shieldDefense\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
-    missingText="${missingText}$(printf 'shieldDefense=%s\n' "$shieldDefense")"
+    shieldDefense=$(perl -ne '/(this[.])?shieldDefense\s*=\s*([-]?[\d]+)\s*;/ && print "\n$2";' "$fn")
+    missingText="${missingText}$(printf 'shieldDefense=\n%s' "$shieldDefense")"
 
-    shields=$(perl -ne '/(this[.])?shields\s*=\s*([-]?[\d]+)\s*;/ && print "$2\n";' "$fn")
-    missingText="${missingText}$(printf 'shields=%s\n' "$shields")"
+    shields=$(perl -ne '/(this[.])?shields\s*=\s*([-]?[\d]+)\s*;/ && print "\n$2";' "$fn")
+    missingText="${missingText}$(printf 'shields=\n%s' "$shields")"
 
-    itemXML="$(printf '\n\t\t\t<Item Name="%s" ID="%s"' "$shortName" "$itemClass" )"
+    itemXML="$(printf '\n\t\t\t<Item Stack="%s" Name="%s" ID="%s"' "$stackSize" "$shortName" "$itemClass" )"
     if [ ! -z "${LongName}" ]; then
         itemXML="${itemXML}$(printf ' LongName="%s"' "$longName")"
     fi
-    if [ ! -z "${stackSize}" ]; then
-        itemXML="${itemXML}$(printf ' Stack="%s"' "$stackSize")"
-    fi
+    #if [ ! -z "${stackSize}" ]; then
+    #    itemXML="${itemXML}$(printf ' Stack="%s"' "$stackSize")"
+    #fi
     if [ ! -z "${fortification}" ] && [ "$fortification" != "0" ]; then hasFortification=1; hasFields=1; fi
     if [ ! -z "${shieldDefense}" ] && [ "$shieldDefense" != "0" ]; then hasShieldDefense=1; hasFields=1; fi
     if [ ! -z "${shields}" ] && [ "$shields" != "0" ]; then hasShields=1; hasFields=1; fi

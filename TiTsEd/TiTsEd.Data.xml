@@ -302,6 +302,7 @@
 			<SkinTone>amethyst</SkinTone>
 			<SkinTone>aqua</SkinTone>
 			<SkinTone>aquamarine</SkinTone>
+			<SkinTone>astral teal</SkinTone>
 			<SkinTone>azure</SkinTone>
 			<SkinTone>black and blue</SkinTone>
 			<SkinTone>black and gold</SkinTone>
@@ -401,6 +402,7 @@
 			<SkinTone>glittering yellow-orange</SkinTone>
 			<SkinTone>glittering yellow</SkinTone>
 			<SkinTone>glittery pink</SkinTone>
+			<SkinTone>glossy black</SkinTone>
 			<SkinTone>glossy blue</SkinTone>
 			<SkinTone>glowing amber</SkinTone>
 			<SkinTone>glowing blue</SkinTone>
@@ -416,6 +418,7 @@
 			<SkinTone>glowing white</SkinTone>
 			<SkinTone>glowing yellow</SkinTone>
 			<SkinTone>gold</SkinTone>
+			<SkinTone>gold and black</SkinTone>
 			<SkinTone>gold and red</SkinTone>
 			<SkinTone>gray</SkinTone>
 			<SkinTone>grayish brown</SkinTone>
@@ -460,7 +463,9 @@
 			<SkinTone>magenta</SkinTone>
 			<SkinTone>mahogany</SkinTone>
 			<SkinTone>maroon</SkinTone>
+			<SkinTone>mauve</SkinTone>
 			<SkinTone>metal</SkinTone>
+			<SkinTone>midnight</SkinTone>
 			<SkinTone>mottled brown</SkinTone>
 			<SkinTone>mottled pink and black</SkinTone>
 			<SkinTone>mottled-pink</SkinTone>
@@ -487,9 +492,11 @@
 			<SkinTone>pale yellow</SkinTone>
 			<SkinTone>pale</SkinTone>
 			<SkinTone>peach</SkinTone>
+			<SkinTone>peach-pink</SkinTone>
 			<SkinTone>pearl</SkinTone>
 			<SkinTone>peridot</SkinTone>
 			<SkinTone>pink</SkinTone>
+			<SkinTone>pink and blue</SkinTone>
 			<SkinTone>platinum</SkinTone>
 			<SkinTone>purple and white</SkinTone>
 			<SkinTone>purple</SkinTone>
@@ -509,6 +516,7 @@
 			<SkinTone>sparkly pink</SkinTone>
 			<SkinTone>steel gray</SkinTone>
 			<SkinTone>steel</SkinTone>
+			<SkinTone>sunlight gold</SkinTone>
 			<SkinTone>tan</SkinTone>
 			<SkinTone>tanned</SkinTone>
 			<SkinTone>teal</SkinTone>
@@ -750,6 +758,9 @@
 			<FaceFlag ID="14" Name="Muzzled" />
 			<FaceFlag ID="15" Name="Angular" />
 			<FaceFlag ID="20" Name="Furred" />
+			<FaceFlag ID="21" Name="Scaled" />
+			<FaceFlag ID="34" Name="Chitinous" />
+			<FaceFlag ID="35" Name="Feathered" />
 			<FaceFlag ID="43" Name="Beak" />
 			<FaceFlag ID="46" Name="Freckled" />
 		</FaceFlags>
@@ -932,6 +943,9 @@
 			<EarFlag ID="1"  Name="Long" />
 			<EarFlag ID="7"  Name="Tapered" />
 			<EarFlag ID="20" Name="Furred" />
+			<EarFlag ID="21" Name="Scaled" />
+			<EarFlag ID="34" Name="Chitinous" />
+			<EarFlag ID="49" Name="Short" />
 			<EarFlag ID="50" Name="Floppy" />
 		</EarFlags>
 		<EarLengthEnables>
@@ -1622,6 +1636,7 @@
 			<Item Stack="1" Name="FlashGogs" ID="classes.Items.Accessories::FlashGoggles" />
 			<Item Stack="1" Name="GooCore" ID="classes.Items.Accessories::GooCore" />
 			<Item Stack="1" Name="G.Leash" ID="classes.Items.Accessories::GrunchLeash" />
+			<Item Stack="1" Name="TerrorHlm" ID="classes.Items.Accessories::HelmOfTerror" />
 			<Item Stack="1" Name="JungleLure" ID="classes.Items.Accessories::JungleLure" />
 			<Item Stack="1" Name="JungleRepel" ID="classes.Items.Accessories::JungleRepel" />
 			<Item Stack="1" Name="K.Leash" ID="classes.Items.Accessories::KordiiakLeash" />
@@ -1637,6 +1652,7 @@
 			<Item Stack="1" Name="M.Repel" ID="classes.Items.Accessories::MuskRepel" />
 			<Item Stack="1" Name="MyrG.coat" ID="classes.Items.Accessories::MyrGreatcoat" />
 			<Item Stack="1" Name="NW.Leash" ID="classes.Items.Accessories::NogwichLeash" />
+			<Item Stack="1" Name="ReapClk" ID="classes.Items.Accessories::ReapersCloak" />
 			<Item Stack="1" Name="S.D.S." ID="classes.Items.Accessories::SalamanderDefenseSystem" />
 			<Item Stack="1" Name="S.Duster" ID="classes.Items.Accessories::SalamanderDuster" />
 			<Item Stack="1" Name="SantaHat" ID="classes.Items.Accessories::SantaHat" />
@@ -1673,10 +1689,14 @@
 			<Item Stack="1" Name="D.Nurse" ID="classes.Items.Apparel::DhaalNurseOutfit" LongName="Dhaalian nurse outfit" />
 			<Item Stack="1" Name="DressCloth" ID="classes.Items.Apparel::DressClothes" />
 			<Item Stack="1" Name="F. Doctor" ID="classes.Items.Apparel::FemaleDoctorOutfit" />
+			<Item Stack="1" Name="JackoDress" ID="classes.Items.Apparel::JackolanternDress" />
 			<Item Stack="1" Name="LabCoat" ID="classes.Items.Apparel::KhansLabCoat" />
 			<Item Stack="1" Name="LtxBdy" ID="classes.Items.Apparel::LatexBodysuit" />
 			<Item Stack="1" Name="L.Harness" ID="classes.Items.Apparel::LeatherStrapHarness" />
 			<Item Stack="1" Name="Libr.O" ID="classes.Items.Apparel::LibrarianOutfit" />
+			<Item Stack="1" Name="LightHarnss" ID="classes.Items.Apparel::LightHarness">
+				<ItemField Name="shields" Type="int" Value="75" />
+			</Item>
 			<Item Stack="1" Name="BlkDress" ID="classes.Items.Apparel::LittleBlackDress" />
 			<Item Stack="1" Name="MaidO." ID="classes.Items.Apparel::MaidOutfit" />
 			<Item Stack="1" Name="Maid U." ID="classes.Items.Apparel::MaidUniform" />
@@ -1826,6 +1846,10 @@
 			<Item Stack="1" Name="O.Collar" ID="classes.Items.Armor.Unique::OmnisuitCollar" />
 			<Item Stack="1" Name="O.Suit" ID="classes.Items.Armor.Unique::Omnisuit" />
 			<Item Stack="1" Name="S.Collar" ID="classes.Items.Armor.Unique::StrangeCollar" />
+			<Item Stack="1" Name="TechSuit" ID="classes.Items.Armor::TechSuit">
+				<ItemField Name="shieldDefense" Type="int" Value="2" />
+				<ItemField Name="shields" Type="int" Value="40" />
+			</Item>
 		</ItemGroup>
 		<ItemGroup Name="Undergarment (Upper)">
 			<Item Stack="1" Name="BikiniTop" ID="classes.Items.Apparel::FrillyBikiniTop" />
@@ -1864,9 +1888,11 @@
 			<Item Stack="1" Name="Pasties" ID="classes.Items.Apparel::Pasties" />
 			<Item Stack="1" Name="Bra" ID="classes.Items.Apparel::PlainBra" />
 			<Item Stack="1" Name="Undershirt" ID="classes.Items.Apparel::PlainUndershirt" />
+			<Item Stack="1" Name="PumpknBra" ID="classes.Items.Apparel::PumpkinBra" />
 			<Item Stack="1" Name="P.CowBra" ID="classes.Items.Apparel::PurpleCowNursingBra" />
 			<Item Stack="1" Name="Shibari Top" ID="classes.Items.Apparel::ShibariTop" />
 			<Item Stack="1" Name="S.W.Bra" ID="classes.Items.Apparel::ShrinkwrapBra" />
+			<Item Stack="1" Name="HandsBra" ID="classes.Items.Apparel::SkeletonHandsBra" />
 			<Item Stack="1" Name="Sk.Bra" ID="classes.Items.Apparel::SkullPatternBra" />
 			<Item Stack="1" Name="Featherbra" ID="classes.Items.Apparel::SlepraDownBra" />
 			<Item Stack="1" Name="Sports Bra" ID="classes.Items.Apparel::SportsBra" />
@@ -1933,6 +1959,7 @@
 				<ItemField Name="hardLightEquipped" Type="bool" Value="true" />
 				<ItemField Name="basePrice" Type="int" Value="3040" />
 			</Item>
+			<Item Stack="1" Name="PB Briefs" ID="classes.Items.Apparel::PumpkinBulgeBriefs" />
 			<Item Stack="1" Name="Sav.Panty"    ID="classes.Items.Apparel::SavicitePanties" />
 			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" />
 			<Item Stack="1" Name="ShibariBottom" ID="classes.Items.Apparel::ShibariBottom" EditorName="Shibari Bottom HL" Tooltip="Hardlight Version">
@@ -1941,6 +1968,7 @@
 				<ItemField Name="basePrice" Type="int" Value="3920" />
 			</Item>
 			<Item Stack="1" Name="SS-Thong" ID="classes.Items.Apparel::SlutSealThong" />
+			<Item Stack="1" Name="WebPanties" ID="classes.Items.Apparel::SpiderwebPanties" />
 			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" />
 			<Item Stack="1" Name="Stockings" ID="classes.Items.Apparel::Stockings" EditorName="Stockings HL" Tooltip="Hardlight Version">
 				<ItemField Name="hasRandomProperties" Type="bool" Value="true" />
@@ -2226,6 +2254,7 @@
 			<Item Stack="1"     Name="Vid: ZNtSB2"     ID="classes.Items.Stories::ZilNighTheScienceBiTwo"  LongName="code for “Zil Nigh the Science Bi 2: SHEnanigans”" />
 		</ItemGroup>
 		<ItemGroup Name="Decorations">
+			<Item Stack="1" Name="Postr:Juice" ID="classes.Items.Decorations::CumJuicePoster" />
 			<Item Stack="1" Name="Postr:Kally"  ID="classes.Items.Decorations::KallyPoster" LongName="kally poster" />
 			<Item Stack="1" Name="Poster:MF"  ID="classes.Items.Decorations::MindfuckPoster" LongName="mindfuck poster" />
 			<Item Stack="1" Name="Poster:Ob"  ID="classes.Items.Decorations::ObediencePoster" LongName="obedience poster" />
@@ -2601,6 +2630,7 @@
 			<Item Stack="1" Name="BreedNBrute" ID="classes.Items.Cybernetics::BreedNBrute" />
 			<Item Stack="1" Name="CombatTail"  ID="classes.Items.Cybernetics::CombatTail" />
 			<Item Stack="1" Name="E.Enlarger"  ID="classes.Items.Cybernetics::EcstasyEnlargers" />
+			<Item Stack="1" Name="InsemPro"    ID="classes.Items.Cybernetics::InseminatorPro" />
 			<Item Stack="1" Name="Lact.Induc." ID="classes.Items.Cybernetics::LactaidDispensers" LongName="Lactation Inducers" />
 			<Item Stack="1" Name="Stabl.Sys"   ID="classes.Items.Cybernetics::MuscularStabilizationSystem" LongName="muscular stabilization system" />
 			<Item Stack="1" Name="ProstituteP" ID="classes.Items.Cybernetics::ProstitutePro" />
@@ -2664,12 +2694,15 @@
 			<KeyItem Name="Maike’s Keycard" />
 			<KeyItem Name="Mhen'ga Comms Relay" Description="The comms relay the U.G.C. Scout Authority on Mhen’ga gave you. As long as you set it up in the right place, it’ll act as a beacon for taxis." />
 			<KeyItem Name="Myr Heavy Tranquilizer Dart" />
+			<KeyItem Name="Naleen Hair" />
+			<KeyItem Name="Nyrea Hair" />
 			<KeyItem Name="Myr Security Radio" />
 			<KeyItem Name="Orange Myr Data" />
 			<KeyItem Name="Parasite Cure" Description="A vial containing a potential cure for the parasite afflicting the crew of the Kashima." />
 			<KeyItem Name="Parasite Sample" Description="A small security hardcase containing a medical sample." />
 			<KeyItem Name="Pirate Datapad" />
 			<KeyItem Name="Plasma Conduit" />
+			<KeyItem Name="Raskvel Feather" />
 			<KeyItem Name="Red Myr Blood" Description="A vial of blood sampled from a red myr." />
 			<KeyItem Name="RK Lah - Captured" />
 			<KeyItem Name="Satellite Hard Drive" />
@@ -3011,9 +3044,12 @@
 		<PerkGroup Name="General">
 			<Perk Name="Big Cock" Label1="Increase Multiplier" Value1="1" Comment="Cock size increase multiplier of {Value1}. See Value1" />
 			<Perk Name="Corrupted" Description="Increases your maximum libido but prevents the loss of taint." />
+			<Perk Name="Custom Ear Type" />
+			<Perk Name="Custom Face Type" />
 			<Perk Name="Fixed CumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="Cum Quantity" Value1="500000" />
 			<Perk Name="Fixed GirlCumQ" Comment="Ensures you always cum exactly {Value1} mLs. See Value1" Label1="GirlCumQ Quantity" Value1="500000" />
 			<Perk Name="Fixed MilkQ" Comment="Ensures you always lactate exactly {Value1} mLs. See Value1" Label1="Lactation Quantity" Value1="500000" />
+			<Perk Name="Gel Body" />
 			<Perk Name="Low Blow" />
 			<Perk Name="MinCumQ" Label1="Cum Quantity" Value1="2000" Comment="Always cum at least {Value1} MLs. See Value1" />
 			<Perk Name="Multiple Attacks" Comment="{Value1} melee attacks per turn. See Value1" Label1="Attacks per turn" Value1="5" />
@@ -3176,6 +3212,36 @@
 		<Flag Name="ANNO_TALKED_ABOUT_YOUR_DAD" Description="1 == You've talked to Anno about your dad" />
 		<Flag Name="ANNO_TEST_DROVE" />
 		<Flag Name="ANNO_TRIBERATOR_USED" Description="Number of times you've used Anno's vibrator on her" />
+		<Flag Name="ANNO_WALKIES_BASE_1_COUNT" />
+		<Flag Name="ANNO_WALKIES_BASE_2_COUNT" />
+		<Flag Name="ANNO_WALKIES_BASE_3_COUNT" />
+		<Flag Name="ANNO_WALKIES_BASE_4_COUNT" />
+		<Flag Name="ANNO_WALKIES_BASE_5_COUNT" />
+		<Flag Name="ANNO_WALKIES_BASE_6_COUNT" />
+		<Flag Name="ANNO_WALKIES_BJ_SNAKEBYTE_REACT" />
+		<Flag Name="ANNO_WALKIES_DISAPPOINT_ENDS" />
+		<Flag Name="ANNO_WALKIES_GOODPETCUNNIES" />
+		<Flag Name="ANNO_WALKIES_GOODPET_BJS" />
+		<Flag Name="ANNO_WALKIES_KNEEL_FASTS" />
+		<Flag Name="ANNO_WALKIES_LAST_INTRO_CHOSEN" />
+		<Flag Name="ANNO_WALKIES_MULTI_1_SYRI_COUNT" />
+		<Flag Name="ANNO_WALKIES_MULTI_2_KAEDE_COUNT" />
+		<Flag Name="ANNO_WALKIES_NEW_TEXAS_1_COUNT" />
+		<Flag Name="ANNO_WALKIES_OBEDIENT_FACESITS" />
+		<Flag Name="ANNO_WALKIES_PUNISHMENTS" />
+		<Flag Name="ANNO_WALKIES_SCENES" />
+		<Flag Name="ANNO_WALKIES_SCENES_COUNTER" />
+		<Flag Name="ANNO_WALKIES_SCORE" />
+		<Flag Name="ANNO_WALKIES_TAVROS_1_COUNT" />
+		<Flag Name="ANNO_WALKIES_UNBROKEN_DISAPPOINTS" />
+		<Flag Name="ANNO_WALKIES_UNBROKEN_GOOD_ENDS" />
+		<Flag Name="ANNO_WALKIES_UNBROKEN_GREAT_ENDS" />
+		<Flag Name="ANNO_WALKIES_UNBROKEN_KNEEL_FASTS" />
+		<Flag Name="ANNO_WALKIES_UNBROKEN_KNEEL_SLOWS" />
+		<Flag Name="ANNO_WALKIES_UNBROKEN_TEASES" />
+		<Flag Name="ANNO_WALKIES_UVETO_1_COUNT" />
+		<Flag Name="ANNO_WALKIES_UVETO_2_COUNT" />
+		<Flag Name="ANNO_WALKIES_YOU" />
 		<Flag Name="ANNO_X_ERRA_INTRODUCED" />
 		<Flag Name="ANNO_X_ERRA_JOINED" />
 		<Flag Name="ANNO_X_ERRA_WATCHED" />
@@ -3844,12 +3910,16 @@
 		<Flag Name="CHAURMINE_WINS" />
 		<Flag Name="CHEAT_UNLOCK_DHAAL" />
 		<Flag Name="CHECKED_GEAR_AT_OGGY" />
+		<Flag Name="CHERRYS_ACT_UPS" />
+		<Flag Name="CHERRYS_MOLLI_PUSH_ITS" />
+		<Flag Name="CHERRYS_PUNISHMENT_WALL_TRIPS" />
 		<Flag Name="CHERRYS_ROOM_SEEN" />
 		<Flag Name="CHERRY_BUBBLE_TALK" />
 		<Flag Name="CHERRY_HERSELF_TALKED" />
 		<Flag Name="CHERRY_HER_PLACE_INVITED_NORMAL" />
 		<Flag Name="CHERRY_HUGE_BUBS" />
 		<Flag Name="CHERRY_HUGE_BUBS_FED" />
+		<Flag Name="CHERRY_JANITOR_TALKED" />
 		<Flag Name="CHERRY_LARGE_BUBS" />
 		<Flag Name="CHERRY_LAST_BUBBLE_GIFT" />
 		<Flag Name="CHERRY_MEDIUM_BUBS" />
@@ -3922,6 +3992,7 @@
 		<Flag Name="CRYSTALGOO_T2_ENCOUNTERS" />
 		<Flag Name="CRYSTAL_GOO_DEFEAT" />
 		<Flag Name="CRYSTAL_GOO_GLORYHOLED" />
+		<Flag Name="CUMJUICE_POSTER_HUNG" />
 		<Flag Name="CUMSTREAM_UNLOCKED" />
 		<Flag Name="CUM_SUCK_COUNTER" />
 		<Flag Name="CUNTTAILED_DALLY" />
@@ -5043,6 +5114,7 @@
 		<Flag Name="KIMBER_QUEST" />
 		<Flag Name="KIMBER_QUEST_2" />
 		<Flag Name="KIMBER_QUEST_GOT_PANTIES" />
+		<Flag Name="KIMBER_QUEST_INCAVES" />
 		<Flag Name="KIMBER_RATION_GIVEN" />
 		<Flag Name="KIMBER_REJECTED_PARASITE" />
 		<Flag Name="KIMBER_RUSKVEL_GIVEN" />
@@ -5136,6 +5208,7 @@
 		<Flag Name="KIRO_TRUST" Description="How much Kiro trusts you" />
 		<Flag Name="KIRO_VAG_FUCKED" />
 		<Flag Name="KIRO_X_SAEN_HAPPENED" Description="1 == You've had a threesome with Kiro and Saendra" />
+		<Flag Name="KIR_KALLY_MEET_DRANK_SPECIAL_INGRED" />
 		<Flag Name="KITHRAN_MET" />
 		<Flag Name="KI_CMO_MEDSUPPLIES" />
 		<Flag Name="KI_CMO_SEARCHED" />
@@ -5395,6 +5468,7 @@
 		<Flag Name="LOOTED_MYR_RIFLE" />
 		<Flag Name="LOOTED_TAIVRAS_BEDROOM" />
 		<Flag Name="LORELEI_BEATEN" />
+		<Flag Name="LORELEI_EGYPTIAN_QUEENINGS" />
 		<Flag Name="LORELEI_FOUGHT" />
 		<Flag Name="LORELEI_KNOTS" />
 		<Flag Name="LORELEI_LUST_LOSSES" />
@@ -6288,6 +6362,8 @@
 		<Flag Name="PUMPKINGS_JOHR_DEFEATED" />
 		<Flag Name="PUMPKING_COMPLETION" />
 		<Flag Name="PUMPKING_FUCKED" />
+		<Flag Name="PUNISHMENT_WALL_CHERRYVISITS" />
+		<Flag Name="PUNISHMENT_WALL_SCENES" />
 		<Flag Name="PUNKMILK_DRANK" />
 		<Flag Name="PUNK_SUCKOP_SUCKED_OFF" />
 		<Flag Name="PUPPYSLUTMAS_2014" Description="Anno or Syri" />
@@ -7223,7 +7299,9 @@
 		<Flag Name="SYRI_GIFT_PANTY" />
 		<Flag Name="SYRI_HOLE_VID_TIMER" />
 		<Flag Name="SYRI_MILOFUCK" />
+		<Flag Name="SYRI_PETPLAY_GOT_WALKED" />
 		<Flag Name="SYRI_PETPLAY_LOST" />
+		<Flag Name="SYRI_PETPLAY_WALKED_HER" />
 		<Flag Name="SYRI_PETPLAY_WINS" />
 		<Flag Name="SYRI_SAID_BAD_PETPLAY" />
 		<Flag Name="SYRI_SEEN_PCS_SHIP_CABIN" Description="1 == Syri has seen the PC's ship cabin" />
@@ -8228,6 +8306,7 @@
 			<StatusEffect Name="STORMGUARD_CD" IsHidden="true" />
 			<StatusEffect Name="Syd Cboy Cooldown" IsHidden="true" />
 			<StatusEffect Name="Sydian Queen Cooldown" IsHidden="true" />
+			<StatusEffect Name="Syri_Quest_Panty_Give_CD" IsHidden="true" />
 			<StatusEffect Name="Taint_CD" MinutesLeft="4320" IsHidden="true" />
 			<StatusEffect Name="Taivra Bed Event Cooldown" IsHidden="true" />
 			<StatusEffect Name="Tapped Kally" IsHidden="true" IconName="Icon_Wine" MinutesLeft="1000" />
