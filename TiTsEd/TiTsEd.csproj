@@ -7,7 +7,7 @@
     <Product>TiTsEd</Product>
     <Description>Save Editor for Trials in Tainted Space</Description>
     <Copyright>Copyright © 2017</Copyright>
-    <Version>0.34.6</Version>
+    <Version>0.34.7</Version>
     <AssemblyVersion>$(Version).0</AssemblyVersion>
     <FileVersion>$(Version).0</FileVersion>
     <UseWindowsForms>true</UseWindowsForms>
