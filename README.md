@@ -2,9 +2,11 @@
 
 This project was a save editor for the Flash engine version of the game *Trials in Tainted Space*.
 
+TiTsEd allows you to edit your character's stats, and possibly other things in the future.
+
 This project does *NOT* support the Javascript version of the game.
 
-TiTsEd allows you to edit your character's stats, and possibly other things in the future.
+For editing the Javascript version of the game please see https://github.com/algoRhythm99/TiTS.JS-Save-Editor or https://github.com/Chase-san/TiTsEdJS/releases
 
 ## Requirements ##
 
