@@ -6,7 +6,7 @@ TiTsEd allows you to edit your character's stats, and possibly other things in t
 
 This project does *NOT* support the Javascript version of the game.
 
-For editing the Javascript version of the game please see https://github.com/algoRhythm99/TiTS.JS-Save-Editor or https://github.com/Chase-san/TiTsEdJS/releases
+For editing the Javascript version of the game please see https://github.com/start-5/TiTS.JS-Save-Editor or https://github.com/Chase-san/TiTsEdJS/releases
 
 ## Requirements ##
 
